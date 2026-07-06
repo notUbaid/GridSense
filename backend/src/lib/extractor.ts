@@ -6,7 +6,6 @@ import logger from '../utils/logger';
 import { config } from '../config';
 import { MockAIProvider } from './MockAIProvider';
 import { GoogleGenerativeAI } from '@google/generative-ai';
-import { MockAIProvider } from './MockAIProvider';
 
 let groq: Groq | null = null;
 let genAI: GoogleGenerativeAI | null = null;

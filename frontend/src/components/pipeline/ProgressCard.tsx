@@ -41,7 +41,7 @@ export function ProgressCard({ progress, records, currentActivity, elapsedMs, et
                 <span className="text-foreground flex items-center gap-1"><Clock className="w-3 h-3" /> {formatTime(elapsedMs)}</span>
                 <span className="text-[10px] uppercase tracking-wider opacity-70">Elapsed</span>
               </div>
-              <div className="w-[1px] bg-border/50 h-auto"></div>
+              <div className="w-px h-6 bg-border mx-2" />
               <div className="flex flex-col items-start">
                 <span className="text-foreground flex items-center gap-1"><Timer className="w-3 h-3" /> {etaMs !== null ? formatTime(etaMs) : '--:--'}</span>
                 <span className="text-[10px] uppercase tracking-wider opacity-70">Remaining</span>
@@ -52,7 +52,7 @@ export function ProgressCard({ progress, records, currentActivity, elapsedMs, et
         <CardContent className="space-y-4">
           <div className="relative">
             <Progress value={progress} className="h-2 w-full transition-all duration-300" />
-            <div className="absolute top-0 left-0 h-full w-full bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full animate-[shimmer_2s_infinite]"></div>
+            <div className="absolute inset-0 bg-linear-to-r from-transparent via-white/20 to-transparent -translate-x-full animate-[shimmer_1.5s_infinite]" />
           </div>
           <div className="flex justify-between items-center text-sm font-medium text-muted-foreground">
             <span>{records.length} / {totalRows} records mapped</span>
