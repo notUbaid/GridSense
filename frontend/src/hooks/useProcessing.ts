@@ -156,9 +156,26 @@ export function useProcessing() {
             throw new Error(response.error || 'Batch failed without specific error');
           }
         } catch (err: any) {
-          localFailedBatches++;
           const backendError = err.response?.data?.error || err.message || 'Unknown error';
-          toast.error(`Batch ${task.index + 1} failed: ${backendError}`);
+          const status = err.response?.status;
+          
+          if (status === 429 || backendError.toLowerCase().includes('rate limit')) {
+            toast.warning(`Rate limit hit on batch ${task.index + 1}. Pausing for 60 seconds...`);
+            
+            // Wait for 60 seconds with a countdown
+            for (let i = 60; i > 0; i--) {
+              setCurrentActivity(`AI Rate Limit reached. Pausing... Resuming in ${i}s`);
+              await new Promise(r => setTimeout(r, 1000));
+            }
+            
+            toast.info(`Resuming batch ${task.index + 1}...`);
+            // Put the task back at the front of the queue to try again
+            queue.unshift(task);
+            continue; // Skip the finally block to not count this as a completed attempt yet
+          } else {
+            localFailedBatches++;
+            toast.error(`Batch ${task.index + 1} failed: ${backendError}`);
+          }
         } finally {
           completedBatches++;
           setProgress(Math.round((completedBatches / totalBatches) * 100));
