@@ -48,9 +48,9 @@ export function Dropzone({ onFileAccepted, disabled }: DropzoneProps) {
   return (
     <div
       className={cn(
-        "group relative grid h-64 w-full cursor-pointer place-items-center rounded-2xl border-2 border-dashed transition-all hover:bg-muted/50",
-        isDragActive ? "border-primary bg-muted/50" : "border-muted-foreground/25",
-        disabled && "pointer-events-none opacity-60"
+        "group relative flex min-h-[240px] w-full cursor-pointer flex-col items-center justify-center rounded-xl border border-dashed transition-all duration-200 ease-out",
+        isDragActive ? "border-primary bg-primary/5" : "border-border hover:border-primary/50 hover:bg-muted/30",
+        disabled && "pointer-events-none opacity-50"
       )}
       onDragEnter={handleDrag}
       onDragLeave={handleDrag}
@@ -64,13 +64,16 @@ export function Dropzone({ onFileAccepted, disabled }: DropzoneProps) {
         onChange={handleChange}
         disabled={disabled}
       />
-      <div className="flex flex-col items-center justify-center space-y-4 text-center">
-        <div className="rounded-full bg-primary/10 p-4 transition-transform group-hover:scale-105 group-active:scale-95">
-          <UploadCloud className="h-8 w-8 text-primary" />
+      <div className="flex flex-col items-center justify-center space-y-4 text-center p-6">
+        <div className={cn(
+          "rounded-full p-4 transition-all duration-200",
+          isDragActive ? "bg-primary/20 text-primary" : "bg-muted text-muted-foreground group-hover:bg-primary/10 group-hover:text-primary"
+        )}>
+          <UploadCloud className="h-6 w-6" />
         </div>
-        <div className="space-y-1">
-          <p className="text-sm font-medium">Click or drag CSV to upload</p>
-          <p className="text-xs text-muted-foreground">Any column format is supported. AI will map it automatically.</p>
+        <div className="space-y-1.5">
+          <p className="text-sm font-medium leading-none text-foreground">Click or drag CSV to upload</p>
+          <p className="text-sm text-muted-foreground">Any column format is supported.</p>
         </div>
       </div>
     </div>

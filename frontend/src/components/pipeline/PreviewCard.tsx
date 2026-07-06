@@ -10,10 +10,10 @@ interface PreviewCardProps {
 
 export function PreviewCard({ previewData, onCancel, onStart }: PreviewCardProps) {
   return (
-    <Card className="shadow-lg border-primary/20 animate-in fade-in slide-in-from-bottom-4 duration-500">
-      <CardHeader>
-        <CardTitle>Preview Raw Data</CardTitle>
-        <CardDescription>We successfully parsed {previewData.rows.length} rows and {previewData.headers.length} columns. Please review a sample below before starting AI extraction.</CardDescription>
+    <Card className="border-border/50 bg-card shadow-sm animate-in fade-in slide-in-from-bottom-4 duration-300">
+      <CardHeader className="space-y-1">
+        <CardTitle className="text-xl">Preview Raw Data</CardTitle>
+        <CardDescription className="text-sm">We parsed {previewData.rows.length} rows and {previewData.headers.length} columns. Review the sample below before extraction.</CardDescription>
       </CardHeader>
       <CardContent className="space-y-6">
         <div className="rounded-md border overflow-x-auto max-w-full">
@@ -21,18 +21,18 @@ export function PreviewCard({ previewData, onCancel, onStart }: PreviewCardProps
             <thead>
               <tr className="border-b bg-muted/50 sticky top-0 z-10 shadow-sm">
                 {previewData.headers.slice(0, 8).map((h, i) => (
-                  <th key={i} className="px-4 py-3 text-left font-medium text-muted-foreground whitespace-nowrap">{h}</th>
+                  <th key={i} className="px-4 py-3 text-left text-xs font-medium uppercase tracking-wider text-muted-foreground whitespace-nowrap">{h}</th>
                 ))}
-                {previewData.headers.length > 8 && <th className="px-4 py-3 text-left font-medium text-muted-foreground">...</th>}
+                {previewData.headers.length > 8 && <th className="px-4 py-3 text-left text-xs font-medium uppercase tracking-wider text-muted-foreground">...</th>}
               </tr>
             </thead>
             <tbody>
               {previewData.rows.slice(0, 5).map((row, i) => (
                 <tr key={i} className="border-b">
                   {previewData.headers.slice(0, 8).map((h, j) => (
-                    <td key={j} className="px-4 py-3 whitespace-nowrap max-w-[150px] truncate">{row[h] || ''}</td>
+                    <td key={j} className="px-4 py-3 whitespace-nowrap max-w-[200px] truncate text-sm text-foreground">{row[h] || ''}</td>
                   ))}
-                  {previewData.headers.length > 8 && <td className="px-4 py-3">...</td>}
+                  {previewData.headers.length > 8 && <td className="px-4 py-3 text-sm text-muted-foreground">...</td>}
                 </tr>
               ))}
             </tbody>

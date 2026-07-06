@@ -1,4 +1,5 @@
 import React from 'react';
+import { cn } from '@/lib/utils';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { ResultsTable } from '@/components/results/ResultsTable';
@@ -17,20 +18,19 @@ export function SummaryDashboard({ state, metrics, records, onReset }: SummaryDa
   const isPartial = state === 'partial_success';
 
   return (
-    <div className="space-y-6 animate-in fade-in slide-in-from-bottom-4 duration-500">
-      <Card className={`shadow-lg border ${isPartial ? 'border-amber-500/50' : 'border-emerald-500/50'}`}>
-        <CardHeader className="pb-4">
+      <Card className={cn("border-border/50 bg-card shadow-sm animate-in fade-in slide-in-from-bottom-4 duration-300")}>
+        <CardHeader className="pb-4 border-b">
           <div className="flex items-center justify-between">
             <div className="flex items-center space-x-3">
-              <div className={`p-2 rounded-full ${isPartial ? 'bg-amber-500/10 text-amber-500' : 'bg-emerald-500/10 text-emerald-500'}`}>
-                {isPartial ? <AlertCircle className="h-6 w-6" /> : <FileCheck2 className="h-6 w-6" />}
+              <div className={cn("p-2 rounded-full", isPartial ? 'bg-amber-500/10 text-amber-500' : 'bg-primary/10 text-primary')}>
+                {isPartial ? <AlertCircle className="h-5 w-5" /> : <FileCheck2 className="h-5 w-5" />}
               </div>
               <div>
-                <CardTitle className="text-2xl">{isPartial ? 'Partial Extraction Complete' : 'Extraction Complete'}</CardTitle>
-                <CardDescription>
+                <CardTitle className="text-xl">{isPartial ? 'Partial Extraction' : 'Extraction Complete'}</CardTitle>
+                <CardDescription className="text-sm">
                   {isPartial 
-                    ? 'Some batches failed due to network or rate limits, but your successful data is preserved below.'
-                    : 'All rows were processed successfully.'}
+                    ? 'Some batches failed due to network limits. Successful data is preserved below.'
+                    : 'All rows processed successfully.'}
                 </CardDescription>
               </div>
             </div>
@@ -38,22 +38,34 @@ export function SummaryDashboard({ state, metrics, records, onReset }: SummaryDa
           </div>
         </CardHeader>
         <CardContent>
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-            <div className="bg-muted/50 p-4 rounded-lg">
-              <p className="text-sm text-muted-foreground font-medium">Total Input Rows</p>
-              <p className="text-3xl font-bold">{metrics.totalRows}</p>
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-6 pt-4">
+            <div className="space-y-1">
+              <p className="text-sm text-muted-foreground font-medium flex items-center gap-2">
+                <span className="h-2 w-2 rounded-full bg-muted-foreground/50"></span>
+                Total Input
+              </p>
+              <p className="text-2xl font-semibold tracking-tight">{metrics.totalRows}</p>
             </div>
-            <div className="bg-emerald-500/10 p-4 rounded-lg border border-emerald-500/20">
-              <p className="text-sm text-emerald-600 dark:text-emerald-400 font-medium">Extracted</p>
-              <p className="text-3xl font-bold text-emerald-600 dark:text-emerald-400">{metrics.successfulRows}</p>
+            <div className="space-y-1">
+              <p className="text-sm text-muted-foreground font-medium flex items-center gap-2">
+                <span className="h-2 w-2 rounded-full bg-emerald-500"></span>
+                Extracted
+              </p>
+              <p className="text-2xl font-semibold tracking-tight">{metrics.successfulRows}</p>
             </div>
-            <div className="bg-amber-500/10 p-4 rounded-lg border border-amber-500/20">
-              <p className="text-sm text-amber-600 dark:text-amber-400 font-medium">Skipped</p>
-              <p className="text-3xl font-bold text-amber-600 dark:text-amber-400">{metrics.skippedRows}</p>
+            <div className="space-y-1">
+              <p className="text-sm text-muted-foreground font-medium flex items-center gap-2">
+                <span className="h-2 w-2 rounded-full bg-amber-500"></span>
+                Skipped
+              </p>
+              <p className="text-2xl font-semibold tracking-tight">{metrics.skippedRows}</p>
             </div>
-            <div className="bg-destructive/10 p-4 rounded-lg border border-destructive/20">
-              <p className="text-sm text-destructive font-medium">Failed Batches</p>
-              <p className="text-3xl font-bold text-destructive">{metrics.failedBatches}</p>
+            <div className="space-y-1">
+              <p className="text-sm text-muted-foreground font-medium flex items-center gap-2">
+                <span className="h-2 w-2 rounded-full bg-destructive"></span>
+                Failed Batches
+              </p>
+              <p className="text-2xl font-semibold tracking-tight">{metrics.failedBatches}</p>
             </div>
           </div>
           <div className="mt-4 text-xs text-muted-foreground text-right">
@@ -62,7 +74,7 @@ export function SummaryDashboard({ state, metrics, records, onReset }: SummaryDa
         </CardContent>
       </Card>
 
-      <Card className="shadow-lg overflow-hidden border-muted">
+      <Card className="border-border/50 bg-card shadow-sm overflow-hidden">
         <CardContent className="p-0">
           <ResultsTable data={records} />
         </CardContent>

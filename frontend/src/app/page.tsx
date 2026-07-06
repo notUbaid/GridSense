@@ -17,14 +17,14 @@ export default function Home() {
     <main className="min-h-screen bg-background text-foreground p-6 md:p-12">
       <div className="mx-auto max-w-6xl space-y-8">
         <div className="space-y-2">
-          <h1 className="text-4xl font-bold tracking-tight">GridSense AI</h1>
-          <p className="text-lg text-muted-foreground">
-            Upload any CSV. We'll automatically map it to standard CRM records using semantic AI extraction.
+          <h1 className="text-3xl font-semibold tracking-tight text-foreground">GridSense</h1>
+          <p className="text-base text-muted-foreground max-w-2xl">
+            Semantic spreadsheet intelligence. Drop any CSV, and the AI will automatically map the raw data into a strictly typed CRM schema.
           </p>
         </div>
 
         {(state === 'idle' || state === 'parsing') && (
-          <Card className="shadow-lg border-muted">
+          <Card className="border-border/50 bg-card shadow-sm transition-all">
             <CardContent className="pt-6">
               <Dropzone onFileAccepted={processFile} disabled={state === 'parsing'} />
               {state === 'parsing' && (
@@ -53,7 +53,7 @@ export default function Home() {
         )}
 
         {state === 'error' && (
-          <Card className="shadow-lg border-destructive/50">
+          <Card className="border-destructive/30 shadow-sm">
             <CardHeader>
               <div className="flex items-center space-x-2 text-destructive">
                 <AlertCircle className="h-5 w-5" />

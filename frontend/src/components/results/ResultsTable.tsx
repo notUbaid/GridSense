@@ -52,7 +52,12 @@ export function ResultsTable({ data }: ResultsTableProps) {
   });
 
   if (!data || data.length === 0) {
-    return <div className="p-8 text-center text-muted-foreground">No records to display.</div>;
+    return (
+      <div className="flex flex-col items-center justify-center p-12 text-center border rounded-md bg-muted/10 border-dashed">
+        <p className="text-sm font-medium text-foreground">No records to display</p>
+        <p className="text-sm text-muted-foreground mt-1">Data will appear here once extraction finishes.</p>
+      </div>
+    );
   }
 
   const exportCsv = () => {
@@ -75,18 +80,18 @@ export function ResultsTable({ data }: ResultsTableProps) {
 
   return (
     <div className="space-y-4 p-4">
-      <div className="flex justify-between items-center px-2">
-        <h3 className="text-lg font-medium">Extracted Records ({data.length})</h3>
-        <Button onClick={exportCsv} variant="secondary">Export to CSV</Button>
+      <div className="flex justify-between items-center px-1">
+        <h3 className="text-base font-semibold text-foreground">Extracted Records ({data.length})</h3>
+        <Button onClick={exportCsv} variant="outline" size="sm" className="h-8">Export CSV</Button>
       </div>
-      <div className="rounded-md border overflow-x-auto max-w-full">
+      <div className="rounded-md border bg-card overflow-x-auto max-w-full max-h-[600px] overflow-y-auto relative">
         <Table>
-          <TableHeader>
+          <TableHeader className="sticky top-0 z-10 bg-muted/90 backdrop-blur-sm shadow-sm">
             {table.getHeaderGroups().map((headerGroup) => (
               <TableRow key={headerGroup.id}>
                 {headerGroup.headers.map((header) => {
                   return (
-                    <TableHead key={header.id} className="whitespace-nowrap">
+                    <TableHead key={header.id} className="whitespace-nowrap text-xs font-medium uppercase tracking-wider text-muted-foreground py-3">
                       {header.isPlaceholder
                         ? null
                         : flexRender(
@@ -105,9 +110,10 @@ export function ResultsTable({ data }: ResultsTableProps) {
                 <TableRow
                   key={row.id}
                   data-state={row.getIsSelected() && 'selected'}
+                  className="hover:bg-muted/30 transition-colors"
                 >
                   {row.getVisibleCells().map((cell) => (
-                    <TableCell key={cell.id} className="whitespace-nowrap max-w-[200px] truncate">
+                    <TableCell key={cell.id} className="whitespace-nowrap max-w-[200px] truncate text-sm py-3 text-foreground">
                       {flexRender(cell.column.columnDef.cell, cell.getContext())}
                     </TableCell>
                   ))}
