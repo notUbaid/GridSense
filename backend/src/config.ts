@@ -14,7 +14,9 @@ const _env = envSchema.safeParse(process.env);
 
 if (!_env.success) {
   console.error('Invalid environment variables:', _env.error.format());
-  process.exit(1);
+  // In Vercel serverless, process.exit(1) crashes the cold start and returns a generic 500.
+  // We throw so it can be caught, or if uncaught it at least provides a stack trace.
+  throw new Error(`Invalid environment variables: ${JSON.stringify(_env.error.format())}`);
 }
 
 export const config = _env.data;
