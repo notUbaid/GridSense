@@ -135,7 +135,8 @@ export function useProcessing() {
           }
         } catch (err: any) {
           localFailedBatches++;
-          toast.error(`Error processing batch ${task.index + 1}: ${err.message || 'Unknown error'}`);
+          const backendError = err.response?.data?.error || err.message || 'Unknown error';
+          toast.error(`Batch ${task.index + 1} failed: ${backendError}`);
         } finally {
           completedBatches++;
           setProgress(Math.round((completedBatches / totalBatches) * 100));
