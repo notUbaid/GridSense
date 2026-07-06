@@ -5,7 +5,7 @@ export const CrmRecordSchema = z.object({
   name: z.string().optional().nullable(),
   email: z.string().email().optional().nullable().or(z.literal('')),
   country_code: z.string().optional().nullable(),
-  mobile_without_country_code: z.string().optional().nullable(),
+  phone_local: z.string().optional().nullable(),
   company: z.string().optional().nullable(),
   city: z.string().optional().nullable(),
   state: z.string().optional().nullable(),
@@ -27,3 +27,14 @@ export const ProcessBatchRequestSchema = z.object({
 });
 
 export type ProcessBatchRequest = z.infer<typeof ProcessBatchRequestSchema>;
+
+export const ProcessBatchResponseSchema = z.object({
+  batchId: z.string(),
+  status: z.enum(['success', 'partial', 'error']),
+  records: z.array(CrmRecordSchema).optional(),
+  skippedCount: z.number().default(0),
+  error: z.string().optional(),
+  processingTimeMs: z.number().optional(),
+});
+
+export type ProcessBatchResponse = z.infer<typeof ProcessBatchResponseSchema>;

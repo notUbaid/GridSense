@@ -11,50 +11,61 @@ const responseSchema = z.object({
   records: z.array(CrmRecordSchema),
 });
 
+function stripMarkdownFences(raw: string): string {
+  const trimmed = raw.trim();
+  if (trimmed.startsWith('```')) {
+    const firstNewline = trimmed.indexOf('\n');
+    const lastFence = trimmed.lastIndexOf('```');
+    if (lastFence > firstNewline) {
+      return trimmed.slice(firstNewline + 1, lastFence).trim();
+    }
+  }
+  return trimmed;
+}
+
 export async function processBatch(headers: string[], rows: Record<string, string>[]) {
   let attempt = 0;
   const maxRetries = config.AI_MAX_RETRIES;
   const startTime = Date.now();
 
-  const prompt = `You are an expert data extraction AI. You will be provided with CSV headers and a JSON array of row data.
-Your task is to accurately map this data to a standardized CRM schema and return the result as a JSON object containing a "records" array.
-Use semantic understanding to figure out which column maps to which CRM field. Do not guess information that is not present.
-If a row cannot be extracted at all, leave the fields null, but still return the object in the array to preserve the batch size.
-Output ONLY valid JSON.
+  const prompt = `You are an expert data extraction AI. You receive CSV headers and row data as JSON.
+Your job: map each row to a standardized CRM schema and return a JSON object with a "records" array.
 
-Here is the JSON schema you MUST strictly follow:
-${JSON.stringify(zodToJsonSchema(responseSchema), null, 2)}
+RULES:
+- Use semantic understanding to figure out which column maps to which CRM field.
+- Never invent data. If a value is not present in the source, leave the field null.
+- If a row has BOTH email and phone missing, still include it but set all fields to null (it will be filtered as a skip).
+- If multiple emails exist, use the first as "email" and append the rest to "crm_note".
+- If multiple phone numbers exist, use the first as "phone_local" and append the rest to "crm_note".
+- "crm_status" MUST be exactly one of: GOOD_LEAD_FOLLOW_UP, DID_NOT_CONNECT, BAD_LEAD, SALE_DONE — or null.
+- "data_source" MUST be exactly one of: leads_on_demand, meridian_tower, eden_park, varah_swamy, sarjapur_plots — or null.
+- Combine first name + last name into a single "name" field.
+- Strip formatting from phone numbers (spaces, dashes, parentheses).
+- You MUST return exactly ${rows.length} objects in the "records" array — one per input row.
+- Output ONLY valid JSON. No markdown, no explanation.
 
-### Few-Shot Example
-If headers are: ["First Name", "SurName", "Email Address", "Phone", "Org"]
-And row data is: [{"First Name": "John", "SurName": "Doe", "Email Address": "john@acme.com", "Phone": "555-0198", "Org": "Acme Corp"}]
-You should map it to:
-{
-  "records": [
-    {
-      "name": "John Doe",
-      "email": "john@acme.com",
-      "mobile_without_country_code": "555-0198",
-      "company": "Acme Corp"
-    }
-  ]
-}
+JSON Schema:
+${JSON.stringify(zodToJsonSchema(responseSchema as any))}
+
+Example:
+Headers: ["First Name", "SurName", "Email Address", "Phone", "Org"]
+Row: [{"First Name": "John", "SurName": "Doe", "Email Address": "john@acme.com", "Phone": "555-0198", "Org": "Acme Corp"}]
+Output: {"records": [{"name": "John Doe", "email": "john@acme.com", "phone_local": "5550198", "company": "Acme Corp"}]}
 
 ---
 CSV Headers: ${JSON.stringify(headers)}
-
 Row Data:
-${JSON.stringify(rows, null, 2)}`;
+${JSON.stringify(rows)}`;
 
   while (attempt < maxRetries) {
     try {
       logger.info({ attempt: attempt + 1, batchSize: rows.length }, 'Sending batch to Groq');
-      
+
       const completion = await groq.chat.completions.create({
         messages: [
           {
             role: 'system',
-            content: 'You are an intelligent data extraction system. You must output ONLY valid JSON matching the exact schema requested.'
+            content: 'You are a data extraction system. Output ONLY valid JSON matching the requested schema. No markdown fences, no commentary.'
           },
           { role: 'user', content: prompt }
         ],
@@ -66,20 +77,21 @@ ${JSON.stringify(rows, null, 2)}`;
       const content = completion.choices[0]?.message?.content;
       if (!content) throw new Error('Empty response from Groq');
 
-      const parsed = JSON.parse(content);
+      const cleaned = stripMarkdownFences(content);
+      const parsed = JSON.parse(cleaned);
       const validated = responseSchema.parse(parsed);
       const records = validated.records;
 
       if (records.length !== rows.length) {
-        throw new Error(`LLM output mismatch. Expected ${rows.length} records, got ${records.length}.`);
+        throw new Error(`Row count mismatch: expected ${rows.length}, got ${records.length}`);
       }
 
       let skippedCount = 0;
       const validRecords: CrmRecord[] = [];
 
       for (const record of records) {
-        const isSkipped = Object.values(record).every(val => !val);
-        if (isSkipped) {
+        const hasContact = record.email || record.phone_local;
+        if (!hasContact) {
           skippedCount++;
         } else {
           validRecords.push(record);
@@ -87,40 +99,40 @@ ${JSON.stringify(rows, null, 2)}`;
       }
 
       const processingTimeMs = Date.now() - startTime;
-      
-      logger.info({ 
-        batchSize: rows.length, 
-        validCount: validRecords.length, 
-        skippedCount, 
-        processingTimeMs 
-      }, 'Batch processing successful');
+
+      logger.info({
+        batchSize: rows.length,
+        extracted: validRecords.length,
+        skipped: skippedCount,
+        ms: processingTimeMs
+      }, 'Batch complete');
 
       return { records: validRecords, skippedCount, processingTimeMs };
 
     } catch (error: any) {
       attempt++;
-      
+
       const status = error?.status || error?.response?.status;
       const isRateLimit = status === 429;
       const isTransientError = status >= 500;
-      
-      if (!isRateLimit && !isTransientError) {
-        logger.error({ err: error.message, status }, 'Non-retriable error encountered');
+
+      if (!isRateLimit && !isTransientError && !(error instanceof SyntaxError)) {
+        logger.error({ err: error.message, status }, 'Non-retriable error');
         throw error;
       }
-      
+
       if (attempt >= maxRetries) {
-        logger.error('Max retries reached for batch processing');
+        logger.error({ err: error.message, attempts: attempt }, 'Max retries exhausted');
         throw error;
       }
 
       const baseDelay = isRateLimit ? config.AI_RETRY_DELAY_MS * 1.5 : config.AI_RETRY_DELAY_MS;
       const delayMs = (baseDelay * Math.pow(2, attempt - 1)) + Math.random() * 1000;
-      
-      logger.warn({ attempt, delayMs, err: error.message }, 'Retrying batch after delay');
+
+      logger.warn({ attempt, delayMs: Math.round(delayMs), err: error.message }, 'Retrying after delay');
       await new Promise(resolve => setTimeout(resolve, delayMs));
     }
   }
-  
+
   throw new Error('Failed to process batch after retries');
 }

@@ -58,7 +58,7 @@ export function ResultsTable({ data }: ResultsTableProps) {
   const exportCsv = () => {
     const headers = columns.map(c => c.header).join(',');
     const rows = data.map(row => 
-      columns.map(c => `"${String((row as any)[c.accessorKey] || '').replace(/"/g, '""')}"`).join(',')
+      columns.map(c => `"${String(row[c.accessorKey as keyof CrmRecord] || '').replace(/"/g, '""')}"`).join(',')
     ).join('\n');
     
     const csvContent = `${headers}\n${rows}`;
@@ -70,6 +70,7 @@ export function ResultsTable({ data }: ResultsTableProps) {
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);
+    URL.revokeObjectURL(url);
   };
 
   return (

@@ -16,7 +16,7 @@ export interface ProcessMetrics {
 
 export function useProcessing() {
   const [state, setState] = useState<ProcessState>('idle');
-  const [progress, setProgress] = useState(0); // 0 to 100
+  const [progress, setProgress] = useState(0);
   const [records, setRecords] = useState<CrmRecord[]>([]);
   const [previewData, setPreviewData] = useState<{ headers: string[], rows: Record<string, string>[] } | null>(null);
   const [error, setError] = useState<string | null>(null);
@@ -134,7 +134,6 @@ export function useProcessing() {
             throw new Error(response.error || 'Batch failed without specific error');
           }
         } catch (err: any) {
-          console.error('Batch error:', err);
           localFailedBatches++;
           toast.error(`Error processing batch ${task.index + 1}: ${err.message || 'Unknown error'}`);
         } finally {
