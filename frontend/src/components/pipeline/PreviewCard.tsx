@@ -13,13 +13,13 @@ export function PreviewCard({ previewData, onCancel, onStart }: PreviewCardProps
     <Card className="shadow-lg border-primary/20 animate-in fade-in slide-in-from-bottom-4 duration-500">
       <CardHeader>
         <CardTitle>Preview Raw Data</CardTitle>
-        <CardDescription>We successfully parsed {previewData.rows.length} rows. Please review a sample below before starting AI extraction.</CardDescription>
+        <CardDescription>We successfully parsed {previewData.rows.length} rows and {previewData.headers.length} columns. Please review a sample below before starting AI extraction.</CardDescription>
       </CardHeader>
       <CardContent className="space-y-6">
         <div className="rounded-md border overflow-x-auto max-w-full">
           <table className="w-full text-sm">
             <thead>
-              <tr className="border-b bg-muted/50">
+              <tr className="border-b bg-muted/50 sticky top-0 z-10 shadow-sm">
                 {previewData.headers.slice(0, 8).map((h, i) => (
                   <th key={i} className="px-4 py-3 text-left font-medium text-muted-foreground whitespace-nowrap">{h}</th>
                 ))}
