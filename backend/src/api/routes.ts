@@ -32,8 +32,12 @@ router.post('/batch', async (req: Request, res: Response): Promise<void> => {
   } catch (error: any) {
     const status = error?.status || error?.response?.status;
     const isRateLimit = status === 429;
-    const statusCode = isRateLimit ? 429 : 500;
-    const errorMessage = isRateLimit ? 'Rate limit exceeded for AI Provider' : (error.message || 'An unexpected error occurred during processing');
+    
+    // Default to 500 only if there is no explicit status code from the provider
+    const statusCode = status || 500;
+    const errorMessage = isRateLimit 
+      ? 'Rate limit exceeded for AI Provider' 
+      : (error.message || 'An unexpected error occurred during processing');
 
     logger.error({ batchId, err: error.message, statusCode }, 'Batch processing failed');
     res.status(statusCode).json({
