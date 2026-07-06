@@ -1,18 +1,35 @@
-id,Contact Data,Contact Data,Details,Details,Misc,empty,empty
-1,John Smith,jsmith@test.com,He said,"""Call me tomorrow""""",Notes: 😅,DROP TABLE leads;,,
-2,Alice W.,alice@test.com; aw@test.com,+1 555 1234 / +1 555 5678,<div>Very interested</div>,,
-3,Bob Tables,bob@test.com,"{""status"":""active","score"":99}",Line 1
-Line 2
-Line 3,,,,
-4,,,,,No contact info provided,,
-5,Eve,eve@test.com,Company Name That Is Unreasonably And Extraordinarily Long Which Might Break The UI Layout Of The Application Because It Never Ends,https://eve.com?param=1&param=2,,,
-6,Mallory,mallory@test.com,mallory@test.com,She said she hates commas,and semicolons;,,,,
-7,Trent,trent@test.com,,,,,
-8,Peggy,peggy@test.com,emoji testing 🚀🔥🌟,this is an invalid email@,,
-9,Victor,victor@test.com,2024-13-45 (Invalid Date),,,
-10,Frank,frank@test.com,Lots of leading spaces,Tab separated	here,,,
-11,Carlos,carlos@test.com,123-456-7890,`markdown code block`,,,
-12,Judy,judy@test.com,Same contact,Same contact,,,
-12,Judy,judy@test.com,Same contact,Same contact,,,
-14,Walter,walter@test.com,"Quote """"inside"""" quote",,,,
-15,Arthur,arthur@test.com,éàçüñ,Unicode test,,,
+  Name  ,E-Mail,Ph#,Organization,Status???,Unused Col 1,Unused Col 2,Unused Col 3
+Priya Patel,Data 620,Data 406,,Interested,DATA 738,Data 504,Data 475
+Fatima Li,,Data 972,Startup Inc,BAD_LEAD,Data 467,Data 303,Data 895
+Diana Martinez,  Data 284  ,Data 685,Tech Solutions,BAD_LEAD,Data 878,Data 572,Data 651
+Charlie Hassan,Data 708,DATA 332,Global Industries,DID_NOT_CONNECT,Data 296,Data 107,DATA 191
+Alice Ali,  Data 879  ,Data 153,Acme Corp,  DID_NOT_CONNECT  ,Data 266,Data 124,Data 471
+Priya Wang,Data 373,Data 970,Acme Corp,  BAD_LEAD  ,Data 182,  Data 480  ,Data 999
+Chen Brown,Data 511,Data 933,Global Industries,SALE_DONE,Data 970,Data 589,  Data 445  
+  Chen Li  ,Data 637,Data 493,Tech Solutions,SALE_DONE,Data 920,,Data 717
+Raj Patel,Data 231,Data 668,Acme Corp,DID_NOT_CONNECT,Data 949,Data 756,Data 417
+Wei Kumar,  Data 753  ,Data 751,Startup Inc,Interested,Data 474,Data 608,DATA 805
+Charlie Garcia,Data 537,Data 854,Tech Solutions,Junk,Data 627,Data 948,Data 768
+  Fatima Doe  ,Data 211,,Tech Solutions,Call back later,Data 277,Data 159,Data 735
+John Garcia,Data 117,DATA 108,Tech Solutions,Call back later,Data 743,Data 640,Data 129
+Fatima Martinez,  Data 609  ,Data 340,Startup Inc,Interested,Data 485,Data 665,  Data 404  
+Raj Smith,Data 720,Data 116,Tech Solutions,GOOD_LEAD_FOLLOW_UP,Data 618,Data 595,Data 512
+John Garcia,Data 140,Data 629,Global Industries,,  Data 706  ,Data 500,Data 907
+  Raj Patel  ,,Data 790,Acme Corp,BAD_LEAD,Data 548,Data 121,DATA 100
+Priya Johnson,Data 451,Data 542,Startup Inc,Junk,Data 195,DATA 448,Data 864
+  Bob Martinez  ,  Data 570  ,  DATA 774  ,Startup Inc,BAD_LEAD,Data 676,Data 925,Data 367
+Priya Doe,Data 895,Data 152,Tech Solutions,GOOD_LEAD_FOLLOW_UP,Data 539,  DATA 802  ,Data 557
+Fatima Kumar,Data 733,Data 532,Acme Corp,Interested,Data 861,Data 427,  Data 619  
+Priya Garcia,Data 630,Data 944,  Tech Solutions  ,  SALE_DONE  ,  Data 613  ,Data 708,  Data 731  
+Alice Garcia,  Data 489  ,Data 203,Global Industries,GOOD_LEAD_FOLLOW_UP,Data 960,Data 275,Data 514
+Alice Kumar,Data 499,Data 849,Acme Corp,DID_NOT_CONNECT,Data 956,DATA 429,Data 611
+,,Data 903,,SALE_DONE,Data 280,  Data 890  ,Data 724
+Jane Doe,Data 733,Data 573,Acme Corp,    ,Data 867,Data 654,Data 301
+Jane Garcia,Data 472,  Data 337  ,Startup Inc,Interested,Data 506,Data 993,Data 900
+Bob Li,,Data 174,Acme Corp,  Call back later  ,Data 983,  Data 934  ,Data 524
+CHEN KUMAR,Data 991,Data 905,,SALE_DONE,  Data 883  ,Data 207,Data 710
+  Alice Brown  ,Data 984,Data 495,Global Industries,Interested,  Data 529  ,Data 519,Data 349
+FATIMA SMITH,Data 550,Data 620,  Tech Solutions  ,  Interested  ,Data 146,Data 174,Data 141
+Priya Garcia,,Data 400,Acme Corp,Junk,Data 540,Data 362,Data 617
+Raj Smith,,  Data 656  ,Local Shop,Interested,Data 954,Data 886,  Data 787  
+Bob Wang,Data 574,Data 922,Startup Inc,SALE_DONE,Data 310,Data 418,  Data 376  

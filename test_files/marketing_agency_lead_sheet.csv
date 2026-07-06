@@ -1,16 +1,62 @@
-Date,Prospect,Prospect,Company,Email(s),Phone(s),Notes / Next Steps,Notes / Next Steps
-11/4,Jim Halpert,Jim Halpert,Dunder Mifflin,jim@dundermifflin.com; jim.h@gmail.com,555-0192 / 555-8821,Spoke on Tuesday. He is interested in the SEO package but needs approval from Michael. Follow up next week.,Follow up next week
-11/5,Pam Beesly,,Dunder Mifflin,pam@dundermifflin.com,555-0193,,
-11/6,Dwight Schrute,Dwight Schrute,Schrute Farms,dwight@schrutefarms.com,555-0194,Wants a website for his beet farm.,
-11/7,Michael Scott,Michael Scott,Michael Scott Paper Co,michael@mspaperco.com; mscott@gmail.com,555-0195,Needs a complete rebranding.,Needs rebranding
-11/8,Angela Martin,Angela Martin,Dunder Mifflin,angela@dundermifflin.com,555-0196,,
-11/9,Kevin Malone,,Dunder Mifflin,kevin@dundermifflin.com,555-0197,Asked about social media marketing.,Social media
-11/10,Oscar Martinez,Oscar Martinez,Dunder Mifflin,oscar@dundermifflin.com; oscar.m@yahoo.com,555-0198 / 555-7733,Wants to improve ROI on PPC campaigns.,PPC ROI
-11/11,Stanley Hudson,Stanley Hudson,Dunder Mifflin,stanley@dundermifflin.com,555-0199,,
-11/12,Phyllis Vance,Phyllis Vance,Vance Refrigeration,phyllis@vancerefrigeration.com,555-0200,Interested in local SEO.,Local SEO
-11/13,Kelly Kapoor,,Dunder Mifflin,kelly@dundermifflin.com,555-0201,Wants to become an influencer.,Influencer marketing
-11/14,Ryan Howard,Ryan Howard,WUPHF.com,ryan@wuphf.com; ryan.h@hotmail.com,555-0202 / 555-6644,Needs an app developed.,App development
-11/15,Toby Flenderson,Toby Flenderson,Dunder Mifflin,toby@dundermifflin.com,555-0203,,
-11/16,Creed Bratton,Creed Bratton,Creed Thoughts,creed@creedthoughts.com,555-0204,Wants to monetize his blog.,Blog monetization
-11/17,Meredith Palmer,,Dunder Mifflin,meredith@dundermifflin.com,555-0205,Asked for a discount.,Discount requested
-11/18,Andy Bernard,Andy Bernard,Dunder Mifflin,andy@dundermifflin.com; andy.b@cornell.edu,555-0206 / 555-5555,Wants to record a jingle.,Jingle recording
+Full Name,Company,Email,Phone,Website,Notes
+Bob Doe,Startup Inc,,+1 (629) 983-8928 / +44 4467 463201,Data 804,  Left voicemail  
+Alice Patel,  Tech Solutions  ,"  , alternate@yahoo.com  ",+1 (585) 160-8522,  Data 352  ,Left voicemail
+Chen Doe,Acme Corp,,,Data 653,Called twice.
+Priya Hassan,Acme Corp,"  , alternate@gmail.com  ",  766-026-0660  ,DATA 598,  Too expensive.  
+Bob Kumar,  Tech Solutions  ,bob.kumar@company.net,+1 (985) 714-6729,Data 394,Left voicemail
+Jane Patel,  Local Shop  ,jane10@hotmail.com,+1 (417) 436-8216 / +1 (905) 322-0111,Data 659,  Called twice.  
+Jane Hassan,Local Shop,  jane56@yahoo.com  ,  198.781.5507 / 2717838262  ,Data 775,Call back next week.
+  DIANA ALI  ,  Startup Inc  ,diana54@hotmail.com,  +44 6495 251112  ,Data 316,Too expensive.
+  Priya Doe  ,,pdoe@gmail.com,330-019-7938,Data 544,Left voicemail
+Raj Hassan,Acme Corp,raj.hassan@example.org,(637) 542-0441,Data 835,Called twice.
+John Wang,Acme Corp,jwang@gmail.com,+44 3546 488535,Data 544,Wants a demo.
+Wei Martinez,  Startup Inc  ,wei77@hotmail.com,(224) 568-0273,Data 437,
+  Wei Smith  ,Local Shop,"wsmith@example.org, alternate@gmail.com",8870784374,Data 755,Left voicemail
+Chen Ali,Tech Solutions,  chen.ali@company.net  ,+44 2673 513257,Data 441,
+John Brown,Local Shop,john78@gmail.com,+44 9146 128900,Data 427,Called twice.
+Priya Doe,Global Industries,  priya.doe@example.org  ,  +44 9840 602301 / 205-005-3790  ,Data 627,Call back next week.
+Wei Brown,Local Shop,wbrown@gmail.com,+1 (787) 339-7314,Data 745,
+Raj Garcia,Startup Inc,,281-134-1413,Data 174,  Called twice.  
+Alice Doe,Local Shop,adoe@company.net,336.720.8306 / 813.187.3842,  Data 256  ,
+John Doe,,  john.doe@example.org  ,657.596.9552,Data 666,Too expensive.
+Raj Brown,Global Industries,raj.brown@company.net,509.201.6975,Data 209,Call back next week.
+Fatima Brown,  Startup Inc  ,fbrown@yahoo.com,984.551.4561,Data 931,  Left voicemail  
+Mohamed Patel,Local Shop,MPATEL@GMAIL.COM,,Data 968,Called twice.
+  Jane Patel  ,Startup Inc,jpatel@company.net,  (388) 257-3154 / +44 8238 759503  ,Data 622,Call back next week.
+Bob Garcia,Startup Inc,bob.garcia@gmail.com,+1 (308) 965-7980,Data 874,Too expensive.
+  Bob Li  ,Startup Inc,,  819-739-1054  ,Data 790,Wants a demo.
+Charlie Patel,Local Shop,"CHARLIE.PATEL@HOTMAIL.COM, ALTERNATE@YAHOO.COM",+44 6552 238441,Data 102,    
+Wei Wang,Local Shop,  WEI.WANG@COMPANY.NET  ,+44 4368 902670,  Data 839  ,Called twice.
+Bob Li,Startup Inc,bli@company.net,643-298-3591 / 4046333854,Data 845,Left voicemail
+Wei Patel,Local Shop,wei.patel@example.org,,  Data 519  ,Wants a demo.
+Raj Wang,Tech Solutions,raj52@yahoo.com,600-687-5409,Data 430,  Left voicemail  
+John Hassan,Acme Corp,  john75@company.net  ,767-670-3108,Data 136,  Too expensive.  
+Charlie Ali,Tech Solutions,charlie.ali@gmail.com,+44 0672 192041,Data 860,Left voicemail
+Raj Hassan,Startup Inc,"  raj47@yahoo.com, alternate@yahoo.com  ",0947521239,  Data 115  ,Called twice.
+John Garcia,Startup Inc,"john10@example.org, alternate@gmail.com",+44 4726 344996,Data 604,CALLED TWICE.
+,Acme Corp,mkumar@hotmail.com,229.409.2694,Data 768,LEFT VOICEMAIL
+Wei Garcia,Acme Corp,wei96@yahoo.com,(882) 676-4441,Data 248,Left voicemail
+John Patel,Startup Inc,  john.patel@example.org  ,+1 (972) 552-4886,Data 327,Call back next week.
+Chen Ali,Acme Corp,cali@example.org,9340624419,Data 207,Called twice.
+Priya Patel,,  priya99@yahoo.com  ,012-353-7015,Data 484,Called twice.
+Alice Ali,Acme Corp,"alice.ali@example.org, alternate@gmail.com",9431827995,  Data 124  ,Left voicemail
+Diana Doe,  Global Industries  ,ddoe@example.org,6225150668,Data 416,  Left voicemail  
+Priya Kumar,Global Industries,priya.kumar@example.org,(288) 509-7955,Data 430,Called twice.
+Raj Martinez,Tech Solutions,raj86@example.org,6292848511,Data 324,Call back next week.
+Chen Ali,Startup Inc,,163-476-2063,Data 561,  Wants a demo.  
+  John Doe  ,Tech Solutions,john.doe@company.net,  +44 5364 500025  ,  Data 444  ,Called twice.
+Mohamed Doe,Tech Solutions,,+44 1663 608949,Data 745,Left voicemail
+Wei Li,Startup Inc,wei.li@company.net,(388) 104-7852,Data 124,Too expensive.
+Bob Wang,  Tech Solutions  ,,,Data 320,    
+  Raj Doe  ,Local Shop,,546-158-3465,Data 134,Wants a demo.
+Fatima Garcia,Acme Corp,,  (927) 079-8849  ,Data 994,Too expensive.
+Jane Wang,ACME CORP,jwang@gmail.com,+1 (808) 807-2167,  Data 329  ,  Wants a demo.  
+Charlie Hassan,Tech Solutions,"  charlie.hassan@yahoo.com  , alternate@gmail.com",+1 (178) 314-6485,Data 280,
+Alice Hassan,Global Industries,alice51@gmail.com,746.783.6304,Data 840,Called twice.
+Chen Hassan,Startup Inc,chen.hassan@gmail.com,+44 6287 383773,Data 833,    
+Fatima Doe,Acme Corp,  fatima.doe@yahoo.com  ,578-210-7919,Data 492,Left voicemail
+Alice Li,Tech Solutions,,(149) 015-3893,  Data 205  ,Call back next week.
+  Chen Patel  ,Startup Inc,chen.patel@example.org,872-416-6489,Data 801,Left voicemail
+Mohamed Patel,  Global Industries  ,mohamed99@yahoo.com,  919-531-6541 / +44 2809 007230  ,Data 208,Wants a demo.
+Raj Johnson,Global Industries,raj.johnson@hotmail.com,599-460-1211,,Called twice.
+John Doe,Local Shop,john.doe@company.net,  571.776.8092  ,Data 881,

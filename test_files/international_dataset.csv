@@ -1,16 +1,44 @@
-Global Region,Full Contact Name,Business Entity,International Phone,Work Email,Physical Address,Registration Date
-India,Ravi Kumar,Tech Mahindra,+91 98765 43210,ravi.kumar@techmahindra.com,Hinjewadi Pune 411057,15-08-2023
-USA,Emily Johnson,Google LLC,+1 (650) 253-0000,emily.j@google.com,1600 Amphitheatre Pkwy Mountain View CA 94043,10/12/2023
-UK,William Brown,Unilever PLC,+44 20 7822 5252,william.brown@unilever.co.uk,100 Victoria Embankment London EC4Y 0DY,2023-11-05
-Germany,Hans Müller,Siemens AG,+49 89 38000,hans.mueller@siemens.com,Werner-von-Siemens-Straße 1 80333 München,22.12.2023
-Japan,Kenji Tanaka,Toyota Motor Corp,+81 565-28-2121,kenji.tanaka@toyota.jp,1 Toyota-Cho Toyota City Aichi Prefecture 471-8571,2024/01/10
-UAE,Ahmed Al Maktoum,Emirates Group,+971 4 708 1111,ahmed.m@emirates.com,Emirates Group Headquarters PO Box 686 Dubai,05-02-2024
-Singapore,Wei Ling,DBS Bank,+65 6878 8888,weiling@dbs.com,12 Marina Boulevard Marina Bay Financial Centre Tower 3,03/15/2024
-Australia,Oliver Jones,BHP Group,+61 1300 55 47 57,oliver.jones@bhp.com,171 Collins Street Melbourne VIC 3000,18-04-2024
-France,Marie Dupont,LVMH,+33 1 44 13 22 22,marie.dupont@lvmh.fr,22 Avenue Montaigne 75008 Paris,2024-05-20
-Canada,Liam Smith,Shopify Inc,+1 888-746-7439,liam.smith@shopify.com,150 Elgin Street 8th Floor Ottawa ON K2P 1L4,06/25/2024
-India,Priya Sharma,Infosys,+91 80 2852 0261,priya.sharma@infosys.com,Electronics City Hosur Road Bengaluru 560100,10-07-2024
-USA,Noah Davis,Microsoft Corp,+1 (425) 882-8080,noah.davis@microsoft.com,One Microsoft Way Redmond WA 98052,08/12/2024
-UK,George Wilson,HSBC,+44 20 7991 8888,george.wilson@hsbc.co.uk,8 Canada Square London E14 5HQ,2024-09-05
-Germany,Anna Schmidt,Volkswagen AG,+49 5361 90,anna.schmidt@volkswagen.de,Berliner Ring 2 38440 Wolfsburg,15.10.2024
-Japan,Yui Sato,Sony Group,+81 3-6748-2111,yui.sato@sony.co.jp,1-7-1 Konan Minato-ku Tokyo 108-0075,2024/11/20
+Given Name,Family Name,Contact Email,Telephone,Country,Company
+Chen Garcia,Chen Garcia,chen.garcia@gmail.com,800.024.9079,,Tech Solutions
+Jane Johnson,Jane Johnson,"jjohnson@example.org, alternate@yahoo.com",+44 4739 737583,Data 290,Startup Inc
+Bob Hassan,Bob Hassan,  BOB.HASSAN@EXAMPLE.ORG  ,+44 5771 452137,Data 684,Acme Corp
+Wei Brown,Wei Brown,wbrown@gmail.com,266-587-6257,Data 573,
+Diana Garcia,Diana Garcia,  diana.garcia@example.org  ,760-702-6409,Data 959,
+  Diana Patel  ,Diana Patel,  diana.patel@gmail.com  ,+1 (672) 681-6936,Data 823,  Tech Solutions  
+Charlie Kumar,  Charlie Kumar  ,ckumar@company.net,5531359565 / (316) 415-4482,Data 463,Local Shop
+Raj Li,  Raj Li  ,  rli@example.org  ,035.477.2025,  Data 202  ,  Global Industries  
+Alice Patel,Alice Patel,alice.patel@example.org,202.615.3041,Data 904,Acme Corp
+Jane Garcia,Jane Garcia,  jane.garcia@example.org  ,(162) 387-2489,Data 406,Tech Solutions
+Wei Patel,  WEI PATEL  ,  wpatel@yahoo.com  ,+1 (786) 986-3962,Data 583,Tech Solutions
+Chen Hassan,Chen Hassan,,+44 9664 050689,Data 998,Local Shop
+  FATIMA PATEL  ,,    FATIMA.PATEL@COMPANY.NET    ,682.723.2815,Data 828,Acme Corp
+Wei Garcia,Wei Garcia,    wei.garcia@example.org    ,751-042-4075 / 832-123-5275,Data 741,Global Industries
+John Kumar,John Kumar,  john.kumar@yahoo.com  ,0161415818,Data 185,Global Industries
+Priya Doe,  Priya Doe  ,  priya.doe@gmail.com  ,(387) 485-0830,Data 533,  Tech Solutions  
+Alice Hassan,,  alice.hassan@gmail.com  ,737-632-8599,  Data 521  ,  Startup Inc  
+Bob Martinez,Bob Martinez,,(015) 059-3364 / 0323908475,Data 639,  Local Shop  
+Priya Smith,Priya Smith,    ,+1 (482) 293-3600 / (758) 635-4744,Data 500,Tech Solutions
+Jane Johnson,Jane Johnson,,(566) 138-8908,DATA 576,Tech Solutions
+Fatima Johnson,Fatima Johnson,  fatima7@hotmail.com  ,0526290589,Data 730,Tech Solutions
+Raj Hassan,Raj Hassan,rhassan@company.net,396-300-5008,Data 498,Startup Inc
+  Raj Doe  ,Raj Doe,"    raj.doe@gmail.com  , alternate@hotmail.com  ",  797-305-2110  ,  Data 812  ,  Startup Inc  
+  Chen Patel  ,Chen Patel,", alternate@hotmail.com",+44 5129 682188,Data 459,Startup Inc
+Mohamed Doe,  Mohamed Doe  ,mdoe@yahoo.com,(443) 843-9952,Data 975,Startup Inc
+Wei Martinez,Wei Martinez,wei26@hotmail.com,832.071.9213,  Data 290  ,  Global Industries  
+Priya Garcia,Priya Garcia,    priya.garcia@gmail.com    ,+1 (903) 032-9247,  Data 649  ,Startup Inc
+Jane Martinez,Jane Martinez,,  434.093.5844  ,  Data 942  ,Local Shop
+Fatima Hassan,Fatima Hassan,"fatima98@yahoo.com, alternate@yahoo.com",337-174-0912,Data 292,  Tech Solutions  
+,Fatima Hassan,fhassan@company.net,+44 1287 799246,Data 783,Local Shop
+Chen Wang,Chen Wang,  chen.wang@gmail.com  ,204.610.2105 / +1 (489) 987-0163,DATA 392,Startup Inc
+Charlie Kumar,Charlie Kumar,charlie50@company.net,484-471-0234,Data 307,Global Industries
+,Fatima Martinez,,  610.640.7879  ,Data 497,Acme Corp
+Mohamed Ali,Mohamed Ali,"mali@yahoo.com, alternate@yahoo.com",478.934.3241,Data 831,Global Industries
+  John Garcia  ,John Garcia,john30@example.org,+44 3546 736066,Data 642,  Acme Corp  
+,Mohamed Kumar,  mohamed8@yahoo.com  ,(984) 416-8237,Data 453,Startup Inc
+Diana Kumar,,diana.kumar@hotmail.com,+44 9006 830952,Data 147,Acme Corp
+Wei Patel,Wei Patel,,+44 1101 003758,Data 974,Startup Inc
+  Wei Ali  ,Wei Ali,wali@company.net,(871) 889-1357,Data 588,  Acme Corp  
+Charlie Garcia,Charlie Garcia,"  , alternate@company.net  ",  2721734014 / 993.069.3758  ,  Data 524  ,Startup Inc
+,,  priya.kumar@example.org  ,161.144.6778,Data 139,
+Wei Garcia,Wei Garcia,,950-929-8417 / 7015264866,,Startup Inc
+Charlie Kumar,  Charlie Kumar  ,  charlie.kumar@gmail.com  ,+44 5688 384503,Data 510,Startup Inc

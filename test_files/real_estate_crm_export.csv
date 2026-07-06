@@ -1,16 +1,72 @@
-Enquiry Date,Interested Property,Lead Stage,Budget,Possession Timeline,Broker Name,Client Info,Call Number,Follow-up Notes,Project Name
-2024-02-14,3BHK Apartment,Qualified,1.5 Cr,Immediate,Rahul Verma,Rajesh Kumar,9876543210,Client visited site,liked the layout.,Eden Park
-2024-02-15,Villa,Negotiation,3.2 Cr,6 months,Sneha Patil,Vikram Singh,8765432109,Asking for a 5% discount.,Sarjapur Plots
-2024-02-16,2BHK Apartment,Cold,85 Lacs,1 year,Direct,Pooja Desai,7654321098,Not picking up calls.,Meridian Tower
-2024-02-17,Penthouse,Closed Won,5.5 Cr,Immediate,Amit Shah,Neha Gupta,6543210987,Token amount received.,Eden Park
-2024-02-18,Commercial Space,Meeting Scheduled,2.8 Cr,3 months,Direct,Sanjay Sharma,5432109876,Meeting fixed for next Tuesday.,Varah Swamy
-2024-02-19,4BHK Apartment,Qualified,2.1 Cr,Immediate,Rahul Verma,Anita Patel,9876543211,Wants to see the clubhouse amenities.,Eden Park
-2024-02-20,Plot,Negotiation,1.2 Cr,6 months,Sneha Patil,Rakesh Roshan,8765432110,Waiting for bank loan approval.,Sarjapur Plots
-2024-02-21,1BHK Apartment,Cold,45 Lacs,1 year,Direct,Kavita Joshi,7654321099,Looking for investment purpose only.,Meridian Tower
-2024-02-22,Duplex,Closed Won,4.2 Cr,Immediate,Amit Shah,Sunil Shetty,6543210988,Agreement signed.,Eden Park
-2024-02-23,Retail Shop,Meeting Scheduled,1.5 Cr,3 months,Direct,Manoj Bajpayee,5432109877,Wants a corner shop.,Varah Swamy
-2024-02-24,3BHK Apartment,Qualified,1.6 Cr,Immediate,Rahul Verma,Rani Mukherjee,9876543212,Loved the balcony view.,Eden Park
-2024-02-25,Villa,Negotiation,3.5 Cr,6 months,Sneha Patil,Akshay Kumar,8765432111,Discussing payment terms.,Sarjapur Plots
-2024-02-26,2BHK Apartment,Cold,90 Lacs,1 year,Direct,Kareena Kapoor,7654321100,Dropped idea of buying.,Meridian Tower
-2024-02-27,Penthouse,Closed Won,6.0 Cr,Immediate,Amit Shah,Saif Ali Khan,6543210989,Full payment done.,Eden Park
-2024-02-28,Office Space,Meeting Scheduled,3.0 Cr,3 months,Direct,Ajay Devgn,5432109878,Needs space for IT company.,Varah Swamy
+Client First Name,Client Last Name,Primary Email,Mobile Phone,Home Phone,Interested In,Lead Status
+Alice,Smith,alice.smith@company.net,2357330315,  495.853.0073  ,Data 221,
+Alice,Wang,"alice56@yahoo.com, alternate@yahoo.com",978-719-6365,222.193.7722 / 8530999689,  DATA 175  ,  BAD_LEAD  
+  Bob  ,  Doe  ,bob81@example.org,235-996-1435,  576-050-6394  ,Data 824,  Junk  
+  Diana  ,Kumar,diana12@company.net,139-155-0609,+1 (374) 010-7627,Data 762,DID_NOT_CONNECT
+Raj,Li,  raj.li@gmail.com  ,+44 7722 522102,0018216552,Data 303,Call back later
+  Priya  ,Hassan,phassan@hotmail.com,  (715) 239-2941  ,933.608.4006,Data 908,BAD_LEAD
+Diana,Kumar,diana.kumar@company.net,(214) 534-3660,  743-935-7983  ,Data 892,Call back later
+,Wang,,7032455768,  +1 (003) 053-4724  ,Data 791,BAD_LEAD
+Priya,Johnson,pjohnson@company.net,343.567.4840,+44 7417 033687,DATA 462,  GOOD_LEAD_FOLLOW_UP  
+  Priya  ,Hassan,priya41@example.org,  +44 0761 800327  ,065.177.8491,  Data 766  ,SALE_DONE
+Wei,Brown,  wei.brown@company.net  ,466-201-8562,  (451) 209-6238  ,,CALL BACK LATER
+Chen,Brown,chen30@gmail.com,440.664.8674,  +1 (205) 731-6936 / +1 (897) 778-0744  ,  Data 853  ,SALE_DONE
+  Diana  ,Brown,  dbrown@example.org  ,+1 (354) 797-0719,871-353-3171,,Interested
+John,Johnson,  JOHN.JOHNSON@YAHOO.COM  ,+1 (867) 530-6867,(715) 271-5140,Data 666,
+Diana,Hassan,,(822) 359-6864,(196) 466-7472,Data 655,DID_NOT_CONNECT
+Raj,Patel,", alternate@example.org",+1 (615) 367-2321 / +1 (412) 942-4251,1409195224,Data 437,Call back later
+Alice,Ali,alice.ali@gmail.com,+44 0449 674368,+44 8236 454684,Data 244,GOOD_LEAD_FOLLOW_UP
+Raj,ALI,raj51@yahoo.com,(646) 283-5490,300-929-8186,  Data 810  ,DID_NOT_CONNECT
+Alice,,abrown@hotmail.com,+1 (019) 485-4899,3007338071,Data 253,
+Charlie,  Ali  ,  CHARLIE39@GMAIL.COM  ,093.698.5621,9405035119,Data 888,SALE_DONE
+  Diana  ,Smith,,497.726.3470,464.818.0267,Data 528,Interested
+Chen,  Kumar  ,ckumar@example.org,010-028-3574,6413582969,  Data 899  ,SALE_DONE
+Priya,Martinez,pmartinez@yahoo.com,+44 3590 172254,+1 (111) 587-3658,Data 373,Interested
+  Raj  ,Brown,rbrown@hotmail.com,  1740704342  ,(820) 081-3618,  Data 969  ,INTERESTED
+Charlie,Kumar,charlie61@example.org,  (608) 301-1674  ,  +44 8943 573348  ,Data 500,Interested
+CHARLIE,Hassan,charlie90@yahoo.com,(182) 457-9653,+1 (341) 807-8116 / +44 2051 021154,Data 727,Junk
+Bob,,  bob.brown@company.net  ,936.416.2878,(149) 431-1111 / +1 (175) 566-0584,Data 894,GOOD_LEAD_FOLLOW_UP
+Raj,  MARTINEZ  ,raj40@company.net,179.580.7180,668.401.3825,Data 445,GOOD_LEAD_FOLLOW_UP
+Raj,Martinez,  rmartinez@gmail.com  ,+1 (890) 953-0483 / 1077207833,+44 5327 022467,Data 208,Interested
+  Priya  ,Martinez,  priya61@gmail.com  ,+44 2917 987245,+44 1815 072217,Data 654,
+Bob,Patel,  bob.patel@example.org  ,  265-893-5383  ,(956) 761-9497,,Junk
+Alice,Johnson,  alice82@gmail.com  ,690.197.7210,  (056) 806-6695  ,Data 315,DID_NOT_CONNECT
+  Bob  ,Ali,bali@hotmail.com,+1 (008) 713-0156,(480) 487-5309,Data 569,DID_NOT_CONNECT
+Mohamed,  Wang  ,mohamed71@gmail.com,+44 4075 059853,(095) 164-6708,,SALE_DONE
+Wei,Doe,wei.doe@example.org,3345604609,603-564-4116,Data 827,
+DIANA,PATEL,dpatel@gmail.com,  (417) 093-7080  ,(225) 213-1497,Data 928,
+  Diana  ,Garcia,diana79@hotmail.com,(549) 344-6781,+44 4501 044034,Data 130,GOOD_LEAD_FOLLOW_UP
+Alice,Johnson,alice.johnson@gmail.com,,8403908843,Data 458,GOOD_LEAD_FOLLOW_UP
+,Ali,jali@gmail.com,246.349.9350,  +1 (808) 219-5347  ,Data 825,BAD_LEAD
+  Wei  ,  Johnson  ,  wei.johnson@hotmail.com  ,0451453663,576.458.5202 / 729.046.5930,,Interested
+Raj,Johnson,rjohnson@gmail.com,259-942-4142,  944.997.0804  ,  Data 934  ,
+  Diana  ,,djohnson@company.net,147-776-1157 / +1 (954) 237-0796,(563) 699-9668,Data 903,Interested
+Chen,  Smith  ,,(366) 145-2107,(439) 877-2692,Data 294,Call back later
+  Alice  ,Martinez,alice80@hotmail.com,+44 1480 937937,3848822330,Data 871,  BAD_LEAD  
+WEI,Garcia,  wei.garcia@example.org  ,+1 (710) 101-6797,8944699830,  Data 304  ,SALE_DONE
+  Raj  ,Kumar,,+1 (308) 205-7992,+1 (836) 041-4337,  Data 608  ,Junk
+Charlie,  SMITH  ,"charlie.smith@company.net, alternate@example.org",2510802981,798-387-9374,Data 937,  Interested  
+Raj,PATEL,    ,506.873.2483,+44 3283 846243,Data 239,DID_NOT_CONNECT
+BOB,Smith,,204.864.0973,078.564.6604,Data 246,  Junk  
+Jane,Patel,jane44@yahoo.com,6776878554,349-263-3405,  Data 820  ,GOOD_LEAD_FOLLOW_UP
+Charlie,Doe,  charlie.doe@example.org  ,+44 0834 542733,+44 9740 863075,Data 443,GOOD_LEAD_FOLLOW_UP
+Alice,HASSAN,  AHASSAN@EXAMPLE.ORG  ,  662.218.1455 / +44 9799 049009  ,958-688-6770,  Data 111  ,DID_NOT_CONNECT
+  Mohamed  ,Kumar,mohamed.kumar@example.org,+44 6917 049758,335.278.6271,,BAD_LEAD
+  Chen  ,Garcia,chen.garcia@example.org,960-710-2947,+1 (298) 808-3224,  Data 124  ,Call back later
+Chen,Patel,  chen24@example.org  ,133-763-9361,+44 0629 587746,  Data 837  ,SALE_DONE
+Priya,Johnson,,+1 (587) 791-5237 / +44 9283 004756,+44 3525 217800,Data 592,Junk
+Diana,,  diana.li@gmail.com  ,+44 9545 998348,277-095-9615,Data 904,GOOD_LEAD_FOLLOW_UP
+  Wei  ,Li,  wei.li@gmail.com  ,  +1 (730) 028-6970  ,+44 2243 992415 / 663.916.9059,Data 315,    
+Jane,Smith,jane28@example.org,214-755-8020,(231) 579-1817,  Data 570  ,  Junk  
+Charlie,Wang,  charlie40@company.net  ,673.181.8170 / 585.344.4318,+1 (527) 590-5036,Data 712,Call back later
+Raj,Martinez,raj.martinez@gmail.com,,  +1 (681) 968-1554  ,Data 770,
+Charlie,,  charlie.smith@gmail.com  ,+44 9915 489604,  (429) 538-7700  ,,BAD_LEAD
+Diana,  Hassan  ,"  diana.hassan@example.org, alternate@yahoo.com  ",4690208518,8717535996 / 9810962198,  Data 981  ,
+Mohamed,LI,  mohamed.li@gmail.com  ,(461) 270-8848,  622.015.6550  ,Data 186,
+Raj,Ali,  raj.ali@gmail.com  ,  895.265.1194  ,1244662368,Data 541,Interested
+Chen,Smith,chen37@example.org,+1 (862) 838-2320,(604) 934-7238,Data 851,DID_NOT_CONNECT
+,Ali,,  (244) 860-6740  ,  1807775306  ,Data 499,  GOOD_LEAD_FOLLOW_UP  
+Fatima,,  fali@hotmail.com  ,(657) 725-3901,+1 (863) 332-1032,Data 974,Junk
+Jane,Li,jane.li@yahoo.com,5217882031 / 454-723-1002,  +1 (136) 196-5818 / 4274302080  ,  Data 280  ,SALE_DONE
+  Bob  ,Garcia,    bob.garcia@hotmail.com    ,725.241.3001 / 210-949-2529,455-595-0028,  Data 202  ,BAD_LEAD
+  Alice  ,  Doe  ,alice39@gmail.com,600.815.6648,0426048416,Data 942,Junk

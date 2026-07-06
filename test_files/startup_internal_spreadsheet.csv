@@ -1,16 +1,31 @@
-first name,LAST_name,mobile,e-mail,company info,Date added,STATUS
-john,SMITH,555-1234,jsmith@tech.com,Tech Inc,12-Jan-24,active
-Jane,doe,(555) 567-8901,JDOE@MEDIA.ORG,Media org.,01/15/2024,Pending
-Bob,jones,5559876543,b.jones@startup.io,Startup IO,2024/02/20,INACTIVE
-alice,WONDER,555-222-3333,alice.w@wonderland.net,Wonderland,Feb 25 24,active
-Charlie,BROWN,555.444.5555,cbrown@peanuts.com,Peanuts LLC,03-01-2024,PENDING
-david,bowie,555 666 7777,dbowie@ziggy.com,Ziggy Stardust,2024-03-10,active
-Eve,ADAMS,1-555-888-9999,eve@eden.com,Eden Gardens,04/05/24,Inactive
-frank,SINATRA,555-000-1111,frank@ratpack.com,Rat Pack Inc.,April 15 2024,pending
-Grace,kelly,(555) 222-4444,gkelly@monaco.gov,Monaco Royal,2024/05/20,ACTIVE
-harry,POTTER,5553335555,hpotter@hogwarts.edu,Hogwarts,06-01-24,inactive
-Ivy,POISON,555.666.8888,ivy@gotham.com,Gotham City,07/10/2024,Pending
-jack,SPARROW,555 999 0000,jack@blackpearl.com,Black Pearl,Aug 15 24,active
-Kate,WINSLET,1-555-111-2222,kate@titanic.com,Titanic Corp,2024-09-20,INACTIVE
-leo,DICAPRIO,555-333-4444,leo@inception.com,Inception Ltd.,Oct 05 24,active
-Mia,WALLACE,(555) 555-6666,mia@pulpfiction.com,Pulp Fiction,11/11/2024,PENDING
+name,email,phone,company,notes,random_col
+  RAJ ALI  ,rali@yahoo.com,862-395-3634,Local Shop,  Call back next week.  ,Data 880
+Chen Li,chen.li@hotmail.com,3173075635,Global Industries,,Data 384
+  Jane Brown  ,  jane55@company.net  ,7858825642,Startup Inc,Called twice.,Data 544
+Mohamed Martinez,mohamed34@yahoo.com,128-346-2426,,Wants a demo.,Data 942
+John Smith,"  john.smith@gmail.com, alternate@hotmail.com  ",  706.357.5424  ,  Local Shop  ,Too expensive.,Data 113
+Mohamed Hassan,,3697397987,Tech Solutions,Too expensive.,Data 811
+Fatima Kumar,"fkumar@hotmail.com, alternate@example.org",6965599220,  Acme Corp  ,Too expensive.,  Data 353  
+Wei Ali,wali@company.net,(165) 338-5105,Startup Inc,Wants a demo.,Data 779
+Priya Wang,  priya.wang@example.org  ,  +1 (330) 638-5169  ,  Acme Corp  ,Called twice.,  Data 129  
+  Mohamed Johnson  ,    mohamed.johnson@yahoo.com    ,  +44 4559 426934  ,Global Industries,,Data 938
+Mohamed Smith,MOHAMED.SMITH@COMPANY.NET,1710105497,,Left voicemail,Data 897
+Raj Johnson,  raj.johnson@example.org  ,+44 4642 106388,Global Industries,  Called twice.  ,Data 545
+Alice Garcia,agarcia@gmail.com,338-120-6270,Global Industries,  Too expensive.  ,Data 156
+  Bob Hassan  ,,064.757.3832,ACME CORP,Called twice.,Data 956
+Wei Wang,wei.wang@example.org,  +1 (736) 605-2234  ,Tech Solutions,Called twice.,Data 813
+Alice Martinez,    alice.martinez@example.org    ,  +1 (882) 040-9872 / 7646134768  ,Acme Corp,Call back next week.,Data 881
+  Alice Garcia  ,,,,Left voicemail,Data 849
+,diana.martinez@yahoo.com,  +44 9124 820229  ,Global Industries,Too expensive.,  Data 730  
+Jane Kumar,JKUMAR@GMAIL.COM,4511417997,Tech Solutions,Wants a demo.,  Data 884  
+Raj Hassan,,+1 (912) 681-1741,Local Shop,Left voicemail,Data 771
+Raj Martinez,raj58@example.org,614-681-5589 / +1 (217) 198-2354,  Tech Solutions  ,,Data 834
+,  mohamed.patel@yahoo.com  ,+44 7361 713184,Tech Solutions,,
+  Priya Martinez  ,  priya25@company.net  ,(351) 478-7945 / +44 0070 738590,  Tech Solutions  ,  Called twice.  ,  Data 353  
+  Alice Patel  ,", alternate@example.org",+44 9677 318009 / (274) 785-7615,,Wants a demo.,Data 219
+John Patel,    john.patel@hotmail.com    ,859-966-2292,STARTUP INC,Left voicemail,Data 402
+Chen Doe,cdoe@gmail.com,0620796302,Local Shop,Called twice.,Data 548
+Bob Doe,bdoe@hotmail.com,  +1 (220) 676-8733  ,,Call back next week.,Data 877
+Wei Smith,wei.smith@gmail.com,3996574624 / 360-637-5851,Tech Solutions,Left voicemail,Data 636
+Mohamed Martinez,mohamed3@example.org,076-256-5376,Local Shop,Call back next week.,
+Raj Garcia,rgarcia@hotmail.com,459.128.8062,Global Industries,Wants a demo.,

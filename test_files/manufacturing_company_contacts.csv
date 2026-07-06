@@ -1,16 +1,49 @@
-Org Name,Division,Rep,Office Line,Direct Cell,Purchasing Notes
-Steel Dynamics,Procurement,Richard Branson,+1-260-469-4000,+1-260-555-1234,Looking for new supplier for raw materials
-Nucor Corp,Supply Chain,Elon Musk,+1-704-366-7000,+1-704-555-5678,Needs a quote for 1000 tons of steel
-US Steel,Purchasing,Jeff Bezos,+1-412-433-1121,+1-412-555-9012,Contract up for renewal next month
-Reliance Ind,Procurement,Mukesh Ambani,+91-22-3555-5000,+91-98200-55555,Expanding plant operations
-Tata Steel,Supply Chain,Ratan Tata,+91-22-6665-8282,+91-98201-55555,Wants to discuss long term contract
-ArcelorMittal,Purchasing,Lakshmi Mittal,+352-4792-1,+352-621-555-555,Price negotiation ongoing
-Posco,Procurement,Jeong-woo Choi,+82-2-3457-0114,+82-10-5555-5555,Quality issues with current supplier
-Nippon Steel,Supply Chain,Eiji Hashimoto,+81-3-6867-4111,+81-90-5555-5555,Exploring alternative sources
-Baosteel,Purchasing,Chen Derong,+86-21-2664-7000,+86-139-5555-5555,High volume requirement
-ThyssenKrupp,Procurement,Martina Merz,+49-201-844-0,+49-151-5555-5555,Sustainability is a key factor
-Gerdau,Supply Chain,Gustavo Werneck,+55-11-3224-8181,+55-11-95555-5555,Needs fast delivery
-JFE Steel,Purchasing,Koji Kakigi,+81-3-3597-3111,+81-80-5555-5555,Looking for specialized alloys
-Hyundai Steel,Procurement,Ahn Dong-il,+82-32-760-7114,+82-11-5555-5555,Partnership opportunity
-Voestalpine,Supply Chain,Herbert Eibensteiner,+43-50304-15-0,+43-664-5555-5555,Focus on high quality
-Nlmk,Purchasing,Grigory Fedorishin,+7-495-915-1575,+7-916-5555-5555,Cost reduction initiative
+First_Name,Last_Name,Email,Direct_Line,Company_Name,Factory_Location
+Bob,Wang,  bwang@hotmail.com  ,Data 149,  Bob Wang  ,Data 119
+Diana,Hassan,  diana.hassan@gmail.com  ,DATA 505,Diana Hassan,Data 561
+John,Martinez,  jmartinez@yahoo.com  ,Data 582,John Martinez,Data 893
+Alice,  Garcia  ,  agarcia@example.org  ,Data 413,ALICE GARCIA,  Data 484  
+  Raj  ,  Smith  ,,  Data 327  ,Raj Smith,Data 347
+John,Smith,JOHN50@HOTMAIL.COM,Data 279,John Smith,Data 704
+Alice,  Ali  ,    ,  DATA 372  ,  Alice Ali  ,Data 914
+Chen,  Johnson  ,chen89@hotmail.com,Data 809,Chen Johnson,Data 111
+  Charlie  ,Garcia,  charlie.garcia@yahoo.com  ,Data 218,Charlie Garcia,Data 428
+  Charlie  ,Wang,charlie70@gmail.com,Data 794,Charlie Wang,  Data 742  
+Bob,Smith,BOB.SMITH@GMAIL.COM,  Data 207  ,  Bob Smith  ,Data 319
+Bob,  Martinez  ,bob.martinez@company.net,Data 904,Bob Martinez,Data 679
+Priya,Patel,ppatel@company.net,Data 344,Priya Patel,  Data 491  
+Charlie,Smith,    charlie.smith@hotmail.com    ,Data 935,Charlie Smith,Data 279
+Chen,Johnson,cjohnson@hotmail.com,Data 780,Chen Johnson,  Data 711  
+Raj,Patel,RPATEL@GMAIL.COM,Data 454,Raj Patel,Data 896
+  Charlie  ,  Smith  ,csmith@company.net,Data 481,  Charlie Smith  ,Data 694
+,Martinez,"  bob.martinez@yahoo.com  , alternate@yahoo.com",Data 179,Bob Martinez,Data 822
+Charlie,Patel,  charlie.patel@gmail.com  ,  DATA 463  ,Charlie Patel,Data 568
+  ALICE  ,Li,alice66@yahoo.com,Data 174,Alice Li,Data 200
+Wei,,,Data 817,Wei Smith,Data 672
+Chen,Johnson,  chen.johnson@company.net  ,Data 525,Chen Johnson,DATA 619
+  Priya  ,Patel,"priya.patel@hotmail.com, alternate@yahoo.com",  Data 290  ,Priya Patel,  Data 258  
+  John  ,Li,", alternate@yahoo.com",Data 953,John Li,Data 564
+Wei,Hassan,wei42@yahoo.com,  Data 544  ,Wei Hassan,DATA 107
+DIANA,  Brown  ,,Data 650,Diana Brown,Data 355
+Jane,Wang,jane.wang@company.net,  Data 634  ,  Jane Wang  ,Data 923
+Diana,Wang,diana24@hotmail.com,Data 315,  Diana Wang  ,  Data 424  
+John,Wang,,Data 552,John Wang,Data 640
+,Patel,wei.patel@yahoo.com,Data 373,  Wei Patel  ,Data 414
+Priya,Johnson,  priya.johnson@hotmail.com  ,Data 691,Priya Johnson,Data 499
+Fatima,Ali,fali@gmail.com,Data 986,Fatima Ali,  Data 866  
+Bob,Hassan,bob73@example.org,Data 165,Bob Hassan,Data 363
+Fatima,,fli@yahoo.com,Data 347,Fatima Li,Data 681
+  John  ,Li,    john.li@gmail.com    ,Data 591,John Li,Data 840
+  Diana  ,Li,  diana.li@example.org  ,Data 715,  Diana Li  ,Data 382
+  Priya  ,BROWN,  priya.brown@gmail.com  ,,Priya Brown,Data 421
+Priya,Garcia,  pgarcia@hotmail.com  ,  Data 780  ,Priya Garcia,Data 481
+John,Smith,    ,Data 195,John Smith,Data 669
+John,  Li  ,  john.li@gmail.com  ,Data 634,John Li,Data 919
+Charlie,HASSAN,charlie15@example.org,Data 580,Charlie Hassan,  Data 836  
+Raj,Ali,"  raj.ali@gmail.com  , alternate@company.net",Data 764,Raj Ali,  Data 871  
+Diana,Johnson,diana57@yahoo.com,Data 744,  Diana Johnson  ,Data 962
+Alice,Kumar,"akumar@company.net, alternate@company.net",Data 252,  Alice Kumar  ,Data 489
+Charlie,Johnson,  charlie.johnson@company.net  ,Data 490,Charlie Johnson,DATA 558
+JANE,Brown,jane17@gmail.com,  Data 588  ,  Jane Brown  ,Data 870
+Chen,Wang,  chen.wang@example.org  ,DATA 447,Chen Wang,  Data 916  
+CHEN,Martinez,chen98@yahoo.com,Data 427,Chen Martinez,Data 713
