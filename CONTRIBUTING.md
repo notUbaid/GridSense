@@ -1,5 +1,5 @@
 <div align="center">
-  <h1>🤝 Contributing to GridSense</h1>
+  <h1>Contributing to GridSense</h1>
   <p><strong>Guidelines and Instructions for Engineers</strong></p>
 </div>
 
@@ -9,7 +9,7 @@ Welcome to GridSense! This document provides comprehensive guidelines and instru
 
 ---
 
-## 🏗️ Architecture Overview
+## Architecture Overview
 
 GridSense is orchestrated as a unified monorepo to guarantee parity between the frontend interface and the backend processing engine.
 
@@ -18,7 +18,7 @@ GridSense is orchestrated as a unified monorepo to guarantee parity between the 
 
 <br />
 
-## 🛠️ Prerequisites
+## Prerequisites
 
 Before contributing, ensure your local development environment meets the following baseline requirements:
 
@@ -30,7 +30,7 @@ Before contributing, ensure your local development environment meets the followi
 
 <br />
 
-## 🚀 Getting Started
+## Getting Started
 
 Follow these steps to bootstrap the monorepo on your local machine.
 
@@ -62,7 +62,7 @@ npm run dev
 
 <br />
 
-## 📏 Code Standards & Conventions
+## Code Standards & Conventions
 
 To maintain a high-quality codebase, we enforce strict formatting and linting rules.
 
@@ -77,7 +77,7 @@ npm run lint
 
 <br />
 
-## 🧪 Testing Infrastructure
+## Testing Infrastructure
 
 GridSense relies on **Vitest** for integration and unit testing. The testing suite uses a custom `MockAIProvider` to bypass network requests to LLMs, ensuring tests are deterministic and execute in milliseconds.
 

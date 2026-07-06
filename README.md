@@ -1,5 +1,5 @@
 <div align="center">
-  <h1>⚡ GridSense</h1>
+  <h1>GridSense</h1>
   <p><strong>Intelligent Data Pipeline & Schema Mapping Engine</strong></p>
 
   <p>
@@ -17,7 +17,7 @@
 
 ---
 
-## 🏗️ Architecture Overview
+## Architecture Overview
 
 This project is built as a unified monorepo to ensure seamless end-to-end type safety, deterministic builds, and synchronized deployments.
 
@@ -30,7 +30,7 @@ This project is built as a unified monorepo to ensure seamless end-to-end type s
 
 <br />
 
-## ✨ Engineering Highlights
+## Engineering Highlights
 
 ### Dual-AI Fallback System
 Engineered for absolute resilience. The backend primarily utilizes Groq (`llama-3.3-70b-versatile`) for extreme-speed inference. If Groq encounters a `429 Too Many Requests` rate limit, the system gracefully traps the error and seamlessly hands off processing to Google Gemini (`gemini-1.5-flash`), eliminating data drop-offs and manual intervention.
@@ -43,7 +43,7 @@ AI applications are notoriously difficult to test due to non-deterministic outpu
 
 <br />
 
-## 🚀 Development Setup
+## Development Setup
 
 <details>
 <summary><strong>1. Prerequisites</strong></summary>
@@ -96,7 +96,7 @@ npm run dev
 
 <br />
 
-## 🧪 Testing & Quality Control
+## Testing & Quality Control
 
 Execute the **Vitest** test suite to validate the extractor logic and API routes:
 ```bash
@@ -110,7 +110,7 @@ npm run lint
 
 <br />
 
-## ☁️ Deployment
+## Deployment
 
 The application is configured for zero-configuration deployments on **Vercel**. 
 
