@@ -18,7 +18,8 @@ export function SummaryDashboard({ state, metrics, records, onReset }: SummaryDa
   const isPartial = state === 'partial_success';
 
   return (
-      <Card className={cn("border-border/50 bg-card shadow-sm animate-in fade-in slide-in-from-bottom-4 duration-300")}>
+    <div className="space-y-6 animate-in fade-in slide-in-from-bottom-4 duration-300">
+      <Card className={cn("border-border/50 bg-card shadow-sm")}>
         <CardHeader className="pb-4 border-b">
           <div className="flex items-center justify-between">
             <div className="flex items-center space-x-3">
