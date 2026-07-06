@@ -5,7 +5,17 @@ import { CrmRecord, CrmRecordSchema } from '../validation/schema';
 import logger from '../utils/logger';
 import { config } from '../config';
 
-const groq = new Groq({ apiKey: config.GROQ_API_KEY });
+let groq: Groq | null = null;
+
+function getGroqClient() {
+  if (!config.GROQ_API_KEY) {
+    throw new Error('GROQ_API_KEY is missing. Please add it to Vercel Environment Variables.');
+  }
+  if (!groq) {
+    groq = new Groq({ apiKey: config.GROQ_API_KEY });
+  }
+  return groq;
+}
 
 const responseSchema = z.object({
   records: z.array(CrmRecordSchema),
@@ -61,7 +71,8 @@ ${JSON.stringify(rows)}`;
     try {
       logger.info({ attempt: attempt + 1, batchSize: rows.length }, 'Sending batch to Groq');
 
-      const completion = await groq.chat.completions.create({
+      const client = getGroqClient();
+      const completion = await client.chat.completions.create({
         messages: [
           {
             role: 'system',
