@@ -11,7 +11,7 @@ import { ProgressCard } from '@/components/pipeline/ProgressCard';
 import { SummaryDashboard } from '@/components/pipeline/SummaryDashboard';
 
 export default function Home() {
-  const { state, progress, records, previewData, metrics, error, processFile, startProcessing, reset } = useProcessing();
+  const { state, progress, records, previewData, metrics, error, currentActivity, elapsedMs, etaMs, processFile, startProcessing, reset } = useProcessing();
 
   return (
     <main className="relative min-h-screen bg-background text-foreground p-6 md:p-12 overflow-hidden selection:bg-primary/20">
@@ -55,6 +55,10 @@ export default function Home() {
           <ProgressCard 
             progress={progress} 
             records={records} 
+            currentActivity={currentActivity}
+            elapsedMs={elapsedMs}
+            etaMs={etaMs}
+            totalRows={metrics.totalRows}
           />
         )}
 

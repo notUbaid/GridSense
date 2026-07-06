@@ -4,23 +4,60 @@ import { Progress } from '@/components/ui/progress';
 import { ResultsTable } from '@/components/results/ResultsTable';
 import { Skeleton } from '@/components/ui/skeleton';
 import { CrmRecord } from '@/types/schema';
+import { Clock, Timer } from 'lucide-react';
 
 interface ProgressCardProps {
   progress: number;
   records: CrmRecord[];
+  currentActivity: string;
+  elapsedMs: number;
+  etaMs: number | null;
+  totalRows: number;
 }
 
-export function ProgressCard({ progress, records }: ProgressCardProps) {
+function formatTime(ms: number) {
+  if (ms < 0) return '0:00';
+  const totalSeconds = Math.floor(ms / 1000);
+  const m = Math.floor(totalSeconds / 60);
+  const s = totalSeconds % 60;
+  return `${m}:${s.toString().padStart(2, '0')}`;
+}
+
+export function ProgressCard({ progress, records, currentActivity, elapsedMs, etaMs, totalRows }: ProgressCardProps) {
   return (
     <div className="space-y-6 animate-in fade-in slide-in-from-bottom-4 duration-300">
       <Card className="border-border/50 bg-card shadow-sm">
         <CardHeader className="space-y-1">
-          <CardTitle className="text-xl">Processing Extraction</CardTitle>
-          <CardDescription className="text-sm">Analyzing spreadsheet structure and extracting standard CRM fields.</CardDescription>
+          <div className="flex justify-between items-start">
+            <div>
+              <CardTitle className="text-xl">Processing Extraction</CardTitle>
+              <CardDescription className="text-sm mt-1 max-w-[80%]">
+                <span className="inline-block animate-pulse text-primary">{currentActivity}</span>
+              </CardDescription>
+            </div>
+            
+            <div className="flex space-x-4 text-xs font-medium text-muted-foreground bg-muted/30 px-3 py-2 rounded-md border border-border/50">
+              <div className="flex flex-col items-end">
+                <span className="text-foreground flex items-center gap-1"><Clock className="w-3 h-3" /> {formatTime(elapsedMs)}</span>
+                <span className="text-[10px] uppercase tracking-wider opacity-70">Elapsed</span>
+              </div>
+              <div className="w-[1px] bg-border/50 h-auto"></div>
+              <div className="flex flex-col items-start">
+                <span className="text-foreground flex items-center gap-1"><Timer className="w-3 h-3" /> {etaMs !== null ? formatTime(etaMs) : '--:--'}</span>
+                <span className="text-[10px] uppercase tracking-wider opacity-70">Remaining</span>
+              </div>
+            </div>
+          </div>
         </CardHeader>
         <CardContent className="space-y-4">
-          <Progress value={progress} className="h-2 w-full transition-all duration-300" />
-          <p className="text-right text-sm font-medium text-muted-foreground">{progress}% Complete</p>
+          <div className="relative">
+            <Progress value={progress} className="h-2 w-full transition-all duration-300" />
+            <div className="absolute top-0 left-0 h-full w-full bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full animate-[shimmer_2s_infinite]"></div>
+          </div>
+          <div className="flex justify-between items-center text-sm font-medium text-muted-foreground">
+            <span>{records.length} / {totalRows} records mapped</span>
+            <span className="text-foreground">{progress}% Complete</span>
+          </div>
         </CardContent>
       </Card>
       

@@ -20,6 +20,9 @@ export function useProcessing() {
   const [records, setRecords] = useState<CrmRecord[]>([]);
   const [previewData, setPreviewData] = useState<{ headers: string[], rows: Record<string, string>[] } | null>(null);
   const [error, setError] = useState<string | null>(null);
+  const [currentActivity, setCurrentActivity] = useState<string>('Idle');
+  const [elapsedMs, setElapsedMs] = useState<number>(0);
+  const [etaMs, setEtaMs] = useState<number | null>(null);
   const [metrics, setMetrics] = useState<ProcessMetrics>({
     totalRows: 0,
     successfulRows: 0,
@@ -37,6 +40,9 @@ export function useProcessing() {
     setProgress(0);
     setRecords([]);
     setPreviewData(null);
+    setCurrentActivity('Idle');
+    setElapsedMs(0);
+    setEtaMs(null);
     setMetrics({ totalRows: 0, successfulRows: 0, skippedRows: 0, failedBatches: 0, processingTimeMs: 0 });
 
     Papa.parse<Record<string, string>>(file, {
@@ -104,16 +110,32 @@ export function useProcessing() {
     setMetrics(prev => ({ ...prev, totalRows: sanitizedData.length }));
     const startTime = Date.now();
 
+    setCurrentActivity(`Warming up AI models for ${sanitizedData.length} records...`);
+
     let completedBatches = 0;
     const totalBatches = batches.length;
     let localFailedBatches = 0;
     let localSuccessfulRows = 0;
     let localSkippedRows = 0;
 
+    const timer = setInterval(() => {
+      const now = Date.now();
+      const elapsed = now - startTime;
+      setElapsedMs(elapsed);
+      
+      if (completedBatches > 0) {
+        const msPerBatch = elapsed / completedBatches;
+        const remainingBatches = totalBatches - completedBatches;
+        setEtaMs(msPerBatch * remainingBatches);
+      }
+    }, 1000);
+
     const processBatchQueue = async (queue: { batch: Record<string, string>[], index: number }[]) => {
       while (queue.length > 0) {
         const task = queue.shift();
         if (!task) break;
+        
+        setCurrentActivity(`Mapping standard fields for rows ${task.index * batchSize} to ${Math.min((task.index + 1) * batchSize, sanitizedData.length)}...`);
         
         try {
           const response = await processBatchApi({
@@ -148,6 +170,8 @@ export function useProcessing() {
     const workers = Array(Math.min(maxConcurrency, queue.length)).fill(null).map(() => processBatchQueue(queue));
 
     await Promise.allSettled(workers);
+    clearInterval(timer);
+    setCurrentActivity('Finalizing extraction...');
 
     setMetrics(prev => ({
       ...prev,
@@ -173,6 +197,9 @@ export function useProcessing() {
     previewData,
     metrics,
     error,
+    currentActivity,
+    elapsedMs,
+    etaMs,
     processFile,
     startProcessing,
     reset: () => {
@@ -181,6 +208,9 @@ export function useProcessing() {
       setRecords([]);
       setPreviewData(null);
       setError(null);
+      setCurrentActivity('Idle');
+      setElapsedMs(0);
+      setEtaMs(null);
       setMetrics({ totalRows: 0, successfulRows: 0, skippedRows: 0, failedBatches: 0, processingTimeMs: 0 });
     }
   };
