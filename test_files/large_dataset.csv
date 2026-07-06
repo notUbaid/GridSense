@@ -1,0 +1,251 @@
+Lead ID,First,Last,Organization,Job Title,Biz Email,Direct Dial,Location,Lead Source Ref,Interaction Summary
+1001,Aaron,Abbott,Abbott Tech,CEO,aabbott@abbotttech.com,555-0101,New York,Webinar Q1,Interested in enterprise plan
+1002,Abigail,Adams,Adams Consulting,Manager,aadams@adamsconsulting.com,555-0102,Los Angeles,Cold Call,Call back in 3 months
+1003,Adam,Baker,Baker Bakery,Owner,abaker@bakerbakery.com,555-0103,Chicago,Trade Show,Requested product demo
+1004,Alice,Carter,Carter Logistics,VP Sales,acarter@carterlogistics.com,555-0104,Houston,Referral,Ready to buy
+1005,Andrew,Davis,Davis Finance,Analyst,adavis@davisfinance.com,555-0105,Phoenix,Website,Needs more information
+1006,Angela,Evans,Evans Real Estate,Broker,aevans@evansre.com,555-0106,Philadelphia,Organic Search,Looking for a cheaper alternative
+1007,Anthony,Ford,Ford Motors,Engineer,aford@fordmotors.com,555-0107,San Antonio,Email Campaign,Wants to speak to tech team
+1008,Ashley,Garcia,Garcia Designs,Designer,agarcia@garciadesigns.com,555-0108,San Diego,Social Media,Loves the UI
+1009,Austin,Harris,Harris Farms,Farmer,aharris@harrisfarms.com,555-0109,Dallas,Webinar Q1,Not a fit right now
+1010,Barbara,Jackson,Jackson Music,Producer,bjackson@jacksonmusic.com,555-0110,San Jose,Cold Call,Too expensive
+1011,Benjamin,King,King Enterprises,Director,bking@kingenterprises.com,555-0111,Austin,Trade Show,Will discuss with board
+1012,Betty,Lee,Lee Legal,Lawyer,blee@leelegal.com,555-0112,Jacksonville,Referral,Send contract
+1013,Bradley,Martin,Martin Construction,Builder,bmartin@martinconstruction.com,555-0113,Fort Worth,Website,Needs customized solution
+1014,Brenda,Nelson,Nelson Medical,Doctor,bnelson@nelsonmedical.com,555-0114,Columbus,Organic Search,Call back next week
+1015,Brian,Owens,Owens Sports,Coach,bowens@owenssports.com,555-0115,San Francisco,Email Campaign,Unsubscribed
+1016,Brittany,Perez,Perez Consulting,Consultant,bperez@perezconsulting.com,555-0116,Charlotte,Social Media,Wants a free trial
+1017,Bruce,Quinn,Quinn Software,Developer,bquinn@quinnsoftware.com,555-0117,Indianapolis,Webinar Q1,Evaluating competitors
+1018,Carl,Roberts,Roberts Retail,Manager,croberts@robertsretail.com,555-0118,Seattle,Cold Call,Left voicemail
+1019,Carol,Smith,Smith Plumbing,Plumber,csmith@smithplumbing.com,555-0119,Denver,Trade Show,Meeting scheduled
+1020,Charles,Taylor,Taylor Marketing,Marketer,ctaylor@taylormarketing.com,555-0120,Washington,Referral,Closed lost
+1021,Charlotte,Underwood,Underwood Wood,Carpenter,cunderwood@underwoodwood.com,555-0121,Boston,Website,Closed won
+1022,Christian,Vance,Vance Refrigeration,Owner,cvance@vancerefrigeration.com,555-0122,El Paso,Organic Search,Follow up tomorrow
+1023,Christina,White,White Enterprises,CEO,cwhite@whiteenterprises.com,555-0123,Nashville,Email Campaign,Send brochure
+1024,Christopher,Xavier,Xavier Academy,Teacher,cxavier@xavieracademy.com,555-0124,Detroit,Social Media,Needs educational discount
+1025,Claire,Young,Young Harvest,Farmer,cyoung@youngharvest.com,555-0125,Oklahoma City,Webinar Q1,Very interested
+1026,Cody,Zane,Zane Fitness,Trainer,czane@zanefitness.com,555-0126,Portland,Cold Call,Not interested
+1027,Colin,Abbott,Abbott Tech,Manager,cabbott@abbotttech.com,555-0127,Las Vegas,Trade Show,Collect requirements
+1028,Courtney,Adams,Adams Consulting,Analyst,cadams@adamsconsulting.com,555-0128,Memphis,Referral,Awaiting budget approval
+1029,Craig,Baker,Baker Bakery,Baker,cbaker@bakerbakery.com,555-0129,Louisville,Website,Wants a demo
+1030,Crystal,Carter,Carter Logistics,Driver,ccarter@carterlogistics.com,555-0130,Baltimore,Organic Search,No authority
+1031,Daniel,Davis,Davis Finance,Broker,ddavis@davisfinance.com,555-0131,Milwaukee,Email Campaign,Call back in 6 months
+1032,Danielle,Evans,Evans Real Estate,Agent,devans@evansre.com,555-0132,Albuquerque,Social Media,Interested in partnership
+1033,David,Ford,Ford Motors,Mechanic,dford@fordmotors.com,555-0133,Tucson,Webinar Q1,Needs technical support
+1034,Deborah,Garcia,Garcia Designs,Artist,dgarcia@garciadesigns.com,555-0134,Fresno,Cold Call,Send pricing
+1035,Dennis,Harris,Harris Farms,Manager,dharris@harrisfarms.com,555-0135,Sacramento,Trade Show,Will review proposal
+1036,Diana,Jackson,Jackson Music,Singer,djackson@jacksonmusic.com,555-0136,Kansas City,Referral,Ready to sign
+1037,Donald,King,King Enterprises,VP,dking@kingenterprises.com,555-0137,Long Beach,Website,Needs custom quote
+1038,Donna,Lee,Lee Legal,Paralegal,dlee@leelegal.com,555-0138,Mesa,Organic Search,Looking for integration
+1039,Douglas,Martin,Martin Construction,Foreman,dmartin@martinconstruction.com,555-0139,Atlanta,Email Campaign,Wants to see ROI
+1040,Dylan,Nelson,Nelson Medical,Nurse,dnelson@nelsonmedical.com,555-0140,Colorado Springs,Social Media,Left voicemail
+1041,Edward,Owens,Owens Sports,Athlete,eowens@owenssports.com,555-0141,Virginia Beach,Webinar Q1,Meeting scheduled
+1042,Elizabeth,Perez,Perez Consulting,Partner,eperez@perezconsulting.com,555-0142,Raleigh,Cold Call,Closed lost
+1043,Emily,Quinn,Quinn Software,Tester,equinn@quinnsoftware.com,555-0143,Omaha,Trade Show,Closed won
+1044,Eric,Roberts,Roberts Retail,Clerk,eroberts@robertsretail.com,555-0144,Miami,Referral,Follow up tomorrow
+1045,Erin,Smith,Smith Plumbing,Apprentice,esmith@smithplumbing.com,555-0145,Oakland,Website,Send brochure
+1046,Ethan,Taylor,Taylor Marketing,Analyst,etaylor@taylormarketing.com,555-0146,Minneapolis,Organic Search,Needs discount
+1047,Evelyn,Underwood,Underwood Wood,Manager,eunderwood@underwoodwood.com,555-0147,Tulsa,Email Campaign,Very interested
+1048,Frank,Vance,Vance Refrigeration,Technician,fvance@vancerefrigeration.com,555-0148,Wichita,Social Media,Not interested
+1049,Gabriel,White,White Enterprises,VP Sales,gwhite@whiteenterprises.com,555-0149,New Orleans,Webinar Q1,Collect requirements
+1050,Gary,Xavier,Xavier Academy,Principal,gxavier@xavieracademy.com,555-0150,Arlington,Cold Call,Awaiting budget approval
+1051,George,Young,Young Harvest,Manager,gyoung@youngharvest.com,555-0151,Cleveland,Trade Show,Wants a demo
+1052,Grace,Zane,Zane Fitness,Owner,gzane@zanefitness.com,555-0152,Bakersfield,Referral,No authority
+1053,Gregory,Abbott,Abbott Tech,Developer,gabbott@abbotttech.com,555-0153,Tampa,Website,Call back in 6 months
+1054,Hannah,Adams,Adams Consulting,Partner,hadams@adamsconsulting.com,555-0154,Aurora,Organic Search,Interested in partnership
+1055,Harold,Baker,Baker Bakery,Manager,hbaker@bakerbakery.com,555-0155,Honolulu,Email Campaign,Needs technical support
+1056,Heather,Carter,Carter Logistics,Dispatcher,hcarter@carterlogistics.com,555-0156,Anaheim,Social Media,Send pricing
+1057,Henry,Davis,Davis Finance,VP,hdavis@davisfinance.com,555-0157,Santa Ana,Webinar Q1,Will review proposal
+1058,Ian,Evans,Evans Real Estate,Broker,ievans@evansre.com,555-0158,Corpus Christi,Cold Call,Ready to sign
+1059,Isabella,Ford,Ford Motors,Manager,iford@fordmotors.com,555-0159,Riverside,Trade Show,Needs custom quote
+1060,Jack,Garcia,Garcia Designs,Owner,jgarcia@garciadesigns.com,555-0160,Lexington,Referral,Looking for integration
+1061,Jacob,Harris,Harris Farms,Farmer,jharris@harrisfarms.com,555-0161,St. Louis,Website,Wants to see ROI
+1062,James,Jackson,Jackson Music,Producer,jjackson@jacksonmusic.com,555-0162,Stockton,Organic Search,Left voicemail
+1063,Jane,King,King Enterprises,Director,jking@kingenterprises.com,555-0163,Pittsburgh,Email Campaign,Meeting scheduled
+1064,Jason,Lee,Lee Legal,Lawyer,jlee@leelegal.com,555-0164,Saint Paul,Social Media,Closed lost
+1065,Jeffrey,Martin,Martin Construction,Builder,jmartin@martinconstruction.com,555-0165,Cincinnati,Webinar Q1,Closed won
+1066,Jennifer,Nelson,Nelson Medical,Doctor,jnelson@nelsonmedical.com,555-0166,Anchorage,Cold Call,Follow up tomorrow
+1067,Jeremy,Owens,Owens Sports,Coach,jowens@owenssports.com,555-0167,Henderson,Trade Show,Send brochure
+1068,Jessica,Perez,Perez Consulting,Consultant,jperez@perezconsulting.com,555-0168,Greensboro,Referral,Needs discount
+1069,John,Quinn,Quinn Software,Developer,jquinn@quinnsoftware.com,555-0169,Plano,Website,Very interested
+1070,Jonathan,Roberts,Roberts Retail,Manager,jroberts@robertsretail.com,555-0170,Newark,Organic Search,Not interested
+1071,Jordan,Smith,Smith Plumbing,Plumber,jsmith@smithplumbing.com,555-0171,Lincoln,Email Campaign,Collect requirements
+1072,Jose,Taylor,Taylor Marketing,Marketer,jtaylor@taylormarketing.com,555-0172,Toledo,Social Media,Awaiting budget approval
+1073,Joseph,Underwood,Underwood Wood,Carpenter,junderwood@underwoodwood.com,555-0173,Orlando,Webinar Q1,Wants a demo
+1074,Joshua,Vance,Vance Refrigeration,Owner,jvance@vancerefrigeration.com,555-0174,Chula Vista,Cold Call,No authority
+1075,Justin,White,White Enterprises,CEO,jwhite@whiteenterprises.com,555-0175,Irvine,Trade Show,Call back in 6 months
+1076,Karen,Xavier,Xavier Academy,Teacher,kxavier@xavieracademy.com,555-0176,Fort Wayne,Referral,Interested in partnership
+1077,Katherine,Young,Young Harvest,Farmer,kyoung@youngharvest.com,555-0177,Jersey City,Website,Needs technical support
+1078,Kathleen,Zane,Zane Fitness,Trainer,kzane@zanefitness.com,555-0178,Durham,Organic Search,Send pricing
+1079,Kelly,Abbott,Abbott Tech,CEO,kabbott@abbotttech.com,555-0179,St. Petersburg,Email Campaign,Will review proposal
+1080,Kenneth,Adams,Adams Consulting,Manager,kadams@adamsconsulting.com,555-0180,Laredo,Social Media,Ready to sign
+1081,Kevin,Baker,Baker Bakery,Owner,kbaker@bakerbakery.com,555-0181,Buffalo,Webinar Q1,Needs custom quote
+1082,Kimberly,Carter,Carter Logistics,VP Sales,kcarter@carterlogistics.com,555-0182,Madison,Cold Call,Looking for integration
+1083,Kyle,Davis,Davis Finance,Analyst,kdavis@davisfinance.com,555-0183,Lubbock,Trade Show,Wants to see ROI
+1084,Laura,Evans,Evans Real Estate,Broker,levans@evansre.com,555-0184,Chandler,Referral,Left voicemail
+1085,Lauren,Ford,Ford Motors,Engineer,lford@fordmotors.com,555-0185,Baton Rouge,Website,Meeting scheduled
+1086,Lawrence,Garcia,Garcia Designs,Designer,lgarcia@garciadesigns.com,555-0186,Winston-Salem,Organic Search,Closed lost
+1087,Linda,Harris,Harris Farms,Farmer,lharris@harrisfarms.com,555-0187,Glendale,Email Campaign,Closed won
+1088,Lisa,Jackson,Jackson Music,Producer,ljackson@jacksonmusic.com,555-0188,Garland,Social Media,Follow up tomorrow
+1089,Logan,King,King Enterprises,Director,lking@kingenterprises.com,555-0189,Hialeah,Webinar Q1,Send brochure
+1090,Madison,Lee,Lee Legal,Lawyer,mlee@leelegal.com,555-0190,Reno,Cold Call,Needs discount
+1091,Margaret,Martin,Martin Construction,Builder,mmartin@martinconstruction.com,555-0191,Chesapeake,Trade Show,Very interested
+1092,Maria,Nelson,Nelson Medical,Doctor,mnelson@nelsonmedical.com,555-0192,Gilbert,Referral,Not interested
+1093,Mark,Owens,Owens Sports,Coach,mowens@owenssports.com,555-0193,Norfolk,Website,Collect requirements
+1094,Mary,Perez,Perez Consulting,Consultant,mperez@perezconsulting.com,555-0194,Irving,Organic Search,Awaiting budget approval
+1095,Matthew,Quinn,Quinn Software,Developer,mquinn@quinnsoftware.com,555-0195,Scottsdale,Email Campaign,Wants a demo
+1096,Megan,Roberts,Roberts Retail,Manager,mroberts@robertsretail.com,555-0196,North Las Vegas,Social Media,No authority
+1097,Melissa,Smith,Smith Plumbing,Plumber,msmith@smithplumbing.com,555-0197,Fremont,Webinar Q1,Call back in 6 months
+1098,Michael,Taylor,Taylor Marketing,Marketer,mtaylor@taylormarketing.com,555-0198,Boise,Cold Call,Interested in partnership
+1099,Michelle,Underwood,Underwood Wood,Carpenter,munderwood@underwoodwood.com,555-0199,Richmond,Trade Show,Needs technical support
+1100,Nancy,Vance,Vance Refrigeration,Owner,nvance@vancerefrigeration.com,555-0200,San Bernardino,Referral,Send pricing
+1101,Natalie,White,White Enterprises,CEO,nwhite@whiteenterprises.com,555-0201,Birmingham,Website,Will review proposal
+1102,Nathan,Xavier,Xavier Academy,Teacher,nxavier@xavieracademy.com,555-0202,Spokane,Organic Search,Ready to sign
+1103,Nicholas,Young,Young Harvest,Farmer,nyoung@youngharvest.com,555-0203,Rochester,Email Campaign,Needs custom quote
+1104,Nicole,Zane,Zane Fitness,Trainer,nzane@zanefitness.com,555-0204,Des Moines,Social Media,Looking for integration
+1105,Noah,Abbott,Abbott Tech,CEO,nabbott@abbotttech.com,555-0205,Modesto,Webinar Q1,Wants to see ROI
+1106,Olivia,Adams,Adams Consulting,Manager,oadams@adamsconsulting.com,555-0206,Fayetteville,Cold Call,Left voicemail
+1107,Pamela,Baker,Baker Bakery,Owner,pbaker@bakerbakery.com,555-0207,Tacoma,Trade Show,Meeting scheduled
+1108,Patricia,Carter,Carter Logistics,VP Sales,pcarter@carterlogistics.com,555-0208,Oxnard,Referral,Closed lost
+1109,Patrick,Davis,Davis Finance,Analyst,pdavis@davisfinance.com,555-0209,Fontana,Website,Closed won
+1110,Paul,Evans,Evans Real Estate,Broker,pevans@evansre.com,555-0210,Montgomery,Organic Search,Follow up tomorrow
+1111,Peter,Ford,Ford Motors,Engineer,pford@fordmotors.com,555-0211,Moreno Valley,Email Campaign,Send brochure
+1112,Philip,Garcia,Garcia Designs,Designer,pgarcia@garciadesigns.com,555-0212,Shreveport,Social Media,Needs discount
+1113,Rachel,Harris,Harris Farms,Farmer,rharris@harrisfarms.com,555-0213,Yonkers,Webinar Q1,Very interested
+1114,Ralph,Jackson,Jackson Music,Producer,rjackson@jacksonmusic.com,555-0214,Akron,Cold Call,Not interested
+1115,Raymond,King,King Enterprises,Director,rking@kingenterprises.com,555-0215,Huntington Beach,Trade Show,Collect requirements
+1116,Rebecca,Lee,Lee Legal,Lawyer,rlee@leelegal.com,555-0216,Little Rock,Referral,Awaiting budget approval
+1117,Richard,Martin,Martin Construction,Builder,rmartin@martinconstruction.com,555-0217,Augusta,Website,Wants a demo
+1118,Robert,Nelson,Nelson Medical,Doctor,rnelson@nelsonmedical.com,555-0218,Amarillo,Organic Search,No authority
+1119,Ronald,Owens,Owens Sports,Coach,rowens@owenssports.com,555-0219,Glendale,Email Campaign,Call back in 6 months
+1120,Ryan,Perez,Perez Consulting,Consultant,rperez@perezconsulting.com,555-0220,Mobile,Social Media,Interested in partnership
+1121,Samantha,Quinn,Quinn Software,Developer,squinn@quinnsoftware.com,555-0221,Grand Rapids,Webinar Q1,Needs technical support
+1122,Samuel,Roberts,Roberts Retail,Manager,sroberts@robertsretail.com,555-0222,Salt Lake City,Cold Call,Send pricing
+1123,Sandra,Smith,Smith Plumbing,Plumber,ssmith@smithplumbing.com,555-0223,Tallahassee,Trade Show,Will review proposal
+1124,Sarah,Taylor,Taylor Marketing,Marketer,staylor@taylormarketing.com,555-0224,Huntsville,Referral,Ready to sign
+1125,Scott,Underwood,Underwood Wood,Carpenter,sunderwood@underwoodwood.com,555-0225,Grand Prairie,Website,Needs custom quote
+1126,Sean,Vance,Vance Refrigeration,Owner,svance@vancerefrigeration.com,555-0226,Knoxville,Organic Search,Looking for integration
+1127,Sharon,White,White Enterprises,CEO,swhite@whiteenterprises.com,555-0227,Worcester,Email Campaign,Wants to see ROI
+1128,Shirley,Xavier,Xavier Academy,Teacher,sxavier@xavieracademy.com,555-0228,Newport News,Social Media,Left voicemail
+1129,Sophia,Young,Young Harvest,Farmer,syoung@youngharvest.com,555-0229,Brownsville,Webinar Q1,Meeting scheduled
+1130,Stephen,Zane,Zane Fitness,Trainer,szane@zanefitness.com,555-0230,Overland Park,Cold Call,Closed lost
+1131,Steven,Abbott,Abbott Tech,CEO,sabbott@abbotttech.com,555-0231,Santa Clarita,Trade Show,Closed won
+1132,Susan,Adams,Adams Consulting,Manager,sadams@adamsconsulting.com,555-0232,Providence,Referral,Follow up tomorrow
+1133,Teresa,Baker,Baker Bakery,Owner,tbaker@bakerbakery.com,555-0233,Garden Grove,Website,Send brochure
+1134,Thomas,Carter,Carter Logistics,VP Sales,tcarter@carterlogistics.com,555-0234,Chattanooga,Organic Search,Needs discount
+1135,Timothy,Davis,Davis Finance,Analyst,tdavis@davisfinance.com,555-0235,Oceanside,Email Campaign,Very interested
+1136,Tyler,Evans,Evans Real Estate,Broker,tevans@evansre.com,555-0236,Jackson,Social Media,Not interested
+1137,Victoria,Ford,Ford Motors,Engineer,vford@fordmotors.com,555-0237,Fort Lauderdale,Webinar Q1,Collect requirements
+1138,Vincent,Garcia,Garcia Designs,Designer,vgarcia@garciadesigns.com,555-0238,Santa Rosa,Cold Call,Awaiting budget approval
+1139,Virginia,Harris,Harris Farms,Farmer,vharris@harrisfarms.com,555-0239,Ontario,Trade Show,Wants a demo
+1140,Walter,Jackson,Jackson Music,Producer,wjackson@jacksonmusic.com,555-0240,Port St. Lucie,Referral,No authority
+1141,Wayne,King,King Enterprises,Director,wking@kingenterprises.com,555-0241,Vancouver,Website,Call back in 6 months
+1142,William,Lee,Lee Legal,Lawyer,wlee@leelegal.com,555-0242,Tempe,Organic Search,Interested in partnership
+1143,Willie,Martin,Martin Construction,Builder,wmartin@martinconstruction.com,555-0243,Springfield,Email Campaign,Needs technical support
+1144,Zachary,Nelson,Nelson Medical,Doctor,znelson@nelsonmedical.com,555-0244,Lancaster,Social Media,Send pricing
+1145,Aaron,Owens,Owens Sports,Coach,aowens@owenssports.com,555-0245,Eugene,Webinar Q1,Will review proposal
+1146,Abigail,Perez,Perez Consulting,Consultant,aperez@perezconsulting.com,555-0246,Pembroke Pines,Cold Call,Ready to sign
+1147,Adam,Quinn,Quinn Software,Developer,aquinn@quinnsoftware.com,555-0247,Salem,Trade Show,Needs custom quote
+1148,Alice,Roberts,Roberts Retail,Manager,aroberts@robertsretail.com,555-0248,Cape Coral,Referral,Looking for integration
+1149,Andrew,Smith,Smith Plumbing,Plumber,asmith@smithplumbing.com,555-0249,Peoria,Website,Wants to see ROI
+1150,Angela,Taylor,Taylor Marketing,Marketer,ataylor@taylormarketing.com,555-0250,Sioux Falls,Organic Search,Left voicemail
+1151,Anthony,Underwood,Underwood Wood,Carpenter,aunderwood@underwoodwood.com,555-0251,Springfield,Email Campaign,Meeting scheduled
+1152,Ashley,Vance,Vance Refrigeration,Owner,avance@vancerefrigeration.com,555-0252,Elk Grove,Social Media,Closed lost
+1153,Austin,White,White Enterprises,CEO,awhite@whiteenterprises.com,555-0253,Rockford,Webinar Q1,Closed won
+1154,Barbara,Xavier,Xavier Academy,Teacher,bxavier@xavieracademy.com,555-0254,Palmdale,Cold Call,Follow up tomorrow
+1155,Benjamin,Young,Young Harvest,Farmer,byoung@youngharvest.com,555-0255,Corona,Trade Show,Send brochure
+1156,Betty,Zane,Zane Fitness,Trainer,bzane@zanefitness.com,555-0256,Salinas,Referral,Needs discount
+1157,Bradley,Abbott,Abbott Tech,CEO,babbott@abbotttech.com,555-0257,Pomona,Website,Very interested
+1158,Brenda,Adams,Adams Consulting,Manager,badams@adamsconsulting.com,555-0258,Pasadena,Organic Search,Not interested
+1159,Brian,Baker,Baker Bakery,Owner,bbaker@bakerbakery.com,555-0259,Joliet,Email Campaign,Collect requirements
+1160,Brittany,Carter,Carter Logistics,VP Sales,bcarter@carterlogistics.com,555-0260,Paterson,Social Media,Awaiting budget approval
+1161,Bruce,Davis,Davis Finance,Analyst,bdavis@davisfinance.com,555-0261,Kansas City,Webinar Q1,Wants a demo
+1162,Carl,Evans,Evans Real Estate,Broker,cevans@evansre.com,555-0262,Torrance,Cold Call,No authority
+1163,Carol,Ford,Ford Motors,Engineer,cford@fordmotors.com,555-0263,Syracuse,Trade Show,Call back in 6 months
+1164,Charles,Garcia,Garcia Designs,Designer,cgarcia@garciadesigns.com,555-0264,Bridgeport,Referral,Interested in partnership
+1165,Charlotte,Harris,Harris Farms,Farmer,charris@harrisfarms.com,555-0265,Hayward,Website,Needs technical support
+1166,Christian,Jackson,Jackson Music,Producer,cjackson@jacksonmusic.com,555-0266,Fort Collins,Organic Search,Send pricing
+1167,Christina,King,King Enterprises,Director,cking@kingenterprises.com,555-0267,Escondido,Email Campaign,Will review proposal
+1168,Christopher,Lee,Lee Legal,Lawyer,clee@leelegal.com,555-0268,Lakewood,Social Media,Ready to sign
+1169,Claire,Martin,Martin Construction,Builder,cmartin@martinconstruction.com,555-0269,Naperville,Webinar Q1,Needs custom quote
+1170,Cody,Nelson,Nelson Medical,Doctor,cnelson@nelsonmedical.com,555-0270,Dayton,Cold Call,Looking for integration
+1171,Colin,Owens,Owens Sports,Coach,cowens@owenssports.com,555-0271,Hollywood,Trade Show,Wants to see ROI
+1172,Courtney,Perez,Perez Consulting,Consultant,cperez@perezconsulting.com,555-0272,Sunnyvale,Referral,Left voicemail
+1173,Craig,Quinn,Quinn Software,Developer,cquinn@quinnsoftware.com,555-0273,Alexandria,Website,Meeting scheduled
+1174,Crystal,Roberts,Roberts Retail,Manager,croberts2@robertsretail.com,555-0274,Mesquite,Organic Search,Closed lost
+1175,Daniel,Smith,Smith Plumbing,Plumber,dsmith@smithplumbing.com,555-0275,Hampton,Email Campaign,Closed won
+1176,Danielle,Taylor,Taylor Marketing,Marketer,dtaylor@taylormarketing.com,555-0276,Pasadena,Social Media,Follow up tomorrow
+1177,David,Underwood,Underwood Wood,Carpenter,dunderwood@underwoodwood.com,555-0277,Orange,Webinar Q1,Send brochure
+1178,Deborah,Vance,Vance Refrigeration,Owner,dvance@vancerefrigeration.com,555-0278,Savannah,Cold Call,Needs discount
+1179,Dennis,White,White Enterprises,CEO,dwhite@whiteenterprises.com,555-0279,Cary,Trade Show,Very interested
+1180,Diana,Xavier,Xavier Academy,Teacher,dxavier@xavieracademy.com,555-0280,Fullerton,Referral,Not interested
+1181,Donald,Young,Young Harvest,Farmer,dyoung@youngharvest.com,555-0281,Warren,Website,Collect requirements
+1182,Donna,Zane,Zane Fitness,Trainer,dzane@zanefitness.com,555-0282,Clarksville,Organic Search,Awaiting budget approval
+1183,Douglas,Abbott,Abbott Tech,CEO,dabbott@abbotttech.com,555-0283,McKinney,Email Campaign,Wants a demo
+1184,Dylan,Adams,Adams Consulting,Manager,dadams@adamsconsulting.com,555-0284,McAllen,Social Media,No authority
+1185,Edward,Baker,Baker Bakery,Owner,ebaker@bakerbakery.com,555-0285,New Haven,Webinar Q1,Call back in 6 months
+1186,Elizabeth,Carter,Carter Logistics,VP Sales,ecarter@carterlogistics.com,555-0286,Sterling Heights,Cold Call,Interested in partnership
+1187,Emily,Davis,Davis Finance,Analyst,edavis@davisfinance.com,555-0287,West Valley City,Trade Show,Needs technical support
+1188,Eric,Evans,Evans Real Estate,Broker,eevans@evansre.com,555-0288,Columbia,Referral,Send pricing
+1189,Erin,Ford,Ford Motors,Engineer,eford@fordmotors.com,555-0289,Killeen,Website,Will review proposal
+1190,Ethan,Garcia,Garcia Designs,Designer,egarcia@garciadesigns.com,555-0290,Topeka,Organic Search,Ready to sign
+1191,Evelyn,Harris,Harris Farms,Farmer,eharris@harrisfarms.com,555-0291,Thousand Oaks,Email Campaign,Needs custom quote
+1192,Frank,Jackson,Jackson Music,Producer,fjackson@jacksonmusic.com,555-0292,Cedar Rapids,Social Media,Looking for integration
+1193,Gabriel,King,King Enterprises,Director,gking@kingenterprises.com,555-0293,Olathe,Webinar Q1,Wants to see ROI
+1194,Gary,Lee,Lee Legal,Lawyer,glee@leelegal.com,555-0294,Elizabeth,Cold Call,Left voicemail
+1195,George,Martin,Martin Construction,Builder,gmartin@martinconstruction.com,555-0295,Waco,Trade Show,Meeting scheduled
+1196,Grace,Nelson,Nelson Medical,Doctor,gnelson@nelsonmedical.com,555-0296,Hartford,Referral,Closed lost
+1197,Gregory,Owens,Owens Sports,Coach,gowens@owenssports.com,555-0297,Visalia,Website,Closed won
+1198,Hannah,Perez,Perez Consulting,Consultant,hperez@perezconsulting.com,555-0298,Gainesville,Organic Search,Follow up tomorrow
+1199,Harold,Quinn,Quinn Software,Developer,hquinn@quinnsoftware.com,555-0299,Simi Valley,Email Campaign,Send brochure
+1200,Heather,Roberts,Roberts Retail,Manager,hroberts@robertsretail.com,555-0300,Stamford,Social Media,Needs discount
+1201,Henry,Smith,Smith Plumbing,Plumber,hsmith@smithplumbing.com,555-0301,Bellevue,Webinar Q1,Very interested
+1202,Ian,Taylor,Taylor Marketing,Marketer,itaylor@taylormarketing.com,555-0302,Concord,Cold Call,Not interested
+1203,Isabella,Underwood,Underwood Wood,Carpenter,iunderwood@underwoodwood.com,555-0303,Miramar,Trade Show,Collect requirements
+1204,Jack,Vance,Vance Refrigeration,Owner,jvance2@vancerefrigeration.com,555-0304,Coral Springs,Referral,Awaiting budget approval
+1205,Jacob,White,White Enterprises,CEO,jwhite2@whiteenterprises.com,555-0305,Lafayette,Website,Wants a demo
+1206,James,Xavier,Xavier Academy,Teacher,jxavier@xavieracademy.com,555-0306,Charleston,Organic Search,No authority
+1207,Jane,Young,Young Harvest,Farmer,jyoung@youngharvest.com,555-0307,Carrollton,Email Campaign,Call back in 6 months
+1208,Jason,Zane,Zane Fitness,Trainer,jzane@zanefitness.com,555-0308,Roseville,Social Media,Interested in partnership
+1209,Jeffrey,Abbott,Abbott Tech,CEO,jabbott@abbotttech.com,555-0309,Thornton,Webinar Q1,Needs technical support
+1210,Jennifer,Adams,Adams Consulting,Manager,jadams@adamsconsulting.com,555-0310,Beaumont,Cold Call,Send pricing
+1211,Jeremy,Baker,Baker Bakery,Owner,jbaker@bakerbakery.com,555-0311,Allentown,Trade Show,Will review proposal
+1212,Jessica,Carter,Carter Logistics,VP Sales,jcarter@carterlogistics.com,555-0312,Surprise,Referral,Ready to sign
+1213,John,Davis,Davis Finance,Analyst,jdavis@davisfinance.com,555-0313,Evansville,Website,Needs custom quote
+1214,Jonathan,Evans,Evans Real Estate,Broker,jevans@evansre.com,555-0314,Abilene,Organic Search,Looking for integration
+1215,Jordan,Ford,Ford Motors,Engineer,jford@fordmotors.com,555-0315,Frisco,Email Campaign,Wants to see ROI
+1216,Jose,Garcia,Garcia Designs,Designer,jgarcia2@garciadesigns.com,555-0316,Independence,Social Media,Left voicemail
+1217,Joseph,Harris,Harris Farms,Farmer,jharris2@harrisfarms.com,555-0317,Santa Clara,Webinar Q1,Meeting scheduled
+1218,Joshua,Jackson,Jackson Music,Producer,jjackson2@jacksonmusic.com,555-0318,Springfield,Cold Call,Closed lost
+1219,Justin,King,King Enterprises,Director,jking2@kingenterprises.com,555-0319,Vallejo,Trade Show,Closed won
+1220,Karen,Lee,Lee Legal,Lawyer,klee@leelegal.com,555-0320,Victorville,Referral,Follow up tomorrow
+1221,Katherine,Martin,Martin Construction,Builder,kmartin@martinconstruction.com,555-0321,Athens,Website,Send brochure
+1222,Kathleen,Nelson,Nelson Medical,Doctor,knelson@nelsonmedical.com,555-0322,Peoria,Organic Search,Needs discount
+1223,Kelly,Owens,Owens Sports,Coach,kowens@owenssports.com,555-0323,Lansing,Email Campaign,Very interested
+1224,Kenneth,Perez,Perez Consulting,Consultant,kperez@perezconsulting.com,555-0324,Ann Arbor,Social Media,Not interested
+1225,Kevin,Quinn,Quinn Software,Developer,kquinn@quinnsoftware.com,555-0325,El Monte,Webinar Q1,Collect requirements
+1226,Kimberly,Roberts,Roberts Retail,Manager,kroberts@robertsretail.com,555-0326,Denton,Cold Call,Awaiting budget approval
+1227,Kyle,Smith,Smith Plumbing,Plumber,ksmith@smithplumbing.com,555-0327,Berkeley,Trade Show,Wants a demo
+1228,Laura,Taylor,Taylor Marketing,Marketer,ltaylor@taylormarketing.com,555-0328,Provo,Referral,No authority
+1229,Lauren,Underwood,Underwood Wood,Carpenter,lunderwood@underwoodwood.com,555-0329,Downey,Website,Call back in 6 months
+1230,Lawrence,Vance,Vance Refrigeration,Owner,lvance@vancerefrigeration.com,555-0330,Midland,Organic Search,Interested in partnership
+1231,Linda,White,White Enterprises,CEO,lwhite@whiteenterprises.com,555-0331,Norman,Email Campaign,Needs technical support
+1232,Lisa,Xavier,Xavier Academy,Teacher,lxavier@xavieracademy.com,555-0332,Waterbury,Social Media,Send pricing
+1233,Logan,Young,Young Harvest,Farmer,lyoung@youngharvest.com,555-0333,Costa Mesa,Webinar Q1,Will review proposal
+1234,Madison,Zane,Zane Fitness,Trainer,mzane@zanefitness.com,555-0334,Inglewood,Cold Call,Ready to sign
+1235,Margaret,Abbott,Abbott Tech,CEO,mabbott@abbotttech.com,555-0335,Manchester,Trade Show,Needs custom quote
+1236,Maria,Adams,Adams Consulting,Manager,madams@adamsconsulting.com,555-0336,Murfreesboro,Referral,Looking for integration
+1237,Mark,Baker,Baker Bakery,Owner,mbaker@bakerbakery.com,555-0337,Waterloo,Website,Wants to see ROI
+1238,Mary,Carter,Carter Logistics,VP Sales,mcarter@carterlogistics.com,555-0338,Elgin,Organic Search,Left voicemail
+1239,Matthew,Davis,Davis Finance,Analyst,mdavis@davisfinance.com,555-0339,Clearwater,Email Campaign,Meeting scheduled
+1240,Megan,Evans,Evans Real Estate,Broker,mevans@evansre.com,555-0340,Cambridge,Social Media,Closed lost
+1241,Melissa,Ford,Ford Motors,Engineer,mford@fordmotors.com,555-0341,Green Bay,Webinar Q1,Closed won
+1242,Michael,Garcia,Garcia Designs,Designer,mgarcia@garciadesigns.com,555-0342,West Jordan,Cold Call,Follow up tomorrow
+1243,Michelle,Harris,Harris Farms,Farmer,mharris@harrisfarms.com,555-0343,Billings,Trade Show,Send brochure
+1244,Nancy,Jackson,Jackson Music,Producer,njackson@jacksonmusic.com,555-0344,Richmond,Referral,Needs discount
+1245,Natalie,King,King Enterprises,Director,nking@kingenterprises.com,555-0345,Westminster,Website,Very interested
+1246,Nathan,Lee,Lee Legal,Lawyer,nlee@leelegal.com,555-0346,High Point,Organic Search,Not interested
+1247,Nicholas,Martin,Martin Construction,Builder,nmartin@martinconstruction.com,555-0347,San Buenaventura,Email Campaign,Collect requirements
+1248,Nicole,Nelson,Nelson Medical,Doctor,nnelson@nelsonmedical.com,555-0348,Pueblo,Social Media,Awaiting budget approval
+1249,Noah,Owens,Owens Sports,Coach,nowens@owenssports.com,555-0349,Lowell,Webinar Q1,Wants a demo
+1250,Olivia,Perez,Perez Consulting,Consultant,operez@perezconsulting.com,555-0350,Centennial,Cold Call,No authority

@@ -1,0 +1,18 @@
+id,Contact Data,Contact Data,Details,Details,Misc,empty,empty
+1,John Smith,jsmith@test.com,He said,"""Call me tomorrow""""",Notes: 😅,DROP TABLE leads;,,
+2,Alice W.,alice@test.com; aw@test.com,+1 555 1234 / +1 555 5678,<div>Very interested</div>,,
+3,Bob Tables,bob@test.com,"{""status"":""active","score"":99}",Line 1
+Line 2
+Line 3,,,,
+4,,,,,No contact info provided,,
+5,Eve,eve@test.com,Company Name That Is Unreasonably And Extraordinarily Long Which Might Break The UI Layout Of The Application Because It Never Ends,https://eve.com?param=1&param=2,,,
+6,Mallory,mallory@test.com,mallory@test.com,She said she hates commas,and semicolons;,,,,
+7,Trent,trent@test.com,,,,,
+8,Peggy,peggy@test.com,emoji testing 🚀🔥🌟,this is an invalid email@,,
+9,Victor,victor@test.com,2024-13-45 (Invalid Date),,,
+10,Frank,frank@test.com,Lots of leading spaces,Tab separated	here,,,
+11,Carlos,carlos@test.com,123-456-7890,`markdown code block`,,,
+12,Judy,judy@test.com,Same contact,Same contact,,,
+12,Judy,judy@test.com,Same contact,Same contact,,,
+14,Walter,walter@test.com,"Quote """"inside"""" quote",,,,
+15,Arthur,arthur@test.com,éàçüñ,Unicode test,,,
