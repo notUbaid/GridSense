@@ -30,6 +30,10 @@ app.use(errorHandler);
 
 const PORT = config.PORT || 8000;
 
-app.listen(PORT, () => {
-  logger.info(`Server is running on port ${PORT}`);
-});
+if (require.main === module || process.env.NODE_ENV !== 'production') {
+  app.listen(PORT, () => {
+    logger.info(`Server is running on port ${PORT}`);
+  });
+}
+
+export default app;
