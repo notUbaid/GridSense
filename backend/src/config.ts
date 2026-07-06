@@ -5,6 +5,7 @@ const envSchema = z.object({
   NODE_ENV: z.enum(['development', 'production', 'test']).default('development'),
   LOG_LEVEL: z.string().default('info'),
   GROQ_API_KEY: z.string().default(''), // Allow empty at startup to prevent Vercel cold-start crash
+  GEMINI_API_KEY: z.string().default(''),
   FRONTEND_URL: z.string().default('http://localhost:3000'),
   AI_MAX_RETRIES: z.coerce.number().int().min(1).default(3),
   AI_RETRY_DELAY_MS: z.coerce.number().int().min(100).default(2000),

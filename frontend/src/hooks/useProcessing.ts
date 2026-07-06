@@ -130,8 +130,13 @@ export function useProcessing() {
       }
     }, 1000);
 
+    let currentProvider: 'groq' | 'gemini' = 'groq';
+    let limitReached = false;
+
     const processBatchQueue = async (queue: { batch: Record<string, string>[], index: number }[]) => {
       while (queue.length > 0) {
+        if (limitReached) break;
+
         const task = queue.shift();
         if (!task) break;
         
@@ -142,7 +147,8 @@ export function useProcessing() {
             batchId: `batch_${task.index}`,
             headers,
             rows: task.batch,
-          });
+            provider: currentProvider,
+          } as any);
 
           if (response.status === 'success' || response.status === 'partial') {
             if (response.records) {
@@ -158,20 +164,22 @@ export function useProcessing() {
         } catch (err: any) {
           const backendError = err.response?.data?.error || err.message || 'Unknown error';
           const status = err.response?.status;
+          const exhaustedProvider = err.response?.data?.exhaustedProvider || 'groq';
           
           if (status === 429 || backendError.toLowerCase().includes('rate limit')) {
-            toast.warning(`Rate limit hit on batch ${task.index + 1}. Pausing for 60 seconds...`);
-            
-            // Wait for 60 seconds with a countdown
-            for (let i = 60; i > 0; i--) {
-              setCurrentActivity(`AI Rate Limit reached. Pausing... Resuming in ${i}s`);
-              await new Promise(r => setTimeout(r, 1000));
+            if (currentProvider === 'groq' && exhaustedProvider === 'groq') {
+              currentProvider = 'gemini';
+              toast.info(`Groq free limit reached. Thoughtfully switching to Gemini backup...`);
+              setCurrentActivity(`Switching AI engine to Gemini...`);
+              await new Promise(r => setTimeout(r, 1500));
+              queue.unshift(task); // Requeue task
+              continue; // Try again with Gemini
+            } else {
+              limitReached = true;
+              setCurrentActivity(`API limits reached. Taking a breather, please try later.`);
+              queue.unshift(task); // Save progress
+              break; // Stop worker gracefully
             }
-            
-            toast.info(`Resuming batch ${task.index + 1}...`);
-            // Put the task back at the front of the queue to try again
-            queue.unshift(task);
-            continue; // Skip the finally block to not count this as a completed attempt yet
           } else {
             localFailedBatches++;
             toast.error(`Batch ${task.index + 1} failed: ${backendError}`);

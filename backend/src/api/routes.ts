@@ -17,10 +17,10 @@ router.post('/batch', async (req: Request, res: Response): Promise<void> => {
     return;
   }
 
-  const { batchId, headers, rows } = parsed.data;
+  const { batchId, headers, rows, provider } = parsed.data;
 
   try {
-    const { records, skippedCount, processingTimeMs } = await processBatch(headers, rows);
+    const { records, skippedCount, processingTimeMs } = await processBatch(headers, rows, provider as any);
     
     res.status(200).json({
       batchId,
@@ -40,6 +40,7 @@ router.post('/batch', async (req: Request, res: Response): Promise<void> => {
       batchId,
       status: 'error',
       error: errorMessage,
+      exhaustedProvider: error?.exhaustedProvider,
     });
   }
 });

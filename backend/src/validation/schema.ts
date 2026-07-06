@@ -24,4 +24,5 @@ export const ProcessBatchRequestSchema = z.object({
   batchId: z.string().min(1),
   headers: z.array(z.string()),
   rows: z.array(z.record(z.string(), z.any())),
+  provider: z.enum(['groq', 'gemini']).optional().default('groq'),
 });

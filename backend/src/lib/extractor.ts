@@ -4,17 +4,27 @@ import { z } from 'zod';
 import { CrmRecord, CrmRecordSchema } from '../validation/schema';
 import logger from '../utils/logger';
 import { config } from '../config';
+import { MockAIProvider } from './MockAIProvider';
+import { GoogleGenerativeAI } from '@google/generative-ai';
+import { MockAIProvider } from './MockAIProvider';
 
 let groq: Groq | null = null;
+let genAI: GoogleGenerativeAI | null = null;
 
 function getGroqClient() {
   if (!config.GROQ_API_KEY) {
-    throw new Error('GROQ_API_KEY is missing. Please add it to Vercel Environment Variables.');
+    throw new Error('GROQ_API_KEY is missing.');
   }
-  if (!groq) {
-    groq = new Groq({ apiKey: config.GROQ_API_KEY });
-  }
+  if (!groq) groq = new Groq({ apiKey: config.GROQ_API_KEY });
   return groq;
+}
+
+function getGeminiClient() {
+  if (!config.GEMINI_API_KEY) {
+    throw new Error('GEMINI_API_KEY is missing.');
+  }
+  if (!genAI) genAI = new GoogleGenerativeAI(config.GEMINI_API_KEY);
+  return genAI;
 }
 
 const responseSchema = z.object({
@@ -33,7 +43,11 @@ function stripMarkdownFences(raw: string): string {
   return trimmed;
 }
 
-export async function processBatch(headers: string[], rows: Record<string, string>[]) {
+export async function processBatch(
+  headers: string[], 
+  rows: Record<string, string>[],
+  provider: 'groq' | 'gemini' = 'groq'
+) {
   let attempt = 0;
   const maxRetries = config.AI_MAX_RETRIES;
   const startTime = Date.now();
@@ -69,29 +83,50 @@ ${JSON.stringify(rows)}`;
 
   while (attempt < maxRetries) {
     try {
-      logger.info({ attempt: attempt + 1, batchSize: rows.length }, 'Sending batch to Groq');
+      logger.info({ attempt: attempt + 1, batchSize: rows.length, provider }, 'Sending batch to AI');
 
-      const client = getGroqClient();
-      const completion = await client.chat.completions.create({
-        messages: [
-          {
-            role: 'system',
-            content: 'You are a data extraction system. Output ONLY valid JSON matching the requested schema. No markdown fences, no commentary.'
-          },
-          { role: 'user', content: prompt }
-        ],
-        model: 'llama-3.3-70b-versatile',
-        temperature: 0.1,
-        response_format: { type: 'json_object' },
-      });
+      let records: CrmRecord[] = [];
 
-      const content = completion.choices[0]?.message?.content;
-      if (!content) throw new Error('Empty response from Groq');
+      if (process.env.NODE_ENV === 'test') {
+        records = await MockAIProvider.extract(headers, rows);
+      } else if (provider === 'gemini') {
+        const ai = getGeminiClient();
+        const model = ai.getGenerativeModel({ model: 'gemini-1.5-flash' });
+        const result = await model.generateContent({
+          contents: [{ role: 'user', parts: [{ text: prompt }] }],
+          generationConfig: {
+            temperature: 0.1,
+            responseMimeType: 'application/json',
+          }
+        });
+        const content = result.response.text();
+        if (!content) throw new Error('Empty response from Gemini');
+        const parsed = JSON.parse(stripMarkdownFences(content));
+        const validated = responseSchema.parse(parsed);
+        records = validated.records;
+      } else {
+        const client = getGroqClient();
+        const completion = await client.chat.completions.create({
+          messages: [
+            {
+              role: 'system',
+              content: 'You are a data extraction system. Output ONLY valid JSON matching the requested schema. No markdown fences, no commentary.'
+            },
+            { role: 'user', content: prompt }
+          ],
+          model: 'llama-3.3-70b-versatile',
+          temperature: 0.1,
+          response_format: { type: 'json_object' },
+        });
 
-      const cleaned = stripMarkdownFences(content);
-      const parsed = JSON.parse(cleaned);
-      const validated = responseSchema.parse(parsed);
-      const records = validated.records;
+        const content = completion.choices[0]?.message?.content;
+        if (!content) throw new Error('Empty response from Groq');
+
+        const cleaned = stripMarkdownFences(content);
+        const parsed = JSON.parse(cleaned);
+        const validated = responseSchema.parse(parsed);
+        records = validated.records;
+      }
 
       if (records.length !== rows.length) {
         throw new Error(`Row count mismatch: expected ${rows.length}, got ${records.length}`);
@@ -123,11 +158,20 @@ ${JSON.stringify(rows)}`;
     } catch (error: any) {
       attempt++;
 
-      const status = error?.status || error?.response?.status;
+      const status = error?.status || error?.response?.status || (error.message?.includes('429') ? 429 : 500);
       const isRateLimit = status === 429;
+      
+      // If we hit a rate limit, immediately throw a special error so the frontend can fallback
+      if (isRateLimit) {
+        const limitError = new Error('Rate limit exceeded');
+        (limitError as any).status = 429;
+        (limitError as any).exhaustedProvider = provider;
+        throw limitError;
+      }
+
       const isTransientError = status >= 500;
 
-      if (!isRateLimit && !isTransientError && !(error instanceof SyntaxError)) {
+      if (!isTransientError && !(error instanceof SyntaxError)) {
         logger.error({ err: error.message, status }, 'Non-retriable error');
         throw error;
       }
