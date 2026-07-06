@@ -2,64 +2,104 @@
   <h1>⚡ GridSense</h1>
   <p><strong>A semantic AI spreadsheet parser that refuses to drop your data.</strong></p>
   <p><i>Built for the GrowEasy Software Developer Internship.</i></p>
-
-  <img alt="TypeScript" src="https://img.shields.io/badge/TypeScript-007ACC?style=for-the-badge&logo=typescript&logoColor=white" />
-  <img alt="Next.js" src="https://img.shields.io/badge/Next-black?style=for-the-badge&logo=next.js&logoColor=white" />
-  <img alt="Express.js" src="https://img.shields.io/badge/Express.js-000000?style=for-the-badge&logo=express&logoColor=white" />
-  <img alt="Groq" src="https://img.shields.io/badge/Groq-f55036?style=for-the-badge&logo=groq&logoColor=white" />
 </div>
 
 <br />
 
-The core of this assignment wasn't just about parsing CSVs—it was about understanding spreadsheets whose column names and layouts are completely unpredictable (e.g., `"First Name"` vs. `"Name"` vs. `"Client"`). 
+## What is GridSense?
 
-Instead of forcing the user into a brittle, manual column-mapping UI, **GridSense** uses an LLM to infer the semantic meaning of each row and normalize it directly into a standard CRM schema.
+Imagine I'm a sales manager. I have this Excel sheet:
+
+| Customer | Contact | Remarks | Interested Project |
+| :--- | :--- | :--- | :--- |
+| John | +91 9876543210 | Wants callback | Meridian Tower |
+
+Another company exports:
+
+| Name | Phone Number | Status | City |
+| :--- | :--- | :--- | :--- |
+
+Facebook exports:
+
+| full_name | phone_number | created_time |
+| :--- | :--- | :--- |
+
+Google exports:
+
+| Lead Name | Mobile | Notes |
+| :--- | :--- | :--- |
+
+Every CSV looks different.
+
+Traditional CRMs ask me to manually map:
+- `Customer` ➔ `Name`
+- `Phone` ➔ `Mobile`
+- `Remarks` ➔ `Notes`
+
+That's annoying.
+
+**GridSense removes that step.**
+
+The AI understands what every column means semantically and maps it to a strict, standardized CRM schema automatically.
 
 ---
 
-## 🧠 How it actually works
+## Complete Flow
 
-1. **Client-side Parsing**: You drop a CSV. `PapaParse` reads and sanitizes it entirely in the browser to prevent server memory bloat.
-2. **Chunking & Concurrency**: The frontend slices the data into small batches (default 20 rows) and dispatches them concurrently using a `Promise.allSettled()` task queue. *A single network failure will not halt your entire import.*
-3. **Semantic Extraction**: A lightweight Express backend intercepts the chunks, strictly validates the payloads, and passes them to an LLM (Groq Llama 3.1 70B). The AI uses zero-shot semantic deduction to map the messy rows into a strictly typed JSON CRM object.
-4. **Integrity & Retries**: LLMs hallucinate and rate limits happen. The backend mathematically enforces input-to-output row counts. If the AI drops a row, or the network returns a `429`, the backend intercepts it and triggers a jittered exponential backoff mechanism.
-
-> [!NOTE]
-> For a deep dive into the engineering decisions, state machines, and API boundary design, please read the [Architecture.md](./Architecture.md).
+**User**
+↓
+**Upload CSV**
+↓
+**Frontend parses CSV** *(using PapaParse locally)*
+↓
+**Preview shown**
+↓
+**User confirms**
+↓
+**Frontend chunks data** *(batches of 20)*
+↓
+**Backend receives batch**
+↓
+**Backend validates**
+↓
+**Prompt built**
+↓
+**Groq AI (Llama 3.1)**
+↓
+**AI returns structured CRM records**
+↓
+**Backend validates** *(Zod + Row Integrity check)*
+↓
+**Returns JSON**
+↓
+**Frontend streams results** *(live progress bar)*
+↓
+**Summary Dashboard**
+↓
+**Export CSV**
 
 ---
 
-## 🚀 Quick Start (Reviewer Guide)
+## 🚀 Quick Start
 
-I've set up a root package script so you don't have to fiddle with multiple terminals to review this submission.
+GridSense is a monorepo containing a Next.js frontend and an Express backend. 
 
-### 1. Environment Setup
-
-Create a `.env` file in the `backend` directory (or use the provided `.env.example` at the root as a template):
+### Environment Setup
+Create a `.env` file in the `backend` directory:
 ```bash
-GROQ_API_KEY=your_groq_api_key
+GROQ_API_KEY=gsk_your_api_key_here
 ```
 
-### 2. Install & Run
-
-From the root directory of the repository, run:
-
+### Install & Run
 ```bash
-# Install dependencies for root, frontend, and backend simultaneously
+# Install dependencies for both frontend and backend
 npm run install:all
 
 # Boot up both Next.js and Express concurrently
 npm run dev
 ```
 
-The application will be running at:
-- **Frontend**: [http://localhost:3000](http://localhost:3000)
-- **Backend API**: `http://localhost:8000`
+The application will be running at [http://localhost:3000](http://localhost:3000).
 
----
-
-## 🛠️ Tech Stack
-
-- **Frontend**: Next.js (App Router), React, Tailwind CSS, shadcn/ui, PapaParse, TanStack Table
-- **Backend**: Node.js, Express, Zod, Groq SDK, Pino
-- **Tooling**: TypeScript, Concurrently
+> [!NOTE]
+> For a deep dive into exactly what happens at every step of this flow, please read the [Architecture.md](./Architecture.md).

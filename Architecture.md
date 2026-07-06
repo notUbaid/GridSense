@@ -1,93 +1,101 @@
-# GridSense Architecture
+# GridSense Architecture & Request Flow
 
-GridSense is designed as a production-grade, highly resilient data extraction pipeline. It handles the inherent unpredictability of Large Language Models (LLMs) and network latency by wrapping AI processing in strict validation boundaries and robust retry mechanisms.
+GridSense handles the inherent unpredictability of Large Language Models (LLMs) and network latency by wrapping AI processing in strict validation boundaries.
 
----
+Here is the exact step-by-step technical flow of the application.
 
-## 1. System Architecture
+### Step 1: Landing
+User opens `gridsense.vercel.app`. They immediately understand the core utility: upload *any* CSV and it will be normalized.
 
-The application is structured as a decoupled monorepo containing:
-- **Frontend**: A Next.js (App Router) client handling file parsing, chunking, state management, and real-time progress streaming.
-- **Backend**: A lightweight Node.js/Express microservice dedicated to AI orchestration, schema validation, and exponential backoff strategies.
+### Step 2: Client-Side Parsing
+User uploads an arbitrary file (e.g., `facebook_leads.csv`). Nothing AI-related happens yet. 
+`PapaParse` runs locally in the browser to convert the CSV into a JSON array:
+```json
+[
+ {
+   "Full Name": "John",
+   "Phone": "9876543210",
+   "Remarks": "Call tomorrow"
+ }
+]
+```
+This is fully local. No server memory is consumed.
 
-By isolating the AI orchestration in the backend, we protect API keys, enable horizontal scaling of the processing workers, and strictly enforce the API boundary between client and server.
+### Step 3: Data Preview
+The user is shown a preview of the parsed data.
+- **Rows:** 145
+- **Columns:** 7
+- **Sample Data:** Displays the first few rows (John, 9876543210, Call tomorrow).
 
----
+This satisfies the initial assignment requirements. 
 
-## 2. Request Flow
+### Step 4: Execution Trigger
+User clicks **Start AI Extraction**. NOW the backend is called.
 
-1. **Client Parsing**: The user drops a CSV file into the frontend. `PapaParse` reads and sanitizes the file locally in the browser (handling files of any size without overwhelming server memory).
-2. **Chunking**: The frontend breaks the parsed data into manageable chunks (e.g., 20 rows per batch) and places them into an asynchronous task queue.
-3. **Concurrent Dispatch**: The frontend dispatches multiple batches concurrently (controlled by `NEXT_PUBLIC_AI_CONCURRENCY`) to the backend via the `/api/v1/process/batch` endpoint.
-4. **Backend Extraction**: The backend validates the payload via Zod, constructs the prompt, and sends the chunk to the Groq LLM.
-5. **Validation & Integrity**: The backend enforces strict mathematical integrity (Input Rows === Output Records). If the LLM swallows data, it is rejected and retried.
-6. **Streaming Response**: As each batch succeeds (or permanently fails), the frontend updates the live Results Table and the Progress Bar.
-7. **Partial Success Dashboard**: Upon completion, the user is presented with a metrics dashboard displaying successful extractions, intentionally skipped rows, and failed batches.
+### Step 5: Chunking & Concurrency
+If a file has 500 rows, the frontend does not send all 500 rows at once. It sends them in chunks:
+`20` ➔ `20` ➔ `20` ➔ `20` ...
 
----
+**Why?**
+- Cheaper (avoids massive token contexts).
+- Faster (batches are processed concurrently).
+- More accurate (LLMs hallucinate less on smaller lists).
+- Easier to retry (a single failure doesn't ruin the whole 500-row import).
 
-## 3. Frontend
+### Step 6: Backend Payload Validation
+The backend receives 20 rows. The first thing it does is validate the shape of the request using Zod. If it's a bad request, it rejects it immediately before wasting any API calls.
 
-The frontend is built for responsiveness and graceful degradation.
+### Step 7: Prompt Construction
+The backend dynamically builds the prompt for this specific chunk:
+> You are an expert CRM extractor. Convert these records.
+> Rules: ...
+> Rows: [...]
 
-- **Componentized State Machine**: The UI flow is broken into decoupled components (`Dropzone`, `PreviewCard`, `ProgressCard`, `SummaryDashboard`) managed by a unified `useProcessing` hook.
-- **Resilient Concurrency**: The batching engine utilizes `Promise.allSettled()` instead of `Promise.all()`. If a single batch fails after maximum retries due to network instability, the engine logs the failure and continues processing the remaining batches, preventing complete data loss.
-- **Client-side Sanitization**: Strings exceeding maximum token limits are truncated locally before transmission, reducing 413 Payload Too Large errors and optimizing AI token usage.
+### Step 8: AI Processing (Groq)
+Groq looks at the arbitrary column headers and semantically maps them:
+- `Customer Name` ➔ `name`
+- `Phone` ➔ `mobile`
+- `Remarks` ➔ `crm_note`
+- `Status` ➔ `GOOD_LEAD_FOLLOW_UP`
 
----
+### Step 9: Structured Output
+Groq returns a strictly formatted JSON array matching our CRM schema:
+```json
+[
+ {
+  "name": "John",
+  "email": "",
+  "phone_local": "9876543210",
+  "crm_status": "GOOD_LEAD_FOLLOW_UP"
+ }
+]
+```
 
-## 4. Backend
+### Step 10: Backend Response Validation
+We don't trust the AI. The backend validates the AI's response again.
+- **Zod Schema:** Does it strictly match `CrmRecordSchema`?
+- **Mathematical Integrity:** Did we send 20 rows and get exactly 20 records back?
 
-The backend is intentionally minimal, avoiding "Enterprise Java" anti-patterns (like unnecessary Dependency Injection containers or overly abstracted Services) in favor of idiomatic, functional Node.js.
+If it's correct ➔ Return to the frontend.
+If it's wrong (hallucination, dropped rows, rate limit) ➔ Trigger exponential backoff and retry the batch.
 
-- **`extractor.ts`**: The core domain logic. It handles the LLM prompt construction, structured JSON generation, and backoff retries in a single, pure async function.
-- **`routes.ts`**: The Express API layer. It executes inline Zod validation on incoming requests before passing them to the extractor.
+### Step 11: Real-Time Streaming
+Instead of making the user wait `████████████` for all 500 rows to finish, the frontend streams the progress via a live progress bar as batches resolve:
+- 20 rows done...
+- 40 rows done...
+- 60 rows done...
 
----
+### Step 12: Summary Dashboard
+Once all batches resolve, a dashboard is shown:
+- **Imported:** 432
+- **Skipped:** 6 (intentionally skipped because both email and phone were missing)
+- **Failed:** 1 Batch (data preserved via partial success)
+- **Time:** 14.2s
 
-## 5. AI Pipeline
+### Step 13: Results Table
+The normalized data is rendered in a clean TanStack table for final review.
 
-GridSense relies on Groq's Llama 3.1 70B model to perform semantic mapping. 
+### Step 14: Export
+User clicks Download to get `crm_records.csv`. Done. 
 
-- **Zero-Shot Mapping**: The AI does not rely on predefined column headers. It reads the raw data and semantically deduces which fields correspond to the standard CRM schema.
-- **Structured Outputs**: We utilize `zod-to-json-schema` to dynamically generate a strict JSON schema that the LLM must adhere to. The prompt explicitly requires `response_format: { type: 'json_object' }`.
-- **Few-Shot Prompting**: The system prompt includes a minimal few-shot example to guide the model on formatting Edge Cases (like combining First and Last names into a single `name` string).
-
----
-
-## 6. Batch Processing & Integrity
-
-Batching is strictly required when processing files with AI due to context window limits.
-
-- **Integrity Verification**: LLMs are known to hallucinate by silently dropping rows when processing lists. GridSense enforces an absolute length check: if a batch of 20 rows is sent, 20 objects must be returned. If not, the backend throws an `IntegrityError` and retries the batch.
-- **Intentional Skips**: If the LLM determines a row is completely unmappable (e.g. empty data), it returns an object of `null` values. The backend recognizes this as an "intentional skip", filtering it from the successful records while logging it in the metrics payload.
-
----
-
-## 7. Retry Logic
-
-Network requests to LLM providers are inherently volatile due to global rate limits (HTTP 429) and transient model errors (HTTP 500+).
-
-GridSense employs a sophisticated **Exponential Backoff with Jitter** strategy:
-- The base delay is determined by the HTTP status code (e.g., 3000ms for 429s, 1000ms for 500s).
-- The delay increases exponentially based on the attempt number: `baseDelay * 2^(attempt - 1)`.
-- A random jitter (up to 1000ms) is added to prevent the "thundering herd" problem when multiple concurrent batches retry simultaneously.
-
----
-
-## 8. Validation
-
-Data correctness is enforced at the system boundaries:
-1. **Request Validation**: The Express route strictly validates `ProcessBatchRequestSchema` via Zod before attempting to communicate with the LLM.
-2. **Response Validation**: The output from the LLM is parsed and validated against `CrmRecordSchema`. Any properties that hallucinate outside of the defined schema are stripped out.
-
----
-
-## 9. Future Improvements
-
-While this architecture is robust, a transition to a full-scale SaaS platform would benefit from the following enhancements:
-
-- **Asynchronous Webhooks**: Moving from HTTP Request/Response to a Webhook or WebSocket architecture for extremely large files (100k+ rows) to prevent browser timeout limits.
-- **Dedicated Queue System**: Swapping the in-memory array concurrency model for Redis and BullMQ to provide persistent jobs, pause/resume functionality, and distributed processing.
-- **Shared Workspace**: Extracting the duplicated Zod schemas into a shared `packages/schema` workspace to enforce a single source of truth across the monorepo.
-- **Cost Analytics**: Tracking Groq token usage per batch to implement user-level billing and rate-limiting.
+That's literally the whole application.
