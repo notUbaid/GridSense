@@ -14,8 +14,14 @@ export default function Home() {
   const { state, progress, records, previewData, metrics, error, processFile, startProcessing, reset } = useProcessing();
 
   return (
-    <main className="min-h-screen bg-background text-foreground p-6 md:p-12">
-      <div className="mx-auto max-w-6xl space-y-8">
+    <main className="relative min-h-screen bg-background text-foreground p-6 md:p-12 overflow-hidden selection:bg-primary/20">
+      {/* Subtle ambient top glow */}
+      <div className="absolute top-[-20%] left-1/2 -translate-x-1/2 w-[800px] h-[500px] rounded-full bg-primary/10 blur-[120px] pointer-events-none -z-10"></div>
+      
+      {/* Technical grid pattern */}
+      <div className="absolute inset-0 bg-[linear-gradient(to_right,#8080800a_1px,transparent_1px),linear-gradient(to_bottom,#8080800a_1px,transparent_1px)] bg-[size:32px_32px] pointer-events-none -z-10"></div>
+      
+      <div className="relative mx-auto max-w-6xl space-y-8 z-10">
         <div className="space-y-2">
           <h1 className="text-3xl font-semibold tracking-tight text-foreground">GridSense</h1>
           <p className="text-base text-muted-foreground max-w-2xl">
