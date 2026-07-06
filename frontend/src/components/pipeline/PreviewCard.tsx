@@ -16,28 +16,31 @@ export function PreviewCard({ previewData, onCancel, onStart }: PreviewCardProps
         <CardDescription className="text-sm">We parsed {previewData.rows.length} rows and {previewData.headers.length} columns. Review the sample below before extraction.</CardDescription>
       </CardHeader>
       <CardContent className="space-y-6">
-        <div className="rounded-md border overflow-x-auto max-w-full">
+        <div className="rounded-md border overflow-auto max-w-full max-h-[400px]">
           <table className="w-full text-sm">
-            <thead>
-              <tr className="border-b bg-muted/50 sticky top-0 z-10 shadow-sm">
-                {previewData.headers.slice(0, 8).map((h, i) => (
+            <thead className="sticky top-0 z-10 bg-muted/95 backdrop-blur shadow-sm">
+              <tr className="border-b">
+                {previewData.headers.map((h, i) => (
                   <th key={i} className="px-4 py-3 text-left text-xs font-medium uppercase tracking-wider text-muted-foreground whitespace-nowrap">{h}</th>
                 ))}
-                {previewData.headers.length > 8 && <th className="px-4 py-3 text-left text-xs font-medium uppercase tracking-wider text-muted-foreground">...</th>}
               </tr>
             </thead>
             <tbody>
-              {previewData.rows.slice(0, 5).map((row, i) => (
-                <tr key={i} className="border-b">
-                  {previewData.headers.slice(0, 8).map((h, j) => (
-                    <td key={j} className="px-4 py-3 whitespace-nowrap max-w-[200px] truncate text-sm text-foreground">{row[h] || ''}</td>
+              {previewData.rows.slice(0, 100).map((row, i) => (
+                <tr key={i} className="border-b hover:bg-muted/30 transition-colors">
+                  {previewData.headers.map((h, j) => (
+                    <td key={j} className="px-4 py-3 whitespace-nowrap max-w-[300px] truncate text-sm text-foreground">{row[h] || ''}</td>
                   ))}
-                  {previewData.headers.length > 8 && <td className="px-4 py-3 text-sm text-muted-foreground">...</td>}
                 </tr>
               ))}
             </tbody>
           </table>
         </div>
+        {previewData.rows.length > 100 && (
+          <div className="text-xs text-muted-foreground text-center">
+            Showing first 100 rows out of {previewData.rows.length} total.
+          </div>
+        )}
         <div className="flex justify-end space-x-4">
           <Button variant="outline" onClick={onCancel}>Cancel</Button>
           <Button onClick={onStart}>Start AI Extraction</Button>
