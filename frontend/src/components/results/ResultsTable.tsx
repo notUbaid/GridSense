@@ -61,7 +61,7 @@ export function ResultsTable({ data }: ResultsTableProps) {
     getPaginationRowModel: getPaginationRowModel(),
     initialState: {
       pagination: {
-        pageSize: 10,
+        pageSize: 50,
       },
     },
   });
