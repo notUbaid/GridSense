@@ -115,7 +115,8 @@ export async function processBatch(
 Your job: map each row to a standardized CRM schema and return a JSON object with a "records" array.
 
 RULES:
-- Use semantic understanding to figure out which column maps to which CRM field.
+- The model must behave as a deterministic extraction engine, not a generative assistant. It must never fabricate, replace, rewrite, or infer names, email addresses, phone numbers, companies, cities, or any other field that is not explicitly present in the input. If a value cannot be confidently extracted, return null. The output must preserve the original information rather than generating plausible replacements.
+- Use semantic understanding to figure out which column maps to which CRM field, but extract exact values.
 - Never invent data. If a value is not present in the source, leave the field null.
 - If a row has BOTH email and phone missing, still include it but set all fields to null (it will be filtered as a skip).
 - If multiple emails exist, use the first as "email" and append the rest to "crm_note".
