@@ -58,7 +58,7 @@ function stripMarkdownFences(raw: string): string {
   return trimmed;
 }
 
-function normalizeAndValidate(record: any, originalRow?: Record<string, string>): CrmRecord {
+function normalizeAndValidate(record: any): CrmRecord {
   const norm = { ...record };
 
   // 1. Whitespace Normalization
@@ -312,7 +312,7 @@ ${JSON.stringify(sanitizedRows)}`;
           created_at: extractedData[i].created_at
         };
 
-        const normalized = normalizeAndValidate(mergedRecord, rows[i]);
+        const normalized = normalizeAndValidate(mergedRecord);
         
         const hasContact = normalized.email || normalized.mobile_without_country_code;
         
