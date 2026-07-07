@@ -3,7 +3,7 @@
   <p><strong>AI-Powered CSV → CRM Schema Mapper</strong></p>
 
   <p>
-    <a href="https://grid-sense.vercel.app"><img src="https://img.shields.io/badge/🔗_Live_Demo-grid--sense.vercel.app-blue?style=for-the-badge" alt="Live Demo" /></a>
+    <a href="https://grid-sense-ge.vercel.app"><img src="https://img.shields.io/badge/🔗_Live_Demo-grid--sense--ge.vercel.app-blue?style=for-the-badge" alt="Live Demo" /></a>
   </p>
   <p>
     <a href="https://github.com/notUbaid/GridSense"><img src="https://img.shields.io/badge/Next.js-16-black?style=for-the-badge&logo=next.js" alt="Next.js" /></a>
