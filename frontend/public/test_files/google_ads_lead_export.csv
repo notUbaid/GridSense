@@ -1,0 +1,38 @@
+Date,Name,Email Address,Phone Number,Source,Status
+Data 868,Raj Li,rli@example.org,466.525.1117,  leads_on_demand  ,
+DATA 457,  Priya Li  ,pli@example.org,061.239.5051,,Call back later
+Data 479,Priya Johnson,  priya.johnson@example.org  ,+44 8259 249717,Google,Interested
+Data 745,Charlie Wang,cwang@example.org,(199) 998-3541,Facebook,
+Data 667,Alice Doe,  adoe@yahoo.com  ,2895861435,leads_on_demand,GOOD_LEAD_FOLLOW_UP
+Data 375,Charlie Johnson,CHARLIE62@HOTMAIL.COM,+44 9314 451118,sarjapur_plots,DID_NOT_CONNECT
+Data 990,  Alice Garcia  ,alice.garcia@company.net,282.597.0760,Google,Call back later
+Data 504,Wei Li,  wei.li@company.net  ,564.001.4923,  eden_park  ,
+Data 713,Charlie Kumar,charlie.kumar@hotmail.com,+1 (443) 936-3379 / 330.281.6133,varah_swamy,  Junk  
+Data 933,Fatima Wang,FWANG@COMPANY.NET,796.202.6202,Facebook,  SALE_DONE  
+Data 960,John Kumar,,+44 2929 689361,  varah_swamy  ,
+Data 254,Chen Patel,chen.patel@company.net,+1 (850) 209-2471 / (070) 381-5074,  Google  ,JUNK
+DATA 350,Alice Ali,alice6@gmail.com,809.829.6021,,SALE_DONE
+Data 621,Chen Hassan,chen.hassan@example.org,737.012.3014,sarjapur_plots,Junk
+DATA 637,  Wei Ali  ,  wei69@company.net  ,  1656523942  ,Facebook,INTERESTED
+  Data 550  ,Fatima Wang,fatima34@company.net,+1 (937) 121-1112,leads_on_demand,BAD_LEAD
+  Data 185  ,Mohamed Hassan,,(699) 315-3429,  Organic  ,BAD_LEAD
+Data 644,Alice Doe,  adoe@example.org  ,036-001-9512,Organic,BAD_LEAD
+Data 679,DIANA HASSAN,diana85@example.org,+1 (545) 302-2630,  Google  ,  BAD_LEAD  
+Data 622,Raj Hassan,raj79@hotmail.com,+44 3474 530354,Organic,SALE_DONE
+Data 868,Mohamed Ali,mohamed28@gmail.com,005.119.4907,,BAD_LEAD
+Data 719,MOHAMED LI,mohamed.li@hotmail.com,+44 6884 977188,meridian_tower,GOOD_LEAD_FOLLOW_UP
+Data 977,  Alice Garcia  ,  alice.garcia@hotmail.com  ,3035745566,meridian_tower,GOOD_LEAD_FOLLOW_UP
+Data 208,Chen Doe,  chen61@company.net  ,,  eden_park  ,BAD_LEAD
+Data 970,,FATIMA.GARCIA@COMPANY.NET,727-081-9867,Google,
+  Data 844  ,  John Brown  ,,+44 0156 234222,Organic,  GOOD_LEAD_FOLLOW_UP  
+  Data 835  ,BOB PATEL,bpatel@yahoo.com,,Facebook,DID_NOT_CONNECT
+Data 994,Wei Hassan,,(058) 679-5073,leads_on_demand,Call back later
+Data 596,Alice Kumar,  alice.kumar@gmail.com  ,+44 9237 843095,varah_swamy,DID_NOT_CONNECT
+  Data 891  ,Wei Kumar,  wei.kumar@company.net  ,  +1 (867) 401-5381  ,  eden_park  ,DID_NOT_CONNECT
+  Data 843  ,Fatima Kumar,fkumar@company.net,200.108.2480,sarjapur_plots,  Interested  
+  Data 917  ,  RAJ DOE  ,  raj50@yahoo.com  ,005.445.1125,  Organic  ,DID_NOT_CONNECT
+Data 269,  Wei Doe  ,wei32@company.net,  164-327-5732  ,,Call back later
+Data 789,Alice Patel,  alice.patel@yahoo.com  ,705.425.5617,eden_park,GOOD_LEAD_FOLLOW_UP
+Data 402,John Garcia,"  john.garcia@gmail.com  , alternate@example.org",+1 (696) 284-3700,varah_swamy,    
+Data 323,Jane Johnson,    ,  +44 7099 443497  ,varah_swamy,
+,Diana Hassan,,+44 2838 560390 / +44 7432 535546,leads_on_demand,  Call back later  

@@ -1,0 +1,54 @@
+Lead ID,First Name,Last Name,Email,Phone,Campaign,Ad Set
+Interested,Wei,,wei.li@gmail.com,+44 9204 405741,Data 407,Data 131
+DID_NOT_CONNECT,Priya,Doe,    priya.doe@hotmail.com    ,524.842.9660,Data 891,Data 700
+Interested,  Diana  ,Wang,dwang@company.net,+1 (894) 957-0267,Data 150,  Data 844  
+    ,Diana,Kumar,diana.kumar@hotmail.com,,  Data 388  ,Data 988
+Call back later,  Fatima  ,Li,  fatima.li@example.org  ,+1 (694) 427-2186,,Data 686
+BAD_LEAD,John,Kumar,  john45@yahoo.com  ,(653) 848-6442,  Data 996  ,  Data 731  
+    ,Raj,Patel,rpatel@gmail.com,  713-949-9827  ,Data 881,  Data 415  
+  Junk  ,Diana,Hassan,diana25@hotmail.com,  +44 7543 771156  ,  Data 427  ,Data 430
+BAD_LEAD,Mohamed,WANG,mohamed37@company.net,+44 1791 829460,  Data 456  ,Data 522
+Call back later,Charlie,Kumar,CHARLIE50@HOTMAIL.COM,933-905-3878,Data 382,  Data 741  
+SALE_DONE,  Raj  ,Doe,raj62@hotmail.com,+1 (302) 148-7956,Data 377,Data 527
+DID_NOT_CONNECT,John,Brown,jbrown@hotmail.com,+1 (699) 881-7083,Data 134,Data 896
+  GOOD_LEAD_FOLLOW_UP  ,Mohamed,  Brown  ,  mohamed.brown@company.net  ,+1 (688) 050-9116,Data 570,Data 877
+DID_NOT_CONNECT,  Wei  ,,wei91@yahoo.com,6030306809,  Data 350  ,Data 455
+SALE_DONE,Wei,  Hassan  ,  wei.hassan@gmail.com  ,487-603-5345,Data 162,Data 628
+  BAD_LEAD  ,Jane,  Li  ,  JANE.LI@HOTMAIL.COM  ,+1 (302) 796-4432,Data 450,Data 984
+Interested,Chen,Doe,  chen.doe@yahoo.com  ,  (617) 494-4785  ,Data 606,Data 294
+Call back later,Jane,KUMAR,jkumar@gmail.com,6951919820,Data 675,
+,  Mohamed  ,LI,mli@yahoo.com,+44 1571 130214,DATA 665,Data 681
+Call back later,Wei,Brown,  wei.brown@yahoo.com  ,,Data 534,Data 502
+,Alice,  LI  ,  alice.li@company.net  ,(143) 997-4982,Data 959,Data 243
+DID_NOT_CONNECT,Raj,Hassan,    ,6848930796,Data 709,Data 716
+DID_NOT_CONNECT,John,Brown,jbrown@company.net,(468) 718-8640,Data 870,Data 243
+  Call back later  ,John,Wang,,074.747.7063,Data 946,Data 930
+Junk,Raj,Smith,  raj.smith@example.org  ,+1 (758) 009-8244 / 4555006371,Data 174,Data 761
+,Raj,  Johnson  ,raj63@company.net,506-679-0492,Data 308,  Data 365  
+Interested,Priya,  Wang  ,"pwang@company.net, alternate@hotmail.com",+44 4286 832407,Data 331,Data 501
+GOOD_LEAD_FOLLOW_UP,Alice,Li,,(213) 228-9763 / (329) 998-6917,Data 771,Data 975
+,Mohamed,Ali,mohamed.ali@company.net,(332) 915-2638,Data 738,Data 261
+,Diana,Smith,diana76@example.org,830-244-6355,  Data 578  ,Data 430
+Interested,Chen,  Doe  ,  chen.doe@hotmail.com  ,  581-264-1963  ,  Data 395  ,Data 783
+Call back later,  CHEN  ,Kumar,  CHEN.KUMAR@HOTMAIL.COM  ,2805502725,Data 519,Data 169
+BAD_LEAD,Priya,Hassan,    ,746.541.2556,Data 232,Data 931
+Call back later,Priya,Doe,priya.doe@company.net,7054104189,  Data 468  ,Data 420
+SALE_DONE,Bob,Doe,bob.doe@company.net,362.730.9074,Data 242,Data 201
+,Alice,Johnson,  ajohnson@yahoo.com  ,333-732-1289,Data 578,Data 830
+,BOB,  Li  ,bli@hotmail.com,+1 (079) 814-9209 / +1 (728) 717-0645,Data 796,  Data 267  
+Junk,Priya,Brown,    ,992-873-2412,Data 465,Data 119
+DID_NOT_CONNECT,WEI,  Hassan  ,  wei48@gmail.com  ,+44 8485 230786,  Data 877  ,  Data 977  
+Interested,Bob,,bob.li@company.net,933-023-5341,Data 770,Data 570
+BAD_LEAD,Chen,Patel,chen95@hotmail.com,500-290-1964,Data 165,Data 279
+Interested,Diana,Hassan,  diana.hassan@example.org  ,793.474.1823 / +1 (898) 146-5622,Data 877,Data 955
+Call back later,  Diana  ,  Li  ,,  +44 4665 019742  ,Data 939,Data 306
+  DID_NOT_CONNECT  ,Mohamed,,mohamed.smith@yahoo.com,  (977) 210-5928  ,Data 645,Data 518
+Call back later,  Chen  ,  Martinez  ,chen46@example.org,  +44 0721 428788  ,  Data 994  ,Data 772
+GOOD_LEAD_FOLLOW_UP,Raj,Johnson,  rjohnson@yahoo.com  ,064.421.0510,Data 747,Data 461
+  Interested  ,  Wei  ,Hassan,wei.hassan@hotmail.com,556-773-7576,  Data 941  ,Data 395
+Call back later,Priya,Hassan,  priya.hassan@company.net  ,(855) 969-2974,Data 351,Data 726
+Call back later,Jane,Wang,  jane61@yahoo.com  ,+1 (332) 916-7431,Data 264,Data 692
+BAD_LEAD,Chen,Ali,cali@yahoo.com,  +1 (569) 034-7783 / 8958606640  ,Data 945,Data 152
+GOOD_LEAD_FOLLOW_UP,Diana,DOE,diana.doe@example.org,  +44 5891 122770  ,Data 434,Data 126
+BAD_LEAD,Alice,Brown,alice26@example.org,948.253.5274,  Data 804  ,Data 944
+Interested,Fatima,Li,fatima56@company.net,(763) 525-6920 / +44 0572 385372,  Data 453  ,Data 856

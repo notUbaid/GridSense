@@ -1,0 +1,48 @@
+Student Name,Email Address,Phone,Course Interest,Lead Source
+Priya Patel,priya84@gmail.com,+1 (406) 402-3197,Data 538,  BAD_LEAD  
+John Patel,jpatel@gmail.com,(356) 953-1440 / (596) 901-4424,  Data 783  ,Call back later
+CHARLIE MARTINEZ,  charlie22@company.net  ,  585-579-5718  ,Data 883,Junk
+Wei Li,wei.li@example.org,2238467728,  Data 629  ,  GOOD_LEAD_FOLLOW_UP  
+Bob Ali,bali@company.net,  +1 (753) 051-8696  ,Data 112,  Interested  
+  Chen Li  ,chen.li@yahoo.com,  +44 0587 983886  ,Data 317,GOOD_LEAD_FOLLOW_UP
+Alice Kumar,  alice36@gmail.com  ,+44 2321 770419,Data 864,GOOD_LEAD_FOLLOW_UP
+Mohamed Garcia,    ,861.021.1113,Data 737,Junk
+  Fatima Smith  ,  fatima.smith@company.net  ,499-967-2243,  Data 135  ,  Junk  
+John Kumar,  john.kumar@gmail.com  ,1444629588,  Data 827  ,DID_NOT_CONNECT
+Mohamed Hassan,  mohamed.hassan@yahoo.com  ,  6970394688  ,Data 712,
+John Smith,john.smith@yahoo.com,1607553898,  Data 861  ,SALE_DONE
+Diana Smith,diana.smith@yahoo.com,+44 8218 185896,  Data 507  ,Junk
+Wei Li,wli@company.net,541-202-3347,Data 179,  GOOD_LEAD_FOLLOW_UP  
+Alice Garcia,  alice.garcia@hotmail.com  ,2609771702,Data 213,DID_NOT_CONNECT
+Wei Martinez,,401-133-3668,  Data 377  ,BAD_LEAD
+Fatima Johnson,    ,162-953-0569,  Data 872  ,  BAD_LEAD  
+Alice Li,  alice.li@yahoo.com  ,  188.002.2363  ,Data 898,  DID_NOT_CONNECT  
+  Diana Brown  ,diana61@yahoo.com,681.546.1657,DATA 647,GOOD_LEAD_FOLLOW_UP
+  Jane Johnson  ,jane56@gmail.com,  175.383.7034  ,Data 857,SALE_DONE
+Priya Johnson,pjohnson@company.net,978-293-2274,Data 466,Interested
+Mohamed Martinez,mohamed31@gmail.com,(074) 217-2864 / 267.752.3603,Data 661,Call back later
+  Charlie Doe  ,  charlie.doe@company.net  ,+1 (683) 516-4885 / +44 8645 017653,Data 723,Call back later
+Bob Martinez,"bmartinez@company.net, alternate@example.org",  6053883807  ,  Data 516  ,  SALE_DONE  
+Charlie Doe,  cdoe@hotmail.com  ,897-422-9635,DATA 696,Junk
+  Bob Hassan  ,bob.hassan@gmail.com,+1 (269) 965-1539,DATA 840,Call back later
+Wei Hassan,whassan@yahoo.com,  392-826-5149  ,Data 443,SALE_DONE
+Chen Ali,    chen.ali@company.net    ,+44 7688 562410,Data 808,BAD_LEAD
+Alice Johnson,  ALICE.JOHNSON@COMPANY.NET  ,513.646.9579,  Data 252  ,SALE_DONE
+  Diana Martinez  ,  DIANA.MARTINEZ@EXAMPLE.ORG  ,  +1 (914) 206-5713  ,Data 570,Junk
+John Wang,john.wang@company.net,2390657645,Data 452,Interested
+Alice Smith,alice67@example.org,  309.892.8708  ,Data 188,Call back later
+DIANA PATEL,diana53@example.org,278-842-1339,Data 323,BAD_LEAD
+Mohamed Li,  mli@hotmail.com  ,  1530742478  ,Data 806,  Interested  
+Bob Smith,  bob.smith@company.net  ,+44 4354 155277 / 9911812831,Data 479,
+Jane Smith,jane.smith@example.org,  5458466129  ,Data 889,  BAD_LEAD  
+Fatima Wang,    fatima.wang@gmail.com    ,  (842) 070-8591  ,Data 202,
+Diana Ali,  diana.ali@company.net  ,7915527828,Data 709,Interested
+  Bob Hassan  ,  bob.hassan@company.net  ,1925756399,DATA 433,
+Fatima Smith,  fatima.smith@gmail.com  ,7454962678,Data 167,GOOD_LEAD_FOLLOW_UP
+Chen Smith,    chen.smith@example.org    ,+44 5760 279965,Data 209,DID_NOT_CONNECT
+Raj Brown,raj.brown@hotmail.com,547-939-5999,Data 241,DID_NOT_CONNECT
+Raj Wang,  raj.wang@hotmail.com  ,1732379265,Data 616,  GOOD_LEAD_FOLLOW_UP  
+Alice Patel,,(191) 199-3526,Data 906,GOOD_LEAD_FOLLOW_UP
+Jane Patel,jane65@yahoo.com,872.605.5966 / 3527185372,Data 722,BAD_LEAD
+Bob Garcia,,713.802.7925,Data 849,Call back later
+Charlie Hassan,chassan@hotmail.com,104.802.1758,Data 912,Call back later

@@ -1,0 +1,52 @@
+Patient Name,Email,Phone,Department,Inquiry Status
+JOHN BROWN,  john.brown@example.org  ,+1 (549) 311-4154,Data 544,  SALE_DONE  
+Diana Hassan,dhassan@gmail.com,(659) 648-5145,Data 356,
+Chen Garcia,  chen.garcia@company.net  ,+44 7802 723927,Data 529,Interested
+  Raj Wang  ,rwang@gmail.com,0693933825,Data 198,
+Wei Johnson,wei.johnson@gmail.com,+1 (692) 502-6154,  Data 958  ,SALE_DONE
+,jane47@hotmail.com,+44 3527 454204,Data 671,
+Jane Li,  jane.li@company.net  ,232-508-2518,Data 905,
+Priya Hassan,phassan@yahoo.com,(812) 920-6677,Data 618,GOOD_LEAD_FOLLOW_UP
+  Mohamed Ali  ,mali@gmail.com,538.119.5697,  Data 394  ,Junk
+Bob Smith,  bob.smith@company.net  ,375.341.6220,Data 200,SALE_DONE
+Chen Garcia,chen10@example.org,+1 (693) 870-5491,Data 923,BAD_LEAD
+Charlie Martinez,charlie.martinez@yahoo.com,6790357924,Data 458,
+Charlie Brown,"  charlie.brown@yahoo.com  , alternate@yahoo.com",045.739.6764,Data 408,Interested
+Charlie Li,  charlie.li@hotmail.com  ,5970144960,Data 123,DID_NOT_CONNECT
+Charlie Brown,  charlie.brown@company.net  ,824-860-9504 / 2366998922,Data 483,BAD_LEAD
+FATIMA MARTINEZ,fatima.martinez@yahoo.com,6440050755 / 797-670-9285,Data 351,Call back later
+CHARLIE MARTINEZ,,(398) 098-5610,Data 450,Call back later
+  John Smith  ,john40@example.org,0955635776,Data 610,  BAD_LEAD  
+Charlie Kumar,  ckumar@gmail.com  ,+1 (970) 597-4953,Data 360,Call back later
+,fgarcia@example.org,+1 (331) 969-0266 / +1 (561) 524-9464,Data 777,
+Chen Wang,chen99@example.org,1259242290,Data 790,  Call back later  
+Raj Smith,rsmith@hotmail.com,+1 (781) 952-8768,,
+  John Patel  ,john.patel@example.org,8083245830,DATA 127,GOOD_LEAD_FOLLOW_UP
+Charlie Smith,csmith@hotmail.com,303.514.7211,  Data 923  ,  Junk  
+  Alice Smith  ,  asmith@hotmail.com  ,436-390-6987,Data 254,  DID_NOT_CONNECT  
+Diana Wang,,+44 8073 289271,Data 397,
+  Alice Johnson  ,"  alice.johnson@gmail.com  , alternate@gmail.com",9781925183,,  JUNK  
+Jane Li,jane48@yahoo.com,+1 (222) 662-2384,Data 334,Interested
+Charlie Martinez,    charlie.martinez@company.net    ,,Data 365,Call back later
+Alice Hassan,"alice21@hotmail.com, alternate@yahoo.com",+44 1126 252535,Data 712,GOOD_LEAD_FOLLOW_UP
+  Alice Johnson  ,  alice.johnson@gmail.com  ,+1 (549) 499-3057,Data 565,DID_NOT_CONNECT
+Diana Hassan,  diana.hassan@yahoo.com  ,963.958.6945,  Data 718  ,Interested
+Charlie Smith,  csmith@yahoo.com  ,+44 3904 407863,Data 444,SALE_DONE
+Mohamed Wang,mohamed.wang@gmail.com,(650) 032-1443,DATA 767,
+Alice Smith,asmith@company.net,8879828026,Data 722,BAD_LEAD
+Priya Martinez,priya68@hotmail.com,(838) 279-5487,Data 609,
+,FDOE@EXAMPLE.ORG,5792631660,  Data 749  ,DID_NOT_CONNECT
+Raj Hassan,,(710) 581-8780,  Data 723  ,CALL BACK LATER
+Fatima Hassan,    fatima.hassan@company.net    ,+44 8896 982927,Data 666,BAD_LEAD
+Diana Ali,  diana.ali@example.org  ,+1 (013) 812-2721,  Data 499  ,BAD_LEAD
+  Chen Kumar  ,chen.kumar@example.org,+1 (520) 637-2409,Data 145,  Call back later  
+Charlie Li,charlie11@company.net,  +44 3273 401429  ,Data 578,
+Diana Ali,,129.474.3810,Data 470,Interested
+Bob Smith,bob60@gmail.com,721-630-0027,Data 891,BAD_LEAD
+Raj Ali,  raj27@hotmail.com  ,7461029509,Data 157,BAD_LEAD
+John Johnson,john.johnson@hotmail.com,+1 (093) 528-3071,Data 384,Call back later
+  Charlie Kumar  ,charlie.kumar@company.net,  648-971-3203  ,Data 995,
+Mohamed Doe,"mohamed7@hotmail.com, alternate@company.net",+1 (145) 310-0015,Data 314,SALE_DONE
+Bob Johnson,", alternate@yahoo.com",+1 (885) 779-7728,Data 429,SALE_DONE
+  Priya Patel  ,ppatel@hotmail.com,0810993327,Data 951,Junk
+Priya Hassan,  priya.hassan@yahoo.com  ,+44 7744 939201,Data 340,
