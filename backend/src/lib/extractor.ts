@@ -31,9 +31,7 @@ function getGeminiClient() {
   return genAI;
 }
 
-const responseSchema = z.object({
-  records: z.array(CrmRecordSchema),
-});
+
 
 const LlmRecordSchema = CrmRecordSchema.omit({ 
   email: true, 
