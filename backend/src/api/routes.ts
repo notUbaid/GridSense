@@ -39,7 +39,7 @@ router.post('/batch', async (req: Request, res: Response): Promise<void> => {
       ? 'Rate limit exceeded for AI Provider' 
       : (error.message || 'An unexpected error occurred during processing');
 
-    logger.error({ batchId, err: error.message, statusCode }, 'Batch processing failed');
+    logger.error({ batchId, err: error.message, stack: error.stack, statusCode }, 'Batch processing failed');
     res.status(statusCode).json({
       batchId,
       status: 'error',

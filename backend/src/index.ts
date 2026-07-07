@@ -38,4 +38,4 @@ if (!isServerless && (require.main === module || process.env.NODE_ENV !== 'produ
   });
 }
 
-export default app;
+module.exports = app;

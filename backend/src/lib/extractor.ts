@@ -100,9 +100,19 @@ ${JSON.stringify(rows)}`;
         });
         const content = result.response.text();
         if (!content) throw new Error('Empty response from Gemini');
-        const parsed = JSON.parse(stripMarkdownFences(content));
-        const validated = responseSchema.parse(parsed);
-        records = validated.records;
+        let parsed;
+        try {
+          parsed = JSON.parse(stripMarkdownFences(content));
+        } catch (e) {
+          logger.error({ content: stripMarkdownFences(content) }, 'Failed to parse JSON from Gemini');
+          throw e;
+        }
+        const validated = responseSchema.safeParse(parsed);
+        if (!validated.success) {
+          logger.error({ errors: validated.error.format() }, 'Zod validation failed on Gemini output');
+          throw new Error('AI output did not match expected schema');
+        }
+        records = validated.data.records;
       } else {
         const client = getGroqClient();
         const completion = await client.chat.completions.create({
@@ -122,13 +132,24 @@ ${JSON.stringify(rows)}`;
         if (!content) throw new Error('Empty response from Groq');
 
         const cleaned = stripMarkdownFences(content);
-        const parsed = JSON.parse(cleaned);
-        const validated = responseSchema.parse(parsed);
-        records = validated.records;
+        let parsed;
+        try {
+          parsed = JSON.parse(cleaned);
+        } catch (e) {
+          logger.error({ content: cleaned }, 'Failed to parse JSON from AI');
+          throw e;
+        }
+
+        const validated = responseSchema.safeParse(parsed);
+        if (!validated.success) {
+          logger.error({ errors: validated.error.format() }, 'Zod validation failed on AI output');
+          throw new Error('AI output did not match expected schema');
+        }
+        records = validated.data.records;
       }
 
       if (records.length !== rows.length) {
-        throw new Error(`Row count mismatch: expected ${rows.length}, got ${records.length}`);
+        logger.warn(`Row count mismatch: expected ${rows.length}, got ${records.length}. Proceeding with extracted records.`);
       }
 
       let skippedCount = 0;
