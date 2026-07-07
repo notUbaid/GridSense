@@ -72,8 +72,9 @@ function normalizeAndValidate(record: any): CrmRecord {
     let phoneStr = String(norm.mobile_without_country_code).trim();
     
     // Fix scientific notation if it slipped through (e.g. 9.19876e+11 -> 919876000000)
-    if (/^\d+\.?\d*e\+\d+$/i.test(phoneStr)) {
+    if (/^\d+\.?\d*e[+-]?\d+$/i.test(phoneStr)) {
       try {
+        // Use Number() to convert scientific string, then format as fixed string without exponent
         phoneStr = BigInt(Math.round(Number(phoneStr))).toString();
       } catch {
         // Ignore parsing errors
@@ -210,7 +211,10 @@ export async function processBatch(
       const extraNotes: string[] = [];
 
       for (const map of schemaMapping) {
-        if (map.confidence && map.confidence < 70) continue;
+        const conf = Number(map.confidence);
+        if (!isNaN(conf) && conf < 70) continue;
+        if (!map.target) continue;
+        
         const val = original[map.source];
         if (val && val.trim() !== '') {
           record[map.target] = val.trim();
@@ -306,8 +310,8 @@ CRITICAL RULES:
 - DO NOT dump irrelevant columns (e.g., "Campaign", "Ad Set", random IDs, or random garbage) into "crm_note".
 - If a value in the input is completely empty, ignore it entirely and do not include its column name in the notes.
 - Combine first name + last name into a single "name" field. If the name is explicitly missing or empty, you MAY infer it from the email address if the email clearly contains a person's name (e.g., john.doe@... -> John Doe).
-- If a row contains secondary emails or extra phone numbers, you MUST explicitly write them into the "crm_note" field (e.g., "Extra email: example@test.com").
-- You MUST return exactly ${aiRows.length} objects in the "records" array — one per input row.
+- Primary Email and Phone numbers have ALREADY been extracted. If you see any additional or secondary emails/phones in the input, you MUST append them to the "crm_note" field. Do NOT output 'email' or 'mobile_without_country_code' fields.
+- You should return exactly ${aiRows.length} objects in the "records" array — one per input row.
 - Output ONLY valid JSON matching the schema. No markdown, no explanation.
 
 JSON Schema:
@@ -354,9 +358,7 @@ ${JSON.stringify(aiRows)}`;
           }
           
           parsed = salvageExtractorJson(parsed);
-          if (parsed?.records && Array.isArray(parsed.records) && parsed.records.length !== aiRows.length) {
-            throw new Error(`AI returned ${parsed.records.length} records, expected ${aiRows.length}`);
-          }
+
 
           const validated = llmResponseSchema.safeParse(parsed);
           if (!validated.success) {
@@ -393,9 +395,7 @@ ${JSON.stringify(aiRows)}`;
           }
 
           parsed = salvageExtractorJson(parsed);
-          if (parsed?.records && Array.isArray(parsed.records) && parsed.records.length !== aiRows.length) {
-            throw new Error(`AI returned ${parsed.records.length} records, expected ${aiRows.length}`);
-          }
+
 
           const validated = llmResponseSchema.safeParse(parsed);
           if (!validated.success) {

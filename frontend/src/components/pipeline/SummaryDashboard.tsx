@@ -178,12 +178,12 @@ export function SummaryDashboard({ state, metrics, records, skippedRawRows, fail
                   <DialogTrigger className="inline-flex outline-none hover:bg-muted p-1 rounded transition-colors">
                     <span className="text-[10px] uppercase font-bold tracking-wider text-muted-foreground/80">View Details</span>
                   </DialogTrigger>
-                  <DialogContent className="max-w-2xl max-h-[80vh] flex flex-col">
+                  <DialogContent className="max-w-2xl max-h-[85vh] flex flex-col">
                     <DialogHeader>
                       <DialogTitle>Skipped Rows Inspector</DialogTitle>
                       <DialogDescription>Review the exact rows that were skipped during processing.</DialogDescription>
                     </DialogHeader>
-                    <ScrollArea className="flex-1 min-h-[300px] mt-4 rounded-md border p-4">
+                    <ScrollArea className="h-[50vh] mt-4 rounded-md border p-4">
                       {skippedRawRows.length > 0 ? (
                         <div className="space-y-4">
                           {skippedRawRows.map((row, idx) => (
@@ -230,12 +230,12 @@ export function SummaryDashboard({ state, metrics, records, skippedRawRows, fail
                   <DialogTrigger className="inline-flex outline-none hover:bg-muted p-1 rounded transition-colors">
                     <span className="text-[10px] uppercase font-bold tracking-wider text-muted-foreground/80">View Details</span>
                   </DialogTrigger>
-                  <DialogContent className="max-w-2xl max-h-[80vh] flex flex-col">
+                  <DialogContent className="max-w-2xl max-h-[85vh] flex flex-col">
                     <DialogHeader>
                       <DialogTitle>Failed Rows Inspector</DialogTitle>
                       <DialogDescription>Review the exact rows that failed during API extraction.</DialogDescription>
                     </DialogHeader>
-                    <ScrollArea className="flex-1 min-h-[300px] mt-4 rounded-md border p-4">
+                    <ScrollArea className="h-[50vh] mt-4 rounded-md border p-4">
                       {failedRawRows.length > 0 ? (
                         <div className="space-y-4">
                           {failedRawRows.map((row, idx) => (

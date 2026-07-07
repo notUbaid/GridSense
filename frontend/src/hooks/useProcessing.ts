@@ -62,6 +62,9 @@ export function useProcessing() {
     failReasons: {}
   });
 
+  // Reference for full parsed data to prevent React state bloat
+  const parsedDataRef = useRef<{ headers: string[], rows: Record<string, string>[] } | null>(null);
+
   // Ref to track and clean up the timer interval on unmount/reset
   const timerRef = useRef<ReturnType<typeof setInterval> | null>(null);
 
@@ -91,6 +94,7 @@ export function useProcessing() {
     setElapsedMs(0);
     setEtaMs(null);
     setMetrics({ totalRows: 0, successfulRows: 0, skippedRows: 0, failedRows: 0, failedBatches: 0, processingTimeMs: 0, skipReasons: {}, failReasons: {} });
+    parsedDataRef.current = null;
 
     Papa.parse<Record<string, string>>(file, {
       header: true,
@@ -130,7 +134,9 @@ export function useProcessing() {
         }
 
         const sanitizedData = sanitizeRows(rows);
-        setPreviewData({ headers, rows: sanitizedData });
+        parsedDataRef.current = { headers, rows: sanitizedData };
+        // Only keep the first 500 rows in React state to avoid memory bloat
+        setPreviewData({ headers, rows: sanitizedData.slice(0, 500) });
         setState('preview');
         toast.success(`Successfully parsed ${sanitizedData.length} rows.`);
       },
@@ -144,12 +150,13 @@ export function useProcessing() {
   }, []);
 
   const startProcessing = useCallback(async () => {
-    if (!previewData) return;
+    const fullData = parsedDataRef.current;
+    if (!previewData || !fullData) return;
     
     setState('processing');
-    toast.info(`Starting AI extraction for ${previewData.rows.length} records...`);
+    toast.info(`Starting AI extraction for ${fullData.rows.length} records...`);
 
-    const { headers, rows: sanitizedData } = previewData;
+    const { headers, rows: sanitizedData } = fullData;
 
     // Pre-flight heuristic filtering & Deduplication
     const validRows: Record<string, string>[] = [];
@@ -227,24 +234,21 @@ export function useProcessing() {
       const elapsed = now - startTime;
       setElapsedMs(elapsed);
       
+      // Sync records periodically to avoid O(N^2) state updates per batch
+      setRecords(localChunkResults.filter(Boolean).flat());
+
       if (completedBatches > 0) {
         const msPerBatch = elapsed / completedBatches;
         const remainingBatches = totalBatches - completedBatches;
-        setEtaMs(msPerBatch * remainingBatches);
+        // Smooth ETA slightly
+        setEtaMs(prev => prev === null ? msPerBatch * remainingBatches : (prev * 0.7 + msPerBatch * remainingBatches * 0.3));
       }
     }, 1000);
 
-    // Provider assignment: Each task gets a provider when dequeued, eliminating
-    // the race condition where concurrent workers mutated a shared provider variable.
+    // Provider assignment
     let nextProvider: 'groq' | 'gemini' = 'groq';
-    let rowsSinceSwitch = 0;
 
-    const getNextProvider = (batchSize: number): 'groq' | 'gemini' => {
-      if (rowsSinceSwitch >= 100) {
-        nextProvider = nextProvider === 'groq' ? 'gemini' : 'groq';
-        rowsSinceSwitch = 0;
-      }
-      rowsSinceSwitch += batchSize;
+    const getNextProvider = (): 'groq' | 'gemini' => {
       return nextProvider;
     };
 
@@ -254,7 +258,7 @@ export function useProcessing() {
         if (!task) break;
 
         // Assign provider at dequeue time (synchronized via single-threaded JS event loop)
-        const taskProvider = getNextProvider(task.batch.length);
+        const taskProvider = getNextProvider();
         
         setCurrentActivity(`Mapping fields for rows ${task.index * effectiveBatchSize + 1} to ${Math.min((task.index + 1) * effectiveBatchSize, validRows.length)}...`);
         
@@ -271,7 +275,7 @@ export function useProcessing() {
           if (response.status === 'success' || response.status === 'partial') {
             if (response.records) {
               localChunkResults[task.index] = response.records;
-              setRecords(localChunkResults.filter(Boolean).flat());
+              // setRecords is now handled in the 1-second interval
               localSuccessfulRows += response.records.length;
             }
             if (response.skippedCount) {
@@ -297,7 +301,6 @@ export function useProcessing() {
             if (exhaustedProvider === 'groq') {
               if (nextProvider === 'groq') {
                 nextProvider = 'gemini';
-                rowsSinceSwitch = 0;
                 toast.info(`Groq free limit reached. Switching to Gemini backup...`);
                 setCurrentActivity(`Switching AI engine to Gemini...`);
                 await new Promise(r => setTimeout(r, 1500));
@@ -308,10 +311,9 @@ export function useProcessing() {
               requeued = true;
               continue;
             } else {
-              setCurrentActivity(`API limits reached across all providers. Sleeping for 60s before resuming...`);
-              await new Promise(r => setTimeout(r, 60000));
-              nextProvider = 'groq';
-              rowsSinceSwitch = 0;
+              setCurrentActivity(`API limits reached across all providers. Sleeping for 15s before resuming...`);
+              await new Promise(r => setTimeout(r, 15000));
+              nextProvider = 'groq'; // Try groq again after sleeping
               queue.unshift(task);
               requeued = true;
               continue;
@@ -342,6 +344,10 @@ export function useProcessing() {
 
     await Promise.allSettled(workers);
     clearTimer();
+    
+    // Final sync of records
+    setRecords(localChunkResults.filter(Boolean).flat());
+    
     setCurrentActivity('Finalizing extraction...');
 
     // Track abandoned rows left in the queue due to a hard abort
@@ -398,6 +404,7 @@ export function useProcessing() {
     setSkippedRawRows([]);
     setFailedRawRows([]);
     setPreviewData(null);
+    parsedDataRef.current = null;
     setError(null);
     setCurrentActivity('Idle');
     setElapsedMs(0);

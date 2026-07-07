@@ -28,8 +28,8 @@ export const ProcessBatchRequestSchema = z.object({
   provider: z.enum(['groq', 'gemini']).optional().default('groq'),
   schemaMapping: z.array(z.object({
     source: z.string(),
-    target: z.string(),
-    confidence: z.number().optional()
+    target: z.string().optional().nullable(),
+    confidence: z.any().optional()
   })).optional()
 });
 

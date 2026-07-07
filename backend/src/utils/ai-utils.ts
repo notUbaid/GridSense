@@ -51,8 +51,12 @@ export function salvageExtractorJson(parsed: any): any {
     for (const record of parsed.records) {
       if (typeof record === 'object' && record !== null) {
         for (const key of Object.keys(record)) {
-          if (record[key] === '') {
+          const val = record[key];
+          if (val === '') {
             record[key] = null;
+          } else if (typeof val === 'object' && val !== null) {
+            // Flatten hallucinated nested structures (e.g. { name: ["John", "Doe"] })
+            record[key] = Array.isArray(val) ? val.join(' ') : JSON.stringify(val);
           }
         }
 

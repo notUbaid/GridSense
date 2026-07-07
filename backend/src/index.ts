@@ -5,6 +5,7 @@ import express from 'express';
 import cors from 'cors';
 import helmet from 'helmet';
 import apiRoutes from './api/routes';
+import rateLimit from 'express-rate-limit';
 import { errorHandler } from './middleware/error.middleware';
 import logger from './utils/logger';
 
@@ -16,6 +17,13 @@ app.use(cors({
   origin: process.env.FRONTEND_URL || 'http://localhost:3000',
 }));
 app.use(express.json({ limit: '10mb' })); // Support larger payloads for batches
+
+const apiLimiter = rateLimit({
+  windowMs: 15 * 60 * 1000, // 15 minutes
+  max: 500, // Limit each IP to 500 requests per windowMs
+  message: 'Too many requests from this IP, please try again later.',
+});
+app.use('/api/', apiLimiter);
 
 // Routes
 app.use('/api/v1/process', apiRoutes);
