@@ -170,8 +170,17 @@ export function useProcessing() {
     }, 1000);
 
     let currentProvider: 'groq' | 'gemini' = 'groq';
+    let rowsProcessedOnCurrentProvider = 0;
     const processBatchQueue = async (queue: { batch: Record<string, string>[], index: number }[]) => {
       while (queue.length > 0) {
+        // Preemptive Load Balancing: Switch API after 100 rows to avoid rate limits
+        if (rowsProcessedOnCurrentProvider >= 100) {
+          currentProvider = currentProvider === 'groq' ? 'gemini' : 'groq';
+          rowsProcessedOnCurrentProvider = 0;
+          
+          setCurrentActivity(`Load balancing: Switching AI engine to ${currentProvider}...`);
+          await new Promise(r => setTimeout(r, 1000));
+        }
 
         const task = queue.shift();
         if (!task) break;
@@ -201,6 +210,7 @@ export function useProcessing() {
                 localSkipReasons[reason] = (localSkipReasons[reason] || 0) + count;
               }
             }
+            rowsProcessedOnCurrentProvider += task.batch.length;
           } else {
             const err = new Error(response.error || 'Batch failed without specific error');
             (err as Error & { exhaustedProvider?: string }).exhaustedProvider = response.exhaustedProvider;
@@ -216,6 +226,7 @@ export function useProcessing() {
             if (exhaustedProvider === 'groq') {
               if (currentProvider === 'groq') {
                 currentProvider = 'gemini';
+                rowsProcessedOnCurrentProvider = 0;
                 toast.info(`Groq free limit reached. Thoughtfully switching to Gemini backup...`);
                 setCurrentActivity(`Switching AI engine to Gemini...`);
                 await new Promise(r => setTimeout(r, 1500));
@@ -230,6 +241,7 @@ export function useProcessing() {
               setCurrentActivity(`API limits reached across all keys. Sleeping for 60s before resuming...`);
               await new Promise(r => setTimeout(r, 60000));
               currentProvider = 'groq';
+              rowsProcessedOnCurrentProvider = 0;
               queue.unshift(task); // Save progress
               requeued = true;
               continue;
