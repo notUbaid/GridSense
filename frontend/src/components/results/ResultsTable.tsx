@@ -58,7 +58,7 @@ export function ResultsTable({ data }: ResultsTableProps) {
       {
         id: 'actions',
         header: '',
-        cell: ({ row }) => (
+        cell: ({ row }: { row: { original: CrmRecord } }) => (
           <Button 
             variant="ghost" 
             size="icon" 
