@@ -1,5 +1,8 @@
 import { useState, useCallback } from 'react';
 import Papa from 'papaparse';
+
+const DIGIT_REGEX = /\d/g;
+
 import { processBatchApi } from '../services/api';
 import { CrmRecord } from '../types/schema';
 import { toast } from 'sonner';
@@ -57,6 +60,7 @@ export function useProcessing() {
     Papa.parse<Record<string, string>>(file, {
       header: true,
       skipEmptyLines: true,
+      worker: true,
       complete: async (results) => {
         const headers = results.meta.fields || [];
         const rows = results.data;
@@ -117,11 +121,11 @@ export function useProcessing() {
     const localSkipReasons: Record<string, number> = {};
 
     for (const row of sanitizedData) {
-      const rowStr = JSON.stringify(row).toLowerCase();
+      const rowVals = Object.values(row).join(' ').toLowerCase();
       // Heuristic: Must contain '@' (email) or at least 7 digits *total* across the row (potential phone)
       // Nightmare CSVs might have phones like "+1 (555) 123-4567" which breaks consecutive digit checks.
-      const totalDigits = (rowStr.match(/\d/g) || []).length;
-      const hasBasicContactInfo = rowStr.includes('@') || totalDigits >= 7;
+      const totalDigits = (rowVals.match(DIGIT_REGEX) || []).length;
+      const hasBasicContactInfo = rowVals.includes('@') || totalDigits >= 7;
       
       if (!hasBasicContactInfo) {
         localSkippedRaw.push(row);

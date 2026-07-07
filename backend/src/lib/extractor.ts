@@ -112,6 +112,12 @@ function normalizeAndValidate(record: any): CrmRecord {
   return norm as CrmRecord;
 }
 
+const EMAIL_REGEX = /[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}/;
+const PHONE_FORMAT_REGEX = /^[\s\d()+-]{7,30}$/;
+const PHONE_EMBEDDED_REGEX = /(?:\+?\d{1,4}[\s.-]*)?\(?\d{2,4}\)?[\s.-]*\d{3,4}[\s.-]*\d{4}/;
+const DATE_FORMAT_REGEX = /\b(?:19|20)\d{2}[-/]\d{1,2}[-/]\d{1,2}\b|\b\d{1,2}[-/]\d{1,2}[-/](?:19|20)\d{2}\b/;
+const DIGIT_REGEX = /\d/g;
+
 export async function processBatch(
   headers: string[], 
   rows: Record<string, string>[],
@@ -141,7 +147,7 @@ export async function processBatch(
       if (!value) continue;
 
       if (!email) {
-        const match = value.match(/[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}/);
+        const match = value.match(EMAIL_REGEX);
         if (match) {
           email = match[0];
           value = value.replace(match[0], '').trim();
@@ -149,15 +155,15 @@ export async function processBatch(
       }
 
       if (!mobile_without_country_code) {
-        const digitCount = (value.match(/\d/g) || []).length;
+        const digitCount = (value.match(DIGIT_REGEX) || []).length;
         if (digitCount >= 7) {
           // If the value is purely a phone number format
-          if (/^[\s\d()+-]{7,30}$/.test(value)) {
+          if (PHONE_FORMAT_REGEX.test(value)) {
             mobile_without_country_code = value.trim();
             value = '';
           } else {
             // Try to extract a standard phone number embedded in text
-            const match = value.match(/(?:\+?\d{1,4}[\s.-]*)?\(?\d{2,4}\)?[\s.-]*\d{3,4}[\s.-]*\d{4}/);
+            const match = value.match(PHONE_EMBEDDED_REGEX);
             if (match) {
               mobile_without_country_code = match[0];
               value = value.replace(match[0], '').trim();
@@ -167,7 +173,7 @@ export async function processBatch(
       }
 
       if (!created_at) {
-        const match = value.match(/\b(?:19|20)\d{2}[-/]\d{1,2}[-/]\d{1,2}\b|\b\d{1,2}[-/]\d{1,2}[-/](?:19|20)\d{2}\b/);
+        const match = value.match(DATE_FORMAT_REGEX);
         if (match) {
           const d = new Date(match[0]);
           if (!isNaN(d.getTime())) {

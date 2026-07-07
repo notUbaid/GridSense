@@ -2,8 +2,10 @@ import React from 'react';
 import { cn } from '@/lib/utils';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
-import { ResultsTable } from '@/components/results/ResultsTable';
+import dynamic from 'next/dynamic';
 import { motion, Variants, useSpring, useTransform } from 'framer-motion';
+
+const ResultsTable = dynamic(() => import('@/components/results/ResultsTable').then(mod => mod.ResultsTable), { ssr: false });
 import { useEffect } from 'react';
 import { AlertCircle, FileCheck2, Info } from 'lucide-react';
 import { ProcessMetrics, ProcessState } from '@/hooks/useProcessing';
