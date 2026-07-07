@@ -35,6 +35,7 @@ interface SummaryDashboardProps {
   metrics: ProcessMetrics;
   records: CrmRecord[];
   skippedRawRows: Record<string, string>[];
+  failedRawRows: Record<string, string>[];
   onReset: () => void;
 }
 
@@ -49,7 +50,7 @@ function AnimatedCounter({ value }: { value: number }) {
   return <motion.span>{display}</motion.span>;
 }
 
-export function SummaryDashboard({ state, metrics, records, skippedRawRows, onReset }: SummaryDashboardProps) {
+export function SummaryDashboard({ state, metrics, records, skippedRawRows, failedRawRows, onReset }: SummaryDashboardProps) {
   const isPartial = state === 'partial_success';
 
   const handleExportSkipped = () => {
@@ -60,6 +61,19 @@ export function SummaryDashboard({ state, metrics, records, skippedRawRows, onRe
     const link = document.createElement('a');
     link.href = url;
     link.setAttribute('download', `skipped_rows_${Date.now()}.csv`);
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+  };
+
+  const handleExportFailed = () => {
+    if (failedRawRows.length === 0) return;
+    const csv = Papa.unparse(failedRawRows);
+    const blob = new Blob([csv], { type: 'text/csv;charset=utf-8;' });
+    const url = URL.createObjectURL(blob);
+    const link = document.createElement('a');
+    link.href = url;
+    link.setAttribute('download', `failed_rows_${Date.now()}.csv`);
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);
@@ -93,6 +107,13 @@ export function SummaryDashboard({ state, metrics, records, skippedRawRows, onRe
                 <motion.div whileHover={{ scale: 1.02 }} whileTap={{ scale: 0.98 }}>
                   <Button onClick={handleExportSkipped} variant="secondary">
                     Export Skipped
+                  </Button>
+                </motion.div>
+              )}
+              {metrics.failedRows > 0 && failedRawRows.length > 0 && (
+                <motion.div whileHover={{ scale: 1.02 }} whileTap={{ scale: 0.98 }}>
+                  <Button onClick={handleExportFailed} variant="destructive" className="bg-destructive/10 text-destructive hover:bg-destructive/20 border border-destructive/20">
+                    Export Failed
                   </Button>
                 </motion.div>
               )}

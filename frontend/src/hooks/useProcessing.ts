@@ -22,6 +22,7 @@ export function useProcessing() {
   const [progress, setProgress] = useState(0);
   const [records, setRecords] = useState<CrmRecord[]>([]);
   const [skippedRawRows, setSkippedRawRows] = useState<Record<string, string>[]>([]);
+  const [failedRawRows, setFailedRawRows] = useState<Record<string, string>[]>([]);
   const [previewData, setPreviewData] = useState<{ headers: string[], rows: Record<string, string>[] } | null>(null);
   const [error, setError] = useState<string | null>(null);
   const [currentActivity, setCurrentActivity] = useState<string>('Idle');
@@ -162,6 +163,7 @@ export function useProcessing() {
     const totalBatches = batches.length;
     let localFailedBatches = 0;
     let localFailedRows = 0;
+    let localFailedRaw: Record<string, string>[] = [];
     let localFailReasons: Record<string, number> = {};
     let localSuccessfulRows = 0;
     let localSkippedRows = localSkippedRaw.length;
@@ -248,6 +250,7 @@ export function useProcessing() {
           } else {
             localFailedBatches++;
             localFailedRows += task.batch.length;
+            localFailedRaw.push(...task.batch);
             localFailReasons[backendError] = (localFailReasons[backendError] || 0) + task.batch.length;
             
             if (localFailedBatches <= 3) {
@@ -277,10 +280,13 @@ export function useProcessing() {
       let abandonedRowsCount = 0;
       for (const task of queue) {
         abandonedRowsCount += task.batch.length;
+        localFailedRaw.push(...task.batch);
       }
       localFailedRows += abandonedRowsCount;
       localFailReasons['Pipeline Aborted (API Limits Exceeded)'] = (localFailReasons['Pipeline Aborted (API Limits Exceeded)'] || 0) + abandonedRowsCount;
     }
+
+    setFailedRawRows(localFailedRaw);
 
     setMetrics(prev => ({
       ...prev,
@@ -307,6 +313,7 @@ export function useProcessing() {
     progress,
     records,
     skippedRawRows,
+    failedRawRows,
     previewData,
     metrics,
     error,
@@ -320,6 +327,7 @@ export function useProcessing() {
       setProgress(0);
       setRecords([]);
       setSkippedRawRows([]);
+      setFailedRawRows([]);
       setPreviewData(null);
       setError(null);
       setCurrentActivity('Idle');

@@ -13,7 +13,7 @@ import { SummaryDashboard } from '@/components/pipeline/SummaryDashboard';
 import { motion, AnimatePresence } from 'framer-motion';
 
 export default function Home() {
-  const { state, progress, records, skippedRawRows, previewData, metrics, error, currentActivity, elapsedMs, etaMs, processFile, startProcessing, reset } = useProcessing();
+  const { state, progress, records, skippedRawRows, failedRawRows, previewData, metrics, error, currentActivity, elapsedMs, etaMs, processFile, startProcessing, reset } = useProcessing();
 
   return (
     <main className="relative min-h-screen bg-background text-foreground p-4 sm:p-6 md:p-12 overflow-hidden selection:bg-primary/20">
@@ -142,6 +142,7 @@ export default function Home() {
                   metrics={metrics} 
                   records={records} 
                   skippedRawRows={skippedRawRows}
+                  failedRawRows={failedRawRows}
                   onReset={reset} 
                 />
               </motion.div>
