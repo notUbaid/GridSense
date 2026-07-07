@@ -98,19 +98,7 @@ function normalizeAndValidate(record: any, originalRow?: Record<string, string>)
     }
   }
 
-  // 4. CRM Status Dictionary Fallback
-  if (!norm.crm_status && originalRow) {
-    const rowString = JSON.stringify(originalRow).toLowerCase();
-    if (rowString.includes('not interested') || rowString.includes('junk') || rowString.includes('spam')) {
-      norm.crm_status = 'BAD_LEAD';
-    } else if (rowString.includes('interested') || rowString.includes('call back later') || rowString.includes('follow up')) {
-      norm.crm_status = 'GOOD_LEAD_FOLLOW_UP';
-    } else if (rowString.includes('won') || rowString.includes('closed')) {
-      norm.crm_status = 'SALE_DONE';
-    } else if (rowString.includes('did not connect')) {
-      norm.crm_status = 'DID_NOT_CONNECT';
-    }
-  }
+
 
   return norm as CrmRecord;
 }
