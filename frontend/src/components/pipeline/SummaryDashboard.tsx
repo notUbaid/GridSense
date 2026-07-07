@@ -111,11 +111,18 @@ export function SummaryDashboard({ state, metrics, records, skippedRawRows, fail
                 </motion.div>
               )}
               {metrics.failedRows > 0 && failedRawRows.length > 0 && (
-                <motion.div whileHover={{ scale: 1.02 }} whileTap={{ scale: 0.98 }}>
-                  <Button onClick={handleExportFailed} variant="destructive" className="bg-destructive/10 text-destructive hover:bg-destructive/20 border border-destructive/20">
-                    Export Failed
-                  </Button>
-                </motion.div>
+                <Tooltip>
+                  <TooltipTrigger className="inline-flex outline-none">
+                    <motion.div whileHover={{ scale: 1.02 }} whileTap={{ scale: 0.98 }}>
+                      <Button onClick={handleExportFailed} variant="destructive" className="bg-destructive/10 text-destructive hover:bg-destructive/20 border border-destructive/20">
+                        Export Failed
+                      </Button>
+                    </motion.div>
+                  </TooltipTrigger>
+                  <TooltipContent side="bottom" className="max-w-[200px] text-xs text-center">
+                    <p>Download the unprocessed rows to easily re-upload them later.</p>
+                  </TooltipContent>
+                </Tooltip>
               )}
               <motion.div whileHover={{ scale: 1.02 }} whileTap={{ scale: 0.98 }}>
                 <Button onClick={onReset} variant="outline">Upload Another File</Button>
