@@ -62,7 +62,8 @@ RULES:
 - If multiple phone numbers exist, use the first as "mobile_without_country_code" and append the rest to "crm_note".
 - "crm_status" MUST be exactly one of: GOOD_LEAD_FOLLOW_UP, DID_NOT_CONNECT, BAD_LEAD, SALE_DONE — or null.
 - "data_source" MUST be exactly one of: leads_on_demand, meridian_tower, eden_park, varah_swamy, sarjapur_plots — or null.
-- IMPORTANT: DO NOT LOSE ANY DATA. If the row contains columns or information (like Campaign, Ad Set, extra IDs, or random text) that do not map to any standard CRM field, you MUST append all of that extra unmapped data into the "crm_note" field.
+- OUT-OF-SYLLABUS DATA: If a row is completely irrelevant to CRM leads (e.g., a list of products, pokemon, cars, random nonsense), DO NOT hallucinate data. Return null for all fields (which will mark it as skipped).
+- IMPORTANT: DO NOT LOSE ANY DATA for actual leads. If a valid lead row contains columns (like Campaign, Ad Set, extra IDs, etc) that do not map to standard CRM fields, you MUST append all of that extra unmapped data into the "crm_note" field.
 - Combine first name + last name into a single "name" field.
 - Strip formatting from phone numbers (spaces, dashes, parentheses).
 - Output \`created_at\` in strict ISO-8601 format (YYYY-MM-DDTHH:mm:ssZ) so it is parseable by JavaScript's new Date(). If no date is present, use null.
