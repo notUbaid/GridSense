@@ -1,11 +1,12 @@
   Name  ,E-Mail,Ph#,Organization,Status???,Unused Col 1,Unused Col 2,Unused Col 3
-Priya Patel,Data 620,Data 406,,Interested,DATA 738,Data 504,Data 475
-Fatima Li,,Data 972,Startup Inc,BAD_LEAD,Data 467,Data 303,Data 895
-Diana Martinez,  Data 284  ,Data 685,Tech Solutions,BAD_LEAD,Data 878,Data 572,Data 651
-Charlie Hassan,Data 708,DATA 332,Global Industries,DID_NOT_CONNECT,Data 296,Data 107,DATA 191
-Alice Ali,  Data 879  ,Data 153,Acme Corp,  DID_NOT_CONNECT  ,Data 266,Data 124,Data 471
-Priya Wang,Data 373,Data 970,Acme Corp,  BAD_LEAD  ,Data 182,  Data 480  ,Data 999
-Chen Brown,Data 511,Data 933,Global Industries,SALE_DONE,Data 970,Data 589,  Data 445  
+" Priya Patel ",Data 620,"Call: +91 (0) 987-654-3210 ext 123",,  iNtErEsTeD  ,DATA 738,Data 504,Data 475
+"Fatima
+Li",,Data 972,"Startup Inc",BAD_LEAD,Data 467,Data 303,Data 895
+Diana Martinez,  Email me at diana284@tech.com if you can  ,"Phone: 555-019-8734",Tech Solutions,BAD_LEAD,Data 878,Data 572,Data 651
+Charlie Hassan,Data 708,Call 1-800-555-1234,Global Industries,DID_NOT_CONNECT,Data 296,Data 107,DATA 191
+Alice Ali,  "Contact via alice879@acme.com, or secondary@acme.com"  ,Data 153,Acme Corp,  Call back later  ,Will be available on 2026-07-07,Data 124,Data 471
+Priya Wang,Data 373,"Phone: (415) 555-9876, Email: priya.wang@gmail.com",Acme Corp,  BAD_LEAD  ,Data 182,  Data 480  ,Data 999
+Chen Brown,Data 511,5119331234,Global Industries,SALE_DONE,Sale closed on 12/31/2023,Data 589,  Data 445  
   Chen Li  ,Data 637,Data 493,Tech Solutions,SALE_DONE,Data 920,,Data 717
 Raj Patel,Data 231,Data 668,Acme Corp,DID_NOT_CONNECT,Data 949,Data 756,Data 417
 Wei Kumar,  Data 753  ,Data 751,Startup Inc,Interested,Data 474,Data 608,DATA 805
