@@ -16,7 +16,7 @@ export default function Home() {
   const { state, progress, records, previewData, metrics, error, currentActivity, elapsedMs, etaMs, processFile, startProcessing, reset } = useProcessing();
 
   return (
-    <main className="relative min-h-screen bg-background text-foreground p-6 md:p-12 overflow-hidden selection:bg-primary/20">
+    <main className="relative min-h-screen bg-background text-foreground p-4 sm:p-6 md:p-12 overflow-hidden selection:bg-primary/20">
       {/* Subtle ambient top glow */}
       <div className="absolute top-[-20%] left-1/2 -translate-x-1/2 w-[800px] h-[500px] rounded-full bg-primary/10 blur-[120px] pointer-events-none -z-10"></div>
       
@@ -101,18 +101,27 @@ export default function Home() {
                 exit={{ opacity: 0, scale: 0.95 }}
                 transition={{ duration: 0.3 }}
               >
-                <Card className="border-destructive/30 shadow-sm">
+                <Card className="border-destructive/50 bg-destructive/5 shadow-lg backdrop-blur-md relative overflow-hidden">
+                  <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-destructive/40 via-destructive to-destructive/40" />
                   <CardHeader>
-                    <div className="flex items-center space-x-2 text-destructive">
-                      <AlertCircle className="h-5 w-5" />
-                      <CardTitle>Processing Failed</CardTitle>
+                    <div className="flex items-center space-x-3 text-destructive">
+                      <div className="p-2 bg-destructive/10 rounded-full">
+                        <AlertCircle className="h-6 w-6" />
+                      </div>
+                      <CardTitle className="text-xl">Processing Disrupted</CardTitle>
                     </div>
                   </CardHeader>
                   <CardContent className="space-y-6">
-                    <p className="text-sm text-muted-foreground bg-destructive/10 p-4 rounded-md border border-destructive/20">
+                    <p className="text-sm text-foreground bg-destructive/10 p-4 rounded-md border border-destructive/20 leading-relaxed font-medium">
                       {error}
                     </p>
-                    <Button onClick={reset} variant="default">Try Another File</Button>
+                    <div className="flex justify-end">
+                      <motion.div whileHover={{ scale: 1.02 }} whileTap={{ scale: 0.98 }}>
+                        <Button onClick={reset} variant="default" className="bg-destructive text-destructive-foreground hover:bg-destructive/90">
+                          Try Again
+                        </Button>
+                      </motion.div>
+                    </div>
                   </CardContent>
                 </Card>
               </motion.div>

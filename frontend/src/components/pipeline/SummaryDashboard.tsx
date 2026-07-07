@@ -55,7 +55,9 @@ export function SummaryDashboard({ state, metrics, records, onReset }: SummaryDa
                 </CardDescription>
               </div>
             </div>
-            <Button onClick={onReset} variant="outline">Upload Another File</Button>
+            <motion.div whileHover={{ scale: 1.02 }} whileTap={{ scale: 0.98 }}>
+              <Button onClick={onReset} variant="outline">Upload Another File</Button>
+            </motion.div>
           </div>
         </CardHeader>
         <CardContent>
@@ -63,7 +65,7 @@ export function SummaryDashboard({ state, metrics, records, onReset }: SummaryDa
             variants={container}
             initial="hidden"
             animate="show"
-            className="grid grid-cols-2 md:grid-cols-4 gap-6 pt-4"
+            className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 pt-4"
           >
             <motion.div variants={item} className="space-y-1">
               <p className="text-sm text-muted-foreground font-medium flex items-center gap-2">

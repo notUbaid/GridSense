@@ -88,15 +88,30 @@ export function ProgressCard({ progress, records, currentActivity, elapsedMs, et
         </Card>
         </motion.div>
       ) : (
-        <Card className="border-border/50 bg-card shadow-sm overflow-hidden">
-          <CardHeader className="bg-muted/30 pb-4 border-b">
-            <Skeleton className="h-4 w-48" />
+        <Card className="border-border/50 bg-card shadow-sm overflow-hidden relative">
+          <div className="absolute inset-0 bg-gradient-to-r from-transparent via-primary/5 to-transparent -translate-x-full animate-[shimmer_2s_infinite]" />
+          <CardHeader className="bg-muted/10 pb-4 border-b">
+            <div className="flex items-center space-x-2">
+              <div className="h-4 w-4 rounded-full border-2 border-primary border-t-transparent animate-spin" />
+              <p className="text-sm font-medium text-muted-foreground">Waiting for AI extraction...</p>
+            </div>
           </CardHeader>
           <CardContent className="p-0">
-            <div className="p-4 space-y-4">
-              <Skeleton className="h-10 w-full" />
-              <Skeleton className="h-10 w-full" />
-              <Skeleton className="h-10 w-full" />
+            <div className="flex flex-col">
+              <div className="grid grid-cols-4 gap-4 px-4 py-3 border-b bg-muted/5">
+                <Skeleton className="h-4 w-20" />
+                <Skeleton className="h-4 w-24" />
+                <Skeleton className="h-4 w-16" />
+                <Skeleton className="h-4 w-32" />
+              </div>
+              {[1, 2, 3].map((i) => (
+                <div key={i} className="grid grid-cols-4 gap-4 px-4 py-4 border-b last:border-0 opacity-60">
+                  <Skeleton className="h-3 w-24" />
+                  <Skeleton className="h-3 w-32" />
+                  <Skeleton className="h-3 w-20" />
+                  <Skeleton className="h-3 w-40" />
+                </div>
+              ))}
             </div>
           </CardContent>
         </Card>
