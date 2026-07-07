@@ -42,6 +42,39 @@ function stripMarkdownFences(raw: string): string {
   return trimmed;
 }
 
+function normalizeAndValidate(record: any): CrmRecord {
+  const norm = { ...record };
+
+  // 1. Whitespace Normalization
+  for (const key of Object.keys(norm)) {
+    if (typeof norm[key] === 'string') {
+      norm[key] = norm[key].trim();
+      if (norm[key] === '') norm[key] = null;
+    }
+  }
+
+  // 2. Email Validation
+  if (norm.email) {
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(norm.email)) {
+      norm.email = null;
+    }
+  }
+
+  // 3. Phone Validation
+  if (norm.mobile_without_country_code) {
+    const stripped = norm.mobile_without_country_code.replace(/[^\d+]/g, '');
+    const digitCount = (stripped.match(/\d/g) || []).length;
+    if (digitCount < 5) {
+      norm.mobile_without_country_code = null;
+    } else {
+      norm.mobile_without_country_code = stripped;
+    }
+  }
+
+  return norm as CrmRecord;
+}
+
 export async function processBatch(
   headers: string[], 
   rows: Record<string, string>[],
@@ -164,12 +197,27 @@ ${JSON.stringify(rows)}`;
       const validRecords: CrmRecord[] = [];
 
       for (const record of records) {
-        const hasContact = record.email || record.mobile_without_country_code;
+        const normalized = normalizeAndValidate(record);
+        
+        const hasContact = normalized.email || normalized.mobile_without_country_code;
+        
+        // Check for mostly empty records (only name exists)
+        let meaningfulData = false;
+        for (const [key, value] of Object.entries(normalized)) {
+          if (key !== 'name' && value !== null && value !== undefined) {
+            meaningfulData = true;
+            break;
+          }
+        }
+
         if (!hasContact) {
           skippedCount++;
           skippedReasons['AI Rejected (Missing Valid Contact Info)'] = (skippedReasons['AI Rejected (Missing Valid Contact Info)'] || 0) + 1;
+        } else if (!meaningfulData) {
+          skippedCount++;
+          skippedReasons['AI Rejected (Lacks Meaningful Data)'] = (skippedReasons['AI Rejected (Lacks Meaningful Data)'] || 0) + 1;
         } else {
-          validRecords.push(record);
+          validRecords.push(normalized);
         }
       }
 
