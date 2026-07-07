@@ -124,6 +124,7 @@ export function SummaryDashboard({ state, metrics, records, skippedRawRows, onRe
                 Skipped
               </p>
               <p className="text-2xl font-semibold tracking-tight"><AnimatedCounter value={metrics.skippedRows} /></p>
+              <p className="text-[10px] text-muted-foreground/70 leading-tight">Missing contact info, duplicates, or out-of-syllabus data.</p>
             </motion.div>
             <motion.div variants={item} className="space-y-1">
               <p className="text-sm text-muted-foreground font-medium flex items-center gap-2">
@@ -131,6 +132,7 @@ export function SummaryDashboard({ state, metrics, records, skippedRawRows, onRe
                 Failed Batches
               </p>
               <p className="text-2xl font-semibold tracking-tight"><AnimatedCounter value={metrics.failedBatches} /></p>
+              <p className="text-[10px] text-muted-foreground/70 leading-tight">API rate limits or extraction errors.</p>
             </motion.div>
           </motion.div>
           <motion.div 
