@@ -35,6 +35,17 @@ const responseSchema = z.object({
   records: z.array(CrmRecordSchema),
 });
 
+const LlmRecordSchema = CrmRecordSchema.omit({ 
+  email: true, 
+  mobile_without_country_code: true, 
+  created_at: true,
+  country_code: true 
+});
+
+const llmResponseSchema = z.object({
+  records: z.array(LlmRecordSchema),
+});
+
 function stripMarkdownFences(raw: string): string {
   const trimmed = raw.trim();
   if (trimmed.startsWith('```')) {
@@ -113,51 +124,113 @@ export async function processBatch(
   const maxRetries = config.AI_MAX_RETRIES;
   const startTime = Date.now();
 
-  const prompt = `You are an expert data extraction AI. You receive CSV headers and row data as JSON.
-Your job: map each row to a standardized CRM schema and return a JSON object with a "records" array.
+  interface ExtractedData {
+    original: Record<string, string>;
+    sanitized: Record<string, string>;
+    email: string | null;
+    mobile_without_country_code: string | null;
+    created_at: string | null;
+  }
 
-RULES:
-- The model must behave as a deterministic extraction engine, not a generative assistant. It must never fabricate, replace, rewrite, or infer names, email addresses, phone numbers, companies, cities, or any other field that is not explicitly present in the input. If a value cannot be confidently extracted, return null. The output must preserve the original information rather than generating plausible replacements.
-- Use semantic understanding to figure out which column maps to which CRM field, but extract exact values.
-- Never invent data. If a value is not present in the source, leave the field null.
-- If a row has BOTH email and phone missing, still include it but set all fields to null (it will be filtered as a skip).
-- If multiple emails exist, use the first as "email" and append the rest to "crm_note".
-- If multiple phone numbers exist, use the first as "mobile_without_country_code" and append the rest to "crm_note".
+  const extractedData: ExtractedData[] = rows.map(row => {
+    const sanitized = { ...row };
+    let email: string | null = null;
+    let mobile_without_country_code: string | null = null;
+    let created_at: string | null = null;
+
+    for (const key of Object.keys(sanitized)) {
+      let value = sanitized[key];
+      if (!value) continue;
+
+      if (!email) {
+        const match = value.match(/[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}/);
+        if (match) {
+          email = match[0];
+          value = value.replace(match[0], '').trim();
+        }
+      }
+
+      if (!mobile_without_country_code) {
+        const digitCount = (value.match(/\d/g) || []).length;
+        if (digitCount >= 7) {
+          // If the value is purely a phone number format
+          if (/^[\s\d()+-]{7,30}$/.test(value)) {
+            mobile_without_country_code = value.trim();
+            value = '';
+          } else {
+            // Try to extract a standard phone number embedded in text
+            const match = value.match(/(?:\+?\d{1,4}[\s.-]*)?\(?\d{2,4}\)?[\s.-]*\d{3,4}[\s.-]*\d{4}/);
+            if (match) {
+              mobile_without_country_code = match[0];
+              value = value.replace(match[0], '').trim();
+            }
+          }
+        }
+      }
+
+      if (!created_at) {
+        const match = value.match(/\b(?:19|20)\d{2}[-/]\d{1,2}[-/]\d{1,2}\b|\b\d{1,2}[-/]\d{1,2}[-/](?:19|20)\d{2}\b/);
+        if (match) {
+          const d = new Date(match[0]);
+          if (!isNaN(d.getTime())) {
+            created_at = d.toISOString();
+            value = value.replace(match[0], '').trim();
+          }
+        }
+      }
+
+      if (value === '') {
+        delete sanitized[key];
+      } else {
+        sanitized[key] = value;
+      }
+    }
+
+    return { original: row, sanitized, email, mobile_without_country_code, created_at };
+  });
+
+  const sanitizedRows = extractedData.map(d => d.sanitized);
+
+  const prompt = `You are a strict data extraction engine. You receive CSV headers and row data as JSON.
+Your job is purely to map the provided semantic data into the defined CRM schema.
+
+CRITICAL RULES:
+- You are NOT allowed to rewrite values.
+- You are NOT allowed to improve values.
+- You are NOT allowed to generate realistic replacements or fake names.
+- Every name, company, city, state, country, and note MUST be copied EXACTLY from the source row.
+- Never fabricate information. Treat this as an information extraction task, NOT a text generation task.
+- If a value is not explicitly present in the source, leave the field null.
 - "crm_status" MUST be exactly one of: GOOD_LEAD_FOLLOW_UP, DID_NOT_CONNECT, BAD_LEAD, SALE_DONE — or null.
 - "data_source" MUST be exactly one of: leads_on_demand, meridian_tower, eden_park, varah_swamy, sarjapur_plots — or null.
-- OUT-OF-SYLLABUS DATA: If a row is completely irrelevant to CRM leads (e.g., a list of products, pokemon, cars, random nonsense), DO NOT hallucinate data. Return null for all fields (which will mark it as skipped).
-- IMPORTANT: DO NOT LOSE ANY DATA for actual leads. If a valid lead row contains columns (like Campaign, Ad Set, extra IDs, etc) that do not map to standard CRM fields, you MUST append all of that extra unmapped data into the "crm_note" field.
-- You MUST extract the person's full name into the "name" field if it exists anywhere in the row.
-- Combine first name + last name into a single "name" field.
-- Phone numbers MUST remain as exact strings. NEVER format them as numbers or scientific notation. 
-- Separate international phone numbers into "country_code" (e.g., +1, +91) and the local number into "mobile_without_country_code".
-- Strip formatting from phone numbers (spaces, dashes, parentheses).
-- Output \`created_at\` in strict ISO-8601 format (YYYY-MM-DDTHH:mm:ssZ) so it is parseable by JavaScript's new Date(). If no date is present, use null.
-- You MUST return exactly ${rows.length} objects in the "records" array — one per input row.
-- Output ONLY valid JSON. No markdown, no explanation.
+- If a row is completely irrelevant nonsense, DO NOT hallucinate data. Return null for all fields.
+- DO NOT LOSE ANY DATA. If a valid lead row contains columns (like Campaign, Ad Set, extra IDs, etc) that do not map to standard CRM fields, you MUST append all of that extra unmapped data into the "crm_note" field.
+- Combine first name + last name into a single "name" field ONLY if they exist. Do not invent a name if it's not there.
+- You MUST return exactly ${sanitizedRows.length} objects in the "records" array — one per input row.
+- Output ONLY valid JSON matching the schema. No markdown, no explanation.
 
 JSON Schema:
-${JSON.stringify(zodToJsonSchema(responseSchema as any))}
+${JSON.stringify(zodToJsonSchema(llmResponseSchema as any))}
 
 Example:
-Headers: ["First Name", "SurName", "Email Address", "Phone", "Org"]
-Row: [{"First Name": "John", "SurName": "Doe", "Email Address": "john@acme.com", "Phone": "555-0198", "Org": "Acme Corp"}]
-Output: {"records": [{"name": "John Doe", "email": "john@acme.com", "mobile_without_country_code": "5550198", "company": "Acme Corp"}]}
+Headers: ["First Name", "SurName", "Org"]
+Row: [{"First Name": "John", "SurName": "Doe", "Org": "Acme Corp"}]
+Output: {"records": [{"name": "John Doe", "company": "Acme Corp"}]}
 
 ---
 CSV Headers: ${JSON.stringify(headers)}
 Row Data:
-${JSON.stringify(rows)}`;
+${JSON.stringify(sanitizedRows)}`;
 
   while (attempt < maxRetries) {
     const usedGroqIndex = currentGroqIndex;
     try {
       logger.info({ attempt: attempt + 1, batchSize: rows.length, provider }, 'Sending batch to AI');
 
-      let records: CrmRecord[] = [];
+      let records: any[] = [];
 
       if (process.env.NODE_ENV === 'test') {
-        records = await MockAIProvider.extract(headers, rows);
+        records = await MockAIProvider.extract(headers, sanitizedRows);
       } else if (provider === 'gemini') {
         const ai = getGeminiClient();
         const model = ai.getGenerativeModel({ model: 'gemini-2.5-flash' });
@@ -177,7 +250,7 @@ ${JSON.stringify(rows)}`;
           logger.error({ content: stripMarkdownFences(content) }, 'Failed to parse JSON from Gemini');
           throw e;
         }
-        const validated = responseSchema.safeParse(parsed);
+        const validated = llmResponseSchema.safeParse(parsed);
         if (!validated.success) {
           logger.error({ errors: validated.error.format() }, 'Zod validation failed on Gemini output');
           throw new Error('AI output did not match expected schema');
@@ -210,7 +283,7 @@ ${JSON.stringify(rows)}`;
           throw e;
         }
 
-        const validated = responseSchema.safeParse(parsed);
+        const validated = llmResponseSchema.safeParse(parsed);
         if (!validated.success) {
           logger.error({ errors: validated.error.format() }, 'Zod validation failed on AI output');
           throw new Error('AI output did not match expected schema');
@@ -231,8 +304,15 @@ ${JSON.stringify(rows)}`;
       const validRecords: CrmRecord[] = [];
 
       for (let i = 0; i < records.length; i++) {
-        const record = records[i];
-        const normalized = normalizeAndValidate(record, rows[i]);
+        // Merge the deterministic extraction with the LLM mapping
+        const mergedRecord = {
+          ...records[i],
+          email: extractedData[i].email,
+          mobile_without_country_code: extractedData[i].mobile_without_country_code,
+          created_at: extractedData[i].created_at
+        };
+
+        const normalized = normalizeAndValidate(mergedRecord, rows[i]);
         
         const hasContact = normalized.email || normalized.mobile_without_country_code;
         
