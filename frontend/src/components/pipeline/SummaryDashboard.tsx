@@ -5,10 +5,15 @@ import { Button } from '@/components/ui/button';
 import { ResultsTable } from '@/components/results/ResultsTable';
 import { motion, Variants, useSpring, useTransform } from 'framer-motion';
 import { useEffect } from 'react';
-import { AlertCircle, FileCheck2 } from 'lucide-react';
+import { AlertCircle, FileCheck2, Info } from 'lucide-react';
 import { ProcessMetrics, ProcessState } from '@/hooks/useProcessing';
 import { CrmRecord } from '@/types/schema';
 import Papa from 'papaparse';
+import {
+  Tooltip,
+  TooltipContent,
+  TooltipTrigger,
+} from "@/components/ui/tooltip";
 
 const container: Variants = {
   hidden: { opacity: 0 },
@@ -122,17 +127,31 @@ export function SummaryDashboard({ state, metrics, records, skippedRawRows, onRe
               <p className="text-sm text-muted-foreground font-medium flex items-center gap-2">
                 <span className="h-2 w-2 rounded-full bg-amber-500"></span>
                 Skipped
+                <Tooltip>
+                  <TooltipTrigger className="inline-flex outline-none">
+                    <Info className="h-3 w-3 text-muted-foreground/70 cursor-help" />
+                  </TooltipTrigger>
+                  <TooltipContent>
+                    <p className="max-w-[200px] text-xs">Missing contact info, duplicates, or completely out-of-syllabus data that failed heuristics.</p>
+                  </TooltipContent>
+                </Tooltip>
               </p>
               <p className="text-2xl font-semibold tracking-tight"><AnimatedCounter value={metrics.skippedRows} /></p>
-              <p className="text-[10px] text-muted-foreground/70 leading-tight">Missing contact info, duplicates, or out-of-syllabus data.</p>
             </motion.div>
             <motion.div variants={item} className="space-y-1">
               <p className="text-sm text-muted-foreground font-medium flex items-center gap-2">
                 <span className="h-2 w-2 rounded-full bg-destructive"></span>
                 Failed Batches
+                <Tooltip>
+                  <TooltipTrigger className="inline-flex outline-none">
+                    <Info className="h-3 w-3 text-muted-foreground/70 cursor-help" />
+                  </TooltipTrigger>
+                  <TooltipContent>
+                    <p className="max-w-[200px] text-xs">API rate limits exceeded or extraction errors during batch processing.</p>
+                  </TooltipContent>
+                </Tooltip>
               </p>
               <p className="text-2xl font-semibold tracking-tight"><AnimatedCounter value={metrics.failedBatches} /></p>
-              <p className="text-[10px] text-muted-foreground/70 leading-tight">API rate limits or extraction errors.</p>
             </motion.div>
           </motion.div>
           <motion.div 
