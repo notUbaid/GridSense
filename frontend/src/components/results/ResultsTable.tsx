@@ -104,7 +104,7 @@ export function ResultsTable({ data }: ResultsTableProps) {
     const headers = exportColumns.map(c => c.header).join(',');
     const rows = data.map(row => 
       exportColumns.map(c => {
-        let val = (row as any)[c.accessorKey as string];
+        let val = row[c.accessorKey as keyof CrmRecord];
         if (val === null || val === undefined) val = '';
         val = String(val);
         return `"${val.replace(/"/g, '""')}"`;
