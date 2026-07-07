@@ -1,13 +1,8 @@
 import React, { useCallback, useState } from 'react';
-import { UploadCloud, ChevronDown } from 'lucide-react';
+import { UploadCloud, Megaphone, Building2, AlertTriangle, Database, FileSpreadsheet, FileText, Loader2 } from 'lucide-react';
 import { cn } from '@/lib/utils';
-import { motion, AnimatePresence } from 'framer-motion';
-import {
-  DropdownMenu,
-  DropdownMenuContent,
-  DropdownMenuItem,
-  DropdownMenuTrigger,
-} from '@/components/ui/dropdown-menu';
+import { motion } from 'framer-motion';
+import { Button } from '@/components/ui/button';
 
 interface DropzoneProps {
   onFileAccepted: (file: File) => void;
@@ -112,27 +107,25 @@ export function Dropzone({ onFileAccepted, disabled }: DropzoneProps) {
 }
 
 const TEST_FILES = [
-  'facebook_lead_ads_export.csv',
-  'google_ads_lead_export.csv',
-  'real_estate_crm_export.csv',
-  'marketing_agency_lead_sheet.csv',
-  'sales_team_excel.csv',
-  'hospital_inquiry_leads.csv',
-  'university_admission_enquiries.csv',
-  'manufacturing_company_contacts.csv',
-  'startup_internal_spreadsheet.csv',
-  'international_dataset.csv',
-  'customers-1000.csv',
-  'large_dataset.csv',
-  'absolute_nightmare_dataset.csv',
+  { filename: 'facebook_lead_ads_export.csv', label: 'Facebook Leads', icon: Megaphone, color: 'text-blue-500' },
+  { filename: 'google_ads_lead_export.csv', label: 'Google Ads', icon: Megaphone, color: 'text-amber-500' },
+  { filename: 'real_estate_crm_export.csv', label: 'Real Estate CRM', icon: Building2, color: 'text-emerald-500' },
+  { filename: 'absolute_nightmare_dataset.csv', label: 'Nightmare Dataset', icon: AlertTriangle, color: 'text-destructive' },
+  { filename: 'large_dataset.csv', label: 'Large Dataset', icon: Database, color: 'text-primary' },
+  { filename: 'customers-1000.csv', label: '1000 Customers', icon: Database, color: 'text-purple-500' },
+  { filename: 'sales_team_excel.csv', label: 'Sales Excel', icon: FileSpreadsheet, color: 'text-green-500' },
+  { filename: 'marketing_agency_lead_sheet.csv', label: 'Marketing Agency', icon: FileText, color: 'text-pink-500' },
+  { filename: 'hospital_inquiry_leads.csv', label: 'Hospital Leads', icon: Building2, color: 'text-rose-500' },
+  { filename: 'university_admission_enquiries.csv', label: 'University Enquiries', icon: Building2, color: 'text-orange-500' },
+  { filename: 'startup_internal_spreadsheet.csv', label: 'Startup Leads', icon: FileSpreadsheet, color: 'text-indigo-500' },
 ];
 
 export function SampleCsvButton({ onFileAccepted }: { onFileAccepted: (file: File) => void }) {
-  const [loading, setLoading] = useState(false);
+  const [loadingFile, setLoadingFile] = useState<string | null>(null);
 
   const handleLoadSample = async (filename: string) => {
     try {
-      setLoading(true);
+      setLoadingFile(filename);
       const res = await fetch(`/test_files/${filename}`);
       if (!res.ok) throw new Error('Failed to fetch test file');
       const blob = await res.blob();
@@ -142,30 +135,38 @@ export function SampleCsvButton({ onFileAccepted }: { onFileAccepted: (file: Fil
       console.error(e);
       alert('Failed to load sample file.');
     } finally {
-      setLoading(false);
+      setLoadingFile(null);
     }
   };
 
   return (
-    <DropdownMenu>
-      <DropdownMenuTrigger
-        disabled={loading}
-        className="flex items-center text-xs text-muted-foreground hover:text-primary transition-colors underline underline-offset-4 decoration-dashed disabled:opacity-50"
-      >
-        {loading ? 'Loading...' : 'No CSV? Try a sample dataset'}
-        <ChevronDown className="ml-1 h-3 w-3" />
-      </DropdownMenuTrigger>
-      <DropdownMenuContent align="center" className="w-64 max-h-[300px] overflow-y-auto">
-        {TEST_FILES.map((file) => (
-          <DropdownMenuItem 
-            key={file} 
-            onClick={() => handleLoadSample(file)}
-            className="cursor-pointer text-xs"
-          >
-            {file.replace('.csv', '').replace(/_/g, ' ')}
-          </DropdownMenuItem>
-        ))}
-      </DropdownMenuContent>
-    </DropdownMenu>
+    <div className="w-full flex flex-col items-center space-y-3 pt-2">
+      <p className="text-xs font-medium text-muted-foreground uppercase tracking-widest">Or try a sample dataset</p>
+      <div className="w-full overflow-x-auto pb-4 pt-1 hide-scrollbar">
+        <div className="flex w-max items-center space-x-2 px-1">
+          {TEST_FILES.map(({ filename, label, icon: Icon, color }) => {
+            const isLoading = loadingFile === filename;
+            return (
+              <motion.div key={filename} whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
+                <Button
+                  variant="outline"
+                  size="sm"
+                  disabled={loadingFile !== null}
+                  onClick={() => handleLoadSample(filename)}
+                  className="rounded-full h-8 px-3 border-dashed border-border/60 hover:border-primary/50 hover:bg-primary/5 bg-card/50 backdrop-blur-sm transition-all text-xs font-medium text-muted-foreground hover:text-foreground"
+                >
+                  {isLoading ? (
+                    <Loader2 className="mr-2 h-3.5 w-3.5 animate-spin text-primary" />
+                  ) : (
+                    <Icon className={cn("mr-2 h-3.5 w-3.5", color)} />
+                  )}
+                  {label}
+                </Button>
+              </motion.div>
+            );
+          })}
+        </div>
+      </div>
+    </div>
   );
 }
