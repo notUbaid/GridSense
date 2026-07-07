@@ -163,8 +163,8 @@ export function useProcessing() {
     const totalBatches = batches.length;
     let localFailedBatches = 0;
     let localFailedRows = 0;
-    let localFailedRaw: Record<string, string>[] = [];
-    let localFailReasons: Record<string, number> = {};
+    const localFailedRaw: Record<string, string>[] = [];
+    const localFailReasons: Record<string, number> = {};
     let localSuccessfulRows = 0;
     let localSkippedRows = localSkippedRaw.length;
 
@@ -217,11 +217,11 @@ export function useProcessing() {
             }
           } else {
             const err = new Error(response.error || 'Batch failed without specific error');
-            (err as any).exhaustedProvider = response.exhaustedProvider;
+            (err as Error & { exhaustedProvider?: string }).exhaustedProvider = response.exhaustedProvider;
             throw err;
           }
         } catch (err: unknown) {
-          const error = err as any;
+          const error = err as Error & { response?: { data?: { error?: string, exhaustedProvider?: string }, status?: number }, exhaustedProvider?: string };
           const backendError = error.response?.data?.error || error.message || 'Unknown error';
           const status = error.response?.status;
           const exhaustedProvider = error.response?.data?.exhaustedProvider || error.exhaustedProvider || 'groq';

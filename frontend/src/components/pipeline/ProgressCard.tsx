@@ -1,6 +1,6 @@
 import React from 'react';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
-import { Progress } from '@/components/ui/progress';
+
 import { ResultsTable } from '@/components/results/ResultsTable';
 import { Skeleton } from '@/components/ui/skeleton';
 import { CrmRecord } from '@/types/schema';

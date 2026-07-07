@@ -14,7 +14,7 @@ import {
 } from '@/components/ui/table';
 import { Button } from '@/components/ui/button';
 import { CrmRecord } from '@/types/schema';
-import { motion, AnimatePresence, Variants } from 'framer-motion';
+import { motion, Variants } from 'framer-motion';
 import { Copy } from 'lucide-react';
 import { toast } from 'sonner';
 
@@ -77,6 +77,7 @@ export function ResultsTable({ data }: ResultsTableProps) {
     []
   );
 
+  // eslint-disable-next-line react-hooks/incompatible-library
   const table = useReactTable({
     data,
     columns,
