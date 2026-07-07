@@ -32,10 +32,10 @@ const PORT = config.PORT || 8000;
 
 const isServerless = !!process.env.VERCEL;
 
-if (!isServerless && (require.main === module || process.env.NODE_ENV !== 'production')) {
+if (!isServerless && process.env.NODE_ENV !== 'test' && (require.main === module || process.env.NODE_ENV !== 'production')) {
   app.listen(PORT, () => {
     logger.info(`Server is running on port ${PORT}`);
   });
 }
 
-module.exports = app;
+export default app;

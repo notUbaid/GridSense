@@ -3,7 +3,8 @@ import { cn } from '@/lib/utils';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { ResultsTable } from '@/components/results/ResultsTable';
-import { motion, Variants } from 'framer-motion';
+import { motion, Variants, useSpring, useTransform } from 'framer-motion';
+import { useEffect } from 'react';
 import { AlertCircle, FileCheck2 } from 'lucide-react';
 import { ProcessMetrics, ProcessState } from '@/hooks/useProcessing';
 import { CrmRecord } from '@/types/schema';
@@ -27,6 +28,17 @@ interface SummaryDashboardProps {
   metrics: ProcessMetrics;
   records: CrmRecord[];
   onReset: () => void;
+}
+
+function AnimatedCounter({ value }: { value: number }) {
+  const spring = useSpring(0, { stiffness: 100, damping: 20 });
+  const display = useTransform(spring, (current) => Math.round(current));
+
+  useEffect(() => {
+    spring.set(value);
+  }, [spring, value]);
+
+  return <motion.span>{display}</motion.span>;
 }
 
 export function SummaryDashboard({ state, metrics, records, onReset }: SummaryDashboardProps) {
@@ -72,28 +84,28 @@ export function SummaryDashboard({ state, metrics, records, onReset }: SummaryDa
                 <span className="h-2 w-2 rounded-full bg-muted-foreground/50"></span>
                 Total Input
               </p>
-              <p className="text-2xl font-semibold tracking-tight">{metrics.totalRows}</p>
+              <p className="text-2xl font-semibold tracking-tight"><AnimatedCounter value={metrics.totalRows} /></p>
             </motion.div>
             <motion.div variants={item} className="space-y-1">
               <p className="text-sm text-muted-foreground font-medium flex items-center gap-2">
                 <span className="h-2 w-2 rounded-full bg-emerald-500"></span>
                 Extracted
               </p>
-              <p className="text-2xl font-semibold tracking-tight">{metrics.successfulRows}</p>
+              <p className="text-2xl font-semibold tracking-tight"><AnimatedCounter value={metrics.successfulRows} /></p>
             </motion.div>
             <motion.div variants={item} className="space-y-1">
               <p className="text-sm text-muted-foreground font-medium flex items-center gap-2">
                 <span className="h-2 w-2 rounded-full bg-amber-500"></span>
                 Skipped
               </p>
-              <p className="text-2xl font-semibold tracking-tight">{metrics.skippedRows}</p>
+              <p className="text-2xl font-semibold tracking-tight"><AnimatedCounter value={metrics.skippedRows} /></p>
             </motion.div>
             <motion.div variants={item} className="space-y-1">
               <p className="text-sm text-muted-foreground font-medium flex items-center gap-2">
                 <span className="h-2 w-2 rounded-full bg-destructive"></span>
                 Failed Batches
               </p>
-              <p className="text-2xl font-semibold tracking-tight">{metrics.failedBatches}</p>
+              <p className="text-2xl font-semibold tracking-tight"><AnimatedCounter value={metrics.failedBatches} /></p>
             </motion.div>
           </motion.div>
           <motion.div 
