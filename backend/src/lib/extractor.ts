@@ -244,7 +244,8 @@ CRITICAL RULES:
 - "crm_note" should ONLY contain meaningful remarks, follow-up notes, secondary emails, or extra phone numbers.
 - DO NOT dump irrelevant columns (e.g., "Campaign", "Ad Set", random IDs, or random garbage) into "crm_note".
 - If a value in the input is completely empty, ignore it entirely and do not include its column name in the notes.
-- Combine first name + last name into a single "name" field ONLY if they exist. Do not invent a name if it's not there.
+- Combine first name + last name into a single "name" field. If the name is explicitly missing or empty, you MAY infer it from the email address if the email clearly contains a person's name (e.g., john.doe@... -> John Doe).
+- If a row contains secondary emails or extra phone numbers, you MUST explicitly write them into the "crm_note" field (e.g., "Extra email: example@test.com").
 - You MUST return exactly ${aiRows.length} objects in the "records" array — one per input row.
 - Output ONLY valid JSON matching the schema. No markdown, no explanation.
 

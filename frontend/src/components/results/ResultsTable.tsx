@@ -108,7 +108,7 @@ export function ResultsTable({ data }: ResultsTableProps) {
         if (val === null || val === undefined) val = '';
         val = String(val);
         if (c.accessorKey === 'mobile_without_country_code' && val) {
-          return `="""${val.replace(/"/g, '""')}"""`;
+          return `="${val.replace(/"/g, '""')}"`;
         }
         return `"${val.replace(/"/g, '""')}"`;
       }).join(',')
