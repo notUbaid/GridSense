@@ -185,6 +185,8 @@ export function useProcessing() {
         
         setCurrentActivity(`Mapping standard fields for rows ${task.index * batchSize} to ${Math.min((task.index + 1) * batchSize, validRows.length)}...`);
         
+        let requeued = false;
+        
         try {
           const response = await processBatchApi({
             batchId: `batch_${task.index}`,
@@ -218,17 +220,24 @@ export function useProcessing() {
           const exhaustedProvider = error.response?.data?.exhaustedProvider || error.exhaustedProvider || 'groq';
           
           if (status === 429 || backendError.toLowerCase().includes('rate limit')) {
-            if (currentProvider === 'groq' && exhaustedProvider === 'groq') {
-              currentProvider = 'gemini';
-              toast.info(`Groq free limit reached. Thoughtfully switching to Gemini backup...`);
-              setCurrentActivity(`Switching AI engine to Gemini...`);
-              await new Promise(r => setTimeout(r, 1500));
+            if (exhaustedProvider === 'groq') {
+              if (currentProvider === 'groq') {
+                currentProvider = 'gemini';
+                toast.info(`Groq free limit reached. Thoughtfully switching to Gemini backup...`);
+                setCurrentActivity(`Switching AI engine to Gemini...`);
+                await new Promise(r => setTimeout(r, 1500));
+              } else {
+                // If another worker already switched us to Gemini, just add a tiny delay
+                await new Promise(r => setTimeout(r, 500));
+              }
               queue.unshift(task); // Requeue task
+              requeued = true;
               continue; // Try again with Gemini
             } else {
               limitReached = true;
               setCurrentActivity(`API limits reached. Taking a breather, please try later.`);
               queue.unshift(task); // Save progress
+              requeued = true;
               break; // Stop worker gracefully
             }
           } else {
@@ -238,8 +247,10 @@ export function useProcessing() {
             toast.error(failMsg);
           }
         } finally {
-          completedBatches++;
-          setProgress(Math.round((completedBatches / totalBatches) * 100));
+          if (!requeued) {
+            completedBatches++;
+            setProgress(Math.round((completedBatches / totalBatches) * 100));
+          }
         }
       }
     };
