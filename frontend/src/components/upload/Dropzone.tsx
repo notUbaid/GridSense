@@ -1,5 +1,5 @@
 import React, { useCallback, useState } from 'react';
-import { UploadCloud, Megaphone, Building2, AlertTriangle, Database, FileSpreadsheet, FileText, Loader2 } from 'lucide-react';
+import { UploadCloud, Megaphone, Building2, AlertTriangle, FileSpreadsheet, FileText, Loader2 } from 'lucide-react';
 import { cn } from '@/lib/utils';
 import { motion } from 'framer-motion';
 import { Button } from '@/components/ui/button';
@@ -111,8 +111,7 @@ const TEST_FILES = [
   { filename: 'google_ads_lead_export.csv', label: 'Google Ads', icon: Megaphone, color: 'text-amber-500' },
   { filename: 'real_estate_crm_export.csv', label: 'Real Estate CRM', icon: Building2, color: 'text-emerald-500' },
   { filename: 'absolute_nightmare_dataset.csv', label: 'Nightmare Dataset', icon: AlertTriangle, color: 'text-destructive' },
-  { filename: 'large_dataset.csv', label: 'Large Dataset', icon: Database, color: 'text-primary' },
-  { filename: 'customers-1000.csv', label: '1000 Customers', icon: Database, color: 'text-purple-500' },
+
   { filename: 'sales_team_excel.csv', label: 'Sales Excel', icon: FileSpreadsheet, color: 'text-green-500' },
   { filename: 'marketing_agency_lead_sheet.csv', label: 'Marketing Agency', icon: FileText, color: 'text-pink-500' },
   { filename: 'hospital_inquiry_leads.csv', label: 'Hospital Leads', icon: Building2, color: 'text-rose-500' },
