@@ -47,7 +47,7 @@ function stripMarkdownFences(raw: string): string {
   return trimmed;
 }
 
-function normalizeAndValidate(record: any): CrmRecord {
+function normalizeAndValidate(record: any, originalRow?: Record<string, string>): CrmRecord {
   const norm = { ...record };
 
   // 1. Whitespace Normalization
@@ -95,6 +95,20 @@ function normalizeAndValidate(record: any): CrmRecord {
       norm.mobile_without_country_code = null;
     } else {
       norm.mobile_without_country_code = stripped;
+    }
+  }
+
+  // 4. CRM Status Dictionary Fallback
+  if (!norm.crm_status && originalRow) {
+    const rowString = JSON.stringify(originalRow).toLowerCase();
+    if (rowString.includes('not interested') || rowString.includes('junk') || rowString.includes('spam')) {
+      norm.crm_status = 'BAD_LEAD';
+    } else if (rowString.includes('interested') || rowString.includes('call back later') || rowString.includes('follow up')) {
+      norm.crm_status = 'GOOD_LEAD_FOLLOW_UP';
+    } else if (rowString.includes('won') || rowString.includes('closed')) {
+      norm.crm_status = 'SALE_DONE';
+    } else if (rowString.includes('did not connect')) {
+      norm.crm_status = 'DID_NOT_CONNECT';
     }
   }
 
@@ -228,8 +242,9 @@ ${JSON.stringify(rows)}`;
 
       const validRecords: CrmRecord[] = [];
 
-      for (const record of records) {
-        const normalized = normalizeAndValidate(record);
+      for (let i = 0; i < records.length; i++) {
+        const record = records[i];
+        const normalized = normalizeAndValidate(record, rows[i]);
         
         const hasContact = normalized.email || normalized.mobile_without_country_code;
         
