@@ -166,11 +166,8 @@ export function useProcessing() {
     }, 1000);
 
     let currentProvider: 'groq' | 'gemini' = 'groq';
-    let limitReached = false;
-
     const processBatchQueue = async (queue: { batch: Record<string, string>[], index: number }[]) => {
       while (queue.length > 0) {
-        if (limitReached) break;
 
         const task = queue.shift();
         if (!task) break;
