@@ -74,7 +74,7 @@ function normalizeAndValidate(record: any): CrmRecord {
     if (/^\d+\.?\d*e\+\d+$/i.test(phoneStr)) {
       try {
         phoneStr = BigInt(Math.round(Number(phoneStr))).toString();
-      } catch (e) {
+      } catch {
         // Ignore parsing errors
       }
     }
