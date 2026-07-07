@@ -18,6 +18,7 @@ export function useProcessing() {
   const [state, setState] = useState<ProcessState>('idle');
   const [progress, setProgress] = useState(0);
   const [records, setRecords] = useState<CrmRecord[]>([]);
+  const [skippedRawRows, setSkippedRawRows] = useState<Record<string, string>[]>([]);
   const [previewData, setPreviewData] = useState<{ headers: string[], rows: Record<string, string>[] } | null>(null);
   const [error, setError] = useState<string | null>(null);
   const [currentActivity, setCurrentActivity] = useState<string>('Idle');
@@ -39,6 +40,7 @@ export function useProcessing() {
     setError(null);
     setProgress(0);
     setRecords([]);
+    setSkippedRawRows([]);
     setPreviewData(null);
     setCurrentActivity('Idle');
     setElapsedMs(0);
@@ -102,21 +104,54 @@ export function useProcessing() {
 
     const { headers, rows: sanitizedData } = previewData;
 
+    // Pre-flight heuristic filtering & Deduplication
+    const validRows: Record<string, string>[] = [];
+    const localSkippedRaw: Record<string, string>[] = [];
+    const seenContacts = new Set<string>();
+
+    for (const row of sanitizedData) {
+      const rowStr = JSON.stringify(row).toLowerCase();
+      // Heuristic: Must contain '@' (email) or a sequence of 7+ digits (phone)
+      const hasBasicContactInfo = rowStr.includes('@') || /\d{7,}/.test(rowStr);
+      
+      if (!hasBasicContactInfo) {
+        localSkippedRaw.push(row);
+        continue;
+      }
+
+      // Quick dedup extraction: Find first email or phone-like string to use as dedup key
+      const emailMatch = rowStr.match(/[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}/);
+      const phoneMatch = rowStr.match(/\d{7,}/);
+      const dedupKey = emailMatch?.[0] || phoneMatch?.[0];
+
+      if (dedupKey) {
+        if (seenContacts.has(dedupKey)) {
+          localSkippedRaw.push(row);
+          continue;
+        }
+        seenContacts.add(dedupKey);
+      }
+      
+      validRows.push(row);
+    }
+
+    setSkippedRawRows(localSkippedRaw);
+
     const batches: Record<string, string>[][] = [];
-    for (let i = 0; i < sanitizedData.length; i += batchSize) {
-      batches.push(sanitizedData.slice(i, i + batchSize));
+    for (let i = 0; i < validRows.length; i += batchSize) {
+      batches.push(validRows.slice(i, i + batchSize));
     }
 
     setMetrics(prev => ({ ...prev, totalRows: sanitizedData.length }));
     const startTime = Date.now();
 
-    setCurrentActivity(`Warming up AI models for ${sanitizedData.length} records...`);
+    setCurrentActivity(`Warming up AI models for ${validRows.length} valid records...`);
 
     let completedBatches = 0;
     const totalBatches = batches.length;
     let localFailedBatches = 0;
     let localSuccessfulRows = 0;
-    let localSkippedRows = 0;
+    let localSkippedRows = localSkippedRaw.length;
 
     const timer = setInterval(() => {
       const now = Date.now();
@@ -140,7 +175,7 @@ export function useProcessing() {
         const task = queue.shift();
         if (!task) break;
         
-        setCurrentActivity(`Mapping standard fields for rows ${task.index * batchSize} to ${Math.min((task.index + 1) * batchSize, sanitizedData.length)}...`);
+        setCurrentActivity(`Mapping standard fields for rows ${task.index * batchSize} to ${Math.min((task.index + 1) * batchSize, validRows.length)}...`);
         
         try {
           const response = await processBatchApi({
@@ -220,6 +255,7 @@ export function useProcessing() {
     state,
     progress,
     records,
+    skippedRawRows,
     previewData,
     metrics,
     error,
@@ -232,6 +268,7 @@ export function useProcessing() {
       setState('idle');
       setProgress(0);
       setRecords([]);
+      setSkippedRawRows([]);
       setPreviewData(null);
       setError(null);
       setCurrentActivity('Idle');

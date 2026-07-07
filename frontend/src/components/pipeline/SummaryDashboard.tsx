@@ -8,6 +8,8 @@ import { useEffect } from 'react';
 import { AlertCircle, FileCheck2 } from 'lucide-react';
 import { ProcessMetrics, ProcessState } from '@/hooks/useProcessing';
 import { CrmRecord } from '@/types/schema';
+import Papa from 'papaparse';
+
 const container: Variants = {
   hidden: { opacity: 0 },
   show: {
@@ -27,6 +29,7 @@ interface SummaryDashboardProps {
   state: ProcessState;
   metrics: ProcessMetrics;
   records: CrmRecord[];
+  skippedRawRows: Record<string, string>[];
   onReset: () => void;
 }
 
@@ -41,8 +44,21 @@ function AnimatedCounter({ value }: { value: number }) {
   return <motion.span>{display}</motion.span>;
 }
 
-export function SummaryDashboard({ state, metrics, records, onReset }: SummaryDashboardProps) {
+export function SummaryDashboard({ state, metrics, records, skippedRawRows, onReset }: SummaryDashboardProps) {
   const isPartial = state === 'partial_success';
+
+  const handleExportSkipped = () => {
+    if (skippedRawRows.length === 0) return;
+    const csv = Papa.unparse(skippedRawRows);
+    const blob = new Blob([csv], { type: 'text/csv;charset=utf-8;' });
+    const url = URL.createObjectURL(blob);
+    const link = document.createElement('a');
+    link.href = url;
+    link.setAttribute('download', `skipped_rows_${Date.now()}.csv`);
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+  };
 
   return (
     <motion.div 
@@ -67,9 +83,18 @@ export function SummaryDashboard({ state, metrics, records, onReset }: SummaryDa
                 </CardDescription>
               </div>
             </div>
-            <motion.div whileHover={{ scale: 1.02 }} whileTap={{ scale: 0.98 }}>
-              <Button onClick={onReset} variant="outline">Upload Another File</Button>
-            </motion.div>
+            <div className="flex items-center space-x-2">
+              {metrics.skippedRows > 0 && skippedRawRows.length > 0 && (
+                <motion.div whileHover={{ scale: 1.02 }} whileTap={{ scale: 0.98 }}>
+                  <Button onClick={handleExportSkipped} variant="secondary">
+                    Export Skipped
+                  </Button>
+                </motion.div>
+              )}
+              <motion.div whileHover={{ scale: 1.02 }} whileTap={{ scale: 0.98 }}>
+                <Button onClick={onReset} variant="outline">Upload Another File</Button>
+              </motion.div>
+            </div>
           </div>
         </CardHeader>
         <CardContent>

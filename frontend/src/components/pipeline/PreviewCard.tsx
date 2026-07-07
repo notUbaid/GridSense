@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { motion, AnimatePresence } from 'framer-motion';
@@ -17,6 +17,24 @@ export function PreviewCard({ previewData, onCancel, onStart }: PreviewCardProps
   const startIndex = page * rowsPerPage;
   const endIndex = Math.min(startIndex + rowsPerPage, previewData.rows.length);
   const visibleRows = previewData.rows.slice(startIndex, endIndex);
+
+  useEffect(() => {
+    const handleKeyDown = (e: KeyboardEvent) => {
+      // Don't trigger if user is interacting with some input
+      if (e.target instanceof HTMLInputElement || e.target instanceof HTMLTextAreaElement) return;
+
+      if (e.key === 'Enter') {
+        e.preventDefault();
+        onStart();
+      } else if (e.key === 'Escape') {
+        e.preventDefault();
+        onCancel();
+      }
+    };
+
+    window.addEventListener('keydown', handleKeyDown);
+    return () => window.removeEventListener('keydown', handleKeyDown);
+  }, [onStart, onCancel]);
 
   return (
     <Card className="border-border/50 bg-card shadow-sm animate-in fade-in slide-in-from-bottom-4 duration-300">
@@ -83,10 +101,14 @@ export function PreviewCard({ previewData, onCancel, onStart }: PreviewCardProps
         </div>
         <div className="flex justify-end space-x-4">
           <motion.div whileHover={{ scale: 1.02 }} whileTap={{ scale: 0.98 }}>
-            <Button variant="outline" onClick={onCancel}>Cancel</Button>
+            <Button variant="outline" onClick={onCancel}>
+              Cancel <kbd className="ml-2 px-1.5 py-0.5 rounded-sm bg-muted text-[10px] text-muted-foreground border border-border">Esc</kbd>
+            </Button>
           </motion.div>
           <motion.div whileHover={{ scale: 1.02 }} whileTap={{ scale: 0.98 }}>
-            <Button onClick={onStart}>Start AI Extraction</Button>
+            <Button onClick={onStart}>
+              Start AI Extraction <kbd className="ml-2 px-1.5 py-0.5 rounded-sm bg-primary-foreground/20 text-[10px] text-primary-foreground border border-primary-foreground/30">Enter</kbd>
+            </Button>
           </motion.div>
         </div>
       </CardContent>
