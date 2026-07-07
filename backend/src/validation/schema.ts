@@ -3,7 +3,7 @@ import { z } from 'zod';
 export const CrmRecordSchema = z.object({
   created_at: z.string().datetime().optional().nullable().describe("ISO-8601 date when the record was created. Leave null if unavailable."),
   name: z.string().optional().nullable().describe("Full name. Combine first and last name if separate."),
-  email: z.string().email().optional().nullable().or(z.literal('')).describe("Primary email address. If multiple emails exist, use the first and append extras to crm_note."),
+  email: z.string().optional().nullable().or(z.literal('')).describe("Primary email address. If multiple emails exist, use the first and append extras to crm_note."),
   country_code: z.string().optional().nullable().describe("Country dialing code (e.g., +1, +91). Infer from country if possible."),
   phone_local: z.string().optional().nullable().describe("Phone number without country code. Strip all formatting. If multiple numbers exist, use the first and append extras to crm_note."),
   company: z.string().optional().nullable().describe("Company or organization name."),

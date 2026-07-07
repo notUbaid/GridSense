@@ -62,6 +62,7 @@ RULES:
 - If multiple phone numbers exist, use the first as "phone_local" and append the rest to "crm_note".
 - "crm_status" MUST be exactly one of: GOOD_LEAD_FOLLOW_UP, DID_NOT_CONNECT, BAD_LEAD, SALE_DONE — or null.
 - "data_source" MUST be exactly one of: leads_on_demand, meridian_tower, eden_park, varah_swamy, sarjapur_plots — or null.
+- IMPORTANT: DO NOT LOSE ANY DATA. If the row contains columns or information (like Campaign, Ad Set, extra IDs, or random text) that do not map to any standard CRM field, you MUST append all of that extra unmapped data into the "crm_note" field.
 - Combine first name + last name into a single "name" field.
 - Strip formatting from phone numbers (spaces, dashes, parentheses).
 - You MUST return exactly ${rows.length} objects in the "records" array — one per input row.
