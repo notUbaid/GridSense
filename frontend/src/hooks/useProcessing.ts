@@ -85,7 +85,7 @@ export function useProcessing() {
         setState('preview');
         toast.success(`Successfully parsed ${sanitizedData.length} rows.`);
       },
-      error: (err: any) => {
+      error: (err: Error) => {
         const errMsg = `Error parsing CSV: ${err.message}`;
         setError(errMsg);
         setState('error');
@@ -148,7 +148,7 @@ export function useProcessing() {
             headers,
             rows: task.batch,
             provider: currentProvider,
-          } as any);
+          });
 
           if (response.status === 'success' || response.status === 'partial') {
             if (response.records) {
@@ -161,10 +161,11 @@ export function useProcessing() {
           } else {
             throw new Error(response.error || 'Batch failed without specific error');
           }
-        } catch (err: any) {
-          const backendError = err.response?.data?.error || err.message || 'Unknown error';
-          const status = err.response?.status;
-          const exhaustedProvider = err.response?.data?.exhaustedProvider || 'groq';
+        } catch (err: unknown) {
+          const error = err as { response?: { data?: { error?: string, exhaustedProvider?: string }, status?: number }, message?: string };
+          const backendError = error.response?.data?.error || error.message || 'Unknown error';
+          const status = error.response?.status;
+          const exhaustedProvider = error.response?.data?.exhaustedProvider || 'groq';
           
           if (status === 429 || backendError.toLowerCase().includes('rate limit')) {
             if (currentProvider === 'groq' && exhaustedProvider === 'groq') {

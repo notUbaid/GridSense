@@ -104,3 +104,28 @@ export function Dropzone({ onFileAccepted, disabled }: DropzoneProps) {
     </motion.div>
   );
 }
+
+const SAMPLE_CSV = `First Name,Last Name,Email Address,Phone Number,Company,City,Lead Status,Notes
+John,Doe,john.doe@example.com,+91 9876543210,GrowEasy,Mumbai,Interested,Wants a demo next week
+Sarah,Johnson,sarah.johnson@example.com,555-1234,Tech Solutions,Bangalore,Not Reachable,Tried calling twice
+Rajesh,Patel,rajesh.patel@example.com,9876543212,Startup Inc,Delhi,Closed Won,Deal signed on 2026-05-01
+Priya,Singh,priya.singh@example.com,9876543213,Enterprise Corp,Pune,Not Interested,Budget constraints
+Amit,Kumar,,9876543214,CloudTech,Hyderabad,Follow Up,Busy this week
+,,,,,,,No contact info - should be skipped`;
+
+export function SampleCsvButton({ onFileAccepted }: { onFileAccepted: (file: File) => void }) {
+  const handleLoadSample = () => {
+    const blob = new Blob([SAMPLE_CSV], { type: 'text/csv' });
+    const file = new File([blob], 'sample_leads.csv', { type: 'text/csv' });
+    onFileAccepted(file);
+  };
+
+  return (
+    <button
+      onClick={handleLoadSample}
+      className="text-xs text-muted-foreground hover:text-primary transition-colors underline underline-offset-4 decoration-dashed"
+    >
+      No CSV? Try a sample dataset →
+    </button>
+  );
+}

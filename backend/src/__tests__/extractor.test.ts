@@ -16,12 +16,12 @@ describe('Extractor', () => {
     
     // First record has email
     expect(result.records[0].email).toBe('john@example.com');
-    expect(result.records[0].phone_local).toBe('555-1234');
+    expect(result.records[0].mobile_without_country_code).toBe('555-1234');
     expect(result.records[0].name).toBe('John');
     
     // Second record has no email, but has phone
     expect(result.records[1].email).toBeNull();
-    expect(result.records[1].phone_local).toBe('555-5678');
+    expect(result.records[1].mobile_without_country_code).toBe('555-5678');
   });
 
   it('should skip records that have neither email nor phone number', async () => {

@@ -1,7 +1,7 @@
 'use client';
 
 import React from 'react';
-import { Dropzone } from '@/components/upload/Dropzone';
+import { Dropzone, SampleCsvButton } from '@/components/upload/Dropzone';
 import { useProcessing } from '@/hooks/useProcessing';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { AlertCircle, Loader2 } from 'lucide-react';
@@ -55,6 +55,9 @@ export default function Home() {
                     )}
                   </CardContent>
                 </Card>
+                <div className="flex justify-center pt-3">
+                  <SampleCsvButton onFileAccepted={processFile} />
+                </div>
               </motion.div>
             )}
 

@@ -22,7 +22,7 @@ export class MockAIProvider {
         created_at: new Date().toISOString(),
         name: row.Name || row['First Name'] || `Test User ${index}`,
         email: hasEmail ? (row.Email || row['Email Address'] || row.email) : null,
-        phone_local: hasPhone ? (row.Phone || row['Phone Number'] || row.mobile) : null,
+        mobile_without_country_code: hasPhone ? (row.Phone || row['Phone Number'] || row.mobile) : null,
         company: row.Company || row.Org || null,
         city: 'Mock City',
         state: 'Mock State',

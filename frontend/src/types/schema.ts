@@ -5,7 +5,7 @@ export const CrmRecordSchema = z.object({
   name: z.string().optional().nullable(),
   email: z.string().optional().nullable().or(z.literal('')),
   country_code: z.string().optional().nullable(),
-  phone_local: z.string().optional().nullable(),
+  mobile_without_country_code: z.string().optional().nullable(),
   company: z.string().optional().nullable(),
   city: z.string().optional().nullable(),
   state: z.string().optional().nullable(),

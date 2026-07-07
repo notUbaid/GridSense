@@ -59,12 +59,13 @@ RULES:
 - Never invent data. If a value is not present in the source, leave the field null.
 - If a row has BOTH email and phone missing, still include it but set all fields to null (it will be filtered as a skip).
 - If multiple emails exist, use the first as "email" and append the rest to "crm_note".
-- If multiple phone numbers exist, use the first as "phone_local" and append the rest to "crm_note".
+- If multiple phone numbers exist, use the first as "mobile_without_country_code" and append the rest to "crm_note".
 - "crm_status" MUST be exactly one of: GOOD_LEAD_FOLLOW_UP, DID_NOT_CONNECT, BAD_LEAD, SALE_DONE — or null.
 - "data_source" MUST be exactly one of: leads_on_demand, meridian_tower, eden_park, varah_swamy, sarjapur_plots — or null.
 - IMPORTANT: DO NOT LOSE ANY DATA. If the row contains columns or information (like Campaign, Ad Set, extra IDs, or random text) that do not map to any standard CRM field, you MUST append all of that extra unmapped data into the "crm_note" field.
 - Combine first name + last name into a single "name" field.
 - Strip formatting from phone numbers (spaces, dashes, parentheses).
+- Output \`created_at\` in strict ISO-8601 format (YYYY-MM-DDTHH:mm:ssZ) so it is parseable by JavaScript's new Date(). If no date is present, use null.
 - You MUST return exactly ${rows.length} objects in the "records" array — one per input row.
 - Output ONLY valid JSON. No markdown, no explanation.
 
@@ -74,7 +75,7 @@ ${JSON.stringify(zodToJsonSchema(responseSchema as any))}
 Example:
 Headers: ["First Name", "SurName", "Email Address", "Phone", "Org"]
 Row: [{"First Name": "John", "SurName": "Doe", "Email Address": "john@acme.com", "Phone": "555-0198", "Org": "Acme Corp"}]
-Output: {"records": [{"name": "John Doe", "email": "john@acme.com", "phone_local": "5550198", "company": "Acme Corp"}]}
+Output: {"records": [{"name": "John Doe", "email": "john@acme.com", "mobile_without_country_code": "5550198", "company": "Acme Corp"}]}
 
 ---
 CSV Headers: ${JSON.stringify(headers)}
@@ -157,7 +158,7 @@ ${JSON.stringify(rows)}`;
       const validRecords: CrmRecord[] = [];
 
       for (const record of records) {
-        const hasContact = record.email || record.phone_local;
+        const hasContact = record.email || record.mobile_without_country_code;
         if (!hasContact) {
           skippedCount++;
         } else {

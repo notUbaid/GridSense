@@ -15,8 +15,10 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "GridSense",
-  description: "AI-powered spreadsheet intelligence platform",
+  title: "GridSense — AI-Powered CSV to CRM Mapper",
+  description: "Drop any CSV file and let AI intelligently extract and map data into a standardized CRM schema. Supports Facebook leads, Google Ads exports, and any spreadsheet format.",
+  keywords: ["CSV", "CRM", "AI", "data extraction", "lead import", "GrowEasy"],
+  authors: [{ name: "GridSense" }],
 };
 
 export default function RootLayout({
