@@ -299,7 +299,7 @@ export function useProcessing() {
       failReasons: localFailReasons
     }));
 
-    if (localFailedBatches === 0) {
+    if (localFailedRows === 0) {
       setState('done');
       toast.success('Extraction complete!');
     } else {
