@@ -1,101 +1,75 @@
 # GridSense Architecture & Request Flow
 
-GridSense handles the inherent unpredictability of Large Language Models (LLMs) and network latency by wrapping AI processing in strict validation boundaries.
+GridSense is engineered to handle the inherent unpredictability of Large Language Models (LLMs) and network latency by wrapping AI processing in strict validation boundaries, dynamic chunking, and multi-provider failovers.
 
-Here is the exact step-by-step technical flow of the application.
+Here is the precise technical lifecycle of a dataset passing through the GridSense pipeline.
 
-### Step 1: Landing
-User opens `gridsense.vercel.app`. They immediately understand the core utility: upload *any* CSV and it will be normalized.
+---
 
-### Step 2: Client-Side Parsing
-User uploads an arbitrary file (e.g., `facebook_leads.csv`). Nothing AI-related happens yet. 
-`PapaParse` runs locally in the browser to convert the CSV into a JSON array:
-```json
-[
- {
-   "Full Name": "John",
-   "Phone": "9876543210",
-   "Remarks": "Call tomorrow"
- }
-]
-```
-This is fully local. No server memory is consumed.
+## 1. Client-Side Parsing & Triage
 
-### Step 3: Data Preview
-The user is shown a preview of the parsed data.
-- **Rows:** 145
-- **Columns:** 7
-- **Sample Data:** Displays the first few rows (John, 9876543210, Call tomorrow).
+**Upload & Web Worker Parsing**
+When a user uploads a file (e.g., `facebook_leads.csv`), nothing AI-related happens immediately. The file is parsed entirely client-side in the browser using `PapaParse` via Web Workers. This prevents server memory bloat, avoids payload limits, and provides instant UI feedback.
 
-This satisfies the initial assignment requirements. 
+**Heuristic Pre-Filtering**
+Before initiating costly API calls, the frontend runs a deterministic pre-flight check on the parsed rows. If a row is clearly devoid of contact information (e.g., lacks an `@` symbol and contains fewer than 7 digits), it is immediately discarded into the "Skipped" pile. 
 
-### Step 4: Execution Trigger
-User clicks **Start AI Extraction**. NOW the backend is called.
+---
 
-### Step 5: Chunking & Concurrency
-If a file has 500 rows, the frontend does not send all 500 rows at once. It sends them in chunks:
-`20` ➔ `20` ➔ `20` ➔ `20` ...
+## 2. Dynamic Schema Mapping
 
-**Why?**
-- Cheaper (avoids massive token contexts).
-- Faster (batches are processed concurrently).
-- More accurate (LLMs hallucinate less on smaller lists).
-- Easier to retry (a single failure doesn't ruin the whole 500-row import).
+Once the data is parsed and triaged, the frontend extracts the column headers and requests a mapping schema from the backend (`/api/v1/process/map-headers`).
 
-### Step 6: Backend Payload Validation
-The backend receives 20 rows. The first thing it does is validate the shape of the request using Zod. If it's a bad request, it rejects it immediately before wasting any API calls.
+**The AI Architect**
+The backend queries Groq (Llama-3.1-8B) to map the unknown CSV columns to our strict GrowEasy CRM schema. The AI returns a JSON mapping along with a `confidence` score.
 
-### Step 7: Prompt Construction
-The backend dynamically builds the prompt for this specific chunk:
-> You are an expert CRM extractor. Convert these records.
-> Rules: ...
-> Rows: [...]
+**The Execution Fork**
+Based on the mapping confidence, the frontend decides on the execution strategy:
+*   **High Confidence (≥ 70%)**: The system switches to **Deterministic Mode**. Batches of 5,000 rows are processed synchronously without further AI involvement, leveraging lightning-fast standard property mapping.
+*   **Low/No Confidence**: The system switches to **AI Extraction Mode**. The data is heavily chunked into highly constrained batches of 50 rows for deep LLM analysis.
 
-### Step 8: AI Processing (Groq)
-Groq looks at the arbitrary column headers and semantically maps them:
-- `Customer Name` ➔ `name`
-- `Phone` ➔ `mobile`
-- `Remarks` ➔ `crm_note`
-- `Status` ➔ `GOOD_LEAD_FOLLOW_UP`
+---
 
-### Step 9: Structured Output
-Groq returns a strictly formatted JSON array matching our CRM schema:
-```json
-[
- {
-  "name": "John",
-  "email": "",
-  "phone_local": "9876543210",
-  "crm_status": "GOOD_LEAD_FOLLOW_UP"
- }
-]
-```
+## 3. Concurrent Worker Pool
 
-### Step 10: Backend Response Validation
-We don't trust the AI. The backend validates the AI's response again.
-- **Zod Schema:** Does it strictly match `CrmRecordSchema`?
-- **Mathematical Integrity:** Did we send 20 rows and get exactly 20 records back?
+Sending massive arrays to an LLM destroys the context window, causes severe hallucinations, and inevitably triggers rate limits. 
 
-If it's correct ➔ Return to the frontend.
-If it's wrong (hallucination, dropped rows, rate limit) ➔ Trigger exponential backoff and retry the batch.
+GridSense utilizes a concurrent worker pool (default `maxConcurrency: 4`) in the React frontend. If a dataset has 500 rows, the workers dispatch 50-row batches asynchronously (e.g., Worker 1 takes rows 1-50, Worker 2 takes 51-100). 
 
-### Step 11: Real-Time Streaming
-Instead of making the user wait `████████████` for all 500 rows to finish, the frontend streams the progress via a live progress bar as batches resolve:
-- 20 rows done...
-- 40 rows done...
-- 60 rows done...
+*Why this matters:*
+- **Cost & Speed**: Parallel execution significantly reduces wall-clock time.
+- **Accuracy**: LLMs hallucinate less on smaller, focused lists.
+- **Resilience**: A single batch failure (e.g., 50 rows) doesn't corrupt the entire 500-row import.
 
-### Step 12: Summary Dashboard
-Once all batches resolve, a dashboard is shown:
-- **Imported:** 432
-- **Skipped:** 6 (intentionally skipped because both email and phone were missing)
-- **Failed:** 1 Batch (data preserved via partial success)
-- **Time:** 14.2s
+---
 
-### Step 13: Results Table
-The normalized data is rendered in a clean TanStack table for final review.
+## 4. Multi-Provider AI Inference
 
-### Step 14: Export
-User clicks Download to get `crm_records.csv`. Done. 
+When the backend receives a 50-row batch, it constructs a prompt enforcing strict JSON output (`response_format: { type: 'json_object' }`).
 
-That's literally the whole application.
+**Primary Inference & Rate Limit Swapping**
+1. The batch is sent to **Groq** (`llama-3.3-70b-versatile`). 
+2. If Groq encounters a `429 Too Many Requests` limit, the backend explicitly traps it and returns the exact status to the frontend worker.
+3. The frontend worker catches the rate limit, logs a warning, **swaps the designated provider to Google Gemini** (`gemini-2.5-flash`), and requeues the failed batch.
+4. The pipeline continues uninterrupted. 
+
+---
+
+## 5. Zero-Hallucination Validation
+
+GridSense operates on a "zero trust" policy for AI outputs. 
+
+When the LLM returns the JSON payload:
+1. **Sanitization**: Shared utilities (`ai-utils.ts`) strip rogue markdown code fences and sanitize empty strings.
+2. **Schema Enforcement**: The payload is passed through strict **Zod validation**. If the AI hallucinated an enum value (e.g., assigning `crm_status: 'KIND_OF_INTERESTED'`), it is clamped to `null`.
+3. **Data Integrity Check**: The backend verifies that the number of returned records matches the number of rows sent. Dropped rows trigger a batch failure.
+
+---
+
+## 6. Real-Time Streaming & Consolidation
+
+As asynchronous workers resolve, the React frontend streams progress via a live dashboard.
+*   **Metrics**: Renders real-time successful rows, skipped rows, and failed batches.
+*   **Dynamic ETA**: Calculates time remaining based on `completedBatches` and `elapsedTime`.
+
+Once all queues are drained, the normalized data is consolidated into a virtualized TanStack Table. The final output can be exported as a clean, UTF-8 BOM encoded CSV, fully compatible with Microsoft Excel.
