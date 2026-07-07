@@ -115,7 +115,6 @@ export function useProcessing() {
     const validRows: Record<string, string>[] = [];
     const localSkippedRaw: Record<string, string>[] = [];
     const localSkipReasons: Record<string, number> = {};
-    const seenContacts = new Set<string>();
 
     for (const row of sanitizedData) {
       const rowStr = JSON.stringify(row).toLowerCase();
@@ -130,20 +129,6 @@ export function useProcessing() {
         continue;
       }
 
-      // Quick dedup extraction: Find first email or phone-like string to use as dedup key
-      const emailMatch = rowStr.match(/[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}/);
-      const phoneMatch = rowStr.match(/\d{7,}/);
-      const dedupKey = emailMatch?.[0] || phoneMatch?.[0];
-
-      if (dedupKey) {
-        if (seenContacts.has(dedupKey)) {
-          localSkippedRaw.push(row);
-          localSkipReasons['Duplicate Contact Info'] = (localSkipReasons['Duplicate Contact Info'] || 0) + 1;
-          continue;
-        }
-        seenContacts.add(dedupKey);
-      }
-      
       validRows.push(row);
     }
 
@@ -241,11 +226,12 @@ export function useProcessing() {
               requeued = true;
               continue; // Try again with Gemini
             } else {
-              limitReached = true;
-              setCurrentActivity(`API limits reached. Taking a breather, please try later.`);
+              setCurrentActivity(`API limits reached across all keys. Sleeping for 60s before resuming...`);
+              await new Promise(r => setTimeout(r, 60000));
+              currentProvider = 'groq';
               queue.unshift(task); // Save progress
               requeued = true;
-              break; // Stop worker gracefully
+              continue;
             }
           } else {
             localFailedBatches++;
