@@ -116,6 +116,19 @@ export function ResultsTable({ data }: ResultsTableProps) {
     URL.revokeObjectURL(url);
   };
 
+  const exportJson = () => {
+    const jsonContent = JSON.stringify(data, null, 2);
+    const blob = new Blob([jsonContent], { type: 'application/json' });
+    const url = URL.createObjectURL(blob);
+    const link = document.createElement('a');
+    link.href = url;
+    link.setAttribute('download', `gridsense_export_${Date.now()}.json`);
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+    URL.revokeObjectURL(url);
+  };
+
   return (
     <div className="space-y-4 p-4">
       <div className="flex justify-between items-center px-1">
@@ -125,6 +138,7 @@ export function ResultsTable({ data }: ResultsTableProps) {
             navigator.clipboard.writeText(JSON.stringify(data, null, 2));
             toast.success('Copied all JSON to clipboard');
           }} variant="ghost" size="sm" className="h-8 hidden sm:flex">Copy JSON</Button>
+          <Button onClick={exportJson} variant="outline" size="sm" className="h-8 hidden sm:flex">Download JSON</Button>
           <Button onClick={exportCsv} variant="outline" size="sm" className="h-8">Export CSV</Button>
         </div>
       </div>
