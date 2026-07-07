@@ -86,6 +86,7 @@ export async function processBatch(
   provider: 'groq' | 'gemini' = 'groq'
 ) {
   let attempt = 0;
+  let keysTried = 1;
   const maxRetries = config.AI_MAX_RETRIES;
   const startTime = Date.now();
 
@@ -247,14 +248,14 @@ ${JSON.stringify(rows)}`;
       // If we hit a rate limit, try to rotate key first if using groq
       if (isRateLimit) {
         if (provider === 'groq') {
-          if (usedGroqIndex === currentGroqIndex && currentGroqIndex < groqClients.length - 1) {
-            logger.warn(`Groq key ${currentGroqIndex} exhausted. Rotating to key ${currentGroqIndex + 1}...`);
-            currentGroqIndex++;
-            attempt = 0;
-            continue;
-          } else if (usedGroqIndex < currentGroqIndex) {
-            // Another worker already rotated the key! Just retry with the new key.
-            logger.warn(`Another worker rotated Groq key to ${currentGroqIndex}. Retrying with new key...`);
+          if (keysTried < groqClients.length) {
+            if (usedGroqIndex === currentGroqIndex) {
+              currentGroqIndex = (currentGroqIndex + 1) % groqClients.length;
+              logger.warn(`Groq key exhausted. Rotating to key ${currentGroqIndex}...`);
+            } else {
+              logger.warn(`Another worker rotated Groq key to ${currentGroqIndex}. Retrying with new key...`);
+            }
+            keysTried++;
             attempt = 0;
             continue;
           }
