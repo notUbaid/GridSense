@@ -99,6 +99,16 @@ export function PreviewCard({ previewData, onCancel, onStart }: PreviewCardProps
             </div>
           )}
         </div>
+        {previewData.rows.length > 500 && (
+          <div className="bg-amber-500/10 border border-amber-500/20 text-amber-500/90 rounded-md p-3 text-sm flex items-start space-x-3 shadow-sm">
+            <svg className="h-5 w-5 shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+            </svg>
+            <p className="leading-relaxed">
+              <strong>Notice:</strong> You are processing a very large dataset ({previewData.rows.length} rows). Because GridSense utilizes free-tier APIs, extraction may take longer than usual and automatically cycle between providers to avoid rate limits. Please leave this tab open until completion.
+            </p>
+          </div>
+        )}
         <div className="flex justify-end space-x-4">
           <motion.div whileHover={{ scale: 1.02 }} whileTap={{ scale: 0.98 }}>
             <Button variant="outline" onClick={onCancel}>
