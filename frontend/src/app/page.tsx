@@ -10,6 +10,7 @@ import { PreviewCard } from '@/components/pipeline/PreviewCard';
 import { ProgressCard } from '@/components/pipeline/ProgressCard';
 import { ThemeToggle } from '@/components/ThemeToggle';
 import { SummaryDashboard } from '@/components/pipeline/SummaryDashboard';
+import { motion, AnimatePresence } from 'framer-motion';
 
 export default function Home() {
   const { state, progress, records, previewData, metrics, error, currentActivity, elapsedMs, etaMs, processFile, startProcessing, reset } = useProcessing();
@@ -25,7 +26,7 @@ export default function Home() {
       <div className="relative mx-auto max-w-6xl space-y-8 z-10">
         <div className="flex justify-between items-start">
           <div className="space-y-2">
-            <h1 className="text-3xl font-semibold tracking-tight text-foreground">GridSense</h1>
+            <h1 className="text-3xl font-semibold tracking-tight bg-clip-text text-transparent bg-gradient-to-r from-primary via-primary/80 to-primary/40">GridSense</h1>
             <p className="text-base text-muted-foreground max-w-2xl">
               Semantic spreadsheet intelligence. Drop any CSV, and the AI will automatically map the raw data into a strictly typed CRM schema.
             </p>
@@ -33,64 +34,107 @@ export default function Home() {
           <ThemeToggle />
         </div>
 
-        {(state === 'idle' || state === 'parsing') && (
-          <Card className="border-border/50 bg-card shadow-sm transition-all">
-            <CardContent className="pt-6">
-              <Dropzone onFileAccepted={processFile} disabled={state === 'parsing'} />
-              {state === 'parsing' && (
-                <div className="mt-6 flex items-center justify-center space-x-2 text-sm text-muted-foreground">
-                  <Loader2 className="h-5 w-5 animate-spin text-primary" />
-                  <span>Parsing CSV locally...</span>
-                </div>
-              )}
-            </CardContent>
-          </Card>
-        )}
+        <div className="relative min-h-[400px]">
+          <AnimatePresence mode="wait">
+            {(state === 'idle' || state === 'parsing') && (
+              <motion.div
+                key="upload"
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, scale: 0.95 }}
+                transition={{ duration: 0.3, ease: 'easeOut' }}
+              >
+                <Card className="border-border/50 bg-card shadow-sm transition-all">
+                  <CardContent className="pt-6">
+                    <Dropzone onFileAccepted={processFile} disabled={state === 'parsing'} />
+                    {state === 'parsing' && (
+                      <div className="mt-6 flex items-center justify-center space-x-2 text-sm text-muted-foreground">
+                        <Loader2 className="h-5 w-5 animate-spin text-primary" />
+                        <span>Parsing CSV locally...</span>
+                      </div>
+                    )}
+                  </CardContent>
+                </Card>
+              </motion.div>
+            )}
 
-        {state === 'preview' && previewData && (
-          <PreviewCard 
-            previewData={previewData} 
-            onCancel={reset} 
-            onStart={startProcessing} 
-          />
-        )}
+            {state === 'preview' && previewData && (
+              <motion.div
+                key="preview"
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, scale: 0.95 }}
+                transition={{ duration: 0.3, ease: 'easeOut' }}
+              >
+                <PreviewCard 
+                  previewData={previewData} 
+                  onCancel={reset} 
+                  onStart={startProcessing} 
+                />
+              </motion.div>
+            )}
 
-        {state === 'processing' && (
-          <ProgressCard 
-            progress={progress} 
-            records={records} 
-            currentActivity={currentActivity}
-            elapsedMs={elapsedMs}
-            etaMs={etaMs}
-            totalRows={metrics.totalRows}
-          />
-        )}
+            {state === 'processing' && (
+              <motion.div
+                key="processing"
+                initial={{ opacity: 0, scale: 0.95 }}
+                animate={{ opacity: 1, scale: 1 }}
+                exit={{ opacity: 0, y: -20 }}
+                transition={{ duration: 0.4, ease: 'easeOut' }}
+              >
+                <ProgressCard 
+                  progress={progress} 
+                  records={records} 
+                  currentActivity={currentActivity}
+                  elapsedMs={elapsedMs}
+                  etaMs={etaMs}
+                  totalRows={metrics.totalRows}
+                />
+              </motion.div>
+            )}
 
-        {state === 'error' && (
-          <Card className="border-destructive/30 shadow-sm">
-            <CardHeader>
-              <div className="flex items-center space-x-2 text-destructive">
-                <AlertCircle className="h-5 w-5" />
-                <CardTitle>Processing Failed</CardTitle>
-              </div>
-            </CardHeader>
-            <CardContent className="space-y-6">
-              <p className="text-sm text-muted-foreground bg-destructive/10 p-4 rounded-md border border-destructive/20">
-                {error}
-              </p>
-              <Button onClick={reset} variant="default">Try Another File</Button>
-            </CardContent>
-          </Card>
-        )}
+            {state === 'error' && (
+              <motion.div
+                key="error"
+                initial={{ opacity: 0, x: -20 }}
+                animate={{ opacity: 1, x: 0 }}
+                exit={{ opacity: 0, scale: 0.95 }}
+                transition={{ duration: 0.3 }}
+              >
+                <Card className="border-destructive/30 shadow-sm">
+                  <CardHeader>
+                    <div className="flex items-center space-x-2 text-destructive">
+                      <AlertCircle className="h-5 w-5" />
+                      <CardTitle>Processing Failed</CardTitle>
+                    </div>
+                  </CardHeader>
+                  <CardContent className="space-y-6">
+                    <p className="text-sm text-muted-foreground bg-destructive/10 p-4 rounded-md border border-destructive/20">
+                      {error}
+                    </p>
+                    <Button onClick={reset} variant="default">Try Another File</Button>
+                  </CardContent>
+                </Card>
+              </motion.div>
+            )}
 
-        {(state === 'done' || state === 'partial_success') && (
-          <SummaryDashboard 
-            state={state} 
-            metrics={metrics} 
-            records={records} 
-            onReset={reset} 
-          />
-        )}
+            {(state === 'done' || state === 'partial_success') && (
+              <motion.div
+                key="done"
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, ease: 'easeOut' }}
+              >
+                <SummaryDashboard 
+                  state={state} 
+                  metrics={metrics} 
+                  records={records} 
+                  onReset={reset} 
+                />
+              </motion.div>
+            )}
+          </AnimatePresence>
+        </div>
       </div>
     </main>
   );

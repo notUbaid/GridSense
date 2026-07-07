@@ -3,9 +3,24 @@ import { cn } from '@/lib/utils';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { ResultsTable } from '@/components/results/ResultsTable';
+import { motion, Variants } from 'framer-motion';
 import { AlertCircle, FileCheck2 } from 'lucide-react';
 import { ProcessMetrics, ProcessState } from '@/hooks/useProcessing';
 import { CrmRecord } from '@/types/schema';
+const container: Variants = {
+  hidden: { opacity: 0 },
+  show: {
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.1
+    }
+  }
+};
+
+const item: Variants = {
+  hidden: { opacity: 0, y: 10 },
+  show: { opacity: 1, y: 0, transition: { type: "spring", stiffness: 300, damping: 24 } }
+};
 
 interface SummaryDashboardProps {
   state: ProcessState;
@@ -18,7 +33,12 @@ export function SummaryDashboard({ state, metrics, records, onReset }: SummaryDa
   const isPartial = state === 'partial_success';
 
   return (
-    <div className="space-y-6 animate-in fade-in slide-in-from-bottom-4 duration-300">
+    <motion.div 
+      className="space-y-6"
+      initial={{ opacity: 0, y: 20 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.4, ease: "easeOut" }}
+    >
       <Card className={cn("border-border/50 bg-card shadow-sm")}>
         <CardHeader className="pb-4 border-b">
           <div className="flex items-center justify-between">
@@ -39,47 +59,63 @@ export function SummaryDashboard({ state, metrics, records, onReset }: SummaryDa
           </div>
         </CardHeader>
         <CardContent>
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-6 pt-4">
-            <div className="space-y-1">
+          <motion.div 
+            variants={container}
+            initial="hidden"
+            animate="show"
+            className="grid grid-cols-2 md:grid-cols-4 gap-6 pt-4"
+          >
+            <motion.div variants={item} className="space-y-1">
               <p className="text-sm text-muted-foreground font-medium flex items-center gap-2">
                 <span className="h-2 w-2 rounded-full bg-muted-foreground/50"></span>
                 Total Input
               </p>
               <p className="text-2xl font-semibold tracking-tight">{metrics.totalRows}</p>
-            </div>
-            <div className="space-y-1">
+            </motion.div>
+            <motion.div variants={item} className="space-y-1">
               <p className="text-sm text-muted-foreground font-medium flex items-center gap-2">
                 <span className="h-2 w-2 rounded-full bg-emerald-500"></span>
                 Extracted
               </p>
               <p className="text-2xl font-semibold tracking-tight">{metrics.successfulRows}</p>
-            </div>
-            <div className="space-y-1">
+            </motion.div>
+            <motion.div variants={item} className="space-y-1">
               <p className="text-sm text-muted-foreground font-medium flex items-center gap-2">
                 <span className="h-2 w-2 rounded-full bg-amber-500"></span>
                 Skipped
               </p>
               <p className="text-2xl font-semibold tracking-tight">{metrics.skippedRows}</p>
-            </div>
-            <div className="space-y-1">
+            </motion.div>
+            <motion.div variants={item} className="space-y-1">
               <p className="text-sm text-muted-foreground font-medium flex items-center gap-2">
                 <span className="h-2 w-2 rounded-full bg-destructive"></span>
                 Failed Batches
               </p>
               <p className="text-2xl font-semibold tracking-tight">{metrics.failedBatches}</p>
-            </div>
-          </div>
-          <div className="mt-4 text-xs text-muted-foreground text-right">
+            </motion.div>
+          </motion.div>
+          <motion.div 
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ delay: 0.5, duration: 0.5 }}
+            className="mt-4 text-xs text-muted-foreground text-right"
+          >
             Processing time: {(metrics.processingTimeMs / 1000).toFixed(1)}s
-          </div>
+          </motion.div>
         </CardContent>
       </Card>
 
-      <Card className="border-border/50 bg-card shadow-sm overflow-hidden">
-        <CardContent className="p-0">
-          <ResultsTable data={records} />
-        </CardContent>
-      </Card>
-    </div>
+      <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ delay: 0.4, duration: 0.5, type: "spring" }}
+      >
+        <Card className="border-border/50 bg-card shadow-sm overflow-hidden">
+          <CardContent className="p-0">
+            <ResultsTable data={records} />
+          </CardContent>
+        </Card>
+      </motion.div>
+    </motion.div>
   );
 }

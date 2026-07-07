@@ -5,6 +5,7 @@ import { ResultsTable } from '@/components/results/ResultsTable';
 import { Skeleton } from '@/components/ui/skeleton';
 import { CrmRecord } from '@/types/schema';
 import { Clock, Timer } from 'lucide-react';
+import { motion } from 'framer-motion';
 
 interface ProgressCardProps {
   progress: number;
@@ -25,7 +26,12 @@ function formatTime(ms: number) {
 
 export function ProgressCard({ progress, records, currentActivity, elapsedMs, etaMs, totalRows }: ProgressCardProps) {
   return (
-    <div className="space-y-6 animate-in fade-in slide-in-from-bottom-4 duration-300">
+    <motion.div 
+      className="space-y-6"
+      initial={{ opacity: 0, y: 20 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.4, ease: "easeOut" }}
+    >
       <Card className="border-border/50 bg-card shadow-sm">
         <CardHeader className="space-y-1">
           <div className="flex justify-between items-start">
@@ -50,8 +56,13 @@ export function ProgressCard({ progress, records, currentActivity, elapsedMs, et
           </div>
         </CardHeader>
         <CardContent className="space-y-4">
-          <div className="relative">
-            <Progress value={progress} className="h-2 w-full transition-all duration-300" />
+          <div className="relative h-2 w-full overflow-hidden rounded-full bg-secondary">
+            <motion.div
+              className="h-full bg-primary"
+              initial={{ width: 0 }}
+              animate={{ width: `${progress}%` }}
+              transition={{ type: "spring", stiffness: 100, damping: 20 }}
+            />
             <div className="absolute inset-0 bg-linear-to-r from-transparent via-white/20 to-transparent -translate-x-full animate-[shimmer_1.5s_infinite]" />
           </div>
           <div className="flex justify-between items-center text-sm font-medium text-muted-foreground">
@@ -62,14 +73,20 @@ export function ProgressCard({ progress, records, currentActivity, elapsedMs, et
       </Card>
       
       {records.length > 0 ? (
-        <Card className="border-border/50 bg-card shadow-sm overflow-hidden animate-in fade-in duration-500">
-          <CardHeader className="bg-muted/30 pb-4">
+        <motion.div
+          initial={{ opacity: 0, height: 0 }}
+          animate={{ opacity: 1, height: "auto" }}
+          transition={{ duration: 0.4 }}
+        >
+          <Card className="border-border/50 bg-card shadow-sm overflow-hidden">
+            <CardHeader className="bg-muted/30 pb-4">
             <CardTitle className="text-sm font-medium text-muted-foreground">Extracted Records ({records.length})</CardTitle>
           </CardHeader>
           <CardContent className="p-0">
             <ResultsTable data={records} />
           </CardContent>
         </Card>
+        </motion.div>
       ) : (
         <Card className="border-border/50 bg-card shadow-sm overflow-hidden">
           <CardHeader className="bg-muted/30 pb-4 border-b">
@@ -84,6 +101,6 @@ export function ProgressCard({ progress, records, currentActivity, elapsedMs, et
           </CardContent>
         </Card>
       )}
-    </div>
+    </motion.div>
   );
 }

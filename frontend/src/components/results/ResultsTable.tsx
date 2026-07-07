@@ -7,7 +7,6 @@ import {
 } from '@tanstack/react-table';
 import {
   Table,
-  TableBody,
   TableCell,
   TableHead,
   TableHeader,
@@ -15,6 +14,22 @@ import {
 } from '@/components/ui/table';
 import { Button } from '@/components/ui/button';
 import { CrmRecord } from '@/types/schema';
+import { motion, AnimatePresence, Variants } from 'framer-motion';
+
+const tableContainer: Variants = {
+  hidden: { opacity: 0 },
+  show: {
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.05
+    }
+  }
+};
+
+const rowItem: Variants = {
+  hidden: { opacity: 0, y: 10 },
+  show: { opacity: 1, y: 0, transition: { type: "spring", stiffness: 300, damping: 24 } }
+};
 
 interface ResultsTableProps {
   data: CrmRecord[];
@@ -104,29 +119,35 @@ export function ResultsTable({ data }: ResultsTableProps) {
               </TableRow>
             ))}
           </TableHeader>
-          <TableBody>
+          <motion.tbody
+            variants={tableContainer}
+            initial="hidden"
+            animate="show"
+            className="[&_tr:last-child]:border-0"
+          >
             {table.getRowModel().rows?.length ? (
               table.getRowModel().rows.map((row) => (
-                <TableRow
+                <motion.tr
+                  variants={rowItem}
                   key={row.id}
                   data-state={row.getIsSelected() && 'selected'}
-                  className="hover:bg-muted/30 transition-colors"
+                  className="border-b transition-colors hover:bg-muted/30 data-[state=selected]:bg-muted"
                 >
                   {row.getVisibleCells().map((cell) => (
                     <TableCell key={cell.id} className="whitespace-nowrap max-w-[200px] truncate text-sm py-3 text-foreground">
                       {flexRender(cell.column.columnDef.cell, cell.getContext())}
                     </TableCell>
                   ))}
-                </TableRow>
+                </motion.tr>
               ))
             ) : (
-              <TableRow>
-                <TableCell colSpan={columns.length} className="h-24 text-center">
-                  No results.
-                </TableCell>
-              </TableRow>
-            )}
-          </TableBody>
+                <TableRow>
+                  <TableCell colSpan={columns.length} className="h-24 text-center">
+                    No results.
+                  </TableCell>
+                </TableRow>
+              )}
+          </motion.tbody>
         </Table>
       </div>
       <div className="flex items-center justify-end space-x-2 py-4">
