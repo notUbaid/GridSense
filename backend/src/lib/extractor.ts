@@ -7,15 +7,20 @@ import { config } from '../config';
 import { MockAIProvider } from './MockAIProvider';
 import { GoogleGenerativeAI } from '@google/generative-ai';
 
-let groq: Groq | null = null;
+let groqClients: Groq[] = [];
+let currentGroqIndex = 0;
 let genAI: GoogleGenerativeAI | null = null;
 
 function getGroqClient() {
   if (!config.GROQ_API_KEY) {
     throw new Error('GROQ_API_KEY is missing.');
   }
-  if (!groq) groq = new Groq({ apiKey: config.GROQ_API_KEY });
-  return groq;
+  if (groqClients.length === 0) {
+    const keys = config.GROQ_API_KEY.split(',').map(k => k.trim()).filter(k => k.length > 0);
+    if (keys.length === 0) throw new Error('No valid GROQ API keys found.');
+    groqClients = keys.map(key => new Groq({ apiKey: key }));
+  }
+  return groqClients[currentGroqIndex];
 }
 
 function getGeminiClient() {
@@ -117,6 +122,7 @@ Row Data:
 ${JSON.stringify(rows)}`;
 
   while (attempt < maxRetries) {
+    let usedGroqIndex = currentGroqIndex;
     try {
       logger.info({ attempt: attempt + 1, batchSize: rows.length, provider }, 'Sending batch to AI');
 
@@ -238,8 +244,22 @@ ${JSON.stringify(rows)}`;
       const status = error?.status || error?.response?.status || (error.message?.includes('429') ? 429 : 500);
       const isRateLimit = status === 429;
       
-      // If we hit a rate limit, immediately throw a special error so the frontend can fallback
+      // If we hit a rate limit, try to rotate key first if using groq
       if (isRateLimit) {
+        if (provider === 'groq') {
+          if (usedGroqIndex === currentGroqIndex && currentGroqIndex < groqClients.length - 1) {
+            logger.warn(`Groq key ${currentGroqIndex} exhausted. Rotating to key ${currentGroqIndex + 1}...`);
+            currentGroqIndex++;
+            attempt = 0;
+            continue;
+          } else if (usedGroqIndex < currentGroqIndex) {
+            // Another worker already rotated the key! Just retry with the new key.
+            logger.warn(`Another worker rotated Groq key to ${currentGroqIndex}. Retrying with new key...`);
+            attempt = 0;
+            continue;
+          }
+        }
+        
         const limitError = new Error('Rate limit exceeded');
         (limitError as any).status = 429;
         (limitError as any).exhaustedProvider = provider;
