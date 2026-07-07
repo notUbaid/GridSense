@@ -239,8 +239,11 @@ CRITICAL RULES:
 - If a value is not explicitly present in the source, leave the field null.
 - "crm_status" MUST be exactly one of: GOOD_LEAD_FOLLOW_UP, DID_NOT_CONNECT, BAD_LEAD, SALE_DONE — or null.
 - "data_source" MUST be exactly one of: leads_on_demand, meridian_tower, eden_park, varah_swamy, sarjapur_plots — or null.
+- Map positive sentiment or interest (e.g., "Interested", "Call back later") to GOOD_LEAD_FOLLOW_UP.
 - If a row is completely irrelevant nonsense, DO NOT hallucinate data. Return null for all fields.
-- DO NOT LOSE ANY DATA. If a valid lead row contains columns (like Campaign, Ad Set, extra IDs, etc) that do not map to standard CRM fields, you MUST append all of that extra unmapped data into the "crm_note" field.
+- "crm_note" should ONLY contain meaningful remarks, follow-up notes, secondary emails, or extra phone numbers.
+- DO NOT dump irrelevant columns (e.g., "Campaign", "Ad Set", random IDs, or random garbage) into "crm_note".
+- If a value in the input is completely empty, ignore it entirely and do not include its column name in the notes.
 - Combine first name + last name into a single "name" field ONLY if they exist. Do not invent a name if it's not there.
 - You MUST return exactly ${aiRows.length} objects in the "records" array — one per input row.
 - Output ONLY valid JSON matching the schema. No markdown, no explanation.
