@@ -183,7 +183,18 @@ export async function processBatch(
         }
       }
 
-      if (!mobile_without_country_code) {
+      if (!created_at) {
+        const match = value.match(DATE_FORMAT_REGEX);
+        if (match) {
+          const d = new Date(match[0]);
+          if (!isNaN(d.getTime())) {
+            created_at = d.toISOString();
+            value = value.replace(match[0], '').trim();
+          }
+        }
+      }
+
+      if (!mobile_without_country_code && value.length > 0) {
         const digitCount = (value.match(DIGIT_REGEX) || []).length;
         if (digitCount >= 7) {
           // If the value is purely a phone number format
@@ -197,17 +208,6 @@ export async function processBatch(
               mobile_without_country_code = match[0];
               value = value.replace(match[0], '').trim();
             }
-          }
-        }
-      }
-
-      if (!created_at) {
-        const match = value.match(DATE_FORMAT_REGEX);
-        if (match) {
-          const d = new Date(match[0]);
-          if (!isNaN(d.getTime())) {
-            created_at = d.toISOString();
-            value = value.replace(match[0], '').trim();
           }
         }
       }
