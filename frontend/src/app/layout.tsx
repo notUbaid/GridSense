@@ -18,7 +18,8 @@ export const metadata: Metadata = {
   title: "GridSense — AI-Powered CSV to CRM Mapper",
   description: "Drop any CSV file and let AI intelligently extract and map data into a standardized CRM schema. Supports Facebook leads, Google Ads exports, and any spreadsheet format.",
   keywords: ["CSV", "CRM", "AI", "data extraction", "lead import", "GrowEasy"],
-  authors: [{ name: "GridSense" }],
+  authors: [{ name: "GridSense Team" }],
+  manifest: "/manifest.json",
 };
 
 export default function RootLayout({

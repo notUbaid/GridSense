@@ -15,6 +15,8 @@ import {
 import { Button } from '@/components/ui/button';
 import { CrmRecord } from '@/types/schema';
 import { motion, AnimatePresence, Variants } from 'framer-motion';
+import { Copy } from 'lucide-react';
+import { toast } from 'sonner';
 
 const tableContainer: Variants = {
   hidden: { opacity: 0 },
@@ -53,6 +55,24 @@ export function ResultsTable({ data }: ResultsTableProps) {
       { accessorKey: 'data_source', header: 'Data Source' },
       { accessorKey: 'possession_time', header: 'Possession Time' },
       { accessorKey: 'description', header: 'Description' },
+      {
+        id: 'actions',
+        header: '',
+        cell: ({ row }) => (
+          <Button 
+            variant="ghost" 
+            size="icon" 
+            className="h-8 w-8 text-muted-foreground hover:text-foreground"
+            onClick={(e) => {
+              e.stopPropagation();
+              navigator.clipboard.writeText(JSON.stringify(row.original, null, 2));
+              toast.success('Copied row data to clipboard');
+            }}
+          >
+            <Copy className="h-4 w-4" />
+          </Button>
+        ),
+      },
     ],
     []
   );
@@ -100,7 +120,13 @@ export function ResultsTable({ data }: ResultsTableProps) {
     <div className="space-y-4 p-4">
       <div className="flex justify-between items-center px-1">
         <h3 className="text-base font-semibold text-foreground">Extracted Records ({data.length})</h3>
-        <Button onClick={exportCsv} variant="outline" size="sm" className="h-8">Export CSV</Button>
+        <div className="flex items-center space-x-2">
+          <Button onClick={() => {
+            navigator.clipboard.writeText(JSON.stringify(data, null, 2));
+            toast.success('Copied all JSON to clipboard');
+          }} variant="ghost" size="sm" className="h-8 hidden sm:flex">Copy JSON</Button>
+          <Button onClick={exportCsv} variant="outline" size="sm" className="h-8">Export CSV</Button>
+        </div>
       </div>
       <div className="rounded-md border bg-card overflow-x-auto max-w-full max-h-[600px] overflow-y-auto relative">
         <Table>
