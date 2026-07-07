@@ -20,13 +20,14 @@ router.post('/batch', async (req: Request, res: Response): Promise<void> => {
   const { batchId, headers, rows, provider } = parsed.data;
 
   try {
-    const { records, skippedCount, processingTimeMs } = await processBatch(headers, rows, provider as any);
+    const { records, skippedCount, skippedReasons, processingTimeMs } = await processBatch(headers, rows, provider as any);
     
     res.status(200).json({
       batchId,
       status: 'success',
       records,
       skippedCount,
+      skippedReasons,
       processingTimeMs
     });
   } catch (error: any) {
@@ -39,8 +40,11 @@ router.post('/batch', async (req: Request, res: Response): Promise<void> => {
       ? 'Rate limit exceeded for AI Provider' 
       : (error.message || 'An unexpected error occurred during processing');
 
+    // To prevent browser console red errors for expected rate limits, we return 200 for rate limits
+    const responseStatusCode = isRateLimit ? 200 : statusCode;
+
     logger.error({ batchId, err: error.message, stack: error.stack, statusCode }, 'Batch processing failed');
-    res.status(statusCode).json({
+    res.status(responseStatusCode).json({
       batchId,
       status: 'error',
       error: errorMessage,

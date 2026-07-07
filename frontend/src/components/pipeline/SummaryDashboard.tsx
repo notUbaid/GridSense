@@ -132,7 +132,18 @@ export function SummaryDashboard({ state, metrics, records, skippedRawRows, onRe
                     <Info className="h-3 w-3 text-muted-foreground/70 cursor-help" />
                   </TooltipTrigger>
                   <TooltipContent>
-                    <p className="max-w-[200px] text-xs">Missing contact info, duplicates, or completely out-of-syllabus data that failed heuristics.</p>
+                    <div className="max-w-[250px] text-xs space-y-1">
+                      {Object.keys(metrics.skipReasons).length > 0 ? (
+                        Object.entries(metrics.skipReasons).map(([reason, count]) => (
+                          <div key={reason} className="flex justify-between gap-4">
+                            <span>{reason}:</span>
+                            <span className="font-semibold">{count}</span>
+                          </div>
+                        ))
+                      ) : (
+                        <p>No rows were skipped.</p>
+                      )}
+                    </div>
                   </TooltipContent>
                 </Tooltip>
               </p>
@@ -147,7 +158,17 @@ export function SummaryDashboard({ state, metrics, records, skippedRawRows, onRe
                     <Info className="h-3 w-3 text-muted-foreground/70 cursor-help" />
                   </TooltipTrigger>
                   <TooltipContent>
-                    <p className="max-w-[200px] text-xs">API rate limits exceeded or extraction errors during batch processing.</p>
+                    <div className="max-w-[250px] text-xs space-y-1">
+                      {metrics.failReasons.length > 0 ? (
+                        metrics.failReasons.map((reason, idx) => (
+                          <div key={idx} className="text-destructive font-medium border-b border-border/50 pb-1 mb-1 last:border-0 last:pb-0 last:mb-0">
+                            {reason}
+                          </div>
+                        ))
+                      ) : (
+                        <p>No batches failed.</p>
+                      )}
+                    </div>
                   </TooltipContent>
                 </Tooltip>
               </p>

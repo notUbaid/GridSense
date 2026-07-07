@@ -12,6 +12,8 @@ export interface ProcessMetrics {
   skippedRows: number;
   failedBatches: number;
   processingTimeMs: number;
+  skipReasons: Record<string, number>;
+  failReasons: string[];
 }
 
 export function useProcessing() {
@@ -29,7 +31,9 @@ export function useProcessing() {
     successfulRows: 0,
     skippedRows: 0,
     failedBatches: 0,
-    processingTimeMs: 0
+    processingTimeMs: 0,
+    skipReasons: {},
+    failReasons: []
   });
 
   const batchSize = Number(process.env.NEXT_PUBLIC_AI_BATCH_SIZE) || 20;
@@ -45,7 +49,7 @@ export function useProcessing() {
     setCurrentActivity('Idle');
     setElapsedMs(0);
     setEtaMs(null);
-    setMetrics({ totalRows: 0, successfulRows: 0, skippedRows: 0, failedBatches: 0, processingTimeMs: 0 });
+    setMetrics({ totalRows: 0, successfulRows: 0, skippedRows: 0, failedBatches: 0, processingTimeMs: 0, skipReasons: {}, failReasons: [] });
 
     Papa.parse<Record<string, string>>(file, {
       header: true,
@@ -107,6 +111,7 @@ export function useProcessing() {
     // Pre-flight heuristic filtering & Deduplication
     const validRows: Record<string, string>[] = [];
     const localSkippedRaw: Record<string, string>[] = [];
+    const localSkipReasons: Record<string, number> = {};
     const seenContacts = new Set<string>();
 
     for (const row of sanitizedData) {
@@ -116,6 +121,7 @@ export function useProcessing() {
       
       if (!hasBasicContactInfo) {
         localSkippedRaw.push(row);
+        localSkipReasons['Missing Email/Phone (Heuristics)'] = (localSkipReasons['Missing Email/Phone (Heuristics)'] || 0) + 1;
         continue;
       }
 
@@ -127,6 +133,7 @@ export function useProcessing() {
       if (dedupKey) {
         if (seenContacts.has(dedupKey)) {
           localSkippedRaw.push(row);
+          localSkipReasons['Duplicate Contact Info'] = (localSkipReasons['Duplicate Contact Info'] || 0) + 1;
           continue;
         }
         seenContacts.add(dedupKey);
@@ -150,6 +157,7 @@ export function useProcessing() {
     let completedBatches = 0;
     const totalBatches = batches.length;
     let localFailedBatches = 0;
+    let localFailReasons: string[] = [];
     let localSuccessfulRows = 0;
     let localSkippedRows = localSkippedRaw.length;
 
@@ -193,14 +201,21 @@ export function useProcessing() {
             if (response.skippedCount) {
               localSkippedRows += response.skippedCount;
             }
+            if (response.skippedReasons) {
+              for (const [reason, count] of Object.entries(response.skippedReasons)) {
+                localSkipReasons[reason] = (localSkipReasons[reason] || 0) + count;
+              }
+            }
           } else {
-            throw new Error(response.error || 'Batch failed without specific error');
+            const err = new Error(response.error || 'Batch failed without specific error');
+            (err as any).exhaustedProvider = response.exhaustedProvider;
+            throw err;
           }
         } catch (err: unknown) {
-          const error = err as { response?: { data?: { error?: string, exhaustedProvider?: string }, status?: number }, message?: string };
+          const error = err as any;
           const backendError = error.response?.data?.error || error.message || 'Unknown error';
           const status = error.response?.status;
-          const exhaustedProvider = error.response?.data?.exhaustedProvider || 'groq';
+          const exhaustedProvider = error.response?.data?.exhaustedProvider || error.exhaustedProvider || 'groq';
           
           if (status === 429 || backendError.toLowerCase().includes('rate limit')) {
             if (currentProvider === 'groq' && exhaustedProvider === 'groq') {
@@ -218,7 +233,9 @@ export function useProcessing() {
             }
           } else {
             localFailedBatches++;
-            toast.error(`Batch ${task.index + 1} failed: ${backendError}`);
+            const failMsg = `Batch ${task.index + 1}: ${backendError}`;
+            localFailReasons.push(failMsg);
+            toast.error(failMsg);
           }
         } finally {
           completedBatches++;
@@ -239,7 +256,9 @@ export function useProcessing() {
       successfulRows: localSuccessfulRows,
       skippedRows: localSkippedRows,
       failedBatches: localFailedBatches,
-      processingTimeMs: Date.now() - startTime
+      processingTimeMs: Date.now() - startTime,
+      skipReasons: localSkipReasons,
+      failReasons: localFailReasons
     }));
 
     if (localFailedBatches === 0) {
@@ -274,7 +293,7 @@ export function useProcessing() {
       setCurrentActivity('Idle');
       setElapsedMs(0);
       setEtaMs(null);
-      setMetrics({ totalRows: 0, successfulRows: 0, skippedRows: 0, failedBatches: 0, processingTimeMs: 0 });
+      setMetrics({ totalRows: 0, successfulRows: 0, skippedRows: 0, failedBatches: 0, processingTimeMs: 0, skipReasons: {}, failReasons: [] });
     }
   };
 }

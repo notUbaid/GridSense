@@ -34,7 +34,9 @@ export const ProcessBatchResponseSchema = z.object({
   status: z.enum(['success', 'partial', 'error']),
   records: z.array(CrmRecordSchema).optional(),
   skippedCount: z.number().default(0),
+  skippedReasons: z.record(z.string(), z.number()).optional(),
   error: z.string().optional(),
+  exhaustedProvider: z.string().optional(),
   processingTimeMs: z.number().optional(),
 });
 

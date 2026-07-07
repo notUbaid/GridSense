@@ -156,12 +156,14 @@ ${JSON.stringify(rows)}`;
       }
 
       let skippedCount = 0;
+      const skippedReasons: Record<string, number> = {};
       const validRecords: CrmRecord[] = [];
 
       for (const record of records) {
         const hasContact = record.email || record.mobile_without_country_code;
         if (!hasContact) {
           skippedCount++;
+          skippedReasons['AI Rejected (Missing Valid Contact Info)'] = (skippedReasons['AI Rejected (Missing Valid Contact Info)'] || 0) + 1;
         } else {
           validRecords.push(record);
         }
@@ -176,7 +178,7 @@ ${JSON.stringify(rows)}`;
         ms: processingTimeMs
       }, 'Batch complete');
 
-      return { records: validRecords, skippedCount, processingTimeMs };
+      return { records: validRecords, skippedCount, skippedReasons, processingTimeMs };
 
     } catch (error: any) {
       attempt++;
