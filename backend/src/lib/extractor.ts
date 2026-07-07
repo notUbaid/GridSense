@@ -163,6 +163,7 @@ export async function processBatch(
     email: string | null;
     mobile_without_country_code: string | null;
     created_at: string | null;
+    needsAI: boolean;
   }
 
   const extractedData: ExtractedData[] = rows.map(row => {
@@ -171,6 +172,7 @@ export async function processBatch(
     let mobile_without_country_code: string | null = null;
     let created_at: string | null = null;
 
+    let needsAI = false;
     for (const key of Object.keys(sanitized)) {
       let value = sanitized[key];
       if (!value) continue;
@@ -216,13 +218,14 @@ export async function processBatch(
         delete sanitized[key];
       } else {
         sanitized[key] = value;
+        needsAI = true;
       }
     }
 
-    return { original: row, sanitized, email, mobile_without_country_code, created_at };
+    return { original: row, sanitized, email, mobile_without_country_code, created_at, needsAI };
   });
 
-  const sanitizedRows = extractedData.map(d => d.sanitized);
+  const aiRows = extractedData.filter(d => d.needsAI).map(d => d.sanitized);
 
   const prompt = `You are a strict data extraction engine. You receive CSV headers and row data as JSON.
 Your job is purely to map the provided semantic data into the defined CRM schema.
@@ -239,7 +242,7 @@ CRITICAL RULES:
 - If a row is completely irrelevant nonsense, DO NOT hallucinate data. Return null for all fields.
 - DO NOT LOSE ANY DATA. If a valid lead row contains columns (like Campaign, Ad Set, extra IDs, etc) that do not map to standard CRM fields, you MUST append all of that extra unmapped data into the "crm_note" field.
 - Combine first name + last name into a single "name" field ONLY if they exist. Do not invent a name if it's not there.
-- You MUST return exactly ${sanitizedRows.length} objects in the "records" array — one per input row.
+- You MUST return exactly ${aiRows.length} objects in the "records" array — one per input row.
 - Output ONLY valid JSON matching the schema. No markdown, no explanation.
 
 JSON Schema:
@@ -253,107 +256,118 @@ Output: {"records": [{"name": "John Doe", "company": "Acme Corp"}]}
 ---
 CSV Headers: ${JSON.stringify(headers)}
 Row Data:
-${JSON.stringify(sanitizedRows)}`;
+${JSON.stringify(aiRows)}`;
 
   while (attempt < maxRetries) {
     const usedGroqIndex = currentGroqIndex;
     try {
-      logger.info({ attempt: attempt + 1, batchSize: rows.length, provider }, 'Sending batch to AI');
+      logger.info({ attempt: attempt + 1, batchSize: rows.length, aiBatchSize: aiRows.length, provider }, 'Sending batch to AI');
 
-      let records: any[] = [];
-
-      if (process.env.NODE_ENV === 'test') {
-        records = await MockAIProvider.extract(headers, sanitizedRows);
-      } else if (provider === 'gemini') {
-        const ai = getGeminiClient();
-        const model = ai.getGenerativeModel({ model: 'gemini-2.5-flash' });
-        const result = await model.generateContent({
-          contents: [{ role: 'user', parts: [{ text: prompt }] }],
-          generationConfig: {
-            temperature: 0.1,
-            responseMimeType: 'application/json',
+      let aiRecords: any[] = [];
+      
+      if (aiRows.length > 0) {
+        if (process.env.NODE_ENV === 'test') {
+          aiRecords = await MockAIProvider.extract(headers, aiRows);
+        } else if (provider === 'gemini') {
+          const ai = getGeminiClient();
+          const model = ai.getGenerativeModel({ model: 'gemini-2.5-flash' });
+          const result = await model.generateContent({
+            contents: [{ role: 'user', parts: [{ text: prompt }] }],
+            generationConfig: {
+              temperature: 0.1,
+              responseMimeType: 'application/json',
+            }
+          });
+          const content = result.response.text();
+          if (!content) throw new Error('Empty response from Gemini');
+          let parsed;
+          try {
+            parsed = JSON.parse(stripMarkdownFences(content));
+          } catch (e) {
+            logger.error({ content: stripMarkdownFences(content) }, 'Failed to parse JSON from Gemini');
+            throw e;
           }
-        });
-        const content = result.response.text();
-        if (!content) throw new Error('Empty response from Gemini');
-        let parsed;
-        try {
-          parsed = JSON.parse(stripMarkdownFences(content));
-        } catch (e) {
-          logger.error({ content: stripMarkdownFences(content) }, 'Failed to parse JSON from Gemini');
-          throw e;
-        }
-        
-        parsed = salvageParsedJson(parsed);
-        if (parsed?.records && Array.isArray(parsed.records) && parsed.records.length !== sanitizedRows.length) {
-          throw new Error(`AI returned ${parsed.records.length} records, expected ${sanitizedRows.length}`);
-        }
+          
+          parsed = salvageParsedJson(parsed);
+          if (parsed?.records && Array.isArray(parsed.records) && parsed.records.length !== aiRows.length) {
+            throw new Error(`AI returned ${parsed.records.length} records, expected ${aiRows.length}`);
+          }
 
-        const validated = llmResponseSchema.safeParse(parsed);
-        if (!validated.success) {
-          logger.error({ errors: validated.error.format() }, 'Zod validation failed on Gemini output');
-          throw new Error('AI output did not match expected schema');
-        }
-        records = validated.data.records;
-      } else {
-        const client = getGroqClient();
-        const completion = await client.chat.completions.create({
-          messages: [
-            {
-              role: 'system',
-              content: 'You are a data extraction system. Output ONLY valid JSON matching the requested schema. No markdown fences, no commentary.'
-            },
-            { role: 'user', content: prompt }
-          ],
-          model: 'llama-3.1-8b-instant',
-          temperature: 0.1,
-          response_format: { type: 'json_object' },
-        });
+          const validated = llmResponseSchema.safeParse(parsed);
+          if (!validated.success) {
+            logger.error({ errors: validated.error.format() }, 'Zod validation failed on Gemini output');
+            throw new Error('AI output did not match expected schema');
+          }
+          aiRecords = validated.data.records;
+        } else {
+          const client = getGroqClient();
+          const completion = await client.chat.completions.create({
+            messages: [
+              {
+                role: 'system',
+                content: 'You are a data extraction system. Output ONLY valid JSON matching the requested schema. No markdown fences, no commentary.'
+              },
+              { role: 'user', content: prompt }
+            ],
+            model: 'llama-3.1-8b-instant',
+            temperature: 0.1,
+            response_format: { type: 'json_object' },
+          });
 
-        const content = completion.choices[0]?.message?.content;
-        if (!content) throw new Error('Empty response from Groq');
+          const content = completion.choices[0]?.message?.content;
+          if (!content) throw new Error('Empty response from Groq');
 
-        const cleaned = stripMarkdownFences(content);
-        let parsed;
-        try {
-          parsed = JSON.parse(cleaned);
-        } catch (e) {
-          logger.error({ content: cleaned }, 'Failed to parse JSON from AI');
-          throw e;
-        }
+          const cleaned = stripMarkdownFences(content);
+          let parsed;
+          try {
+            parsed = JSON.parse(cleaned);
+          } catch (e) {
+            logger.error({ content: cleaned }, 'Failed to parse JSON from AI');
+            throw e;
+          }
 
-        parsed = salvageParsedJson(parsed);
-        if (parsed?.records && Array.isArray(parsed.records) && parsed.records.length !== sanitizedRows.length) {
-          throw new Error(`AI returned ${parsed.records.length} records, expected ${sanitizedRows.length}`);
-        }
+          parsed = salvageParsedJson(parsed);
+          if (parsed?.records && Array.isArray(parsed.records) && parsed.records.length !== aiRows.length) {
+            throw new Error(`AI returned ${parsed.records.length} records, expected ${aiRows.length}`);
+          }
 
-        const validated = llmResponseSchema.safeParse(parsed);
-        if (!validated.success) {
-          logger.error({ errors: validated.error.format() }, 'Zod validation failed on AI output');
-          throw new Error('AI output did not match expected schema');
+          const validated = llmResponseSchema.safeParse(parsed);
+          if (!validated.success) {
+            logger.error({ errors: validated.error.format() }, 'Zod validation failed on AI output');
+            throw new Error('AI output did not match expected schema');
+          }
+          aiRecords = validated.data.records;
         }
-        records = validated.data.records;
       }
 
       let skippedCount = 0;
       const skippedReasons: Record<string, number> = {};
 
-      if (records.length < rows.length) {
-        const truncatedCount = rows.length - records.length;
-        logger.warn(`Row count mismatch: expected ${rows.length}, got ${records.length}. Tracking missing as skipped.`);
+      if (aiRecords.length < aiRows.length) {
+        const truncatedCount = aiRows.length - aiRecords.length;
+        logger.warn(`Row count mismatch: expected ${aiRows.length}, got ${aiRecords.length}. Tracking missing as skipped.`);
         skippedCount += truncatedCount;
         skippedReasons['AI Truncated Output (Missing Rows)'] = truncatedCount;
       }
 
       const validRecords: CrmRecord[] = [];
+      
+      let aiIndex = 0;
 
-      for (let i = 0; i < records.length; i++) {
-        // Merge the deterministic extraction with the LLM mapping
+      for (let i = 0; i < extractedData.length; i++) {
+        const d = extractedData[i];
+        
+        // Either pop from AI records if this row was sent to AI, or generate a null shell
+        const aiRecord = d.needsAI && aiIndex < aiRecords.length 
+          ? aiRecords[aiIndex++] 
+          : { name: null, company: null, city: null, state: null, country: null, lead_owner: null, description: null, crm_status: null, crm_note: null, data_source: null, possession_time: null };
+
+        // Merge the deterministic extraction with the LLM mapping (or empty shell)
         const mergedRecord = {
-          ...records[i],
-          email: extractedData[i].email,
-          mobile_without_country_code: extractedData[i].mobile_without_country_code,
-          created_at: extractedData[i].created_at
+          ...aiRecord,
+          email: d.email,
+          mobile_without_country_code: d.mobile_without_country_code,
+          created_at: d.created_at
         };
 
         const normalized = normalizeAndValidate(mergedRecord);
