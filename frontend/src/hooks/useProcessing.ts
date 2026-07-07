@@ -118,8 +118,10 @@ export function useProcessing() {
 
     for (const row of sanitizedData) {
       const rowStr = JSON.stringify(row).toLowerCase();
-      // Heuristic: Must contain '@' (email) or a sequence of 7+ digits (phone)
-      const hasBasicContactInfo = rowStr.includes('@') || /\d{7,}/.test(rowStr);
+      // Heuristic: Must contain '@' (email) or at least 7 digits *total* across the row (potential phone)
+      // Nightmare CSVs might have phones like "+1 (555) 123-4567" which breaks consecutive digit checks.
+      const totalDigits = (rowStr.match(/\d/g) || []).length;
+      const hasBasicContactInfo = rowStr.includes('@') || totalDigits >= 7;
       
       if (!hasBasicContactInfo) {
         localSkippedRaw.push(row);
