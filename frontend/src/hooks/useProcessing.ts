@@ -138,10 +138,12 @@ export function useProcessing() {
 
     setSkippedRawRows(localSkippedRaw);
 
-    const batches: Record<string, string>[][] = [];
+    const chunks: Record<string, string>[][] = [];
     for (let i = 0; i < validRows.length; i += batchSize) {
-      batches.push(validRows.slice(i, i + batchSize));
+      chunks.push(validRows.slice(i, i + batchSize));
     }
+
+    const localChunkResults: CrmRecord[][] = new Array(chunks.length).fill(null);
 
     setMetrics(prev => ({ ...prev, totalRows: sanitizedData.length }));
     const startTime = Date.now();
@@ -149,7 +151,7 @@ export function useProcessing() {
     setCurrentActivity(`Warming up AI models for ${validRows.length} valid records...`);
 
     let completedBatches = 0;
-    const totalBatches = batches.length;
+    const totalBatches = chunks.length;
     let localFailedBatches = 0;
     let localFailedRows = 0;
     const localFailedRaw: Record<string, string>[] = [];
@@ -199,7 +201,8 @@ export function useProcessing() {
 
           if (response.status === 'success' || response.status === 'partial') {
             if (response.records) {
-              setRecords(prev => [...prev, ...response.records!]);
+              localChunkResults[task.index] = response.records;
+              setRecords(localChunkResults.filter(Boolean).flat());
               localSuccessfulRows += response.records.length;
             }
             if (response.skippedCount) {
@@ -267,7 +270,7 @@ export function useProcessing() {
       }
     };
 
-    const queue = batches.map((batch, index) => ({ batch, index }));
+    const queue = chunks.map((batch, index) => ({ batch, index }));
     const workers = Array(Math.min(maxConcurrency, queue.length)).fill(null).map(() => processBatchQueue(queue));
 
     await Promise.allSettled(workers);
