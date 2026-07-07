@@ -8,6 +8,7 @@ import { AlertCircle, Loader2 } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { PreviewCard } from '@/components/pipeline/PreviewCard';
 import { ProgressCard } from '@/components/pipeline/ProgressCard';
+import { ThemeToggle } from '@/components/ThemeToggle';
 import { SummaryDashboard } from '@/components/pipeline/SummaryDashboard';
 
 export default function Home() {
@@ -19,14 +20,17 @@ export default function Home() {
       <div className="absolute top-[-20%] left-1/2 -translate-x-1/2 w-[800px] h-[500px] rounded-full bg-primary/10 blur-[120px] pointer-events-none -z-10"></div>
       
       {/* Technical grid pattern */}
-      <div className="absolute inset-0 bg-[linear-gradient(to_right,#8080800a_1px,transparent_1px),linear-gradient(to_bottom,#8080800a_1px,transparent_1px)] bg-size-[32px_32px] pointer-events-none -z-10"></div>
+      <div className="absolute inset-0 bg-[linear-gradient(to_right,#8080800a_1px,transparent_1px),linear-gradient(to_bottom,#8080800a_1px,transparent_1px)] bg-[size:32px_32px] pointer-events-none -z-10"></div>
       
       <div className="relative mx-auto max-w-6xl space-y-8 z-10">
-        <div className="space-y-2">
-          <h1 className="text-3xl font-semibold tracking-tight text-foreground">GridSense</h1>
-          <p className="text-base text-muted-foreground max-w-2xl">
-            Semantic spreadsheet intelligence. Drop any CSV, and the AI will automatically map the raw data into a strictly typed CRM schema.
-          </p>
+        <div className="flex justify-between items-start">
+          <div className="space-y-2">
+            <h1 className="text-3xl font-semibold tracking-tight text-foreground">GridSense</h1>
+            <p className="text-base text-muted-foreground max-w-2xl">
+              Semantic spreadsheet intelligence. Drop any CSV, and the AI will automatically map the raw data into a strictly typed CRM schema.
+            </p>
+          </div>
+          <ThemeToggle />
         </div>
 
         {(state === 'idle' || state === 'parsing') && (

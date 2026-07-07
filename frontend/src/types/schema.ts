@@ -3,7 +3,7 @@ import { z } from 'zod';
 export const CrmRecordSchema = z.object({
   created_at: z.string().datetime().optional().nullable(),
   name: z.string().optional().nullable(),
-  email: z.string().email().optional().nullable().or(z.literal('')),
+  email: z.string().optional().nullable().or(z.literal('')),
   country_code: z.string().optional().nullable(),
   phone_local: z.string().optional().nullable(),
   company: z.string().optional().nullable(),
@@ -24,6 +24,7 @@ export const ProcessBatchRequestSchema = z.object({
   batchId: z.string().min(1),
   headers: z.array(z.string()),
   rows: z.array(z.record(z.string(), z.any())),
+  provider: z.enum(['groq', 'gemini']).optional().default('groq'),
 });
 
 export type ProcessBatchRequest = z.infer<typeof ProcessBatchRequestSchema>;
