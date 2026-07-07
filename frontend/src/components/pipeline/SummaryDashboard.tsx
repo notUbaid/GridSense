@@ -150,9 +150,9 @@ export function SummaryDashboard({ state, metrics, records, skippedRawRows, onRe
               <p className="text-2xl font-semibold tracking-tight"><AnimatedCounter value={metrics.skippedRows} /></p>
             </motion.div>
             <motion.div variants={item} className="space-y-1">
-              <p className="text-sm text-muted-foreground font-medium flex items-center gap-2">
-                <span className="h-2 w-2 rounded-full bg-destructive"></span>
-                Failed Batches
+              <p className="text-muted-foreground mb-1 flex items-center gap-1.5">
+                <span className="w-1.5 h-1.5 rounded-full bg-destructive/80 mr-1 shadow-[0_0_8px_rgba(239,68,68,0.5)]"></span>
+                Failed Rows
                 <Tooltip>
                   <TooltipTrigger className="inline-flex outline-none">
                     <Info className="h-3 w-3 text-muted-foreground/70 cursor-help" />
@@ -164,17 +164,17 @@ export function SummaryDashboard({ state, metrics, records, skippedRawRows, onRe
                           <div key={idx} className="text-destructive font-medium border-b border-border/50 pb-1 mb-1 last:border-0 last:pb-0 last:mb-0">
                             {Object.keys(metrics.failReasons).length === 1 
                               ? `All failed due to: ${reason}` 
-                              : `${count} batches: ${reason}`}
+                              : `${count} rows: ${reason}`}
                           </div>
                         ))
                       ) : (
-                        <p>No batches failed.</p>
+                        <p>No rows failed.</p>
                       )}
                     </div>
                   </TooltipContent>
                 </Tooltip>
               </p>
-              <p className="text-2xl font-semibold tracking-tight"><AnimatedCounter value={metrics.failedBatches} /></p>
+              <p className="text-2xl font-semibold tracking-tight"><AnimatedCounter value={metrics.failedRows} /></p>
             </motion.div>
           </motion.div>
           <motion.div 

@@ -10,6 +10,7 @@ export interface ProcessMetrics {
   totalRows: number;
   successfulRows: number;
   skippedRows: number;
+  failedRows: number;
   failedBatches: number;
   processingTimeMs: number;
   skipReasons: Record<string, number>;
@@ -30,6 +31,7 @@ export function useProcessing() {
     totalRows: 0,
     successfulRows: 0,
     skippedRows: 0,
+    failedRows: 0,
     failedBatches: 0,
     processingTimeMs: 0,
     skipReasons: {},
@@ -49,7 +51,7 @@ export function useProcessing() {
     setCurrentActivity('Idle');
     setElapsedMs(0);
     setEtaMs(null);
-    setMetrics({ totalRows: 0, successfulRows: 0, skippedRows: 0, failedBatches: 0, processingTimeMs: 0, skipReasons: {}, failReasons: {} });
+    setMetrics({ totalRows: 0, successfulRows: 0, skippedRows: 0, failedRows: 0, failedBatches: 0, processingTimeMs: 0, skipReasons: {}, failReasons: {} });
 
     Papa.parse<Record<string, string>>(file, {
       header: true,
@@ -157,6 +159,7 @@ export function useProcessing() {
     let completedBatches = 0;
     const totalBatches = batches.length;
     let localFailedBatches = 0;
+    let localFailedRows = 0;
     let localFailReasons: Record<string, number> = {};
     let localSuccessfulRows = 0;
     let localSkippedRows = localSkippedRaw.length;
@@ -242,10 +245,11 @@ export function useProcessing() {
             }
           } else {
             localFailedBatches++;
-            localFailReasons[backendError] = (localFailReasons[backendError] || 0) + 1;
+            localFailedRows += task.batch.length;
+            localFailReasons[backendError] = (localFailReasons[backendError] || 0) + task.batch.length;
             
             if (localFailedBatches <= 3) {
-              toast.error(`Batch ${task.index + 1}: ${backendError}`);
+              toast.error(`Batch ${task.index + 1} (${task.batch.length} rows) failed: ${backendError}`);
             } else if (localFailedBatches === 4) {
               toast.error(`Multiple batches failing with: ${backendError.substring(0, 50)}... suppressing further error toasts.`);
             }
@@ -266,10 +270,21 @@ export function useProcessing() {
     clearInterval(timer);
     setCurrentActivity('Finalizing extraction...');
 
+    // Track abandoned rows left in the queue due to a hard abort (e.g. rate limits on all providers)
+    if (queue.length > 0) {
+      let abandonedRowsCount = 0;
+      for (const task of queue) {
+        abandonedRowsCount += task.batch.length;
+      }
+      localFailedRows += abandonedRowsCount;
+      localFailReasons['Pipeline Aborted (API Limits Exceeded)'] = (localFailReasons['Pipeline Aborted (API Limits Exceeded)'] || 0) + abandonedRowsCount;
+    }
+
     setMetrics(prev => ({
       ...prev,
       successfulRows: localSuccessfulRows,
       skippedRows: localSkippedRows,
+      failedRows: localFailedRows,
       failedBatches: localFailedBatches,
       processingTimeMs: Date.now() - startTime,
       skipReasons: localSkipReasons,
@@ -308,7 +323,7 @@ export function useProcessing() {
       setCurrentActivity('Idle');
       setElapsedMs(0);
       setEtaMs(null);
-      setMetrics({ totalRows: 0, successfulRows: 0, skippedRows: 0, failedBatches: 0, processingTimeMs: 0, skipReasons: {}, failReasons: {} });
+      setMetrics({ totalRows: 0, successfulRows: 0, skippedRows: 0, failedRows: 0, failedBatches: 0, processingTimeMs: 0, skipReasons: {}, failReasons: {} });
     }
   };
 }
