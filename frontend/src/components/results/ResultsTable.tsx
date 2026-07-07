@@ -100,9 +100,17 @@ export function ResultsTable({ data }: ResultsTableProps) {
   }
 
   const exportCsv = () => {
-    const headers = columns.map(c => c.header).join(',');
+    const exportColumns = columns.filter(c => c.accessorKey);
+    const headers = exportColumns.map(c => c.header).join(',');
     const rows = data.map(row => 
-      columns.map(c => `"${String(row[c.accessorKey as keyof CrmRecord] || '').replace(/"/g, '""')}"`).join(',')
+      exportColumns.map(c => {
+        const val = String(row[c.accessorKey as keyof CrmRecord] || '');
+        // Force Excel to treat phone numbers as strings to preserve leading zeros
+        if (val && (c.accessorKey === 'mobile_without_country_code' || c.accessorKey === 'country_code')) {
+          return `="${val.replace(/"/g, '""')}"`;
+        }
+        return `"${val.replace(/"/g, '""')}"`;
+      }).join(',')
     ).join('\n');
     
     const csvContent = `${headers}\n${rows}`;

@@ -68,8 +68,29 @@ function normalizeAndValidate(record: any): CrmRecord {
 
   // 3. Phone Validation
   if (norm.mobile_without_country_code) {
-    const stripped = norm.mobile_without_country_code.replace(/[^\d+]/g, '');
-    const digitCount = (stripped.match(/\d/g) || []).length;
+    let phoneStr = String(norm.mobile_without_country_code).trim();
+    
+    // Fix scientific notation if it slipped through (e.g. 9.19876e+11 -> 919876000000)
+    if (/^\d+\.?\d*e\+\d+$/i.test(phoneStr)) {
+      try {
+        phoneStr = BigInt(Math.round(Number(phoneStr))).toString();
+      } catch (e) {
+        // Ignore parsing errors
+      }
+    }
+    
+    // Extract country code if present (e.g. +91 9876543210 or +1 (555))
+    const countryMatch = phoneStr.match(/^(\+\d{1,4})\s*(.*)$/);
+    if (countryMatch) {
+      if (!norm.country_code) {
+        norm.country_code = countryMatch[1];
+      }
+      phoneStr = countryMatch[2];
+    }
+    
+    // Strip all non-digits from the mobile
+    const stripped = phoneStr.replace(/[^\d]/g, '');
+    const digitCount = stripped.length;
     if (digitCount < 5) {
       norm.mobile_without_country_code = null;
     } else {
@@ -103,7 +124,10 @@ RULES:
 - "data_source" MUST be exactly one of: leads_on_demand, meridian_tower, eden_park, varah_swamy, sarjapur_plots — or null.
 - OUT-OF-SYLLABUS DATA: If a row is completely irrelevant to CRM leads (e.g., a list of products, pokemon, cars, random nonsense), DO NOT hallucinate data. Return null for all fields (which will mark it as skipped).
 - IMPORTANT: DO NOT LOSE ANY DATA for actual leads. If a valid lead row contains columns (like Campaign, Ad Set, extra IDs, etc) that do not map to standard CRM fields, you MUST append all of that extra unmapped data into the "crm_note" field.
+- You MUST extract the person's full name into the "name" field if it exists anywhere in the row.
 - Combine first name + last name into a single "name" field.
+- Phone numbers MUST remain as exact strings. NEVER format them as numbers or scientific notation. 
+- Separate international phone numbers into "country_code" (e.g., +1, +91) and the local number into "mobile_without_country_code".
 - Strip formatting from phone numbers (spaces, dashes, parentheses).
 - Output \`created_at\` in strict ISO-8601 format (YYYY-MM-DDTHH:mm:ssZ) so it is parseable by JavaScript's new Date(). If no date is present, use null.
 - You MUST return exactly ${rows.length} objects in the "records" array — one per input row.
