@@ -13,7 +13,7 @@ export interface ProcessMetrics {
   failedBatches: number;
   processingTimeMs: number;
   skipReasons: Record<string, number>;
-  failReasons: string[];
+  failReasons: Record<string, number>;
 }
 
 export function useProcessing() {
@@ -33,7 +33,7 @@ export function useProcessing() {
     failedBatches: 0,
     processingTimeMs: 0,
     skipReasons: {},
-    failReasons: []
+    failReasons: {}
   });
 
   const batchSize = Number(process.env.NEXT_PUBLIC_AI_BATCH_SIZE) || 20;
@@ -49,7 +49,7 @@ export function useProcessing() {
     setCurrentActivity('Idle');
     setElapsedMs(0);
     setEtaMs(null);
-    setMetrics({ totalRows: 0, successfulRows: 0, skippedRows: 0, failedBatches: 0, processingTimeMs: 0, skipReasons: {}, failReasons: [] });
+    setMetrics({ totalRows: 0, successfulRows: 0, skippedRows: 0, failedBatches: 0, processingTimeMs: 0, skipReasons: {}, failReasons: {} });
 
     Papa.parse<Record<string, string>>(file, {
       header: true,
@@ -157,7 +157,7 @@ export function useProcessing() {
     let completedBatches = 0;
     const totalBatches = batches.length;
     let localFailedBatches = 0;
-    let localFailReasons: string[] = [];
+    let localFailReasons: Record<string, number> = {};
     let localSuccessfulRows = 0;
     let localSkippedRows = localSkippedRaw.length;
 
@@ -242,9 +242,13 @@ export function useProcessing() {
             }
           } else {
             localFailedBatches++;
-            const failMsg = `Batch ${task.index + 1}: ${backendError}`;
-            localFailReasons.push(failMsg);
-            toast.error(failMsg);
+            localFailReasons[backendError] = (localFailReasons[backendError] || 0) + 1;
+            
+            if (localFailedBatches <= 3) {
+              toast.error(`Batch ${task.index + 1}: ${backendError}`);
+            } else if (localFailedBatches === 4) {
+              toast.error(`Multiple batches failing with: ${backendError.substring(0, 50)}... suppressing further error toasts.`);
+            }
           }
         } finally {
           if (!requeued) {
@@ -304,7 +308,7 @@ export function useProcessing() {
       setCurrentActivity('Idle');
       setElapsedMs(0);
       setEtaMs(null);
-      setMetrics({ totalRows: 0, successfulRows: 0, skippedRows: 0, failedBatches: 0, processingTimeMs: 0, skipReasons: {}, failReasons: [] });
+      setMetrics({ totalRows: 0, successfulRows: 0, skippedRows: 0, failedBatches: 0, processingTimeMs: 0, skipReasons: {}, failReasons: {} });
     }
   };
 }

@@ -151,12 +151,16 @@ ${JSON.stringify(rows)}`;
         records = validated.data.records;
       }
 
-      if (records.length !== rows.length) {
-        logger.warn(`Row count mismatch: expected ${rows.length}, got ${records.length}. Proceeding with extracted records.`);
-      }
-
       let skippedCount = 0;
       const skippedReasons: Record<string, number> = {};
+
+      if (records.length < rows.length) {
+        const truncatedCount = rows.length - records.length;
+        logger.warn(`Row count mismatch: expected ${rows.length}, got ${records.length}. Tracking missing as skipped.`);
+        skippedCount += truncatedCount;
+        skippedReasons['AI Truncated Output (Missing Rows)'] = truncatedCount;
+      }
+
       const validRecords: CrmRecord[] = [];
 
       for (const record of records) {

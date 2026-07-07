@@ -159,10 +159,12 @@ export function SummaryDashboard({ state, metrics, records, skippedRawRows, onRe
                   </TooltipTrigger>
                   <TooltipContent>
                     <div className="max-w-[250px] text-xs space-y-1">
-                      {metrics.failReasons.length > 0 ? (
-                        metrics.failReasons.map((reason, idx) => (
+                      {Object.keys(metrics.failReasons).length > 0 ? (
+                        Object.entries(metrics.failReasons).map(([reason, count], idx) => (
                           <div key={idx} className="text-destructive font-medium border-b border-border/50 pb-1 mb-1 last:border-0 last:pb-0 last:mb-0">
-                            {reason}
+                            {Object.keys(metrics.failReasons).length === 1 
+                              ? `All failed due to: ${reason}` 
+                              : `${count} batches: ${reason}`}
                           </div>
                         ))
                       ) : (
