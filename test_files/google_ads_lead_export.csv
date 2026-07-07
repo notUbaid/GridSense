@@ -1,7 +1,7 @@
 Date,Name,Email Address,Phone Number,Source,Status
-Data 868,Raj Li,rli@example.org,466.525.1117,  leads_on_demand  ,
-DATA 457,  Priya Li  ,pli@example.org,061.239.5051,,Call back later
-Data 479,Priya Johnson,  priya.johnson@example.org  ,+44 8259 249717,Google,Interested
+"2026-07-07",Raj Li,"Email me at: rli@example.org or raj@example.org",466.525.1117,  leads_on_demand  ,
+DATA 457,  Priya Li  ,pli@example.org,"061.239.5051 (Mobile)",,Call back later
+"December 1, 2023",Priya Johnson,  priya.johnson@example.org  ,+44 8259 249717,Google,  iNtErEsTeD  
 Data 745,Charlie Wang,cwang@example.org,(199) 998-3541,Facebook,
 Data 667,Alice Doe,  adoe@yahoo.com  ,2895861435,leads_on_demand,GOOD_LEAD_FOLLOW_UP
 Data 375,Charlie Johnson,CHARLIE62@HOTMAIL.COM,+44 9314 451118,sarjapur_plots,DID_NOT_CONNECT

@@ -1,9 +1,9 @@
 Client First Name,Client Last Name,Primary Email,Mobile Phone,Home Phone,Interested In,Lead Status
-Alice,Smith,alice.smith@company.net,2357330315,  495.853.0073  ,Data 221,
+Alice,Smith,"Email: alice.smith@company.net",2357330315,  495.853.0073  ,Data 221,
 Alice,Wang,"alice56@yahoo.com, alternate@yahoo.com",978-719-6365,222.193.7722 / 8530999689,  DATA 175  ,  BAD_LEAD  
   Bob  ,  Doe  ,bob81@example.org,235-996-1435,  576-050-6394  ,Data 824,  Junk  
-  Diana  ,Kumar,diana12@company.net,139-155-0609,+1 (374) 010-7627,Data 762,DID_NOT_CONNECT
-Raj,Li,  raj.li@gmail.com  ,+44 7722 522102,0018216552,Data 303,Call back later
+  Diana  ,Kumar,diana12@company.net,139-155-0609,"+1 (374) 010-7627 (Home)",Data 762,DID_NOT_CONNECT
+Raj,Li,  raj.li@gmail.com  ,"Call me at +44 7722 522102 please",0018216552,Data 303,Call back later
   Priya  ,Hassan,phassan@hotmail.com,  (715) 239-2941  ,933.608.4006,Data 908,BAD_LEAD
 Diana,Kumar,diana.kumar@company.net,(214) 534-3660,  743-935-7983  ,Data 892,Call back later
 ,Wang,,7032455768,  +1 (003) 053-4724  ,Data 791,BAD_LEAD
