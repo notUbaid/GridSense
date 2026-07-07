@@ -295,6 +295,19 @@ export function useProcessing() {
     }
   }, [batchSize, maxConcurrency, previewData]);
 
+  const retryFailed = useCallback(() => {
+    if (failedRawRows.length === 0 || !previewData) return;
+    
+    setPreviewData({
+      headers: previewData.headers,
+      rows: [...failedRawRows]
+    });
+    
+    setFailedRawRows([]);
+    setState('preview');
+    toast.info('Failed rows have been queued up for retry.');
+  }, [failedRawRows, previewData]);
+
   return {
     state,
     progress,
@@ -309,6 +322,7 @@ export function useProcessing() {
     etaMs,
     processFile,
     startProcessing,
+    retryFailed,
     reset: () => {
       setState('idle');
       setProgress(0);

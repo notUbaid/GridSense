@@ -56,6 +56,35 @@ function stripMarkdownFences(raw: string): string {
   return trimmed;
 }
 
+function salvageParsedJson(parsed: any): any {
+  if (Array.isArray(parsed)) {
+    parsed = { records: parsed };
+  }
+
+  if (parsed && Array.isArray(parsed.records)) {
+    for (const record of parsed.records) {
+      if (typeof record === 'object' && record !== null) {
+        for (const key of Object.keys(record)) {
+          if (record[key] === '') {
+            record[key] = null;
+          }
+        }
+        
+        const validStatus = ['GOOD_LEAD_FOLLOW_UP', 'DID_NOT_CONNECT', 'BAD_LEAD', 'SALE_DONE'];
+        if (record.crm_status && !validStatus.includes(record.crm_status)) {
+          record.crm_status = null;
+        }
+        
+        const validSource = ['leads_on_demand', 'meridian_tower', 'eden_park', 'varah_swamy', 'sarjapur_plots'];
+        if (record.data_source && !validSource.includes(record.data_source)) {
+          record.data_source = null;
+        }
+      }
+    }
+  }
+  return parsed;
+}
+
 function normalizeAndValidate(record: any): CrmRecord {
   const norm = { ...record };
 
@@ -254,6 +283,12 @@ ${JSON.stringify(sanitizedRows)}`;
           logger.error({ content: stripMarkdownFences(content) }, 'Failed to parse JSON from Gemini');
           throw e;
         }
+        
+        parsed = salvageParsedJson(parsed);
+        if (parsed?.records && Array.isArray(parsed.records) && parsed.records.length !== sanitizedRows.length) {
+          throw new Error(`AI returned ${parsed.records.length} records, expected ${sanitizedRows.length}`);
+        }
+
         const validated = llmResponseSchema.safeParse(parsed);
         if (!validated.success) {
           logger.error({ errors: validated.error.format() }, 'Zod validation failed on Gemini output');
@@ -285,6 +320,11 @@ ${JSON.stringify(sanitizedRows)}`;
         } catch (e) {
           logger.error({ content: cleaned }, 'Failed to parse JSON from AI');
           throw e;
+        }
+
+        parsed = salvageParsedJson(parsed);
+        if (parsed?.records && Array.isArray(parsed.records) && parsed.records.length !== sanitizedRows.length) {
+          throw new Error(`AI returned ${parsed.records.length} records, expected ${sanitizedRows.length}`);
         }
 
         const validated = llmResponseSchema.safeParse(parsed);

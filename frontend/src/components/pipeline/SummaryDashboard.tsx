@@ -39,6 +39,7 @@ interface SummaryDashboardProps {
   skippedRawRows: Record<string, string>[];
   failedRawRows: Record<string, string>[];
   onReset: () => void;
+  onRetry: () => void;
 }
 
 function AnimatedCounter({ value }: { value: number }) {
@@ -52,8 +53,9 @@ function AnimatedCounter({ value }: { value: number }) {
   return <motion.span>{display}</motion.span>;
 }
 
-export function SummaryDashboard({ state, metrics, records, skippedRawRows, failedRawRows, onReset }: SummaryDashboardProps) {
+export function SummaryDashboard({ state, metrics, records, skippedRawRows, failedRawRows, onReset, onRetry }: SummaryDashboardProps) {
   const isPartial = state === 'partial_success';
+  console.log("SummaryDashboard render:", { failedRowsMetric: metrics.failedRows, failedRawRowsLength: failedRawRows?.length });
 
   const handleExportSkipped = () => {
     if (skippedRawRows.length === 0) return;
@@ -125,6 +127,13 @@ export function SummaryDashboard({ state, metrics, records, skippedRawRows, fail
                     <p>Download the unprocessed rows to easily re-upload them later.</p>
                   </TooltipContent>
                 </Tooltip>
+              )}
+              {metrics.failedRows > 0 && failedRawRows.length > 0 && (
+                <motion.div whileHover={{ scale: 1.02 }} whileTap={{ scale: 0.98 }}>
+                  <Button onClick={onRetry} variant="default" className="bg-primary text-primary-foreground hover:bg-primary/90">
+                    Retry Failed
+                  </Button>
+                </motion.div>
               )}
               <motion.div whileHover={{ scale: 1.02 }} whileTap={{ scale: 0.98 }}>
                 <Button onClick={onReset} variant="outline">Upload Another File</Button>
