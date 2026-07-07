@@ -20,7 +20,7 @@ export function ThemeToggle() {
       onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')}
       title="Toggle theme"
     >
-      <div className="absolute inset-0 bg-gradient-to-tr from-primary/10 to-transparent opacity-0 hover:opacity-100 transition-opacity" />
+      <div className="absolute inset-0 bg-linear-to-tr from-primary/10 to-transparent opacity-0 hover:opacity-100 transition-opacity" />
       <motion.div
         initial={false}
         animate={{ 

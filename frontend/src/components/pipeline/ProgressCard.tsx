@@ -89,7 +89,7 @@ export function ProgressCard({ progress, records, currentActivity, elapsedMs, et
         </motion.div>
       ) : (
         <Card className="border-border/50 bg-card shadow-sm overflow-hidden relative">
-          <div className="absolute inset-0 bg-gradient-to-r from-transparent via-primary/5 to-transparent -translate-x-full animate-[shimmer_2s_infinite]" />
+          <div className="absolute inset-0 bg-linear-to-r from-transparent via-primary/5 to-transparent -translate-x-full animate-[shimmer_2s_infinite]" />
           <CardHeader className="bg-muted/10 pb-4 border-b">
             <div className="flex items-center space-x-2">
               <div className="h-4 w-4 rounded-full border-2 border-primary border-t-transparent animate-spin" />

@@ -21,12 +21,12 @@ export default function Home() {
       <div className="absolute top-[-20%] left-1/2 -translate-x-1/2 w-[800px] h-[500px] rounded-full bg-primary/10 blur-[120px] pointer-events-none -z-10"></div>
       
       {/* Technical grid pattern */}
-      <div className="absolute inset-0 bg-[linear-gradient(to_right,#8080800a_1px,transparent_1px),linear-gradient(to_bottom,#8080800a_1px,transparent_1px)] bg-[size:32px_32px] pointer-events-none -z-10"></div>
+      <div className="absolute inset-0 bg-[linear-gradient(to_right,#8080800a_1px,transparent_1px),linear-gradient(to_bottom,#8080800a_1px,transparent_1px)] bg-size-[32px_32px] pointer-events-none -z-10"></div>
       
       <div className="relative mx-auto max-w-6xl space-y-8 z-10">
         <div className="flex justify-between items-start">
           <div className="space-y-2">
-            <h1 className="text-3xl font-semibold tracking-tight bg-clip-text text-transparent bg-gradient-to-r from-primary via-primary/80 to-primary/40">GridSense</h1>
+            <h1 className="text-3xl font-semibold tracking-tight bg-clip-text text-transparent bg-linear-to-r from-primary via-primary/80 to-primary/40">GridSense</h1>
             <p className="text-base text-muted-foreground max-w-2xl">
               Semantic spreadsheet intelligence. Drop any CSV, and the AI will automatically map the raw data into a strictly typed CRM schema.
             </p>
@@ -102,7 +102,7 @@ export default function Home() {
                 transition={{ duration: 0.3 }}
               >
                 <Card className="border-destructive/50 bg-destructive/5 shadow-lg backdrop-blur-md relative overflow-hidden">
-                  <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-destructive/40 via-destructive to-destructive/40" />
+                  <div className="absolute top-0 left-0 w-full h-1 bg-linear-to-r from-destructive/40 via-destructive to-destructive/40" />
                   <CardHeader>
                     <div className="flex items-center space-x-3 text-destructive">
                       <div className="p-2 bg-destructive/10 rounded-full">

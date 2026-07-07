@@ -66,7 +66,7 @@ export function Dropzone({ onFileAccepted, disabled }: DropzoneProps) {
       {isDragActive && (
         <motion.div 
           layoutId="dropzone-glow"
-          className="absolute inset-0 bg-gradient-to-tr from-primary/10 via-transparent to-primary/5 -z-10"
+          className="absolute inset-0 bg-linear-to-tr from-primary/10 via-transparent to-primary/5 -z-10"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
