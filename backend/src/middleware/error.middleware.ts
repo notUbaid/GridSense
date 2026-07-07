@@ -7,11 +7,15 @@ export const errorHandler = (
   res: Response,
   _next: NextFunction
 ) => {
+  const requestId = req.headers['x-request-id'] || `req_${Date.now()}`;
+
   logger.error(
     { 
-      err, 
+      err: err.message,
+      stack: err.stack,
       method: req.method, 
       path: req.path,
+      requestId,
       bodySize: req.headers['content-length']
     }, 
     'Unhandled server error'
@@ -22,6 +26,7 @@ export const errorHandler = (
   res.status(500).json({
     success: false,
     error: 'Internal Server Error',
+    requestId,
     message: isDev ? err.message : undefined,
     stack: isDev ? err.stack : undefined,
   });

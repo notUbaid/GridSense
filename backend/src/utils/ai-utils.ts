@@ -1,0 +1,88 @@
+/**
+ * Shared AI response parsing utilities.
+ * Extracted to prevent duplication between extractor.ts and mapper.ts.
+ */
+
+/**
+ * Strips markdown code fences (```json ... ```) that LLMs sometimes
+ * wrap around their JSON output despite being told not to.
+ */
+export function stripMarkdownFences(raw: string): string {
+  const trimmed = raw.trim();
+  if (trimmed.startsWith('```')) {
+    const firstNewline = trimmed.indexOf('\n');
+    const lastFence = trimmed.lastIndexOf('```');
+    if (lastFence > firstNewline) {
+      return trimmed.slice(firstNewline + 1, lastFence).trim();
+    }
+  }
+  return trimmed;
+}
+
+/** Valid CRM status enum values */
+export const VALID_CRM_STATUSES = [
+  'GOOD_LEAD_FOLLOW_UP',
+  'DID_NOT_CONNECT',
+  'BAD_LEAD',
+  'SALE_DONE',
+] as const;
+
+/** Valid data source enum values */
+export const VALID_DATA_SOURCES = [
+  'leads_on_demand',
+  'meridian_tower',
+  'eden_park',
+  'varah_swamy',
+  'sarjapur_plots',
+] as const;
+
+/**
+ * Attempts to salvage a partially-correct AI JSON response by:
+ * 1. Wrapping bare arrays in { records: [...] }
+ * 2. Normalizing empty strings to null
+ * 3. Clamping invalid enum values to null
+ */
+export function salvageExtractorJson(parsed: any): any {
+  if (Array.isArray(parsed)) {
+    parsed = { records: parsed };
+  }
+
+  if (parsed && Array.isArray(parsed.records)) {
+    for (const record of parsed.records) {
+      if (typeof record === 'object' && record !== null) {
+        for (const key of Object.keys(record)) {
+          if (record[key] === '') {
+            record[key] = null;
+          }
+        }
+
+        if (
+          record.crm_status &&
+          !(VALID_CRM_STATUSES as readonly string[]).includes(record.crm_status)
+        ) {
+          record.crm_status = null;
+        }
+
+        if (
+          record.data_source &&
+          !(VALID_DATA_SOURCES as readonly string[]).includes(record.data_source)
+        ) {
+          record.data_source = null;
+        }
+      }
+    }
+  }
+  return parsed;
+}
+
+/**
+ * Attempts to salvage the mapper AI response.
+ * If the response has a `mapping` array, returns it as-is.
+ * Otherwise returns an empty fallback.
+ */
+export function salvageMapperJson(parsed: any): any {
+  if (typeof parsed === 'object' && parsed !== null && parsed.mapping) {
+    return parsed;
+  }
+  return { mapping: [], overallConfidence: 0 };
+}

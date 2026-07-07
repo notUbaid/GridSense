@@ -15,6 +15,7 @@ export const CrmRecordSchema = z.object({
   crm_note: z.string().optional().nullable(),
   data_source: z.string().optional().nullable(),
   possession_time: z.string().optional().nullable(),
+  _row_id: z.string().optional(),
   description: z.string().optional().nullable(),
 });
 
@@ -25,6 +26,11 @@ export const ProcessBatchRequestSchema = z.object({
   headers: z.array(z.string()),
   rows: z.array(z.record(z.string(), z.any())),
   provider: z.enum(['groq', 'gemini']).optional().default('groq'),
+  schemaMapping: z.array(z.object({
+    source: z.string(),
+    target: z.string(),
+    confidence: z.number().optional()
+  })).optional()
 });
 
 export type ProcessBatchRequest = z.infer<typeof ProcessBatchRequestSchema>;

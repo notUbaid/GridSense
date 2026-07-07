@@ -6,6 +6,7 @@ import logger from '../utils/logger';
 import { config } from '../config';
 import { MockAIProvider } from './MockAIProvider';
 import { GoogleGenerativeAI } from '@google/generative-ai';
+import { stripMarkdownFences, salvageExtractorJson } from '../utils/ai-utils';
 
 let groqClients: Groq[] = [];
 let currentGroqIndex = 0;
@@ -44,46 +45,8 @@ const llmResponseSchema = z.object({
   records: z.array(LlmRecordSchema),
 });
 
-function stripMarkdownFences(raw: string): string {
-  const trimmed = raw.trim();
-  if (trimmed.startsWith('```')) {
-    const firstNewline = trimmed.indexOf('\n');
-    const lastFence = trimmed.lastIndexOf('```');
-    if (lastFence > firstNewline) {
-      return trimmed.slice(firstNewline + 1, lastFence).trim();
-    }
-  }
-  return trimmed;
-}
-
-function salvageParsedJson(parsed: any): any {
-  if (Array.isArray(parsed)) {
-    parsed = { records: parsed };
-  }
-
-  if (parsed && Array.isArray(parsed.records)) {
-    for (const record of parsed.records) {
-      if (typeof record === 'object' && record !== null) {
-        for (const key of Object.keys(record)) {
-          if (record[key] === '') {
-            record[key] = null;
-          }
-        }
-        
-        const validStatus = ['GOOD_LEAD_FOLLOW_UP', 'DID_NOT_CONNECT', 'BAD_LEAD', 'SALE_DONE'];
-        if (record.crm_status && !validStatus.includes(record.crm_status)) {
-          record.crm_status = null;
-        }
-        
-        const validSource = ['leads_on_demand', 'meridian_tower', 'eden_park', 'varah_swamy', 'sarjapur_plots'];
-        if (record.data_source && !validSource.includes(record.data_source)) {
-          record.data_source = null;
-        }
-      }
-    }
-  }
-  return parsed;
-}
+// stripMarkdownFences and salvageExtractorJson are imported from '../utils/ai-utils'
+// to avoid code duplication with mapper.ts
 
 function normalizeAndValidate(record: any): CrmRecord {
   const norm = { ...record };
@@ -150,7 +113,8 @@ const DIGIT_REGEX = /\d/g;
 export async function processBatch(
   headers: string[], 
   rows: Record<string, string>[],
-  provider: 'groq' | 'gemini' = 'groq'
+  provider: 'groq' | 'gemini' = 'groq',
+  schemaMapping?: { source: string, target: string, confidence?: number }[]
 ) {
   let attempt = 0;
   let keysTried = 1;
@@ -164,15 +128,17 @@ export async function processBatch(
     mobile_without_country_code: string | null;
     created_at: string | null;
     needsAI: boolean;
+    _row_id?: string;
   }
 
   const extractedData: ExtractedData[] = rows.map(row => {
-    const sanitized = { ...row };
+    const { _row_id, ...rowWithoutId } = row;
+    const sanitized = { ...rowWithoutId };
+    
     let email: string | null = null;
     let mobile_without_country_code: string | null = null;
     let created_at: string | null = null;
 
-    let needsAI = false;
     for (const key of Object.keys(sanitized)) {
       let value = sanitized[key];
       if (!value) continue;
@@ -218,14 +184,109 @@ export async function processBatch(
         delete sanitized[key];
       } else {
         sanitized[key] = value;
-        needsAI = true;
       }
     }
-
-    return { original: row, sanitized, email, mobile_without_country_code, created_at, needsAI };
+    const needsAI = Object.keys(sanitized).length > 0;
+    
+    return { original: row, sanitized, email, mobile_without_country_code, created_at, needsAI, _row_id: _row_id as string | undefined };
   });
 
   const aiRows = extractedData.filter(d => d.needsAI).map(d => d.sanitized);
+
+  if (schemaMapping && schemaMapping.length > 0) {
+    const validRecords: CrmRecord[] = [];
+    let skippedCount = 0;
+    const skippedReasons: Record<string, number> = {};
+
+    for (let i = 0; i < extractedData.length; i++) {
+      const d = extractedData[i];
+      const { original, email, mobile_without_country_code, created_at, _row_id } = d;
+      
+      const record: any = { 
+        email, mobile_without_country_code, created_at, _row_id 
+      };
+
+      const mappedKeys = new Set<string>();
+      const extraNotes: string[] = [];
+
+      for (const map of schemaMapping) {
+        if (map.confidence && map.confidence < 70) continue;
+        const val = original[map.source];
+        if (val && val.trim() !== '') {
+          record[map.target] = val.trim();
+          mappedKeys.add(map.source);
+        }
+      }
+
+      if (!record.name && record.email) {
+        const parts = record.email.split('@')[0].split(/[._-]/);
+        if (parts.length > 0) {
+           record.name = parts.map((p: string) => p.charAt(0).toUpperCase() + p.slice(1)).join(' ');
+        }
+      }
+
+      if (record.crm_status) {
+         const s = record.crm_status.toLowerCase();
+         if (s.includes('interested') || s.includes('call back') || s.includes('follow up') || s.includes('positive') || s.includes('callback')) {
+            record.crm_status = 'GOOD_LEAD_FOLLOW_UP';
+         } else if (s.includes('not connected') || s.includes('did not connect') || s.includes('no answer')) {
+            record.crm_status = 'DID_NOT_CONNECT';
+         } else if (s.includes('bad') || s.includes('not interested') || s.includes('dnc') || s.includes('do not call')) {
+            record.crm_status = 'BAD_LEAD';
+         } else if (s.includes('sale') || s.includes('done') || s.includes('closed') || s.includes('won')) {
+            record.crm_status = 'SALE_DONE';
+         } else {
+            record.crm_status = null;
+         }
+      }
+
+      for (const [key, val] of Object.entries(original)) {
+        if (key === '_row_id' || mappedKeys.has(key)) continue;
+        if (!val || val.trim() === '') continue;
+
+        const valTrimmed = val.trim();
+        const keyLower = key.toLowerCase();
+
+        if (valTrimmed.includes('@') && EMAIL_REGEX.test(valTrimmed)) {
+           extraNotes.push(`Extra email: ${valTrimmed}`);
+        } else if ((valTrimmed.match(DIGIT_REGEX) || []).length >= 7 && (PHONE_FORMAT_REGEX.test(valTrimmed) || PHONE_EMBEDDED_REGEX.test(valTrimmed))) {
+           extraNotes.push(`Extra phone: ${valTrimmed}`);
+        } else if (keyLower.includes('note') || keyLower.includes('remark') || keyLower.includes('comment') || keyLower.includes('feedback')) {
+           extraNotes.push(`${key}: ${valTrimmed}`);
+        }
+      }
+
+      if (extraNotes.length > 0) {
+         record.crm_note = record.crm_note ? record.crm_note + ' | ' + extraNotes.join(' | ') : extraNotes.join(' | ');
+      }
+
+      const normalized = normalizeAndValidate(record);
+      
+      const hasContact = normalized.email || normalized.mobile_without_country_code;
+      const AUTO_FIELDS = new Set(['name', 'email', 'mobile_without_country_code', 'created_at', 'country_code', '_row_id']);
+      let meaningfulData = false;
+      for (const [key, value] of Object.entries(normalized)) {
+        if (!AUTO_FIELDS.has(key) && value !== null && value !== undefined) {
+          meaningfulData = true;
+          break;
+        }
+      }
+
+      if (!hasContact) {
+        skippedCount++;
+        skippedReasons['Rejected (Missing Valid Contact Info)'] = (skippedReasons['Rejected (Missing Valid Contact Info)'] || 0) + 1;
+      } else if (!meaningfulData) {
+        skippedCount++;
+        skippedReasons['Rejected (Lacks Meaningful Data)'] = (skippedReasons['Rejected (Lacks Meaningful Data)'] || 0) + 1;
+      } else {
+        validRecords.push(normalized);
+      }
+    }
+
+    const processingTimeMs = Date.now() - startTime;
+    logger.info({ batchSize: rows.length, extracted: validRecords.length, skipped: skippedCount, ms: processingTimeMs }, 'Deterministic batch complete');
+    return { records: validRecords, skippedCount, skippedReasons, processingTimeMs };
+  }
 
   const prompt = `You are a strict data extraction engine. You receive CSV headers and row data as JSON.
 Your job is purely to map the provided semantic data into the defined CRM schema.
@@ -288,11 +349,11 @@ ${JSON.stringify(aiRows)}`;
           try {
             parsed = JSON.parse(stripMarkdownFences(content));
           } catch (e) {
-            logger.error({ content: stripMarkdownFences(content) }, 'Failed to parse JSON from Gemini');
+            logger.error({ content: content.substring(0, 500) }, 'Failed to parse JSON from Gemini');
             throw e;
           }
           
-          parsed = salvageParsedJson(parsed);
+          parsed = salvageExtractorJson(parsed);
           if (parsed?.records && Array.isArray(parsed.records) && parsed.records.length !== aiRows.length) {
             throw new Error(`AI returned ${parsed.records.length} records, expected ${aiRows.length}`);
           }
@@ -331,7 +392,7 @@ ${JSON.stringify(aiRows)}`;
             throw e;
           }
 
-          parsed = salvageParsedJson(parsed);
+          parsed = salvageExtractorJson(parsed);
           if (parsed?.records && Array.isArray(parsed.records) && parsed.records.length !== aiRows.length) {
             throw new Error(`AI returned ${parsed.records.length} records, expected ${aiRows.length}`);
           }
@@ -372,7 +433,8 @@ ${JSON.stringify(aiRows)}`;
           ...aiRecord,
           email: d.email,
           mobile_without_country_code: d.mobile_without_country_code,
-          created_at: d.created_at
+          created_at: d.created_at,
+          _row_id: d._row_id
         };
 
         const normalized = normalizeAndValidate(mergedRecord);
@@ -380,9 +442,12 @@ ${JSON.stringify(aiRows)}`;
         const hasContact = normalized.email || normalized.mobile_without_country_code;
         
         // Check for mostly empty records (only name exists)
+        // Auto-extracted fields (email, phone, date, country_code, _row_id) don't count as
+        // "meaningful" on their own — they were deterministically extracted, not AI-mapped.
+        const AUTO_FIELDS = new Set(['name', 'email', 'mobile_without_country_code', 'created_at', 'country_code', '_row_id']);
         let meaningfulData = false;
         for (const [key, value] of Object.entries(normalized)) {
-          if (key !== 'name' && value !== null && value !== undefined) {
+          if (!AUTO_FIELDS.has(key) && value !== null && value !== undefined) {
             meaningfulData = true;
             break;
           }

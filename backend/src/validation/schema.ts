@@ -15,6 +15,7 @@ export const CrmRecordSchema = z.object({
   crm_note: z.string().optional().nullable().describe("Additional notes, remarks, or overflow data (extra emails, extra phone numbers, miscellaneous columns)."),
   data_source: z.enum(['leads_on_demand', 'meridian_tower', 'eden_park', 'varah_swamy', 'sarjapur_plots']).optional().nullable().describe("Lead source. Only use these exact values if the source data clearly matches. Otherwise leave null."),
   possession_time: z.string().optional().nullable().describe("Duration or timestamp of lead ownership."),
+  _row_id: z.string().optional().describe("Unique identifier for the row."),
   description: z.string().optional().nullable().describe("General description or bio."),
 });
 
@@ -25,4 +26,9 @@ export const ProcessBatchRequestSchema = z.object({
   headers: z.array(z.string()),
   rows: z.array(z.record(z.string(), z.any())),
   provider: z.enum(['groq', 'gemini']).optional().default('groq'),
+  schemaMapping: z.array(z.object({
+    source: z.string(),
+    target: z.string(),
+    confidence: z.number().optional()
+  })).optional(),
 });

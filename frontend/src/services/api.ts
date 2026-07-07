@@ -10,7 +10,7 @@ export const apiClient = axios.create({
   },
 });
 
-export const processBatchApi = async (batch: ProcessBatchRequest) => {
-  const response = await apiClient.post('/process/batch', batch);
+export const processBatchApi = async (batch: ProcessBatchRequest, schemaMapping?: any[]) => {
+  const response = await apiClient.post('/process/batch', { ...batch, schemaMapping });
   return ProcessBatchResponseSchema.parse(response.data);
 };

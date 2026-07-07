@@ -3,6 +3,7 @@ import { UploadCloud, Megaphone, Building2, AlertTriangle, FileSpreadsheet, File
 import { cn } from '@/lib/utils';
 import { motion } from 'framer-motion';
 import { Button } from '@/components/ui/button';
+import { toast } from 'sonner';
 
 interface DropzoneProps {
   onFileAccepted: (file: File) => void;
@@ -34,7 +35,7 @@ export function Dropzone({ onFileAccepted, disabled }: DropzoneProps) {
       if (file.type === 'text/csv' || file.name.endsWith('.csv') || file.type === 'application/vnd.ms-excel') {
         onFileAccepted(file);
       } else {
-        alert('Please upload a valid CSV file.');
+        toast.error('Please upload a valid CSV file.');
       }
     }
   }, [disabled, onFileAccepted]);
@@ -76,6 +77,7 @@ export function Dropzone({ onFileAccepted, disabled }: DropzoneProps) {
       <input
         type="file"
         accept=".csv, text/csv, application/vnd.ms-excel"
+        aria-label="Upload CSV file"
         className="absolute inset-0 z-50 h-full w-full cursor-pointer opacity-0"
         onChange={handleChange}
         disabled={disabled}
@@ -132,7 +134,7 @@ export function SampleCsvButton({ onFileAccepted }: { onFileAccepted: (file: Fil
       onFileAccepted(file);
     } catch (e) {
       console.error(e);
-      alert('Failed to load sample file.');
+      toast.error('Failed to load sample file.');
     } finally {
       setLoadingFile(null);
     }

@@ -3,10 +3,10 @@ import { cn } from '@/lib/utils';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import dynamic from 'next/dynamic';
-import { motion, Variants, useSpring, useTransform } from 'framer-motion';
+import { motion, Variants, useSpring, useTransform, useMotionValueEvent } from 'framer-motion';
 
 const ResultsTable = dynamic(() => import('@/components/results/ResultsTable').then(mod => mod.ResultsTable), { ssr: false });
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import { AlertCircle, FileCheck2, Info } from 'lucide-react';
 import { ProcessMetrics, ProcessState } from '@/hooks/useProcessing';
 import { CrmRecord } from '@/types/schema';
@@ -16,6 +16,8 @@ import {
   TooltipContent,
   TooltipTrigger,
 } from "@/components/ui/tooltip";
+import { Dialog, DialogTrigger, DialogContent, DialogHeader, DialogTitle, DialogDescription } from '@/components/ui/dialog';
+import { ScrollArea } from '@/components/ui/scroll-area';
 
 const container: Variants = {
   hidden: { opacity: 0 },
@@ -44,23 +46,27 @@ interface SummaryDashboardProps {
 
 function AnimatedCounter({ value }: { value: number }) {
   const spring = useSpring(0, { stiffness: 100, damping: 20 });
-  const display = useTransform(spring, (current) => Math.round(current));
+  const [displayValue, setDisplayValue] = useState(0);
 
   useEffect(() => {
     spring.set(value);
   }, [spring, value]);
 
-  return <motion.span>{display}</motion.span>;
+  const rounded = useTransform(spring, (current) => Math.round(current));
+  useMotionValueEvent(rounded, 'change', (latest) => {
+    setDisplayValue(latest);
+  });
+
+  return <span>{displayValue}</span>;
 }
 
 export function SummaryDashboard({ state, metrics, records, skippedRawRows, failedRawRows, onReset, onRetry }: SummaryDashboardProps) {
   const isPartial = state === 'partial_success';
-  console.log("SummaryDashboard render:", { failedRowsMetric: metrics.failedRows, failedRawRowsLength: failedRawRows?.length });
 
   const handleExportSkipped = () => {
     if (skippedRawRows.length === 0) return;
     const csv = Papa.unparse(skippedRawRows);
-    const blob = new Blob([csv], { type: 'text/csv;charset=utf-8;' });
+    const blob = new Blob(['\uFEFF' + csv], { type: 'text/csv;charset=utf-8;' });
     const url = URL.createObjectURL(blob);
     const link = document.createElement('a');
     link.href = url;
@@ -68,12 +74,13 @@ export function SummaryDashboard({ state, metrics, records, skippedRawRows, fail
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);
+    URL.revokeObjectURL(url);
   };
 
   const handleExportFailed = () => {
     if (failedRawRows.length === 0) return;
     const csv = Papa.unparse(failedRawRows);
-    const blob = new Blob([csv], { type: 'text/csv;charset=utf-8;' });
+    const blob = new Blob(['\uFEFF' + csv], { type: 'text/csv;charset=utf-8;' });
     const url = URL.createObjectURL(blob);
     const link = document.createElement('a');
     link.href = url;
@@ -81,6 +88,7 @@ export function SummaryDashboard({ state, metrics, records, skippedRawRows, fail
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);
+    URL.revokeObjectURL(url);
   };
 
   return (
@@ -166,25 +174,51 @@ export function SummaryDashboard({ state, metrics, records, skippedRawRows, fail
               <p className="text-sm text-muted-foreground font-medium flex items-center gap-2">
                 <span className="h-2 w-2 rounded-full bg-amber-500"></span>
                 Skipped
-                <Tooltip>
-                  <TooltipTrigger className="inline-flex outline-none">
-                    <Info className="h-3 w-3 text-muted-foreground/70 cursor-help" />
-                  </TooltipTrigger>
-                  <TooltipContent>
-                    <div className="max-w-[250px] text-xs space-y-1">
-                      {Object.keys(metrics.skipReasons).length > 0 ? (
-                        Object.entries(metrics.skipReasons).map(([reason, count]) => (
-                          <div key={reason} className="flex justify-between gap-4">
-                            <span>{reason}:</span>
-                            <span className="font-semibold">{count}</span>
-                          </div>
-                        ))
+                <Dialog>
+                  <DialogTrigger className="inline-flex outline-none hover:bg-muted p-1 rounded transition-colors">
+                    <span className="text-[10px] uppercase font-bold tracking-wider text-muted-foreground/80">View Details</span>
+                  </DialogTrigger>
+                  <DialogContent className="max-w-2xl max-h-[80vh] flex flex-col">
+                    <DialogHeader>
+                      <DialogTitle>Skipped Rows Inspector</DialogTitle>
+                      <DialogDescription>Review the exact rows that were skipped during processing.</DialogDescription>
+                    </DialogHeader>
+                    <ScrollArea className="flex-1 min-h-[300px] mt-4 rounded-md border p-4">
+                      {skippedRawRows.length > 0 ? (
+                        <div className="space-y-4">
+                          {skippedRawRows.map((row, idx) => (
+                            <div key={idx} className="border-b border-border/50 pb-4 last:border-0 last:pb-0">
+                              <div className="flex items-center justify-between mb-2">
+                                <span className="font-semibold text-sm">Row {row._row_id || '?'}</span>
+                                <span className="text-xs font-medium text-destructive bg-destructive/10 px-2 py-0.5 rounded">
+                                  {row._skipReason || 'Skipped'}
+                                </span>
+                              </div>
+                              <div className="text-xs text-muted-foreground bg-muted/50 p-2 rounded truncate">
+                                {Object.entries(row).filter(([k]) => !k.startsWith('_')).map(([k, v]) => `${v}`).join(', ')}
+                              </div>
+                            </div>
+                          ))}
+                        </div>
                       ) : (
-                        <p>No rows were skipped.</p>
+                        <div className="flex flex-col items-center justify-center h-[200px] text-muted-foreground text-sm">
+                          {metrics.skippedRows > 0 ? (
+                            <div className="text-center space-y-2">
+                              <p>Rows were skipped during AI extraction phase.</p>
+                              <div className="inline-block text-left bg-muted/30 p-4 rounded-md border text-xs">
+                                {Object.entries(metrics.skipReasons).map(([r, c]) => (
+                                  <div key={r}><span className="font-semibold">{r}:</span> {c} rows</div>
+                                ))}
+                              </div>
+                            </div>
+                          ) : (
+                            <p>No rows were skipped.</p>
+                          )}
+                        </div>
                       )}
-                    </div>
-                  </TooltipContent>
-                </Tooltip>
+                    </ScrollArea>
+                  </DialogContent>
+                </Dialog>
               </p>
               <p className="text-2xl font-semibold tracking-tight"><AnimatedCounter value={metrics.skippedRows} /></p>
             </motion.div>
@@ -192,26 +226,51 @@ export function SummaryDashboard({ state, metrics, records, skippedRawRows, fail
               <p className="text-muted-foreground mb-1 flex items-center gap-1.5">
                 <span className="w-1.5 h-1.5 rounded-full bg-destructive/80 mr-1 shadow-[0_0_8px_rgba(239,68,68,0.5)]"></span>
                 Failed Rows
-                <Tooltip>
-                  <TooltipTrigger className="inline-flex outline-none">
-                    <Info className="h-3 w-3 text-muted-foreground/70 cursor-help" />
-                  </TooltipTrigger>
-                  <TooltipContent>
-                    <div className="max-w-[250px] text-xs space-y-1">
-                      {Object.keys(metrics.failReasons).length > 0 ? (
-                        Object.entries(metrics.failReasons).map(([reason, count], idx) => (
-                          <div key={idx} className="text-destructive font-medium border-b border-border/50 pb-1 mb-1 last:border-0 last:pb-0 last:mb-0">
-                            {Object.keys(metrics.failReasons).length === 1 
-                              ? `All failed due to: ${reason}` 
-                              : `${count} rows: ${reason}`}
-                          </div>
-                        ))
+                <Dialog>
+                  <DialogTrigger className="inline-flex outline-none hover:bg-muted p-1 rounded transition-colors">
+                    <span className="text-[10px] uppercase font-bold tracking-wider text-muted-foreground/80">View Details</span>
+                  </DialogTrigger>
+                  <DialogContent className="max-w-2xl max-h-[80vh] flex flex-col">
+                    <DialogHeader>
+                      <DialogTitle>Failed Rows Inspector</DialogTitle>
+                      <DialogDescription>Review the exact rows that failed during API extraction.</DialogDescription>
+                    </DialogHeader>
+                    <ScrollArea className="flex-1 min-h-[300px] mt-4 rounded-md border p-4">
+                      {failedRawRows.length > 0 ? (
+                        <div className="space-y-4">
+                          {failedRawRows.map((row, idx) => (
+                            <div key={idx} className="border-b border-border/50 pb-4 last:border-0 last:pb-0">
+                              <div className="flex items-center justify-between mb-2">
+                                <span className="font-semibold text-sm">Row {row._row_id || '?'}</span>
+                                <span className="text-xs font-medium text-destructive bg-destructive/10 px-2 py-0.5 rounded">
+                                  Failed
+                                </span>
+                              </div>
+                              <div className="text-xs text-muted-foreground bg-muted/50 p-2 rounded truncate">
+                                {Object.entries(row).filter(([k]) => !k.startsWith('_')).map(([k, v]) => `${v}`).join(', ')}
+                              </div>
+                            </div>
+                          ))}
+                        </div>
                       ) : (
-                        <p>No rows failed.</p>
+                        <div className="flex flex-col items-center justify-center h-[200px] text-muted-foreground text-sm">
+                          {metrics.failedRows > 0 ? (
+                            <div className="text-center space-y-2">
+                              <p>Rows failed during API extraction.</p>
+                              <div className="inline-block text-left bg-muted/30 p-4 rounded-md border text-xs">
+                                {Object.entries(metrics.failReasons).map(([r, c]) => (
+                                  <div key={r} className="text-destructive"><span className="font-semibold">Error:</span> {r} ({c} rows)</div>
+                                ))}
+                              </div>
+                            </div>
+                          ) : (
+                            <p>No rows failed.</p>
+                          )}
+                        </div>
                       )}
-                    </div>
-                  </TooltipContent>
-                </Tooltip>
+                    </ScrollArea>
+                  </DialogContent>
+                </Dialog>
               </p>
               <p className="text-2xl font-semibold tracking-tight"><AnimatedCounter value={metrics.failedRows} /></p>
             </motion.div>

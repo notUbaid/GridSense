@@ -10,10 +10,11 @@ import { PreviewCard } from '@/components/pipeline/PreviewCard';
 import { ProgressCard } from '@/components/pipeline/ProgressCard';
 import { ThemeToggle } from '@/components/ThemeToggle';
 import { SummaryDashboard } from '@/components/pipeline/SummaryDashboard';
+import { SchemaMappingPanel } from '@/components/upload/SchemaMappingPanel';
 import { motion, AnimatePresence } from 'framer-motion';
 
 export default function Home() {
-  const { state, progress, records, skippedRawRows, failedRawRows, previewData, metrics, error, currentActivity, elapsedMs, etaMs, processFile, startProcessing, retryFailed, reset } = useProcessing();
+  const { state, progress, records, skippedRawRows, failedRawRows, previewData, schemaMapping, metrics, error, currentActivity, elapsedMs, etaMs, processFile, startProcessing, retryFailed, reset } = useProcessing();
 
   return (
     <main className="relative min-h-screen bg-background text-foreground p-4 sm:p-6 md:p-12 overflow-hidden selection:bg-primary/20">
@@ -93,6 +94,7 @@ export default function Home() {
                   etaMs={etaMs}
                   totalRows={metrics.totalRows}
                 />
+                <SchemaMappingPanel mapping={schemaMapping} />
               </motion.div>
             )}
 
@@ -146,6 +148,7 @@ export default function Home() {
                   onReset={reset}
                   onRetry={retryFailed}
                 />
+                <SchemaMappingPanel mapping={schemaMapping} />
               </motion.div>
             )}
           </AnimatePresence>

@@ -4,6 +4,8 @@ build/
 .env
 .env.local
 .env.*.local
+backend/.env
 .DS_Store
 .next/
 *.log
+*.tsbuildinfo

@@ -40,6 +40,7 @@ interface ResultsTableProps {
 export function ResultsTable({ data }: ResultsTableProps) {
   const columns = React.useMemo(
     () => [
+      { accessorKey: '_row_id', header: 'Row ID' },
       { accessorKey: 'created_at', header: 'Created At' },
       { accessorKey: 'name', header: 'Name' },
       { accessorKey: 'email', header: 'Email' },
@@ -77,7 +78,6 @@ export function ResultsTable({ data }: ResultsTableProps) {
     []
   );
 
-  // eslint-disable-next-line react-hooks/incompatible-library
   const table = useReactTable({
     data,
     columns,
@@ -115,7 +115,7 @@ export function ResultsTable({ data }: ResultsTableProps) {
     ).join('\n');
     
     const csvContent = `${headers}\n${rows}`;
-    const blob = new Blob([csvContent], { type: 'text/csv;charset=utf-8;' });
+    const blob = new Blob(['\uFEFF' + csvContent], { type: 'text/csv;charset=utf-8;' });
     const url = URL.createObjectURL(blob);
     const link = document.createElement('a');
     link.href = url;

@@ -1,13 +1,20 @@
-import { useState, useCallback } from 'react';
+'use client';
+
+import { useState, useCallback, useRef } from 'react';
 import Papa from 'papaparse';
 
 const DIGIT_REGEX = /\d/g;
 
-import { processBatchApi } from '../services/api';
+import { processBatchApi, apiClient } from '../services/api';
 import { CrmRecord } from '../types/schema';
 import { toast } from 'sonner';
 
 export type ProcessState = 'idle' | 'parsing' | 'preview' | 'processing' | 'done' | 'partial_success' | 'error';
+
+export interface SchemaMapping {
+  mapping: { source: string; target: string; confidence: number }[];
+  overallConfidence: number;
+}
 
 export interface ProcessMetrics {
   totalRows: number;
@@ -20,6 +27,18 @@ export interface ProcessMetrics {
   failReasons: Record<string, number>;
 }
 
+/** Maximum file size in bytes (50 MB) */
+const MAX_FILE_SIZE_BYTES = 50 * 1024 * 1024;
+
+/**
+ * Batch size for AI-processed rows. Kept small (50) to stay within LLM
+ * context windows and improve extraction accuracy per the PRD's 20-30 recommendation.
+ * Deterministic (schema-mapped) batches use a much larger size since they skip AI entirely.
+ */
+const AI_BATCH_SIZE = 50;
+const DETERMINISTIC_BATCH_SIZE = 5000;
+const MAX_CONCURRENCY = 4;
+
 export function useProcessing() {
   const [state, setState] = useState<ProcessState>('idle');
   const [progress, setProgress] = useState(0);
@@ -27,6 +46,7 @@ export function useProcessing() {
   const [skippedRawRows, setSkippedRawRows] = useState<Record<string, string>[]>([]);
   const [failedRawRows, setFailedRawRows] = useState<Record<string, string>[]>([]);
   const [previewData, setPreviewData] = useState<{ headers: string[], rows: Record<string, string>[] } | null>(null);
+  const [schemaMapping, setSchemaMapping] = useState<SchemaMapping | null>(null);
   const [error, setError] = useState<string | null>(null);
   const [currentActivity, setCurrentActivity] = useState<string>('Idle');
   const [elapsedMs, setElapsedMs] = useState<number>(0);
@@ -42,16 +62,31 @@ export function useProcessing() {
     failReasons: {}
   });
 
-  const batchSize = Number(process.env.NEXT_PUBLIC_AI_BATCH_SIZE) || 20;
-  const maxConcurrency = Number(process.env.NEXT_PUBLIC_AI_CONCURRENCY) || 2;
+  // Ref to track and clean up the timer interval on unmount/reset
+  const timerRef = useRef<ReturnType<typeof setInterval> | null>(null);
+
+  const clearTimer = useCallback(() => {
+    if (timerRef.current) {
+      clearInterval(timerRef.current);
+      timerRef.current = null;
+    }
+  }, []);
 
   const processFile = useCallback((file: File) => {
+    // Validate file size before parsing
+    if (file.size > MAX_FILE_SIZE_BYTES) {
+      const sizeMB = (file.size / (1024 * 1024)).toFixed(1);
+      toast.error(`File too large (${sizeMB} MB). Maximum supported size is 50 MB.`);
+      return;
+    }
+
     setState('parsing');
     setError(null);
     setProgress(0);
     setRecords([]);
     setSkippedRawRows([]);
     setPreviewData(null);
+    setSchemaMapping(null);
     setCurrentActivity('Idle');
     setElapsedMs(0);
     setEtaMs(null);
@@ -73,9 +108,10 @@ export function useProcessing() {
         }
 
         const sanitizeRows = (r: Record<string, string>[]) => {
-          return r.map(row => {
-            const sanitized: Record<string, string> = {};
+          return r.map((row, index) => {
+            const sanitized: Record<string, string> = { _row_id: String(index + 2) };
             for (const key in row) {
+              if (key === '_row_id') continue;
               const val = row[key] || '';
               sanitized[key] = val.length > 2000 ? val.substring(0, 2000) + '...' : val;
             }
@@ -123,12 +159,11 @@ export function useProcessing() {
     for (const row of sanitizedData) {
       const rowVals = Object.values(row).join(' ').toLowerCase();
       // Heuristic: Must contain '@' (email) or at least 7 digits *total* across the row (potential phone)
-      // Nightmare CSVs might have phones like "+1 (555) 123-4567" which breaks consecutive digit checks.
       const totalDigits = (rowVals.match(DIGIT_REGEX) || []).length;
       const hasBasicContactInfo = rowVals.includes('@') || totalDigits >= 7;
       
       if (!hasBasicContactInfo) {
-        localSkippedRaw.push(row);
+        localSkippedRaw.push({ ...row, _skipReason: 'Missing Email/Phone (Heuristics)' });
         localSkipReasons['Missing Email/Phone (Heuristics)'] = (localSkipReasons['Missing Email/Phone (Heuristics)'] || 0) + 1;
         continue;
       }
@@ -136,20 +171,46 @@ export function useProcessing() {
       validRows.push(row);
     }
 
-    setSkippedRawRows(localSkippedRaw);
-
-    const chunks: Record<string, string>[][] = [];
-    for (let i = 0; i < validRows.length; i += batchSize) {
-      chunks.push(validRows.slice(i, i + batchSize));
+    if (sanitizedData.length > 500) {
+      toast.info(`Note: You're uploading a massive file (${sanitizedData.length} rows). Our Free Tier API limits might cause processing to slow down or hit rate limits temporarily.`);
     }
 
-    const localChunkResults: CrmRecord[][] = new Array(chunks.length).fill(null);
+    setSkippedRawRows(localSkippedRaw);
+
+    // Determine batch size based on whether we'll have a schema mapping
+    // (will be refined after map-headers call)
+    let effectiveBatchSize = AI_BATCH_SIZE;
 
     setMetrics(prev => ({ ...prev, totalRows: sanitizedData.length }));
     const startTime = Date.now();
 
+    let fetchedMapping: any = null;
+    try {
+      setCurrentActivity('AI is analyzing your column headers...');
+      const res = await apiClient.post('/process/map-headers', { headers });
+      const data = res.data;
+      if (data && data.mapping && data.mapping.length > 0) {
+        setSchemaMapping(data);
+        fetchedMapping = data.mapping;
+        // With a high-confidence schema mapping, we can use deterministic processing
+        // which doesn't hit the AI — so we can use much larger batches
+        if (data.overallConfidence >= 70) {
+          effectiveBatchSize = DETERMINISTIC_BATCH_SIZE;
+        }
+      }
+    } catch (err) {
+      // Header mapping failure is non-fatal — fall back to AI extraction
+      console.warn('Failed to map headers, falling back to AI extraction', err);
+    }
+
+    const chunks: Record<string, string>[][] = [];
+    for (let i = 0; i < validRows.length; i += effectiveBatchSize) {
+      chunks.push(validRows.slice(i, i + effectiveBatchSize));
+    }
+
     setCurrentActivity(`Warming up AI models for ${validRows.length} valid records...`);
 
+    const localChunkResults: CrmRecord[][] = new Array(chunks.length).fill(null);
     let completedBatches = 0;
     const totalBatches = chunks.length;
     let localFailedBatches = 0;
@@ -159,7 +220,9 @@ export function useProcessing() {
     let localSuccessfulRows = 0;
     let localSkippedRows = localSkippedRaw.length;
 
-    const timer = setInterval(() => {
+    // Timer for elapsed/ETA — tracked via ref for proper cleanup
+    clearTimer();
+    timerRef.current = setInterval(() => {
       const now = Date.now();
       const elapsed = now - startTime;
       setElapsedMs(elapsed);
@@ -171,23 +234,29 @@ export function useProcessing() {
       }
     }, 1000);
 
-    let currentProvider: 'groq' | 'gemini' = 'groq';
-    let rowsProcessedOnCurrentProvider = 0;
+    // Provider assignment: Each task gets a provider when dequeued, eliminating
+    // the race condition where concurrent workers mutated a shared provider variable.
+    let nextProvider: 'groq' | 'gemini' = 'groq';
+    let rowsSinceSwitch = 0;
+
+    const getNextProvider = (batchSize: number): 'groq' | 'gemini' => {
+      if (rowsSinceSwitch >= 100) {
+        nextProvider = nextProvider === 'groq' ? 'gemini' : 'groq';
+        rowsSinceSwitch = 0;
+      }
+      rowsSinceSwitch += batchSize;
+      return nextProvider;
+    };
+
     const processBatchQueue = async (queue: { batch: Record<string, string>[], index: number }[]) => {
       while (queue.length > 0) {
-        // Preemptive Load Balancing: Switch API after 100 rows to avoid rate limits
-        if (rowsProcessedOnCurrentProvider >= 100) {
-          currentProvider = currentProvider === 'groq' ? 'gemini' : 'groq';
-          rowsProcessedOnCurrentProvider = 0;
-          
-          setCurrentActivity(`Load balancing: Switching AI engine to ${currentProvider}...`);
-          await new Promise(r => setTimeout(r, 1000));
-        }
-
         const task = queue.shift();
         if (!task) break;
+
+        // Assign provider at dequeue time (synchronized via single-threaded JS event loop)
+        const taskProvider = getNextProvider(task.batch.length);
         
-        setCurrentActivity(`Mapping standard fields for rows ${task.index * batchSize} to ${Math.min((task.index + 1) * batchSize, validRows.length)}...`);
+        setCurrentActivity(`Mapping fields for rows ${task.index * effectiveBatchSize + 1} to ${Math.min((task.index + 1) * effectiveBatchSize, validRows.length)}...`);
         
         let requeued = false;
         
@@ -196,8 +265,8 @@ export function useProcessing() {
             batchId: `batch_${task.index}`,
             headers,
             rows: task.batch,
-            provider: currentProvider,
-          });
+            provider: taskProvider,
+          }, fetchedMapping);
 
           if (response.status === 'success' || response.status === 'partial') {
             if (response.records) {
@@ -213,7 +282,6 @@ export function useProcessing() {
                 localSkipReasons[reason] = (localSkipReasons[reason] || 0) + count;
               }
             }
-            rowsProcessedOnCurrentProvider += task.batch.length;
           } else {
             const err = new Error(response.error || 'Batch failed without specific error');
             (err as Error & { exhaustedProvider?: string }).exhaustedProvider = response.exhaustedProvider;
@@ -227,25 +295,24 @@ export function useProcessing() {
           
           if (status === 429 || backendError.toLowerCase().includes('rate limit')) {
             if (exhaustedProvider === 'groq') {
-              if (currentProvider === 'groq') {
-                currentProvider = 'gemini';
-                rowsProcessedOnCurrentProvider = 0;
-                toast.info(`Groq free limit reached. Thoughtfully switching to Gemini backup...`);
+              if (nextProvider === 'groq') {
+                nextProvider = 'gemini';
+                rowsSinceSwitch = 0;
+                toast.info(`Groq free limit reached. Switching to Gemini backup...`);
                 setCurrentActivity(`Switching AI engine to Gemini...`);
                 await new Promise(r => setTimeout(r, 1500));
               } else {
-                // If another worker already switched us to Gemini, just add a tiny delay
                 await new Promise(r => setTimeout(r, 500));
               }
-              queue.unshift(task); // Requeue task
+              queue.unshift(task);
               requeued = true;
-              continue; // Try again with Gemini
+              continue;
             } else {
-              setCurrentActivity(`API limits reached across all keys. Sleeping for 60s before resuming...`);
+              setCurrentActivity(`API limits reached across all providers. Sleeping for 60s before resuming...`);
               await new Promise(r => setTimeout(r, 60000));
-              currentProvider = 'groq';
-              rowsProcessedOnCurrentProvider = 0;
-              queue.unshift(task); // Save progress
+              nextProvider = 'groq';
+              rowsSinceSwitch = 0;
+              queue.unshift(task);
               requeued = true;
               continue;
             }
@@ -258,7 +325,7 @@ export function useProcessing() {
             if (localFailedBatches <= 3) {
               toast.error(`Batch ${task.index + 1} (${task.batch.length} rows) failed: ${backendError}`);
             } else if (localFailedBatches === 4) {
-              toast.error(`Multiple batches failing with: ${backendError.substring(0, 50)}... suppressing further error toasts.`);
+              toast.error(`Multiple batches failing. Suppressing further error toasts.`);
             }
           }
         } finally {
@@ -271,13 +338,13 @@ export function useProcessing() {
     };
 
     const queue = chunks.map((batch, index) => ({ batch, index }));
-    const workers = Array(Math.min(maxConcurrency, queue.length)).fill(null).map(() => processBatchQueue(queue));
+    const workers = Array(Math.min(MAX_CONCURRENCY, queue.length)).fill(null).map(() => processBatchQueue(queue));
 
     await Promise.allSettled(workers);
-    clearInterval(timer);
+    clearTimer();
     setCurrentActivity('Finalizing extraction...');
 
-    // Track abandoned rows left in the queue due to a hard abort (e.g. rate limits on all providers)
+    // Track abandoned rows left in the queue due to a hard abort
     if (queue.length > 0) {
       let abandonedRowsCount = 0;
       for (const task of queue) {
@@ -308,7 +375,7 @@ export function useProcessing() {
       setState('partial_success');
       toast.warning('Extraction finished with some batch errors. Partial results recovered.');
     }
-  }, [batchSize, maxConcurrency, previewData]);
+  }, [previewData, clearTimer]);
 
   const retryFailed = useCallback(() => {
     if (failedRawRows.length === 0 || !previewData) return;
@@ -323,6 +390,21 @@ export function useProcessing() {
     toast.info('Failed rows have been queued up for retry.');
   }, [failedRawRows, previewData]);
 
+  const reset = useCallback(() => {
+    clearTimer();
+    setState('idle');
+    setProgress(0);
+    setRecords([]);
+    setSkippedRawRows([]);
+    setFailedRawRows([]);
+    setPreviewData(null);
+    setError(null);
+    setCurrentActivity('Idle');
+    setElapsedMs(0);
+    setEtaMs(null);
+    setMetrics({ totalRows: 0, successfulRows: 0, skippedRows: 0, failedRows: 0, failedBatches: 0, processingTimeMs: 0, skipReasons: {}, failReasons: {} });
+  }, [clearTimer]);
+
   return {
     state,
     progress,
@@ -330,6 +412,7 @@ export function useProcessing() {
     skippedRawRows,
     failedRawRows,
     previewData,
+    schemaMapping,
     metrics,
     error,
     currentActivity,
@@ -338,18 +421,6 @@ export function useProcessing() {
     processFile,
     startProcessing,
     retryFailed,
-    reset: () => {
-      setState('idle');
-      setProgress(0);
-      setRecords([]);
-      setSkippedRawRows([]);
-      setFailedRawRows([]);
-      setPreviewData(null);
-      setError(null);
-      setCurrentActivity('Idle');
-      setElapsedMs(0);
-      setEtaMs(null);
-      setMetrics({ totalRows: 0, successfulRows: 0, skippedRows: 0, failedRows: 0, failedBatches: 0, processingTimeMs: 0, skipReasons: {}, failReasons: {} });
-    }
+    reset,
   };
 }
