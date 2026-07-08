@@ -406,7 +406,7 @@ export function useProcessing() {
           }
           
           // Batch Splitting logic
-          if (task.batch.length > 10 && task.attempts > 1) {
+          if (task.batch.length > 1 && task.attempts > 1) {
             const mid = Math.floor(task.batch.length / 2);
             queue.unshift({ batch: task.batch.slice(mid), index: task.index, attempts: 0 });
             queue.unshift({ batch: task.batch.slice(0, mid), index: task.index, attempts: 0 });
