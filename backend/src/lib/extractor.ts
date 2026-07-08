@@ -140,6 +140,19 @@ function normalizeAndValidate(record: any): CrmRecord {
       // Check for 1-2 digit country code with a separator, avoiding 3-digit US area codes
       countryMatch = phoneStr.match(/^(\d{1,2})[\s-]+(\d[\d\s-]{4,})$/);
     }
+    if (!countryMatch) {
+      // Highly optimize for unformatted numbers (e.g. 919624444730 -> +91 9624444730)
+      const pureDigits = phoneStr.replace(/[^\d]/g, '');
+      if (pureDigits.length === 12 && pureDigits.startsWith('91')) {
+        countryMatch = [phoneStr, '91', pureDigits.slice(2)]; // India (91 + 10 digits)
+      } else if (pureDigits.length === 12 && pureDigits.startsWith('44')) {
+        countryMatch = [phoneStr, '44', pureDigits.slice(2)]; // UK (44 + 10 digits)
+      } else if (pureDigits.length === 11 && pureDigits.startsWith('1')) {
+        countryMatch = [phoneStr, '1', pureDigits.slice(1)]; // US/CA (1 + 10 digits)
+      } else if (pureDigits.length === 11 && pureDigits.startsWith('61')) {
+        countryMatch = [phoneStr, '61', pureDigits.slice(2)]; // Australia (61 + 9 digits)
+      }
+    }
     if (countryMatch) {
       if (!norm.country_code) {
         norm.country_code = countryMatch[1].startsWith('+') ? countryMatch[1] : '+' + countryMatch[1];
