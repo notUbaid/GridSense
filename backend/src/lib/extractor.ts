@@ -574,8 +574,8 @@ ${JSON.stringify(aiRows)}`;
             continue;
           } else {
             // Circuit Breaker: All keys exhausted or tried
-            logger.error(`All ${groqClients.length} Groq keys exhausted or rate-limited. Opening circuit breaker for 30s.`);
-            circuitBreakerOpenUntil = Date.now() + 30000;
+            logger.error(`All ${groqClients.length} Groq keys exhausted or rate-limited. Opening circuit breaker for 2s.`);
+            circuitBreakerOpenUntil = Date.now() + 2000;
           }
         }
         
