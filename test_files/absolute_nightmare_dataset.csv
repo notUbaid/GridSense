@@ -1,36 +1,41 @@
-  Name  ,E-Mail,Ph#,Organization,Status???,Unused Col 1,Unused Col 2,Unused Col 3
-" Priya Patel ",Data 620,"Call: +91 (0) 987-654-3210 ext 123",,  iNtErEsTeD  ,DATA 738,Data 504,Data 475
-"Fatima
-Li",,Data 972,"Startup Inc",BAD_LEAD,Data 467,Data 303,Data 895
-Diana Martinez,  Email me at diana284@tech.com if you can  ,"Phone: 555-019-8734",Tech Solutions,BAD_LEAD,Data 878,Data 572,Data 651
-Charlie Hassan,Data 708,Call 1-800-555-1234,Global Industries,DID_NOT_CONNECT,Data 296,Data 107,DATA 191
-Alice Ali,  "Contact via alice879@acme.com, or secondary@acme.com"  ,Data 153,Acme Corp,  Call back later  ,Will be available on 2026-07-07,Data 124,Data 471
-Priya Wang,Data 373,"Phone: (415) 555-9876, Email: priya.wang@gmail.com",Acme Corp,  BAD_LEAD  ,Data 182,  Data 480  ,Data 999
-Chen Brown,Data 511,5119331234,Global Industries,SALE_DONE,Sale closed on 12/31/2023,Data 589,  Data 445  
-  Chen Li  ,Data 637,Data 493,Tech Solutions,SALE_DONE,Data 920,,Data 717
-Raj Patel,Data 231,Data 668,Acme Corp,DID_NOT_CONNECT,Data 949,Data 756,Data 417
-Wei Kumar,  Data 753  ,Data 751,Startup Inc,Interested,Data 474,Data 608,DATA 805
-Charlie Garcia,Data 537,Data 854,Tech Solutions,Junk,Data 627,Data 948,Data 768
-  Fatima Doe  ,Data 211,,Tech Solutions,Call back later,Data 277,Data 159,Data 735
-John Garcia,Data 117,DATA 108,Tech Solutions,Call back later,Data 743,Data 640,Data 129
-Fatima Martinez,  Data 609  ,Data 340,Startup Inc,Interested,Data 485,Data 665,  Data 404  
-Raj Smith,Data 720,Data 116,Tech Solutions,GOOD_LEAD_FOLLOW_UP,Data 618,Data 595,Data 512
-John Garcia,Data 140,Data 629,Global Industries,,  Data 706  ,Data 500,Data 907
-  Raj Patel  ,,Data 790,Acme Corp,BAD_LEAD,Data 548,Data 121,DATA 100
-Priya Johnson,Data 451,Data 542,Startup Inc,Junk,Data 195,DATA 448,Data 864
-  Bob Martinez  ,  Data 570  ,  DATA 774  ,Startup Inc,BAD_LEAD,Data 676,Data 925,Data 367
-Priya Doe,Data 895,Data 152,Tech Solutions,GOOD_LEAD_FOLLOW_UP,Data 539,  DATA 802  ,Data 557
-Fatima Kumar,Data 733,Data 532,Acme Corp,Interested,Data 861,Data 427,  Data 619  
-Priya Garcia,Data 630,Data 944,  Tech Solutions  ,  SALE_DONE  ,  Data 613  ,Data 708,  Data 731  
-Alice Garcia,  Data 489  ,Data 203,Global Industries,GOOD_LEAD_FOLLOW_UP,Data 960,Data 275,Data 514
-Alice Kumar,Data 499,Data 849,Acme Corp,DID_NOT_CONNECT,Data 956,DATA 429,Data 611
-,,Data 903,,SALE_DONE,Data 280,  Data 890  ,Data 724
-Jane Doe,Data 733,Data 573,Acme Corp,    ,Data 867,Data 654,Data 301
-Jane Garcia,Data 472,  Data 337  ,Startup Inc,Interested,Data 506,Data 993,Data 900
-Bob Li,,Data 174,Acme Corp,  Call back later  ,Data 983,  Data 934  ,Data 524
-CHEN KUMAR,Data 991,Data 905,,SALE_DONE,  Data 883  ,Data 207,Data 710
-  Alice Brown  ,Data 984,Data 495,Global Industries,Interested,  Data 529  ,Data 519,Data 349
-FATIMA SMITH,Data 550,Data 620,  Tech Solutions  ,  Interested  ,Data 146,Data 174,Data 141
-Priya Garcia,,Data 400,Acme Corp,Junk,Data 540,Data 362,Data 617
-Raj Smith,,  Data 656  ,Local Shop,Interested,Data 954,Data 886,  Data 787  
-Bob Wang,Data 574,Data 922,Startup Inc,SALE_DONE,Data 310,Data 418,  Data 376  
+Name,Phone,Email,Company,Date,Status,Notes,Empty1,Empty2,Garbage
+Sneha Verma,91-99143-1914 or 9827304924,sneha.verma@techsolutions.in,TechNova,Jan 1 2023,,"Note with
+newline",,,
+Charlie Bose,938547201,charlie.bose@startup.io,Quantum Systems,2023-01-01,,,,,#$@%
+Raj Johnson,949418811,raj.johnson@hotmail.com,BlueOcean,44927,Done,<p>HTML snippet</p>,,,garb
+Sunil Rao,923466143,sunil.rao@yahoo.com,Apex Solutions,,In Progress,"{""json"": ""snippet""}",,,123
+Ravi Kumar,912526760,"ravi.kumar@logistics.com, ravi.kumar@company.net",Stellar Services,,,"Note with, comma",,,#$@%
+Raj Sharma,098018 6384 or 9270383626,raj.sharma@hotmail.com,   Sunrise Foods	,2023-01-01,In Progress,"Note with
+newline",,,123
+Chen Reddy,959045482,chen.reddy@corp.org,Quantum Systems,2023-01-01,,,,,123
+Alice Das,096165 0636,alice.das@outlook.com,Sunrise Foods,,In Progress,,,,
+Ravi Brown,+91 91991 4782,ravi.brown@startup.io,Quantum Systems,1/1/2023,In Progress,,,,#$@%
+Raj Brown,raj.brown@hotmail.com,922023214,   BlueOcean	,,In Progress,<p>HTML snippet</p>,,,123
+Suresh Singh,98990 2828,"suresh.singh@gmail.com, suresh.singh@enterprise.co",Zenith Enterprises,2023-01-01,In Progress,"Note with
+newline",,,#$@%
+Ravi Rao,91-92513-4512,ravi.rao@outlook.com,   Stellar Services	,,New,<p>HTML snippet</p>,,,#$@%
+John Rao,921785670 or 9184551314,john.rao@yahoo.com,Global Logistics,2023-01-01,New,"{""json"": ""snippet""}",,,#$@%
+Sunil Jain,981609093,sunil.jain@startup.io,Apex Solutions,Jan 1 2023,New,,,,garb
+Kavita Bose,91-95065-4366,kavita.bose@logistics.com,   BlueOcean	,,Done,Regular note,,,123
+Charlie Hassan,92017 6176,charlie.hassan@enterprise.co,   Pioneer Manufacturing	,1/1/2023,In Progress,"Note with
+newline",,,123
+Ravi Verma,+91 99295 2594,ravi.verma@yahoo.com,Sunrise Foods,2023-01-01,,<p>HTML snippet</p>,,,garb
+Amit Reddy,91-93874-4818 or 9601448335,amit.reddy@startup.io,Quantum Systems,44927,In Progress,"Note with
+newline",,,123
+Arjun Das,95640 0600,arjun.das@enterprise.co,Quantum Systems,Jan 1 2023,In Progress,Regular note,,,#$@%
+Kavita Johnson 🚀,939120026,kavita.johnson@logistics.com,Acme Corp,Jan 1 2023,New,"Note with, comma",,,
+Suresh Wang,098922 5881,"suresh.wang@enterprise.co, suresh.wang@company.net",   Stellar Services	,2023-01-01,In Progress,<p>HTML snippet</p>,,,123
+Suresh Singh,997071834,suresh.singh@techsolutions.in,BlueOcean,1/1/2023,New,"Note with, comma",,,
+Diana Jain,93819 7810,diana.jain@logistics.com,Zenith Enterprises,Jan 1 2023,New,"{""json"": ""snippet""}",,,
+Priya Wang,+91 96487 2858,priya.wang@outlook.com,Sunrise Foods,1/1/2023,New,"{""json"": ""snippet""}",,,garb
+Arjun Kumar,91-91024-5218,"arjun.kumar@outlook.com, arjun.kumar@enterprise.co",Pioneer Manufacturing,1/1/2023,In Progress,,,,123
+Mohamed Kumar,+91 (970) 46-9078,mohamed.kumar@techsolutions.in,BlueOcean,44927,In Progress,,,,garb
+Anjali Das,940358367 or 9025106074,anjali.das@outlook.com,BlueOcean,1/1/2023,Done,<p>HTML snippet</p>,,,123
+Anita Gupta,+91 92196 1777,anita.gupta@company.net,BlueOcean,,,"Note with
+newline",,,garb
+Anita Singh,983629542,anita.singh@techsolutions.in,Stellar Services,Jan 1 2023,New,Regular note,,,
+Sunil Reddy,940318443,sunil.reddy@enterprise.co,Zenith Enterprises,1/1/2023,Done,,,,#$@%
+Diana Menon,diana.menon@company.net,+91 (926) 66-2299,TechNova,Jan 1 2023,Done,"Note with, comma",,,garb
+Sunil Das,093924 6309,sunil.das@logistics.com,Acme Corp,Jan 1 2023,Done,"Note with, comma",,,#$@%
+Sarah Singh 🚀,98177 8241,sarah.singh@enterprise.co,Global Logistics,2023-01-01,In Progress,<p>HTML snippet</p>,,,123
+Amit Rao,+91 93333 4381,amit.rao@company.net,TechNova,1/1/2023,In Progress,<p>HTML snippet</p>,,,garb

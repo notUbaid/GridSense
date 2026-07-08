@@ -1,49 +1,49 @@
-First_Name,Last_Name,Email,Direct_Line,Company_Name,Factory_Location
-Bob,Wang,  bwang@hotmail.com  ,Data 149,  Bob Wang  ,Data 119
-Diana,Hassan,  diana.hassan@gmail.com  ,DATA 505,Diana Hassan,Data 561
-John,Martinez,  jmartinez@yahoo.com  ,Data 582,John Martinez,Data 893
-Alice,  Garcia  ,  agarcia@example.org  ,Data 413,ALICE GARCIA,  Data 484  
-  Raj  ,  Smith  ,,  Data 327  ,Raj Smith,Data 347
-John,Smith,JOHN50@HOTMAIL.COM,Data 279,John Smith,Data 704
-Alice,  Ali  ,    ,  DATA 372  ,  Alice Ali  ,Data 914
-Chen,  Johnson  ,chen89@hotmail.com,Data 809,Chen Johnson,Data 111
-  Charlie  ,Garcia,  charlie.garcia@yahoo.com  ,Data 218,Charlie Garcia,Data 428
-  Charlie  ,Wang,charlie70@gmail.com,Data 794,Charlie Wang,  Data 742  
-Bob,Smith,BOB.SMITH@GMAIL.COM,  Data 207  ,  Bob Smith  ,Data 319
-Bob,  Martinez  ,bob.martinez@company.net,Data 904,Bob Martinez,Data 679
-Priya,Patel,ppatel@company.net,Data 344,Priya Patel,  Data 491  
-Charlie,Smith,    charlie.smith@hotmail.com    ,Data 935,Charlie Smith,Data 279
-Chen,Johnson,cjohnson@hotmail.com,Data 780,Chen Johnson,  Data 711  
-Raj,Patel,RPATEL@GMAIL.COM,Data 454,Raj Patel,Data 896
-  Charlie  ,  Smith  ,csmith@company.net,Data 481,  Charlie Smith  ,Data 694
-,Martinez,"  bob.martinez@yahoo.com  , alternate@yahoo.com",Data 179,Bob Martinez,Data 822
-Charlie,Patel,  charlie.patel@gmail.com  ,  DATA 463  ,Charlie Patel,Data 568
-  ALICE  ,Li,alice66@yahoo.com,Data 174,Alice Li,Data 200
-Wei,,,Data 817,Wei Smith,Data 672
-Chen,Johnson,  chen.johnson@company.net  ,Data 525,Chen Johnson,DATA 619
-  Priya  ,Patel,"priya.patel@hotmail.com, alternate@yahoo.com",  Data 290  ,Priya Patel,  Data 258  
-  John  ,Li,", alternate@yahoo.com",Data 953,John Li,Data 564
-Wei,Hassan,wei42@yahoo.com,  Data 544  ,Wei Hassan,DATA 107
-DIANA,  Brown  ,,Data 650,Diana Brown,Data 355
-Jane,Wang,jane.wang@company.net,  Data 634  ,  Jane Wang  ,Data 923
-Diana,Wang,diana24@hotmail.com,Data 315,  Diana Wang  ,  Data 424  
-John,Wang,,Data 552,John Wang,Data 640
-,Patel,wei.patel@yahoo.com,Data 373,  Wei Patel  ,Data 414
-Priya,Johnson,  priya.johnson@hotmail.com  ,Data 691,Priya Johnson,Data 499
-Fatima,Ali,fali@gmail.com,Data 986,Fatima Ali,  Data 866  
-Bob,Hassan,bob73@example.org,Data 165,Bob Hassan,Data 363
-Fatima,,fli@yahoo.com,Data 347,Fatima Li,Data 681
-  John  ,Li,    john.li@gmail.com    ,Data 591,John Li,Data 840
-  Diana  ,Li,  diana.li@example.org  ,Data 715,  Diana Li  ,Data 382
-  Priya  ,BROWN,  priya.brown@gmail.com  ,,Priya Brown,Data 421
-Priya,Garcia,  pgarcia@hotmail.com  ,  Data 780  ,Priya Garcia,Data 481
-John,Smith,    ,Data 195,John Smith,Data 669
-John,  Li  ,  john.li@gmail.com  ,Data 634,John Li,Data 919
-Charlie,HASSAN,charlie15@example.org,Data 580,Charlie Hassan,  Data 836  
-Raj,Ali,"  raj.ali@gmail.com  , alternate@company.net",Data 764,Raj Ali,  Data 871  
-Diana,Johnson,diana57@yahoo.com,Data 744,  Diana Johnson  ,Data 962
-Alice,Kumar,"akumar@company.net, alternate@company.net",Data 252,  Alice Kumar  ,Data 489
-Charlie,Johnson,  charlie.johnson@company.net  ,Data 490,Charlie Johnson,DATA 558
-JANE,Brown,jane17@gmail.com,  Data 588  ,  Jane Brown  ,Data 870
-Chen,Wang,  chen.wang@example.org  ,DATA 447,Chen Wang,  Data 916  
-CHEN,Martinez,chen98@yahoo.com,Data 427,Chen Martinez,Data 713
+Company Name,Contact Person,Designation,Department,Email,Direct Line,Factory Location,Requirement,Budget (Annual),Current Vendor,Meeting Status,Sales Remarks
+SteelWorks Ltd,Rahul Reddy,Purchase Manager,Procurement,rahul.reddy@hotmail.com,9858925819,Pune Industrial Area,Spare Parts,> 1Cr,None,Completed,Price sensitive
+Global Auto Parts,Suresh Singh,Director,Operations,suresh.singh@startup.io,9324670411,Bangalore Industrial Area,Maintenance Services,> 1Cr,Local Supplier,Scheduled,Wants credit period of 60 days
+Precision Tools,John Doe,Plant Head,Management,john.doe@hotmail.com,9202905338,Ahmedabad Industrial Area,CNC Machines,< 10L,Vendor A,Scheduled,
+Apex Manufacturing,Raj Brown,Purchase Manager,Procurement,raj.brown@corp.org,9888443429,Chennai Industrial Area,Spare Parts,10-50L,Importing,Awaiting Quote,
+Apex Manufacturing,Amit Doe,Purchase Manager,Management,amit.doe@corp.org,9092527543,Pune Industrial Area,Maintenance Services,> 1Cr,None,Lost to Competitor,Wants credit period of 60 days
+Global Auto Parts,Sarah Brown,Engineer,Engineering,sarah.brown@enterprise.co,9390169675,Hyderabad Industrial Area,Raw materials,> 1Cr,Importing,Scheduled,
+SteelWorks Ltd,Wei Rao,Director,Engineering,wei.rao@startup.io,9276522757,Delhi Industrial Area,Maintenance Services,50L - 1Cr,None,Completed,Wants credit period of 60 days
+SteelWorks Ltd,Priya Sharma,Plant Head,Procurement,priya.sharma@logistics.com,9488507563,Kolkata Industrial Area,Maintenance Services,< 10L,Local Supplier,Awaiting Quote,Very strict on quality
+Heavy Machinery Inc,John Kumar,Engineer,Procurement,john.kumar@yahoo.com,9455956921,Hyderabad Industrial Area,CNC Machines,< 10L,None,Completed,Send catalog again
+Precision Tools,Sarah Ali,Director,Operations,sarah.ali@yahoo.com,9256689546,Delhi Industrial Area,CNC Machines,> 1Cr,Vendor A,Scheduled,Send catalog again
+Precision Tools,Vikram Wang,Procurement Head,Operations,vikram.wang@hotmail.com,9447167046,Hyderabad Industrial Area,Maintenance Services,50L - 1Cr,Importing,Completed,Wants credit period of 60 days
+Apex Manufacturing,Wei Das,Plant Head,Management,wei.das@gmail.com,9564772564,Kolkata Industrial Area,Spare Parts,10-50L,Importing,Scheduled,Very strict on quality
+Global Auto Parts,Diana Li,Purchase Manager,Engineering,diana.li@enterprise.co,9622376396,Ahmedabad Industrial Area,Raw materials,50L - 1Cr,Vendor A,Scheduled,
+Heavy Machinery Inc,Alice Brown,Director,Engineering,alice.brown@startup.io,9072417869,Chennai Industrial Area,Raw materials,50L - 1Cr,Local Supplier,Scheduled,Price sensitive
+Heavy Machinery Inc,Raj Reddy,Engineer,Operations,raj.reddy@gmail.com,9878990995,Bangalore Industrial Area,CNC Machines,< 10L,Importing,Completed,Very strict on quality
+Heavy Machinery Inc,Sneha Ali,Engineer,Operations,sneha.ali@outlook.com,9678643692,Hyderabad Industrial Area,Maintenance Services,50L - 1Cr,Vendor A,Awaiting Quote,Send catalog again
+SteelWorks Ltd,Wei Rao,Engineer,Operations,wei.rao@outlook.com,9281281096,Hyderabad Industrial Area,Raw materials,< 10L,Vendor A,Completed,Wants credit period of 60 days
+Heavy Machinery Inc,Ravi Rao,Purchase Manager,Procurement,ravi.rao@techsolutions.in,9795678981,Chennai Industrial Area,Spare Parts,< 10L,Vendor A,Awaiting Quote,Very strict on quality
+SteelWorks Ltd,Wei Hassan,Engineer,Procurement,wei.hassan@startup.io,9112171885,Pune Industrial Area,Raw materials,50L - 1Cr,Local Supplier,Awaiting Quote,Send catalog again
+SteelWorks Ltd,Ravi Hassan,Plant Head,Engineering,ravi.hassan@logistics.com,9153146892,Mumbai Industrial Area,CNC Machines,10-50L,Vendor A,Completed,Price sensitive
+SteelWorks Ltd,Mohamed Wang,Plant Head,Operations,mohamed.wang@enterprise.co,9523739503,Chennai Industrial Area,Raw materials,> 1Cr,None,Scheduled,Very strict on quality
+SteelWorks Ltd,Diana Li,Procurement Head,Operations,diana.li@gmail.com,9034370380,Bangalore Industrial Area,CNC Machines,> 1Cr,Importing,Scheduled,Very strict on quality
+Apex Manufacturing,Chen Verma,Procurement Head,Procurement,chen.verma@yahoo.com,9938786506,Bangalore Industrial Area,Maintenance Services,> 1Cr,Importing,Completed,Wants credit period of 60 days
+Global Auto Parts,Ravi Singh,Engineer,Engineering,ravi.singh@enterprise.co,9463926980,Bangalore Industrial Area,Maintenance Services,10-50L,None,Lost to Competitor,Price sensitive
+Apex Manufacturing,Rahul Bose,Director,Engineering,rahul.bose@yahoo.com,9024899806,Ahmedabad Industrial Area,Spare Parts,> 1Cr,Vendor A,Awaiting Quote,Very strict on quality
+Apex Manufacturing,Sunil Smith,Purchase Manager,Procurement,sunil.smith@techsolutions.in,9911979682,Bangalore Industrial Area,Spare Parts,10-50L,Local Supplier,Scheduled,Very strict on quality
+Apex Manufacturing,Amit Rao,Purchase Manager,Operations,amit.rao@logistics.com,9763295465,Ahmedabad Industrial Area,Maintenance Services,10-50L,None,Scheduled,Very strict on quality
+Apex Manufacturing,Vikram Reddy,Plant Head,Procurement,vikram.reddy@techsolutions.in,9130709858,Kolkata Industrial Area,Raw materials,< 10L,None,Awaiting Quote,Send catalog again
+Global Auto Parts,Mohamed Johnson,Purchase Manager,Procurement,mohamed.johnson@corp.org,9390736986,Bangalore Industrial Area,Spare Parts,> 1Cr,Local Supplier,Lost to Competitor,
+Precision Tools,Raj Ali,Director,Operations,raj.ali@gmail.com,9576704610,Pune Industrial Area,Maintenance Services,> 1Cr,Vendor A,Completed,Wants credit period of 60 days
+Apex Manufacturing,Diana Wang,Engineer,Engineering,diana.wang@yahoo.com,9140693342,Bangalore Industrial Area,Spare Parts,< 10L,None,Completed,Send catalog again
+Apex Manufacturing,Chen Ali,Engineer,Management,chen.ali@enterprise.co,9820003498,Hyderabad Industrial Area,Spare Parts,10-50L,Vendor A,Lost to Competitor,
+Precision Tools,Diana Doe,Purchase Manager,Engineering,diana.doe@hotmail.com,9917606108,Hyderabad Industrial Area,Spare Parts,< 10L,Importing,Completed,Send catalog again
+Apex Manufacturing,Anita Verma,Plant Head,Management,anita.verma@gmail.com,9101423032,Bangalore Industrial Area,Maintenance Services,50L - 1Cr,Vendor A,Scheduled,Wants credit period of 60 days
+SteelWorks Ltd,Sarah Singh,Engineer,Procurement,sarah.singh@logistics.com,9634649836,Mumbai Industrial Area,CNC Machines,10-50L,Vendor A,Lost to Competitor,Wants credit period of 60 days
+Precision Tools,Diana Brown,Engineer,Engineering,diana.brown@logistics.com,9734580624,Pune Industrial Area,Raw materials,50L - 1Cr,Vendor A,Awaiting Quote,Very strict on quality
+Heavy Machinery Inc,Sneha Verma,Purchase Manager,Operations,sneha.verma@company.net,9458080748,Bangalore Industrial Area,Spare Parts,50L - 1Cr,Vendor A,Awaiting Quote,Very strict on quality
+Precision Tools,Chen Patel,Plant Head,Management,chen.patel@techsolutions.in,9264893575,Bangalore Industrial Area,Spare Parts,> 1Cr,None,Lost to Competitor,Price sensitive
+Global Auto Parts,Alice Verma,Engineer,Management,alice.verma@techsolutions.in,9725665555,Hyderabad Industrial Area,CNC Machines,< 10L,Importing,Scheduled,Wants credit period of 60 days
+SteelWorks Ltd,Sunil Bose,Purchase Manager,Management,sunil.bose@outlook.com,9651562821,Kolkata Industrial Area,Maintenance Services,50L - 1Cr,Vendor A,Completed,
+Global Auto Parts,Sneha Johnson,Engineer,Procurement,sneha.johnson@yahoo.com,9779549285,Chennai Industrial Area,Spare Parts,10-50L,Local Supplier,Awaiting Quote,Price sensitive
+Apex Manufacturing,Ravi Menon,Procurement Head,Engineering,ravi.menon@company.net,9477369512,Hyderabad Industrial Area,Spare Parts,> 1Cr,Vendor A,Awaiting Quote,Wants credit period of 60 days
+Apex Manufacturing,Mohamed Smith,Engineer,Operations,mohamed.smith@company.net,9105144009,Chennai Industrial Area,Maintenance Services,< 10L,Local Supplier,Lost to Competitor,Very strict on quality
+SteelWorks Ltd,Neha Verma,Engineer,Engineering,neha.verma@enterprise.co,9180928412,Ahmedabad Industrial Area,Raw materials,> 1Cr,Vendor A,Completed,Wants credit period of 60 days
+Precision Tools,Sarah Bose,Plant Head,Management,sarah.bose@techsolutions.in,9911388850,Hyderabad Industrial Area,Raw materials,> 1Cr,Importing,Lost to Competitor,
+Heavy Machinery Inc,Priya Rao,Plant Head,Management,priya.rao@yahoo.com,9267423324,Hyderabad Industrial Area,Maintenance Services,> 1Cr,Importing,Scheduled,
+Global Auto Parts,Anjali Reddy,Purchase Manager,Management,anjali.reddy@techsolutions.in,9067868993,Bangalore Industrial Area,CNC Machines,> 1Cr,Local Supplier,Awaiting Quote,Very strict on quality
+Precision Tools,Alice Reddy,Engineer,Procurement,alice.reddy@logistics.com,9304868943,Pune Industrial Area,Raw materials,50L - 1Cr,Vendor A,Awaiting Quote,

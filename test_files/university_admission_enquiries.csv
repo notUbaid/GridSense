@@ -1,48 +1,48 @@
-Student Name,Email Address,Phone,Course Interest,Lead Source
-Priya Patel,priya84@gmail.com,+1 (406) 402-3197,Data 538,  BAD_LEAD  
-John Patel,jpatel@gmail.com,(356) 953-1440 / (596) 901-4424,  Data 783  ,Call back later
-CHARLIE MARTINEZ,  charlie22@company.net  ,  585-579-5718  ,Data 883,Junk
-Wei Li,wei.li@example.org,2238467728,  Data 629  ,  GOOD_LEAD_FOLLOW_UP  
-Bob Ali,bali@company.net,  +1 (753) 051-8696  ,Data 112,  Interested  
-  Chen Li  ,chen.li@yahoo.com,  +44 0587 983886  ,Data 317,GOOD_LEAD_FOLLOW_UP
-Alice Kumar,  alice36@gmail.com  ,+44 2321 770419,Data 864,GOOD_LEAD_FOLLOW_UP
-Mohamed Garcia,    ,861.021.1113,Data 737,Junk
-  Fatima Smith  ,  fatima.smith@company.net  ,499-967-2243,  Data 135  ,  Junk  
-John Kumar,  john.kumar@gmail.com  ,1444629588,  Data 827  ,DID_NOT_CONNECT
-Mohamed Hassan,  mohamed.hassan@yahoo.com  ,  6970394688  ,Data 712,
-John Smith,john.smith@yahoo.com,1607553898,  Data 861  ,SALE_DONE
-Diana Smith,diana.smith@yahoo.com,+44 8218 185896,  Data 507  ,Junk
-Wei Li,wli@company.net,541-202-3347,Data 179,  GOOD_LEAD_FOLLOW_UP  
-Alice Garcia,  alice.garcia@hotmail.com  ,2609771702,Data 213,DID_NOT_CONNECT
-Wei Martinez,,401-133-3668,  Data 377  ,BAD_LEAD
-Fatima Johnson,    ,162-953-0569,  Data 872  ,  BAD_LEAD  
-Alice Li,  alice.li@yahoo.com  ,  188.002.2363  ,Data 898,  DID_NOT_CONNECT  
-  Diana Brown  ,diana61@yahoo.com,681.546.1657,DATA 647,GOOD_LEAD_FOLLOW_UP
-  Jane Johnson  ,jane56@gmail.com,  175.383.7034  ,Data 857,SALE_DONE
-Priya Johnson,pjohnson@company.net,978-293-2274,Data 466,Interested
-Mohamed Martinez,mohamed31@gmail.com,(074) 217-2864 / 267.752.3603,Data 661,Call back later
-  Charlie Doe  ,  charlie.doe@company.net  ,+1 (683) 516-4885 / +44 8645 017653,Data 723,Call back later
-Bob Martinez,"bmartinez@company.net, alternate@example.org",  6053883807  ,  Data 516  ,  SALE_DONE  
-Charlie Doe,  cdoe@hotmail.com  ,897-422-9635,DATA 696,Junk
-  Bob Hassan  ,bob.hassan@gmail.com,+1 (269) 965-1539,DATA 840,Call back later
-Wei Hassan,whassan@yahoo.com,  392-826-5149  ,Data 443,SALE_DONE
-Chen Ali,    chen.ali@company.net    ,+44 7688 562410,Data 808,BAD_LEAD
-Alice Johnson,  ALICE.JOHNSON@COMPANY.NET  ,513.646.9579,  Data 252  ,SALE_DONE
-  Diana Martinez  ,  DIANA.MARTINEZ@EXAMPLE.ORG  ,  +1 (914) 206-5713  ,Data 570,Junk
-John Wang,john.wang@company.net,2390657645,Data 452,Interested
-Alice Smith,alice67@example.org,  309.892.8708  ,Data 188,Call back later
-DIANA PATEL,diana53@example.org,278-842-1339,Data 323,BAD_LEAD
-Mohamed Li,  mli@hotmail.com  ,  1530742478  ,Data 806,  Interested  
-Bob Smith,  bob.smith@company.net  ,+44 4354 155277 / 9911812831,Data 479,
-Jane Smith,jane.smith@example.org,  5458466129  ,Data 889,  BAD_LEAD  
-Fatima Wang,    fatima.wang@gmail.com    ,  (842) 070-8591  ,Data 202,
-Diana Ali,  diana.ali@company.net  ,7915527828,Data 709,Interested
-  Bob Hassan  ,  bob.hassan@company.net  ,1925756399,DATA 433,
-Fatima Smith,  fatima.smith@gmail.com  ,7454962678,Data 167,GOOD_LEAD_FOLLOW_UP
-Chen Smith,    chen.smith@example.org    ,+44 5760 279965,Data 209,DID_NOT_CONNECT
-Raj Brown,raj.brown@hotmail.com,547-939-5999,Data 241,DID_NOT_CONNECT
-Raj Wang,  raj.wang@hotmail.com  ,1732379265,Data 616,  GOOD_LEAD_FOLLOW_UP  
-Alice Patel,,(191) 199-3526,Data 906,GOOD_LEAD_FOLLOW_UP
-Jane Patel,jane65@yahoo.com,872.605.5966 / 3527185372,Data 722,BAD_LEAD
-Bob Garcia,,713.802.7925,Data 849,Call back later
-Charlie Hassan,chassan@hotmail.com,104.802.1758,Data 912,Call back later
+Date,Student Name,Parent/Guardian Name,Course Interested,Current Board,12th Percentage / Expected,Student Email,Parent Phone,Student Phone,City,Assigned Counsellor,Application Stage,Counsellor Remarks
+28-Apr-2026,Raj Li,,MBA,CBSE,87%,raj.student@gmail.com,9540911532,,Mumbai,Sneha,Form Submitted,
+08-May-2026,Sunil Doe,Fatima Doe,BCA,ICSE,62%,sunil.student@gmail.com,9024711050,9289245635,Bangalore,Priya,Dropped,
+03-Apr-2026,Amit Gupta,Alice Kumar,BBA,State Board,75%,amit.student@gmail.com,9323247834,9195003736,Bangalore,Priya,Fee Paid,Asking for scholarship
+23-Apr-2026,Kavita Wang,,B.Tech CS,CBSE,80%,kavita.student@gmail.com,9111098883,,Pune,Priya,Enquiry,Will visit campus next week
+09-May-2026,Mohamed Doe,Wei Iyer,BBA,State Board,79%,mohamed.student@gmail.com,9773958484,9102243740,Mumbai,Sneha,Enquiry,
+15-Jun-2026,Raj Kumar,,BBA,ICSE,79%,raj.student@gmail.com,9571807245,9889182936,Kolkata,Priya,Enquiry,Not answering calls
+21-May-2026,Anita Li,Raj Reddy,BCA,ICSE,81%,anita.student@gmail.com,9851478580,9104105655,Pune,Sneha,Form Submitted,Asking for scholarship
+03-Jul-2026,Wei Iyer,,B.Tech Mech,State Board,97%,wei.student@gmail.com,9497847329,9669649461,Chennai,Amit,Fee Paid,Not answering calls
+25-Apr-2026,Diana Jain,,BBA,CBSE,68%,diana.student@gmail.com,9060623030,9065144467,Mumbai,Amit,Fee Paid,
+24-May-2026,Mohamed Reddy,Alice Brown,MBA,CBSE,62%,mohamed.student@gmail.com,9478132474,9697988527,Ahmedabad,Ravi,Form Submitted,
+21-Jun-2026,John Reddy,Neha Hassan,B.Tech CS,ICSE,68%,john.student@gmail.com,9593883547,9184959038,Ahmedabad,Amit,Dropped,Wants hostel facility
+27-Jun-2026,Kavita Patel,,B.Tech CS,State Board,97%,kavita.student@gmail.com,9553373730,9439095939,Ahmedabad,Priya,Form Submitted,
+22-Apr-2026,Charlie Das,,B.Tech CS,CBSE,74%,charlie.student@gmail.com,9740159766,,Chennai,Amit,Dropped,Asking for scholarship
+16-Apr-2026,Priya Bose,Neha Smith,B.Tech CS,State Board,96%,priya.student@gmail.com,9492983589,,Pune,Amit,Enquiry,Wants hostel facility
+09-Jun-2026,Ravi Bose,Wei Iyer,B.Tech Mech,ICSE,70%,ravi.student@gmail.com,9588380824,,Kolkata,Ravi,Enquiry,Wants hostel facility
+03-Jul-2026,John Rao,,B.Tech CS,State Board,80%,john.student@gmail.com,9679608535,,Delhi,Sneha,Form Submitted,
+29-Apr-2026,Suresh Jain,,B.Tech CS,State Board,81%,suresh.student@gmail.com,9407083487,9163506772,Pune,Priya,Fee Paid,Will visit campus next week
+24-Jun-2026,Vikram Reddy,Sunil Kumar,BCA,CBSE,64%,vikram.student@gmail.com,9772868274,,Delhi,Ravi,Fee Paid,Asking for scholarship
+25-Apr-2026,Alice Li,Mohamed Li,MBA,CBSE,95%,alice.student@gmail.com,9626752898,9294427796,Chennai,Sneha,Enquiry,Asking for scholarship
+19-Jun-2026,Chen Patel,Sarah Doe,BCA,State Board,93%,chen.student@gmail.com,9625710807,9631693646,Mumbai,Ravi,Dropped,Will visit campus next week
+20-Apr-2026,Sunil Das,Aditya Hassan,BBA,CBSE,60%,sunil.student@gmail.com,9748145478,,Hyderabad,Priya,Dropped,Asking for scholarship
+04-Jul-2026,Alice Wang,Alice Gupta,B.Tech CS,State Board,72%,alice.student@gmail.com,9160224914,9444707458,Hyderabad,Priya,Fee Paid,Asking for scholarship
+12-Apr-2026,Alice Smith,Amit Menon,BCA,CBSE,60%,alice.student@gmail.com,9689328092,9233097210,Hyderabad,Amit,Enquiry,Asking for scholarship
+20-Apr-2026,Anjali Ali,,B.Tech Mech,CBSE,76%,anjali.student@gmail.com,9446469479,,Chennai,Ravi,Form Submitted,
+25-Apr-2026,Arjun Doe,Raj Li,BCA,State Board,87%,arjun.student@gmail.com,9508039085,,Hyderabad,Amit,Dropped,Will visit campus next week
+03-Jul-2026,Aditya Jain,,BCA,CBSE,67%,aditya.student@gmail.com,9303664670,,Ahmedabad,Amit,Enquiry,Will visit campus next week
+21-Jun-2026,Arjun Verma,,BBA,State Board,99%,arjun.student@gmail.com,9360096825,9484562598,Hyderabad,Priya,Dropped,
+27-May-2026,Kavita Johnson,Mohamed Verma,B.Tech CS,State Board,65%,kavita.student@gmail.com,9686351076,9586861076,Bangalore,Amit,Fee Paid,Will visit campus next week
+18-Apr-2026,Diana Rao,Kavita Bose,B.Tech CS,CBSE,64%,diana.student@gmail.com,9318402454,9333575316,Mumbai,Priya,Dropped,Will visit campus next week
+03-May-2026,Vikram Rao,Sarah Das,BCA,State Board,80%,vikram.student@gmail.com,9969333317,9922026637,Pune,Priya,Fee Paid,
+23-Apr-2026,John Sharma,,MBA,CBSE,60%,john.student@gmail.com,9135851668,,Kolkata,Sneha,Dropped,Will visit campus next week
+30-May-2026,Sarah Jain,,BCA,CBSE,96%,sarah.student@gmail.com,9357930764,,Mumbai,Ravi,Form Submitted,Not answering calls
+17-May-2026,Chen Rao,,BCA,State Board,82%,chen.student@gmail.com,9870819576,9769477899,Bangalore,Amit,Form Submitted,
+05-Jun-2026,Kavita Bose,Ravi Sharma,MBA,CBSE,99%,kavita.student@gmail.com,9230232472,9429008753,Bangalore,Sneha,Enquiry,Wants hostel facility
+24-Apr-2026,Sunil Das,Raj Doe,BBA,State Board,66%,sunil.student@gmail.com,9418478658,9392745360,Chennai,Ravi,Form Submitted,Will visit campus next week
+27-May-2026,Wei Menon,Anita Li,BBA,State Board,74%,wei.student@gmail.com,9184029706,9335780483,Delhi,Amit,Fee Paid,Will visit campus next week
+08-Jun-2026,Priya Doe,Priya Jain,B.Tech Mech,CBSE,99%,priya.student@gmail.com,9192329780,,Pune,Sneha,Form Submitted,Will visit campus next week
+23-Apr-2026,Aditya Patel,,MBA,ICSE,72%,aditya.student@gmail.com,9321436745,9265072320,Mumbai,Priya,Dropped,
+07-May-2026,Sneha Li,,BCA,CBSE,90%,sneha.student@gmail.com,9180191197,,Pune,Priya,Fee Paid,Not answering calls
+22-May-2026,Chen Rao,,B.Tech CS,CBSE,65%,chen.student@gmail.com,9121059847,9382524449,Chennai,Amit,Fee Paid,Asking for scholarship
+22-Apr-2026,Wei Singh,,BBA,CBSE,90%,wei.student@gmail.com,9127465718,9994988196,Kolkata,Priya,Form Submitted,Asking for scholarship
+31-Mar-2026,Anjali Gupta,,B.Tech CS,ICSE,99%,anjali.student@gmail.com,9760294464,9489829455,Mumbai,Ravi,Dropped,Not answering calls
+30-Apr-2026,Ravi Brown,Sneha Menon,B.Tech Mech,CBSE,62%,ravi.student@gmail.com,9300014718,9094347409,Mumbai,Priya,Fee Paid,Will visit campus next week
+01-Apr-2026,Anita Das,,BBA,ICSE,88%,anita.student@gmail.com,9568323269,,Chennai,Sneha,Form Submitted,
+11-Jun-2026,Amit Li,,MBA,ICSE,81%,amit.student@gmail.com,9460269457,9176795870,Delhi,Amit,Enquiry,Asking for scholarship
+21-May-2026,Neha Johnson,,B.Tech Mech,ICSE,63%,neha.student@gmail.com,9451316214,,Mumbai,Ravi,Enquiry,
+22-Apr-2026,Anita Patel,Sarah Li,B.Tech Mech,ICSE,80%,anita.student@gmail.com,9831292691,9287607480,Delhi,Sneha,Dropped,Asking for scholarship

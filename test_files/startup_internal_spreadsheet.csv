@@ -1,31 +1,31 @@
-name,email,phone,company,notes,random_col
-  RAJ ALI  ,rali@yahoo.com,862-395-3634,Local Shop,  Call back next week.  ,Data 880
-Chen Li,chen.li@hotmail.com,3173075635,Global Industries,,Data 384
-  Jane Brown  ,  jane55@company.net  ,7858825642,Startup Inc,Called twice.,Data 544
-Mohamed Martinez,mohamed34@yahoo.com,128-346-2426,,Wants a demo.,Data 942
-John Smith,"  john.smith@gmail.com, alternate@hotmail.com  ",  706.357.5424  ,  Local Shop  ,Too expensive.,Data 113
-Mohamed Hassan,,3697397987,Tech Solutions,Too expensive.,Data 811
-Fatima Kumar,"fkumar@hotmail.com, alternate@example.org",6965599220,  Acme Corp  ,Too expensive.,  Data 353  
-Wei Ali,wali@company.net,(165) 338-5105,Startup Inc,Wants a demo.,Data 779
-Priya Wang,  priya.wang@example.org  ,  +1 (330) 638-5169  ,  Acme Corp  ,Called twice.,  Data 129  
-  Mohamed Johnson  ,    mohamed.johnson@yahoo.com    ,  +44 4559 426934  ,Global Industries,,Data 938
-Mohamed Smith,MOHAMED.SMITH@COMPANY.NET,1710105497,,Left voicemail,Data 897
-Raj Johnson,  raj.johnson@example.org  ,+44 4642 106388,Global Industries,  Called twice.  ,Data 545
-Alice Garcia,agarcia@gmail.com,338-120-6270,Global Industries,  Too expensive.  ,Data 156
-  Bob Hassan  ,,064.757.3832,ACME CORP,Called twice.,Data 956
-Wei Wang,wei.wang@example.org,  +1 (736) 605-2234  ,Tech Solutions,Called twice.,Data 813
-Alice Martinez,    alice.martinez@example.org    ,  +1 (882) 040-9872 / 7646134768  ,Acme Corp,Call back next week.,Data 881
-  Alice Garcia  ,,,,Left voicemail,Data 849
-,diana.martinez@yahoo.com,  +44 9124 820229  ,Global Industries,Too expensive.,  Data 730  
-Jane Kumar,JKUMAR@GMAIL.COM,4511417997,Tech Solutions,Wants a demo.,  Data 884  
-Raj Hassan,,+1 (912) 681-1741,Local Shop,Left voicemail,Data 771
-Raj Martinez,raj58@example.org,614-681-5589 / +1 (217) 198-2354,  Tech Solutions  ,,Data 834
-,  mohamed.patel@yahoo.com  ,+44 7361 713184,Tech Solutions,,
-  Priya Martinez  ,  priya25@company.net  ,(351) 478-7945 / +44 0070 738590,  Tech Solutions  ,  Called twice.  ,  Data 353  
-  Alice Patel  ,", alternate@example.org",+44 9677 318009 / (274) 785-7615,,Wants a demo.,Data 219
-John Patel,    john.patel@hotmail.com    ,859-966-2292,STARTUP INC,Left voicemail,Data 402
-Chen Doe,cdoe@gmail.com,0620796302,Local Shop,Called twice.,Data 548
-Bob Doe,bdoe@hotmail.com,  +1 (220) 676-8733  ,,Call back next week.,Data 877
-Wei Smith,wei.smith@gmail.com,3996574624 / 360-637-5851,Tech Solutions,Left voicemail,Data 636
-Mohamed Martinez,mohamed3@example.org,076-256-5376,Local Shop,Call back next week.,
-Raj Garcia,rgarcia@hotmail.com,459.128.8062,Global Industries,Wants a demo.,
+Lead ID,Name,Role,Startup Name,Funding Stage,Email,Mobile,LinkedIn,Use Case,Vibe,Next Steps
+574,Arjun,Product Manager,FintechRevolution,Series B,arjun.smith@startup.io,9022273583,linkedin.com/in/arjun-53,Internal tools,Ghosted,Send calendly link
+566,Wei,Dev,EdTech Hub,Seed,wei.verma@startup.io,9186424614,linkedin.com/in/wei-87,Customer facing app,Cold,Follow up on discord
+327,Suresh,Founder,AI.io,Bootstrapped,suresh.brown@startup.io,9346918615,linkedin.com/in/suresh-54,Automation,Cold,They want a custom demo
+605,Diana,Dev,FintechRevolution,Bootstrapped,diana.reddy@startup.io,9151694967,linkedin.com/in/diana-81,Data analysis,Cold,Send calendly link
+549,John,Dev,AI.io,Bootstrapped,john.menon@startup.io,9505523484,linkedin.com/in/john-79,Data analysis,Super hot,Send calendly link
+191,Neha,Co-founder,AI.io,Series A,neha.iyer@startup.io,9192460442,linkedin.com/in/neha-94,Customer facing app,Ghosted,Too early for us
+908,Aditya,Dev,FintechRevolution,Seed,aditya.rao@startup.io,9021561406,linkedin.com/in/aditya-28,Customer facing app,Super hot,
+990,Amit,Founder,FintechRevolution,Bootstrapped,amit.hassan@startup.io,9555785402,linkedin.com/in/amit-30,Internal tools,Needs nurturing,Send calendly link
+641,Raj,Founder,SaaSify,Series A,raj.verma@startup.io,9309788715,linkedin.com/in/raj-82,Automation,Super hot,Follow up on discord
+432,Sunil,Growth Hacker,SaaSify,Seed,sunil.verma@startup.io,9757517572,linkedin.com/in/sunil-42,Internal tools,Super hot,Send calendly link
+323,Charlie,Product Manager,SaaSify,Series A,charlie.das@startup.io,9453618420,linkedin.com/in/charlie-3,Automation,Cold,
+573,Kavita,Growth Hacker,FintechRevolution,Seed,kavita.gupta@startup.io,9459681527,linkedin.com/in/kavita-45,Internal tools,Ghosted,Send calendly link
+953,Wei,Dev,EdTech Hub,Series B,wei.li@startup.io,9758367679,linkedin.com/in/wei-63,Internal tools,Cold,They want a custom demo
+831,Ravi,Founder,HealthTech Pro,Bootstrapped,ravi.iyer@startup.io,9944042586,linkedin.com/in/ravi-53,Automation,Ghosted,Send calendly link
+678,Vikram,Growth Hacker,AI.io,Seed,vikram.kumar@startup.io,9444875295,linkedin.com/in/vikram-38,Automation,Super hot,They want a custom demo
+716,Raj,Founder,EdTech Hub,Series B,raj.johnson@startup.io,9059519070,linkedin.com/in/raj-29,Automation,Ghosted,They want a custom demo
+963,Alice,Co-founder,AI.io,Series A,alice.menon@startup.io,9484517184,linkedin.com/in/alice-35,Data analysis,Cold,
+251,Anita,Co-founder,EdTech Hub,Seed,anita.doe@startup.io,9536079206,linkedin.com/in/anita-25,Automation,Cold,
+386,Chen,Founder,AI.io,Series A,chen.doe@startup.io,9150008138,linkedin.com/in/chen-95,Customer facing app,Cold,
+601,Diana,Dev,EdTech Hub,Series A,diana.kumar@startup.io,9057483675,linkedin.com/in/diana-69,Customer facing app,Ghosted,Too early for us
+764,Sunil,Dev,HealthTech Pro,Series B,sunil.brown@startup.io,9474174039,linkedin.com/in/sunil-76,Customer facing app,Ghosted,Follow up on discord
+106,Amit,Growth Hacker,SaaSify,Bootstrapped,amit.menon@startup.io,9557380844,linkedin.com/in/amit-75,Data analysis,Cold,Follow up on discord
+135,Rahul,Dev,FintechRevolution,Series B,rahul.singh@startup.io,9309752672,linkedin.com/in/rahul-23,Customer facing app,Cold,
+899,Diana,Co-founder,SaaSify,Series A,diana.doe@startup.io,9591361037,linkedin.com/in/diana-91,Data analysis,Cold,They want a custom demo
+103,Diana,Growth Hacker,SaaSify,Bootstrapped,diana.jain@startup.io,9054055025,linkedin.com/in/diana-55,Automation,Ghosted,They want a custom demo
+887,Diana,Co-founder,FintechRevolution,Series A,diana.reddy@startup.io,9539585392,linkedin.com/in/diana-96,Data analysis,Needs nurturing,They want a custom demo
+482,Sarah,Growth Hacker,FintechRevolution,Series B,sarah.das@startup.io,9995713969,linkedin.com/in/sarah-32,Automation,Ghosted,
+469,Charlie,Product Manager,EdTech Hub,Series A,charlie.verma@startup.io,9146272973,linkedin.com/in/charlie-41,Internal tools,Needs nurturing,They want a custom demo
+926,Arjun,Growth Hacker,HealthTech Pro,Series B,arjun.doe@startup.io,9078389380,linkedin.com/in/arjun-59,Customer facing app,Needs nurturing,
+344,Diana,Founder,HealthTech Pro,Seed,diana.iyer@startup.io,9007962085,linkedin.com/in/diana-46,Internal tools,Super hot,They want a custom demo
