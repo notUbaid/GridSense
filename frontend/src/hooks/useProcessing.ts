@@ -38,7 +38,6 @@ const MAX_FILE_SIZE_BYTES = 50 * 1024 * 1024;
  */
 const AI_BATCH_SIZE = 50;
 const DETERMINISTIC_BATCH_SIZE = 5000;
-const MAX_CONCURRENCY = 4;
 
 export function useProcessing() {
   const [state, setState] = useState<ProcessState>('idle');
@@ -248,9 +247,8 @@ export function useProcessing() {
 
     setCurrentActivity(`Warming up AI models for ${validRows.length} valid records...`);
 
-    const localChunkResults: CrmRecord[][] = new Array(chunks.length).fill(null);
+    const localChunkResults: CrmRecord[][] = new Array(chunks.length).fill(null).map(() => []);
     let completedBatches = 0;
-    const totalBatches = chunks.length;
     let localProcessedRows = localSkippedRaw.length;
     
     // Initial progress based on heuristically skipped rows
@@ -271,11 +269,12 @@ export function useProcessing() {
       setElapsedMs(elapsed);
       
       // Sync records periodically to avoid O(N^2) state updates per batch
-      setRecords(localChunkResults.filter(Boolean).flat());
+      setRecords(localChunkResults.flat());
 
       if (completedBatches > 0) {
         const msPerBatch = elapsed / completedBatches;
-        const remainingBatches = totalBatches - completedBatches;
+        const totalBatchesEstimate = Math.ceil(validRows.length / effectiveBatchSize);
+        const remainingBatches = Math.max(0, totalBatchesEstimate - completedBatches);
         // Smooth ETA slightly
         setEtaMs(prev => prev === null ? msPerBatch * remainingBatches : (prev * 0.7 + msPerBatch * remainingBatches * 0.3));
       }
@@ -288,109 +287,153 @@ export function useProcessing() {
       return nextProvider;
     };
 
-    const processBatchQueue = async (queue: { batch: Record<string, string>[], index: number }[]) => {
-      while (queue.length > 0) {
+    // Advanced Queue State
+    interface QueueTask {
+      batch: Record<string, string>[];
+      index: number;
+      attempts: number;
+    }
+    
+    const queue: QueueTask[] = chunks.map((batch, index) => ({ batch, index, attempts: 0 }));
+    let activeWorkers = 0;
+    let maxConcurrency = 2; // Start low (Adaptive Concurrency)
+    const MAX_ALLOWED_CONCURRENCY = 8;
+    let isPipelineAborted = false;
+
+    const dispatchWorkers = () => {
+      while (activeWorkers < maxConcurrency && queue.length > 0 && !isPipelineAborted) {
         const task = queue.shift();
-        if (!task) break;
-
-        // Assign provider at dequeue time (synchronized via single-threaded JS event loop)
-        const taskProvider = getNextProvider();
-        
-        setCurrentActivity(`Mapping fields for rows ${task.index * effectiveBatchSize + 1} to ${Math.min((task.index + 1) * effectiveBatchSize, validRows.length)}...`);
-        
-        let requeued = false;
-        
-        try {
-          const response = await processBatchApi({
-            batchId: `batch_${task.index}`,
-            headers,
-            rows: task.batch,
-            provider: taskProvider,
-          }, fetchedMapping, abortControllerRef.current?.signal);
-
-          if (response.status === 'success' || response.status === 'partial') {
-            if (response.records) {
-              localChunkResults[task.index] = response.records;
-              // setRecords is now handled in the 1-second interval
-              localSuccessfulRows += response.records.length;
-            }
-            if (response.skippedCount) {
-              localSkippedRows += response.skippedCount;
-            }
-            if (response.skippedRecords) {
-              for (const record of response.skippedRecords) {
-                localSkippedRaw.push({ ...record.original, _skipReason: record.reason });
-              }
-              setSkippedRawRows([...localSkippedRaw]);
-            }
-            if (response.skippedReasons) {
-              for (const [reason, count] of Object.entries(response.skippedReasons)) {
-                localSkipReasons[reason] = (localSkipReasons[reason] || 0) + count;
-              }
-            }
-          } else {
-            const err = new Error(response.error || 'Batch failed without specific error');
-            (err as Error & { exhaustedProvider?: string }).exhaustedProvider = response.exhaustedProvider;
-            throw err;
-          }
-        } catch (err: unknown) {
-          if (axios.isCancel(err)) {
-            // Aborted, do not requeue or count as failure
-            break;
-          }
-          const error = err as Error & { response?: { data?: { error?: string, exhaustedProvider?: string }, status?: number }, exhaustedProvider?: string };
-          const backendError = error.response?.data?.error || error.message || 'Unknown error';
-          const status = error.response?.status;
-          const exhaustedProvider = error.response?.data?.exhaustedProvider || error.exhaustedProvider || 'groq';
-          
-          if (status === 429 || backendError.toLowerCase().includes('rate limit')) {
-            if (exhaustedProvider === 'groq') {
-              if (nextProvider === 'groq') {
-                nextProvider = 'gemini';
-                toast.info(`Groq free limit reached. Switching to Gemini backup...`);
-                setCurrentActivity(`Switching AI engine to Gemini...`);
-                await new Promise(r => setTimeout(r, 1500));
-              } else {
-                await new Promise(r => setTimeout(r, 500));
-              }
-              queue.unshift(task);
-              requeued = true;
-              continue;
-            } else {
-              setCurrentActivity(`API limits reached across all providers. Sleeping for 15s before resuming...`);
-              await new Promise(r => setTimeout(r, 15000));
-              nextProvider = 'groq'; // Try groq again after sleeping
-              queue.unshift(task);
-              requeued = true;
-              continue;
-            }
-          } else {
-            localFailedBatches++;
-            localFailedRows += task.batch.length;
-            localFailedRaw.push(...task.batch);
-            localFailReasons[backendError] = (localFailReasons[backendError] || 0) + task.batch.length;
-            
-            if (localFailedBatches <= 3) {
-              toast.error(`Batch ${task.index + 1} (${task.batch.length} rows) failed: ${backendError}`);
-            } else if (localFailedBatches === 4) {
-              toast.error(`Multiple batches failing. Suppressing further error toasts.`);
-            }
-          }
-        } finally {
-          if (!requeued) {
-            completedBatches++;
-            localProcessedRows += task.batch.length;
-            setProcessedRows(localProcessedRows);
-            setProgress(Math.round((localProcessedRows / sanitizedData.length) * 100));
-          }
+        if (task) {
+          activeWorkers++;
+          processTask(task).finally(() => {
+            activeWorkers--;
+            dispatchWorkers();
+          });
         }
       }
     };
 
-    const queue = chunks.map((batch, index) => ({ batch, index }));
-    const workers = Array(Math.min(MAX_CONCURRENCY, queue.length)).fill(null).map(() => processBatchQueue(queue));
+    const processTask = async (task: QueueTask) => {
+      const taskProvider = getNextProvider();
+      
+      setCurrentActivity(`Mapping fields for rows ${task.index * effectiveBatchSize + 1} to ${Math.min((task.index + 1) * effectiveBatchSize, validRows.length)}...`);
+      
+      try {
+        const response = await processBatchApi({
+          batchId: `batch_${task.index}_${task.attempts}`,
+          headers,
+          rows: task.batch,
+          provider: taskProvider,
+        }, fetchedMapping, abortControllerRef.current?.signal);
 
-    await Promise.allSettled(workers);
+        if (response.status === 'success' || response.status === 'partial') {
+          // Adaptive Concurrency: Scale up on success
+          if (maxConcurrency < MAX_ALLOWED_CONCURRENCY) {
+            maxConcurrency++;
+          }
+          
+          if (response.records) {
+            localChunkResults[task.index].push(...response.records);
+            localSuccessfulRows += response.records.length;
+          }
+          if (response.skippedCount) {
+            localSkippedRows += response.skippedCount;
+          }
+          if (response.skippedRecords) {
+            for (const record of response.skippedRecords) {
+              localSkippedRaw.push({ ...record.original, _skipReason: record.reason });
+            }
+            setSkippedRawRows([...localSkippedRaw]);
+          }
+          if (response.skippedReasons) {
+            for (const [reason, count] of Object.entries(response.skippedReasons)) {
+              localSkipReasons[reason] = (localSkipReasons[reason] || 0) + count;
+            }
+          }
+          
+          completedBatches++;
+          localProcessedRows += task.batch.length;
+          setProcessedRows(localProcessedRows);
+          setProgress(Math.round((localProcessedRows / sanitizedData.length) * 100));
+        } else {
+          throw new Error(response.error || 'Batch failed without specific error');
+        }
+      } catch (err: unknown) {
+        if (axios.isCancel(err) || abortControllerRef.current?.signal.aborted) {
+          isPipelineAborted = true;
+          return;
+        }
+        
+        const error = err as Error & { response?: { data?: { error?: string, exhaustedProvider?: string }, status?: number }, exhaustedProvider?: string };
+        const backendError = error.response?.data?.error || error.message || 'Unknown error';
+        const status = error.response?.status;
+        const exhaustedProvider = error.response?.data?.exhaustedProvider || error.exhaustedProvider || 'groq';
+        
+        if (status === 429 || backendError.toLowerCase().includes('rate limit') || status === 403) {
+          // Adaptive Concurrency: Scale down aggressively on rate limit
+          maxConcurrency = Math.max(1, Math.floor(maxConcurrency / 2));
+          
+          if (exhaustedProvider === 'groq') {
+            if (nextProvider === 'groq') {
+              nextProvider = 'gemini';
+              toast.info(`Groq free limit reached. Switching to Gemini backup...`);
+              setCurrentActivity(`Switching AI engine to Gemini...`);
+              await new Promise(r => setTimeout(r, 1500));
+            }
+          } else if (exhaustedProvider === 'gemini') {
+            setCurrentActivity(`API limits reached across all providers. Sleeping...`);
+            await new Promise(r => setTimeout(r, 15000));
+            nextProvider = 'groq';
+          }
+          
+          task.attempts++;
+          
+          // Batch Splitting logic
+          if (task.batch.length > 10 && task.attempts > 1) {
+            const mid = Math.floor(task.batch.length / 2);
+            queue.unshift({ batch: task.batch.slice(mid), index: task.index, attempts: 0 });
+            queue.unshift({ batch: task.batch.slice(0, mid), index: task.index, attempts: 0 });
+            toast.info(`Splitting batch ${task.index + 1} into smaller chunks to avoid rate limits...`);
+          } else {
+            // Jittered Exponential Backoff
+            const baseDelay = 1000;
+            const jitter = Math.random() * 500;
+            const delay = (baseDelay * Math.pow(2, task.attempts)) + jitter;
+            await new Promise(r => setTimeout(r, Math.min(delay, 8000)));
+            queue.unshift(task);
+          }
+        } else {
+          localFailedBatches++;
+          localFailedRows += task.batch.length;
+          localFailedRaw.push(...task.batch);
+          localFailReasons[backendError] = (localFailReasons[backendError] || 0) + task.batch.length;
+          
+          if (localFailedBatches <= 3) {
+            toast.error(`Batch ${task.index + 1} (${task.batch.length} rows) failed: ${backendError}`);
+          } else if (localFailedBatches === 4) {
+            toast.error(`Multiple batches failing. Suppressing further error toasts.`);
+          }
+          
+          completedBatches++;
+          localProcessedRows += task.batch.length;
+          setProcessedRows(localProcessedRows);
+          setProgress(Math.round((localProcessedRows / sanitizedData.length) * 100));
+        }
+      }
+    };
+
+    dispatchWorkers();
+
+    // Wait for queue to drain
+    await new Promise<void>(resolve => {
+      const checkInterval = setInterval(() => {
+        if ((queue.length === 0 && activeWorkers === 0) || isPipelineAborted) {
+          clearInterval(checkInterval);
+          resolve();
+        }
+      }, 250);
+    });
+
     clearTimer();
     
     // Final sync of records
