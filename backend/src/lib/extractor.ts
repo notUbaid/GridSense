@@ -134,11 +134,15 @@ function normalizeAndValidate(record: any): CrmRecord {
       }
     }
     
-    // Extract country code if present (e.g. +91 9876543210 or +1 (555))
-    const countryMatch = phoneStr.match(/^(\+\d{1,4})\s*(.*)$/);
+    // Extract country code if present (e.g. +91 9876543210 or 91-95446-3201)
+    let countryMatch = phoneStr.match(/^(\+\d{1,4})[\s-]*(.*)$/);
+    if (!countryMatch) {
+      // Check for 1-2 digit country code with a separator, avoiding 3-digit US area codes
+      countryMatch = phoneStr.match(/^(\d{1,2})[\s-]+(\d[\d\s-]{4,})$/);
+    }
     if (countryMatch) {
       if (!norm.country_code) {
-        norm.country_code = countryMatch[1];
+        norm.country_code = countryMatch[1].startsWith('+') ? countryMatch[1] : '+' + countryMatch[1];
       }
       phoneStr = countryMatch[2];
     }
@@ -155,13 +159,29 @@ function normalizeAndValidate(record: any): CrmRecord {
 
 
 
+  }
+
+  // 4. Infer Country from Country Code
+  if (norm.country_code && !norm.country) {
+    if (norm.country_code === '+1') norm.country = 'United States';
+    else if (norm.country_code === '+44') norm.country = 'United Kingdom';
+    else if (norm.country_code === '+91') norm.country = 'India';
+    else if (norm.country_code === '+61') norm.country = 'Australia';
+    else if (norm.country_code === '+49') norm.country = 'Germany';
+    else if (norm.country_code === '+33') norm.country = 'France';
+    else if (norm.country_code === '+81') norm.country = 'Japan';
+    else if (norm.country_code === '+86') norm.country = 'China';
+    else if (norm.country_code === '+55') norm.country = 'Brazil';
+    else if (norm.country_code === '+52') norm.country = 'Mexico';
+  }
+
   return norm as CrmRecord;
 }
 
 const EMAIL_REGEX = /[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}/;
 const PHONE_FORMAT_REGEX = /^[\s\d()+-]{7,30}$/;
 const PHONE_EMBEDDED_REGEX = /(?:\+?\d{1,4}[\s.-]*)?\(?\d{2,4}\)?(?:[\s.-]*\d{2,6}){1,4}(?:\s*(?:ext|x|extension)\.?\s*\d{1,5})?/i;
-const DATE_FORMAT_REGEX = /\b(?:19|20)\d{2}[-/]\d{1,2}[-/]\d{1,2}\b|\b\d{1,2}[-/]\d{1,2}[-/](?:19|20)\d{2}\b/;
+const DATE_FORMAT_REGEX = /\b(?:19|20)\d{2}[-/.]\d{1,2}[-/.]\d{1,2}\b|\b\d{1,2}[-/.]\d{1,2}[-/.](?:19|20)\d{2}\b/;
 const TEXT_DATE_REGEX = /\b(?:Jan(?:uary)?|Feb(?:ruary)?|Mar(?:ch)?|Apr(?:il)?|May|Jun(?:e)?|Jul(?:y)?|Aug(?:ust)?|Sep(?:tember)?|Oct(?:ober)?|Nov(?:ember)?|Dec(?:ember)?)\s+\d{1,2}(?:st|nd|rd|th)?(?:,\s*|\s+)(?:19|20)\d{2}\b/i;
 const DIGIT_REGEX = /\d/g;
 
@@ -376,7 +396,7 @@ CRITICAL RULES:
 - For unmapped columns with useful information, append them to "crm_note". Standardize the format: use "Additional email: [email]" for extra emails, "Additional phone: [phone]" for extra phones, and "ColumnName: Value" for others. Separate multiple notes with " | ".
 - If a row is completely irrelevant nonsense, DO NOT hallucinate data. Return null for all fields.
 - "crm_note" should ONLY contain meaningful remarks, follow-up notes, secondary emails, or extra phone numbers.
-- DO NOT dump irrelevant columns (e.g., "Campaign", "Ad Set", random IDs, or random garbage) into "crm_note".
+- DO NOT dump irrelevant columns (e.g., "Campaign", "Ad Set", random IDs, or random garbage) into "crm_note". However, source platforms (e.g., "Hubspot", "Zoho", "Excel") or lead sources ARE highly relevant and MUST be included in notes.
 - If a value in the input is completely empty, ignore it entirely and do not include its column name in the notes.
 - Combine first name + last name into a single "name" field. If the name is explicitly missing or empty, you MAY infer it from the email address if the email clearly contains a person's name (e.g., john.doe@... -> John Doe).
 - Primary Email and Phone numbers have ALREADY been extracted. If you see any additional or secondary emails/phones in the input, you MUST append them to the "crm_note" field. Do NOT output 'email' or 'mobile_without_country_code' fields.
