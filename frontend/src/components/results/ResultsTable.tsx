@@ -40,22 +40,22 @@ interface ResultsTableProps {
 export function ResultsTable({ data }: ResultsTableProps) {
   const columns = React.useMemo(
     () => [
-      { accessorKey: '_row_id', header: 'Row ID' },
-      { accessorKey: 'created_at', header: 'Created At' },
       { accessorKey: 'name', header: 'Name' },
       { accessorKey: 'email', header: 'Email' },
       { accessorKey: 'country_code', header: 'Country Code' },
       { accessorKey: 'mobile_without_country_code', header: 'Mobile' },
+      { accessorKey: 'crm_status', header: 'CRM Status' },
       { accessorKey: 'company', header: 'Company' },
       { accessorKey: 'city', header: 'City' },
       { accessorKey: 'state', header: 'State' },
       { accessorKey: 'country', header: 'Country' },
       { accessorKey: 'lead_owner', header: 'Lead Owner' },
-      { accessorKey: 'crm_status', header: 'CRM Status' },
       { accessorKey: 'crm_note', header: 'Note' },
       { accessorKey: 'data_source', header: 'Data Source' },
       { accessorKey: 'possession_time', header: 'Possession Time' },
       { accessorKey: 'description', header: 'Description' },
+      { accessorKey: 'created_at', header: 'Created At' },
+      { accessorKey: '_row_id', header: 'Row ID' },
       {
         id: 'actions',
         header: '',

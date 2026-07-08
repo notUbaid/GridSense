@@ -10,6 +10,7 @@ import { motion } from 'framer-motion';
 interface ProgressCardProps {
   progress: number;
   processedRows: number;
+  skippedRows: number;
   records: CrmRecord[];
   currentActivity: string;
   elapsedMs: number;
@@ -25,7 +26,7 @@ function formatTime(ms: number) {
   return `${m}:${s.toString().padStart(2, '0')}`;
 }
 
-export function ProgressCard({ progress, processedRows, records, currentActivity, elapsedMs, etaMs, totalRows }: ProgressCardProps) {
+export function ProgressCard({ progress, processedRows, skippedRows, records, currentActivity, elapsedMs, etaMs, totalRows }: ProgressCardProps) {
   return (
     <motion.div 
       className="space-y-6"
@@ -66,8 +67,11 @@ export function ProgressCard({ progress, processedRows, records, currentActivity
             />
             <div className="absolute inset-0 bg-linear-to-r from-transparent via-white/20 to-transparent -translate-x-full animate-[shimmer_1.5s_infinite]" />
           </div>
-          <div className="flex justify-between items-center text-sm font-medium text-muted-foreground">
-            <span>{processedRows} / {totalRows} records processed</span>
+          <div className="flex flex-col sm:flex-row sm:justify-between sm:items-center text-sm font-medium text-muted-foreground gap-1">
+            <span>
+              {processedRows} / {totalRows} records processed
+              {skippedRows > 0 && <span className="opacity-70 ml-1">({skippedRows} instantly skipped)</span>}
+            </span>
             <span className="text-foreground">{progress}% Complete</span>
           </div>
         </CardContent>

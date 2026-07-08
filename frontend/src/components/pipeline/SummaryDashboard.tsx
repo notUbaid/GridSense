@@ -170,110 +170,122 @@ export function SummaryDashboard({ state, metrics, records, skippedRawRows, fail
               </p>
               <p className="text-2xl font-semibold tracking-tight"><AnimatedCounter value={metrics.successfulRows} /></p>
             </motion.div>
-            <motion.div variants={item} className="space-y-1">
-              <p className="text-sm text-muted-foreground font-medium flex items-center gap-2">
-                <span className="h-2 w-2 rounded-full bg-amber-500"></span>
-                Skipped
-                <Dialog>
-                  <DialogTrigger className="inline-flex outline-none hover:bg-muted p-1 rounded transition-colors">
-                    <span className="text-[10px] uppercase font-bold tracking-wider text-muted-foreground/80">View Details</span>
-                  </DialogTrigger>
-                  <DialogContent className="max-w-2xl max-h-[85vh] flex flex-col">
-                    <DialogHeader>
-                      <DialogTitle>Skipped Rows Inspector</DialogTitle>
-                      <DialogDescription>Review the exact rows that were skipped during processing.</DialogDescription>
-                    </DialogHeader>
-                    <ScrollArea className="h-[50vh] mt-4 rounded-md border p-4">
-                      {skippedRawRows.length > 0 ? (
-                        <div className="space-y-4">
-                          {skippedRawRows.map((row, idx) => (
-                            <div key={idx} className="border-b border-border/50 pb-4 last:border-0 last:pb-0">
-                              <div className="flex items-center justify-between mb-2">
-                                <span className="font-semibold text-sm">Row {row._row_id || '?'}</span>
-                                <span className="text-xs font-medium text-destructive bg-destructive/10 px-2 py-0.5 rounded">
-                                  {row._skipReason || 'Skipped'}
-                                </span>
-                              </div>
-                              <div className="text-xs text-muted-foreground bg-muted/50 p-2 rounded truncate">
-                                {Object.entries(row).filter(([k]) => !k.startsWith('_')).map(([, v]) => `${v}`).join(', ')}
-                              </div>
-                            </div>
-                          ))}
+            <Dialog>
+              <DialogTrigger
+                render={
+                  <motion.div variants={item} className="space-y-1 cursor-pointer group hover:bg-muted/30 p-2 -m-2 rounded-md transition-colors" />
+                }
+              >
+                <p className="text-sm text-muted-foreground font-medium flex items-center justify-between">
+                  <span className="flex items-center gap-2">
+                    <span className="h-2 w-2 rounded-full bg-amber-500"></span>
+                    Skipped
+                  </span>
+                  <span className="text-[10px] uppercase font-bold tracking-wider text-muted-foreground/0 group-hover:text-muted-foreground/80 transition-colors">
+                    View Details
+                  </span>
+                </p>
+                <p className="text-2xl font-semibold tracking-tight"><AnimatedCounter value={metrics.skippedRows} /></p>
+              </DialogTrigger>
+              <DialogContent className="max-w-2xl max-h-[85vh] flex flex-col">
+                <DialogHeader>
+                  <DialogTitle>Skipped Rows Inspector</DialogTitle>
+                  <DialogDescription>Review the exact rows that were skipped during processing.</DialogDescription>
+                </DialogHeader>
+                <ScrollArea className="h-[50vh] mt-4 rounded-md border p-4">
+                  {skippedRawRows.length > 0 ? (
+                    <div className="space-y-4">
+                      {skippedRawRows.map((row, idx) => (
+                        <div key={idx} className="border-b border-border/50 pb-4 last:border-0 last:pb-0">
+                          <div className="flex items-center justify-between mb-2">
+                            <span className="font-semibold text-sm">Row {row._row_id || '?'}</span>
+                            <span className="text-xs font-medium text-destructive bg-destructive/10 px-2 py-0.5 rounded">
+                              {row._skipReason || 'Skipped'}
+                            </span>
+                          </div>
+                          <div className="text-xs text-muted-foreground bg-muted/50 p-2 rounded truncate">
+                            {Object.entries(row).filter(([k]) => !k.startsWith('_')).map(([, v]) => `${v}`).join(', ')}
+                          </div>
+                        </div>
+                      ))}
+                    </div>
+                  ) : (
+                    <div className="flex flex-col items-center justify-center h-[200px] text-muted-foreground text-sm">
+                      {metrics.skippedRows > 0 ? (
+                        <div className="text-center space-y-2">
+                          <p>Rows were skipped during AI extraction phase.</p>
+                          <div className="inline-block text-left bg-muted/30 p-4 rounded-md border text-xs">
+                            {Object.entries(metrics.skipReasons).map(([r, c]) => (
+                              <div key={r}><span className="font-semibold">{r}:</span> {c} rows</div>
+                            ))}
+                          </div>
                         </div>
                       ) : (
-                        <div className="flex flex-col items-center justify-center h-[200px] text-muted-foreground text-sm">
-                          {metrics.skippedRows > 0 ? (
-                            <div className="text-center space-y-2">
-                              <p>Rows were skipped during AI extraction phase.</p>
-                              <div className="inline-block text-left bg-muted/30 p-4 rounded-md border text-xs">
-                                {Object.entries(metrics.skipReasons).map(([r, c]) => (
-                                  <div key={r}><span className="font-semibold">{r}:</span> {c} rows</div>
-                                ))}
-                              </div>
-                            </div>
-                          ) : (
-                            <p>No rows were skipped.</p>
-                          )}
-                        </div>
+                        <p>No rows were skipped.</p>
                       )}
-                    </ScrollArea>
-                  </DialogContent>
-                </Dialog>
-              </p>
-              <p className="text-2xl font-semibold tracking-tight"><AnimatedCounter value={metrics.skippedRows} /></p>
-            </motion.div>
-            <motion.div variants={item} className="space-y-1">
-              <p className="text-muted-foreground mb-1 flex items-center gap-1.5">
-                <span className="w-1.5 h-1.5 rounded-full bg-destructive/80 mr-1 shadow-[0_0_8px_rgba(239,68,68,0.5)]"></span>
-                Failed Rows
-                <Dialog>
-                  <DialogTrigger className="inline-flex outline-none hover:bg-muted p-1 rounded transition-colors">
-                    <span className="text-[10px] uppercase font-bold tracking-wider text-muted-foreground/80">View Details</span>
-                  </DialogTrigger>
-                  <DialogContent className="max-w-2xl max-h-[85vh] flex flex-col">
-                    <DialogHeader>
-                      <DialogTitle>Failed Rows Inspector</DialogTitle>
-                      <DialogDescription>Review the exact rows that failed during API extraction.</DialogDescription>
-                    </DialogHeader>
-                    <ScrollArea className="h-[50vh] mt-4 rounded-md border p-4">
-                      {failedRawRows.length > 0 ? (
-                        <div className="space-y-4">
-                          {failedRawRows.map((row, idx) => (
-                            <div key={idx} className="border-b border-border/50 pb-4 last:border-0 last:pb-0">
-                              <div className="flex items-center justify-between mb-2">
-                                <span className="font-semibold text-sm">Row {row._row_id || '?'}</span>
-                                <span className="text-xs font-medium text-destructive bg-destructive/10 px-2 py-0.5 rounded">
-                                  Failed
-                                </span>
-                              </div>
-                              <div className="text-xs text-muted-foreground bg-muted/50 p-2 rounded truncate">
-                                {Object.entries(row).filter(([k]) => !k.startsWith('_')).map(([, v]) => `${v}`).join(', ')}
-                              </div>
-                            </div>
-                          ))}
+                    </div>
+                  )}
+                </ScrollArea>
+              </DialogContent>
+            </Dialog>
+            <Dialog>
+              <DialogTrigger
+                render={
+                  <motion.div variants={item} className="space-y-1 cursor-pointer group hover:bg-muted/30 p-2 -m-2 rounded-md transition-colors" />
+                }
+              >
+                <p className="text-sm text-muted-foreground font-medium flex items-center justify-between">
+                  <span className="flex items-center gap-2">
+                    <span className="h-2 w-2 rounded-full bg-destructive/80 mr-1 shadow-[0_0_8px_rgba(239,68,68,0.5)]"></span>
+                    Failed Rows
+                  </span>
+                  <span className="text-[10px] uppercase font-bold tracking-wider text-muted-foreground/0 group-hover:text-muted-foreground/80 transition-colors">
+                    View Details
+                  </span>
+                </p>
+                <p className="text-2xl font-semibold tracking-tight"><AnimatedCounter value={metrics.failedRows} /></p>
+              </DialogTrigger>
+              <DialogContent className="max-w-2xl max-h-[85vh] flex flex-col">
+                <DialogHeader>
+                  <DialogTitle>Failed Rows Inspector</DialogTitle>
+                  <DialogDescription>Review the exact rows that failed during API extraction.</DialogDescription>
+                </DialogHeader>
+                <ScrollArea className="h-[50vh] mt-4 rounded-md border p-4">
+                  {failedRawRows.length > 0 ? (
+                    <div className="space-y-4">
+                      {failedRawRows.map((row, idx) => (
+                        <div key={idx} className="border-b border-border/50 pb-4 last:border-0 last:pb-0">
+                          <div className="flex items-center justify-between mb-2">
+                            <span className="font-semibold text-sm">Row {row._row_id || '?'}</span>
+                            <span className="text-xs font-medium text-destructive bg-destructive/10 px-2 py-0.5 rounded">
+                              Failed
+                            </span>
+                          </div>
+                          <div className="text-xs text-muted-foreground bg-muted/50 p-2 rounded truncate">
+                            {Object.entries(row).filter(([k]) => !k.startsWith('_')).map(([, v]) => `${v}`).join(', ')}
+                          </div>
+                        </div>
+                      ))}
+                    </div>
+                  ) : (
+                    <div className="flex flex-col items-center justify-center h-[200px] text-muted-foreground text-sm">
+                      {metrics.failedRows > 0 ? (
+                        <div className="text-center space-y-2">
+                          <p>Rows failed during API extraction.</p>
+                          <div className="inline-block text-left bg-muted/30 p-4 rounded-md border text-xs">
+                            {Object.entries(metrics.failReasons).map(([r, c]) => (
+                              <div key={r} className="text-destructive"><span className="font-semibold">Error:</span> {r} ({c} rows)</div>
+                            ))}
+                          </div>
                         </div>
                       ) : (
-                        <div className="flex flex-col items-center justify-center h-[200px] text-muted-foreground text-sm">
-                          {metrics.failedRows > 0 ? (
-                            <div className="text-center space-y-2">
-                              <p>Rows failed during API extraction.</p>
-                              <div className="inline-block text-left bg-muted/30 p-4 rounded-md border text-xs">
-                                {Object.entries(metrics.failReasons).map(([r, c]) => (
-                                  <div key={r} className="text-destructive"><span className="font-semibold">Error:</span> {r} ({c} rows)</div>
-                                ))}
-                              </div>
-                            </div>
-                          ) : (
-                            <p>No rows failed.</p>
-                          )}
-                        </div>
+                        <p>No rows failed.</p>
                       )}
-                    </ScrollArea>
-                  </DialogContent>
-                </Dialog>
-              </p>
-              <p className="text-2xl font-semibold tracking-tight"><AnimatedCounter value={metrics.failedRows} /></p>
-            </motion.div>
+                    </div>
+                  )}
+                </ScrollArea>
+              </DialogContent>
+            </Dialog>
           </motion.div>
           <motion.div 
             initial={{ opacity: 0 }}

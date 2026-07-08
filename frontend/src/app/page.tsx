@@ -89,6 +89,7 @@ export default function Home() {
                 <ProgressCard 
                   progress={progress} 
                   processedRows={processedRows}
+                  skippedRows={metrics.skippedRows}
                   records={records} 
                   currentActivity={currentActivity}
                   elapsedMs={elapsedMs}
