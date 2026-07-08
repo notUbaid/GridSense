@@ -6,7 +6,7 @@ import Papa from 'papaparse';
 const DIGIT_REGEX = /\d/g;
 
 import { processBatchApi, apiClient } from '../services/api';
-import { CrmRecord } from '../types/schema';
+import { CrmRecord, ProcessBatchRequest } from '../types/schema';
 import { toast } from 'sonner';
 
 export type ProcessState = 'idle' | 'parsing' | 'preview' | 'processing' | 'done' | 'partial_success' | 'error';
@@ -191,7 +191,7 @@ export function useProcessing() {
     setMetrics(prev => ({ ...prev, totalRows: sanitizedData.length }));
     const startTime = Date.now();
 
-    let fetchedMapping: any = null;
+    let fetchedMapping: ProcessBatchRequest['schemaMapping'] | null = null;
     try {
       setCurrentActivity('AI is analyzing your column headers...');
       const res = await apiClient.post('/process/map-headers', { headers });

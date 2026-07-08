@@ -7,7 +7,7 @@ import { motion, Variants, useSpring, useTransform, useMotionValueEvent } from '
 
 const ResultsTable = dynamic(() => import('@/components/results/ResultsTable').then(mod => mod.ResultsTable), { ssr: false });
 import { useEffect, useState } from 'react';
-import { AlertCircle, FileCheck2, Info } from 'lucide-react';
+import { AlertCircle, FileCheck2 } from 'lucide-react';
 import { ProcessMetrics, ProcessState } from '@/hooks/useProcessing';
 import { CrmRecord } from '@/types/schema';
 import Papa from 'papaparse';
@@ -195,7 +195,7 @@ export function SummaryDashboard({ state, metrics, records, skippedRawRows, fail
                                 </span>
                               </div>
                               <div className="text-xs text-muted-foreground bg-muted/50 p-2 rounded truncate">
-                                {Object.entries(row).filter(([k]) => !k.startsWith('_')).map(([k, v]) => `${v}`).join(', ')}
+                                {Object.entries(row).filter(([k]) => !k.startsWith('_')).map(([, v]) => `${v}`).join(', ')}
                               </div>
                             </div>
                           ))}
@@ -247,7 +247,7 @@ export function SummaryDashboard({ state, metrics, records, skippedRawRows, fail
                                 </span>
                               </div>
                               <div className="text-xs text-muted-foreground bg-muted/50 p-2 rounded truncate">
-                                {Object.entries(row).filter(([k]) => !k.startsWith('_')).map(([k, v]) => `${v}`).join(', ')}
+                                {Object.entries(row).filter(([k]) => !k.startsWith('_')).map(([, v]) => `${v}`).join(', ')}
                               </div>
                             </div>
                           ))}
