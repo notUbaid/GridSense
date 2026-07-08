@@ -149,6 +149,8 @@ const DATE_FORMAT_REGEX = /\b(?:19|20)\d{2}[-/]\d{1,2}[-/]\d{1,2}\b|\b\d{1,2}[-/
 const TEXT_DATE_REGEX = /\b(?:Jan(?:uary)?|Feb(?:ruary)?|Mar(?:ch)?|Apr(?:il)?|May|Jun(?:e)?|Jul(?:y)?|Aug(?:ust)?|Sep(?:tember)?|Oct(?:ober)?|Nov(?:ember)?|Dec(?:ember)?)\s+\d{1,2}(?:st|nd|rd|th)?(?:,\s*|\s+)(?:19|20)\d{2}\b/i;
 const DIGIT_REGEX = /\d/g;
 
+let circuitBreakerOpenUntil = 0;
+
 export async function processBatch(
   headers: string[], 
   rows: Record<string, string>[],
@@ -159,6 +161,13 @@ export async function processBatch(
   let keysTried = 1;
   const maxRetries = config.AI_MAX_RETRIES;
   const startTime = Date.now();
+
+  if (provider === 'groq' && Date.now() < circuitBreakerOpenUntil) {
+    const limitError = new Error('API Key exhausted or restricted (Circuit Breaker Open)');
+    (limitError as any).status = 429;
+    (limitError as any).exhaustedProvider = 'groq';
+    throw limitError;
+  }
 
   interface ExtractedData {
     original: Record<string, string>;
@@ -544,11 +553,15 @@ ${JSON.stringify(aiRows)}`;
             keysTried++;
             attempt = 0;
             continue;
+          } else {
+            // Circuit Breaker: All keys exhausted
+            logger.error(`All ${groqClients.length} Groq keys exhausted. Opening circuit breaker for 30s.`);
+            circuitBreakerOpenUntil = Date.now() + 30000;
           }
         }
         
         const limitError = new Error(isAuthError ? 'API Key exhausted or restricted' : 'Rate limit exceeded');
-        (limitError as any).status = isAuthError ? 403 : 429;
+        (limitError as any).status = 429; // Coerce to 429 to avoid ugly 403 console errors in browser
         (limitError as any).exhaustedProvider = provider;
         throw limitError;
       }
