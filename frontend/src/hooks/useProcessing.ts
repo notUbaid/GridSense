@@ -32,11 +32,11 @@ export interface ProcessMetrics {
 const MAX_FILE_SIZE_BYTES = 50 * 1024 * 1024;
 
 /**
- * Batch size for AI-processed rows. Kept small (50) to stay within LLM
- * context windows and improve extraction accuracy per the PRD's 20-30 recommendation.
+ * Batch size for AI-processed rows. Kept small (15) to stay within Groq free-tier
+ * TPM limits and improve extraction accuracy per the PRD's recommendation.
  * Deterministic (schema-mapped) batches use a much larger size since they skip AI entirely.
  */
-const AI_BATCH_SIZE = 50;
+const AI_BATCH_SIZE = 15;
 const DETERMINISTIC_BATCH_SIZE = 5000;
 
 export function useProcessing() {
@@ -385,8 +385,20 @@ export function useProcessing() {
             await new Promise(r => setTimeout(r, 15000));
             nextProvider = 'groq';
           }
-          
           task.attempts++;
+          
+          if (task.attempts > 8) {
+             toast.error(`Batch ${task.index + 1} failed: All AI providers exhausted after 8 retries.`);
+             localFailedBatches++;
+             localFailedRows += task.batch.length;
+             localFailedRaw.push(...task.batch);
+             localFailReasons['All AI providers exhausted'] = (localFailReasons['All AI providers exhausted'] || 0) + task.batch.length;
+             completedBatches++;
+             localProcessedRows += task.batch.length;
+             setProcessedRows(localProcessedRows);
+             setProgress(Math.round((localProcessedRows / sanitizedData.length) * 100));
+             return;
+          }
           
           // Batch Splitting logic
           if (task.batch.length > 10 && task.attempts > 1) {

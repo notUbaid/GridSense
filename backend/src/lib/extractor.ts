@@ -535,8 +535,13 @@ ${JSON.stringify(aiRows)}`;
       attempt++;
 
       const status = error?.status || error?.response?.status || (error.message?.includes('429') ? 429 : 500);
-      const isRateLimit = status === 429;
-      const isAuthError = status === 401 || status === 403 || (status === 400 && error?.error?.code === 'organization_restricted') || (status === 400 && error.message?.includes('organization_restricted'));
+      const isRateLimit = status === 429 || error.message?.toLowerCase().includes('context_length_exceeded') || error.message?.toLowerCase().includes('too large');
+      const errorMsgLower = error.message?.toLowerCase() || '';
+      const isAuthError = status === 401 || status === 403 || 
+        (status === 400 && error?.error?.code === 'organization_restricted') || 
+        (status === 400 && errorMsgLower.includes('organization_restricted')) ||
+        (status === 400 && errorMsgLower.includes('api key not valid')) ||
+        errorMsgLower.includes('invalid api key');
       
       const shouldRotateKey = isRateLimit || isAuthError;
 
