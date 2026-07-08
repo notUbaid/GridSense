@@ -1,5 +1,4 @@
 import Groq from 'groq-sdk';
-import { zodToJsonSchema } from 'zod-to-json-schema';
 import { z } from 'zod';
 import { CrmRecord, CrmRecordSchema } from '../validation/schema';
 import logger from '../utils/logger';
@@ -251,7 +250,7 @@ export async function processBatch(
 
     for (const key of Object.keys(sanitized)) {
       if (/created|enquiry|added|submitted|timestamp|lead date/i.test(key)) {
-        let value = sanitized[key];
+        const value = sanitized[key];
         if (!value) continue;
         
         const relative = resolveRelativeDate(value);
@@ -261,7 +260,7 @@ export async function processBatch(
           break;
         }
 
-        let dateMatch = value.match(DATE_FORMAT_REGEX) || value.match(TEXT_DATE_REGEX);
+        const dateMatch = value.match(DATE_FORMAT_REGEX) || value.match(TEXT_DATE_REGEX);
         if (dateMatch) {
           const parsedDate = Date.parse(dateMatch[0].replace(/\./g, '-'));
           if (!isNaN(parsedDate)) {
@@ -292,7 +291,7 @@ export async function processBatch(
           created_at = new Date(relative).toISOString();
           value = '';
         } else {
-          let dateMatch = value.match(DATE_FORMAT_REGEX) || value.match(TEXT_DATE_REGEX);
+          const dateMatch = value.match(DATE_FORMAT_REGEX) || value.match(TEXT_DATE_REGEX);
           if (dateMatch) {
             const parsedDate = Date.parse(dateMatch[0].replace(/\./g, '-'));
             if (!isNaN(parsedDate)) {
