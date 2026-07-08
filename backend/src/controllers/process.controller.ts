@@ -49,9 +49,10 @@ export const processBatchController = async (req: Request, res: Response): Promi
   } catch (error: any) {
     const status = error?.status || error?.response?.status;
     const isRateLimit = status === 429;
+    const isAuthError = error?.isAuthError || false;
     
     const statusCode = status || 500;
-    const errorMessage = isRateLimit 
+    const errorMessage = isRateLimit && !isAuthError
       ? 'Rate limit exceeded for AI Provider' 
       : (error.message || 'An unexpected error occurred during processing');
 
@@ -63,6 +64,7 @@ export const processBatchController = async (req: Request, res: Response): Promi
       status: 'error',
       error: errorMessage,
       exhaustedProvider: error?.exhaustedProvider,
+      isAuthError
     });
   }
 };

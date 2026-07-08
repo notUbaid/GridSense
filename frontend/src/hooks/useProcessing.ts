@@ -263,6 +263,7 @@ export function useProcessing() {
     let localSuccessfulRows = 0;
     let localSkippedRows = localSkippedRaw.length;
     let localTotalSleepMs = 0;
+    let isGeminiDisabled = false;
 
     // Timer for elapsed/ETA — tracked via ref for proper cleanup
     clearTimer();
@@ -377,7 +378,7 @@ export function useProcessing() {
           maxConcurrency = Math.max(1, Math.floor(maxConcurrency / 2));
           
           if (exhaustedProvider === 'groq') {
-            if (nextProvider === 'groq') {
+            if (nextProvider === 'groq' && !isGeminiDisabled) {
               nextProvider = 'gemini';
               toast.info(`Groq free limit reached. Switching to Gemini backup...`);
               setCurrentActivity(`Switching AI engine to Gemini...`);
@@ -385,10 +386,16 @@ export function useProcessing() {
               await new Promise(r => setTimeout(r, 1500));
             }
           } else if (exhaustedProvider === 'gemini') {
-            setCurrentActivity(`API limits reached across all providers. Sleeping...`);
-            localTotalSleepMs += 15000;
-            await new Promise(r => setTimeout(r, 15000));
-            nextProvider = 'groq';
+            if (backendError.toLowerCase().includes('api key') || backendError.toLowerCase().includes('restricted')) {
+              toast.error('Gemini API key is invalid or exhausted. Disabling Gemini fallback permanently.');
+              isGeminiDisabled = true;
+              nextProvider = 'groq';
+            } else {
+              setCurrentActivity(`API limits reached across all providers. Sleeping...`);
+              localTotalSleepMs += 15000;
+              await new Promise(r => setTimeout(r, 15000));
+              nextProvider = 'groq';
+            }
           }
           task.attempts++;
           
