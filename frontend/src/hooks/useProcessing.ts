@@ -27,6 +27,13 @@ export interface ProcessMetrics {
   totalSleepMs: number;
   skipReasons: Record<string, number>;
   failReasons: Record<string, number>;
+  // Real telemetry — no fabricated numbers
+  parseTimeMs: number;
+  mappingTimeMs: number;
+  batchesSent: number;
+  totalRetries: number;
+  peakConcurrency: number;
+  isDeterministic: boolean;
 }
 
 /** Maximum file size in bytes (50 MB) */
@@ -62,7 +69,13 @@ export function useProcessing() {
     processingTimeMs: 0,
     totalSleepMs: 0,
     skipReasons: {},
-    failReasons: {}
+    failReasons: {},
+    parseTimeMs: 0,
+    mappingTimeMs: 0,
+    batchesSent: 0,
+    totalRetries: 0,
+    peakConcurrency: 0,
+    isDeterministic: false,
   });
 
   // Reference for full parsed data to prevent React state bloat
@@ -102,9 +115,10 @@ export function useProcessing() {
     setCurrentActivity('Idle');
     setElapsedMs(0);
     setEtaMs(null);
-    setMetrics({ totalRows: 0, successfulRows: 0, skippedRows: 0, failedRows: 0, failedBatches: 0, processingTimeMs: 0, totalSleepMs: 0, skipReasons: {}, failReasons: {} });
+    setMetrics({ totalRows: 0, successfulRows: 0, skippedRows: 0, failedRows: 0, failedBatches: 0, processingTimeMs: 0, totalSleepMs: 0, skipReasons: {}, failReasons: {}, parseTimeMs: 0, mappingTimeMs: 0, batchesSent: 0, totalRetries: 0, peakConcurrency: 0, isDeterministic: false });
     parsedDataRef.current = null;
 
+    const parseStart = performance.now();
     Papa.parse<Record<string, string>>(file, {
       header: true,
       skipEmptyLines: true,
@@ -147,6 +161,7 @@ export function useProcessing() {
         // Only keep the first 500 rows in React state to avoid memory bloat
         setPreviewData({ headers, rows: sanitizedData.slice(0, 500) });
         setState('preview');
+        setMetrics(prev => ({ ...prev, parseTimeMs: Math.round(performance.now() - parseStart) }));
         toast.success(`Successfully parsed ${sanitizedData.length} rows.`);
 
         // --- SPECULATIVE PROCESSING ---
@@ -214,6 +229,8 @@ export function useProcessing() {
     const startTime = Date.now();
 
     let fetchedMapping: ProcessBatchRequest['schemaMapping'] | null = null;
+    let localIsDeterministic = false;
+    const mappingStart = performance.now();
     try {
       setCurrentActivity('AI is analyzing your column headers...');
       
@@ -231,6 +248,7 @@ export function useProcessing() {
           // which doesn't hit the AI — so we can use much larger batches
           if (data.overallConfidence >= 70) {
             effectiveBatchSize = DETERMINISTIC_BATCH_SIZE;
+            localIsDeterministic = true;
           }
         }
       }
@@ -241,6 +259,8 @@ export function useProcessing() {
       // Header mapping failure is non-fatal — fall back to AI extraction
       console.warn('Failed to map headers, falling back to AI extraction', err);
     }
+    const mappingTimeMs = Math.round(performance.now() - mappingStart);
+    setMetrics(prev => ({ ...prev, mappingTimeMs, isDeterministic: localIsDeterministic }));
 
     const chunks: Record<string, string>[][] = [];
     for (let i = 0; i < validRows.length; i += effectiveBatchSize) {
@@ -264,6 +284,11 @@ export function useProcessing() {
     let localSkippedRows = localSkippedRaw.length;
     let localTotalSleepMs = 0;
     let isGeminiDisabled = false;
+    let localBatchesSent = 0;
+    let localTotalRetries = 0;
+    let localPeakConcurrency = 0;
+    let cachedFlatRecords: CrmRecord[] = [];
+    let flatRecordsDirty = false;
 
     // Timer for elapsed/ETA — tracked via ref for proper cleanup
     clearTimer();
@@ -272,8 +297,12 @@ export function useProcessing() {
       const elapsed = now - startTime;
       setElapsedMs(elapsed);
       
-      // Sync records periodically to avoid O(N^2) state updates per batch
-      setRecords(localChunkResults.flat());
+      // Sync records periodically — only recompute flat() when data changed
+      if (flatRecordsDirty) {
+        cachedFlatRecords = localChunkResults.flat();
+        flatRecordsDirty = false;
+      }
+      setRecords(cachedFlatRecords);
 
       if (completedBatches > 0) {
         const msPerBatch = elapsed / completedBatches;
@@ -309,6 +338,7 @@ export function useProcessing() {
         const task = queue.shift();
         if (task) {
           activeWorkers++;
+          if (activeWorkers > localPeakConcurrency) localPeakConcurrency = activeWorkers;
           processTask(task).finally(() => {
             activeWorkers--;
             dispatchWorkers();
@@ -323,6 +353,7 @@ export function useProcessing() {
       setCurrentActivity(`Mapping fields for rows ${task.index * effectiveBatchSize + 1} to ${Math.min((task.index + 1) * effectiveBatchSize, validRows.length)}...`);
       
       try {
+        localBatchesSent++;
         const response = await processBatchApi({
           batchId: `batch_${task.index}_${task.attempts}`,
           headers,
@@ -339,6 +370,7 @@ export function useProcessing() {
           if (response.records) {
             localChunkResults[task.index].push(...response.records);
             localSuccessfulRows += response.records.length;
+            flatRecordsDirty = true;
           }
           if (response.skippedCount) {
             localSkippedRows += response.skippedCount;
@@ -398,6 +430,7 @@ export function useProcessing() {
             }
           }
           task.attempts++;
+          localTotalRetries++;
           
           if (task.attempts > 8) {
              toast.error(`Batch ${task.index + 1} failed: All AI providers exhausted after 8 retries.`);
@@ -488,7 +521,10 @@ export function useProcessing() {
       processingTimeMs: Date.now() - startTime,
       totalSleepMs: localTotalSleepMs,
       skipReasons: localSkipReasons,
-      failReasons: localFailReasons
+      failReasons: localFailReasons,
+      batchesSent: localBatchesSent,
+      totalRetries: localTotalRetries,
+      peakConcurrency: localPeakConcurrency,
     }));
 
     if (localFailedRows === 0) {
@@ -532,7 +568,7 @@ export function useProcessing() {
     setCurrentActivity('Idle');
     setElapsedMs(0);
     setEtaMs(null);
-    setMetrics({ totalRows: 0, successfulRows: 0, skippedRows: 0, failedRows: 0, failedBatches: 0, processingTimeMs: 0, totalSleepMs: 0, skipReasons: {}, failReasons: {} });
+    setMetrics({ totalRows: 0, successfulRows: 0, skippedRows: 0, failedRows: 0, failedBatches: 0, processingTimeMs: 0, totalSleepMs: 0, skipReasons: {}, failReasons: {}, parseTimeMs: 0, mappingTimeMs: 0, batchesSent: 0, totalRetries: 0, peakConcurrency: 0, isDeterministic: false });
   }, [clearTimer]);
 
   return {

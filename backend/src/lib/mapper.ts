@@ -1,33 +1,8 @@
-import { Groq } from 'groq-sdk';
-import { GoogleGenerativeAI } from '@google/generative-ai';
-import { config } from '../config';
-import { zodToJsonSchema } from 'zod-to-json-schema';
+import { getGroqClient, getGeminiClient, markGroqKeyExhausted } from './extractor';
 import { z } from 'zod';
+import { zodToJsonSchema } from 'zod-to-json-schema';
 import logger from '../utils/logger';
 import { stripMarkdownFences, salvageMapperJson } from '../utils/ai-utils';
-
-let groqClient: Groq | null = null;
-let genAI: GoogleGenerativeAI | null = null;
-
-function getGroqClient() {
-  if (!config.GROQ_API_KEY) {
-    throw new Error('GROQ_API_KEY is missing.');
-  }
-  if (!groqClient) {
-    const keys = config.GROQ_API_KEY.split(',').map(k => k.trim()).filter(k => k.length > 0);
-    if (keys.length === 0) throw new Error('No valid GROQ API keys found.');
-    groqClient = new Groq({ apiKey: keys[0] });
-  }
-  return groqClient;
-}
-
-function getGeminiClient() {
-  if (!config.GEMINI_API_KEY) {
-    throw new Error('GEMINI_API_KEY is missing.');
-  }
-  if (!genAI) genAI = new GoogleGenerativeAI(config.GEMINI_API_KEY);
-  return genAI;
-}
 
 const MappingSchema = z.object({
   mapping: z.array(z.object({
@@ -77,14 +52,30 @@ ${JSON.stringify(zodToJsonSchema(MappingSchema as any))}
   let resultString = '';
   
   try {
-    const groq = getGroqClient();
-    const completion = await groq.chat.completions.create({
-      messages: [{ role: 'user', content: prompt }],
-      model: 'llama-3.1-8b-instant',
-      temperature: 0,
-      response_format: { type: 'json_object' }
-    });
-    resultString = completion.choices[0]?.message?.content || '{}';
+    let groq;
+    let index: number;
+    try {
+       const res = getGroqClient();
+       groq = res.client;
+       index = res.index;
+    } catch (e) {
+       throw e;
+    }
+    
+    try {
+      const completion = await groq.chat.completions.create({
+        messages: [{ role: 'user', content: prompt }],
+        model: 'llama-3.1-8b-instant',
+        temperature: 0,
+        response_format: { type: 'json_object' }
+      });
+      resultString = completion.choices[0]?.message?.content || '{}';
+    } catch (err: any) {
+      if (err.status === 429 || err.status === 400 || err.status === 403) {
+         markGroqKeyExhausted(index);
+      }
+      throw err;
+    }
   } catch (err: any) {
     logger.warn({ err: err.message }, 'Groq mapping failed, falling back to Gemini');
     try {

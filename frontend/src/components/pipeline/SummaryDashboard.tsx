@@ -306,43 +306,35 @@ export function SummaryDashboard({ state, metrics, records, skippedRawRows, fail
                 </DialogHeader>
                 <div className="space-y-4 pt-4">
                   <div className="grid grid-cols-2 gap-y-1">
+                    <span className="text-muted-foreground">Mode:</span>
+                    <span className="text-right">{metrics.isDeterministic ? 'Deterministic' : 'AI Inference'}</span>
                     <span className="text-muted-foreground">CSV Parse:</span>
-                    <span className="text-right">{(metrics.totalRows > 0 ? 38 + (metrics.totalRows % 10) : 0)}ms</span>
+                    <span className="text-right">{metrics.parseTimeMs}ms</span>
                     <span className="text-muted-foreground">Header Analysis:</span>
-                    <span className="text-right">120ms</span>
-                    <span className="text-muted-foreground">AI Extraction:</span>
-                    <span className="text-right">{Math.max(0, (metrics.processingTimeMs - metrics.totalSleepMs - 247) / 1000).toFixed(2)}s</span>
+                    <span className="text-right">{metrics.mappingTimeMs}ms</span>
+                    <span className="text-muted-foreground">Extraction processing:</span>
+                    <span className="text-right">{Math.max(0, (metrics.processingTimeMs - metrics.totalSleepMs - metrics.parseTimeMs - metrics.mappingTimeMs) / 1000).toFixed(2)}s</span>
                     <span className="text-muted-foreground">Rate Limit Sleep:</span>
                     <span className="text-right text-orange-400">{(metrics.totalSleepMs / 1000).toFixed(2)}s</span>
-                    <span className="text-muted-foreground">Validation:</span>
-                    <span className="text-right">{(metrics.totalRows > 0 ? 71 + (metrics.totalRows % 5) : 0)}ms</span>
-                    <span className="text-muted-foreground">Export:</span>
-                    <span className="text-right">18ms</span>
-                    <span className="text-muted-foreground font-bold mt-2">Total:</span>
+                    <span className="text-muted-foreground font-bold mt-2">Total Time:</span>
                     <span className="text-right font-bold mt-2">{(metrics.processingTimeMs / 1000).toFixed(2)}s</span>
                   </div>
                   
                   <div className="h-px bg-border" />
                   
                   <div className="grid grid-cols-2 gap-y-1">
-                    <span className="text-muted-foreground">Rows</span>
+                    <span className="text-muted-foreground">Rows Processed</span>
                     <span className="text-right">{metrics.totalRows}</span>
-                    <span className="text-muted-foreground">Batches (Chunks)</span>
-                    <span className="text-right">{Math.ceil(metrics.totalRows / 15)}</span>
-                    <span className="text-muted-foreground">Avg AI latency</span>
-                    <span className="text-right">{Math.min(1200, Math.max(300, Math.floor((metrics.processingTimeMs - metrics.totalSleepMs) / Math.max(1, Math.ceil(metrics.totalRows / 15)))))}ms</span>
-                    <span className="text-muted-foreground">Peak concurrency</span>
-                    <span className="text-right">{Math.min(10, Math.ceil(metrics.totalRows / 100) + 2)}</span>
-                    <span className="text-muted-foreground">Retries</span>
-                    <span className="text-right">{metrics.failedBatches > 0 ? metrics.failedBatches : (metrics.totalRows % 3)}</span>
-                    <span className="text-muted-foreground">Tokens</span>
-                    <span className="text-right">{(metrics.totalRows * 18.2).toLocaleString(undefined, {maximumFractionDigits: 0})}</span>
+                    <span className="text-muted-foreground">Batches Sent</span>
+                    <span className="text-right">{metrics.batchesSent}</span>
+                    <span className="text-muted-foreground">Avg API Latency</span>
+                    <span className="text-right">{metrics.batchesSent > 0 ? Math.round((metrics.processingTimeMs - metrics.totalSleepMs) / Math.max(1, metrics.batchesSent)) : 0}ms</span>
+                    <span className="text-muted-foreground">Peak Concurrency</span>
+                    <span className="text-right">{metrics.peakConcurrency} workers</span>
+                    <span className="text-muted-foreground">API Retries</span>
+                    <span className="text-right">{metrics.totalRetries}</span>
                     <span className="text-muted-foreground">Rows/sec</span>
                     <span className="text-right">{metrics.processingTimeMs > 0 ? Math.round((metrics.totalRows / metrics.processingTimeMs) * 1000) : 0}</span>
-                    <span className="text-muted-foreground">Cache hits</span>
-                    <span className="text-right">{90 + (metrics.totalRows % 9)}%</span>
-                    <span className="text-muted-foreground">Memory</span>
-                    <span className="text-right">{45 + (metrics.totalRows % 40)}MB</span>
                   </div>
                 </div>
               </DialogContent>

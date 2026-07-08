@@ -13,7 +13,7 @@ let currentGroqIndex = 0;
 let availableGroqIndices: number[] = [];
 let genAI: GoogleGenerativeAI | null = null;
 
-function getGroqClient(): { client: Groq, index: number } {
+export function getGroqClient(): { client: Groq, index: number } {
   if (!config.GROQ_API_KEY) {
     throw new Error('GROQ_API_KEY is missing.');
   }
@@ -35,12 +35,21 @@ function getGroqClient(): { client: Groq, index: number } {
   return { client: groqClients[selectedIndex], index: selectedIndex };
 }
 
-function markGroqKeyExhausted(index: number) {
+export function markGroqKeyExhausted(index: number) {
+  if (!availableGroqIndices.includes(index)) return; // Already exhausted
   availableGroqIndices = availableGroqIndices.filter(i => i !== index);
-  logger.warn(`Groq key at index ${index} marked as exhausted. ${availableGroqIndices.length} keys remaining.`);
+  logger.warn(`Groq key at index ${index} marked as exhausted. ${availableGroqIndices.length} keys remaining. Will restore in 60s.`);
+  
+  // TTL-based recovery: Rate limits typically reset after a minute.
+  setTimeout(() => {
+    if (!availableGroqIndices.includes(index)) {
+      availableGroqIndices.push(index);
+      logger.info(`Groq key at index ${index} restored after 60s timeout. ${availableGroqIndices.length} keys available.`);
+    }
+  }, 60000);
 }
 
-function getGeminiClient() {
+export function getGeminiClient() {
   if (!config.GEMINI_API_KEY) {
     throw new Error('GEMINI_API_KEY is missing.');
   }
@@ -258,18 +267,23 @@ export async function processBatch(
       }
 
       if (!mobile_without_country_code && value.length > 0) {
-        const digitCount = (value.match(DIGIT_REGEX) || []).length;
-        if (digitCount >= 7) {
-          // If the value is purely a phone number format
-          if (PHONE_FORMAT_REGEX.test(value)) {
-            mobile_without_country_code = value.trim();
-            value = '';
-          } else {
-            // Try to extract a standard phone number embedded in text
-            const match = value.match(PHONE_EMBEDDED_REGEX);
-            if (match) {
-              mobile_without_country_code = match[0];
-              value = value.replace(match[0], '').trim();
+        const isDateColumn = /date|time|created|updated|added/i.test(key);
+        const isPureDate = DATE_FORMAT_REGEX.test(value);
+        
+        if (!isDateColumn && !isPureDate) {
+          const digitCount = (value.match(DIGIT_REGEX) || []).length;
+          if (digitCount >= 7) {
+            // If the value is purely a phone number format
+            if (PHONE_FORMAT_REGEX.test(value)) {
+              mobile_without_country_code = value.trim();
+              value = '';
+            } else {
+              // Try to extract a standard phone number embedded in text
+              const match = value.match(PHONE_EMBEDDED_REGEX);
+              if (match) {
+                mobile_without_country_code = match[0];
+                value = value.replace(match[0], '').trim();
+              }
             }
           }
         }
@@ -312,8 +326,13 @@ export async function processBatch(
         
         const val = original[map.source];
         if (val && val.trim() !== '') {
-          record[map.target] = val.trim();
-          mappedKeys.add(map.source);
+          // Guard: don't overwrite cleanly auto-extracted fields with dirty mapped data
+          if (['email', 'mobile_without_country_code', 'created_at'].includes(map.target) && record[map.target]) {
+            mappedKeys.add(map.source);
+          } else {
+            record[map.target] = val.trim();
+            mappedKeys.add(map.source);
+          }
         }
       }
 
@@ -411,8 +430,25 @@ CRITICAL RULES:
 - You should return exactly ${aiRows.length} objects in the "records" array — one per input row.
 - Output ONLY valid JSON matching the schema. No markdown, no explanation.
 
-JSON Schema:
-${JSON.stringify(zodToJsonSchema(llmResponseSchema as any))}
+Output JSON Format:
+{
+  "records": [
+    {
+      "name": "string | null",
+      "company": "string | null",
+      "city": "string | null",
+      "state": "string | null",
+      "country": "string | null",
+      "lead_owner": "string | null",
+      "crm_status": "string | null",
+      "crm_note": "string | null",
+      "data_source": "string | null",
+      "possession_time": "string | null",
+      "description": "string | null",
+      "_row_id": "string (MUST preserve from input row)"
+    }
+  ]
+}
 
 Example:
 Headers: ["First Name", "SurName", "Org"]
