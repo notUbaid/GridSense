@@ -10,6 +10,7 @@ import { errorHandler } from './middleware/error.middleware';
 import logger from './utils/logger';
 
 const app = express();
+app.set('trust proxy', 1);
 
 // Middleware
 app.use(helmet());

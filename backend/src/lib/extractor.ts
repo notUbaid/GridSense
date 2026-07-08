@@ -115,7 +115,7 @@ export async function processBatch(
   headers: string[], 
   rows: Record<string, string>[],
   provider: 'groq' | 'gemini' = 'groq',
-  schemaMapping?: { source: string, target: string, confidence?: number }[]
+  schemaMapping?: { source: string, target?: string | null, confidence?: any }[] | null
 ) {
   let attempt = 0;
   let keysTried = 1;
