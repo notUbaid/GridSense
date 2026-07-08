@@ -90,7 +90,7 @@ ${JSON.stringify(zodToJsonSchema(MappingSchema as any))}
     const parsed = JSON.parse(cleaned);
     const salvaged = salvageMapperJson(parsed);
     return { ...salvaged, processingTimeMs: Date.now() - startTime };
-  } catch (e) {
+  } catch {
     logger.error({ rawResponse: resultString.substring(0, 200) }, 'Failed to parse mapper response');
     return { mapping: [], overallConfidence: 0, processingTimeMs: Date.now() - startTime };
   }
