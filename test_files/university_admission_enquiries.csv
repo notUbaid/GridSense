@@ -1,48 +1,165 @@
 Date,Student Name,Parent/Guardian Name,Course Interested,Current Board,12th Percentage / Expected,Student Email,Parent Phone,Student Phone,City,Assigned Counsellor,Application Stage,Counsellor Remarks
-28-Apr-2026,Raj Li,,MBA,CBSE,87%,raj.student@gmail.com,9540911532,,Mumbai,Sneha,Form Submitted,
-08-May-2026,Sunil Doe,Fatima Doe,BCA,ICSE,62%,sunil.student@gmail.com,9024711050,9289245635,Bangalore,Priya,Dropped,
-03-Apr-2026,Amit Gupta,Alice Kumar,BBA,State Board,75%,amit.student@gmail.com,9323247834,9195003736,Bangalore,Priya,Fee Paid,Asking for scholarship
-23-Apr-2026,Kavita Wang,,B.Tech CS,CBSE,80%,kavita.student@gmail.com,9111098883,,Pune,Priya,Enquiry,Will visit campus next week
-09-May-2026,Mohamed Doe,Wei Iyer,BBA,State Board,79%,mohamed.student@gmail.com,9773958484,9102243740,Mumbai,Sneha,Enquiry,
-15-Jun-2026,Raj Kumar,,BBA,ICSE,79%,raj.student@gmail.com,9571807245,9889182936,Kolkata,Priya,Enquiry,Not answering calls
-21-May-2026,Anita Li,Raj Reddy,BCA,ICSE,81%,anita.student@gmail.com,9851478580,9104105655,Pune,Sneha,Form Submitted,Asking for scholarship
-03-Jul-2026,Wei Iyer,,B.Tech Mech,State Board,97%,wei.student@gmail.com,9497847329,9669649461,Chennai,Amit,Fee Paid,Not answering calls
-25-Apr-2026,Diana Jain,,BBA,CBSE,68%,diana.student@gmail.com,9060623030,9065144467,Mumbai,Amit,Fee Paid,
-24-May-2026,Mohamed Reddy,Alice Brown,MBA,CBSE,62%,mohamed.student@gmail.com,9478132474,9697988527,Ahmedabad,Ravi,Form Submitted,
-21-Jun-2026,John Reddy,Neha Hassan,B.Tech CS,ICSE,68%,john.student@gmail.com,9593883547,9184959038,Ahmedabad,Amit,Dropped,Wants hostel facility
-27-Jun-2026,Kavita Patel,,B.Tech CS,State Board,97%,kavita.student@gmail.com,9553373730,9439095939,Ahmedabad,Priya,Form Submitted,
-22-Apr-2026,Charlie Das,,B.Tech CS,CBSE,74%,charlie.student@gmail.com,9740159766,,Chennai,Amit,Dropped,Asking for scholarship
-16-Apr-2026,Priya Bose,Neha Smith,B.Tech CS,State Board,96%,priya.student@gmail.com,9492983589,,Pune,Amit,Enquiry,Wants hostel facility
-09-Jun-2026,Ravi Bose,Wei Iyer,B.Tech Mech,ICSE,70%,ravi.student@gmail.com,9588380824,,Kolkata,Ravi,Enquiry,Wants hostel facility
-03-Jul-2026,John Rao,,B.Tech CS,State Board,80%,john.student@gmail.com,9679608535,,Delhi,Sneha,Form Submitted,
-29-Apr-2026,Suresh Jain,,B.Tech CS,State Board,81%,suresh.student@gmail.com,9407083487,9163506772,Pune,Priya,Fee Paid,Will visit campus next week
-24-Jun-2026,Vikram Reddy,Sunil Kumar,BCA,CBSE,64%,vikram.student@gmail.com,9772868274,,Delhi,Ravi,Fee Paid,Asking for scholarship
-25-Apr-2026,Alice Li,Mohamed Li,MBA,CBSE,95%,alice.student@gmail.com,9626752898,9294427796,Chennai,Sneha,Enquiry,Asking for scholarship
-19-Jun-2026,Chen Patel,Sarah Doe,BCA,State Board,93%,chen.student@gmail.com,9625710807,9631693646,Mumbai,Ravi,Dropped,Will visit campus next week
-20-Apr-2026,Sunil Das,Aditya Hassan,BBA,CBSE,60%,sunil.student@gmail.com,9748145478,,Hyderabad,Priya,Dropped,Asking for scholarship
-04-Jul-2026,Alice Wang,Alice Gupta,B.Tech CS,State Board,72%,alice.student@gmail.com,9160224914,9444707458,Hyderabad,Priya,Fee Paid,Asking for scholarship
-12-Apr-2026,Alice Smith,Amit Menon,BCA,CBSE,60%,alice.student@gmail.com,9689328092,9233097210,Hyderabad,Amit,Enquiry,Asking for scholarship
-20-Apr-2026,Anjali Ali,,B.Tech Mech,CBSE,76%,anjali.student@gmail.com,9446469479,,Chennai,Ravi,Form Submitted,
-25-Apr-2026,Arjun Doe,Raj Li,BCA,State Board,87%,arjun.student@gmail.com,9508039085,,Hyderabad,Amit,Dropped,Will visit campus next week
-03-Jul-2026,Aditya Jain,,BCA,CBSE,67%,aditya.student@gmail.com,9303664670,,Ahmedabad,Amit,Enquiry,Will visit campus next week
-21-Jun-2026,Arjun Verma,,BBA,State Board,99%,arjun.student@gmail.com,9360096825,9484562598,Hyderabad,Priya,Dropped,
-27-May-2026,Kavita Johnson,Mohamed Verma,B.Tech CS,State Board,65%,kavita.student@gmail.com,9686351076,9586861076,Bangalore,Amit,Fee Paid,Will visit campus next week
-18-Apr-2026,Diana Rao,Kavita Bose,B.Tech CS,CBSE,64%,diana.student@gmail.com,9318402454,9333575316,Mumbai,Priya,Dropped,Will visit campus next week
-03-May-2026,Vikram Rao,Sarah Das,BCA,State Board,80%,vikram.student@gmail.com,9969333317,9922026637,Pune,Priya,Fee Paid,
-23-Apr-2026,John Sharma,,MBA,CBSE,60%,john.student@gmail.com,9135851668,,Kolkata,Sneha,Dropped,Will visit campus next week
-30-May-2026,Sarah Jain,,BCA,CBSE,96%,sarah.student@gmail.com,9357930764,,Mumbai,Ravi,Form Submitted,Not answering calls
-17-May-2026,Chen Rao,,BCA,State Board,82%,chen.student@gmail.com,9870819576,9769477899,Bangalore,Amit,Form Submitted,
-05-Jun-2026,Kavita Bose,Ravi Sharma,MBA,CBSE,99%,kavita.student@gmail.com,9230232472,9429008753,Bangalore,Sneha,Enquiry,Wants hostel facility
-24-Apr-2026,Sunil Das,Raj Doe,BBA,State Board,66%,sunil.student@gmail.com,9418478658,9392745360,Chennai,Ravi,Form Submitted,Will visit campus next week
-27-May-2026,Wei Menon,Anita Li,BBA,State Board,74%,wei.student@gmail.com,9184029706,9335780483,Delhi,Amit,Fee Paid,Will visit campus next week
-08-Jun-2026,Priya Doe,Priya Jain,B.Tech Mech,CBSE,99%,priya.student@gmail.com,9192329780,,Pune,Sneha,Form Submitted,Will visit campus next week
-23-Apr-2026,Aditya Patel,,MBA,ICSE,72%,aditya.student@gmail.com,9321436745,9265072320,Mumbai,Priya,Dropped,
-07-May-2026,Sneha Li,,BCA,CBSE,90%,sneha.student@gmail.com,9180191197,,Pune,Priya,Fee Paid,Not answering calls
-22-May-2026,Chen Rao,,B.Tech CS,CBSE,65%,chen.student@gmail.com,9121059847,9382524449,Chennai,Amit,Fee Paid,Asking for scholarship
-22-Apr-2026,Wei Singh,,BBA,CBSE,90%,wei.student@gmail.com,9127465718,9994988196,Kolkata,Priya,Form Submitted,Asking for scholarship
-31-Mar-2026,Anjali Gupta,,B.Tech CS,ICSE,99%,anjali.student@gmail.com,9760294464,9489829455,Mumbai,Ravi,Dropped,Not answering calls
-30-Apr-2026,Ravi Brown,Sneha Menon,B.Tech Mech,CBSE,62%,ravi.student@gmail.com,9300014718,9094347409,Mumbai,Priya,Fee Paid,Will visit campus next week
-01-Apr-2026,Anita Das,,BBA,ICSE,88%,anita.student@gmail.com,9568323269,,Chennai,Sneha,Form Submitted,
-11-Jun-2026,Amit Li,,MBA,ICSE,81%,amit.student@gmail.com,9460269457,9176795870,Delhi,Amit,Enquiry,Asking for scholarship
-21-May-2026,Neha Johnson,,B.Tech Mech,ICSE,63%,neha.student@gmail.com,9451316214,,Mumbai,Ravi,Enquiry,
-22-Apr-2026,Anita Patel,Sarah Li,B.Tech Mech,ICSE,80%,anita.student@gmail.com,9831292691,9287607480,Delhi,Sneha,Dropped,Asking for scholarship
+2025-04-22 11:00:00,Lucia Hassan,,B.Tech CS,CBSE,69%,lucia.student@gmail.com,+919926995740,,Ahmedabad,Amit,Enquiry,Loan discussion pending
+2024-08-25 13:00:00,Seo-yeon Kumar,,B.Tech CS,CBSE,75%,seo-yeon.student@gmail.com,+919111303646,+919600188931,Sydney,Priya,Fee Paid,"Called 3 times, no response"
+2024-03-26 16:00:00,Santiago Ndiaye,Yousef Ibrahim,BCA,ICSE,82%,santiago.student@gmail.com,+919070118315,,Sydney,Ravi,Dropped,Needs GST invoice
+2023-04-16 04:00:00,Anita Bose,Tariro Park,BBA,State Board,71%,anita.student@gmail.com,+919482298823,+919657873432,Singapore,Priya,Dropped,CBL
+2024-10-10 16:00:00,Lucia Davis,,MBA,State Board,97%,lucia.student@gmail.com,+919937884260,,Sydney,Priya,Enquiry,Hot lead
+2023-03-16 00:00:00,Sarah Taylor,Elena Hernandez,BCA,ICSE,75%,sarah.student@gmail.com,+919603038180,,Mumbai,Priya,Dropped,Number belongs to receptionist
+2024-02-17 16:00:00,Valentina Mensah,Min-jun Anderson,BBA,State Board,76%,valentina.student@gmail.com,+919847723963,+919273615510,Singapore,Sneha,Form Submitted,VM left
+2023-09-30 19:00:00,Vivek Patel,Rajesh Yadav,B.Tech CS,State Board,94%,vivek.student@gmail.com,+919258906649,+919894935671,Bangalore,Priya,Fee Paid,Duplicate enquiry
+2024-01-01 09:00:00,Vivek Chauhan,,MBA,ICSE,67%,vivek.student@gmail.com,+919867311602,+919722926213,Bangalore,Sneha,Dropped,Requested brochure
+2023-10-15 22:00:00,Zahra Reddy,Neha Das,B.Tech CS,ICSE,94%,zahra.student@gmail.com,+919473397684,+919284842986,Toronto,Sneha,Dropped,Wants credit period of 60 days
+2024-04-01 04:00:00,Takumi Iyer,Vikram Miller,MBA,State Board,95%,takumi.student@gmail.com,+919624764606,,Mumbai,Ravi,Dropped,Requested virtual demo
+2023-09-08 19:00:00,Aisha Hernandez,Elena Verma,BCA,ICSE,64%,aisha.student@gmail.com,+919478897631,+919657437985,Ahmedabad,Ravi,Enquiry,Decision maker travelling
+2024-12-21 05:00:00,Emily Chen,Arjun Schmidt,B.Tech Mech,State Board,82%,emily.student@gmail.com,+919593641892,,Kolkata,Amit,Dropped,Wrong number
+2025-05-21 05:00:00,Layla Jain,,BCA,ICSE,89%,layla.student@gmail.com,+919793730673,+919290677369,Kolkata,Sneha,Enquiry,Do Not Call
+2023-05-16 04:00:00,John Muller,Riya Chen,B.Tech Mech,ICSE,72%,john.student@gmail.com,+919790682609,,Chennai,Sneha,Enquiry,Needs GST invoice
+2024-01-06 00:00:00,Sven Jones,,B.Tech Mech,ICSE,73%,sven.student@gmail.com,+919908399057,+919475928800,Singapore,Amit,Fee Paid,Needs GST invoice
+2024-08-29 16:00:00,Alejandro Sharma,,BCA,ICSE,93%,alejandro.student@gmail.com,+919390985779,+919084883159,London,Sneha,Enquiry,Send catalog again
+2024-09-02 02:00:00,Zahra Yadav,,BCA,CBSE,64%,zahra.student@gmail.com,+919403881769,+919974910621,Bangalore,Ravi,Dropped,Requested virtual demo
+2023-01-01 06:00:00,Rahul Miller,Suresh Patel,MBA,ICSE,76%,rahul.student@gmail.com,+919245303497,+919163208929,Singapore,Amit,Form Submitted,Send catalog again
+2023-01-01 06:00:00,Rahul Miller,Suresh Patel,MBA,ICSE,76%,rahul.student@gmail.com,+919245303497,+919163208929,Singapore,Amit,Form Submitted,Send catalog again
+2023-11-21 15:00:00,Wei Hernandez,Swati Garcia,MBA,ICSE,97%,wei.student@gmail.com,+919337153827,,Ahmedabad,Amit,Dropped,Decision maker travelling
+2025-09-03 12:00:00,Neha Iyer,Michael Yadav,BBA,State Board,88%,neha.student@gmail.com,+919581474326,,Singapore,Ravi,Dropped,Awaiting confirmation
+2025-04-21 00:00:00,Wei Garcia,Santiago Hassan,MBA,CBSE,78%,wei.student@gmail.com,+919535720543,,Hyderabad,Priya,Enquiry,Asked to call after 6 PM
+2023-06-18 13:00:00,Priya Hernandez,,BBA,ICSE,89%,priya.student@gmail.com,+919112275222,+919060474444,Bangalore,Amit,Fee Paid,Follow up next Tuesday
+2023-03-21 17:00:00,Zahra Yadav,Mohamed Okafor,MBA,CBSE,78%,zahra.student@gmail.com,+919634721610,+919944707653,New York,Sneha,Enquiry,VM left
+2024-08-11 11:00:00,Suresh Perez,,BBA,State Board,78%,suresh.student@gmail.com,+919329858918,+919636883933,Delhi,Priya,Enquiry,Follow up next Tuesday
+2024-09-05 11:00:00,Lucia Johnson,Lucia Davis,BBA,State Board,82%,lucia.student@gmail.com,+919314121502,+919592840948,Berlin,Amit,Dropped,Price sensitive
+2023-12-26 14:00:00,Ravi Lopez,James Rodriguez,BCA,State Board,75%,ravi.student@gmail.com,+919857447242,+919235648567,Toronto,Amit,Dropped,Requested virtual demo
+2023-02-28 01:00:00,William Santos,Rahul Jain,MBA,CBSE,86%,william.student@gmail.com,+919065714979,,Mumbai,Sneha,Enquiry,Not picking up
+2024-06-06 06:00:00,Alejandro Schmidt,Chen Park,B.Tech CS,State Board,64%,alejandro.student@gmail.com,+919740949236,,Bangalore,Amit,Dropped,DNC
+2024-05-30 19:00:00,Kwame Lee,Carlos Okafor,B.Tech Mech,State Board,75%,kwame.student@gmail.com,+919724590585,,New York,Priya,Form Submitted,Sent pricing over WhatsApp
+2024-02-26 11:00:00,Ravi Reddy,,B.Tech CS,ICSE,79%,ravi.student@gmail.com,+919859004215,+919836896661,Toronto,Amit,Fee Paid,Works night shift
+2024-02-03 06:00:00,Anita Menon,,B.Tech Mech,State Board,71%,anita.student@gmail.com,+919253528226,,Kolkata,Priya,Fee Paid,Cold
+2024-04-18 17:00:00,Chidi Ndiaye,Sarah Nair,BCA,CBSE,72%,chidi.student@gmail.com,+919817288552,+919139048809,London,Sneha,Enquiry,Requested brochure
+2023-03-26 19:00:00,Tariq Miller,,BCA,State Board,61%,tariq.student@gmail.com,+919392973992,+919422831733,Singapore,Amit,Dropped,"Called 3 times, no response"
+2023-06-16 14:00:00,Omar Suzuki,Ravi Hussein,B.Tech CS,ICSE,93%,omar.student@gmail.com,+919708811866,+919639494447,Ahmedabad,Ravi,Form Submitted,Requested brochure
+2025-03-27 13:00:00,Min-jun Johnson,,BBA,CBSE,63%,min-jun.student@gmail.com,+919723408859,+919087395849,Singapore,Amit,Dropped,Duplicate enquiry
+2023-08-19 22:00:00,Sneha Kumar,,B.Tech CS,CBSE,92%,sneha.student@gmail.com,+919630767092,+919058020019,San Francisco,Ravi,Form Submitted,Cold
+2023-07-16 14:00:00,Nour Mensah,Zahra Schmidt,B.Tech Mech,State Board,89%,nour.student@gmail.com,+919486693302,+919674111046,Singapore,Amit,Enquiry,Do Not Call
+2023-07-16 14:00:00,Nour Mensah,Zahra Schmidt,B.Tech Mech,State Board,89%,nour.student@gmail.com,+919486693302,+919674111046,Singapore,Amit,Enquiry,Do Not Call
+2025-05-27 19:00:00,Hiroshi Ndiaye,,BCA,ICSE,69%,hiroshi.student@gmail.com,+919099194773,,Toronto,Amit,Form Submitted,DNC
+2024-12-12 03:00:00,Min-jun Verma,,MBA,ICSE,85%,min-jun.student@gmail.com,+919939678895,,Kolkata,Priya,Dropped,"Called 3 times, no response"
+2025-08-06 09:00:00,Mohamed Yang,William Bose,BBA,ICSE,98%,mohamed.student@gmail.com,+919323260461,,Hyderabad,Ravi,Enquiry,Prefers email communication
+2023-11-03 18:00:00,Layla Smith,,BCA,State Board,81%,layla.student@gmail.com,+919450177354,,Bangalore,Priya,Form Submitted,Hot lead
+2025-08-13 00:00:00,Santiago Santos,,BCA,State Board,93%,santiago.student@gmail.com,+919926450268,,New York,Ravi,Fee Paid,"Called 3 times, no response"
+2024-04-10 22:00:00,Emily Verma,Khalid Lee,BBA,State Board,87%,emily.student@gmail.com,+919921108467,+919403587509,London,Amit,Dropped,Already spoke to spouse
+2023-03-09 18:00:00,Yousef Reddy,,MBA,CBSE,86%,yousef.student@gmail.com,+919915081355,,Bangalore,Amit,Form Submitted,Requested virtual demo
+2023-01-06 20:00:00,Ravi Gupta,Anita Suzuki,BBA,State Board,63%,ravi.student@gmail.com,+919008311001,+919753498361,Mumbai,Ravi,Dropped,DNC
+2023-12-22 22:00:00,Sven Singh,,BCA,CBSE,80%,sven.student@gmail.com,+919638994352,+919865349122,Hyderabad,Amit,Fee Paid,Hot lead
+2024-01-31 00:00:00,Aditya Ibrahim,Ravi Garcia,MBA,ICSE,76%,aditya.student@gmail.com,+919892921295,,San Francisco,Ravi,Fee Paid,Duplicate enquiry
+2024-09-29 11:00:00,Swati Zhang,Sneha Kumar,BCA,ICSE,98%,swati.student@gmail.com,+919995992727,,Tokyo,Amit,Enquiry,Do Not Call
+2025-08-07 02:00:00,Min-jun Schmidt,,BCA,CBSE,73%,min-jun.student@gmail.com,+919968705399,,Hyderabad,Amit,Enquiry,VM left
+2025-09-22 03:00:00,Camila Johnson,,B.Tech CS,CBSE,63%,camila.student@gmail.com,+919800739307,+919945197826,Berlin,Ravi,Dropped,CBL
+2024-06-24 07:00:00,Wei Yang,Robert Martinez,BCA,ICSE,82%,wei.student@gmail.com,+919826280050,+919150068764,Bangalore,Sneha,Form Submitted,Send catalog again
+2023-07-22 09:00:00,Chen Hussein,James Das,MBA,CBSE,93%,chen.student@gmail.com,+919420350278,+919505242881,San Francisco,Sneha,Dropped,Requested virtual demo
+2023-07-10 11:00:00,Karthik Miller,Amanda Bose,BCA,ICSE,93%,karthik.student@gmail.com,+919582524954,,San Francisco,Sneha,Enquiry,Sale closed
+2023-05-06 21:00:00,Sneha Williams,Yuki Ndiaye,B.Tech CS,ICSE,69%,sneha.student@gmail.com,+919816699521,,Tokyo,Sneha,Form Submitted,Send catalog again
+2023-06-01 23:00:00,Khalid Pillai,Diego Miller,BBA,ICSE,83%,khalid.student@gmail.com,+919328570691,+919657091493,Chennai,Priya,Fee Paid,Duplicate enquiry
+2024-08-15 01:00:00,Chidi Hussein,Sarah Saleh,BBA,CBSE,84%,chidi.student@gmail.com,+919019768959,+919561526408,Hyderabad,Ravi,Dropped,Send catalog again
+2024-07-26 07:00:00,Mei Bose,Min-jun Hernandez,B.Tech Mech,State Board,75%,mei.student@gmail.com,+919806026113,,Bangalore,Amit,Dropped,Asked to call after 6 PM
+2024-05-20 05:00:00,Lars Patel,Arjun Iyer,B.Tech CS,CBSE,76%,lars.student@gmail.com,+919846133739,+919000434653,Singapore,Ravi,Form Submitted,Hot lead
+2024-10-25 04:00:00,Aisha Bose,Vikram Gupta,B.Tech CS,ICSE,63%,aisha.student@gmail.com,+919134746970,+919495129261,Tokyo,Sneha,Dropped,Send catalog again
+2024-04-27 13:00:00,Mateo Patel,,MBA,CBSE,66%,mateo.student@gmail.com,+919367789222,+919359152632,Delhi,Priya,Fee Paid,Wrong number
+2023-11-18 01:00:00,Omar Smith,Tariro Chauhan,B.Tech CS,ICSE,81%,omar.student@gmail.com,+919608122255,,Bangalore,Ravi,Fee Paid,Requested virtual demo
+2023-02-24 12:00:00,Aisha Schmidt,,B.Tech CS,CBSE,60%,aisha.student@gmail.com,+919308323258,+919964139175,Berlin,Sneha,Form Submitted,Interested in 3BHK
+2023-05-18 13:00:00,Rahul Liu,Alejandro Garcia,BBA,ICSE,92%,rahul.student@gmail.com,+919897888147,+919274501253,Kolkata,Sneha,Dropped,Requested virtual demo
+2024-09-30 00:00:00,Ngozi Yadav,Aisha Ali,B.Tech Mech,ICSE,96%,ngozi.student@gmail.com,+919011702339,+919675359301,Pune,Priya,Form Submitted,Decision maker travelling
+2023-08-04 21:00:00,Hiroshi Suzuki,Tariro Singh,B.Tech Mech,ICSE,94%,hiroshi.student@gmail.com,+919667319957,,Hyderabad,Ravi,Enquiry,Works night shift
+2024-09-19 08:00:00,Takumi Traore,Kofi Santos,MBA,State Board,77%,takumi.student@gmail.com,+919944589138,+919703408813,Mumbai,Amit,Dropped,Requested virtual demo
+2025-08-28 21:00:00,Suresh Chen,,BCA,State Board,65%,suresh.student@gmail.com,+919206304298,,Ahmedabad,Sneha,Fee Paid,Works night shift
+2025-06-15 17:00:00,Mateo Liu,,BBA,ICSE,87%,mateo.student@gmail.com,+919813218417,+919470503721,Dubai,Priya,Fee Paid,Already spoke to spouse
+2024-06-02 08:00:00,Min-jun Davis,Sarah Patel,MBA,State Board,92%,min-jun.student@gmail.com,+919067646717,+919346838843,Mumbai,Sneha,Form Submitted,Will visit with spouse
+2025-08-05 21:00:00,Yuki Perez,,B.Tech CS,State Board,76%,yuki.student@gmail.com,+919340246469,+919069475352,London,Ravi,Form Submitted,Send catalog again
+2023-02-09 21:00:00,Sven Hassan,Ashley Ndiaye,BCA,ICSE,97%,sven.student@gmail.com,+919000204463,+919330051284,Tokyo,Amit,Fee Paid,Loan discussion pending
+2024-01-12 20:00:00,Riya Miller,,BCA,CBSE,85%,riya.student@gmail.com,+919621617721,+919289613219,San Francisco,Amit,Dropped,Price sensitive
+2024-07-03 20:00:00,Aditya Silva,Ravi Perez,BBA,ICSE,75%,aditya.student@gmail.com,+919752037621,+919755422435,Sydney,Ravi,Fee Paid,Will visit with spouse
+2023-04-04 02:00:00,Yuki Doe,Pooja Liu,B.Tech Mech,State Board,70%,yuki.student@gmail.com,+919998943751,,Hyderabad,Amit,Fee Paid,Hot lead
+2023-04-07 14:00:00,Yuki Jain,,BCA,ICSE,95%,yuki.student@gmail.com,+919358654978,+919306561626,Berlin,Amit,Dropped,PIC unavailable
+2023-09-29 08:00:00,Omar Chen,Amanda Santos,MBA,ICSE,75%,omar.student@gmail.com,+919784430863,+919823649454,Dubai,Ravi,Form Submitted,Cold
+2025-06-16 11:00:00,Hiroshi Tanaka,Kofi Li,BBA,ICSE,69%,hiroshi.student@gmail.com,+919620608812,,Tokyo,Priya,Dropped,DNC
+2024-03-12 06:00:00,Emily Hernandez,Vivek Brown,B.Tech Mech,CBSE,80%,emily.student@gmail.com,+919389035781,+919110269706,Singapore,Sneha,Fee Paid,Asked to call after 6 PM
+2024-03-12 06:00:00,Emily Hernandez,Vivek Brown,B.Tech Mech,CBSE,80%,emily.student@gmail.com,+919389035781,+919110269706,Singapore,Sneha,Fee Paid,Asked to call after 6 PM
+2024-01-01 09:00:00,Tariro Mensah,Amina Pillai,MBA,State Board,77%,tariro.student@gmail.com,+919997302798,+919440188242,Kolkata,Ravi,Form Submitted,Warm
+2025-01-19 01:00:00,Ngozi Wang,Valentina Johnson,B.Tech Mech,ICSE,83%,ngozi.student@gmail.com,+919280343782,,London,Ravi,Fee Paid,Warm
+2025-03-08 17:00:00,James Singh,Tariro Kim,BCA,State Board,66%,james.student@gmail.com,+919076372599,,Hyderabad,Sneha,Dropped,Referred by existing customer
+2025-09-10 18:00:00,Seo-yeon Pillai,Jessica Chen,B.Tech Mech,ICSE,94%,seo-yeon.student@gmail.com,+919352402670,,Pune,Sneha,Form Submitted,FUP
+2025-02-14 21:00:00,Anita Li,,MBA,ICSE,72%,anita.student@gmail.com,+919694452668,,Mumbai,Sneha,Form Submitted,CBL
+2024-10-22 02:00:00,Santiago Williams,Anjali Pillai,BBA,CBSE,66%,santiago.student@gmail.com,+919098417676,+919090593828,New York,Priya,Enquiry,Prefers email communication
+2023-12-02 03:00:00,Tariq Santos,Ashley Chen,BBA,ICSE,81%,tariq.student@gmail.com,+919401675230,+919095627313,Sydney,Amit,Enquiry,Works night shift
+2025-07-31 02:00:00,Wei Taylor,William Li,MBA,State Board,75%,wei.student@gmail.com,+919574166884,+919620340387,Tokyo,Sneha,Enquiry,Already spoke to spouse
+2023-11-11 06:00:00,Anjali Jones,Olivia Singh,BBA,ICSE,78%,anjali.student@gmail.com,+919450349663,+919950480076,Singapore,Priya,Fee Paid,Prefers email communication
+2025-07-25 16:00:00,Aisha Wang,,MBA,ICSE,84%,aisha.student@gmail.com,+919162163560,,Tokyo,Priya,Dropped,Requested virtual demo
+2024-06-05 13:00:00,Carlos Sharma,,B.Tech Mech,ICSE,73%,carlos.student@gmail.com,+919179010675,+919060111501,Tokyo,Ravi,Fee Paid,Previous enquiry closed
+2025-03-28 12:00:00,Ashley Davis,Emily Ndiaye,B.Tech Mech,State Board,79%,ashley.student@gmail.com,+919021867210,+919332181901,Berlin,Ravi,Form Submitted,CBL
+2024-04-17 21:00:00,Priya Singh,,B.Tech CS,State Board,69%,priya.student@gmail.com,+919825197733,+919934740856,Delhi,Priya,Form Submitted,Already spoke to spouse
+2023-08-12 08:00:00,Kofi Jones,Pooja Martinez,BBA,State Board,81%,kofi.student@gmail.com,+919490826286,+919407789680,Hyderabad,Sneha,Form Submitted,Price sensitive
+2023-11-30 01:00:00,Mohamed Mahmoud,,B.Tech Mech,State Board,66%,mohamed.student@gmail.com,+919772886227,+919825258838,Chennai,Ravi,Fee Paid,FUP
+2023-11-05 14:00:00,Amanda Saleh,,BBA,CBSE,69%,amanda.student@gmail.com,+919476807146,+919800606361,Bangalore,Ravi,Dropped,Will visit with spouse
+2023-12-26 01:00:00,Olivia Takahashi,,BBA,State Board,96%,olivia.student@gmail.com,+919723922584,+919932816654,Mumbai,Priya,Dropped,Previous enquiry closed
+2023-08-31 22:00:00,Seo-yeon Kumar,,B.Tech CS,State Board,95%,seo-yeon.student@gmail.com,+919707361883,+919440512324,Mumbai,Sneha,Dropped,VM left
+2024-04-25 00:00:00,Lars Iyer,Khalid Garcia,B.Tech Mech,State Board,60%,lars.student@gmail.com,+919201671891,,Bangalore,Sneha,Form Submitted,Duplicate enquiry
+2023-09-29 21:00:00,John Mensah,Chidi Singh,B.Tech CS,ICSE,68%,john.student@gmail.com,+919011462641,+919956568439,Berlin,Amit,Dropped,Wrong number
+2023-09-29 21:00:00,John Mensah,Chidi Singh,B.Tech CS,ICSE,68%,john.student@gmail.com,+919011462641,+919956568439,Berlin,Amit,Dropped,Wrong number
+2024-03-11 09:00:00,Kwame Lee,Lucia Johnson,B.Tech CS,State Board,81%,kwame.student@gmail.com,+919260910439,,Sydney,Ravi,Dropped,Referred by existing customer
+2024-11-28 16:00:00,Olivia Ali,,B.Tech CS,CBSE,71%,olivia.student@gmail.com,+919462568294,+919247733214,San Francisco,Amit,Dropped,Requested brochure
+2025-08-10 14:00:00,Olivia Brown,,BBA,State Board,81%,olivia.student@gmail.com,+919300830866,+919955096693,Toronto,Ravi,Form Submitted,PIC unavailable
+2024-12-19 09:00:00,Neha Gonzalez,,MBA,ICSE,92%,neha.student@gmail.com,+919944917298,,Tokyo,Amit,Form Submitted,Follow up next Tuesday
+2023-04-01 10:00:00,Neha Wang,,BBA,ICSE,90%,neha.student@gmail.com,+919293106391,+919864734639,Singapore,Sneha,Form Submitted,Wants credit period of 60 days
+2023-09-25 12:00:00,Diego Liu,Alejandro Chauhan,B.Tech Mech,State Board,78%,diego.student@gmail.com,+919303121886,,Ahmedabad,Sneha,Dropped,Duplicate enquiry
+2024-06-26 09:00:00,Kavita Wang,Ravi Yang,B.Tech CS,CBSE,83%,kavita.student@gmail.com,+919908124016,+919665259021,Mumbai,Amit,Form Submitted,Asked to call after 6 PM
+2024-04-16 14:00:00,Anjali Mensah,,BBA,CBSE,77%,anjali.student@gmail.com,+919087545699,,Delhi,Ravi,Fee Paid,Loan discussion pending
+2024-11-01 16:00:00,Seo-yeon Jain,David Pillai,B.Tech Mech,CBSE,62%,seo-yeon.student@gmail.com,+919930299169,+919011964048,Toronto,Amit,Fee Paid,Wants credit period of 60 days
+2023-01-24 06:00:00,Swati Mahmoud,Neha Davis,B.Tech Mech,ICSE,92%,swati.student@gmail.com,+919683254443,+919850045036,Hyderabad,Ravi,Fee Paid,Will visit with spouse
+2024-06-21 07:00:00,Anita Tanaka,,BBA,ICSE,86%,anita.student@gmail.com,+919009574537,+919434002302,Hyderabad,Ravi,Form Submitted,FUP
+2025-05-29 18:00:00,Kwame Traore,Lars Okafor,BCA,State Board,90%,kwame.student@gmail.com,+919621086752,+919615262426,New York,Priya,Enquiry,Wants credit period of 60 days
+2023-11-08 07:00:00,Min-jun Menon,,MBA,CBSE,95%,min-jun.student@gmail.com,+919812182607,+919040833065,London,Amit,Form Submitted,Previous enquiry closed
+2024-02-20 03:00:00,Layla Li,Ngozi Park,BCA,ICSE,90%,layla.student@gmail.com,+919487469201,+919538293058,Kolkata,Amit,Dropped,PIC unavailable
+2025-08-25 03:00:00,Kwame Brown,Amanda Singh,MBA,CBSE,86%,kwame.student@gmail.com,+919131717538,+919420377005,Ahmedabad,Amit,Fee Paid,VM left
+2025-06-13 19:00:00,Tariq Santos,Alejandro Pillai,B.Tech Mech,CBSE,99%,tariq.student@gmail.com,+919201084911,+919831961922,Delhi,Priya,Enquiry,Interested in 3BHK
+2024-12-10 12:00:00,Lucia Anderson,Seo-yeon Zhang,B.Tech CS,State Board,84%,lucia.student@gmail.com,+919901605654,,Hyderabad,Sneha,Enquiry,Decision maker travelling
+2023-09-29 01:00:00,Chidi Jain,,BBA,CBSE,72%,chidi.student@gmail.com,+919977946585,+919837874416,Pune,Amit,Fee Paid,Loan discussion pending
+2024-05-18 22:00:00,Chidi Anderson,Mei Lee,BBA,State Board,69%,chidi.student@gmail.com,+919111199237,+919292251668,Singapore,Ravi,Enquiry,Awaiting confirmation
+2025-09-22 01:00:00,Takumi Menon,Karthik Takahashi,MBA,ICSE,75%,takumi.student@gmail.com,+919801329626,,Kolkata,Ravi,Fee Paid,Previous enquiry closed
+2024-01-29 13:00:00,Rajesh Kim,,B.Tech Mech,State Board,67%,rajesh.student@gmail.com,+919863937205,,Toronto,Sneha,Fee Paid,FUP
+2024-02-19 05:00:00,Seo-yeon Li,Alejandro Jain,MBA,State Board,67%,seo-yeon.student@gmail.com,+919352105712,+919775066728,Ahmedabad,Sneha,Enquiry,Do Not Call
+2025-03-28 02:00:00,Diego Anderson,Diego Jain,B.Tech Mech,State Board,76%,diego.student@gmail.com,+919947704331,+919119951603,London,Ravi,Dropped,Requested brochure
+2023-07-30 08:00:00,James Hussein,,BBA,State Board,95%,james.student@gmail.com,+919647702764,+919443525522,Pune,Amit,Dropped,Asked to call after 6 PM
+2023-06-24 05:00:00,Seo-yeon Liu,Aisha Gonzalez,B.Tech CS,ICSE,60%,seo-yeon.student@gmail.com,+919618969709,,London,Priya,Form Submitted,Previous enquiry closed
+2023-09-12 05:00:00,Lucia Martinez,Kwame Liu,BBA,State Board,70%,lucia.student@gmail.com,+919575081734,,Singapore,Ravi,Enquiry,VM left
+2023-09-12 05:00:00,Lucia Martinez,Kwame Liu,BBA,State Board,70%,lucia.student@gmail.com,+919575081734,,Singapore,Ravi,Enquiry,VM left
+2023-09-12 05:00:00,Lucia Martinez,Kwame Liu,BBA,State Board,70%,lucia.student@gmail.com,+919575081734,,Singapore,Ravi,Enquiry,VM left
+2023-01-12 10:00:00,Aditya Johnson,Amina Doe,B.Tech Mech,State Board,68%,aditya.student@gmail.com,+919286549488,+919701929667,Delhi,Priya,Dropped,Number belongs to receptionist
+2024-05-25 13:00:00,Seo-yeon Lee,Chen Patel,B.Tech Mech,ICSE,90%,seo-yeon.student@gmail.com,+919086289662,+919080121685,Berlin,Sneha,Dropped,VM left
+2024-04-26 21:00:00,Lars Traore,,MBA,ICSE,60%,lars.student@gmail.com,+919219741814,+919008913347,San Francisco,Priya,Enquiry,Wants credit period of 60 days
+2023-04-06 18:00:00,Takumi Hassan,Kavita Martinez,BBA,ICSE,71%,takumi.student@gmail.com,+919343003912,,Toronto,Sneha,Fee Paid,Follow up next Tuesday
+2025-04-29 01:00:00,Tariq Lopez,,B.Tech CS,CBSE,91%,tariq.student@gmail.com,+919835183306,+919804575097,Pune,Amit,Enquiry,Follow up next Tuesday
+2025-09-06 15:00:00,Chen Saleh,Khalid Schmidt,B.Tech Mech,ICSE,71%,chen.student@gmail.com,+919613801976,+919269233380,Pune,Sneha,Fee Paid,Wants credit period of 60 days
+2024-02-24 22:00:00,Sven Gonzalez,Swati Li,B.Tech Mech,ICSE,87%,sven.student@gmail.com,+919933015986,+919958964658,Toronto,Ravi,Fee Paid,CBL
+2025-07-14 11:00:00,Sneha Saleh,Ashley Li,B.Tech CS,ICSE,90%,sneha.student@gmail.com,+919863480106,,Dubai,Ravi,Enquiry,Awaiting confirmation
+2025-09-17 20:00:00,Jessica Smith,,BCA,State Board,88%,jessica.student@gmail.com,+919693553770,+919239445456,Tokyo,Priya,Enquiry,Follow up next Tuesday
+2024-03-07 20:00:00,Hiroshi Lee,,B.Tech Mech,CBSE,69%,hiroshi.student@gmail.com,+919047556387,+919871107087,London,Priya,Enquiry,Already spoke to spouse
+2025-04-10 20:00:00,Omar Taylor,Ashley Sharma,MBA,ICSE,66%,omar.student@gmail.com,+919300782933,+919580858393,Kolkata,Sneha,Fee Paid,Very strict on quality
+2025-04-10 20:00:00,Omar Taylor,Ashley Sharma,MBA,ICSE,66%,omar.student@gmail.com,+919300782933,+919580858393,Kolkata,Sneha,Fee Paid,Very strict on quality
+2024-08-22 08:00:00,Vikram Rodriguez,,B.Tech CS,State Board,60%,vikram.student@gmail.com,+919623224438,+919307081194,Hyderabad,Amit,Dropped,Budget revised
+2023-12-10 16:00:00,Kofi Das,Sarah Gupta,BBA,ICSE,89%,kofi.student@gmail.com,+919767869365,+919530492923,New York,Sneha,Form Submitted,Will visit with spouse
+2023-04-28 07:00:00,Layla Williams,,B.Tech Mech,CBSE,61%,layla.student@gmail.com,+919383578154,+919303876154,Toronto,Ravi,Form Submitted,Requested virtual demo
+2023-04-28 07:00:00,Layla Williams,,B.Tech Mech,CBSE,61%,layla.student@gmail.com,+919383578154,+919303876154,Toronto,Ravi,Form Submitted,Requested virtual demo
+2023-04-28 07:00:00,Layla Williams,,B.Tech Mech,CBSE,61%,layla.student@gmail.com,+919383578154,+919303876154,Toronto,Ravi,Form Submitted,Requested virtual demo
+2025-05-12 07:00:00,Chidi Li,Diego Pillai,BCA,ICSE,96%,chidi.student@gmail.com,+919547038362,+919961969233,Sydney,Sneha,Form Submitted,Not picking up
+2023-07-27 05:00:00,Yousef Bose,Elena Saleh,B.Tech Mech,CBSE,64%,yousef.student@gmail.com,+919044609472,,San Francisco,Ravi,Enquiry,Email bounced
+2024-06-17 08:00:00,Arjun Rodriguez,John Lopez,BBA,State Board,65%,arjun.student@gmail.com,+919038195973,,Chennai,Amit,Enquiry,Budget revised
+2024-10-30 04:00:00,Seo-yeon Zhang,,B.Tech CS,State Board,70%,seo-yeon.student@gmail.com,+919564844634,,Delhi,Amit,Dropped,Number belongs to receptionist
+2024-02-01 19:00:00,Layla Menon,,B.Tech Mech,State Board,77%,layla.student@gmail.com,+919765542423,,Berlin,Sneha,Dropped,Wrong number
+2023-10-01 10:00:00,Ravi Yang,,BCA,State Board,71%,ravi.student@gmail.com,+919952357127,,Mumbai,Amit,Form Submitted,Decision maker travelling
+2024-02-15 22:00:00,Diego Mensah,Swati Ali,BCA,ICSE,71%,diego.student@gmail.com,+919462234882,+919227274784,Pune,Priya,Fee Paid,Decision maker travelling
+2025-01-05 07:00:00,Yousef Ibrahim,Vikram Traore,MBA,CBSE,60%,yousef.student@gmail.com,+919406873333,+919367982139,London,Amit,Fee Paid,Awaiting confirmation
+2023-08-29 13:00:00,Rajesh Liu,Sneha Menon,B.Tech CS,State Board,91%,rajesh.student@gmail.com,+919965530449,+919033719445,Ahmedabad,Sneha,Form Submitted,Prefers email communication
+2023-03-08 08:00:00,Fatima Traore,Amanda Bose,B.Tech Mech,ICSE,95%,fatima.student@gmail.com,+919484803100,+919530404205,Pune,Amit,Dropped,Cold
+2024-08-24 01:00:00,Yuki Johnson,Ngozi Das,MBA,ICSE,89%,yuki.student@gmail.com,+919886841260,+919483601494,Delhi,Sneha,Enquiry,Not picking up
+2025-09-14 02:00:00,Ngozi Mensah,Chen Okafor,B.Tech Mech,CBSE,87%,ngozi.student@gmail.com,+919113500576,+919010942237,Sydney,Amit,Fee Paid,Already spoke to spouse
+2023-09-18 08:00:00,Nour Hernandez,Mohamed Nair,B.Tech CS,State Board,73%,nour.student@gmail.com,+919335137750,+919635939237,London,Amit,Form Submitted,Loan discussion pending
+2025-01-05 03:00:00,Robert Takahashi,Lars Brown,BCA,State Board,99%,robert.student@gmail.com,+919855738156,,New York,Ravi,Dropped,Email bounced
+2023-02-16 18:00:00,Kofi Saleh,Pooja Silva,MBA,State Board,71%,kofi.student@gmail.com,+919005647804,+919372056338,Mumbai,Sneha,Form Submitted,Will visit with spouse
+2025-06-13 02:00:00,Swati Diallo,David Gupta,BBA,State Board,86%,swati.student@gmail.com,+919346274017,+919479125357,Mumbai,Sneha,Fee Paid,Very strict on quality

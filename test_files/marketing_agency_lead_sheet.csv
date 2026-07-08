@@ -1,62 +1,138 @@
-Date,Client,Source,Campaign Name,UTM Source,UTM Medium,UTM Campaign,Lead Name,Email,Phone,Company,Lead Score,CPL,Comments
-2026-06-18,SaaS Startup,Google Ads,Lookalike_1%,google,email,Q1_Promo,Charlie Gupta,charlie.gupta@outlook.com,9654525655,Pioneer Manufacturing,15,$37.96,SQL
-2026-06-11,Local Clinic,Referral,Retargeting_30d,facebook,email,Q1_Promo,Kavita Wang,kavita.wang@outlook.com,9220468841,Quantum Systems,18,$30.72,Disqualified
-2026-07-01,E-commerce Brand,Organic,Retargeting_30d,google,cpc,Q1_Promo,Kavita Hassan,kavita.hassan@corp.org,9713169574,Global Logistics,86,$36.62,Disqualified
-2026-07-05,SaaS Startup,LinkedIn,Retargeting_30d,linkedin,email,Q1_Promo,Wei Smith,wei.smith@startup.io,9821624364,Stellar Services,79,$19.20,MQL
-2026-05-16,E-commerce Brand,Google Ads,Retargeting_30d,facebook,email,Q1_Promo,Sneha Jain,sneha.jain@company.net,9517805803,Global Logistics,53,$15.57,
-2026-06-28,Local Clinic,Google Ads,Lookalike_1%,facebook,email,Q1_Promo,Kavita Ali,kavita.ali@yahoo.com,9622168781,Apex Solutions,36,$25.11,SQL
-2026-05-24,SaaS Startup,LinkedIn,Q1_Promo,google,email,Q1_Promo,Diana Singh,diana.singh@enterprise.co,9371577162,Pioneer Manufacturing,50,$21.50,Disqualified
-2026-07-08,Local Clinic,Meta Ads,Retargeting_30d,direct,cpc,Q1_Promo,Wei Bose,wei.bose@logistics.com,9965894121,Zenith Enterprises,93,$27.24,
-2026-06-05,Local Clinic,Referral,Retargeting_30d,linkedin,email,Q1_Promo,Ravi Ali,ravi.ali@gmail.com,9194477369,Pioneer Manufacturing,52,$45.68,
-2026-06-08,E-commerce Brand,LinkedIn,Q1_Promo,google,social,Q1_Promo,Charlie Sharma,charlie.sharma@corp.org,9758617884,Pioneer Manufacturing,26,$34.50,
-2026-06-03,Local Clinic,LinkedIn,Lookalike_1%,facebook,social,Q1_Promo,Aditya Das,aditya.das@logistics.com,9849040192,Stellar Services,12,$29.72,MQL
-2026-05-27,Local Clinic,LinkedIn,Retargeting_30d,facebook,social,Q1_Promo,Rahul Li,rahul.li@startup.io,9504369388,Apex Solutions,24,$21.19,
-2026-05-19,SaaS Startup,Referral,Lookalike_1%,google,cpc,Q1_Promo,Amit Brown,amit.brown@startup.io,9669632412,Global Logistics,63,$11.74,Spam
-2026-06-24,E-commerce Brand,Organic,Retargeting_30d,linkedin,social,Q1_Promo,Wei Gupta,wei.gupta@corp.org,9878524019,Acme Corp,31,$34.34,Disqualified
-2026-07-07,Local Clinic,Google Ads,Retargeting_30d,google,email,Q1_Promo,Fatima Wang,fatima.wang@enterprise.co,9516251200,Sunrise Foods,50,$34.21,
-2026-06-07,Local Clinic,Meta Ads,Retargeting_30d,facebook,social,Q1_Promo,Vikram Iyer,vikram.iyer@company.net,9592527269,Sunrise Foods,82,$10.13,MQL
-2026-06-27,SaaS Startup,Organic,Retargeting_30d,facebook,cpc,Q1_Promo,Charlie Reddy,charlie.reddy@startup.io,9925214363,BlueOcean,50,$26.59,Disqualified
-2026-05-24,E-commerce Brand,Referral,Q1_Promo,linkedin,email,Q1_Promo,Aditya Verma,aditya.verma@outlook.com,9357215426,Stellar Services,84,$17.77,SQL
-2026-06-02,E-commerce Brand,Meta Ads,Retargeting_30d,linkedin,social,Q1_Promo,Chen Reddy,chen.reddy@techsolutions.in,9636291577,Zenith Enterprises,80,$45.76,SQL
-2026-06-30,E-commerce Brand,Referral,Lookalike_1%,direct,cpc,Q1_Promo,Vikram Menon,vikram.menon@hotmail.com,9218495270,Acme Corp,16,$33.75,Spam
-2026-07-07,E-commerce Brand,LinkedIn,Retargeting_30d,google,cpc,Q1_Promo,Neha Verma,neha.verma@outlook.com,9196337506,Zenith Enterprises,20,$33.02,
-2026-05-15,Local Clinic,Google Ads,Q1_Promo,direct,cpc,Q1_Promo,Kavita Sharma,kavita.sharma@company.net,9773191511,BlueOcean,63,$28.69,Spam
-2026-05-29,SaaS Startup,Google Ads,Lookalike_1%,google,cpc,Q1_Promo,Ravi Rao,ravi.rao@yahoo.com,9970128572,Pioneer Manufacturing,29,$37.82,SQL
-2026-05-23,SaaS Startup,Meta Ads,Retargeting_30d,linkedin,social,Q1_Promo,John Bose,john.bose@startup.io,9653361884,TechNova,90,$10.97,Disqualified
-2026-07-05,SaaS Startup,LinkedIn,Retargeting_30d,linkedin,cpc,Q1_Promo,Fatima Wang,fatima.wang@corp.org,9513775383,Stellar Services,48,$44.91,SQL
-2026-06-02,E-commerce Brand,Organic,Lookalike_1%,direct,cpc,Q1_Promo,Diana Sharma,diana.sharma@techsolutions.in,9289721895,Stellar Services,12,$18.96,Disqualified
-2026-05-28,SaaS Startup,Organic,Lookalike_1%,google,social,Q1_Promo,Ravi Singh,ravi.singh@corp.org,9898928666,Zenith Enterprises,69,$43.45,Disqualified
-2026-06-19,SaaS Startup,Google Ads,Retargeting_30d,facebook,email,Q1_Promo,Mohamed Jain,mohamed.jain@startup.io,9312910172,Sunrise Foods,84,$27.83,
-2026-05-13,SaaS Startup,LinkedIn,Lookalike_1%,facebook,cpc,Q1_Promo,Neha Ali,neha.ali@startup.io,9826420915,Stellar Services,28,$30.59,Spam
-2026-06-02,SaaS Startup,Meta Ads,Lookalike_1%,direct,social,Q1_Promo,Raj Johnson,raj.johnson@enterprise.co,9100856476,TechNova,94,$14.65,
-2026-06-20,Local Clinic,Organic,Q1_Promo,linkedin,email,Q1_Promo,Sarah Li,sarah.li@logistics.com,9217583320,Acme Corp,34,$16.81,SQL
-2026-05-12,SaaS Startup,Referral,Retargeting_30d,google,social,Q1_Promo,Raj Doe,raj.doe@enterprise.co,9398652451,Stellar Services,86,$37.37,SQL
-2026-05-31,SaaS Startup,LinkedIn,Q1_Promo,google,cpc,Q1_Promo,Diana Li,diana.li@yahoo.com,9786523397,Zenith Enterprises,93,$26.43,Disqualified
-2026-06-04,SaaS Startup,Meta Ads,Q1_Promo,facebook,cpc,Q1_Promo,Kavita Patel,kavita.patel@gmail.com,9058028714,Stellar Services,71,$39.42,Disqualified
-2026-06-01,SaaS Startup,LinkedIn,Lookalike_1%,linkedin,social,Q1_Promo,Raj Gupta,raj.gupta@logistics.com,9547995001,TechNova,66,$32.68,Spam
-2026-06-25,SaaS Startup,Google Ads,Retargeting_30d,google,cpc,Q1_Promo,Sneha Jain,sneha.jain@outlook.com,9505785232,Stellar Services,95,$6.69,
-2026-06-07,E-commerce Brand,Organic,Q1_Promo,linkedin,social,Q1_Promo,Anita Ali,anita.ali@logistics.com,9033740689,Pioneer Manufacturing,60,$43.47,
-2026-06-14,Local Clinic,Meta Ads,Q1_Promo,google,cpc,Q1_Promo,Anita Patel,anita.patel@corp.org,9917252774,TechNova,79,$14.12,
-2026-07-03,SaaS Startup,Meta Ads,Q1_Promo,linkedin,social,Q1_Promo,Aditya Doe,aditya.doe@corp.org,9072686344,BlueOcean,85,$18.93,Spam
-2026-06-16,Local Clinic,Referral,Retargeting_30d,linkedin,cpc,Q1_Promo,Alice Das,alice.das@enterprise.co,9795221661,TechNova,66,$30.68,MQL
-2026-05-19,E-commerce Brand,Organic,Retargeting_30d,facebook,social,Q1_Promo,Sneha Bose,sneha.bose@yahoo.com,9196443126,Apex Solutions,23,$26.57,MQL
-2026-05-15,SaaS Startup,Referral,Q1_Promo,direct,social,Q1_Promo,Diana Wang,diana.wang@startup.io,9843518500,Stellar Services,21,$20.84,Disqualified
-2026-05-26,E-commerce Brand,Google Ads,Q1_Promo,google,email,Q1_Promo,Chen Ali,chen.ali@company.net,9875312883,Quantum Systems,37,$11.43,MQL
-2026-06-26,E-commerce Brand,Meta Ads,Retargeting_30d,linkedin,social,Q1_Promo,Charlie Brown,charlie.brown@yahoo.com,9242408111,TechNova,82,$33.77,SQL
-2026-05-20,SaaS Startup,Meta Ads,Q1_Promo,google,social,Q1_Promo,John Reddy,john.reddy@enterprise.co,9661759842,Quantum Systems,21,$7.87,
-2026-06-27,Local Clinic,LinkedIn,Retargeting_30d,google,email,Q1_Promo,Kavita Gupta,kavita.gupta@logistics.com,9647137348,Zenith Enterprises,29,$49.87,SQL
-2026-06-30,E-commerce Brand,Referral,Q1_Promo,google,social,Q1_Promo,Rahul Reddy,rahul.reddy@hotmail.com,9495770536,Apex Solutions,23,$7.02,Spam
-2026-06-27,SaaS Startup,Meta Ads,Q1_Promo,linkedin,social,Q1_Promo,Vikram Wang,vikram.wang@hotmail.com,9431081769,Stellar Services,15,$26.74,MQL
-2026-06-12,E-commerce Brand,Meta Ads,Retargeting_30d,google,cpc,Q1_Promo,Kavita Menon,kavita.menon@outlook.com,9867743723,Stellar Services,35,$19.70,Spam
-2026-06-01,E-commerce Brand,LinkedIn,Retargeting_30d,linkedin,cpc,Q1_Promo,Suresh Jain,suresh.jain@yahoo.com,9090654471,Sunrise Foods,25,$16.49,
-2026-05-15,Local Clinic,LinkedIn,Lookalike_1%,direct,email,Q1_Promo,Sunil Brown,sunil.brown@outlook.com,9154336448,Acme Corp,21,$24.95,Spam
-2026-05-13,SaaS Startup,Organic,Lookalike_1%,google,social,Q1_Promo,Sneha Hassan,sneha.hassan@enterprise.co,9440770856,Sunrise Foods,40,$14.92,
-2026-06-12,SaaS Startup,Organic,Lookalike_1%,direct,cpc,Q1_Promo,Sarah Brown,sarah.brown@enterprise.co,9051265702,Global Logistics,42,$43.81,
-2026-05-21,E-commerce Brand,LinkedIn,Retargeting_30d,facebook,social,Q1_Promo,Sneha Gupta,sneha.gupta@gmail.com,9005909048,Acme Corp,15,$47.67,
-2026-06-18,SaaS Startup,LinkedIn,Q1_Promo,linkedin,social,Q1_Promo,Diana Das,diana.das@outlook.com,9006939594,TechNova,27,$14.69,Spam
-2026-05-14,E-commerce Brand,Meta Ads,Lookalike_1%,direct,email,Q1_Promo,Anita Johnson,anita.johnson@company.net,9933452209,Quantum Systems,63,$46.06,MQL
-2026-05-31,Local Clinic,Meta Ads,Lookalike_1%,linkedin,email,Q1_Promo,Chen Ali,chen.ali@logistics.com,9800619257,Sunrise Foods,78,$14.79,Disqualified
-2026-05-29,Local Clinic,LinkedIn,Q1_Promo,facebook,email,Q1_Promo,John Brown,john.brown@gmail.com,9783333348,Sunrise Foods,98,$47.72,SQL
-2026-07-07,E-commerce Brand,Organic,Lookalike_1%,linkedin,cpc,Q1_Promo,Chen Jain,chen.jain@hotmail.com,9075630902,Stellar Services,24,$31.53,Spam
-2026-06-28,SaaS Startup,Organic,Q1_Promo,google,social,Q1_Promo,John Gupta,john.gupta@logistics.com,9206215790,TechNova,88,$8.79,Disqualified
-2026-05-16,E-commerce Brand,Meta Ads,Q1_Promo,google,social,Q1_Promo,Fatima Rao,fatima.rao@hotmail.com,9587570252,Stellar Services,100,$44.84,
+Date,Client,Source,Campaign,UTM Source,UTM Medium,UTM Campaign,Prospect,Preferred Contact,Phone,Organization,Lead Score,Cost per Lead,Agent Comments
+,SaaS Startup,Google Ads,Q1_Promo,google,email,Q1_Promo,Tariq Schmidt,tariq.schmidt@startup.io,+919803664386,Quantum Systems,80,$47.42,
+19/02/2024,E-commerce Brand,Referral,Retargeting_30d,direct,social,Q1_Promo,Yousef Menon,yousef.menon@yahoo.co.in,+919234275706,BlueOcean,51,$16.55,Disqualified
+Yesterday,E-commerce Brand,Organic,Q1_Promo,direct,social,Q1_Promo,Priya Johnson,priya.johnson@university.edu,+919606882021,TechNova,92,$30.40,SQL
+05/12/2025,E-commerce Brand,LinkedIn,Lookalike_1%,linkedin,cpc,Q1_Promo,Isabella Yang,isabella.yang@company.net,+919502550523,Apex Solutions,86,$22.34,Disqualified
+,SaaS Startup,Meta Ads,Q1_Promo,facebook,social,Q1_Promo,Vivek Das,vivek.das@startup.io,+919274846816,City Hospital,85,$13.35,SQL
+,Local Clinic,Meta Ads,Lookalike_1%,linkedin,cpc,Q1_Promo,Swati Kim,swati.kim@techsolutions.in,+919283092240,Healthcare Partners,72,$42.95,SQL
+01-Jan-2024,Local Clinic,LinkedIn,Lookalike_1%,linkedin,email,Q1_Promo,Vikram Perez,vikram.perez@aol.com,+919340488162,Retail Giants,17,$38.06,Disqualified
+01-Jan-2024,Local Clinic,LinkedIn,Lookalike_1%,linkedin,email,Q1_Promo,Vikram Perez,vikram.perez@aol.com,+919340488162,Retail Giants,17,$38.06,Disqualified
+17/01/2024,Local Clinic,Organic,Retargeting_30d,facebook,cpc,Q1_Promo,Chen Martinez,chen.martinez@agency.media,+919192212528,Metro Properties,86,$46.24,SQL
+15-Feb-2025,Local Clinic,Organic,Retargeting_30d,linkedin,email,Q1_Promo,Kwame Davis,kwame.davis@builders.co.in,+919318724493,Apex Solutions,77,$20.94,Disqualified
+"Sep 02, 2025",E-commerce Brand,LinkedIn,Lookalike_1%,facebook,cpc,Q1_Promo,Yousef Lopez,yousef.lopez@university.edu,+919025374249,Ecom Express,17,$6.84,SQL
+12-Aug-2023,E-commerce Brand,Meta Ads,Q1_Promo,google,social,Q1_Promo,Kwame Taylor,kwame.taylor@hospital.org,+919055623214,Apex Solutions,42,$17.32,Disqualified
+Today,Local Clinic,Google Ads,Retargeting_30d,facebook,email,Q1_Promo,Lucia Gonzalez,lucia.gonzalez@university.edu,+919287317697,Paramount Health,61,$34.87,MQL
+Today,Local Clinic,Organic,Retargeting_30d,facebook,cpc,Q1_Promo,Neha Patel,neha.patel@protonmail.com,+919012313488,TechNova,64,$10.90,
+InvalidDate,E-commerce Brand,LinkedIn,Retargeting_30d,facebook,cpc,Q1_Promo,Khalid Schmidt,khalid.schmidt@aol.com,+919818122309,BlueOcean,47,$12.42,
+2023.08.02,SaaS Startup,Referral,Lookalike_1%,direct,cpc,Q1_Promo,Ngozi Johnson,ngozi.johnson@builders.co.in,+919411775966,BlueOcean,22,$7.10,
+07/20/2023,SaaS Startup,Organic,Q1_Promo,linkedin,email,Q1_Promo,Ravi Diallo,ravi.diallo@corp.org,+919529286572,Healthcare Partners,22,$20.49,Disqualified
+Yesterday,E-commerce Brand,Meta Ads,Lookalike_1%,facebook,social,Q1_Promo,Aisha Rodriguez,aisha.rodriguez@startup.io,+919372008806,BlueOcean,78,$15.24,
+"Feb 25, 2024",Local Clinic,Meta Ads,Retargeting_30d,google,email,Q1_Promo,Amanda Nair,amanda.nair@university.edu,+919722019370,Stellar Services,40,$25.28,SQL
+Yesterday,E-commerce Brand,Referral,Retargeting_30d,direct,email,Q1_Promo,Khalid Hussein,khalid.hussein@enterprise.co,+919368300383,Global Logistics,43,$17.09,MQL
+26/07/2024,SaaS Startup,LinkedIn,Lookalike_1%,facebook,cpc,Q1_Promo,Elena Singh,elena.singh@protonmail.com,+919728962553,City Hospital,75,$42.68,MQL
+11/03/2024,E-commerce Brand,Organic,Retargeting_30d,google,email,Q1_Promo,Camila Santos,camila.santos@company.net,+919237872543,TechNova,93,$9.39,
+05/08/2023,Local Clinic,Organic,Q1_Promo,google,cpc,Q1_Promo,Pooja Kumar,pooja.kumar@logistics.com,+919314860880,Retail Giants,58,$23.64,
+2024.09.10,SaaS Startup,Meta Ads,Retargeting_30d,linkedin,cpc,Q1_Promo,Robert Gupta,robert.gupta@icloud.com,+919738195250,Metro Properties,66,$43.17,MQL
+25/04/2025,Local Clinic,Referral,Retargeting_30d,facebook,social,Q1_Promo,Kavita Nair,kavita.nair@techsolutions.in,+919748647120,City Hospital,100,$23.73,SQL
+Yesterday,E-commerce Brand,Google Ads,Retargeting_30d,google,cpc,Q1_Promo,Isabella Liu,isabella.liu@outlook.com,+919665263220,WebWorks,18,$5.77,MQL
+2025.05.11,SaaS Startup,Google Ads,Retargeting_30d,direct,social,Q1_Promo,Vikram Williams,vikram.williams@hotmail.com,+919632995335,NextGen IT,85,$38.70,Disqualified
+"Aug 02, 2024",Local Clinic,Google Ads,Lookalike_1%,direct,social,Q1_Promo,Jessica Li,jessica.li@enterprise.co,+919444857741,Sunrise Foods,81,$27.88,SQL
+21-Oct-2024,E-commerce Brand,Organic,Q1_Promo,facebook,social,Q1_Promo,Chen Anderson,chen.anderson@builders.co.in,+919725703191,Stellar Services,58,$18.56,MQL
+Today,E-commerce Brand,LinkedIn,Retargeting_30d,facebook,social,Q1_Promo,Kofi Kim,kofi.kim@yahoo.com,+919994510118,Acme Corp,26,$11.69,SQL
+2024-08-25,Local Clinic,Referral,Retargeting_30d,google,email,Q1_Promo,Ashley Miller,ashley.miller@techsolutions.in,+919013426344,TechNova,47,$44.74,Spam
+2023-06-26,E-commerce Brand,Organic,Q1_Promo,linkedin,email,Q1_Promo,Lars Ali,lars.ali@yahoo.com,+919036976300,Ecom Express,18,$22.33,Disqualified
+"Jul 04, 2024",SaaS Startup,LinkedIn,Q1_Promo,direct,cpc,Q1_Promo,Kofi Tanaka,kofi.tanaka@enterprise.co,+919964476988,TechNova,79,$32.22,MQL
+"Mar 17, 2024",E-commerce Brand,Organic,Lookalike_1%,facebook,cpc,Q1_Promo,Robert Smith,robert.smith@builders.co.in,+919062834891,NextGen IT,45,$49.87,
+2024.09.14,Local Clinic,Organic,Lookalike_1%,facebook,cpc,Q1_Promo,Alejandro Ibrahim,alejandro.ibrahim@startup.io,+919574525283,Paramount Health,65,$26.84,MQL
+Yesterday,E-commerce Brand,Meta Ads,Q1_Promo,facebook,cpc,Q1_Promo,Amanda Yang,amanda.yang@aol.com,+919453571059,Apex Solutions,26,$34.98,SQL
+26/03/2023,Local Clinic,Organic,Q1_Promo,google,email,Q1_Promo,Seo-yeon Miller,seo-yeon.miller@yahoo.co.in,+919643267758,WebWorks,44,$44.71,MQL
+01-Jan-2025,SaaS Startup,Google Ads,Retargeting_30d,direct,email,Q1_Promo,Arjun Hassan,arjun.hassan@enterprise.co,+919117822921,Retail Giants,64,$23.02,SQL
+01-Jan-2025,SaaS Startup,Google Ads,Retargeting_30d,direct,email,Q1_Promo,Arjun Hassan,arjun.hassan@enterprise.co,+919117822921,Retail Giants,64,$23.02,SQL
+,SaaS Startup,Google Ads,Retargeting_30d,linkedin,social,Q1_Promo,Neha Diallo,neha.diallo@hotmail.com,+919081487643,Metro Properties,84,$18.78,Spam
+InvalidDate,SaaS Startup,Referral,Lookalike_1%,direct,email,Q1_Promo,Kofi Patel,kofi.patel@protonmail.com,+919539583410,Pioneer Manufacturing,65,$48.90,SQL
+2024-02-26,E-commerce Brand,Organic,Retargeting_30d,facebook,cpc,Q1_Promo,Amanda Liu,amanda.liu@hospital.org,+919150669726,WebWorks,85,$37.62,MQL
+29/08/2023,SaaS Startup,Google Ads,Lookalike_1%,linkedin,email,Q1_Promo,Kavita Hassan,kavita.hassan@outlook.com,+919926062346,Metro Properties,77,$31.57,MQL
+24-Feb-2024,Local Clinic,Google Ads,Retargeting_30d,facebook,social,Q1_Promo,Riya Reddy,riya.reddy@university.edu,+919037917080,Ecom Express,37,$35.98,MQL
+Today,SaaS Startup,Google Ads,Lookalike_1%,google,social,Q1_Promo,Kavita Kim,kavita.kim@techsolutions.in,+919137921529,Pioneer Manufacturing,92,$34.27,Disqualified
+Today,Local Clinic,LinkedIn,Q1_Promo,direct,social,Q1_Promo,Rajesh Martinez,rajesh.martinez@consulting.biz,+919450492078,Zenith Enterprises,96,$12.23,MQL
+18/03/2025,SaaS Startup,Organic,Retargeting_30d,linkedin,email,Q1_Promo,John Gupta,john.gupta@enterprise.co,+919228898661,TechNova,36,$41.77,MQL
+,E-commerce Brand,Meta Ads,Q1_Promo,facebook,email,Q1_Promo,Michael Pillai,michael.pillai@builders.co.in,+919145975793,Metro Properties,54,$35.03,Spam
+15/06/2023,Local Clinic,Organic,Q1_Promo,facebook,email,Q1_Promo,Camila Rao,camila.rao@yahoo.co.in,+919308950373,Agile Agency,49,$20.70,SQL
+02/27/2025,Local Clinic,Meta Ads,Lookalike_1%,linkedin,email,Q1_Promo,Elena Muller,elena.muller@logistics.com,+919495473002,Ecom Express,11,$18.40,SQL
+"Sep 19, 2025",Local Clinic,Organic,Retargeting_30d,google,cpc,Q1_Promo,Elena Kim,elena.kim@outlook.com,+919097127880,Agile Agency,53,$6.15,MQL
+28-Jun-2025,E-commerce Brand,LinkedIn,Q1_Promo,linkedin,social,Q1_Promo,Ngozi Taylor,ngozi.taylor@company.net,+919028402941,Urban Builders,44,$49.42,Disqualified
+2024-09-07,Local Clinic,LinkedIn,Retargeting_30d,google,social,Q1_Promo,Chidi Smith,chidi.smith@yahoo.com,+919738701020,Acme Corp,30,$25.33,SQL
+17/04/2025,Local Clinic,Organic,Q1_Promo,direct,social,Q1_Promo,Sneha Traore,sneha.traore@startup.io,+919923326148,Retail Giants,72,$30.83,Spam
+Yesterday,E-commerce Brand,Google Ads,Lookalike_1%,direct,cpc,Q1_Promo,Hiroshi Hassan,hiroshi.hassan@gmail.com,+919067933258,Ecom Express,13,$41.57,
+"Mar 08, 2024",E-commerce Brand,Organic,Lookalike_1%,direct,social,Q1_Promo,Valentina Wang,valentina.wang@company.net,+919010396997,NextGen IT,75,$43.28,MQL
+Yesterday,E-commerce Brand,Referral,Retargeting_30d,facebook,social,Q1_Promo,Emily Miller,emily.miller@agency.media,+919023030657,Sunrise Foods,22,$10.30,SQL
+Yesterday,E-commerce Brand,Referral,Retargeting_30d,facebook,social,Q1_Promo,Emily Miller,emily.miller@agency.media,+919023030657,Sunrise Foods,22,$10.30,SQL
+Yesterday,SaaS Startup,Referral,Retargeting_30d,linkedin,social,Q1_Promo,Vikram Suzuki,vikram.suzuki@techsolutions.in,+919147026164,NextGen IT,95,$29.93,SQL
+"Mar 21, 2024",Local Clinic,Referral,Lookalike_1%,direct,cpc,Q1_Promo,Olivia Patel,olivia.patel@university.edu,+919367383496,Agile Agency,68,$39.91,SQL
+"Nov 10, 2023",Local Clinic,LinkedIn,Retargeting_30d,linkedin,cpc,Q1_Promo,Aisha Gonzalez,aisha.gonzalez@company.net,+919376821690,Global Logistics,26,$6.95,SQL
+2025.07.11,Local Clinic,LinkedIn,Q1_Promo,google,cpc,Q1_Promo,Arjun Yadav,arjun.yadav@gmail.com,+919741778412,NextGen IT,67,$21.45,Disqualified
+02/03/2025,Local Clinic,Google Ads,Retargeting_30d,google,social,Q1_Promo,Ngozi Mensah,ngozi.mensah@hotmail.com,+919550557882,WebWorks,67,$43.69,MQL
+InvalidDate,SaaS Startup,Meta Ads,Retargeting_30d,google,cpc,Q1_Promo,Yuki Pillai,yuki.pillai@builders.co.in,+919801198755,City Hospital,34,$26.11,Spam
+Yesterday,E-commerce Brand,Organic,Retargeting_30d,facebook,email,Q1_Promo,Kwame Lopez,kwame.lopez@hotmail.com,+919304829325,Paramount Health,72,$23.94,Spam
+2025-04-07,Local Clinic,Meta Ads,Retargeting_30d,google,cpc,Q1_Promo,Arjun Doe,arjun.doe@university.edu,+919402244430,Pioneer Manufacturing,73,$28.20,Spam
+2025.09.10,SaaS Startup,Organic,Retargeting_30d,direct,cpc,Q1_Promo,Min-jun Kumar,min-jun.kumar@outlook.com,+919970587055,Agile Agency,54,$41.31,MQL
+2023-06-24,SaaS Startup,Organic,Q1_Promo,google,email,Q1_Promo,Camila Davis,camila.davis@yahoo.co.in,+919841900348,TechNova,83,$20.60,
+InvalidDate,Local Clinic,Meta Ads,Lookalike_1%,facebook,email,Q1_Promo,Sven Davis,sven.davis@protonmail.com,+919774959972,Ecom Express,21,$45.95,SQL
+Yesterday,SaaS Startup,Organic,Q1_Promo,facebook,email,Q1_Promo,Anita Reddy,anita.reddy@aol.com,+919928051794,Acme Corp,83,$17.57,Disqualified
+Today,E-commerce Brand,Google Ads,Q1_Promo,google,social,Q1_Promo,William Zhang,william.zhang@outlook.com,+919435988688,BlueOcean,25,$21.73,MQL
+13-Nov-2024,Local Clinic,Organic,Lookalike_1%,facebook,cpc,Q1_Promo,Elena Bose,elena.bose@logistics.com,+919536416892,Sunrise Foods,87,$35.40,Disqualified
+,E-commerce Brand,Google Ads,Q1_Promo,direct,cpc,Q1_Promo,Tariro Garcia,tariro.garcia@outlook.com,+919265757542,NextGen IT,42,$7.05,Spam
+Yesterday,Local Clinic,Meta Ads,Retargeting_30d,google,cpc,Q1_Promo,Min-jun Miller,min-jun.miller@agency.media,+919428347895,FinServe Group,21,$17.09,Spam
+2024.05.18,E-commerce Brand,Google Ads,Retargeting_30d,facebook,social,Q1_Promo,David Jain,david.jain@aol.com,+919031687330,Quantum Systems,75,$31.83,SQL
+06/19/2023,SaaS Startup,Google Ads,Retargeting_30d,direct,email,Q1_Promo,Khalid Ali,khalid.ali@corp.org,+919052240851,WebWorks,57,$45.75,MQL
+InvalidDate,E-commerce Brand,Referral,Retargeting_30d,direct,cpc,Q1_Promo,Rajesh Ali,rajesh.ali@icloud.com,+919934792544,Pioneer Manufacturing,16,$23.11,MQL
+Yesterday,Local Clinic,Meta Ads,Q1_Promo,google,cpc,Q1_Promo,Wei Santos,wei.santos@enterprise.co,+919451697350,Sunrise Foods,21,$39.05,Spam
+2023-04-12,E-commerce Brand,Google Ads,Retargeting_30d,linkedin,email,Q1_Promo,Seo-yeon Jones,seo-yeon.jones@builders.co.in,+919915161458,Paramount Health,30,$8.93,Disqualified
+Today,Local Clinic,Referral,Lookalike_1%,facebook,social,Q1_Promo,Layla Das,layla.das@logistics.com,+919696621603,City Hospital,96,$25.89,Spam
+Yesterday,E-commerce Brand,LinkedIn,Lookalike_1%,linkedin,social,Q1_Promo,Omar Johnson,omar.johnson@company.net,+919464495145,Healthcare Partners,32,$28.76,
+2023-11-11,E-commerce Brand,Organic,Lookalike_1%,facebook,cpc,Q1_Promo,Aisha Davis,aisha.davis@university.edu,+919285656545,Stellar Services,27,$42.27,
+10-Nov-2023,Local Clinic,LinkedIn,Q1_Promo,direct,social,Q1_Promo,Ravi Rodriguez,ravi.rodriguez@university.edu,+919502956228,TechNova,75,$18.24,SQL
+2025-05-06,SaaS Startup,Referral,Lookalike_1%,facebook,social,Q1_Promo,Riya Park,riya.park@builders.co.in,+919950512087,Metro Properties,52,$46.39,Spam
+Yesterday,SaaS Startup,Meta Ads,Retargeting_30d,google,social,Q1_Promo,Ravi Zhang,ravi.zhang@yahoo.com,+919274125178,Skyline Construction,86,$14.48,Spam
+2024.11.29,SaaS Startup,LinkedIn,Q1_Promo,facebook,email,Q1_Promo,Sneha Nair,sneha.nair@corp.org,+919208303893,Global Logistics,76,$26.28,MQL
+2024.05.12,Local Clinic,Google Ads,Lookalike_1%,direct,email,Q1_Promo,Mohamed Saleh,mohamed.saleh@yahoo.com,+919935681961,Sunrise Foods,40,$45.31,
+01-Jan-2023,E-commerce Brand,Google Ads,Lookalike_1%,google,cpc,Q1_Promo,Vivek Gupta,vivek.gupta@outlook.com,+919918359591,Metro Properties,11,$12.47,Spam
+"Nov 24, 2024",SaaS Startup,Meta Ads,Lookalike_1%,facebook,cpc,Q1_Promo,Sarah Hassan,sarah.hassan@hospital.org,+919675719214,FinServe Group,98,$31.20,MQL
+,SaaS Startup,Organic,Retargeting_30d,linkedin,cpc,Q1_Promo,Valentina Miller,valentina.miller@outlook.com,+919582585896,Healthcare Partners,74,$49.66,Spam
+Today,E-commerce Brand,Google Ads,Q1_Promo,linkedin,social,Q1_Promo,Khalid Santos,khalid.santos@corp.org,+919483029634,NextGen IT,79,$6.97,MQL
+01/04/2024,E-commerce Brand,Organic,Lookalike_1%,google,email,Q1_Promo,Olivia Nair,olivia.nair@agency.media,+919434875644,Healthcare Partners,85,$38.91,Spam
+Yesterday,SaaS Startup,Meta Ads,Lookalike_1%,facebook,social,Q1_Promo,Aditya Tanaka,aditya.tanaka@protonmail.com,+919545118579,Global Logistics,82,$22.61,Spam
+12-Aug-2023,E-commerce Brand,LinkedIn,Q1_Promo,facebook,social,Q1_Promo,James Okafor,james.okafor@consulting.biz,+919996042827,FinServe Group,29,$34.69,Spam
+12/11/2023,SaaS Startup,Meta Ads,Q1_Promo,google,email,Q1_Promo,Emily Yang,emily.yang@consulting.biz,+919366548541,WebWorks,93,$10.54,MQL
+11/05/2023,E-commerce Brand,Referral,Retargeting_30d,linkedin,email,Q1_Promo,Khalid Li,khalid.li@gmail.com,+919481012182,WebWorks,50,$30.68,SQL
+,SaaS Startup,LinkedIn,Retargeting_30d,google,social,Q1_Promo,Neha Li,neha.li@hospital.org,+919831930332,Metro Properties,50,$7.26,Disqualified
+2025.08.21,SaaS Startup,Organic,Q1_Promo,facebook,social,Q1_Promo,Kofi Li,kofi.li@enterprise.co,+919275525189,Zenith Enterprises,39,$19.80,Spam
+,E-commerce Brand,Referral,Q1_Promo,facebook,cpc,Q1_Promo,Olivia Davis,olivia.davis@corp.org,+919966812009,Quantum Systems,73,$27.88,Spam
+InvalidDate,Local Clinic,Google Ads,Q1_Promo,direct,cpc,Q1_Promo,Kofi Lee,kofi.lee@outlook.com,+919394204330,Global Logistics,95,$13.65,MQL
+2025.05.25,SaaS Startup,Google Ads,Retargeting_30d,facebook,email,Q1_Promo,Chidi Liu,chidi.liu@startup.io,+919275558264,Metro Properties,28,$38.13,MQL
+14/10/2023,E-commerce Brand,LinkedIn,Retargeting_30d,google,cpc,Q1_Promo,Kavita Perez,kavita.perez@enterprise.co,+919312097922,Stellar Services,37,$9.89,MQL
+,E-commerce Brand,LinkedIn,Lookalike_1%,direct,email,Q1_Promo,Santiago Jones,santiago.jones@gmail.com,+919116991611,Quantum Systems,44,$8.60,MQL
+15-Mar-2025,E-commerce Brand,Referral,Retargeting_30d,direct,email,Q1_Promo,Amanda Das,amanda.das@enterprise.co,+919671239520,Ecom Express,22,$16.80,Spam
+15-Mar-2025,E-commerce Brand,Referral,Retargeting_30d,direct,email,Q1_Promo,Amanda Das,amanda.das@enterprise.co,+919671239520,Ecom Express,22,$16.80,Spam
+,E-commerce Brand,Organic,Lookalike_1%,direct,email,Q1_Promo,Lucia Santos,lucia.santos@protonmail.com,+919891701719,Global Logistics,37,$12.11,Disqualified
+Today,E-commerce Brand,LinkedIn,Lookalike_1%,direct,email,Q1_Promo,Mohamed Wang,mohamed.wang@gmail.com,+919596836674,NextGen IT,86,$35.08,SQL
+,Local Clinic,Referral,Lookalike_1%,facebook,email,Q1_Promo,Karthik Nair,karthik.nair@aol.com,+919787147359,Metro Properties,90,$18.93,Disqualified
+21-Apr-2025,SaaS Startup,Google Ads,Q1_Promo,linkedin,cpc,Q1_Promo,Seo-yeon Singh,seo-yeon.singh@logistics.com,+919825766859,WebWorks,57,$11.10,
+24-Sep-2025,E-commerce Brand,Meta Ads,Q1_Promo,facebook,cpc,Q1_Promo,Emily Lee,emily.lee@corp.org,+919399460818,Zenith Enterprises,14,$26.52,Disqualified
+InvalidDate,Local Clinic,Organic,Q1_Promo,linkedin,social,Q1_Promo,Wei Park,wei.park@university.edu,+919004336787,Paramount Health,20,$15.58,SQL
+2023-12-20,E-commerce Brand,Referral,Q1_Promo,direct,email,Q1_Promo,Anita Yadav,anita.yadav@techsolutions.in,+919215448724,Metro Properties,29,$37.50,
+2025.03.04,E-commerce Brand,Google Ads,Retargeting_30d,direct,cpc,Q1_Promo,Emily Zhang,emily.zhang@outlook.com,+919359251178,DataFlow,24,$10.80,SQL
+2024.03.06,E-commerce Brand,LinkedIn,Retargeting_30d,facebook,cpc,Q1_Promo,Rajesh Nair,rajesh.nair@builders.co.in,+919419884542,Global Logistics,77,$19.31,SQL
+03/06/2024,Local Clinic,Referral,Lookalike_1%,google,email,Q1_Promo,Aditya Reddy,aditya.reddy@outlook.com,+919525563309,Stellar Services,59,$34.04,Spam
+08/04/2023,E-commerce Brand,Google Ads,Retargeting_30d,facebook,cpc,Q1_Promo,Priya Jain,priya.jain@builders.co.in,+919383322076,FinServe Group,52,$26.94,
+02-Dec-2024,E-commerce Brand,Meta Ads,Q1_Promo,direct,email,Q1_Promo,Anita Ali,anita.ali@hotmail.com,+919322253112,Quantum Systems,26,$22.14,Disqualified
+Yesterday,SaaS Startup,Google Ads,Lookalike_1%,facebook,cpc,Q1_Promo,John Chen,john.chen@aol.com,+919700530243,Retail Giants,35,$9.18,SQL
+Yesterday,Local Clinic,Organic,Retargeting_30d,linkedin,social,Q1_Promo,David Jones,david.jones@agency.media,+919038609390,FinServe Group,20,$38.78,Spam
+2024.01.02,SaaS Startup,Referral,Lookalike_1%,direct,cpc,Q1_Promo,Kavita Li,kavita.li@corp.org,+919320734124,Healthcare Partners,84,$22.29,
+29/01/2023,SaaS Startup,Google Ads,Retargeting_30d,google,cpc,Q1_Promo,Vivek Doe,vivek.doe@aol.com,+919225769467,Stellar Services,52,$10.49,Disqualified
+01/03/2023,SaaS Startup,LinkedIn,Retargeting_30d,linkedin,cpc,Q1_Promo,Kwame Ndiaye,kwame.ndiaye@icloud.com,+919184887439,Agile Agency,80,$41.68,
+,SaaS Startup,Meta Ads,Q1_Promo,direct,cpc,Q1_Promo,Kwame Ibrahim,kwame.ibrahim@hotmail.com,+919866370095,BlueOcean,13,$18.42,MQL
+Yesterday,E-commerce Brand,Referral,Q1_Promo,facebook,social,Q1_Promo,Seo-yeon Williams,seo-yeon.williams@company.net,+919412962826,TechNova,65,$11.51,
+Yesterday,E-commerce Brand,LinkedIn,Q1_Promo,facebook,email,Q1_Promo,Riya Kumar,riya.kumar@yahoo.com,+919790004505,FinServe Group,34,$5.81,Disqualified
+,SaaS Startup,Referral,Lookalike_1%,direct,cpc,Q1_Promo,Zahra Miller,zahra.miller@logistics.com,+919258687705,Paramount Health,56,$17.83,Spam
+18/07/2024,E-commerce Brand,Google Ads,Q1_Promo,linkedin,social,Q1_Promo,Lars Ndiaye,lars.ndiaye@agency.media,+919088787047,Ecom Express,75,$23.74,MQL
+"Sep 07, 2023",SaaS Startup,LinkedIn,Q1_Promo,direct,email,Q1_Promo,Suresh Takahashi,suresh.takahashi@icloud.com,+919024458320,TechNova,56,$36.96,SQL
+14/02/2024,SaaS Startup,Google Ads,Lookalike_1%,google,cpc,Q1_Promo,Anjali Yadav,anjali.yadav@startup.io,+919100904335,TechNova,85,$13.11,Spam
+06/15/2023,E-commerce Brand,Google Ads,Retargeting_30d,linkedin,email,Q1_Promo,Aditya Williams,aditya.williams@enterprise.co,+919870165993,Healthcare Partners,55,$45.88,Spam
+"Feb 17, 2024",E-commerce Brand,LinkedIn,Q1_Promo,direct,social,Q1_Promo,Arjun Chauhan,arjun.chauhan@consulting.biz,+919071817438,NextGen IT,23,$38.45,Spam
+"Mar 15, 2025",E-commerce Brand,Organic,Lookalike_1%,google,cpc,Q1_Promo,Diego Santos,diego.santos@startup.io,+919945740544,City Hospital,22,$25.95,SQL
+InvalidDate,SaaS Startup,Google Ads,Q1_Promo,facebook,cpc,Q1_Promo,Khalid Perez,khalid.perez@gmail.com,+919056436422,Agile Agency,38,$15.73,Spam
+08/18/2023,Local Clinic,LinkedIn,Retargeting_30d,facebook,cpc,Q1_Promo,Olivia Ndiaye,olivia.ndiaye@hotmail.com,+919473241665,Zenith Enterprises,50,$31.19,SQL
+13/03/2024,SaaS Startup,Google Ads,Retargeting_30d,direct,cpc,Q1_Promo,Carlos Taylor,carlos.taylor@icloud.com,+919892600544,Acme Corp,14,$46.37,SQL
+2023.03.23,Local Clinic,Referral,Lookalike_1%,facebook,social,Q1_Promo,Seo-yeon Anderson,seo-yeon.anderson@yahoo.co.in,+919731143425,BlueOcean,27,$21.19,Spam
+03/02/2025,E-commerce Brand,Google Ads,Retargeting_30d,linkedin,email,Q1_Promo,David Lopez,david.lopez@startup.io,+919377044400,NextGen IT,47,$23.35,Spam

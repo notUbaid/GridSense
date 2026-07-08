@@ -1,49 +1,81 @@
-Company Name,Contact Person,Designation,Department,Email,Direct Line,Factory Location,Requirement,Budget (Annual),Current Vendor,Meeting Status,Sales Remarks
-SteelWorks Ltd,Rahul Reddy,Purchase Manager,Procurement,rahul.reddy@hotmail.com,9858925819,Pune Industrial Area,Spare Parts,> 1Cr,None,Completed,Price sensitive
-Global Auto Parts,Suresh Singh,Director,Operations,suresh.singh@startup.io,9324670411,Bangalore Industrial Area,Maintenance Services,> 1Cr,Local Supplier,Scheduled,Wants credit period of 60 days
-Precision Tools,John Doe,Plant Head,Management,john.doe@hotmail.com,9202905338,Ahmedabad Industrial Area,CNC Machines,< 10L,Vendor A,Scheduled,
-Apex Manufacturing,Raj Brown,Purchase Manager,Procurement,raj.brown@corp.org,9888443429,Chennai Industrial Area,Spare Parts,10-50L,Importing,Awaiting Quote,
-Apex Manufacturing,Amit Doe,Purchase Manager,Management,amit.doe@corp.org,9092527543,Pune Industrial Area,Maintenance Services,> 1Cr,None,Lost to Competitor,Wants credit period of 60 days
-Global Auto Parts,Sarah Brown,Engineer,Engineering,sarah.brown@enterprise.co,9390169675,Hyderabad Industrial Area,Raw materials,> 1Cr,Importing,Scheduled,
-SteelWorks Ltd,Wei Rao,Director,Engineering,wei.rao@startup.io,9276522757,Delhi Industrial Area,Maintenance Services,50L - 1Cr,None,Completed,Wants credit period of 60 days
-SteelWorks Ltd,Priya Sharma,Plant Head,Procurement,priya.sharma@logistics.com,9488507563,Kolkata Industrial Area,Maintenance Services,< 10L,Local Supplier,Awaiting Quote,Very strict on quality
-Heavy Machinery Inc,John Kumar,Engineer,Procurement,john.kumar@yahoo.com,9455956921,Hyderabad Industrial Area,CNC Machines,< 10L,None,Completed,Send catalog again
-Precision Tools,Sarah Ali,Director,Operations,sarah.ali@yahoo.com,9256689546,Delhi Industrial Area,CNC Machines,> 1Cr,Vendor A,Scheduled,Send catalog again
-Precision Tools,Vikram Wang,Procurement Head,Operations,vikram.wang@hotmail.com,9447167046,Hyderabad Industrial Area,Maintenance Services,50L - 1Cr,Importing,Completed,Wants credit period of 60 days
-Apex Manufacturing,Wei Das,Plant Head,Management,wei.das@gmail.com,9564772564,Kolkata Industrial Area,Spare Parts,10-50L,Importing,Scheduled,Very strict on quality
-Global Auto Parts,Diana Li,Purchase Manager,Engineering,diana.li@enterprise.co,9622376396,Ahmedabad Industrial Area,Raw materials,50L - 1Cr,Vendor A,Scheduled,
-Heavy Machinery Inc,Alice Brown,Director,Engineering,alice.brown@startup.io,9072417869,Chennai Industrial Area,Raw materials,50L - 1Cr,Local Supplier,Scheduled,Price sensitive
-Heavy Machinery Inc,Raj Reddy,Engineer,Operations,raj.reddy@gmail.com,9878990995,Bangalore Industrial Area,CNC Machines,< 10L,Importing,Completed,Very strict on quality
-Heavy Machinery Inc,Sneha Ali,Engineer,Operations,sneha.ali@outlook.com,9678643692,Hyderabad Industrial Area,Maintenance Services,50L - 1Cr,Vendor A,Awaiting Quote,Send catalog again
-SteelWorks Ltd,Wei Rao,Engineer,Operations,wei.rao@outlook.com,9281281096,Hyderabad Industrial Area,Raw materials,< 10L,Vendor A,Completed,Wants credit period of 60 days
-Heavy Machinery Inc,Ravi Rao,Purchase Manager,Procurement,ravi.rao@techsolutions.in,9795678981,Chennai Industrial Area,Spare Parts,< 10L,Vendor A,Awaiting Quote,Very strict on quality
-SteelWorks Ltd,Wei Hassan,Engineer,Procurement,wei.hassan@startup.io,9112171885,Pune Industrial Area,Raw materials,50L - 1Cr,Local Supplier,Awaiting Quote,Send catalog again
-SteelWorks Ltd,Ravi Hassan,Plant Head,Engineering,ravi.hassan@logistics.com,9153146892,Mumbai Industrial Area,CNC Machines,10-50L,Vendor A,Completed,Price sensitive
-SteelWorks Ltd,Mohamed Wang,Plant Head,Operations,mohamed.wang@enterprise.co,9523739503,Chennai Industrial Area,Raw materials,> 1Cr,None,Scheduled,Very strict on quality
-SteelWorks Ltd,Diana Li,Procurement Head,Operations,diana.li@gmail.com,9034370380,Bangalore Industrial Area,CNC Machines,> 1Cr,Importing,Scheduled,Very strict on quality
-Apex Manufacturing,Chen Verma,Procurement Head,Procurement,chen.verma@yahoo.com,9938786506,Bangalore Industrial Area,Maintenance Services,> 1Cr,Importing,Completed,Wants credit period of 60 days
-Global Auto Parts,Ravi Singh,Engineer,Engineering,ravi.singh@enterprise.co,9463926980,Bangalore Industrial Area,Maintenance Services,10-50L,None,Lost to Competitor,Price sensitive
-Apex Manufacturing,Rahul Bose,Director,Engineering,rahul.bose@yahoo.com,9024899806,Ahmedabad Industrial Area,Spare Parts,> 1Cr,Vendor A,Awaiting Quote,Very strict on quality
-Apex Manufacturing,Sunil Smith,Purchase Manager,Procurement,sunil.smith@techsolutions.in,9911979682,Bangalore Industrial Area,Spare Parts,10-50L,Local Supplier,Scheduled,Very strict on quality
-Apex Manufacturing,Amit Rao,Purchase Manager,Operations,amit.rao@logistics.com,9763295465,Ahmedabad Industrial Area,Maintenance Services,10-50L,None,Scheduled,Very strict on quality
-Apex Manufacturing,Vikram Reddy,Plant Head,Procurement,vikram.reddy@techsolutions.in,9130709858,Kolkata Industrial Area,Raw materials,< 10L,None,Awaiting Quote,Send catalog again
-Global Auto Parts,Mohamed Johnson,Purchase Manager,Procurement,mohamed.johnson@corp.org,9390736986,Bangalore Industrial Area,Spare Parts,> 1Cr,Local Supplier,Lost to Competitor,
-Precision Tools,Raj Ali,Director,Operations,raj.ali@gmail.com,9576704610,Pune Industrial Area,Maintenance Services,> 1Cr,Vendor A,Completed,Wants credit period of 60 days
-Apex Manufacturing,Diana Wang,Engineer,Engineering,diana.wang@yahoo.com,9140693342,Bangalore Industrial Area,Spare Parts,< 10L,None,Completed,Send catalog again
-Apex Manufacturing,Chen Ali,Engineer,Management,chen.ali@enterprise.co,9820003498,Hyderabad Industrial Area,Spare Parts,10-50L,Vendor A,Lost to Competitor,
-Precision Tools,Diana Doe,Purchase Manager,Engineering,diana.doe@hotmail.com,9917606108,Hyderabad Industrial Area,Spare Parts,< 10L,Importing,Completed,Send catalog again
-Apex Manufacturing,Anita Verma,Plant Head,Management,anita.verma@gmail.com,9101423032,Bangalore Industrial Area,Maintenance Services,50L - 1Cr,Vendor A,Scheduled,Wants credit period of 60 days
-SteelWorks Ltd,Sarah Singh,Engineer,Procurement,sarah.singh@logistics.com,9634649836,Mumbai Industrial Area,CNC Machines,10-50L,Vendor A,Lost to Competitor,Wants credit period of 60 days
-Precision Tools,Diana Brown,Engineer,Engineering,diana.brown@logistics.com,9734580624,Pune Industrial Area,Raw materials,50L - 1Cr,Vendor A,Awaiting Quote,Very strict on quality
-Heavy Machinery Inc,Sneha Verma,Purchase Manager,Operations,sneha.verma@company.net,9458080748,Bangalore Industrial Area,Spare Parts,50L - 1Cr,Vendor A,Awaiting Quote,Very strict on quality
-Precision Tools,Chen Patel,Plant Head,Management,chen.patel@techsolutions.in,9264893575,Bangalore Industrial Area,Spare Parts,> 1Cr,None,Lost to Competitor,Price sensitive
-Global Auto Parts,Alice Verma,Engineer,Management,alice.verma@techsolutions.in,9725665555,Hyderabad Industrial Area,CNC Machines,< 10L,Importing,Scheduled,Wants credit period of 60 days
-SteelWorks Ltd,Sunil Bose,Purchase Manager,Management,sunil.bose@outlook.com,9651562821,Kolkata Industrial Area,Maintenance Services,50L - 1Cr,Vendor A,Completed,
-Global Auto Parts,Sneha Johnson,Engineer,Procurement,sneha.johnson@yahoo.com,9779549285,Chennai Industrial Area,Spare Parts,10-50L,Local Supplier,Awaiting Quote,Price sensitive
-Apex Manufacturing,Ravi Menon,Procurement Head,Engineering,ravi.menon@company.net,9477369512,Hyderabad Industrial Area,Spare Parts,> 1Cr,Vendor A,Awaiting Quote,Wants credit period of 60 days
-Apex Manufacturing,Mohamed Smith,Engineer,Operations,mohamed.smith@company.net,9105144009,Chennai Industrial Area,Maintenance Services,< 10L,Local Supplier,Lost to Competitor,Very strict on quality
-SteelWorks Ltd,Neha Verma,Engineer,Engineering,neha.verma@enterprise.co,9180928412,Ahmedabad Industrial Area,Raw materials,> 1Cr,Vendor A,Completed,Wants credit period of 60 days
-Precision Tools,Sarah Bose,Plant Head,Management,sarah.bose@techsolutions.in,9911388850,Hyderabad Industrial Area,Raw materials,> 1Cr,Importing,Lost to Competitor,
-Heavy Machinery Inc,Priya Rao,Plant Head,Management,priya.rao@yahoo.com,9267423324,Hyderabad Industrial Area,Maintenance Services,> 1Cr,Importing,Scheduled,
-Global Auto Parts,Anjali Reddy,Purchase Manager,Management,anjali.reddy@techsolutions.in,9067868993,Bangalore Industrial Area,CNC Machines,> 1Cr,Local Supplier,Awaiting Quote,Very strict on quality
-Precision Tools,Alice Reddy,Engineer,Procurement,alice.reddy@logistics.com,9304868943,Pune Industrial Area,Raw materials,50L - 1Cr,Vendor A,Awaiting Quote,
+Customer Organization,Contact Person,Designation,Department,Email,Direct Line,Factory Location,Requirement,Budget (Annual),Current Vendor,Meeting Status,Sales Notes
+Precision Tools,Karthik Gupta,Procurement Head,Operations,karthik.gupta@outlook.com,+919802168167,New York Industrial Area,Raw materials,< 10L,None,Scheduled,Asked to call after 6 PM
+SteelWorks Ltd,Kofi Martinez,Procurement Head,Engineering,kofi.martinez@yahoo.co.in,+919417196048,Singapore Industrial Area,Maintenance Services,> 1Cr,None,Scheduled,Number belongs to receptionist
+Global Auto Parts,Layla Perez,Purchase Manager,Procurement,layla.perez@university.edu,+919246672489,Bangalore Industrial Area,Spare Parts,10-50L,Importing,Lost to Competitor,Wrong number
+Heavy Machinery Inc,Tariq Kumar,Plant Head,Operations,tariq.kumar@consulting.biz,+919040527165,New York Industrial Area,Raw materials,> 1Cr,Importing,Scheduled,Will visit with spouse
+Apex Manufacturing,Tariq Reddy,Plant Head,Management,tariq.reddy@yahoo.co.in,+919584157962,London Industrial Area,Maintenance Services,< 10L,None,Lost to Competitor,Awaiting confirmation
+Global Auto Parts,Santiago Hussein,Procurement Head,Operations,santiago.hussein@university.edu,+919192361300,Sydney Industrial Area,Raw materials,10-50L,Local Supplier,Lost to Competitor,Send catalog again
+Global Auto Parts,Chen Mahmoud,Plant Head,Management,chen.mahmoud@logistics.com,+919305920725,Hyderabad Industrial Area,Maintenance Services,> 1Cr,Local Supplier,Completed,Hot lead
+SteelWorks Ltd,Anjali Ali,Procurement Head,Engineering,anjali.ali@gmail.com,+919382216145,Bangalore Industrial Area,CNC Machines,10-50L,None,Lost to Competitor,Sent pricing over WhatsApp
+Heavy Machinery Inc,Diego Silva,Procurement Head,Management,diego.silva@company.net,+919893695568,Kolkata Industrial Area,Maintenance Services,> 1Cr,Vendor A,Lost to Competitor,Awaiting confirmation
+SteelWorks Ltd,Takumi Silva,Plant Head,Engineering,takumi.silva@consulting.biz,+919370090710,New York Industrial Area,CNC Machines,50L - 1Cr,None,Completed,Wants credit period of 60 days
+SteelWorks Ltd,Suresh Bose,Director,Procurement,suresh.bose@agency.media,+919308611126,Singapore Industrial Area,CNC Machines,< 10L,None,Completed,Email bounced
+SteelWorks Ltd,Suresh Bose,Director,Procurement,suresh.bose@agency.media,+919308611126,Singapore Industrial Area,CNC Machines,< 10L,None,Completed,Email bounced
+Global Auto Parts,Amina Lee,Plant Head,Operations,amina.lee@gmail.com,+919669304200,Singapore Industrial Area,Spare Parts,10-50L,Vendor A,Scheduled,Send catalog again
+Precision Tools,Amina Menon,Procurement Head,Operations,amina.menon@corp.org,+919698619086,Mumbai Industrial Area,Maintenance Services,10-50L,None,Scheduled,Previous enquiry closed
+Precision Tools,Sneha Perez,Procurement Head,Procurement,sneha.perez@startup.io,+919044485494,Mumbai Industrial Area,Raw materials,50L - 1Cr,Importing,Awaiting Quote,Sale closed
+Heavy Machinery Inc,Priya Santos,Plant Head,Operations,priya.santos@techsolutions.in,+919377338375,Chennai Industrial Area,Spare Parts,> 1Cr,Vendor A,Lost to Competitor,FUP
+SteelWorks Ltd,Sneha Davis,Purchase Manager,Operations,sneha.davis@builders.co.in,+919467407815,Bangalore Industrial Area,Spare Parts,> 1Cr,Local Supplier,Completed,Hot lead
+Precision Tools,Carlos Garcia,Engineer,Management,carlos.garcia@logistics.com,+919743804952,Sydney Industrial Area,CNC Machines,> 1Cr,None,Awaiting Quote,Number belongs to receptionist
+Precision Tools,Neha Ali,Procurement Head,Procurement,neha.ali@builders.co.in,+919298560306,San Francisco Industrial Area,Spare Parts,> 1Cr,Importing,Scheduled,Requested virtual demo
+Apex Manufacturing,Tariq Muller,Plant Head,Operations,tariq.muller@company.net,+919238923766,Mumbai Industrial Area,Spare Parts,10-50L,Importing,Completed,Prefers email communication
+Apex Manufacturing,Tariq Muller,Plant Head,Operations,tariq.muller@company.net,+919238923766,Mumbai Industrial Area,Spare Parts,10-50L,Importing,Completed,Prefers email communication
+Global Auto Parts,Rahul Miller,Plant Head,Operations,rahul.miller@outlook.com,+919779523114,Ahmedabad Industrial Area,Spare Parts,> 1Cr,Local Supplier,Lost to Competitor,Interested in 3BHK
+Apex Manufacturing,Tariq Jones,Procurement Head,Management,tariq.jones@enterprise.co,+919400707067,Toronto Industrial Area,Spare Parts,10-50L,None,Lost to Competitor,Decision maker travelling
+Apex Manufacturing,Tariq Jones,Procurement Head,Management,tariq.jones@enterprise.co,+919400707067,Toronto Industrial Area,Spare Parts,10-50L,None,Lost to Competitor,Decision maker travelling
+Precision Tools,Tariq Yadav,Plant Head,Operations,tariq.yadav@logistics.com,+919837073581,Mumbai Industrial Area,CNC Machines,> 1Cr,None,Awaiting Quote,Not picking up
+Heavy Machinery Inc,Vikram Wang,Engineer,Procurement,vikram.wang@hospital.org,+919111133066,Berlin Industrial Area,Raw materials,> 1Cr,Vendor A,Lost to Competitor,Decision maker travelling
+SteelWorks Ltd,Amanda Williams,Procurement Head,Procurement,amanda.williams@hospital.org,+919821910978,Chennai Industrial Area,Maintenance Services,50L - 1Cr,Local Supplier,Completed,Asked to call after 6 PM
+SteelWorks Ltd,Amanda Williams,Procurement Head,Procurement,amanda.williams@hospital.org,+919821910978,Chennai Industrial Area,Maintenance Services,50L - 1Cr,Local Supplier,Completed,Asked to call after 6 PM
+Heavy Machinery Inc,Lars Hussein,Procurement Head,Operations,lars.hussein@logistics.com,+919403085414,Delhi Industrial Area,CNC Machines,50L - 1Cr,None,Completed,Duplicate enquiry
+Precision Tools,Robert Jones,Engineer,Engineering,robert.jones@hospital.org,+919320397579,Sydney Industrial Area,CNC Machines,10-50L,Vendor A,Scheduled,FUP
+SteelWorks Ltd,Chidi Traore,Plant Head,Procurement,chidi.traore@hotmail.com,+919903657456,Tokyo Industrial Area,Spare Parts,50L - 1Cr,Vendor A,Scheduled,Decision maker travelling
+Apex Manufacturing,Lucia Silva,Director,Procurement,lucia.silva@aol.com,+919208906332,Bangalore Industrial Area,Spare Parts,10-50L,None,Lost to Competitor,Duplicate enquiry
+Heavy Machinery Inc,Anjali Verma,Plant Head,Management,anjali.verma@agency.media,+919342522500,Delhi Industrial Area,Maintenance Services,< 10L,None,Awaiting Quote,Loan discussion pending
+Precision Tools,Riya Reddy,Director,Procurement,riya.reddy@techsolutions.in,+919845227411,Bangalore Industrial Area,CNC Machines,10-50L,Importing,Lost to Competitor,Will visit with spouse
+Precision Tools,Neha Hussein,Plant Head,Procurement,neha.hussein@gmail.com,+919252583683,San Francisco Industrial Area,Spare Parts,> 1Cr,Vendor A,Scheduled,Requested brochure
+Precision Tools,Isabella Chauhan,Engineer,Engineering,isabella.chauhan@hotmail.com,+919412381440,Bangalore Industrial Area,Maintenance Services,10-50L,Importing,Completed,Wrong number
+Precision Tools,Isabella Chauhan,Engineer,Engineering,isabella.chauhan@hotmail.com,+919412381440,Bangalore Industrial Area,Maintenance Services,10-50L,Importing,Completed,Wrong number
+Heavy Machinery Inc,Valentina Saleh,Plant Head,Operations,valentina.saleh@techsolutions.in,+919799116288,Tokyo Industrial Area,Spare Parts,10-50L,Vendor A,Lost to Competitor,Price sensitive
+Global Auto Parts,John Suzuki,Purchase Manager,Procurement,john.suzuki@university.edu,+919204668096,Berlin Industrial Area,Maintenance Services,50L - 1Cr,None,Scheduled,Duplicate enquiry
+Precision Tools,Suresh Sharma,Procurement Head,Procurement,suresh.sharma@yahoo.co.in,+919415786722,Toronto Industrial Area,Raw materials,50L - 1Cr,Vendor A,Awaiting Quote,Requested brochure
+SteelWorks Ltd,Wei Gupta,Purchase Manager,Engineering,wei.gupta@outlook.com,+919701989479,Chennai Industrial Area,CNC Machines,< 10L,Vendor A,Scheduled,Works night shift
+Heavy Machinery Inc,Elena Takahashi,Engineer,Procurement,elena.takahashi@agency.media,+919802440273,San Francisco Industrial Area,Raw materials,50L - 1Cr,Vendor A,Lost to Competitor,Already spoke to spouse
+Heavy Machinery Inc,Seo-yeon Gonzalez,Plant Head,Procurement,seo-yeon.gonzalez@hospital.org,+919393123253,Mumbai Industrial Area,Maintenance Services,> 1Cr,Local Supplier,Awaiting Quote,DNC
+SteelWorks Ltd,Mateo Verma,Plant Head,Procurement,mateo.verma@logistics.com,+919135810060,Tokyo Industrial Area,Spare Parts,> 1Cr,None,Completed,Price sensitive
+Precision Tools,Sarah Yang,Plant Head,Engineering,sarah.yang@gmail.com,+919802285618,New York Industrial Area,CNC Machines,< 10L,Vendor A,Awaiting Quote,"Called 3 times, no response"
+SteelWorks Ltd,Fatima Das,Procurement Head,Engineering,fatima.das@logistics.com,+919391788584,Bangalore Industrial Area,CNC Machines,> 1Cr,None,Completed,Already spoke to spouse
+Global Auto Parts,Isabella Rodriguez,Director,Management,isabella.rodriguez@agency.media,+919279304732,Kolkata Industrial Area,Spare Parts,< 10L,Local Supplier,Lost to Competitor,PIC unavailable
+Precision Tools,Karthik Iyer,Purchase Manager,Procurement,karthik.iyer@corp.org,+919475255330,Dubai Industrial Area,CNC Machines,< 10L,Importing,Lost to Competitor,Not interested
+Heavy Machinery Inc,Lars Saleh,Procurement Head,Operations,lars.saleh@yahoo.co.in,+919427361593,Pune Industrial Area,Spare Parts,50L - 1Cr,Local Supplier,Scheduled,Already spoke to spouse
+Heavy Machinery Inc,Pooja Schmidt,Director,Engineering,pooja.schmidt@enterprise.co,+919351001304,Bangalore Industrial Area,Spare Parts,50L - 1Cr,Importing,Scheduled,Wrong number
+SteelWorks Ltd,Vikram Martinez,Engineer,Operations,vikram.martinez@outlook.com,+919067737410,Kolkata Industrial Area,Spare Parts,50L - 1Cr,Vendor A,Scheduled,Awaiting confirmation
+Heavy Machinery Inc,Neha Gupta,Engineer,Operations,neha.gupta@aol.com,+919205541378,Bangalore Industrial Area,Raw materials,< 10L,Importing,Awaiting Quote,Very strict on quality
+SteelWorks Ltd,Riya Sharma,Purchase Manager,Management,riya.sharma@techsolutions.in,+919592920759,Ahmedabad Industrial Area,Spare Parts,10-50L,Importing,Scheduled,Sent pricing over WhatsApp
+Heavy Machinery Inc,Vivek Smith,Engineer,Management,vivek.smith@gmail.com,+919792971298,Sydney Industrial Area,CNC Machines,< 10L,Vendor A,Lost to Competitor,Previous enquiry closed
+Global Auto Parts,Aisha Wang,Engineer,Engineering,aisha.wang@company.net,+919475676398,Mumbai Industrial Area,Maintenance Services,10-50L,None,Completed,Prefers email communication
+Precision Tools,Rahul Davis,Procurement Head,Management,rahul.davis@builders.co.in,+919890984781,Mumbai Industrial Area,CNC Machines,50L - 1Cr,Local Supplier,Lost to Competitor,"Called 3 times, no response"
+Global Auto Parts,Seo-yeon Hussein,Director,Operations,seo-yeon.hussein@outlook.com,+919040798953,Singapore Industrial Area,Raw materials,50L - 1Cr,Vendor A,Lost to Competitor,Awaiting confirmation
+Global Auto Parts,Yousef Traore,Engineer,Engineering,yousef.traore@gmail.com,+919649000322,Hyderabad Industrial Area,Raw materials,50L - 1Cr,None,Lost to Competitor,Number belongs to receptionist
+Heavy Machinery Inc,Tariq Wang,Engineer,Procurement,tariq.wang@aol.com,+919331167147,London Industrial Area,Spare Parts,< 10L,Vendor A,Scheduled,Sent pricing over WhatsApp
+SteelWorks Ltd,Kofi Wang,Plant Head,Operations,kofi.wang@yahoo.com,+919662354583,New York Industrial Area,Raw materials,10-50L,Vendor A,Completed,Requested virtual demo
+Heavy Machinery Inc,Sneha Schmidt,Engineer,Engineering,sneha.schmidt@university.edu,+919079689748,New York Industrial Area,Raw materials,10-50L,Vendor A,Awaiting Quote,Interested in 3BHK
+Precision Tools,Nour Doe,Director,Engineering,nour.doe@outlook.com,+919910565204,Berlin Industrial Area,Spare Parts,> 1Cr,Vendor A,Lost to Competitor,PIC unavailable
+Precision Tools,Anjali Jain,Procurement Head,Engineering,anjali.jain@aol.com,+919847456678,Hyderabad Industrial Area,Spare Parts,10-50L,Local Supplier,Awaiting Quote,Will visit with spouse
+SteelWorks Ltd,Chidi Garcia,Purchase Manager,Management,chidi.garcia@hotmail.com,+919434878203,Singapore Industrial Area,Raw materials,< 10L,None,Awaiting Quote,Already spoke to spouse
+Heavy Machinery Inc,Chen Ndiaye,Director,Management,chen.ndiaye@outlook.com,+919278899036,Hyderabad Industrial Area,Raw materials,50L - 1Cr,Vendor A,Lost to Competitor,Duplicate enquiry
+Heavy Machinery Inc,Elena Reddy,Purchase Manager,Operations,elena.reddy@hospital.org,+919416652260,Ahmedabad Industrial Area,CNC Machines,< 10L,Local Supplier,Awaiting Quote,Requested brochure
+Apex Manufacturing,Seo-yeon Muller,Procurement Head,Engineering,seo-yeon.muller@hotmail.com,+919390904648,Berlin Industrial Area,Spare Parts,> 1Cr,None,Scheduled,Very strict on quality
+Apex Manufacturing,Camila Wang,Procurement Head,Engineering,camila.wang@corp.org,+919453483808,Sydney Industrial Area,Maintenance Services,> 1Cr,None,Awaiting Quote,Needs GST invoice
+Apex Manufacturing,Riya Lee,Director,Procurement,riya.lee@university.edu,+919013260640,Kolkata Industrial Area,Maintenance Services,< 10L,None,Lost to Competitor,Email bounced
+Heavy Machinery Inc,Ngozi Wang,Plant Head,Operations,ngozi.wang@gmail.com,+919729536327,Pune Industrial Area,Spare Parts,> 1Cr,Importing,Completed,Number belongs to receptionist
+Global Auto Parts,Hiroshi Iyer,Engineer,Engineering,hiroshi.iyer@protonmail.com,+919329437408,Ahmedabad Industrial Area,Spare Parts,50L - 1Cr,Importing,Completed,Needs GST invoice
+Heavy Machinery Inc,Khalid Kumar,Director,Management,khalid.kumar@builders.co.in,+919857011959,Kolkata Industrial Area,Raw materials,< 10L,Importing,Awaiting Quote,Previous enquiry closed
+Precision Tools,Min-jun Kim,Director,Engineering,min-jun.kim@company.net,+919953535561,Chennai Industrial Area,Raw materials,10-50L,None,Scheduled,Duplicate enquiry
+Precision Tools,Amina Ibrahim,Director,Procurement,amina.ibrahim@builders.co.in,+919916154206,Berlin Industrial Area,Maintenance Services,> 1Cr,None,Lost to Competitor,Prefers email communication
+Apex Manufacturing,Zahra Smith,Procurement Head,Management,zahra.smith@yahoo.com,+919079761517,Tokyo Industrial Area,Maintenance Services,> 1Cr,Local Supplier,Scheduled,Wants credit period of 60 days
+Global Auto Parts,Kwame Schmidt,Director,Procurement,kwame.schmidt@company.net,+919594672942,Pune Industrial Area,CNC Machines,10-50L,None,Awaiting Quote,Requested brochure
+Global Auto Parts,Robert Verma,Engineer,Engineering,robert.verma@protonmail.com,+919643870049,Singapore Industrial Area,Spare Parts,< 10L,Vendor A,Lost to Competitor,Cold
+Heavy Machinery Inc,Seo-yeon Suzuki,Director,Procurement,seo-yeon.suzuki@startup.io,+919936152428,Hyderabad Industrial Area,CNC Machines,10-50L,Importing,Awaiting Quote,Follow up next Tuesday
+Heavy Machinery Inc,Seo-yeon Suzuki,Director,Procurement,seo-yeon.suzuki@startup.io,+919936152428,Hyderabad Industrial Area,CNC Machines,10-50L,Importing,Awaiting Quote,Follow up next Tuesday
+Global Auto Parts,Arjun Doe,Director,Engineering,arjun.doe@logistics.com,+919975589037,Singapore Industrial Area,Raw materials,> 1Cr,Importing,Scheduled,Not interested

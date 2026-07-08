@@ -1,52 +1,80 @@
-Enquiry Date,Patient Name,Guardian Name,Age/Gender,Department,Preferred Doctor,Appointment Date,Patient Email,Contact Number,Insurance Provider,Remarks
-19/06/2026,Anjali Li,,80/F,Orthopedics,Dr. Patel,Next Week,anjali.patel@outlook.com,91-97203-8328,HDFC Ergo,Follow up after tests
-22/06/2026,Kavita Reddy,,50/O,General Medicine,Any,Urgent,,971638383,,
-09/07/2026,Neha Johnson,Anjali Gupta,10/M,Neurology,Dr. Patel,,,+91 93133 6469,Star Health,Requires wheelchair
-26/06/2026,Suresh Patel,Neha Reddy,70/F,Cardiology,Any,,,+91 (952) 06-9851,HDFC Ergo,Requires wheelchair
-14/06/2026,Diana Jain,,6/O,Cardiology,Dr. Patel,Urgent,,96948 6192,HDFC Ergo,
-16/06/2026,Rahul Reddy,Sunil Hassan,20/M,Cardiology,Dr. Reddy,Next Week,rahul.patel@yahoo.com,+91 99670 7040,Star Health,Requires wheelchair
-10/06/2026,Amit Wang,Neha Ali,30/F,Neurology,Dr. Patel,Next Week,,+91 97516 4193,None,Second opinion
-09/07/2026,Arjun Jain,,22/M,Neurology,Any,Tomorrow,arjun.patel@startup.io,97092 9468,None,Follow up after tests
-06/07/2026,Sneha Li,Anjali Patel,26/F,General Medicine,Any,Next Week,,923039393,HDFC Ergo,
-10/06/2026,Suresh Sharma,,31/M,Orthopedics,Dr. Patel,Next Week,suresh.patel@enterprise.co,097952 2993,Star Health,Second opinion
-25/06/2026,Sunil Smith,Rahul Rao,30/O,Cardiology,Dr. Sharma,Next Week,sunil.patel@hotmail.com,91-95736-9049,,
-09/07/2026,Anita Ali,,27/M,General Medicine,Dr. Sharma,Urgent,anita.patel@yahoo.com,+91 94594 2519,HDFC Ergo,Follow up after tests
-24/06/2026,Aditya Smith,Ravi Wang,80/M,Orthopedics,Dr. Sharma,,aditya.patel@logistics.com,99846 4070,HDFC Ergo,Requires wheelchair
-01/07/2026,Raj Das,Charlie Iyer,33/O,General Medicine,Dr. Sharma,Next Week,raj.patel@logistics.com,+91 92262 2105,HDFC Ergo,Follow up after tests
-08/07/2026,Charlie Bose,Sunil Menon,77/F,Pediatrics,Dr. Patel,Next Week,charlie.patel@yahoo.com,+91 92957 4289,HDFC Ergo,Follow up after tests
-29/06/2026,Kavita Kumar,Sunil Ali,33/F,Cardiology,Any,Urgent,kavita.patel@hotmail.com,094239 1640,HDFC Ergo,Follow up after tests
-04/07/2026,Ravi Doe,Neha Smith,37/M,General Medicine,Any,,ravi.patel@enterprise.co,092242 2211,,Second opinion
-30/06/2026,Anjali Rao,Charlie Smith,30/O,Orthopedics,Dr. Patel,,,+91 98560 8735,Star Health,Requires wheelchair
-08/07/2026,Fatima Johnson,,16/M,General Medicine,Dr. Patel,Tomorrow,,092549 8424,Star Health,Second opinion
-27/06/2026,Anjali Kumar,Neha Reddy,36/F,General Medicine,Dr. Reddy,Urgent,,91-91140-2510,ICICI Lombard,Follow up after tests
-29/06/2026,Sunil Doe,,80/O,Neurology,Dr. Reddy,Tomorrow,,91-98555-5893,Star Health,Requires wheelchair
-27/06/2026,Mohamed Doe,Chen Iyer,59/O,Orthopedics,Dr. Sharma,,mohamed.patel@techsolutions.in,91-93854-9373,Star Health,Follow up after tests
-09/07/2026,Kavita Ali,Rahul Johnson,22/F,Cardiology,Dr. Sharma,Urgent,kavita.patel@logistics.com,092131 7603,Star Health,Follow up after tests
-30/06/2026,Sarah Rao,,32/F,General Medicine,Dr. Sharma,Next Week,sarah.patel@hotmail.com,91454 9617,Star Health,Follow up after tests
-12/06/2026,Aditya Johnson,,15/M,Pediatrics,Dr. Sharma,Urgent,,+91 93110 1722,,
-07/07/2026,Alice Patel,,31/F,Pediatrics,Dr. Patel,Urgent,alice.patel@corp.org,96083 5636,None,Second opinion
-25/06/2026,Priya Gupta,Charlie Li,34/M,Neurology,Dr. Sharma,Next Week,,939579579,None,
-14/06/2026,Neha Jain,Mohamed Patel,20/F,Neurology,Any,Next Week,,+91 (930) 60-0494,HDFC Ergo,Follow up after tests
-12/06/2026,Chen Das,Charlie Bose,11/F,Orthopedics,Dr. Reddy,Urgent,,+91 97336 8964,ICICI Lombard,Requires wheelchair
-11/06/2026,Amit Verma,,60/O,Neurology,Any,,amit.patel@company.net,+91 (944) 56-0076,Star Health,Follow up after tests
-03/07/2026,Vikram Gupta,Anjali Jain,18/F,Neurology,Dr. Patel,Tomorrow,vikram.patel@outlook.com,+91 92584 6106,,
-21/06/2026,Arjun Bose,Anita Patel,7/F,General Medicine,Dr. Patel,Next Week,arjun.patel@gmail.com,096188 5723,HDFC Ergo,Second opinion
-06/07/2026,Diana Johnson,,15/O,Pediatrics,Dr. Sharma,,,91-98171-9230,Star Health,Second opinion
-19/06/2026,Neha Gupta,Aditya Brown,79/M,Neurology,Dr. Patel,,,936989560,None,Second opinion
-26/06/2026,Diana Brown,Aditya Verma,24/M,Cardiology,Dr. Sharma,Next Week,,94025 1784,None,Follow up after tests
-16/06/2026,Suresh Patel,Diana Johnson,67/M,General Medicine,Any,,suresh.patel@logistics.com,91-91098-2800,,Follow up after tests
-16/06/2026,Neha Li,Sarah Li,61/O,General Medicine,Dr. Patel,,,927879012,HDFC Ergo,Second opinion
-05/07/2026,Priya Smith,Anjali Singh,5/M,General Medicine,Dr. Sharma,,priya.patel@logistics.com,091800 1140,,Second opinion
-24/06/2026,Kavita Menon,Raj Hassan,44/F,Pediatrics,Any,,,91-92015-5999,None,Requires wheelchair
-10/06/2026,Charlie Jain,,67/M,Orthopedics,Dr. Reddy,Next Week,,93809 3389,HDFC Ergo,
-13/06/2026,Amit Jain,,9/M,Neurology,Dr. Reddy,Tomorrow,amit.patel@gmail.com,096707 1272,HDFC Ergo,
-16/06/2026,Charlie Das,,29/M,Cardiology,Dr. Patel,,,+91 (957) 10-0017,ICICI Lombard,
-09/06/2026,Diana Reddy,,50/O,Pediatrics,Any,,,+91 (959) 86-0178,Star Health,
-28/06/2026,Rahul Li,,45/F,Pediatrics,Dr. Sharma,,rahul.patel@startup.io,91-93957-8685,HDFC Ergo,Requires wheelchair
-17/06/2026,Mohamed Singh,,11/M,Cardiology,Dr. Reddy,Next Week,,91-98103-7183,HDFC Ergo,Requires wheelchair
-15/06/2026,Raj Iyer,Vikram Gupta,44/M,Neurology,Dr. Reddy,Tomorrow,raj.patel@yahoo.com,91-94341-7129,HDFC Ergo,Follow up after tests
-19/06/2026,Sneha Patel,Aditya Bose,35/F,Orthopedics,Dr. Patel,Tomorrow,sneha.patel@corp.org,991371102,Star Health,
-28/06/2026,Sunil Jain,Alice Iyer,19/F,General Medicine,Dr. Sharma,Next Week,sunil.patel@outlook.com,91-92105-8173,ICICI Lombard,
-01/07/2026,Neha Doe,,54/F,Pediatrics,Dr. Patel,,neha.patel@startup.io,+91 (959) 83-9539,,Second opinion
-21/06/2026,Rahul Ali,,60/M,Cardiology,Dr. Sharma,,,+91 (940) 70-1146,ICICI Lombard,Second opinion
-24/06/2026,Arjun Verma,,15/F,Cardiology,Dr. Patel,Next Week,,96374 3653,None,
+Enquiry Date,Patient Name,Guardian Name,Age/Gender,Department,Preferred Doctor,Appointment Date,Patient Email,Contact Number,Insurance Provider,Customer Feedback
+Yesterday,Kwame Miller,,25/M,Cardiology,Dr. Patel,2025-09-22,,092437 1891,Star Health,Already spoke to spouse
+07/21/2025,Rajesh Okafor,Jessica Rodriguez,32/O,Neurology,Dr. Patel,09/12/2024,,91-93135-9936,None,Warm
+06/06/2023,Sven Gonzalez,Vivek Singh,31/O,Neurology,Dr. Reddy,2025.02.24,,+91 99546 0296,Star Health,Sale closed
+06/06/2023,Sven Gonzalez,Vivek Singh,31/O,Neurology,Dr. Reddy,2025.02.24,,+91 99546 0296,Star Health,Sale closed
+2023-06-07,William Iyer,,7/O,General Medicine,Dr. Patel,InvalidDate,,+91 95958 3673 ext 807,HDFC Ergo,Warm
+2024.04.27,Arjun Wang,Yousef Hussein,80/O,Neurology,Any,08/13/2023,,+91 92625 4057,ICICI Lombard,Sent pricing over WhatsApp
+,Karthik Bose,,29/M,General Medicine,Any,Today,karthik.patel@outlook.com,+91 (922) 40-8097,Star Health,Budget revised
+2024-12-02,William Hussein,Seo-yeon Jain,42/F,Orthopedics,Dr. Sharma,12-Jul-2024,william.patel@company.net,91-96550-2550,,CBL
+06-Apr-2024,Kofi Iyer,,59/F,Cardiology,Any,,kofi.patel@agency.media,94465 7876,,Requested brochure
+2023.03.12,Santiago Mensah,Yousef Menon,40/M,Neurology,Dr. Patel,2025-06-23,,+91 (958) 56-7392,,Not interested
+,Kavita Gupta,Valentina Zhang,46/M,Neurology,Dr. Patel,04/21/2024,,91-99970-7960,HDFC Ergo,Works night shift
+Today,Diego Chen,Chen Patel,74/F,Neurology,Dr. Reddy,"Jan 06, 2024",diego.patel@yahoo.com,098491 3871,,Send catalog again
+03/12/2024,Isabella Perez,,20/M,Cardiology,Dr. Patel,05-Jun-2025,isabella.patel@techsolutions.in,+91 92930 5923,HDFC Ergo,Email bounced
+Today,Suresh Liu,,52/O,Orthopedics,Dr. Reddy,05/24/2025,,957792324,Star Health,FUP
+,Rajesh Chen,Robert Miller,54/M,Orthopedics,Dr. Sharma,2023.12.31,rajesh.patel@protonmail.com,+91 (976) 44-3901,Star Health,Budget revised
+"Jun 25, 2024",Ashley Anderson,,77/M,Neurology,Dr. Sharma,21/06/2024,ashley.patel@outlook.com,918771687,None,Wrong number
+05-Jul-2024,Swati Smith,Anita Williams,32/O,Pediatrics,Dr. Patel,07/06/2024,swati.patel@startup.io,+91 95192 7071,HDFC Ergo,Previous enquiry closed
+"Jan 28, 2024",Tariq Mahmoud,Fatima Zhang,70/F,Neurology,Dr. Reddy,InvalidDate,,91373 5507,HDFC Ergo,Needs GST invoice
+,Zahra Park,Olivia Park,63/M,Cardiology,Dr. Sharma,"Jun 21, 2024",zahra.patel@yahoo.co.in,945782152,None,Already spoke to spouse
+,Ravi Zhang,Jessica Gonzalez,7/F,Cardiology,Dr. Sharma,2025-09-04,ravi.patel@gmail.com,095871 5093,Star Health,Awaiting confirmation
+Yesterday,Vivek Kumar,Kwame Suzuki,49/F,Pediatrics,Dr. Reddy,23/02/2024,vivek.patel@hospital.org,952217558,ICICI Lombard,FUP
+12/03/2025,Kwame Silva,Alejandro Takahashi,59/F,General Medicine,Dr. Patel,2024.08.03,kwame.patel@company.net,+91 98648 4929,ICICI Lombard,Sale closed
+Today,Wei Lee,,79/O,Pediatrics,Dr. Sharma,2023.07.05,wei.patel@agency.media,+91 94510 6040,ICICI Lombard,Do Not Call
+24-Jun-2025,David Mensah,Suresh Park,11/F,Orthopedics,Dr. Sharma,Today,david.patel@yahoo.co.in,91-97586-9439,Star Health,Already spoke to spouse
+Yesterday,Isabella Takahashi,Lars Mahmoud,45/F,Pediatrics,Dr. Patel,11-Mar-2024,,098232 9068,None,"Called 3 times, no response"
+2024-02-27,Lucia Muller,,10/F,Cardiology,Dr. Reddy,02/26/2025,lucia.patel@icloud.com,91-94501-9285,None,Already spoke to spouse
+2024-02-27,Lucia Muller,,10/F,Cardiology,Dr. Reddy,02/26/2025,lucia.patel@icloud.com,91-94501-9285,None,Already spoke to spouse
+04/20/2023,Yousef Smith,Robert Doe,68/M,Orthopedics,Dr. Patel,18-Apr-2024,,99372 7413,Star Health,Cold
+InvalidDate,Yuki Traore,Priya Smith,33/M,Cardiology,Dr. Sharma,InvalidDate,yuki.patel@outlook.com,91-91470-5612,ICICI Lombard,Not interested
+2024.11.26,Neha Ibrahim,William Anderson,19/M,Pediatrics,Any,2023-05-14,neha.patel@enterprise.co,092015 7995 ext 824,,Not picking up
+,Olivia Sharma,,56/M,Orthopedics,Dr. Reddy,07-Apr-2023,,99401 1776,,Sale closed
+2023-10-21,Vikram Smith,Mei Ali,46/M,Pediatrics,Dr. Reddy,,vikram.patel@university.edu,93987 4118,ICICI Lombard,Email bounced
+InvalidDate,Yuki Muller,,34/O,Pediatrics,Dr. Reddy,2025.06.14,yuki.patel@builders.co.in,094464 4970,None,Previous enquiry closed
+30-May-2024,Ravi Gupta,,59/M,Neurology,Any,16-Jul-2025,ravi.patel@techsolutions.in,91-98075-9197,,Not picking up
+Yesterday,Neha Tanaka,,7/O,Cardiology,Any,Yesterday,neha.patel@protonmail.com,098714 4252,ICICI Lombard,Wrong number
+"Sep 16, 2025",Wei Kim,,6/F,Orthopedics,Dr. Patel,2025-09-07,wei.patel@company.net,+91 (984) 98-5421,ICICI Lombard,Decision maker travelling
+09-Dec-2023,Karthik Doe,,56/F,Neurology,Dr. Reddy,Yesterday,karthik.patel@corp.org,91-95855-3003,HDFC Ergo,Needs GST invoice
+13/03/2023,Tariq Li,Mei Singh,24/M,Cardiology,Dr. Reddy,,,+91 97485 7921,None,Hot lead
+2024-02-23,Nour Pillai,Anita Jones,51/M,Neurology,Dr. Patel,06/30/2023,,+91 91335 6959,HDFC Ergo,Sale closed
+2024.01.10,Santiago Doe,,45/M,Neurology,Dr. Sharma,2023.06.09,,91-94726-8673,HDFC Ergo,Very strict on quality
+10/18/2023,Aditya Smith,Santiago Lopez,13/O,General Medicine,Any,,aditya.patel@protonmail.com,99222 6124,ICICI Lombard,"Called 3 times, no response"
+08/01/2023,Swati Tanaka,Rajesh Wang,24/M,Cardiology,Dr. Patel,InvalidDate,,+91 93117 1201,None,Asked to call after 6 PM
+2024.07.03,Seo-yeon Mensah,Alejandro Garcia,69/F,Orthopedics,Dr. Patel,InvalidDate,,91-91309-6274,None,Number belongs to receptionist
+2023-09-04,Mei Wang,,46/O,Neurology,Dr. Patel,,mei.patel@builders.co.in,093079 2532,ICICI Lombard,Requested virtual demo
+19/08/2023,Anita Kumar,Takumi Das,5/M,Orthopedics,Dr. Sharma,2023-03-24,anita.patel@protonmail.com,93881 3629,None,Decision maker travelling
+2025-02-17,Rahul Doe,William Tanaka,26/F,General Medicine,Dr. Sharma,2025.06.18,rahul.patel@aol.com,+91 (933) 99-5154 ext 533,Star Health,Wants credit period of 60 days
+"Sep 29, 2023",Swati Ali,,58/O,Cardiology,Any,"May 06, 2023",,993286903 ext 510,ICICI Lombard,Wants credit period of 60 days
+2023.01.13,Lucia Rodriguez,Nour Brown,41/M,Cardiology,Any,InvalidDate,lucia.patel@aol.com,099447 3577,,Awaiting confirmation
+Today,Ashley Park,Kavita Kim,35/M,Cardiology,Dr. Reddy,,,91-91759-0586,ICICI Lombard,Cold
+Today,Valentina Garcia,Amanda Sharma,33/F,Cardiology,Dr. Sharma,,,94893 8536,None,"Called 3 times, no response"
+2025-09-05,Aisha Chauhan,Kofi Ndiaye,66/F,Neurology,Dr. Sharma,04/09/2023,aisha.patel@consulting.biz,950506527,ICICI Lombard,Not interested
+23-Sep-2023,Swati Verma,,31/M,General Medicine,Dr. Reddy,04/22/2025,swati.patel@protonmail.com,933323249,ICICI Lombard,Do Not Call
+05/10/2023,Diego Menon,,52/M,Pediatrics,Dr. Sharma,"Aug 15, 2024",,+91 94888 4211,,Wrong number
+Yesterday,Rahul Verma,Ravi Iyer,11/F,Orthopedics,Dr. Reddy,,rahul.patel@logistics.com,933668080,None,Interested in 3BHK
+02-Apr-2025,Tariro Chen,,5/O,Neurology,Dr. Reddy,Yesterday,,092305 8920,Star Health,Loan discussion pending
+01-Jul-2025,William Schmidt,,35/O,Orthopedics,Dr. Reddy,"Nov 21, 2023",william.patel@gmail.com,+91 (986) 96-6560 ext 452,None,Price sensitive
+,Min-jun Tanaka,,76/O,Orthopedics,Any,04/07/2023,,962270917,ICICI Lombard,Referred by existing customer
+Today,Yuki Williams,,76/O,General Medicine,Dr. Patel,09/06/2024,yuki.patel@hospital.org,+91 (974) 14-1970,HDFC Ergo,Send catalog again
+2024.05.07,Mei Li,,29/O,Cardiology,Dr. Sharma,2023.02.20,mei.patel@startup.io,970266654,Star Health,VM left
+2023-04-03,Alejandro Reddy,,9/F,Neurology,Dr. Reddy,Yesterday,alejandro.patel@yahoo.com,910614930,None,FUP
+04/13/2023,Lucia Okafor,Karthik Das,35/O,Cardiology,Dr. Reddy,,,91-91484-5928,HDFC Ergo,Already spoke to spouse
+2024-05-13,Fatima Okafor,Mohamed Menon,45/F,Pediatrics,Dr. Reddy,12/06/2024,,91805 5612,,Hot lead
+06/19/2025,Emily Johnson,,40/M,Pediatrics,Any,Yesterday,emily.patel@techsolutions.in,+91 (956) 84-6705,HDFC Ergo,Not picking up
+2023-05-22,Yousef Bose,Lars Traore,28/F,Cardiology,Dr. Reddy,2025-09-22,yousef.patel@startup.io,91-97355-5063,HDFC Ergo,Do Not Call
+2023-05-22,Yousef Bose,Lars Traore,28/F,Cardiology,Dr. Reddy,2025-09-22,yousef.patel@startup.io,91-97355-5063,HDFC Ergo,Do Not Call
+2023.08.23,Ashley Traore,Amina Silva,53/F,Neurology,Dr. Sharma,,ashley.patel@corp.org,961635359,Star Health,DNC
+07/23/2023,Karthik Okafor,Robert Muller,70/M,Pediatrics,Dr. Sharma,,,+91 96007 3242,,VM left
+"Jun 18, 2024",James Mensah,Anita Bose,48/F,Orthopedics,Dr. Patel,2025-03-25,,+91 (969) 32-7569,HDFC Ergo,Will visit with spouse
+Today,Wei Gonzalez,,37/F,Orthopedics,Any,06/19/2025,wei.patel@hotmail.com,+91 (953) 86-6205,Star Health,Follow up next Tuesday
+"Apr 15, 2024",Fatima Schmidt,Carlos Bose,39/F,General Medicine,Dr. Sharma,"Apr 23, 2025",,+91 91952 4453,None,Wants credit period of 60 days
+2023.10.12,Lars Taylor,Priya Silva,18/O,Neurology,Any,,,094485 7306,ICICI Lombard,Warm
+07/23/2025,Camila Hussein,Arjun Menon,67/F,Neurology,Dr. Reddy,08/09/2025,,999508567,HDFC Ergo,Awaiting confirmation
+,Neha Muller,Sarah Lee,67/M,Neurology,Dr. Patel,InvalidDate,neha.patel@company.net,91-99870-9779,HDFC Ergo,Wants credit period of 60 days
+Yesterday,Karthik Chen,Mohamed Silva,15/O,Pediatrics,Any,08/12/2023,,98967 0746,None,Will visit with spouse
+26-Aug-2025,Tariq Reddy,,11/O,Pediatrics,Dr. Reddy,2023-11-11,,977611132,ICICI Lombard,Loan discussion pending
+2023.11.22,Zahra Traore,,66/M,Orthopedics,Dr. Patel,2023.03.03,zahra.patel@logistics.com,+91 (977) 89-0362,HDFC Ergo,Needs GST invoice
+InvalidDate,Neha Smith,,66/M,Cardiology,Any,31/05/2023,,922180651,ICICI Lombard,Works night shift
+Today,Chen Muller,,17/M,Cardiology,Dr. Patel,,chen.patel@protonmail.com,98267 3115,ICICI Lombard,Works night shift
+InvalidDate,Wei Chauhan,Min-jun Jones,7/O,Orthopedics,Any,09/14/2024,wei.patel@corp.org,+91 94857 6854,HDFC Ergo,CBL
