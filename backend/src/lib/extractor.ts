@@ -142,6 +142,10 @@ function normalizeAndValidate(record: any): CrmRecord {
       }
     }
     
+    if (phoneStr.startsWith('00')) {
+      phoneStr = '+' + phoneStr.slice(2);
+    }
+
     // Extract country code if present (e.g. +91 9876543210 or 91-95446-3201)
     let countryMatch = phoneStr.match(/^(\+\d{1,4})[\s-]*(.*)$/);
     if (!countryMatch) {
@@ -303,10 +307,10 @@ export async function processBatch(
       }
 
       if (!mobile_without_country_code && value.length > 0) {
-        const isDateColumn = /date|time|created|updated|added/i.test(key);
+        const isExcludedColumn = /date|time|created|updated|added|id|uuid|guid|token|zip|post|code|salary|price|amount|campaign|adset/i.test(key);
         const isPureDate = DATE_FORMAT_REGEX.test(value);
         
-        if (!isDateColumn && !isPureDate) {
+        if (!isExcludedColumn && !isPureDate) {
           const digitCount = (value.match(DIGIT_REGEX) || []).length;
           if (digitCount >= 7) {
             // If the value is purely a phone number format
@@ -455,7 +459,7 @@ CRITICAL RULES:
 - Never fabricate information. Treat this as an information extraction task, NOT a text generation task.
 - If a value is not explicitly present in the source, leave the field null.
 - For CRM status, interpret intent. If the text implies they want to be contacted, use "GOOD_LEAD_FOLLOW_UP". If they refused, use "BAD_LEAD". If they couldn't be reached, use "DID_NOT_CONNECT". If they purchased, use "SALE_DONE". Otherwise null.
-- NEVER map dates or values from date columns (e.g., Appointment Date, Meeting Date) to mobile numbers. Date columns must go into crm_note if unmapped.
+- NEVER map dates, IDs, zip codes, or amounts (e.g., Appointment Date, Lead ID, Salary) to mobile numbers. Date columns must go into crm_note if unmapped.
 - Identify mobile/phone numbers. Standardize as strings without formatting. Extract the country code separately. If there is an extension, put it in "crm_note" as "Extension: [ext]".
 - For unmapped columns with useful information, append them to "crm_note". Standardize the format: use "Additional email: [email]" for extra emails, "Additional phone: [phone]" for extra phones, and "ColumnName: Value" for others. Separate multiple notes with " | ".
 - If a row is completely irrelevant nonsense, DO NOT hallucinate data. Return null for all fields.
