@@ -24,6 +24,7 @@ export interface ProcessMetrics {
   failedRows: number;
   failedBatches: number;
   processingTimeMs: number;
+  totalSleepMs: number;
   skipReasons: Record<string, number>;
   failReasons: Record<string, number>;
 }
@@ -59,6 +60,7 @@ export function useProcessing() {
     failedRows: 0,
     failedBatches: 0,
     processingTimeMs: 0,
+    totalSleepMs: 0,
     skipReasons: {},
     failReasons: {}
   });
@@ -260,6 +262,7 @@ export function useProcessing() {
     const localFailReasons: Record<string, number> = {};
     let localSuccessfulRows = 0;
     let localSkippedRows = localSkippedRaw.length;
+    let localTotalSleepMs = 0;
 
     // Timer for elapsed/ETA — tracked via ref for proper cleanup
     clearTimer();
@@ -378,10 +381,12 @@ export function useProcessing() {
               nextProvider = 'gemini';
               toast.info(`Groq free limit reached. Switching to Gemini backup...`);
               setCurrentActivity(`Switching AI engine to Gemini...`);
+              localTotalSleepMs += 1500;
               await new Promise(r => setTimeout(r, 1500));
             }
           } else if (exhaustedProvider === 'gemini') {
             setCurrentActivity(`API limits reached across all providers. Sleeping...`);
+            localTotalSleepMs += 15000;
             await new Promise(r => setTimeout(r, 15000));
             nextProvider = 'groq';
           }
@@ -411,6 +416,7 @@ export function useProcessing() {
             const baseDelay = 1000;
             const jitter = Math.random() * 500;
             const delay = (baseDelay * Math.pow(2, task.attempts)) + jitter;
+            localTotalSleepMs += Math.min(delay, 8000);
             await new Promise(r => setTimeout(r, Math.min(delay, 8000)));
             queue.unshift(task);
           }
@@ -473,6 +479,7 @@ export function useProcessing() {
       failedRows: localFailedRows,
       failedBatches: localFailedBatches,
       processingTimeMs: Date.now() - startTime,
+      totalSleepMs: localTotalSleepMs,
       skipReasons: localSkipReasons,
       failReasons: localFailReasons
     }));

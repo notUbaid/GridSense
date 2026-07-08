@@ -311,7 +311,9 @@ export function SummaryDashboard({ state, metrics, records, skippedRawRows, fail
                     <span className="text-muted-foreground">Header Analysis:</span>
                     <span className="text-right">120ms</span>
                     <span className="text-muted-foreground">AI Extraction:</span>
-                    <span className="text-right">{Math.max(0, (metrics.processingTimeMs - 247) / 1000).toFixed(2)}s</span>
+                    <span className="text-right">{Math.max(0, (metrics.processingTimeMs - metrics.totalSleepMs - 247) / 1000).toFixed(2)}s</span>
+                    <span className="text-muted-foreground">Rate Limit Sleep:</span>
+                    <span className="text-right text-orange-400">{(metrics.totalSleepMs / 1000).toFixed(2)}s</span>
                     <span className="text-muted-foreground">Validation:</span>
                     <span className="text-right">{(metrics.totalRows > 0 ? 71 + (metrics.totalRows % 5) : 0)}ms</span>
                     <span className="text-muted-foreground">Export:</span>
@@ -326,9 +328,9 @@ export function SummaryDashboard({ state, metrics, records, skippedRawRows, fail
                     <span className="text-muted-foreground">Rows</span>
                     <span className="text-right">{metrics.totalRows}</span>
                     <span className="text-muted-foreground">Batches (Chunks)</span>
-                    <span className="text-right">{Math.ceil(metrics.totalRows / 50)}</span>
+                    <span className="text-right">{Math.ceil(metrics.totalRows / 15)}</span>
                     <span className="text-muted-foreground">Avg AI latency</span>
-                    <span className="text-right">{Math.min(1200, Math.max(300, Math.floor(metrics.processingTimeMs / Math.max(1, Math.ceil(metrics.totalRows / 50)))))}ms</span>
+                    <span className="text-right">{Math.min(1200, Math.max(300, Math.floor((metrics.processingTimeMs - metrics.totalSleepMs) / Math.max(1, Math.ceil(metrics.totalRows / 15)))))}ms</span>
                     <span className="text-muted-foreground">Peak concurrency</span>
                     <span className="text-right">{Math.min(10, Math.ceil(metrics.totalRows / 100) + 2)}</span>
                     <span className="text-muted-foreground">Retries</span>

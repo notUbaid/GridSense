@@ -10,9 +10,10 @@ import { stripMarkdownFences, salvageExtractorJson, VALID_CRM_STATUSES, VALID_DA
 
 let groqClients: Groq[] = [];
 let currentGroqIndex = 0;
+let availableGroqIndices: number[] = [];
 let genAI: GoogleGenerativeAI | null = null;
 
-function getGroqClient() {
+function getGroqClient(): { client: Groq, index: number } {
   if (!config.GROQ_API_KEY) {
     throw new Error('GROQ_API_KEY is missing.');
   }
@@ -20,8 +21,23 @@ function getGroqClient() {
     const keys = config.GROQ_API_KEY.split(',').map(k => k.trim()).filter(k => k.length > 0);
     if (keys.length === 0) throw new Error('No valid GROQ API keys found.');
     groqClients = keys.map(key => new Groq({ apiKey: key }));
+    availableGroqIndices = groqClients.map((_, i) => i);
   }
-  return groqClients[currentGroqIndex];
+  
+  if (availableGroqIndices.length === 0) {
+    throw new Error('All Groq keys are exhausted.');
+  }
+
+  // Round-robin selection for load balancing
+  currentGroqIndex = (currentGroqIndex + 1) % availableGroqIndices.length;
+  const selectedIndex = availableGroqIndices[currentGroqIndex];
+  
+  return { client: groqClients[selectedIndex], index: selectedIndex };
+}
+
+function markGroqKeyExhausted(index: number) {
+  availableGroqIndices = availableGroqIndices.filter(i => i !== index);
+  logger.warn(`Groq key at index ${index} marked as exhausted. ${availableGroqIndices.length} keys remaining.`);
 }
 
 function getGeminiClient() {
@@ -420,8 +436,9 @@ ${JSON.stringify(aiRows)}`;
           }
           aiRecords = validated.data.records;
         } else {
-          const client = getGroqClient();
-          const completion = await client.chat.completions.create({
+          const { client: groqClient, index: groqKeyIndex } = getGroqClient();
+          usedGroqIndex = groqKeyIndex;
+          const completion = await groqClient.chat.completions.create({
             messages: [
               {
                 role: 'system',
@@ -543,24 +560,21 @@ ${JSON.stringify(aiRows)}`;
         (status === 400 && errorMsgLower.includes('api key not valid')) ||
         errorMsgLower.includes('invalid api key');
       
-      const shouldRotateKey = isRateLimit || isAuthError;
+      const shouldRotateKey = isRateLimit || isAuthError || error.message?.includes('All Groq keys are exhausted');
 
-      // If we hit a rate limit or auth error, try to rotate key first if using groq
       if (shouldRotateKey) {
         if (provider === 'groq') {
-          if (keysTried < groqClients.length) {
-            if (usedGroqIndex === currentGroqIndex) {
-              currentGroqIndex = (currentGroqIndex + 1) % groqClients.length;
-              logger.warn(`Groq key exhausted (Status: ${status}). Rotating to key ${currentGroqIndex}...`);
-            } else {
-              logger.warn(`Another worker rotated Groq key to ${currentGroqIndex}. Retrying with new key...`);
-            }
+          if (isAuthError && typeof usedGroqIndex === 'number') {
+            markGroqKeyExhausted(usedGroqIndex);
+          }
+          if (keysTried < groqClients.length && availableGroqIndices.length > 0) {
+            logger.warn(`Groq key hit limit (Status: ${status}). Retrying with next available key...`);
             keysTried++;
-            attempt = 0;
+            attempt = 0; // Reset attempt so we don't fail out before trying all keys
             continue;
           } else {
-            // Circuit Breaker: All keys exhausted
-            logger.error(`All ${groqClients.length} Groq keys exhausted. Opening circuit breaker for 30s.`);
+            // Circuit Breaker: All keys exhausted or tried
+            logger.error(`All ${groqClients.length} Groq keys exhausted or rate-limited. Opening circuit breaker for 30s.`);
             circuitBreakerOpenUntil = Date.now() + 30000;
           }
         }
