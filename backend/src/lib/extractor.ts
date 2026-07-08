@@ -397,7 +397,7 @@ Row Data:
 ${JSON.stringify(aiRows)}`;
 
   while (attempt < maxRetries) {
-    const usedGroqIndex = currentGroqIndex;
+    let usedGroqIndex = currentGroqIndex;
     try {
       logger.info({ attempt: attempt + 1, batchSize: rows.length, aiBatchSize: aiRows.length, provider }, 'Sending batch to AI');
 
