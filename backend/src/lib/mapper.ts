@@ -38,8 +38,21 @@ const MappingSchema = z.object({
   overallConfidence: z.number().min(0).max(100),
 });
 
+import crypto from 'crypto';
+
+const headerCache = new Map<string, any>();
+
 export async function mapHeadersToSchema(headers: string[]): Promise<any> {
   const startTime = Date.now();
+  
+  // Fingerprint headers
+  const headerHash = crypto.createHash('sha256').update(headers.join('|').toLowerCase()).digest('hex');
+  if (headerCache.has(headerHash)) {
+    logger.info({ headerHash }, 'Header mapping cache hit');
+    const cached = headerCache.get(headerHash);
+    return { ...cached, processingTimeMs: Date.now() - startTime, cached: true };
+  }
+
   const schemaKeys = [
     'name', 'email', 'mobile_without_country_code', 'company', 'city', 'state', 'country', 'lead_owner', 'crm_status', 'crm_note', 'data_source', 'possession_time', 'description'
   ];
@@ -89,6 +102,10 @@ ${JSON.stringify(zodToJsonSchema(MappingSchema as any))}
     const cleaned = stripMarkdownFences(resultString);
     const parsed = JSON.parse(cleaned);
     const salvaged = salvageMapperJson(parsed);
+    
+    // Save to cache
+    headerCache.set(headerHash, salvaged);
+    
     return { ...salvaged, processingTimeMs: Date.now() - startTime };
   } catch {
     logger.error({ rawResponse: resultString.substring(0, 200) }, 'Failed to parse mapper response');

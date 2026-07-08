@@ -8,6 +8,7 @@ const DIGIT_REGEX = /\d/g;
 import { processBatchApi, apiClient } from '../services/api';
 import { CrmRecord, ProcessBatchRequest } from '../types/schema';
 import { toast } from 'sonner';
+import axios from 'axios';
 
 export type ProcessState = 'idle' | 'parsing' | 'preview' | 'processing' | 'done' | 'partial_success' | 'error';
 
@@ -68,6 +69,12 @@ export function useProcessing() {
 
   // Ref to track and clean up the timer interval on unmount/reset
   const timerRef = useRef<ReturnType<typeof setInterval> | null>(null);
+
+  // Ref to store speculative header mapping promise
+  const mapHeadersPromiseRef = useRef<Promise<unknown> | null>(null);
+
+  // Ref to store AbortController for cancelation
+  const abortControllerRef = useRef<AbortController | null>(null);
 
   const clearTimer = useCallback(() => {
     if (timerRef.current) {
@@ -140,6 +147,19 @@ export function useProcessing() {
         setPreviewData({ headers, rows: sanitizedData.slice(0, 500) });
         setState('preview');
         toast.success(`Successfully parsed ${sanitizedData.length} rows.`);
+
+        // --- SPECULATIVE PROCESSING ---
+        // Cancel any previous speculative processing
+        if (abortControllerRef.current) {
+          abortControllerRef.current.abort();
+        }
+        const ac = new AbortController();
+        abortControllerRef.current = ac;
+        
+        // Start mapping headers in the background immediately
+        mapHeadersPromiseRef.current = apiClient
+          .post('/process/map-headers', { headers }, { signal: ac.signal })
+          .catch(() => null); // Ignore errors from speculation
       },
       error: (err: Error) => {
         const errMsg = `Error parsing CSV: ${err.message}`;
@@ -195,18 +215,28 @@ export function useProcessing() {
     let fetchedMapping: ProcessBatchRequest['schemaMapping'] | null = null;
     try {
       setCurrentActivity('AI is analyzing your column headers...');
-      const res = await apiClient.post('/process/map-headers', { headers });
-      const data = res.data;
-      if (data && data.mapping && data.mapping.length > 0) {
-        setSchemaMapping(data);
-        fetchedMapping = data.mapping;
-        // With a high-confidence schema mapping, we can use deterministic processing
-        // which doesn't hit the AI — so we can use much larger batches
-        if (data.overallConfidence >= 70) {
-          effectiveBatchSize = DETERMINISTIC_BATCH_SIZE;
+      
+      // Await the speculative promise if it exists, otherwise fire a new request
+      const mappingPromise = mapHeadersPromiseRef.current || apiClient.post('/process/map-headers', { headers }, { signal: abortControllerRef.current?.signal });
+      const res = (await mappingPromise) as { data?: SchemaMapping };
+      mapHeadersPromiseRef.current = null; // Clear out the ref
+
+      if (res && res.data) {
+        const data = res.data;
+        if (data.mapping && data.mapping.length > 0) {
+          setSchemaMapping(data);
+          fetchedMapping = data.mapping;
+          // With a high-confidence schema mapping, we can use deterministic processing
+          // which doesn't hit the AI — so we can use much larger batches
+          if (data.overallConfidence >= 70) {
+            effectiveBatchSize = DETERMINISTIC_BATCH_SIZE;
+          }
         }
       }
-    } catch (err) {
+    } catch (err: unknown) {
+      if (axios.isCancel(err)) {
+         throw err;
+      }
       // Header mapping failure is non-fatal — fall back to AI extraction
       console.warn('Failed to map headers, falling back to AI extraction', err);
     }
@@ -276,7 +306,7 @@ export function useProcessing() {
             headers,
             rows: task.batch,
             provider: taskProvider,
-          }, fetchedMapping);
+          }, fetchedMapping, abortControllerRef.current?.signal);
 
           if (response.status === 'success' || response.status === 'partial') {
             if (response.records) {
@@ -298,6 +328,10 @@ export function useProcessing() {
             throw err;
           }
         } catch (err: unknown) {
+          if (axios.isCancel(err)) {
+            // Aborted, do not requeue or count as failure
+            break;
+          }
           const error = err as Error & { response?: { data?: { error?: string, exhaustedProvider?: string }, status?: number }, exhaustedProvider?: string };
           const backendError = error.response?.data?.error || error.message || 'Unknown error';
           const status = error.response?.status;
@@ -405,6 +439,11 @@ export function useProcessing() {
   }, [failedRawRows, previewData]);
 
   const reset = useCallback(() => {
+    if (abortControllerRef.current) {
+      abortControllerRef.current.abort();
+      abortControllerRef.current = null;
+    }
+    mapHeadersPromiseRef.current = null;
     clearTimer();
     setState('idle');
     setProgress(0);

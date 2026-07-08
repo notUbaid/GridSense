@@ -81,6 +81,16 @@ function normalizeAndValidate(record: any): CrmRecord {
       }
     }
     
+    // Extract extension before stripping non-digits
+    const extMatch = phoneStr.match(/(?:ext|x|extension)\.?\s*(\d{1,5})/i);
+    if (extMatch) {
+      const ext = extMatch[1];
+      phoneStr = phoneStr.replace(extMatch[0], '').trim();
+      if (ext) {
+         norm.crm_note = norm.crm_note ? `${norm.crm_note} | Extension: ${ext}` : `Extension: ${ext}`;
+      }
+    }
+    
     // Extract country code if present (e.g. +91 9876543210 or +1 (555))
     const countryMatch = phoneStr.match(/^(\+\d{1,4})\s*(.*)$/);
     if (countryMatch) {
@@ -107,7 +117,7 @@ function normalizeAndValidate(record: any): CrmRecord {
 
 const EMAIL_REGEX = /[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}/;
 const PHONE_FORMAT_REGEX = /^[\s\d()+-]{7,30}$/;
-const PHONE_EMBEDDED_REGEX = /(?:\+?\d{1,4}[\s.-]*)?\(?\d{2,4}\)?[\s.-]*\d{3,4}[\s.-]*\d{4}/;
+const PHONE_EMBEDDED_REGEX = /(?:\+?\d{1,4}[\s.-]*)?\(?\d{2,4}\)?(?:[\s.-]*\d{2,6}){1,4}(?:\s*(?:ext|x|extension)\.?\s*\d{1,5})?/i;
 const DATE_FORMAT_REGEX = /\b(?:19|20)\d{2}[-/]\d{1,2}[-/]\d{1,2}\b|\b\d{1,2}[-/]\d{1,2}[-/](?:19|20)\d{2}\b/;
 const DIGIT_REGEX = /\d/g;
 
@@ -252,9 +262,9 @@ export async function processBatch(
         const keyLower = key.toLowerCase();
 
         if (valTrimmed.includes('@') && EMAIL_REGEX.test(valTrimmed)) {
-           extraNotes.push(`Extra email: ${valTrimmed}`);
+           extraNotes.push(`Additional email: ${valTrimmed}`);
         } else if ((valTrimmed.match(DIGIT_REGEX) || []).length >= 7 && (PHONE_FORMAT_REGEX.test(valTrimmed) || PHONE_EMBEDDED_REGEX.test(valTrimmed))) {
-           extraNotes.push(`Extra phone: ${valTrimmed}`);
+           extraNotes.push(`Additional phone: ${valTrimmed}`);
         } else if (keyLower.includes('note') || keyLower.includes('remark') || keyLower.includes('comment') || keyLower.includes('feedback')) {
            extraNotes.push(`${key}: ${valTrimmed}`);
         }
@@ -302,9 +312,9 @@ CRITICAL RULES:
 - Every name, company, city, state, country, and note MUST be copied EXACTLY from the source row.
 - Never fabricate information. Treat this as an information extraction task, NOT a text generation task.
 - If a value is not explicitly present in the source, leave the field null.
-- "crm_status" MUST be exactly one of: GOOD_LEAD_FOLLOW_UP, DID_NOT_CONNECT, BAD_LEAD, SALE_DONE — or null.
-- "data_source" MUST be exactly one of: leads_on_demand, meridian_tower, eden_park, varah_swamy, sarjapur_plots — or null.
-- Map positive sentiment or interest (e.g., "Interested", "Call back later") to GOOD_LEAD_FOLLOW_UP.
+- For CRM status, interpret intent. If the text implies they want to be contacted, use "GOOD_LEAD_FOLLOW_UP". If they refused, use "BAD_LEAD". If they couldn't be reached, use "DID_NOT_CONNECT". If they purchased, use "SALE_DONE". Otherwise null.
+- Identify mobile/phone numbers. Standardize as strings without formatting. Extract the country code separately. If there is an extension, put it in "crm_note" as "Extension: [ext]".
+- For unmapped columns with useful information, append them to "crm_note". Standardize the format: use "Additional email: [email]" for extra emails, "Additional phone: [phone]" for extra phones, and "ColumnName: Value" for others. Separate multiple notes with " | ".
 - If a row is completely irrelevant nonsense, DO NOT hallucinate data. Return null for all fields.
 - "crm_note" should ONLY contain meaningful remarks, follow-up notes, secondary emails, or extra phone numbers.
 - DO NOT dump irrelevant columns (e.g., "Campaign", "Ad Set", random IDs, or random garbage) into "crm_note".
@@ -343,7 +353,7 @@ ${JSON.stringify(aiRows)}`;
           const result = await model.generateContent({
             contents: [{ role: 'user', parts: [{ text: prompt }] }],
             generationConfig: {
-              temperature: 0.1,
+              temperature: attempt > 0 ? 0.0 : 0.1,
               responseMimeType: 'application/json',
             }
           });
@@ -377,7 +387,7 @@ ${JSON.stringify(aiRows)}`;
               { role: 'user', content: prompt }
             ],
             model: 'llama-3.3-70b-versatile',
-            temperature: 0.1,
+            temperature: attempt > 0 ? 0.0 : 0.1,
             max_tokens: 8000,
             response_format: { type: 'json_object' },
           });
