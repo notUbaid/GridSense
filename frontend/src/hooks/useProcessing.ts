@@ -102,7 +102,7 @@ export function useProcessing() {
     setCurrentActivity('Idle');
     setElapsedMs(0);
     setEtaMs(null);
-    setMetrics({ totalRows: 0, successfulRows: 0, skippedRows: 0, failedRows: 0, failedBatches: 0, processingTimeMs: 0, skipReasons: {}, failReasons: {} });
+    setMetrics({ totalRows: 0, successfulRows: 0, skippedRows: 0, failedRows: 0, failedBatches: 0, processingTimeMs: 0, totalSleepMs: 0, skipReasons: {}, failReasons: {} });
     parsedDataRef.current = null;
 
     Papa.parse<Record<string, string>>(file, {
@@ -525,7 +525,7 @@ export function useProcessing() {
     setCurrentActivity('Idle');
     setElapsedMs(0);
     setEtaMs(null);
-    setMetrics({ totalRows: 0, successfulRows: 0, skippedRows: 0, failedRows: 0, failedBatches: 0, processingTimeMs: 0, skipReasons: {}, failReasons: {} });
+    setMetrics({ totalRows: 0, successfulRows: 0, skippedRows: 0, failedRows: 0, failedBatches: 0, processingTimeMs: 0, totalSleepMs: 0, skipReasons: {}, failReasons: {} });
   }, [clearTimer]);
 
   return {
