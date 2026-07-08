@@ -461,7 +461,7 @@ CRITICAL RULES:
 - For CRM status, interpret intent. If the text implies they want to be contacted, use "GOOD_LEAD_FOLLOW_UP". If they refused, use "BAD_LEAD". If they couldn't be reached, use "DID_NOT_CONNECT". If they purchased, use "SALE_DONE". Otherwise null.
 - NEVER map dates, IDs, zip codes, or amounts (e.g., Appointment Date, Lead ID, Salary) to mobile numbers. Date columns must go into crm_note if unmapped.
 - Identify mobile/phone numbers. Standardize as strings without formatting. Extract the country code separately. If there is an extension, put it in "crm_note" as "Extension: [ext]".
-- For unmapped columns with useful information, append them to "crm_note". Standardize the format: use "Additional email: [email]" for extra emails, "Additional phone: [phone]" for extra phones, and "ColumnName: Value" for others. Separate multiple notes with " | ".
+- For unmapped columns with useful information, append them to "crm_note". Format them cleanly in Title Case like "Platform: Instagram" or "Campaign: Q3 Retargeting" instead of raw machine names. Separate multiple notes with " | ".
 - If a row is completely irrelevant nonsense, DO NOT hallucinate data. Return null for all fields.
 - "crm_note" should ONLY contain meaningful remarks, follow-up notes, secondary emails, or extra phone numbers.
 - DO NOT dump irrelevant columns (e.g., "Campaign", "Ad Set", random IDs, or random garbage) into "crm_note". However, source platforms (e.g., "Hubspot", "Zoho", "Excel") or lead sources ARE highly relevant and MUST be included in notes.
