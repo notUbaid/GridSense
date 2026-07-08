@@ -6,7 +6,7 @@ import logger from '../utils/logger';
 import { config } from '../config';
 import { MockAIProvider } from './MockAIProvider';
 import { GoogleGenerativeAI } from '@google/generative-ai';
-import { stripMarkdownFences, salvageExtractorJson } from '../utils/ai-utils';
+import { stripMarkdownFences, salvageExtractorJson, VALID_CRM_STATUSES, VALID_DATA_SOURCES } from '../utils/ai-utils';
 
 let groqClients: Groq[] = [];
 let currentGroqIndex = 0;
@@ -51,11 +51,30 @@ const llmResponseSchema = z.object({
 function normalizeAndValidate(record: any): CrmRecord {
   const norm = { ...record };
 
-  // 1. Whitespace Normalization
+  // 1. Whitespace & NaN Normalization
   for (const key of Object.keys(norm)) {
     if (typeof norm[key] === 'string') {
-      norm[key] = norm[key].trim();
-      if (norm[key] === '') norm[key] = null;
+      const val = norm[key].trim();
+      const lower = val.toLowerCase();
+      if (val === '' || lower === 'nan' || lower === 'null') {
+        norm[key] = null;
+      } else {
+        norm[key] = val;
+      }
+    }
+  }
+
+  // 1b. Enum Enforcement (to handle deterministic mapping bypassing Zod)
+  if (norm.crm_status && !VALID_CRM_STATUSES.includes(norm.crm_status as any)) {
+    norm.crm_status = null;
+  }
+  if (norm.data_source && !VALID_DATA_SOURCES.includes(norm.data_source as any)) {
+    const lower = String(norm.data_source).toLowerCase();
+    const matched = VALID_DATA_SOURCES.find(ds => lower.includes(ds.toLowerCase()));
+    if (matched) {
+       norm.data_source = matched;
+    } else {
+       norm.data_source = null;
     }
   }
 
@@ -65,6 +84,14 @@ function normalizeAndValidate(record: any): CrmRecord {
     if (!emailRegex.test(norm.email)) {
       norm.email = null;
     }
+  }
+
+  // 2b. Country Code Validation
+  if (norm.country_code) {
+    let cc = String(norm.country_code).trim();
+    if (cc.endsWith('.0')) cc = cc.replace('.0', '');
+    if (!cc.startsWith('+')) cc = '+' + cc;
+    norm.country_code = cc;
   }
 
   // 3. Phone Validation
@@ -119,6 +146,7 @@ const EMAIL_REGEX = /[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}/;
 const PHONE_FORMAT_REGEX = /^[\s\d()+-]{7,30}$/;
 const PHONE_EMBEDDED_REGEX = /(?:\+?\d{1,4}[\s.-]*)?\(?\d{2,4}\)?(?:[\s.-]*\d{2,6}){1,4}(?:\s*(?:ext|x|extension)\.?\s*\d{1,5})?/i;
 const DATE_FORMAT_REGEX = /\b(?:19|20)\d{2}[-/]\d{1,2}[-/]\d{1,2}\b|\b\d{1,2}[-/]\d{1,2}[-/](?:19|20)\d{2}\b/;
+const TEXT_DATE_REGEX = /\b(?:Jan(?:uary)?|Feb(?:ruary)?|Mar(?:ch)?|Apr(?:il)?|May|Jun(?:e)?|Jul(?:y)?|Aug(?:ust)?|Sep(?:tember)?|Oct(?:ober)?|Nov(?:ember)?|Dec(?:ember)?)\s+\d{1,2}(?:st|nd|rd|th)?(?:,\s*|\s+)(?:19|20)\d{2}\b/i;
 const DIGIT_REGEX = /\d/g;
 
 export async function processBatch(
@@ -163,12 +191,15 @@ export async function processBatch(
       }
 
       if (!created_at) {
-        const match = value.match(DATE_FORMAT_REGEX);
-        if (match) {
-          const d = new Date(match[0]);
-          if (!isNaN(d.getTime())) {
-            created_at = d.toISOString();
-            value = value.replace(match[0], '').trim();
+        let dateMatch = value.match(DATE_FORMAT_REGEX);
+        if (!dateMatch) {
+          dateMatch = value.match(TEXT_DATE_REGEX);
+        }
+        if (dateMatch) {
+          const parsedDate = Date.parse(dateMatch[0]);
+          if (!isNaN(parsedDate)) {
+            created_at = new Date(parsedDate).toISOString();
+            value = value.replace(dateMatch[0], '').trim();
           }
         }
       }
@@ -208,6 +239,7 @@ export async function processBatch(
     const validRecords: CrmRecord[] = [];
     let skippedCount = 0;
     const skippedReasons: Record<string, number> = {};
+    const skippedRecords: any[] = [];
 
     for (let i = 0; i < extractedData.length; i++) {
       const d = extractedData[i];
@@ -289,9 +321,11 @@ export async function processBatch(
       if (!hasContact) {
         skippedCount++;
         skippedReasons['Rejected (Missing Valid Contact Info)'] = (skippedReasons['Rejected (Missing Valid Contact Info)'] || 0) + 1;
+        skippedRecords.push({ original, reason: 'Rejected (Missing Valid Contact Info)' });
       } else if (!meaningfulData) {
         skippedCount++;
         skippedReasons['Rejected (Lacks Meaningful Data)'] = (skippedReasons['Rejected (Lacks Meaningful Data)'] || 0) + 1;
+        skippedRecords.push({ original, reason: 'Rejected (Lacks Meaningful Data)' });
       } else {
         validRecords.push(normalized);
       }
@@ -299,7 +333,7 @@ export async function processBatch(
 
     const processingTimeMs = Date.now() - startTime;
     logger.info({ batchSize: rows.length, extracted: validRecords.length, skipped: skippedCount, ms: processingTimeMs }, 'Deterministic batch complete');
-    return { records: validRecords, skippedCount, skippedReasons, processingTimeMs };
+    return { records: validRecords, skippedCount, skippedReasons, skippedRecords, processingTimeMs };
   }
 
   const prompt = `You are a strict data extraction engine. You receive CSV headers and row data as JSON.
@@ -418,6 +452,7 @@ ${JSON.stringify(aiRows)}`;
 
       let skippedCount = 0;
       const skippedReasons: Record<string, number> = {};
+      const skippedRecords: any[] = [];
 
       if (aiRecords.length < aiRows.length) {
         const truncatedCount = aiRows.length - aiRecords.length;
@@ -466,9 +501,11 @@ ${JSON.stringify(aiRows)}`;
         if (!hasContact) {
           skippedCount++;
           skippedReasons['AI Rejected (Missing Valid Contact Info)'] = (skippedReasons['AI Rejected (Missing Valid Contact Info)'] || 0) + 1;
+          skippedRecords.push({ original: d.original, reason: 'AI Rejected (Missing Valid Contact Info)' });
         } else if (!meaningfulData) {
           skippedCount++;
           skippedReasons['AI Rejected (Lacks Meaningful Data)'] = (skippedReasons['AI Rejected (Lacks Meaningful Data)'] || 0) + 1;
+          skippedRecords.push({ original: d.original, reason: 'AI Rejected (Lacks Meaningful Data)' });
         } else {
           validRecords.push(normalized);
         }
@@ -483,7 +520,7 @@ ${JSON.stringify(aiRows)}`;
         ms: processingTimeMs
       }, 'Batch complete');
 
-      return { records: validRecords, skippedCount, skippedReasons, processingTimeMs };
+      return { records: validRecords, skippedCount, skippedReasons, skippedRecords, processingTimeMs };
 
     } catch (error: any) {
       attempt++;

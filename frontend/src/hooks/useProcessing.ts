@@ -317,6 +317,12 @@ export function useProcessing() {
             if (response.skippedCount) {
               localSkippedRows += response.skippedCount;
             }
+            if (response.skippedRecords) {
+              for (const record of response.skippedRecords) {
+                localSkippedRaw.push({ ...record.original, _skipReason: record.reason });
+              }
+              setSkippedRawRows([...localSkippedRaw]);
+            }
             if (response.skippedReasons) {
               for (const [reason, count] of Object.entries(response.skippedReasons)) {
                 localSkipReasons[reason] = (localSkipReasons[reason] || 0) + count;

@@ -41,6 +41,10 @@ export const ProcessBatchResponseSchema = z.object({
   records: z.array(CrmRecordSchema).optional(),
   skippedCount: z.number().default(0),
   skippedReasons: z.record(z.string(), z.number()).optional(),
+  skippedRecords: z.array(z.object({
+    original: z.record(z.string(), z.string()),
+    reason: z.string()
+  })).optional(),
   error: z.string().optional(),
   exhaustedProvider: z.string().optional(),
   processingTimeMs: z.number().optional(),
