@@ -30,7 +30,7 @@ export const ProcessBatchRequestSchema = z.object({
     source: z.string(),
     target: z.string().optional().nullable(),
     confidence: z.any().optional()
-  })).optional()
+  })).optional().nullable()
 });
 
 export type ProcessBatchRequest = z.infer<typeof ProcessBatchRequestSchema>;
