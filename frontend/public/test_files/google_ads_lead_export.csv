@@ -1,38 +1,38 @@
-Date,Name,Email Address,Phone Number,Source,Status
-"2026-07-07",Raj Li,"Email me at: rli@example.org or raj@example.org",466.525.1117,  leads_on_demand  ,
-DATA 457,  Priya Li  ,pli@example.org,"061.239.5051 (Mobile)",,Call back later
-"December 1, 2023",Priya Johnson,  priya.johnson@example.org  ,+44 8259 249717,Google,  iNtErEsTeD  
-Data 745,Charlie Wang,cwang@example.org,(199) 998-3541,Facebook,
-Data 667,Alice Doe,  adoe@yahoo.com  ,2895861435,leads_on_demand,GOOD_LEAD_FOLLOW_UP
-Data 375,Charlie Johnson,CHARLIE62@HOTMAIL.COM,+44 9314 451118,sarjapur_plots,DID_NOT_CONNECT
-Data 990,  Alice Garcia  ,alice.garcia@company.net,282.597.0760,Google,Call back later
-Data 504,Wei Li,  wei.li@company.net  ,564.001.4923,  eden_park  ,
-Data 713,Charlie Kumar,charlie.kumar@hotmail.com,+1 (443) 936-3379 / 330.281.6133,varah_swamy,  Junk  
-Data 933,Fatima Wang,FWANG@COMPANY.NET,796.202.6202,Facebook,  SALE_DONE  
-Data 960,John Kumar,,+44 2929 689361,  varah_swamy  ,
-Data 254,Chen Patel,chen.patel@company.net,+1 (850) 209-2471 / (070) 381-5074,  Google  ,JUNK
-DATA 350,Alice Ali,alice6@gmail.com,809.829.6021,,SALE_DONE
-Data 621,Chen Hassan,chen.hassan@example.org,737.012.3014,sarjapur_plots,Junk
-DATA 637,  Wei Ali  ,  wei69@company.net  ,  1656523942  ,Facebook,INTERESTED
-  Data 550  ,Fatima Wang,fatima34@company.net,+1 (937) 121-1112,leads_on_demand,BAD_LEAD
-  Data 185  ,Mohamed Hassan,,(699) 315-3429,  Organic  ,BAD_LEAD
-Data 644,Alice Doe,  adoe@example.org  ,036-001-9512,Organic,BAD_LEAD
-Data 679,DIANA HASSAN,diana85@example.org,+1 (545) 302-2630,  Google  ,  BAD_LEAD  
-Data 622,Raj Hassan,raj79@hotmail.com,+44 3474 530354,Organic,SALE_DONE
-Data 868,Mohamed Ali,mohamed28@gmail.com,005.119.4907,,BAD_LEAD
-Data 719,MOHAMED LI,mohamed.li@hotmail.com,+44 6884 977188,meridian_tower,GOOD_LEAD_FOLLOW_UP
-Data 977,  Alice Garcia  ,  alice.garcia@hotmail.com  ,3035745566,meridian_tower,GOOD_LEAD_FOLLOW_UP
-Data 208,Chen Doe,  chen61@company.net  ,,  eden_park  ,BAD_LEAD
-Data 970,,FATIMA.GARCIA@COMPANY.NET,727-081-9867,Google,
-  Data 844  ,  John Brown  ,,+44 0156 234222,Organic,  GOOD_LEAD_FOLLOW_UP  
-  Data 835  ,BOB PATEL,bpatel@yahoo.com,,Facebook,DID_NOT_CONNECT
-Data 994,Wei Hassan,,(058) 679-5073,leads_on_demand,Call back later
-Data 596,Alice Kumar,  alice.kumar@gmail.com  ,+44 9237 843095,varah_swamy,DID_NOT_CONNECT
-  Data 891  ,Wei Kumar,  wei.kumar@company.net  ,  +1 (867) 401-5381  ,  eden_park  ,DID_NOT_CONNECT
-  Data 843  ,Fatima Kumar,fkumar@company.net,200.108.2480,sarjapur_plots,  Interested  
-  Data 917  ,  RAJ DOE  ,  raj50@yahoo.com  ,005.445.1125,  Organic  ,DID_NOT_CONNECT
-Data 269,  Wei Doe  ,wei32@company.net,  164-327-5732  ,,Call back later
-Data 789,Alice Patel,  alice.patel@yahoo.com  ,705.425.5617,eden_park,GOOD_LEAD_FOLLOW_UP
-Data 402,John Garcia,"  john.garcia@gmail.com  , alternate@example.org",+1 (696) 284-3700,varah_swamy,    
-Data 323,Jane Johnson,    ,  +44 7099 443497  ,varah_swamy,
-,Diana Hassan,,+44 2838 560390 / +44 7432 535546,leads_on_demand,  Call back later  
+Campaign,Ad Group,Keyword,Match Type,Network,Conversion Time,Name,Email,Phone,Landing Page,Device,Browser
+Search_Branded,Competitor_Keywords,+sales +platform,Exact,Display Network,09/23/2023 00:00:00,Priya Sharma,priya.sharma@hotmail.com,,/pricing,Tablet,Chrome
+Display_Remarketing,Competitor_Keywords,+sales +platform,Broad,Search Network,08/25/2023 00:00:00,Anita Reddy,anita.reddy@startup.io,,/demo,Mobile,Safari
+Search_Generic,Exact_Match,[best lead gen tool],Exact,Display Network,10/01/2023 00:00:00,Sarah Smith,,+91 (945) 90-8156,/demo,Desktop,Firefox
+Search_Branded,B2B_Terms,[best lead gen tool],Exact,Display Network,07/17/2023 00:00:00,Rahul Hassan,,91-91027-6058,/demo,Mobile,Edge
+Search_Generic,Competitor_Keywords,+sales +platform,Broad,Display Network,10/11/2023 00:00:00,Ravi Johnson,,983052267,/pricing,Tablet,Firefox
+Search_Branded,Exact_Match,"""crm software""",Exact,Display Network,10/23/2023 00:00:00,Fatima Jain,,+91 (991) 88-4434,/features,Mobile,Edge
+Display_Remarketing,Competitor_Keywords,[best lead gen tool],Broad,Display Network,08/29/2023 00:00:00,Charlie Hassan,charlie.hassan@yahoo.com,,/pricing,Mobile,Firefox
+Search_Generic,B2B_Terms,"""crm software""",Broad,Search Network,11/20/2023 00:00:00,Diana Smith,,+91 (954) 35-1141,/demo,Tablet,Safari
+Search_Generic,B2B_Terms,[best lead gen tool],Broad,Display Network,11/04/2023 00:00:00,Neha Li,neha.li@logistics.com,,/demo,Desktop,Edge
+Display_Remarketing,Competitor_Keywords,+sales +platform,Phrase,Search Network,10/10/2023 00:00:00,Aditya Smith,aditya.smith@corp.org,91-93616-9845,/features,Tablet,Chrome
+Display_Remarketing,Exact_Match,"""crm software""",Phrase,Search Network,07/23/2023 00:00:00,Priya Reddy,priya.reddy@enterprise.co,,/pricing,Desktop,Chrome
+Display_Remarketing,Exact_Match,[best lead gen tool],Broad,Display Network,08/05/2023 00:00:00,Amit Patel,,+91 (977) 94-5470,/,Tablet,Firefox
+Search_Generic,B2B_Terms,+sales +platform,Broad,Search Network,11/25/2023 00:00:00,Diana Brown,diana.brown@yahoo.com,91-92844-1000,/,Desktop,Chrome
+Display_Remarketing,Competitor_Keywords,+sales +platform,Exact,Search Network,07/05/2023 00:00:00,Alice Sharma,alice.sharma@logistics.com,+91 97422 2330,/,Desktop,Edge
+Display_Remarketing,Competitor_Keywords,"""crm software""",Phrase,Search Network,11/16/2023 00:00:00,Diana Li,diana.li@corp.org,+91 (945) 88-1440,/pricing,Desktop,Edge
+Search_Branded,Exact_Match,"""crm software""",Phrase,Search Network,11/23/2023 00:00:00,Suresh Verma,suresh.verma@yahoo.com,097970 2406,/demo,Mobile,Edge
+Search_Branded,Exact_Match,+sales +platform,Exact,Search Network,07/13/2023 00:00:00,Ravi Iyer,ravi.iyer@enterprise.co,,/demo,Mobile,Safari
+Display_Remarketing,Competitor_Keywords,"""crm software""",Phrase,Display Network,08/18/2023 00:00:00,Rahul Smith,rahul.smith@corp.org,+91 (924) 91-5018,/,Mobile,Firefox
+Search_Generic,Exact_Match,+sales +platform,Exact,Display Network,10/15/2023 00:00:00,Anjali Ali,anjali.ali@yahoo.com,988856318,/features,Desktop,Safari
+Search_Branded,Exact_Match,+sales +platform,Exact,Display Network,07/01/2023 00:00:00,Chen Rao,chen.rao@techsolutions.in,+91 97479 7646,/demo,Tablet,Chrome
+Display_Remarketing,B2B_Terms,"""crm software""",Broad,Search Network,09/21/2023 00:00:00,Sarah Brown,sarah.brown@techsolutions.in,+91 (944) 60-5377,/demo,Mobile,Edge
+Display_Remarketing,Exact_Match,[best lead gen tool],Broad,Search Network,07/24/2023 00:00:00,Ravi Ali,ravi.ali@hotmail.com,,/demo,Desktop,Safari
+Search_Branded,Competitor_Keywords,[best lead gen tool],Phrase,Search Network,07/10/2023 00:00:00,Sarah Das,sarah.das@enterprise.co,,/demo,Desktop,Safari
+Display_Remarketing,Competitor_Keywords,"""crm software""",Broad,Search Network,06/21/2023 00:00:00,Kavita Smith,kavita.smith@gmail.com,91-95251-3793,/,Desktop,Chrome
+Search_Generic,Exact_Match,+sales +platform,Exact,Display Network,09/21/2023 00:00:00,Diana Bose,diana.bose@startup.io,,/features,Desktop,Edge
+Display_Remarketing,Competitor_Keywords,[best lead gen tool],Broad,Display Network,08/27/2023 00:00:00,Sarah Johnson,sarah.johnson@yahoo.com,+91 93112 1336,/,Tablet,Chrome
+Search_Generic,B2B_Terms,[best lead gen tool],Exact,Search Network,11/28/2023 00:00:00,Wei Sharma,wei.sharma@gmail.com,98101 6858,/features,Mobile,Firefox
+Search_Generic,Exact_Match,[best lead gen tool],Exact,Display Network,06/03/2023 00:00:00,Aditya Menon,,93232 7068,/features,Mobile,Firefox
+Search_Branded,Exact_Match,[best lead gen tool],Exact,Display Network,08/09/2023 00:00:00,Mohamed Patel,mohamed.patel@logistics.com,,/pricing,Mobile,Firefox
+Display_Remarketing,Competitor_Keywords,+sales +platform,Phrase,Search Network,08/10/2023 00:00:00,John Menon,john.menon@enterprise.co,+91 91601 5336,/features,Mobile,Firefox
+Search_Branded,Exact_Match,"""crm software""",Phrase,Display Network,06/24/2023 00:00:00,Anjali Sharma,anjali.sharma@enterprise.co,+91 97800 9149,/demo,Tablet,Edge
+Search_Generic,Competitor_Keywords,"""crm software""",Exact,Search Network,11/09/2023 00:00:00,Anjali Wang,anjali.wang@logistics.com,+91 (913) 58-0539,/features,Desktop,Firefox
+Search_Branded,Exact_Match,+sales +platform,Exact,Display Network,11/09/2023 00:00:00,Wei Verma,wei.verma@company.net,+91 (953) 59-5055,/pricing,Desktop,Edge
+Search_Generic,Competitor_Keywords,[best lead gen tool],Exact,Search Network,07/22/2023 00:00:00,Fatima Kumar,,+91 95862 8796,/demo,Desktop,Chrome
+Search_Generic,Exact_Match,[best lead gen tool],Broad,Display Network,11/09/2023 00:00:00,Chen Reddy,chen.reddy@outlook.com,91-96077-0560,/,Mobile,Edge
+Search_Branded,Competitor_Keywords,[best lead gen tool],Exact,Search Network,08/16/2023 00:00:00,Fatima Li,,+91 93476 8850,/,Desktop,Safari
+Display_Remarketing,Exact_Match,"""crm software""",Phrase,Display Network,08/15/2023 00:00:00,Anita Li,,098863 7797,/features,Mobile,Safari

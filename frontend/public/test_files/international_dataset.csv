@@ -1,44 +1,44 @@
-Given Name,Family Name,Contact Email,Telephone,Country,Company
-Chen Garcia,Chen Garcia,chen.garcia@gmail.com,800.024.9079,,Tech Solutions
-Jane Johnson,Jane Johnson,"jjohnson@example.org, alternate@yahoo.com",+44 4739 737583,Data 290,Startup Inc
-Bob Hassan,Bob Hassan,  BOB.HASSAN@EXAMPLE.ORG  ,+44 5771 452137,Data 684,Acme Corp
-Wei Brown,Wei Brown,wbrown@gmail.com,266-587-6257,Data 573,
-Diana Garcia,Diana Garcia,  diana.garcia@example.org  ,760-702-6409,Data 959,
-  Diana Patel  ,Diana Patel,  diana.patel@gmail.com  ,+1 (672) 681-6936,Data 823,  Tech Solutions  
-Charlie Kumar,  Charlie Kumar  ,ckumar@company.net,5531359565 / (316) 415-4482,Data 463,Local Shop
-Raj Li,  Raj Li  ,  rli@example.org  ,035.477.2025,  Data 202  ,  Global Industries  
-Alice Patel,Alice Patel,alice.patel@example.org,202.615.3041,Data 904,Acme Corp
-Jane Garcia,Jane Garcia,  jane.garcia@example.org  ,(162) 387-2489,Data 406,Tech Solutions
-Wei Patel,  WEI PATEL  ,  wpatel@yahoo.com  ,+1 (786) 986-3962,Data 583,Tech Solutions
-Chen Hassan,Chen Hassan,,+44 9664 050689,Data 998,Local Shop
-  FATIMA PATEL  ,,    FATIMA.PATEL@COMPANY.NET    ,682.723.2815,Data 828,Acme Corp
-Wei Garcia,Wei Garcia,    wei.garcia@example.org    ,751-042-4075 / 832-123-5275,Data 741,Global Industries
-John Kumar,John Kumar,  john.kumar@yahoo.com  ,0161415818,Data 185,Global Industries
-Priya Doe,  Priya Doe  ,  priya.doe@gmail.com  ,(387) 485-0830,Data 533,  Tech Solutions  
-Alice Hassan,,  alice.hassan@gmail.com  ,737-632-8599,  Data 521  ,  Startup Inc  
-Bob Martinez,Bob Martinez,,(015) 059-3364 / 0323908475,Data 639,  Local Shop  
-Priya Smith,Priya Smith,    ,+1 (482) 293-3600 / (758) 635-4744,Data 500,Tech Solutions
-Jane Johnson,Jane Johnson,,(566) 138-8908,DATA 576,Tech Solutions
-Fatima Johnson,Fatima Johnson,  fatima7@hotmail.com  ,0526290589,Data 730,Tech Solutions
-Raj Hassan,Raj Hassan,rhassan@company.net,396-300-5008,Data 498,Startup Inc
-  Raj Doe  ,Raj Doe,"    raj.doe@gmail.com  , alternate@hotmail.com  ",  797-305-2110  ,  Data 812  ,  Startup Inc  
-  Chen Patel  ,Chen Patel,", alternate@hotmail.com",+44 5129 682188,Data 459,Startup Inc
-Mohamed Doe,  Mohamed Doe  ,mdoe@yahoo.com,(443) 843-9952,Data 975,Startup Inc
-Wei Martinez,Wei Martinez,wei26@hotmail.com,832.071.9213,  Data 290  ,  Global Industries  
-Priya Garcia,Priya Garcia,    priya.garcia@gmail.com    ,+1 (903) 032-9247,  Data 649  ,Startup Inc
-Jane Martinez,Jane Martinez,,  434.093.5844  ,  Data 942  ,Local Shop
-Fatima Hassan,Fatima Hassan,"fatima98@yahoo.com, alternate@yahoo.com",337-174-0912,Data 292,  Tech Solutions  
-,Fatima Hassan,fhassan@company.net,+44 1287 799246,Data 783,Local Shop
-Chen Wang,Chen Wang,  chen.wang@gmail.com  ,204.610.2105 / +1 (489) 987-0163,DATA 392,Startup Inc
-Charlie Kumar,Charlie Kumar,charlie50@company.net,484-471-0234,Data 307,Global Industries
-,Fatima Martinez,,  610.640.7879  ,Data 497,Acme Corp
-Mohamed Ali,Mohamed Ali,"mali@yahoo.com, alternate@yahoo.com",478.934.3241,Data 831,Global Industries
-  John Garcia  ,John Garcia,john30@example.org,+44 3546 736066,Data 642,  Acme Corp  
-,Mohamed Kumar,  mohamed8@yahoo.com  ,(984) 416-8237,Data 453,Startup Inc
-Diana Kumar,,diana.kumar@hotmail.com,+44 9006 830952,Data 147,Acme Corp
-Wei Patel,Wei Patel,,+44 1101 003758,Data 974,Startup Inc
-  Wei Ali  ,Wei Ali,wali@company.net,(871) 889-1357,Data 588,  Acme Corp  
-Charlie Garcia,Charlie Garcia,"  , alternate@company.net  ",  2721734014 / 993.069.3758  ,  Data 524  ,Startup Inc
-,,  priya.kumar@example.org  ,161.144.6778,Data 139,
-Wei Garcia,Wei Garcia,,950-929-8417 / 7015264866,,Startup Inc
-Charlie Kumar,  Charlie Kumar  ,  charlie.kumar@gmail.com  ,+44 5688 384503,Data 510,Startup Inc
+Record ID,Full Name,Email Address,Phone (International),Country,Region/State,City,Timezone,Language Preference,Company,Job Title,Notes
+INTL-4250,Yuki Smith,yuki.smith@enterprise.co,+44 7381 487998,Germany,Dubai,Dubai,PST,Spanish,Stellar Services,Engineer,Met at Global Expo 2023
+INTL-8784,Jean Martinez,jean.martinez@corp.org,+44 7472 941568,Canada,Ile-de-France,Tokyo,JST,Spanish,BlueOcean,Director,Requires translation services
+INTL-6159,Olivia Tremblay,olivia.tremblay@startup.io,+61 453 832583,Canada,Catalonia,Barcelona,GST,French,Pioneer Manufacturing,Director,
+INTL-3061,Carlos Ali,carlos.ali@startup.io,+61 452 751421,Australia,Ile-de-France,Tokyo,PST,Japanese,TechNova,Director,Met at Global Expo 2023
+INTL-4482,Yuki Muller,yuki.muller@gmail.com,+61 497 871066,Australia,Ile-de-France,Munich,JST,Arabic,Sunrise Foods,Engineer,Call during their afternoon
+INTL-5343,Fatima Tanaka,fatima.tanaka@enterprise.co,+61 449 886153,Australia,Catalonia,Tokyo,EST,German,Stellar Services,Director,Met at Global Expo 2023
+INTL-9021,Carlos Tanaka,carlos.tanaka@enterprise.co,+61 416 657390,UK,Ile-de-France,Tokyo,EST,German,Acme Corp,Engineer,Met at Global Expo 2023
+INTL-3286,Carlos Martinez,carlos.martinez@gmail.com,+61 423 394613,Germany,Tokyo,Tokyo,EST,German,TechNova,Director,Requires translation services
+INTL-2414,Jean Martinez,jean.martinez@outlook.com,+61 430 222032,France,Ile-de-France,Barcelona,JST,French,Apex Solutions,CEO,Requires translation services
+INTL-8328,Carlos Ali,carlos.ali@startup.io,+1 (684) 203-2015,France,Ile-de-France,Dubai,PST,French,Acme Corp,Manager,Met at Global Expo 2023
+INTL-3083,Elena Ali,elena.ali@outlook.com,+61 462 774079,Mexico,Ile-de-France,Toronto,PST,Spanish,Apex Solutions,Consultant,Requires translation services
+INTL-4579,Fatima Muller,fatima.muller@company.net,+61 487 840065,France,Ontario,Tokyo,PST,German,Zenith Enterprises,Consultant,Call during their afternoon
+INTL-1510,Carlos Garcia,carlos.garcia@hotmail.com,+1 (522) 302-9941,Spain,Catalonia,Paris,GST,Japanese,Pioneer Manufacturing,CEO,Call during their afternoon
+INTL-4176,Carlos Muller,carlos.muller@gmail.com,+44 7534 963893,UAE,Ile-de-France,Barcelona,EST,Japanese,Quantum Systems,Engineer,
+INTL-8130,Jean Ali,jean.ali@gmail.com,+44 7442 178472,Australia,Catalonia,Toronto,GST,German,Acme Corp,CEO,Call during their afternoon
+INTL-3924,Carlos Tanaka,carlos.tanaka@corp.org,+61 459 355898,Germany,Bavaria,Dubai,GST,French,Pioneer Manufacturing,Manager,
+INTL-4329,Yuki Tanaka,yuki.tanaka@startup.io,+44 7983 811762,Australia,Catalonia,Barcelona,CET,English,Zenith Enterprises,Consultant,
+INTL-4755,Carlos Tanaka,carlos.tanaka@enterprise.co,+1 (472) 269-9220,Australia,Bavaria,Toronto,JST,Spanish,Sunrise Foods,Consultant,
+INTL-3264,Olivia Ali,olivia.ali@yahoo.com,+61 426 991458,Mexico,Bavaria,Dubai,CET,French,Sunrise Foods,Consultant,Requires translation services
+INTL-8995,Carlos Garcia,carlos.garcia@enterprise.co,+44 7291 446828,Mexico,Catalonia,Tokyo,EST,English,Sunrise Foods,CEO,Requires translation services
+INTL-5783,Noah Smith,noah.smith@corp.org,+44 7923 624799,France,Dubai,Munich,EST,Japanese,Quantum Systems,CEO,Met at Global Expo 2023
+INTL-4545,Lars Tanaka,lars.tanaka@corp.org,+61 427 309840,UAE,Tokyo,Barcelona,EST,English,Sunrise Foods,CEO,Call during their afternoon
+INTL-7187,Jean Tremblay,jean.tremblay@enterprise.co,+1 (410) 750-1933,UK,Catalonia,Barcelona,GST,English,Quantum Systems,Director,
+INTL-9189,Carlos Tremblay,carlos.tremblay@hotmail.com,+1 (213) 859-8462,Germany,Catalonia,Barcelona,JST,Japanese,Sunrise Foods,CEO,
+INTL-5227,Carlos Ali,carlos.ali@company.net,+1 (639) 977-3904,Australia,Bavaria,Tokyo,JST,Spanish,Apex Solutions,Engineer,
+INTL-8606,Olivia Dupont,olivia.dupont@company.net,+44 7118 104471,Australia,Bavaria,Paris,PST,English,Stellar Services,Consultant,Met at Global Expo 2023
+INTL-8963,Noah Garcia,noah.garcia@enterprise.co,+44 7417 513488,Mexico,Tokyo,Munich,JST,Arabic,Global Logistics,Consultant,Met at Global Expo 2023
+INTL-5965,Fatima Smith,fatima.smith@gmail.com,+44 7345 593528,Japan,Ontario,Tokyo,CET,French,Stellar Services,Director,Met at Global Expo 2023
+INTL-8052,Jean Ali,jean.ali@hotmail.com,+61 413 988924,France,Bavaria,Toronto,JST,Arabic,TechNova,Manager,Met at Global Expo 2023
+INTL-9560,Fatima Dupont,fatima.dupont@corp.org,+1 (213) 626-6292,Germany,Bavaria,Munich,PST,Spanish,Zenith Enterprises,Consultant,
+INTL-2908,Jean Muller,jean.muller@outlook.com,+44 7579 308816,UK,Catalonia,Toronto,CET,Spanish,Sunrise Foods,Manager,
+INTL-7856,Jean Garcia,jean.garcia@company.net,+1 (769) 334-1674,Australia,Ile-de-France,Tokyo,PST,Japanese,Acme Corp,Consultant,Requires translation services
+INTL-8550,Yuki Dupont,yuki.dupont@gmail.com,+44 7623 888024,Japan,Tokyo,Barcelona,CET,English,Zenith Enterprises,Director,Met at Global Expo 2023
+INTL-5760,Noah Smith,noah.smith@gmail.com,+61 439 392010,France,Bavaria,Toronto,JST,Arabic,BlueOcean,Consultant,
+INTL-7104,Elena Tanaka,elena.tanaka@outlook.com,+44 7447 707907,France,Ontario,Munich,EST,German,Apex Solutions,Manager,Met at Global Expo 2023
+INTL-4727,Carlos Smith,carlos.smith@hotmail.com,+44 7914 717589,Japan,Catalonia,Tokyo,JST,Arabic,Stellar Services,Consultant,Call during their afternoon
+INTL-9821,Carlos Ali,carlos.ali@enterprise.co,+61 444 226917,UK,Tokyo,Toronto,EST,Arabic,Zenith Enterprises,Engineer,Met at Global Expo 2023
+INTL-8717,Olivia Ali,olivia.ali@yahoo.com,+61 429 742629,UAE,Dubai,Dubai,GST,Arabic,Stellar Services,Director,
+INTL-8718,Jean Garcia,jean.garcia@hotmail.com,+44 7605 751717,Australia,Tokyo,Munich,PST,English,BlueOcean,CEO,
+INTL-3029,Elena Muller,elena.muller@outlook.com,+61 414 502654,Australia,Dubai,Toronto,JST,Spanish,TechNova,CEO,Call during their afternoon
+INTL-4757,Carlos Dupont,carlos.dupont@enterprise.co,+44 7130 469016,Australia,Ile-de-France,Barcelona,PST,Arabic,Sunrise Foods,Director,Call during their afternoon
+INTL-9890,Yuki Tanaka,yuki.tanaka@hotmail.com,+1 (272) 784-7435,Spain,Catalonia,Barcelona,JST,English,Apex Solutions,Consultant,Call during their afternoon
+INTL-9157,Olivia Garcia,olivia.garcia@corp.org,+1 (651) 876-3875,Japan,Tokyo,Tokyo,JST,Spanish,Sunrise Foods,Manager,Call during their afternoon

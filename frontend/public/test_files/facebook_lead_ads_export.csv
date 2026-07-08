@@ -1,55 +1,54 @@
-Lead ID,First Name,Last Name,Email,Phone,Campaign,Ad Set,Random Garbage
-Interested,   Wei   ,,Email: wei.li@gmail.com,Call: +44 9204 405741 ext 555,Data 407,Data 131,Pikachu
-DID_NOT_CONNECT,Priya,Doe,    priya.doe@hotmail.com  and secondary@gmail.com   ,524.842.9660,Data 891,Data 700,
-" Interested ",  Diana  ,Wang,"dwang@company.net
-and another@company.net","+1 (894) 957-0267 (Mobile)",Data 150,  Data 844  ,
-    ,Diana,Kumar,diana.kumar@hotmail.com,,  Data 388  ,Data 988,
-Call back later,  Fatima  ,Li,  fatima.li@example.org  ,+1 (694) 427-2186,,Data 686,
-BAD_LEAD,John,Kumar,  john45@yahoo.com  ,(653) 848-6442,  Data 996  ,  Data 731  ,
-    ,Raj,Patel,rpatel@gmail.com,  713-949-9827  ,Data 881,  Data 415  ,
-  Junk  ,Diana,Hassan,diana25@hotmail.com,  +44 7543 771156  ,  Data 427  ,Data 430,
-BAD_LEAD,Mohamed,WANG,mohamed37@company.net,+44 1791 829460,  Data 456  ,Data 522,
-Call back later,Charlie,Kumar,CHARLIE50@HOTMAIL.COM,933-905-3878,Data 382,  Data 741  ,
-SALE_DONE,  Raj  ,Doe,raj62@hotmail.com,+1 (302) 148-7956,Data 377,Data 527,
-DID_NOT_CONNECT,John,Brown,jbrown@hotmail.com,+1 (699) 881-7083,Data 134,Data 896,
-  GOOD_LEAD_FOLLOW_UP  ,Mohamed,  Brown  ,  mohamed.brown@company.net  ,+1 (688) 050-9116,Data 570,Data 877,
-DID_NOT_CONNECT,  Wei  ,,wei91@yahoo.com,6030306809,  Data 350  ,Data 455,
-SALE_DONE,Wei,  Hassan  ,  wei.hassan@gmail.com  ,487-603-5345,Data 162,Data 628,
-  BAD_LEAD  ,Jane,  Li  ,  JANE.LI@HOTMAIL.COM  ,+1 (302) 796-4432,Data 450,Data 984,
-Interested,Chen,Doe,  chen.doe@yahoo.com  ,  (617) 494-4785  ,Data 606,Data 294,
-Call back later,Jane,KUMAR,jkumar@gmail.com,6951919820,Data 675,,
-,  Mohamed  ,LI,mli@yahoo.com,+44 1571 130214,DATA 665,Data 681,
-Call back later,Wei,Brown,  wei.brown@yahoo.com  ,,Data 534,Data 502,
-,Alice,  LI  ,  alice.li@company.net  ,(143) 997-4982,Data 959,Data 243,
-DID_NOT_CONNECT,Raj,Hassan,    ,6848930796,Data 709,Data 716,
-DID_NOT_CONNECT,John,Brown,jbrown@company.net,(468) 718-8640,Data 870,Data 243,
-  Call back later  ,John,Wang,,074.747.7063,Data 946,Data 930,
-Junk,Raj,Smith,  raj.smith@example.org  ,+1 (758) 009-8244 / 4555006371,Data 174,Data 761,
-,Raj,  Johnson  ,raj63@company.net,506-679-0492,Data 308,  Data 365  ,
-Interested,Priya,  Wang  ,"pwang@company.net, alternate@hotmail.com",+44 4286 832407,Data 331,Data 501,
-GOOD_LEAD_FOLLOW_UP,Alice,Li,,(213) 228-9763 / (329) 998-6917,Data 771,Data 975,
-,Mohamed,Ali,mohamed.ali@company.net,(332) 915-2638,Data 738,Data 261,
-,Diana,Smith,diana76@example.org,830-244-6355,  Data 578  ,Data 430,
-Interested,Chen,  Doe  ,  chen.doe@hotmail.com  ,  581-264-1963  ,  Data 395  ,Data 783,
-Call back later,  CHEN  ,Kumar,  CHEN.KUMAR@HOTMAIL.COM  ,2805502725,Data 519,Data 169,
-BAD_LEAD,Priya,Hassan,    ,746.541.2556,Data 232,Data 931,
-Call back later,Priya,Doe,priya.doe@company.net,7054104189,  Data 468  ,Data 420,
-SALE_DONE,Bob,Doe,bob.doe@company.net,362.730.9074,Data 242,Data 201,
-,Alice,Johnson,  ajohnson@yahoo.com  ,333-732-1289,Data 578,Data 830,
-,BOB,  Li  ,bli@hotmail.com,+1 (079) 814-9209 / +1 (728) 717-0645,Data 796,  Data 267  ,
-Junk,Priya,Brown,    ,992-873-2412,Data 465,Data 119,
-DID_NOT_CONNECT,WEI,  Hassan  ,  wei48@gmail.com  ,+44 8485 230786,  Data 877  ,  Data 977  ,
-Interested,Bob,,bob.li@company.net,933-023-5341,Data 770,Data 570,
-BAD_LEAD,Chen,Patel,chen95@hotmail.com,500-290-1964,Data 165,Data 279,
-Interested,Diana,Hassan,  diana.hassan@example.org  ,793.474.1823 / +1 (898) 146-5622,Data 877,Data 955,
-Call back later,  Diana  ,  Li  ,,  +44 4665 019742  ,Data 939,Data 306,
-  DID_NOT_CONNECT  ,Mohamed,,mohamed.smith@yahoo.com,  (977) 210-5928  ,Data 645,Data 518,
-Call back later,  Chen  ,  Martinez  ,chen46@example.org,  +44 0721 428788  ,  Data 994  ,Data 772,
-GOOD_LEAD_FOLLOW_UP,Raj,Johnson,  rjohnson@yahoo.com  ,064.421.0510,Data 747,Data 461,
-  Interested  ,  Wei  ,Hassan,wei.hassan@hotmail.com,556-773-7576,  Data 941  ,Data 395,
-Call back later,Priya,Hassan,  priya.hassan@company.net  ,(855) 969-2974,Data 351,Data 726,
-Call back later,Jane,Wang,  jane61@yahoo.com  ,+1 (332) 916-7431,Data 264,Data 692,
-BAD_LEAD,Chen,Ali,cali@yahoo.com,  +1 (569) 034-7783 / 8958606640  ,Data 945,Data 152,
-GOOD_LEAD_FOLLOW_UP,Diana,DOE,diana.doe@example.org,  +44 5891 122770  ,Data 434,Data 126,
-BAD_LEAD,Alice,Brown,alice26@example.org,948.253.5274,  Data 804  ,Data 944,
-Interested,Fatima,Li,fatima56@company.net,(763) 525-6920 / +44 0572 385372,  Data 453  ,Data 856,
+id,created_time,campaign_name,adset_name,form_id,platform,first_name,last_name,email,phone_number,lead_quality
+l_162483697153733,2023-07-04T21:00:00,Lookalike_Audience_1,Tech_Interests,70991653108,ig,Kavita,Li,kavita.li@yahoo.com,+91 92825 1779,
+l_961140525007319,2023-09-15T14:00:00,Lead_Gen_Form,Tech_Interests,63846573946,ig,Amit,Wang,amit.wang@hotmail.com,+91 92047 7179,
+l_546475625050843,2023-10-29T14:00:00,Lead_Gen_Form,Tech_Interests,56549959754,fb,Arjun,Doe, arjun.doe@outlook.com and alternate@hotmail.com ,91-99885-9134,
+l_694501039428512,2023-01-16T08:00:00,Lead_Gen_Form,Tech_Interests,87983535378,fb,Alice,Bose,alice.bose@hotmail.com,096819 7506,HIGH
+l_330935710740570,2023-11-01T13:00:00,Lead_Gen_Form,Tech_Interests,68378401963,fb,Arjun,Reddy,arjun.reddy@yahoo.com,993060783,
+l_462672976010003,2023-08-21T04:00:00,Q3_Retargeting,Broad_25-45,47952083438,fb,Priya,Singh,priya.singh@logistics.com,91-95018-6672,
+l_413827651118012,2023-07-18T23:00:00,Brand_Awareness_IN,Broad_25-45,40605268268,fb,Ravi,Li,ravi.li@startup.io and alternate@startup.io,+91 (913) 20-5041,
+l_555338802774134,2023-08-20T15:00:00,Lookalike_Audience_1,Broad_25-45,63097885169,fb,John,Singh,john.singh@enterprise.co and alternate@hotmail.com,+91 (926) 17-3088,HIGH
+l_476177239656864,2023-06-01T16:00:00,Lookalike_Audience_1,Tech_Interests,11924273506,fb,Anita,Hassan,anita.hassan@logistics.com,91-98273-7851,
+l_707908539014897,2023-07-03T18:00:00,Brand_Awareness_IN,Tech_Interests,23870924507,fb,Mohamed,Brown,mohamed.brown@techsolutions.in,+91 99905 5078,
+l_414162309711857,2023-04-29T11:00:00,Lead_Gen_Form,Broad_25-45,49455696130,ig,Fatima,Kumar,fatima.kumar@startup.io,91-96949-9334,HIGH
+l_332803156293949,2023-11-09T08:00:00,Q3_Retargeting,Custom_List_Upload,40836769263,fb,John,Smith,john.smith@enterprise.co,+91 99320 1780,LOW
+l_662892981094776,2023-02-08T10:00:00,Lead_Gen_Form,Tech_Interests,18440636763,fb,Fatima,Verma,fatima.verma@company.net,,
+l_777850162562996,2023-01-29T22:00:00,Q3_Retargeting,Custom_List_Upload,43619113857,ig,Fatima,Sharma,  ,+91 (943) 10-5652,
+l_174901749453499,2023-12-22T19:00:00,Lead_Gen_Form,Broad_25-45,71647101634,ig,Raj,Kumar,,,HIGH
+l_183755368766420,2023-08-25T21:00:00,Brand_Awareness_IN,Tech_Interests,34647545884,ig,Raj,Patel,raj.patel@startup.io,093381 0702,
+l_382944930948494,2023-12-17T10:00:00,Brand_Awareness_IN,Tech_Interests,39867774004,ig,Anjali,Hassan, anjali.hassan@logistics.com , ext 14,LOW
+l_482463189672241,2023-01-17T12:00:00,Lookalike_Audience_1,Broad_25-45,95869645267,fb,Amit,Bose,,,
+l_884157478118778,2023-03-15T15:00:00,Q3_Retargeting,Custom_List_Upload,69148137390,fb,Arjun,Bose,arjun.bose@corp.org and alternate@yahoo.com,,
+l_500376788436026,2023-12-15T21:00:00,Brand_Awareness_IN,Broad_25-45,22717857573,ig,Wei,Iyer,wei.iyer@gmail.com,930116512,HIGH
+l_930845266338826,2023-11-19T21:00:00,Brand_Awareness_IN,Tech_Interests,91972776994,fb,Kavita,Verma,kavita.verma@outlook.com,,HIGH
+l_870289779486254,2023-01-03T08:00:00,Lead_Gen_Form,Custom_List_Upload,22983257715,ig,Rahul,Wang, rahul.wang@gmail.com ,953426585,
+l_964669538407967,2023-09-20T19:00:00,Brand_Awareness_IN,Broad_25-45,70606455992,ig,Priya,Rao,,+91 (929) 79-3229,HIGH
+l_454840523417547,2023-01-25T18:00:00,Lead_Gen_Form,Broad_25-45,73204216593,ig,Fatima,Li,fatima.li@techsolutions.in,+91 99488 2293,HIGH
+l_409207319262722,2023-11-27T08:00:00,Brand_Awareness_IN,Tech_Interests,36232493235,fb,Sarah,Li,sarah.li@corp.org,+91 (966) 52-6317,
+l_684436991473096,2023-11-12T20:00:00,Lead_Gen_Form,Tech_Interests,15477055436,ig,Vikram,Rao,vikram.rao@outlook.com,910597135,
+l_665123739224695,2023-12-17T16:00:00,Q3_Retargeting,Custom_List_Upload,16279254623,fb,Anjali,Jain,anjali.jain@hotmail.com and alternate@yahoo.com,,LOW
+l_675080542588453,2023-09-12T10:00:00,Brand_Awareness_IN,Broad_25-45,71250247440,ig,Aditya,Iyer,aditya.iyer@yahoo.com,,
+l_772030665292479,2023-09-25T05:00:00,Brand_Awareness_IN,Custom_List_Upload,51631493501,ig,Kavita,Smith,kavita.smith@hotmail.com,91-97999-3568,
+l_833679596025947,2023-03-24T04:00:00,Lead_Gen_Form,Tech_Interests,62772926138,fb,Sunil,Rao,,920593730 ext 340,
+l_872457444422004,2023-01-08T12:00:00,Q3_Retargeting,Broad_25-45,67953800505,ig,Diana,Gupta,diana.gupta@hotmail.com,958532245,
+l_187306540096341,2023-06-18T06:00:00,Lookalike_Audience_1,Tech_Interests,92734526924,fb,Aditya,Sharma,aditya.sharma@startup.io,91-97285-8821,HIGH
+l_297514514721041,2023-01-10T17:00:00,Brand_Awareness_IN,Custom_List_Upload,37737539752,ig,Sneha,Ali,sneha.ali@techsolutions.in,91-99233-6754,
+l_647607232057797,2023-10-15T17:00:00,Brand_Awareness_IN,Broad_25-45,25633180095,fb,Raj,Reddy,,,HIGH
+l_353044464201936,2023-03-19T07:00:00,Lookalike_Audience_1,Custom_List_Upload,22805393328,ig,Amit,Hassan,amit.hassan@outlook.com,098200 5391,HIGH
+l_615851767680242,2023-05-27T12:00:00,Q3_Retargeting,Custom_List_Upload,77366838798,ig,Aditya,Ali,aditya.ali@outlook.com,99841 9050,HIGH
+l_412138531002577,2023-04-03T17:00:00,Q3_Retargeting,Tech_Interests,12348063576,ig,Sarah,Menon,sarah.menon@yahoo.com,091249 7113,
+l_718913627845382,2023-12-02T11:00:00,Lead_Gen_Form,Custom_List_Upload,53096484554,fb,Anjali,Menon,anjali.menon@corp.org,092911 9191,
+l_309135323234423,2023-05-16T19:00:00,Lead_Gen_Form,Tech_Interests,31408553100,ig,Sarah,Gupta,sarah.gupta@corp.org,996556677,LOW
+l_157113083936844,2023-10-15T23:00:00,Lead_Gen_Form,Custom_List_Upload,93836040532,ig,Aditya,Johnson,,093180 6535,
+l_667272287185359,2023-10-02T13:00:00,Brand_Awareness_IN,Custom_List_Upload,76827041606,ig,Aditya,Jain, aditya.jain@startup.io ,91-92303-8135,
+l_917227562467067,2023-11-15T16:00:00,Brand_Awareness_IN,Tech_Interests,12470184523,ig,Aditya,Gupta,,96965 6722,LOW
+l_617609610961805,2023-07-03T17:00:00,Lead_Gen_Form,Broad_25-45,88917854785,ig,Charlie,Jain,charlie.jain@enterprise.co and alternate@logistics.com,+91 93721 8726 ext 988,
+l_505404074913158,2023-12-30T18:00:00,Lookalike_Audience_1,Custom_List_Upload,57414802150,fb,Neha,Singh,neha.singh@hotmail.com and alternate@gmail.com,97429 8659,
+l_430018032358718,2023-03-05T21:00:00,Lead_Gen_Form,Custom_List_Upload,17351886306,ig,Neha,Iyer,neha.iyer@yahoo.com and alternate@outlook.com,99136 0488 ext 370,HIGH
+l_111946560431740,2023-05-10T07:00:00,Brand_Awareness_IN,Custom_List_Upload,15736127262,fb,Fatima,Menon,,998071833,
+l_270587899876915,2023-11-15T01:00:00,Lookalike_Audience_1,Broad_25-45,99338001743,ig,Suresh,Johnson,suresh.johnson@enterprise.co,99752 0483,
+l_960683206987631,2023-06-23T10:00:00,Q3_Retargeting,Broad_25-45,47586804119,fb,Kavita,Sharma,,91082 3643 ext 662,
+l_271936664800736,2023-01-02T04:00:00,Lookalike_Audience_1,Broad_25-45,59015372228,ig,Amit,Menon,amit.menon@company.net,99880 2048,LOW
+l_748976520742953,2023-11-20T09:00:00,Brand_Awareness_IN,Custom_List_Upload,14785179756,ig,Neha,Kumar,neha.kumar@corp.org,91-99963-5551,
+l_766616619612491,2023-11-15T06:00:00,Lookalike_Audience_1,Broad_25-45,96245653114,fb,Chen,Jain,chen.jain@gmail.com,91621 5468,HIGH
+l_608699089638329,2023-09-09T14:00:00,Lookalike_Audience_1,Custom_List_Upload,84305941579,fb,Fatima,Sharma,fatima.sharma@company.net,+91 95761 6631,
+l_568961881121067,2023-01-24T00:00:00,Lookalike_Audience_1,Broad_25-45,20763691061,ig,Suresh,Gupta,suresh.gupta@company.net,+91 94002 2310,LOW

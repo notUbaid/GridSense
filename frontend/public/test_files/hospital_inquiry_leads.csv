@@ -1,52 +1,52 @@
-Patient Name,Email,Phone,Department,Inquiry Status
-JOHN BROWN,  john.brown@example.org  ,+1 (549) 311-4154,Data 544,  SALE_DONE  
-Diana Hassan,dhassan@gmail.com,(659) 648-5145,Data 356,
-Chen Garcia,  chen.garcia@company.net  ,+44 7802 723927,Data 529,Interested
-  Raj Wang  ,rwang@gmail.com,0693933825,Data 198,
-Wei Johnson,wei.johnson@gmail.com,+1 (692) 502-6154,  Data 958  ,SALE_DONE
-,jane47@hotmail.com,+44 3527 454204,Data 671,
-Jane Li,  jane.li@company.net  ,232-508-2518,Data 905,
-Priya Hassan,phassan@yahoo.com,(812) 920-6677,Data 618,GOOD_LEAD_FOLLOW_UP
-  Mohamed Ali  ,mali@gmail.com,538.119.5697,  Data 394  ,Junk
-Bob Smith,  bob.smith@company.net  ,375.341.6220,Data 200,SALE_DONE
-Chen Garcia,chen10@example.org,+1 (693) 870-5491,Data 923,BAD_LEAD
-Charlie Martinez,charlie.martinez@yahoo.com,6790357924,Data 458,
-Charlie Brown,"  charlie.brown@yahoo.com  , alternate@yahoo.com",045.739.6764,Data 408,Interested
-Charlie Li,  charlie.li@hotmail.com  ,5970144960,Data 123,DID_NOT_CONNECT
-Charlie Brown,  charlie.brown@company.net  ,824-860-9504 / 2366998922,Data 483,BAD_LEAD
-FATIMA MARTINEZ,fatima.martinez@yahoo.com,6440050755 / 797-670-9285,Data 351,Call back later
-CHARLIE MARTINEZ,,(398) 098-5610,Data 450,Call back later
-  John Smith  ,john40@example.org,0955635776,Data 610,  BAD_LEAD  
-Charlie Kumar,  ckumar@gmail.com  ,+1 (970) 597-4953,Data 360,Call back later
-,fgarcia@example.org,+1 (331) 969-0266 / +1 (561) 524-9464,Data 777,
-Chen Wang,chen99@example.org,1259242290,Data 790,  Call back later  
-Raj Smith,rsmith@hotmail.com,+1 (781) 952-8768,,
-  John Patel  ,john.patel@example.org,8083245830,DATA 127,GOOD_LEAD_FOLLOW_UP
-Charlie Smith,csmith@hotmail.com,303.514.7211,  Data 923  ,  Junk  
-  Alice Smith  ,  asmith@hotmail.com  ,436-390-6987,Data 254,  DID_NOT_CONNECT  
-Diana Wang,,+44 8073 289271,Data 397,
-  Alice Johnson  ,"  alice.johnson@gmail.com  , alternate@gmail.com",9781925183,,  JUNK  
-Jane Li,jane48@yahoo.com,+1 (222) 662-2384,Data 334,Interested
-Charlie Martinez,    charlie.martinez@company.net    ,,Data 365,Call back later
-Alice Hassan,"alice21@hotmail.com, alternate@yahoo.com",+44 1126 252535,Data 712,GOOD_LEAD_FOLLOW_UP
-  Alice Johnson  ,  alice.johnson@gmail.com  ,+1 (549) 499-3057,Data 565,DID_NOT_CONNECT
-Diana Hassan,  diana.hassan@yahoo.com  ,963.958.6945,  Data 718  ,Interested
-Charlie Smith,  csmith@yahoo.com  ,+44 3904 407863,Data 444,SALE_DONE
-Mohamed Wang,mohamed.wang@gmail.com,(650) 032-1443,DATA 767,
-Alice Smith,asmith@company.net,8879828026,Data 722,BAD_LEAD
-Priya Martinez,priya68@hotmail.com,(838) 279-5487,Data 609,
-,FDOE@EXAMPLE.ORG,5792631660,  Data 749  ,DID_NOT_CONNECT
-Raj Hassan,,(710) 581-8780,  Data 723  ,CALL BACK LATER
-Fatima Hassan,    fatima.hassan@company.net    ,+44 8896 982927,Data 666,BAD_LEAD
-Diana Ali,  diana.ali@example.org  ,+1 (013) 812-2721,  Data 499  ,BAD_LEAD
-  Chen Kumar  ,chen.kumar@example.org,+1 (520) 637-2409,Data 145,  Call back later  
-Charlie Li,charlie11@company.net,  +44 3273 401429  ,Data 578,
-Diana Ali,,129.474.3810,Data 470,Interested
-Bob Smith,bob60@gmail.com,721-630-0027,Data 891,BAD_LEAD
-Raj Ali,  raj27@hotmail.com  ,7461029509,Data 157,BAD_LEAD
-John Johnson,john.johnson@hotmail.com,+1 (093) 528-3071,Data 384,Call back later
-  Charlie Kumar  ,charlie.kumar@company.net,  648-971-3203  ,Data 995,
-Mohamed Doe,"mohamed7@hotmail.com, alternate@company.net",+1 (145) 310-0015,Data 314,SALE_DONE
-Bob Johnson,", alternate@yahoo.com",+1 (885) 779-7728,Data 429,SALE_DONE
-  Priya Patel  ,ppatel@hotmail.com,0810993327,Data 951,Junk
-Priya Hassan,  priya.hassan@yahoo.com  ,+44 7744 939201,Data 340,
+Enquiry Date,Patient Name,Guardian Name,Age/Gender,Department,Preferred Doctor,Appointment Date,Patient Email,Contact Number,Insurance Provider,Remarks
+19/06/2026,Anjali Li,,80/F,Orthopedics,Dr. Patel,Next Week,anjali.patel@outlook.com,91-97203-8328,HDFC Ergo,Follow up after tests
+22/06/2026,Kavita Reddy,,50/O,General Medicine,Any,Urgent,,971638383,,
+09/07/2026,Neha Johnson,Anjali Gupta,10/M,Neurology,Dr. Patel,,,+91 93133 6469,Star Health,Requires wheelchair
+26/06/2026,Suresh Patel,Neha Reddy,70/F,Cardiology,Any,,,+91 (952) 06-9851,HDFC Ergo,Requires wheelchair
+14/06/2026,Diana Jain,,6/O,Cardiology,Dr. Patel,Urgent,,96948 6192,HDFC Ergo,
+16/06/2026,Rahul Reddy,Sunil Hassan,20/M,Cardiology,Dr. Reddy,Next Week,rahul.patel@yahoo.com,+91 99670 7040,Star Health,Requires wheelchair
+10/06/2026,Amit Wang,Neha Ali,30/F,Neurology,Dr. Patel,Next Week,,+91 97516 4193,None,Second opinion
+09/07/2026,Arjun Jain,,22/M,Neurology,Any,Tomorrow,arjun.patel@startup.io,97092 9468,None,Follow up after tests
+06/07/2026,Sneha Li,Anjali Patel,26/F,General Medicine,Any,Next Week,,923039393,HDFC Ergo,
+10/06/2026,Suresh Sharma,,31/M,Orthopedics,Dr. Patel,Next Week,suresh.patel@enterprise.co,097952 2993,Star Health,Second opinion
+25/06/2026,Sunil Smith,Rahul Rao,30/O,Cardiology,Dr. Sharma,Next Week,sunil.patel@hotmail.com,91-95736-9049,,
+09/07/2026,Anita Ali,,27/M,General Medicine,Dr. Sharma,Urgent,anita.patel@yahoo.com,+91 94594 2519,HDFC Ergo,Follow up after tests
+24/06/2026,Aditya Smith,Ravi Wang,80/M,Orthopedics,Dr. Sharma,,aditya.patel@logistics.com,99846 4070,HDFC Ergo,Requires wheelchair
+01/07/2026,Raj Das,Charlie Iyer,33/O,General Medicine,Dr. Sharma,Next Week,raj.patel@logistics.com,+91 92262 2105,HDFC Ergo,Follow up after tests
+08/07/2026,Charlie Bose,Sunil Menon,77/F,Pediatrics,Dr. Patel,Next Week,charlie.patel@yahoo.com,+91 92957 4289,HDFC Ergo,Follow up after tests
+29/06/2026,Kavita Kumar,Sunil Ali,33/F,Cardiology,Any,Urgent,kavita.patel@hotmail.com,094239 1640,HDFC Ergo,Follow up after tests
+04/07/2026,Ravi Doe,Neha Smith,37/M,General Medicine,Any,,ravi.patel@enterprise.co,092242 2211,,Second opinion
+30/06/2026,Anjali Rao,Charlie Smith,30/O,Orthopedics,Dr. Patel,,,+91 98560 8735,Star Health,Requires wheelchair
+08/07/2026,Fatima Johnson,,16/M,General Medicine,Dr. Patel,Tomorrow,,092549 8424,Star Health,Second opinion
+27/06/2026,Anjali Kumar,Neha Reddy,36/F,General Medicine,Dr. Reddy,Urgent,,91-91140-2510,ICICI Lombard,Follow up after tests
+29/06/2026,Sunil Doe,,80/O,Neurology,Dr. Reddy,Tomorrow,,91-98555-5893,Star Health,Requires wheelchair
+27/06/2026,Mohamed Doe,Chen Iyer,59/O,Orthopedics,Dr. Sharma,,mohamed.patel@techsolutions.in,91-93854-9373,Star Health,Follow up after tests
+09/07/2026,Kavita Ali,Rahul Johnson,22/F,Cardiology,Dr. Sharma,Urgent,kavita.patel@logistics.com,092131 7603,Star Health,Follow up after tests
+30/06/2026,Sarah Rao,,32/F,General Medicine,Dr. Sharma,Next Week,sarah.patel@hotmail.com,91454 9617,Star Health,Follow up after tests
+12/06/2026,Aditya Johnson,,15/M,Pediatrics,Dr. Sharma,Urgent,,+91 93110 1722,,
+07/07/2026,Alice Patel,,31/F,Pediatrics,Dr. Patel,Urgent,alice.patel@corp.org,96083 5636,None,Second opinion
+25/06/2026,Priya Gupta,Charlie Li,34/M,Neurology,Dr. Sharma,Next Week,,939579579,None,
+14/06/2026,Neha Jain,Mohamed Patel,20/F,Neurology,Any,Next Week,,+91 (930) 60-0494,HDFC Ergo,Follow up after tests
+12/06/2026,Chen Das,Charlie Bose,11/F,Orthopedics,Dr. Reddy,Urgent,,+91 97336 8964,ICICI Lombard,Requires wheelchair
+11/06/2026,Amit Verma,,60/O,Neurology,Any,,amit.patel@company.net,+91 (944) 56-0076,Star Health,Follow up after tests
+03/07/2026,Vikram Gupta,Anjali Jain,18/F,Neurology,Dr. Patel,Tomorrow,vikram.patel@outlook.com,+91 92584 6106,,
+21/06/2026,Arjun Bose,Anita Patel,7/F,General Medicine,Dr. Patel,Next Week,arjun.patel@gmail.com,096188 5723,HDFC Ergo,Second opinion
+06/07/2026,Diana Johnson,,15/O,Pediatrics,Dr. Sharma,,,91-98171-9230,Star Health,Second opinion
+19/06/2026,Neha Gupta,Aditya Brown,79/M,Neurology,Dr. Patel,,,936989560,None,Second opinion
+26/06/2026,Diana Brown,Aditya Verma,24/M,Cardiology,Dr. Sharma,Next Week,,94025 1784,None,Follow up after tests
+16/06/2026,Suresh Patel,Diana Johnson,67/M,General Medicine,Any,,suresh.patel@logistics.com,91-91098-2800,,Follow up after tests
+16/06/2026,Neha Li,Sarah Li,61/O,General Medicine,Dr. Patel,,,927879012,HDFC Ergo,Second opinion
+05/07/2026,Priya Smith,Anjali Singh,5/M,General Medicine,Dr. Sharma,,priya.patel@logistics.com,091800 1140,,Second opinion
+24/06/2026,Kavita Menon,Raj Hassan,44/F,Pediatrics,Any,,,91-92015-5999,None,Requires wheelchair
+10/06/2026,Charlie Jain,,67/M,Orthopedics,Dr. Reddy,Next Week,,93809 3389,HDFC Ergo,
+13/06/2026,Amit Jain,,9/M,Neurology,Dr. Reddy,Tomorrow,amit.patel@gmail.com,096707 1272,HDFC Ergo,
+16/06/2026,Charlie Das,,29/M,Cardiology,Dr. Patel,,,+91 (957) 10-0017,ICICI Lombard,
+09/06/2026,Diana Reddy,,50/O,Pediatrics,Any,,,+91 (959) 86-0178,Star Health,
+28/06/2026,Rahul Li,,45/F,Pediatrics,Dr. Sharma,,rahul.patel@startup.io,91-93957-8685,HDFC Ergo,Requires wheelchair
+17/06/2026,Mohamed Singh,,11/M,Cardiology,Dr. Reddy,Next Week,,91-98103-7183,HDFC Ergo,Requires wheelchair
+15/06/2026,Raj Iyer,Vikram Gupta,44/M,Neurology,Dr. Reddy,Tomorrow,raj.patel@yahoo.com,91-94341-7129,HDFC Ergo,Follow up after tests
+19/06/2026,Sneha Patel,Aditya Bose,35/F,Orthopedics,Dr. Patel,Tomorrow,sneha.patel@corp.org,991371102,Star Health,
+28/06/2026,Sunil Jain,Alice Iyer,19/F,General Medicine,Dr. Sharma,Next Week,sunil.patel@outlook.com,91-92105-8173,ICICI Lombard,
+01/07/2026,Neha Doe,,54/F,Pediatrics,Dr. Patel,,neha.patel@startup.io,+91 (959) 83-9539,,Second opinion
+21/06/2026,Rahul Ali,,60/M,Cardiology,Dr. Sharma,,,+91 (940) 70-1146,ICICI Lombard,Second opinion
+24/06/2026,Arjun Verma,,15/F,Cardiology,Dr. Patel,Next Week,,96374 3653,None,
