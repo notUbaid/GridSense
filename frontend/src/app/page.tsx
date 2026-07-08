@@ -14,7 +14,7 @@ import { SchemaMappingPanel } from '@/components/upload/SchemaMappingPanel';
 import { motion, AnimatePresence } from 'framer-motion';
 
 export default function Home() {
-  const { state, progress, records, skippedRawRows, failedRawRows, previewData, schemaMapping, metrics, error, currentActivity, elapsedMs, etaMs, processFile, startProcessing, retryFailed, reset } = useProcessing();
+  const { state, progress, processedRows, records, skippedRawRows, failedRawRows, previewData, schemaMapping, metrics, error, currentActivity, elapsedMs, etaMs, processFile, startProcessing, retryFailed, reset } = useProcessing();
 
   return (
     <main className="relative min-h-screen bg-background text-foreground p-4 sm:p-6 md:p-12 overflow-hidden selection:bg-primary/20">
@@ -88,6 +88,7 @@ export default function Home() {
               >
                 <ProgressCard 
                   progress={progress} 
+                  processedRows={processedRows}
                   records={records} 
                   currentActivity={currentActivity}
                   elapsedMs={elapsedMs}

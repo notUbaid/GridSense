@@ -9,6 +9,7 @@ import { motion } from 'framer-motion';
 
 interface ProgressCardProps {
   progress: number;
+  processedRows: number;
   records: CrmRecord[];
   currentActivity: string;
   elapsedMs: number;
@@ -24,7 +25,7 @@ function formatTime(ms: number) {
   return `${m}:${s.toString().padStart(2, '0')}`;
 }
 
-export function ProgressCard({ progress, records, currentActivity, elapsedMs, etaMs, totalRows }: ProgressCardProps) {
+export function ProgressCard({ progress, processedRows, records, currentActivity, elapsedMs, etaMs, totalRows }: ProgressCardProps) {
   return (
     <motion.div 
       className="space-y-6"
@@ -66,7 +67,7 @@ export function ProgressCard({ progress, records, currentActivity, elapsedMs, et
             <div className="absolute inset-0 bg-linear-to-r from-transparent via-white/20 to-transparent -translate-x-full animate-[shimmer_1.5s_infinite]" />
           </div>
           <div className="flex justify-between items-center text-sm font-medium text-muted-foreground">
-            <span>{records.length} / {totalRows} records mapped</span>
+            <span>{processedRows} / {totalRows} records processed</span>
             <span className="text-foreground">{progress}% Complete</span>
           </div>
         </CardContent>

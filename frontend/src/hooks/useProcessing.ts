@@ -42,6 +42,7 @@ const MAX_CONCURRENCY = 4;
 export function useProcessing() {
   const [state, setState] = useState<ProcessState>('idle');
   const [progress, setProgress] = useState(0);
+  const [processedRows, setProcessedRows] = useState(0);
   const [records, setRecords] = useState<CrmRecord[]>([]);
   const [skippedRawRows, setSkippedRawRows] = useState<Record<string, string>[]>([]);
   const [failedRawRows, setFailedRawRows] = useState<Record<string, string>[]>([]);
@@ -220,6 +221,11 @@ export function useProcessing() {
     const localChunkResults: CrmRecord[][] = new Array(chunks.length).fill(null);
     let completedBatches = 0;
     const totalBatches = chunks.length;
+    let localProcessedRows = localSkippedRaw.length;
+    
+    // Initial progress based on heuristically skipped rows
+    setProcessedRows(localProcessedRows);
+    setProgress(Math.round((localProcessedRows / sanitizedData.length) * 100));
     let localFailedBatches = 0;
     let localFailedRows = 0;
     const localFailedRaw: Record<string, string>[] = [];
@@ -333,7 +339,9 @@ export function useProcessing() {
         } finally {
           if (!requeued) {
             completedBatches++;
-            setProgress(Math.round((completedBatches / totalBatches) * 100));
+            localProcessedRows += task.batch.length;
+            setProcessedRows(localProcessedRows);
+            setProgress(Math.round((localProcessedRows / sanitizedData.length) * 100));
           }
         }
       }
@@ -400,6 +408,7 @@ export function useProcessing() {
     clearTimer();
     setState('idle');
     setProgress(0);
+    setProcessedRows(0);
     setRecords([]);
     setSkippedRawRows([]);
     setFailedRawRows([]);
@@ -415,6 +424,7 @@ export function useProcessing() {
   return {
     state,
     progress,
+    processedRows,
     records,
     skippedRawRows,
     failedRawRows,
