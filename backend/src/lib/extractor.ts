@@ -527,14 +527,17 @@ ${JSON.stringify(aiRows)}`;
 
       const status = error?.status || error?.response?.status || (error.message?.includes('429') ? 429 : 500);
       const isRateLimit = status === 429;
+      const isAuthError = status === 401 || status === 403 || (status === 400 && error?.error?.code === 'organization_restricted') || (status === 400 && error.message?.includes('organization_restricted'));
       
-      // If we hit a rate limit, try to rotate key first if using groq
-      if (isRateLimit) {
+      const shouldRotateKey = isRateLimit || isAuthError;
+
+      // If we hit a rate limit or auth error, try to rotate key first if using groq
+      if (shouldRotateKey) {
         if (provider === 'groq') {
           if (keysTried < groqClients.length) {
             if (usedGroqIndex === currentGroqIndex) {
               currentGroqIndex = (currentGroqIndex + 1) % groqClients.length;
-              logger.warn(`Groq key exhausted. Rotating to key ${currentGroqIndex}...`);
+              logger.warn(`Groq key exhausted (Status: ${status}). Rotating to key ${currentGroqIndex}...`);
             } else {
               logger.warn(`Another worker rotated Groq key to ${currentGroqIndex}. Retrying with new key...`);
             }
@@ -544,8 +547,8 @@ ${JSON.stringify(aiRows)}`;
           }
         }
         
-        const limitError = new Error('Rate limit exceeded');
-        (limitError as any).status = 429;
+        const limitError = new Error(isAuthError ? 'API Key exhausted or restricted' : 'Rate limit exceeded');
+        (limitError as any).status = isAuthError ? 403 : 429;
         (limitError as any).exhaustedProvider = provider;
         throw limitError;
       }
