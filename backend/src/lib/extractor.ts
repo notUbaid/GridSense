@@ -202,6 +202,15 @@ const DATE_FORMAT_REGEX = /\b(?:19|20)\d{2}[-/.]\d{1,2}[-/.]\d{1,2}\b|\b\d{1,2}[
 const TEXT_DATE_REGEX = /\b(?:Jan(?:uary)?|Feb(?:ruary)?|Mar(?:ch)?|Apr(?:il)?|May|Jun(?:e)?|Jul(?:y)?|Aug(?:ust)?|Sep(?:tember)?|Oct(?:ober)?|Nov(?:ember)?|Dec(?:ember)?)\s+\d{1,2}(?:st|nd|rd|th)?(?:,\s*|\s+)(?:19|20)\d{2}\b/i;
 const DIGIT_REGEX = /\d/g;
 
+function resolveRelativeDate(str: string): number | null {
+  const lower = str.trim().toLowerCase();
+  const now = new Date();
+  if (lower === 'today') return now.getTime();
+  if (lower === 'yesterday') return now.getTime() - 86400000;
+  if (lower === 'tomorrow') return now.getTime() + 86400000;
+  return null;
+}
+
 let circuitBreakerOpenUntil = 0;
 
 export async function processBatch(
@@ -241,6 +250,31 @@ export async function processBatch(
     let created_at: string | null = null;
 
     for (const key of Object.keys(sanitized)) {
+      if (/created|enquiry|added|submitted|timestamp|lead date/i.test(key)) {
+        let value = sanitized[key];
+        if (!value) continue;
+        
+        const relative = resolveRelativeDate(value);
+        if (relative) {
+          created_at = new Date(relative).toISOString();
+          delete sanitized[key];
+          break;
+        }
+
+        let dateMatch = value.match(DATE_FORMAT_REGEX) || value.match(TEXT_DATE_REGEX);
+        if (dateMatch) {
+          const parsedDate = Date.parse(dateMatch[0].replace(/\./g, '-'));
+          if (!isNaN(parsedDate)) {
+            created_at = new Date(parsedDate).toISOString();
+            sanitized[key] = value.replace(dateMatch[0], '').trim();
+            if (!sanitized[key]) delete sanitized[key];
+            break;
+          }
+        }
+      }
+    }
+
+    for (const key of Object.keys(sanitized)) {
       let value = sanitized[key];
       if (!value) continue;
 
@@ -252,16 +286,19 @@ export async function processBatch(
         }
       }
 
-      if (!created_at) {
-        let dateMatch = value.match(DATE_FORMAT_REGEX);
-        if (!dateMatch) {
-          dateMatch = value.match(TEXT_DATE_REGEX);
-        }
-        if (dateMatch) {
-          const parsedDate = Date.parse(dateMatch[0]);
-          if (!isNaN(parsedDate)) {
-            created_at = new Date(parsedDate).toISOString();
-            value = value.replace(dateMatch[0], '').trim();
+      if (!created_at && !/appointment|meeting|event|end|follow|birth|dob/i.test(key)) {
+        const relative = resolveRelativeDate(value);
+        if (relative) {
+          created_at = new Date(relative).toISOString();
+          value = '';
+        } else {
+          let dateMatch = value.match(DATE_FORMAT_REGEX) || value.match(TEXT_DATE_REGEX);
+          if (dateMatch) {
+            const parsedDate = Date.parse(dateMatch[0].replace(/\./g, '-'));
+            if (!isNaN(parsedDate)) {
+              created_at = new Date(parsedDate).toISOString();
+              value = value.replace(dateMatch[0], '').trim();
+            }
           }
         }
       }
@@ -419,6 +456,7 @@ CRITICAL RULES:
 - Never fabricate information. Treat this as an information extraction task, NOT a text generation task.
 - If a value is not explicitly present in the source, leave the field null.
 - For CRM status, interpret intent. If the text implies they want to be contacted, use "GOOD_LEAD_FOLLOW_UP". If they refused, use "BAD_LEAD". If they couldn't be reached, use "DID_NOT_CONNECT". If they purchased, use "SALE_DONE". Otherwise null.
+- NEVER map dates or values from date columns (e.g., Appointment Date, Meeting Date) to mobile numbers. Date columns must go into crm_note if unmapped.
 - Identify mobile/phone numbers. Standardize as strings without formatting. Extract the country code separately. If there is an extension, put it in "crm_note" as "Extension: [ext]".
 - For unmapped columns with useful information, append them to "crm_note". Standardize the format: use "Additional email: [email]" for extra emails, "Additional phone: [phone]" for extra phones, and "ColumnName: Value" for others. Separate multiple notes with " | ".
 - If a row is completely irrelevant nonsense, DO NOT hallucinate data. Return null for all fields.
