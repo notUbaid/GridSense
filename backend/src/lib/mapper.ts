@@ -80,7 +80,7 @@ ${JSON.stringify(zodToJsonSchema(MappingSchema as any))}
     logger.warn({ err: err.message }, 'Groq mapping failed, falling back to Gemini');
     try {
       const gemini = getGeminiClient();
-      const model = gemini.getGenerativeModel({ model: 'gemini-2.5-flash', generationConfig: { responseMimeType: 'application/json' } });
+      const model = gemini.getGenerativeModel({ model: 'gemini-1.5-flash', generationConfig: { responseMimeType: 'application/json' } });
       const result = await model.generateContent(prompt);
       resultString = result.response.text();
     } catch (e: any) {
