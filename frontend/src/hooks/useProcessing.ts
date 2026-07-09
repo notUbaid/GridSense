@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useCallback, useRef } from 'react';
+import { useState, useCallback, useRef, useEffect } from 'react';
 import Papa from 'papaparse';
 
 const DIGIT_REGEX = /\d/g;
@@ -89,14 +89,37 @@ export function useProcessing() {
   // Ref to store AbortController for cancelation
   const abortControllerRef = useRef<AbortController | null>(null);
 
+  // Ref to track the queue-drain polling interval for cleanup
+  const drainIntervalRef = useRef<ReturnType<typeof setInterval> | null>(null);
+
+  // Guard ref to prevent processFile from being called during processing
+  const isProcessingRef = useRef(false);
+
   const clearTimer = useCallback(() => {
     if (timerRef.current) {
       clearInterval(timerRef.current);
       timerRef.current = null;
     }
+    if (drainIntervalRef.current) {
+      clearInterval(drainIntervalRef.current);
+      drainIntervalRef.current = null;
+    }
   }, []);
 
+  // Fix #9: Clean up all intervals on unmount to prevent memory leaks
+  useEffect(() => {
+    return () => {
+      clearTimer();
+      if (abortControllerRef.current) {
+        abortControllerRef.current.abort();
+      }
+    };
+  }, [clearTimer]);
+
   const processFile = useCallback((file: File) => {
+    // Fix #7/#11: Guard against calling processFile while already processing
+    if (isProcessingRef.current) return;
+
     // Validate file size before parsing
     if (file.size > MAX_FILE_SIZE_BYTES) {
       const sizeMB = (file.size / (1024 * 1024)).toFixed(1);
@@ -190,6 +213,7 @@ export function useProcessing() {
     if (!previewData || !fullData) return;
     
     setState('processing');
+    isProcessingRef.current = true;
     toast.info(`Starting AI extraction for ${fullData.rows.length} records...`);
 
     const { headers, rows: sanitizedData } = fullData;
@@ -268,7 +292,9 @@ export function useProcessing() {
 
     setCurrentActivity(`Warming up AI models for ${validRows.length} valid records...`);
 
-    const localChunkResults: CrmRecord[][] = new Array(chunks.length).fill(null).map(() => []);
+    // Fix #3: Use a single accumulator array instead of indexed slots
+    // to avoid index collisions when batches are split on rate limit
+    const allExtractedRecords: CrmRecord[] = [];
     let completedBatches = 0;
     let localProcessedRows = localSkippedRaw.length;
     
@@ -296,9 +322,9 @@ export function useProcessing() {
       const elapsed = now - startTime;
       setElapsedMs(elapsed);
       
-      // Sync records periodically — only recompute flat() when data changed
+      // Sync records periodically — only update when data changed
       if (flatRecordsDirty) {
-        cachedFlatRecords = localChunkResults.flat();
+        cachedFlatRecords = [...allExtractedRecords];
         flatRecordsDirty = false;
       }
       setRecords(cachedFlatRecords);
@@ -367,7 +393,7 @@ export function useProcessing() {
           }
           
           if (response.records) {
-            localChunkResults[task.index].push(...response.records);
+            allExtractedRecords.push(...response.records);
             localSuccessfulRows += response.records.length;
             flatRecordsDirty = true;
           }
@@ -481,20 +507,23 @@ export function useProcessing() {
 
     dispatchWorkers();
 
-    // Wait for queue to drain
+    // Wait for queue to drain (tracked via ref for cleanup on unmount)
     await new Promise<void>(resolve => {
       const checkInterval = setInterval(() => {
         if ((queue.length === 0 && activeWorkers === 0) || isPipelineAborted) {
           clearInterval(checkInterval);
+          drainIntervalRef.current = null;
           resolve();
         }
       }, 250);
+      drainIntervalRef.current = checkInterval;
     });
 
     clearTimer();
     
     // Final sync of records
-    setRecords(localChunkResults.filter(Boolean).flat());
+    setRecords([...allExtractedRecords]);
+    isProcessingRef.current = false;
     
     setCurrentActivity('Finalizing extraction...');
 
@@ -538,10 +567,14 @@ export function useProcessing() {
   const retryFailed = useCallback(() => {
     if (failedRawRows.length === 0 || !previewData) return;
     
-    setPreviewData({
+    // Fix #1: Update parsedDataRef so startProcessing reads only the failed rows,
+    // not the entire original dataset.
+    const retryData = {
       headers: previewData.headers,
       rows: [...failedRawRows]
-    });
+    };
+    parsedDataRef.current = retryData;
+    setPreviewData(retryData);
     
     setFailedRawRows([]);
     setState('preview');
@@ -554,6 +587,7 @@ export function useProcessing() {
       abortControllerRef.current = null;
     }
     mapHeadersPromiseRef.current = null;
+    isProcessingRef.current = false;
     clearTimer();
     setState('idle');
     setProgress(0);

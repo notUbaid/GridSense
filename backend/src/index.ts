@@ -15,7 +15,7 @@ app.set('trust proxy', 1);
 // Middleware
 app.use(helmet());
 app.use(cors({
-  origin: process.env.FRONTEND_URL || 'http://localhost:3000',
+  origin: config.FRONTEND_URL,
 }));
 app.use(express.json({ limit: '10mb' })); // Support larger payloads for batches
 

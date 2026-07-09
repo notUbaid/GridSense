@@ -28,9 +28,9 @@ export function getGroqClient(): { client: Groq, index: number } {
     throw new Error('All Groq keys are exhausted.');
   }
 
-  // Round-robin selection for load balancing
+  // Round-robin selection — select THEN increment to avoid skipping index 0
+  const selectedIndex = availableGroqIndices[currentGroqIndex % availableGroqIndices.length];
   currentGroqIndex = (currentGroqIndex + 1) % availableGroqIndices.length;
-  const selectedIndex = availableGroqIndices[currentGroqIndex];
   
   return { client: groqClients[selectedIndex], index: selectedIndex };
 }
@@ -216,6 +216,9 @@ function resolveRelativeDate(str: string): number | null {
   return null;
 }
 
+// NOTE: Module-level mutable state. In serverless (Vercel), each cold start
+// gets a fresh scope. In local dev (long-running Express), this is shared
+// across all requests — intentional for single-user dev mode.
 let circuitBreakerOpenUntil = 0;
 
 export async function processBatch(
@@ -529,6 +532,7 @@ ${Papa.unparse(aiRows, { header: false })}`;
             generationConfig: {
               temperature: attempt > 0 ? 0.0 : 0.1,
               responseMimeType: 'application/json',
+              maxOutputTokens: Math.min(16384, Math.max(4096, aiRows.length * 200)),
             }
           });
           apiLatencyMs = performance.now() - apiStart;
@@ -571,7 +575,7 @@ ${Papa.unparse(aiRows, { header: false })}`;
             ],
             model: 'llama-3.3-70b-versatile',
             temperature: attempt > 0 ? 0.0 : 0.1,
-            max_tokens: 8000,
+            max_tokens: Math.min(16384, Math.max(4096, aiRows.length * 200)),
             response_format: { type: 'json_object' },
           });
           apiLatencyMs = performance.now() - apiStart;
@@ -704,8 +708,8 @@ ${Papa.unparse(aiRows, { header: false })}`;
             continue;
           } else {
             // Circuit Breaker: All keys exhausted or tried
-            logger.error(`All ${groqClients.length} Groq keys exhausted or rate-limited. Opening circuit breaker for 2s.`);
-            circuitBreakerOpenUntil = Date.now() + 2000;
+            logger.error(`All ${groqClients.length} Groq keys exhausted or rate-limited. Opening circuit breaker for 1s.`);
+            circuitBreakerOpenUntil = Date.now() + 1000;
           }
         }
         

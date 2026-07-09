@@ -17,6 +17,7 @@ import { CrmRecord } from '@/types/schema';
 import { motion, Variants } from 'framer-motion';
 import { Copy } from 'lucide-react';
 import { toast } from 'sonner';
+import Papa from 'papaparse';
 
 const tableContainer: Variants = {
   hidden: { opacity: 0 },
@@ -101,23 +102,12 @@ export function ResultsTable({ data }: ResultsTableProps) {
   }
 
   const exportCsv = () => {
-    const exportColumns = columns.filter(c => c.accessorKey);
-    const headers = exportColumns.map(c => c.header).join(',');
-    const rows = data.map(row => 
-      exportColumns.map(c => {
-        let val = row[c.accessorKey as keyof CrmRecord];
-        if (val === null || val === undefined) val = '';
-        val = String(val);
-        return `"${val.replace(/"/g, '""')}"`;
-      }).join(',')
-    ).join('\n');
-    
-    const csvContent = `${headers}\n${rows}`;
-    const blob = new Blob(['\uFEFF' + csvContent], { type: 'text/csv;charset=utf-8;' });
+    const csv = Papa.unparse(data);
+    const blob = new Blob(['\uFEFF' + csv], { type: 'text/csv;charset=utf-8;' });
     const url = URL.createObjectURL(blob);
     const link = document.createElement('a');
     link.href = url;
-    link.setAttribute('download', 'gridsense_export.csv');
+    link.setAttribute('download', `gridsense_export_${Date.now()}.csv`);
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);
