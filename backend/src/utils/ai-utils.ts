@@ -16,7 +16,54 @@ export function stripMarkdownFences(raw: string): string {
       return trimmed.slice(firstNewline + 1, lastFence).trim();
     }
   }
+
   return trimmed;
+}
+
+/**
+ * Repairs a truncated JSON string by closing unclosed strings, removing trailing commas,
+ * appending 'null' to dangling colons, and popping matching brackets/braces.
+ */
+export function repairTruncatedJson(str: string): string {
+  let inString = false;
+  let escapeNext = false;
+  const stack: string[] = [];
+
+  for (let i = 0; i < str.length; i++) {
+    const c = str[i];
+    if (escapeNext) {
+      escapeNext = false;
+      continue;
+    }
+    if (c === '\\') {
+      escapeNext = true;
+      continue;
+    }
+    if (c === '"') {
+      inString = !inString;
+      continue;
+    }
+    if (!inString) {
+      if (c === '{') stack.push('}');
+      else if (c === '[') stack.push(']');
+      else if (c === '}' || c === ']') stack.pop();
+    }
+  }
+
+  let repaired = str;
+  if (inString) repaired += '"';
+  
+  // Clean up trailing commas or dangling colons before closing
+  repaired = repaired.replace(/,\s*$/, '');
+  if (repaired.trim().endsWith(':')) {
+    repaired += 'null';
+  }
+
+  while (stack.length > 0) {
+    repaired += stack.pop();
+  }
+
+  return repaired;
 }
 
 /** Valid CRM status enum values */

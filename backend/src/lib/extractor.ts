@@ -6,7 +6,7 @@ import logger from '../utils/logger';
 import { config } from '../config';
 import { MockAIProvider } from './MockAIProvider';
 import { GoogleGenerativeAI } from '@google/generative-ai';
-import { stripMarkdownFences, salvageExtractorJson, VALID_CRM_STATUSES, VALID_DATA_SOURCES } from '../utils/ai-utils';
+import { stripMarkdownFences, salvageExtractorJson, repairTruncatedJson, VALID_CRM_STATUSES, VALID_DATA_SOURCES } from '../utils/ai-utils';
 
 let groqClients: Groq[] = [];
 let currentGroqIndex = 0;
@@ -547,8 +547,15 @@ ${Papa.unparse(aiRows, { header: false })}`;
           try {
             parsed = JSON.parse(stripMarkdownFences(content));
           } catch (e) {
-            logger.error({ content: content.substring(0, 500) }, 'Failed to parse JSON from Gemini');
-            throw e;
+            logger.warn({ content: content.substring(0, 500) }, 'JSON parse failed, attempting to repair truncated JSON');
+            try {
+              const repaired = repairTruncatedJson(stripMarkdownFences(content));
+              parsed = JSON.parse(repaired);
+              logger.info('Successfully repaired truncated JSON from Gemini');
+            } catch (repairError) {
+              logger.error({ content: content.substring(0, 500) }, 'Failed to parse JSON from Gemini even after repair attempt');
+              throw e;
+            }
           }
           
           parsed = salvageExtractorJson(parsed);
@@ -595,8 +602,15 @@ ${Papa.unparse(aiRows, { header: false })}`;
           try {
             parsed = JSON.parse(cleaned);
           } catch (e) {
-            logger.error({ content: cleaned }, 'Failed to parse JSON from AI');
-            throw e;
+            logger.warn({ content: cleaned.substring(0, 500) }, 'JSON parse failed, attempting to repair truncated JSON');
+            try {
+              const repaired = repairTruncatedJson(cleaned);
+              parsed = JSON.parse(repaired);
+              logger.info('Successfully repaired truncated JSON from Groq');
+            } catch (repairError) {
+              logger.error({ content: cleaned.substring(0, 500) }, 'Failed to parse JSON from Groq even after repair attempt');
+              throw e;
+            }
           }
 
           parsed = salvageExtractorJson(parsed);
