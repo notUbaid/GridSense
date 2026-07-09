@@ -125,7 +125,11 @@ export function ResultsTable({ data, originalFilename }: ResultsTableProps) {
     return data.map(record => {
       const normalizedRecord: Record<string, any> = {};
       CRM_SCHEMA_KEYS.forEach(key => {
-        normalizedRecord[key] = (record as any)[key] ?? "";
+        let val = (record as any)[key];
+        if (typeof val === 'string') {
+          val = val.replace(/[\r\n\t]+/g, ' ').replace(/\s{2,}/g, ' ').trim();
+        }
+        normalizedRecord[key] = val ?? "";
       });
       return normalizedRecord;
     });
