@@ -886,7 +886,7 @@ ${Papa.unparse(aiRows, { header: false })}`;
               },
               { role: 'user', content: prompt }
             ],
-            model: 'llama-3.3-70b-versatile',
+            model: 'llama-3.1-8b-instant',
             temperature: attempt > 0 ? 0.0 : 0.1,
             // Groq deducts TPM based on prompt_tokens + max_tokens requested.
             // Free tier has 6,000 TPM limit. Setting this too high causes instant 429s.
