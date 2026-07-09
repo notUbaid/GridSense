@@ -679,7 +679,7 @@ ${Papa.unparse(aiRows, { header: false })}`;
               const repaired = repairTruncatedJson(stripMarkdownFences(content));
               parsed = JSON.parse(repaired);
               logger.info('Successfully repaired truncated JSON from Gemini');
-            } catch (repairError) {
+            } catch {
               logger.error({ content: content.substring(0, 500) }, 'Failed to parse JSON from Gemini even after repair attempt');
               throw e;
             }
@@ -729,7 +729,7 @@ ${Papa.unparse(aiRows, { header: false })}`;
             try {
               const repaired = repairTruncatedJson(cleaned);
               parsed = JSON.parse(repaired);
-            } catch (repairError) {
+            } catch {
               throw e;
             }
           }
@@ -772,7 +772,7 @@ ${Papa.unparse(aiRows, { header: false })}`;
             try {
               const repaired = repairTruncatedJson(cleaned);
               parsed = JSON.parse(repaired);
-            } catch (repairError) {
+            } catch {
               throw e;
             }
           }
@@ -823,7 +823,7 @@ ${Papa.unparse(aiRows, { header: false })}`;
               const repaired = repairTruncatedJson(cleaned);
               parsed = JSON.parse(repaired);
               logger.info('Successfully repaired truncated JSON from Groq');
-            } catch (repairError) {
+            } catch {
               logger.error({ content: cleaned.substring(0, 500) }, 'Failed to parse JSON from Groq even after repair attempt');
               throw e;
             }
@@ -847,7 +847,7 @@ ${Papa.unparse(aiRows, { header: false })}`;
       const skippedRecords: any[] = [];
 
       if (aiRecords.length < aiRows.length) {
-        const truncatedCount = aiRows.length - aiRecords.length;
+        const _truncatedCount = aiRows.length - aiRecords.length;
         logger.warn(`Row count mismatch: expected ${aiRows.length}, got ${aiRecords.length}. Tracking missing as skipped.`);
         // We do NOT increment skippedCount here, because the missing rows will be passed
         // as empty shells to the loop below, which will naturally fail the meaningfulData

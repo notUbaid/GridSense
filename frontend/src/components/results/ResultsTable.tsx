@@ -123,8 +123,10 @@ export function ResultsTable({ data, originalFilename }: ResultsTableProps) {
     ];
 
     return data.map(record => {
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
       const normalizedRecord: Record<string, any> = {};
       CRM_SCHEMA_KEYS.forEach(key => {
+        // eslint-disable-next-line @typescript-eslint/no-explicit-any
         let val = (record as any)[key];
         if (typeof val === 'string') {
           val = val.replace(/[\r\n\t]+/g, ' ').replace(/\s{2,}/g, ' ').trim();

@@ -38,7 +38,7 @@ export function PreviewCard({ previewData, totalRows, onCancel, onStart }: Previ
 
     window.addEventListener('keydown', handleKeyDown);
     return () => window.removeEventListener('keydown', handleKeyDown);
-  }, [onStart, onCancel]);
+  }, [onStart, onCancel, totalRows]);
 
   return (
     <Card className="border-border/50 bg-card shadow-sm animate-in fade-in slide-in-from-bottom-4 duration-300">
@@ -122,7 +122,7 @@ export function PreviewCard({ previewData, totalRows, onCancel, onStart }: Previ
                 <DialogHeader>
                   <DialogTitle>Large Dataset Notice</DialogTitle>
                   <DialogDescription className="pt-2 text-foreground/80 leading-relaxed">
-                    GridSense's infrastructure is fully equipped to handle massive datasets!
+                    GridSense&apos;s infrastructure is fully equipped to handle massive datasets!
                     <br /><br />
                     However, because this app is currently utilizing <strong>free-tier AI APIs</strong> (Groq & Gemini), we are subject to strict rate limits. The app will automatically throttle requests and cycle providers to keep things running smoothly, but extraction may take slightly longer than usual.
                   </DialogDescription>

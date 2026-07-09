@@ -1,4 +1,4 @@
-import { getGroqClient, getGeminiClient, getOpenAIClient, getAnthropicClient, getOpenRouterClient, markGroqKeyExhausted, markGeminiKeyExhausted } from './extractor';
+import { getGroqClient, getGeminiClient, getOpenAIClient, getAnthropicClient, getOpenRouterClient } from './extractor';
 import { z } from 'zod';
 import { zodToJsonSchema } from 'zod-to-json-schema';
 import logger from '../utils/logger';
@@ -52,7 +52,7 @@ ${JSON.stringify(zodToJsonSchema(MappingSchema as any))}
   let resultString = '';
   
   try {
-    const { client: groq, index } = getGroqClient();
+    const { client: groq } = getGroqClient();
     const completion = await groq.chat.completions.create({
       messages: [{ role: 'user', content: prompt }],
       model: 'llama-3.1-8b-instant',

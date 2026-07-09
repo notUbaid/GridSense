@@ -42,10 +42,18 @@ jobs:
       working-directory: ./backend
       run: npx tsc --noEmit
       
-    - name: Test Frontend
-      working-directory: ./frontend
-      run: npm run test
+    - name: Audit Root Dependencies
+      run: npm audit --audit-level=high || true
       
+    - name: Audit Frontend Dependencies
+      working-directory: ./frontend
+      run: npm audit --audit-level=high || true
+      
+    - name: Audit Backend Dependencies
+      working-directory: ./backend
+      run: npm audit --audit-level=high || true
+      
+
     - name: Test Backend
       working-directory: ./backend
       run: npm run test

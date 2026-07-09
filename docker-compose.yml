@@ -6,7 +6,7 @@ services:
       context: .
       target: production
     env_file:
-      - .env
+      - .env.example
     ports:
       - '8000:8000'
     command: ['node', 'backend/dist/index.js']

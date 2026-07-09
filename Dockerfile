@@ -24,6 +24,7 @@ ENV NODE_ENV=production
 COPY --from=backend-deps /app/backend/node_modules ./backend/node_modules
 COPY --from=backend-build /app/backend/dist ./backend/dist
 COPY --from=frontend-build /app/frontend/.next ./frontend/.next
+COPY --from=frontend-build /app/frontend/public ./frontend/public
 COPY --from=frontend-build /app/frontend/node_modules ./frontend/node_modules
 COPY --from=frontend-build /app/frontend/package.json ./frontend/package.json
 
