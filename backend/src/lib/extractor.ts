@@ -554,23 +554,11 @@ export async function processBatch(
       const normalized = normalizeAndValidate(record);
       
       const hasContact = normalized.email || normalized.mobile_without_country_code;
-      const AUTO_FIELDS = new Set(['name', 'email', 'mobile_without_country_code', 'created_at', 'country_code', '_row_id']);
-      let meaningfulData = false;
-      for (const [key, value] of Object.entries(normalized)) {
-        if (!AUTO_FIELDS.has(key) && value !== null && value !== undefined) {
-          meaningfulData = true;
-          break;
-        }
-      }
 
       if (!hasContact) {
         skippedCount++;
         skippedReasons['Rejected (Missing Valid Contact Info)'] = (skippedReasons['Rejected (Missing Valid Contact Info)'] || 0) + 1;
         skippedRecords.push({ original, reason: 'Rejected (Missing Valid Contact Info)' });
-      } else if (!meaningfulData) {
-        skippedCount++;
-        skippedReasons['Rejected (Lacks Meaningful Data)'] = (skippedReasons['Rejected (Lacks Meaningful Data)'] || 0) + 1;
-        skippedRecords.push({ original, reason: 'Rejected (Lacks Meaningful Data)' });
       } else {
         validRecords.push(normalized);
       }
@@ -871,36 +859,20 @@ ${Papa.unparse(aiRows, { header: false })}`;
         // Merge the deterministic extraction with the LLM mapping (or empty shell)
         const mergedRecord = {
           ...aiRecord,
-          email: d.email,
-          mobile_without_country_code: d.mobile_without_country_code,
-          created_at: d.created_at,
+          email: d.email || aiRecord.email,
+          mobile_without_country_code: d.mobile_without_country_code || aiRecord.mobile_without_country_code,
+          created_at: d.created_at || aiRecord.created_at,
           _row_id: d._row_id
         };
 
         const normalized = normalizeAndValidate(mergedRecord);
         
         const hasContact = normalized.email || normalized.mobile_without_country_code;
-        
-        // Check for mostly empty records (only name exists)
-        // Auto-extracted fields (email, phone, date, country_code, _row_id) don't count as
-        // "meaningful" on their own — they were deterministically extracted, not AI-mapped.
-        const AUTO_FIELDS = new Set(['name', 'email', 'mobile_without_country_code', 'created_at', 'country_code', '_row_id']);
-        let meaningfulData = false;
-        for (const [key, value] of Object.entries(normalized)) {
-          if (!AUTO_FIELDS.has(key) && value !== null && value !== undefined) {
-            meaningfulData = true;
-            break;
-          }
-        }
 
         if (!hasContact) {
           skippedCount++;
           skippedReasons['AI Rejected (Missing Valid Contact Info)'] = (skippedReasons['AI Rejected (Missing Valid Contact Info)'] || 0) + 1;
           skippedRecords.push({ original: d.original, reason: 'AI Rejected (Missing Valid Contact Info)' });
-        } else if (!meaningfulData) {
-          skippedCount++;
-          skippedReasons['AI Rejected (Lacks Meaningful Data)'] = (skippedReasons['AI Rejected (Lacks Meaningful Data)'] || 0) + 1;
-          skippedRecords.push({ original: d.original, reason: 'AI Rejected (Lacks Meaningful Data)' });
         } else {
           validRecords.push(normalized);
         }

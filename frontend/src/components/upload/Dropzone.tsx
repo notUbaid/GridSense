@@ -109,6 +109,7 @@ export function Dropzone({ onFileAccepted, disabled }: DropzoneProps) {
 }
 
 const TEST_FILES = [
+  { filename: 'benchmark_700_messy_leads.csv', label: '700x Benchmark', icon: AlertTriangle, color: 'text-purple-500' },
   { filename: 'facebook_lead_ads_export.csv', label: 'Facebook Leads', icon: Megaphone, color: 'text-blue-500' },
   { filename: 'google_ads_lead_export.csv', label: 'Google Ads', icon: Megaphone, color: 'text-amber-500' },
   { filename: 'real_estate_crm_export.csv', label: 'Real Estate CRM', icon: Building2, color: 'text-emerald-500' },
