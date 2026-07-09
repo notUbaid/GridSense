@@ -9,6 +9,7 @@ const envSchema = z.object({
   OPENAI_API_KEY: z.string().default(''),
   ANTHROPIC_API_KEY: z.string().default(''),
   OPENROUTER_API_KEY: z.string().default(''),
+  COHERE_API_KEY: z.string().default(''),
   FRONTEND_URL: z.string().default('http://localhost:3000'),
   AI_MAX_RETRIES: z.coerce.number().int().min(1).default(3),
   AI_RETRY_DELAY_MS: z.coerce.number().int().min(100).default(2000),

@@ -1,6 +1,7 @@
 import Groq from 'groq-sdk';
 import OpenAI from 'openai';
 import Anthropic from '@anthropic-ai/sdk';
+import { CohereClientV2 } from 'cohere-ai';
 import Papa from 'papaparse';
 import { z } from 'zod';
 import { CrmRecord, CrmRecordSchema } from '../validation/schema';
@@ -28,6 +29,10 @@ let availableAnthropicIndices: number[] = [];
 let openRouterClients: OpenAI[] = [];
 let currentOpenRouterIndex = 0;
 let availableOpenRouterIndices: number[] = [];
+
+let cohereClients: CohereClientV2[] = [];
+let currentCohereIndex = 0;
+let availableCohereIndices: number[] = [];
 
 export function getGroqClient(): { client: Groq, index: number } {
   if (!config.GROQ_API_KEY) {
@@ -200,6 +205,36 @@ export function markOpenRouterKeyExhausted(index: number) {
   }, 60000);
 }
 
+export function getCohereClient(): { client: CohereClientV2, index: number } {
+  if (!config.COHERE_API_KEY) {
+    const limitError = new Error('COHERE API Key is missing.');
+    (limitError as any).status = 403;
+    (limitError as any).exhaustedProvider = 'cohere';
+    throw limitError;
+  }
+  if (cohereClients.length === 0) {
+    const keys = config.COHERE_API_KEY.split(',').map(k => k.trim()).filter(k => k.length > 0);
+    if (keys.length === 0) throw new Error('No valid COHERE API keys found.');
+    cohereClients = keys.map(key => new CohereClientV2({ token: key }));
+    availableCohereIndices = cohereClients.map((_, i) => i);
+  }
+  if (availableCohereIndices.length === 0) throw new Error('All Cohere keys are exhausted.');
+  const selectedIndex = availableCohereIndices[currentCohereIndex % availableCohereIndices.length];
+  currentCohereIndex = (currentCohereIndex + 1) % availableCohereIndices.length;
+  return { client: cohereClients[selectedIndex], index: selectedIndex };
+}
+
+export function markCohereKeyExhausted(index: number) {
+  if (!availableCohereIndices.includes(index)) return;
+  availableCohereIndices = availableCohereIndices.filter(i => i !== index);
+  logger.warn(`Cohere key at index ${index} marked as exhausted. ${availableCohereIndices.length} remaining.`);
+  setTimeout(() => {
+    if (!availableCohereIndices.includes(index)) {
+      availableCohereIndices.push(index);
+      logger.info(`Cohere key at index ${index} restored.`);
+    }
+  }, 60000);
+}
 
 
 const LlmRecordSchema = CrmRecordSchema.omit({ 
@@ -652,6 +687,7 @@ ${Papa.unparse(aiRows, { header: false })}`;
     let usedOpenAIIndex = currentOpenAIIndex;
     let usedAnthropicIndex = currentAnthropicIndex;
     let usedOpenRouterIndex = currentOpenRouterIndex;
+    let usedCohereIndex = currentCohereIndex;
     try {
       logger.info({ attempt: attempt + 1, batchSize: rows.length, aiBatchSize: aiRows.length, provider }, 'Sending batch to AI');
 
@@ -716,7 +752,7 @@ ${Papa.unparse(aiRows, { header: false })}`;
               { role: 'system', content: 'You are a data extraction system. Output ONLY valid JSON matching the requested schema. No markdown fences, no commentary.' },
               { role: 'user', content: prompt }
             ],
-            model: isRouter ? 'openai/gpt-4o-mini' : 'gpt-4o-mini',
+            model: isRouter ? 'nvidia/nemotron-3-ultra-550b-a55b:free' : 'gpt-4o-mini',
             temperature: attempt > 0 ? 0.0 : 0.1,
             max_tokens: Math.min(4000, Math.max(1024, aiRows.length * 80)),
             response_format: { type: 'json_object' },
@@ -790,6 +826,50 @@ ${Papa.unparse(aiRows, { header: false })}`;
           const validated = llmResponseSchema.safeParse(parsed);
           if (!validated.success) {
             logger.error({ errors: validated.error.format() }, `Zod validation failed on Anthropic output`);
+            throw new Error('AI output did not match expected schema');
+          }
+          aiRecords = validated.data.records;
+          parseLatencyMs = performance.now() - parseStart;
+        } else if (provider === 'cohere') {
+          const { client, index } = getCohereClient();
+          usedCohereIndex = index;
+
+          const apiStart = performance.now();
+          const completion = await client.chat({
+            model: 'command-r-plus-08-2024',
+            messages: [
+              { role: 'system', content: 'You are a data extraction system. Output ONLY valid JSON matching the requested schema. No markdown fences, no commentary.' },
+              { role: 'user', content: prompt }
+            ],
+            temperature: attempt > 0 ? 0.0 : 0.1,
+            responseFormat: { type: 'json_object' }
+          });
+          apiLatencyMs = performance.now() - apiStart;
+
+          const content = completion.message?.content?.[0]?.text;
+          if (!content) throw new Error('Empty response from Cohere');
+          responseChars = content.length;
+          promptTokens = completion.usage?.billedUnits?.inputTokens || 0;
+          responseTokens = completion.usage?.billedUnits?.outputTokens || 0;
+
+          const parseStart = performance.now();
+          const cleaned = stripMarkdownFences(content);
+          let parsed;
+          try {
+            parsed = JSON.parse(cleaned);
+          } catch (e) {
+            logger.warn({ content: cleaned.substring(0, 500) }, 'JSON parse failed, attempting to repair truncated JSON');
+            try {
+              const repaired = repairTruncatedJson(cleaned);
+              parsed = JSON.parse(repaired);
+            } catch {
+              throw e;
+            }
+          }
+          parsed = salvageExtractorJson(parsed);
+          const validated = llmResponseSchema.safeParse(parsed);
+          if (!validated.success) {
+            logger.error({ errors: validated.error.format() }, 'Zod validation failed on Cohere output');
             throw new Error('AI output did not match expected schema');
           }
           aiRecords = validated.data.records;
