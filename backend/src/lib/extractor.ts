@@ -663,7 +663,7 @@ ${Papa.unparse(aiRows, { header: false })}`;
         } else if (provider === 'gemini') {
           const { client: ai, index: geminiKeyIndex } = getGeminiClient();
           usedGeminiIndex = geminiKeyIndex;
-          const model = ai.getGenerativeModel({ model: 'gemini-1.5-flash-latest' });
+          const model = ai.getGenerativeModel({ model: 'gemini-1.5-flash' }, { apiVersion: 'v1' });
           const apiStart = performance.now();
           const result = await model.generateContent({
             contents: [{ role: 'user', parts: [{ text: prompt }] }],
