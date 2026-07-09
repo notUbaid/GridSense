@@ -67,6 +67,7 @@ ${JSON.stringify(zodToJsonSchema(MappingSchema as any))}
         messages: [{ role: 'user', content: prompt }],
         model: 'llama-3.1-8b-instant',
         temperature: 0,
+        max_tokens: 1024,
         response_format: { type: 'json_object' }
       });
       resultString = completion.choices[0]?.message?.content || '{}';
