@@ -613,8 +613,14 @@ export async function processBatch(
 
       if (!hasContact) {
         skippedCount++;
-        skippedReasons['Rejected (Missing Valid Contact Info)'] = (skippedReasons['Rejected (Missing Valid Contact Info)'] || 0) + 1;
-        skippedRecords.push({ original, reason: 'Rejected (Missing Valid Contact Info)' });
+        const phone = record.mobile_without_country_code || '';
+        const digits = (String(phone).match(/\d/g) || []).length;
+        const emailReason = record.email ? 'email format invalid' : 'No valid email detected';
+        const phoneReason = digits < 7 ? `phone contained only ${digits} digits` : 'phone format invalid';
+        const reason = `Rejected (Record skipped because no usable contact exists: ${emailReason}, ${phoneReason})`;
+        
+        skippedReasons[reason] = (skippedReasons[reason] || 0) + 1;
+        skippedRecords.push({ original, reason });
       } else {
         validRecords.push(normalized);
       }
@@ -971,8 +977,14 @@ ${Papa.unparse(aiRows, { header: false })}`;
 
         if (!hasContact) {
           skippedCount++;
-          skippedReasons['AI Rejected (Missing Valid Contact Info)'] = (skippedReasons['AI Rejected (Missing Valid Contact Info)'] || 0) + 1;
-          skippedRecords.push({ original: d.original, reason: 'AI Rejected (Missing Valid Contact Info)' });
+          const phone = mergedRecord.mobile_without_country_code || '';
+          const digits = (String(phone).match(/\d/g) || []).length;
+          const emailReason = mergedRecord.email ? 'email format invalid' : 'No valid email detected';
+          const phoneReason = digits < 7 ? `phone contained only ${digits} digits` : 'phone format invalid';
+          const reason = `AI Rejected (Record skipped because no usable contact exists: ${emailReason}, ${phoneReason})`;
+
+          skippedReasons[reason] = (skippedReasons[reason] || 0) + 1;
+          skippedRecords.push({ original: d.original, reason });
         } else {
           validRecords.push(normalized);
         }
