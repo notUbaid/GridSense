@@ -811,8 +811,8 @@ ${Papa.unparse(aiRows, { header: false })}`;
             temperature: attempt > 0 ? 0.0 : 0.1,
             // Groq deducts TPM based on prompt_tokens + max_tokens requested.
             // Free tier has 6,000 TPM limit. Setting this too high causes instant 429s.
-            // 50 rows generates ~2500 tokens. We cap max_tokens conservatively.
-            max_tokens: Math.min(4000, Math.max(1024, aiRows.length * 80)),
+            // 35 rows generates ~1700 tokens. We cap max_tokens conservatively to 2100.
+            max_tokens: Math.min(4000, Math.max(1024, aiRows.length * 60)),
             response_format: { type: 'json_object' },
           });
           apiLatencyMs = performance.now() - apiStart;
