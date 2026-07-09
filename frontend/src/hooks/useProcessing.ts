@@ -57,6 +57,7 @@ export function useProcessing() {
   const [schemaMapping, setSchemaMapping] = useState<SchemaMapping | null>(null);
   const [error, setError] = useState<string | null>(null);
   const [originalFilename, setOriginalFilename] = useState<string | null>(null);
+  const [totalParsedRows, setTotalParsedRows] = useState<number>(0);
   const [currentActivity, setCurrentActivity] = useState<string>('Idle');
   const [elapsedMs, setElapsedMs] = useState<number>(0);
   const [etaMs, setEtaMs] = useState<number | null>(null);
@@ -182,6 +183,7 @@ export function useProcessing() {
 
         const sanitizedData = sanitizeRows(rows);
         parsedDataRef.current = { headers, rows: sanitizedData };
+        setTotalParsedRows(sanitizedData.length);
         // Only keep the first 500 rows in React state to avoid memory bloat
         setPreviewData({ headers, rows: sanitizedData.slice(0, 500) });
         setState('preview');
@@ -238,10 +240,6 @@ export function useProcessing() {
       }
 
       validRows.push(row);
-    }
-
-    if (sanitizedData.length > 500) {
-      toast.info(`Note: You're uploading a massive file (${sanitizedData.length} rows). Our Free Tier API limits might cause processing to slow down or hit rate limits temporarily.`);
     }
 
     setSkippedRawRows(localSkippedRaw);
@@ -597,6 +595,7 @@ export function useProcessing() {
     setRecords([]);
     setSkippedRawRows([]);
     setFailedRawRows([]);
+    setTotalParsedRows(0);
     setPreviewData(null);
     parsedDataRef.current = null;
     setError(null);
@@ -618,6 +617,7 @@ export function useProcessing() {
     metrics,
     error,
     originalFilename,
+    totalParsedRows,
     currentActivity,
     elapsedMs,
     etaMs,

@@ -1,15 +1,17 @@
 import React, { useState, useEffect } from 'react';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
+import { Dialog, DialogTrigger, DialogContent, DialogHeader, DialogTitle, DialogDescription, DialogFooter } from '@/components/ui/dialog';
 import { motion, AnimatePresence } from 'framer-motion';
 
 interface PreviewCardProps {
   previewData: { headers: string[], rows: Record<string, string>[] };
+  totalRows: number;
   onCancel: () => void;
   onStart: () => void;
 }
 
-export function PreviewCard({ previewData, onCancel, onStart }: PreviewCardProps) {
+export function PreviewCard({ previewData, totalRows, onCancel, onStart }: PreviewCardProps) {
   const [page, setPage] = useState(0);
   const rowsPerPage = 100;
   const totalPages = Math.ceil(previewData.rows.length / rowsPerPage);
@@ -24,8 +26,10 @@ export function PreviewCard({ previewData, onCancel, onStart }: PreviewCardProps
       if (e.target instanceof HTMLInputElement || e.target instanceof HTMLTextAreaElement) return;
 
       if (e.key === 'Enter') {
-        e.preventDefault();
-        onStart();
+        if (totalRows <= 500) {
+          e.preventDefault();
+          onStart();
+        }
       } else if (e.key === 'Escape') {
         e.preventDefault();
         onCancel();
@@ -40,7 +44,7 @@ export function PreviewCard({ previewData, onCancel, onStart }: PreviewCardProps
     <Card className="border-border/50 bg-card shadow-sm animate-in fade-in slide-in-from-bottom-4 duration-300">
       <CardHeader className="space-y-1">
         <CardTitle className="text-xl">Preview Raw Data</CardTitle>
-        <CardDescription className="text-sm">We parsed {previewData.rows.length} rows and {previewData.headers.length} columns. Review the sample below before extraction.</CardDescription>
+        <CardDescription className="text-sm">We parsed {totalRows} rows and {previewData.headers.length} columns. Review the sample below before extraction.</CardDescription>
       </CardHeader>
       <CardContent className="space-y-6">
         <div className="rounded-md border overflow-auto max-w-full max-h-[400px]">
@@ -73,7 +77,7 @@ export function PreviewCard({ previewData, onCancel, onStart }: PreviewCardProps
         </div>
         <div className="flex items-center justify-between">
           <div className="text-xs text-muted-foreground">
-            Showing rows {startIndex + 1} to {endIndex} out of {previewData.rows.length} total.
+            Showing rows {startIndex + 1} to {endIndex} out of {previewData.rows.length} sample rows. (Total: {totalRows})
           </div>
           {totalPages > 1 && (
             <div className="flex items-center space-x-2">
@@ -99,27 +103,43 @@ export function PreviewCard({ previewData, onCancel, onStart }: PreviewCardProps
             </div>
           )}
         </div>
-        {previewData.rows.length > 500 && (
-          <div className="bg-amber-500/10 border border-amber-500/20 text-amber-500/90 rounded-md p-3 text-sm flex items-start space-x-3 shadow-sm">
-            <svg className="h-5 w-5 shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-            </svg>
-            <p className="leading-relaxed">
-              <strong>Notice:</strong> You are processing a very large dataset ({previewData.rows.length} rows). Because GridSense utilizes free-tier APIs, extraction may take longer than usual and automatically cycle between providers to avoid rate limits. Please leave this tab open until completion.
-            </p>
-          </div>
-        )}
         <div className="flex justify-end space-x-4">
           <motion.div whileHover={{ scale: 1.02 }} whileTap={{ scale: 0.98 }}>
             <Button variant="outline" onClick={onCancel}>
               Cancel <kbd className="ml-2 px-1.5 py-0.5 rounded-sm bg-muted text-[10px] text-muted-foreground border border-border">Esc</kbd>
             </Button>
           </motion.div>
-          <motion.div whileHover={{ scale: 1.02 }} whileTap={{ scale: 0.98 }}>
-            <Button onClick={onStart}>
-              Start AI Extraction <kbd className="ml-2 px-1.5 py-0.5 rounded-sm bg-primary-foreground/20 text-[10px] text-primary-foreground border border-primary-foreground/30">Enter</kbd>
-            </Button>
-          </motion.div>
+          {totalRows > 500 ? (
+            <Dialog>
+              <DialogTrigger render={
+                <motion.div whileHover={{ scale: 1.02 }} whileTap={{ scale: 0.98 }}>
+                  <Button>
+                    Start AI Extraction <kbd className="ml-2 px-1.5 py-0.5 rounded-sm bg-primary-foreground/20 text-[10px] text-primary-foreground border border-primary-foreground/30">Enter</kbd>
+                  </Button>
+                </motion.div>
+              } />
+              <DialogContent className="sm:max-w-[425px]">
+                <DialogHeader>
+                  <DialogTitle>Large Dataset Notice</DialogTitle>
+                  <DialogDescription className="pt-2 text-foreground/80 leading-relaxed">
+                    GridSense's infrastructure is fully equipped to handle massive datasets!
+                    <br /><br />
+                    However, because this app is currently utilizing <strong>free-tier AI APIs</strong> (Groq & Gemini), we are subject to strict rate limits. The app will automatically throttle requests and cycle providers to keep things running smoothly, but extraction may take slightly longer than usual.
+                  </DialogDescription>
+                </DialogHeader>
+                <DialogFooter className="mt-4">
+                  <Button variant="outline" onClick={onCancel}>Cancel Extraction</Button>
+                  <Button onClick={onStart}>Continue Anyway</Button>
+                </DialogFooter>
+              </DialogContent>
+            </Dialog>
+          ) : (
+            <motion.div whileHover={{ scale: 1.02 }} whileTap={{ scale: 0.98 }}>
+              <Button onClick={onStart}>
+                Start AI Extraction <kbd className="ml-2 px-1.5 py-0.5 rounded-sm bg-primary-foreground/20 text-[10px] text-primary-foreground border border-primary-foreground/30">Enter</kbd>
+              </Button>
+            </motion.div>
+          )}
         </div>
       </CardContent>
     </Card>
