@@ -35,7 +35,7 @@ export const processBatchController = async (req: Request, res: Response): Promi
   const { batchId, headers, rows, provider, schemaMapping } = parsed.data;
 
   try {
-    const { records, skippedCount, skippedReasons, skippedRecords, processingTimeMs } = await processBatch(headers, rows, provider as any, schemaMapping);
+    const { records, skippedCount, skippedReasons, skippedRecords, processingTimeMs, metrics } = await processBatch(headers, rows, provider as any, schemaMapping);
     
     res.status(200).json({
       batchId,
@@ -44,7 +44,8 @@ export const processBatchController = async (req: Request, res: Response): Promi
       skippedCount,
       skippedReasons,
       skippedRecords,
-      processingTimeMs
+      processingTimeMs,
+      metrics
     });
   } catch (error: any) {
     const status = error?.status || error?.response?.status;

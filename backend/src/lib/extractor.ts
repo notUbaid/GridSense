@@ -222,6 +222,12 @@ export async function processBatch(
   provider: 'groq' | 'gemini' = 'groq',
   schemaMapping?: { source: string, target?: string | null, confidence?: any }[] | null
 ) {
+  let promptChars = 0;
+  let responseChars = 0;
+  let promptTokens = 0;
+  let responseTokens = 0;
+  let apiLatencyMs = 0;
+  let parseLatencyMs = 0;
   let attempt = 0;
   let keysTried = 1;
   const maxRetries = config.AI_MAX_RETRIES;
@@ -445,7 +451,7 @@ export async function processBatch(
 
     const processingTimeMs = Date.now() - startTime;
     logger.info({ batchSize: rows.length, extracted: validRecords.length, skipped: skippedCount, ms: processingTimeMs }, 'Deterministic batch complete');
-    return { records: validRecords, skippedCount, skippedReasons, skippedRecords, processingTimeMs };
+    return { records: validRecords, skippedCount, skippedReasons, skippedRecords, processingTimeMs, metrics: { promptChars, responseChars, promptTokens, responseTokens, apiLatencyMs, parseLatencyMs, retries: attempt } };
   }
 
   const prompt = `You are a strict data extraction engine. You receive CSV headers and row data as JSON.
@@ -457,12 +463,12 @@ CRITICAL RULES:
 - You are NOT allowed to generate realistic replacements or fake names.
 - Every name, company, city, state, country, and note MUST be copied EXACTLY from the source row.
 - Never fabricate information. Treat this as an information extraction task, NOT a text generation task.
-- If a value is not explicitly present in the source, leave the field null.
-- For CRM status, interpret intent. If the text implies they want to be contacted, use "GOOD_LEAD_FOLLOW_UP". If they refused, use "BAD_LEAD". If they couldn't be reached, use "DID_NOT_CONNECT". If they purchased, use "SALE_DONE". Otherwise null.
+- IMPORTANT: DO NOT output any keys where the value would be null. Omit them entirely from the JSON object to save output tokens.
+- For CRM status, interpret intent. If the text implies they want to be contacted, use "GOOD_LEAD_FOLLOW_UP". If they refused, use "BAD_LEAD". If they couldn't be reached, use "DID_NOT_CONNECT". If they purchased, use "SALE_DONE". Otherwise omit the key.
 - NEVER map dates, IDs, zip codes, or amounts (e.g., Appointment Date, Lead ID, Salary) to mobile numbers. Date columns must go into crm_note if unmapped.
 - Identify mobile/phone numbers. Standardize as strings without formatting. Extract the country code separately. If there is an extension, put it in "crm_note" as "Extension: [ext]".
 - For unmapped columns with useful information, append them to "crm_note". Format them cleanly in Title Case like "Platform: Instagram" or "Campaign: Q3 Retargeting" instead of raw machine names. Separate multiple notes with " | ".
-- If a row is completely irrelevant nonsense, DO NOT hallucinate data. Return null for all fields.
+- If a row is completely irrelevant nonsense, DO NOT hallucinate data. Return an empty object {} except for _row_id.
 - "crm_note" should ONLY contain meaningful remarks, follow-up notes, secondary emails, or extra phone numbers.
 - DO NOT dump irrelevant columns (e.g., "Campaign", "Ad Set", random IDs, or random garbage) into "crm_note". However, source platforms (e.g., "Hubspot", "Zoho", "Excel") or lead sources ARE highly relevant and MUST be included in notes.
 - If a value in the input is completely empty, ignore it entirely and do not include its column name in the notes.
@@ -471,35 +477,36 @@ CRITICAL RULES:
 - You should return exactly ${aiRows.length} objects in the "records" array — one per input row.
 - Output ONLY valid JSON matching the schema. No markdown, no explanation.
 
-Output JSON Format:
+Output JSON Format (only include keys that have values, omit all nulls):
 {
   "records": [
     {
-      "name": "string | null",
-      "company": "string | null",
-      "city": "string | null",
-      "state": "string | null",
-      "country": "string | null",
-      "lead_owner": "string | null",
-      "crm_status": "string | null",
-      "crm_note": "string | null",
-      "data_source": "string | null",
-      "possession_time": "string | null",
-      "description": "string | null",
+      "name": "string",
+      "company": "string",
+      "city": "string",
+      "state": "string",
+      "country": "string",
+      "lead_owner": "string",
+      "crm_status": "string",
+      "crm_note": "string",
+      "data_source": "string",
+      "possession_time": "string",
+      "description": "string",
       "_row_id": "string (MUST preserve from input row)"
     }
   ]
 }
 
 Example:
-Headers: ["First Name", "SurName", "Org"]
-Row: [{"First Name": "John", "SurName": "Doe", "Org": "Acme Corp"}]
-Output: {"records": [{"name": "John Doe", "company": "Acme Corp"}]}
+Headers: ["First Name", "SurName", "Org", "_row_id"]
+Row: [{"First Name": "John", "SurName": "Doe", "Org": "Acme Corp", "_row_id": "2"}]
+Output: {"records": [{"name": "John Doe", "company": "Acme Corp", "_row_id": "2"}]}
 
 ---
 CSV Headers: ${JSON.stringify(headers)}
 Row Data:
 ${JSON.stringify(aiRows)}`;
+  promptChars = prompt.length;
 
   while (attempt < maxRetries) {
     let usedGroqIndex = currentGroqIndex;
@@ -514,6 +521,7 @@ ${JSON.stringify(aiRows)}`;
         } else if (provider === 'gemini') {
           const ai = getGeminiClient();
           const model = ai.getGenerativeModel({ model: 'gemini-2.5-flash' });
+          const apiStart = performance.now();
           const result = await model.generateContent({
             contents: [{ role: 'user', parts: [{ text: prompt }] }],
             generationConfig: {
@@ -521,8 +529,14 @@ ${JSON.stringify(aiRows)}`;
               responseMimeType: 'application/json',
             }
           });
+          apiLatencyMs = performance.now() - apiStart;
           const content = result.response.text();
           if (!content) throw new Error('Empty response from Gemini');
+          responseChars = content.length;
+          promptTokens = result.response.usageMetadata?.promptTokenCount || 0;
+          responseTokens = result.response.usageMetadata?.candidatesTokenCount || 0;
+          
+          const parseStart = performance.now();
           let parsed;
           try {
             parsed = JSON.parse(stripMarkdownFences(content));
@@ -540,9 +554,11 @@ ${JSON.stringify(aiRows)}`;
             throw new Error('AI output did not match expected schema');
           }
           aiRecords = validated.data.records;
+          parseLatencyMs = performance.now() - parseStart;
         } else {
           const { client: groqClient, index: groqKeyIndex } = getGroqClient();
           usedGroqIndex = groqKeyIndex;
+          const apiStart = performance.now();
           const completion = await groqClient.chat.completions.create({
             messages: [
               {
@@ -556,10 +572,15 @@ ${JSON.stringify(aiRows)}`;
             max_tokens: 8000,
             response_format: { type: 'json_object' },
           });
+          apiLatencyMs = performance.now() - apiStart;
 
           const content = completion.choices[0]?.message?.content;
           if (!content) throw new Error('Empty response from Groq');
+          responseChars = content.length;
+          promptTokens = completion.usage?.prompt_tokens || 0;
+          responseTokens = completion.usage?.completion_tokens || 0;
 
+          const parseStart = performance.now();
           const cleaned = stripMarkdownFences(content);
           let parsed;
           try {
@@ -578,6 +599,7 @@ ${JSON.stringify(aiRows)}`;
             throw new Error('AI output did not match expected schema');
           }
           aiRecords = validated.data.records;
+          parseLatencyMs = performance.now() - parseStart;
         }
       }
 
@@ -648,10 +670,11 @@ ${JSON.stringify(aiRows)}`;
         batchSize: rows.length,
         extracted: validRecords.length,
         skipped: skippedCount,
-        ms: processingTimeMs
+        ms: processingTimeMs,
+        metrics: { promptChars, responseChars, promptTokens, responseTokens, apiLatencyMs, parseLatencyMs, retries: attempt }
       }, 'Batch complete');
 
-      return { records: validRecords, skippedCount, skippedReasons, skippedRecords, processingTimeMs };
+      return { records: validRecords, skippedCount, skippedReasons, skippedRecords, processingTimeMs, metrics: { promptChars, responseChars, promptTokens, responseTokens, apiLatencyMs, parseLatencyMs, retries: attempt } };
 
     } catch (error: any) {
       attempt++;

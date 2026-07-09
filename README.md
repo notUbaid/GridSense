@@ -43,11 +43,11 @@ Here is the exact step-by-step technical flow of the application when processing
 4. **AI Architect**: The backend asks Groq (Llama-3.1-8B) to map the unknown columns (e.g., `Customer Name`, `Remarks`, `Status`) to our strict schema (`name`, `crm_note`, `crm_status`). The AI assigns a confidence score to its mapping.
 5. **The Fork in the Road**:
    - **High Confidence (≥ 70%)**: If the mapping is nearly perfect, we switch to **Deterministic Extraction Mode**. We process 5,000 rows at a time synchronously without hitting the AI again.
-   - **Low/No Confidence**: If the headers are absolute garbage, we switch to **AI Extraction Mode**. We chunk the data into highly constrained batches of 15 rows.
+   - **Low/No Confidence**: If the headers are absolute garbage, we switch to **AI Extraction Mode**. We chunk the data into highly constrained batches of 50 rows.
 
 ### Phase 3: The Concurrent Worker Pool
 
-6. **Chunking & Concurrency**: Sending 500 rows to an LLM at once destroys the context window, causes hallucinations, and hits rate limits. Instead, the frontend uses a concurrent worker pool (max concurrency: 8) to dispatch 15-row batches asynchronously.
+6. **Chunking & Concurrency**: Sending 500 rows to an LLM at once destroys the context window, causes hallucinations, and hits rate limits. Instead, the frontend uses a concurrent worker pool (max concurrency: 8) to dispatch 50-row batches asynchronously.
 7. **Backend Prompt Construction**: The Express backend dynamically constructs the prompt, embedding the specific chunk and enforcing strict JSON output using `zod-to-json-schema`.
 
 ### Phase 4: Multi-Provider Resilience & Validation
@@ -73,7 +73,7 @@ flowchart TD
         C --> D[Header Mapping Request]
         D --> E{Confidence Score?}
         E -->|> 70%| F[Batch size: 5000]
-        E -->|< 70%| G[Batch size: 15]
+        E -->|< 70%| G[Batch size: 50]
         F & G --> H[Concurrent Worker Pool]
     end
 
