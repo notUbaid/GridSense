@@ -752,7 +752,7 @@ ${Papa.unparse(aiRows, { header: false })}`;
               { role: 'system', content: 'You are a data extraction system. Output ONLY valid JSON matching the requested schema. No markdown fences, no commentary.' },
               { role: 'user', content: prompt }
             ],
-            model: isRouter ? 'nvidia/nemotron-3-ultra-550b-a55b:free' : 'gpt-4o-mini',
+            model: isRouter ? 'google/gemma-2-9b-it:free' : 'gpt-4o-mini',
             temperature: attempt > 0 ? 0.0 : 0.1,
             max_tokens: Math.min(4000, Math.max(1024, aiRows.length * 80)),
             response_format: { type: 'json_object' },
