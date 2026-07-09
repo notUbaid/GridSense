@@ -326,8 +326,10 @@ export function SummaryDashboard({ state, metrics, originalFilename, records, sk
                   <div className="h-px bg-border" />
                   
                   <div className="grid grid-cols-2 gap-y-1">
-                    <span className="text-muted-foreground">Rows Processed</span>
+                    <span className="text-muted-foreground">Total Input Rows</span>
                     <span className="text-right">{metrics.totalRows}</span>
+                    <span className="text-muted-foreground text-destructive">Failed (API Limits)</span>
+                    <span className="text-right text-destructive font-bold">{metrics.failedRows}</span>
                     <span className="text-muted-foreground">Batches Sent</span>
                     <span className="text-right">{metrics.batchesSent}</span>
                     <span className="text-muted-foreground">Avg API Latency</span>
