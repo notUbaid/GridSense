@@ -585,7 +585,7 @@ ${Papa.unparse(aiRows, { header: false })}`;
             // Groq deducts TPM based on prompt_tokens + max_tokens requested.
             // Free tier has 6,000 TPM limit. Setting this too high causes instant 429s.
             // 50 rows generates ~2500 tokens. We cap max_tokens conservatively.
-            max_tokens: Math.min(4000, Math.max(1024, aiRows.length * 65)),
+            max_tokens: Math.min(4000, Math.max(1024, aiRows.length * 80)),
             response_format: { type: 'json_object' },
           });
           apiLatencyMs = performance.now() - apiStart;
@@ -633,8 +633,9 @@ ${Papa.unparse(aiRows, { header: false })}`;
       if (aiRecords.length < aiRows.length) {
         const truncatedCount = aiRows.length - aiRecords.length;
         logger.warn(`Row count mismatch: expected ${aiRows.length}, got ${aiRecords.length}. Tracking missing as skipped.`);
-        skippedCount += truncatedCount;
-        skippedReasons['AI Truncated Output (Missing Rows)'] = truncatedCount;
+        // We do NOT increment skippedCount here, because the missing rows will be passed
+        // as empty shells to the loop below, which will naturally fail the meaningfulData
+        // check and properly increment skippedCount AND push to skippedRecords.
       }
 
       const validRecords: CrmRecord[] = [];
