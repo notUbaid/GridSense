@@ -129,7 +129,7 @@ export function ResultsTable({ data, originalFilename }: ResultsTableProps) {
         // eslint-disable-next-line @typescript-eslint/no-explicit-any
         let val = (record as any)[key];
         if (typeof val === 'string') {
-          val = val.replace(/[\r\n\t]+/g, ' ').replace(/\s{2,}/g, ' ').trim();
+          val = val.replace(/\r\n/g, '\\n').replace(/[\r\n]/g, '\\n').replace(/\t/g, ' ').replace(/\s{2,}/g, ' ').trim();
         }
         normalizedRecord[key] = val ?? "";
       });

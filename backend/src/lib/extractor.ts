@@ -592,6 +592,7 @@ CRITICAL RULES:
 - Never fabricate information. Treat this as an information extraction task, NOT a text generation task.
 - IMPORTANT: DO NOT output any keys where the value would be null. Omit them entirely from the JSON object to save output tokens.
 - For CRM status, interpret intent. If the text implies they want to be contacted, use "GOOD_LEAD_FOLLOW_UP". If they refused, use "BAD_LEAD". If they couldn't be reached, use "DID_NOT_CONNECT". If they purchased, use "SALE_DONE". Otherwise omit the key.
+- For data_source, ONLY use one of: "leads_on_demand", "meridian_tower", "eden_park", "varah_swamy", "sarjapur_plots". If none match confidently, leave it blank (omit).
 - NEVER map dates, IDs, zip codes, or amounts (e.g., Appointment Date, Lead ID, Salary) to mobile numbers. Date columns must go into crm_note if unmapped.
 - Identify mobile/phone numbers. Standardize as strings without formatting. Extract the country code separately. If there is an extension, put it in "crm_note" as "Extension: [ext]".
 - For unmapped columns with useful information, append them to "crm_note". Format them cleanly in Title Case like "Platform: Instagram" or "Campaign: Q3 Retargeting" instead of raw machine names. Separate multiple notes with " | ".
