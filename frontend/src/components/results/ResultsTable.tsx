@@ -36,9 +36,11 @@ const rowItem: Variants = {
 
 interface ResultsTableProps {
   data: CrmRecord[];
+  originalFilename?: string | null;
 }
 
-export function ResultsTable({ data }: ResultsTableProps) {
+export function ResultsTable({ data, originalFilename }: ResultsTableProps) {
+  const baseFilename = originalFilename ? originalFilename.replace(/\.[^/.]+$/, "") : "gridsense_export";
   const columns = React.useMemo(
     () => [
       { accessorKey: 'name', header: 'Name' },
@@ -107,7 +109,7 @@ export function ResultsTable({ data }: ResultsTableProps) {
     const url = URL.createObjectURL(blob);
     const link = document.createElement('a');
     link.href = url;
-    link.setAttribute('download', `gridsense_export_${Date.now()}.csv`);
+    link.setAttribute('download', `${baseFilename} (cleaned).csv`);
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);
@@ -120,7 +122,7 @@ export function ResultsTable({ data }: ResultsTableProps) {
     const url = URL.createObjectURL(blob);
     const link = document.createElement('a');
     link.href = url;
-    link.setAttribute('download', `gridsense_export_${Date.now()}.json`);
+    link.setAttribute('download', `${baseFilename} (cleaned).json`);
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);

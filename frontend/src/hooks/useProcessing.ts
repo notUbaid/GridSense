@@ -56,6 +56,7 @@ export function useProcessing() {
   const [previewData, setPreviewData] = useState<{ headers: string[], rows: Record<string, string>[] } | null>(null);
   const [schemaMapping, setSchemaMapping] = useState<SchemaMapping | null>(null);
   const [error, setError] = useState<string | null>(null);
+  const [originalFilename, setOriginalFilename] = useState<string | null>(null);
   const [currentActivity, setCurrentActivity] = useState<string>('Idle');
   const [elapsedMs, setElapsedMs] = useState<number>(0);
   const [etaMs, setEtaMs] = useState<number | null>(null);
@@ -129,6 +130,7 @@ export function useProcessing() {
 
     setState('parsing');
     setError(null);
+    setOriginalFilename(file.name);
     setProgress(0);
     setRecords([]);
     setSkippedRawRows([]);
@@ -615,6 +617,7 @@ export function useProcessing() {
     schemaMapping,
     metrics,
     error,
+    originalFilename,
     currentActivity,
     elapsedMs,
     etaMs,
