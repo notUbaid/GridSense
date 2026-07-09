@@ -1,138 +1,142 @@
-Date,Client,Source,Campaign,UTM Source,UTM Medium,UTM Campaign,Prospect,Preferred Contact,Phone,Organization,Lead Score,Cost per Lead,Agent Comments
-,SaaS Startup,Google Ads,Q1_Promo,google,email,Q1_Promo,Tariq Schmidt,tariq.schmidt@startup.io,+919803664386,Quantum Systems,80,$47.42,
-19/02/2024,E-commerce Brand,Referral,Retargeting_30d,direct,social,Q1_Promo,Yousef Menon,yousef.menon@yahoo.co.in,+919234275706,BlueOcean,51,$16.55,Disqualified
-Yesterday,E-commerce Brand,Organic,Q1_Promo,direct,social,Q1_Promo,Priya Johnson,priya.johnson@university.edu,+919606882021,TechNova,92,$30.40,SQL
-05/12/2025,E-commerce Brand,LinkedIn,Lookalike_1%,linkedin,cpc,Q1_Promo,Isabella Yang,isabella.yang@company.net,+919502550523,Apex Solutions,86,$22.34,Disqualified
-,SaaS Startup,Meta Ads,Q1_Promo,facebook,social,Q1_Promo,Vivek Das,vivek.das@startup.io,+919274846816,City Hospital,85,$13.35,SQL
-,Local Clinic,Meta Ads,Lookalike_1%,linkedin,cpc,Q1_Promo,Swati Kim,swati.kim@techsolutions.in,+919283092240,Healthcare Partners,72,$42.95,SQL
-01-Jan-2024,Local Clinic,LinkedIn,Lookalike_1%,linkedin,email,Q1_Promo,Vikram Perez,vikram.perez@aol.com,+919340488162,Retail Giants,17,$38.06,Disqualified
-01-Jan-2024,Local Clinic,LinkedIn,Lookalike_1%,linkedin,email,Q1_Promo,Vikram Perez,vikram.perez@aol.com,+919340488162,Retail Giants,17,$38.06,Disqualified
-17/01/2024,Local Clinic,Organic,Retargeting_30d,facebook,cpc,Q1_Promo,Chen Martinez,chen.martinez@agency.media,+919192212528,Metro Properties,86,$46.24,SQL
-15-Feb-2025,Local Clinic,Organic,Retargeting_30d,linkedin,email,Q1_Promo,Kwame Davis,kwame.davis@builders.co.in,+919318724493,Apex Solutions,77,$20.94,Disqualified
-"Sep 02, 2025",E-commerce Brand,LinkedIn,Lookalike_1%,facebook,cpc,Q1_Promo,Yousef Lopez,yousef.lopez@university.edu,+919025374249,Ecom Express,17,$6.84,SQL
-12-Aug-2023,E-commerce Brand,Meta Ads,Q1_Promo,google,social,Q1_Promo,Kwame Taylor,kwame.taylor@hospital.org,+919055623214,Apex Solutions,42,$17.32,Disqualified
-Today,Local Clinic,Google Ads,Retargeting_30d,facebook,email,Q1_Promo,Lucia Gonzalez,lucia.gonzalez@university.edu,+919287317697,Paramount Health,61,$34.87,MQL
-Today,Local Clinic,Organic,Retargeting_30d,facebook,cpc,Q1_Promo,Neha Patel,neha.patel@protonmail.com,+919012313488,TechNova,64,$10.90,
-InvalidDate,E-commerce Brand,LinkedIn,Retargeting_30d,facebook,cpc,Q1_Promo,Khalid Schmidt,khalid.schmidt@aol.com,+919818122309,BlueOcean,47,$12.42,
-2023.08.02,SaaS Startup,Referral,Lookalike_1%,direct,cpc,Q1_Promo,Ngozi Johnson,ngozi.johnson@builders.co.in,+919411775966,BlueOcean,22,$7.10,
-07/20/2023,SaaS Startup,Organic,Q1_Promo,linkedin,email,Q1_Promo,Ravi Diallo,ravi.diallo@corp.org,+919529286572,Healthcare Partners,22,$20.49,Disqualified
-Yesterday,E-commerce Brand,Meta Ads,Lookalike_1%,facebook,social,Q1_Promo,Aisha Rodriguez,aisha.rodriguez@startup.io,+919372008806,BlueOcean,78,$15.24,
-"Feb 25, 2024",Local Clinic,Meta Ads,Retargeting_30d,google,email,Q1_Promo,Amanda Nair,amanda.nair@university.edu,+919722019370,Stellar Services,40,$25.28,SQL
-Yesterday,E-commerce Brand,Referral,Retargeting_30d,direct,email,Q1_Promo,Khalid Hussein,khalid.hussein@enterprise.co,+919368300383,Global Logistics,43,$17.09,MQL
-26/07/2024,SaaS Startup,LinkedIn,Lookalike_1%,facebook,cpc,Q1_Promo,Elena Singh,elena.singh@protonmail.com,+919728962553,City Hospital,75,$42.68,MQL
-11/03/2024,E-commerce Brand,Organic,Retargeting_30d,google,email,Q1_Promo,Camila Santos,camila.santos@company.net,+919237872543,TechNova,93,$9.39,
-05/08/2023,Local Clinic,Organic,Q1_Promo,google,cpc,Q1_Promo,Pooja Kumar,pooja.kumar@logistics.com,+919314860880,Retail Giants,58,$23.64,
-2024.09.10,SaaS Startup,Meta Ads,Retargeting_30d,linkedin,cpc,Q1_Promo,Robert Gupta,robert.gupta@icloud.com,+919738195250,Metro Properties,66,$43.17,MQL
-25/04/2025,Local Clinic,Referral,Retargeting_30d,facebook,social,Q1_Promo,Kavita Nair,kavita.nair@techsolutions.in,+919748647120,City Hospital,100,$23.73,SQL
-Yesterday,E-commerce Brand,Google Ads,Retargeting_30d,google,cpc,Q1_Promo,Isabella Liu,isabella.liu@outlook.com,+919665263220,WebWorks,18,$5.77,MQL
-2025.05.11,SaaS Startup,Google Ads,Retargeting_30d,direct,social,Q1_Promo,Vikram Williams,vikram.williams@hotmail.com,+919632995335,NextGen IT,85,$38.70,Disqualified
-"Aug 02, 2024",Local Clinic,Google Ads,Lookalike_1%,direct,social,Q1_Promo,Jessica Li,jessica.li@enterprise.co,+919444857741,Sunrise Foods,81,$27.88,SQL
-21-Oct-2024,E-commerce Brand,Organic,Q1_Promo,facebook,social,Q1_Promo,Chen Anderson,chen.anderson@builders.co.in,+919725703191,Stellar Services,58,$18.56,MQL
-Today,E-commerce Brand,LinkedIn,Retargeting_30d,facebook,social,Q1_Promo,Kofi Kim,kofi.kim@yahoo.com,+919994510118,Acme Corp,26,$11.69,SQL
-2024-08-25,Local Clinic,Referral,Retargeting_30d,google,email,Q1_Promo,Ashley Miller,ashley.miller@techsolutions.in,+919013426344,TechNova,47,$44.74,Spam
-2023-06-26,E-commerce Brand,Organic,Q1_Promo,linkedin,email,Q1_Promo,Lars Ali,lars.ali@yahoo.com,+919036976300,Ecom Express,18,$22.33,Disqualified
-"Jul 04, 2024",SaaS Startup,LinkedIn,Q1_Promo,direct,cpc,Q1_Promo,Kofi Tanaka,kofi.tanaka@enterprise.co,+919964476988,TechNova,79,$32.22,MQL
-"Mar 17, 2024",E-commerce Brand,Organic,Lookalike_1%,facebook,cpc,Q1_Promo,Robert Smith,robert.smith@builders.co.in,+919062834891,NextGen IT,45,$49.87,
-2024.09.14,Local Clinic,Organic,Lookalike_1%,facebook,cpc,Q1_Promo,Alejandro Ibrahim,alejandro.ibrahim@startup.io,+919574525283,Paramount Health,65,$26.84,MQL
-Yesterday,E-commerce Brand,Meta Ads,Q1_Promo,facebook,cpc,Q1_Promo,Amanda Yang,amanda.yang@aol.com,+919453571059,Apex Solutions,26,$34.98,SQL
-26/03/2023,Local Clinic,Organic,Q1_Promo,google,email,Q1_Promo,Seo-yeon Miller,seo-yeon.miller@yahoo.co.in,+919643267758,WebWorks,44,$44.71,MQL
-01-Jan-2025,SaaS Startup,Google Ads,Retargeting_30d,direct,email,Q1_Promo,Arjun Hassan,arjun.hassan@enterprise.co,+919117822921,Retail Giants,64,$23.02,SQL
-01-Jan-2025,SaaS Startup,Google Ads,Retargeting_30d,direct,email,Q1_Promo,Arjun Hassan,arjun.hassan@enterprise.co,+919117822921,Retail Giants,64,$23.02,SQL
-,SaaS Startup,Google Ads,Retargeting_30d,linkedin,social,Q1_Promo,Neha Diallo,neha.diallo@hotmail.com,+919081487643,Metro Properties,84,$18.78,Spam
-InvalidDate,SaaS Startup,Referral,Lookalike_1%,direct,email,Q1_Promo,Kofi Patel,kofi.patel@protonmail.com,+919539583410,Pioneer Manufacturing,65,$48.90,SQL
-2024-02-26,E-commerce Brand,Organic,Retargeting_30d,facebook,cpc,Q1_Promo,Amanda Liu,amanda.liu@hospital.org,+919150669726,WebWorks,85,$37.62,MQL
-29/08/2023,SaaS Startup,Google Ads,Lookalike_1%,linkedin,email,Q1_Promo,Kavita Hassan,kavita.hassan@outlook.com,+919926062346,Metro Properties,77,$31.57,MQL
-24-Feb-2024,Local Clinic,Google Ads,Retargeting_30d,facebook,social,Q1_Promo,Riya Reddy,riya.reddy@university.edu,+919037917080,Ecom Express,37,$35.98,MQL
-Today,SaaS Startup,Google Ads,Lookalike_1%,google,social,Q1_Promo,Kavita Kim,kavita.kim@techsolutions.in,+919137921529,Pioneer Manufacturing,92,$34.27,Disqualified
-Today,Local Clinic,LinkedIn,Q1_Promo,direct,social,Q1_Promo,Rajesh Martinez,rajesh.martinez@consulting.biz,+919450492078,Zenith Enterprises,96,$12.23,MQL
-18/03/2025,SaaS Startup,Organic,Retargeting_30d,linkedin,email,Q1_Promo,John Gupta,john.gupta@enterprise.co,+919228898661,TechNova,36,$41.77,MQL
-,E-commerce Brand,Meta Ads,Q1_Promo,facebook,email,Q1_Promo,Michael Pillai,michael.pillai@builders.co.in,+919145975793,Metro Properties,54,$35.03,Spam
-15/06/2023,Local Clinic,Organic,Q1_Promo,facebook,email,Q1_Promo,Camila Rao,camila.rao@yahoo.co.in,+919308950373,Agile Agency,49,$20.70,SQL
-02/27/2025,Local Clinic,Meta Ads,Lookalike_1%,linkedin,email,Q1_Promo,Elena Muller,elena.muller@logistics.com,+919495473002,Ecom Express,11,$18.40,SQL
-"Sep 19, 2025",Local Clinic,Organic,Retargeting_30d,google,cpc,Q1_Promo,Elena Kim,elena.kim@outlook.com,+919097127880,Agile Agency,53,$6.15,MQL
-28-Jun-2025,E-commerce Brand,LinkedIn,Q1_Promo,linkedin,social,Q1_Promo,Ngozi Taylor,ngozi.taylor@company.net,+919028402941,Urban Builders,44,$49.42,Disqualified
-2024-09-07,Local Clinic,LinkedIn,Retargeting_30d,google,social,Q1_Promo,Chidi Smith,chidi.smith@yahoo.com,+919738701020,Acme Corp,30,$25.33,SQL
-17/04/2025,Local Clinic,Organic,Q1_Promo,direct,social,Q1_Promo,Sneha Traore,sneha.traore@startup.io,+919923326148,Retail Giants,72,$30.83,Spam
-Yesterday,E-commerce Brand,Google Ads,Lookalike_1%,direct,cpc,Q1_Promo,Hiroshi Hassan,hiroshi.hassan@gmail.com,+919067933258,Ecom Express,13,$41.57,
-"Mar 08, 2024",E-commerce Brand,Organic,Lookalike_1%,direct,social,Q1_Promo,Valentina Wang,valentina.wang@company.net,+919010396997,NextGen IT,75,$43.28,MQL
-Yesterday,E-commerce Brand,Referral,Retargeting_30d,facebook,social,Q1_Promo,Emily Miller,emily.miller@agency.media,+919023030657,Sunrise Foods,22,$10.30,SQL
-Yesterday,E-commerce Brand,Referral,Retargeting_30d,facebook,social,Q1_Promo,Emily Miller,emily.miller@agency.media,+919023030657,Sunrise Foods,22,$10.30,SQL
-Yesterday,SaaS Startup,Referral,Retargeting_30d,linkedin,social,Q1_Promo,Vikram Suzuki,vikram.suzuki@techsolutions.in,+919147026164,NextGen IT,95,$29.93,SQL
-"Mar 21, 2024",Local Clinic,Referral,Lookalike_1%,direct,cpc,Q1_Promo,Olivia Patel,olivia.patel@university.edu,+919367383496,Agile Agency,68,$39.91,SQL
-"Nov 10, 2023",Local Clinic,LinkedIn,Retargeting_30d,linkedin,cpc,Q1_Promo,Aisha Gonzalez,aisha.gonzalez@company.net,+919376821690,Global Logistics,26,$6.95,SQL
-2025.07.11,Local Clinic,LinkedIn,Q1_Promo,google,cpc,Q1_Promo,Arjun Yadav,arjun.yadav@gmail.com,+919741778412,NextGen IT,67,$21.45,Disqualified
-02/03/2025,Local Clinic,Google Ads,Retargeting_30d,google,social,Q1_Promo,Ngozi Mensah,ngozi.mensah@hotmail.com,+919550557882,WebWorks,67,$43.69,MQL
-InvalidDate,SaaS Startup,Meta Ads,Retargeting_30d,google,cpc,Q1_Promo,Yuki Pillai,yuki.pillai@builders.co.in,+919801198755,City Hospital,34,$26.11,Spam
-Yesterday,E-commerce Brand,Organic,Retargeting_30d,facebook,email,Q1_Promo,Kwame Lopez,kwame.lopez@hotmail.com,+919304829325,Paramount Health,72,$23.94,Spam
-2025-04-07,Local Clinic,Meta Ads,Retargeting_30d,google,cpc,Q1_Promo,Arjun Doe,arjun.doe@university.edu,+919402244430,Pioneer Manufacturing,73,$28.20,Spam
-2025.09.10,SaaS Startup,Organic,Retargeting_30d,direct,cpc,Q1_Promo,Min-jun Kumar,min-jun.kumar@outlook.com,+919970587055,Agile Agency,54,$41.31,MQL
-2023-06-24,SaaS Startup,Organic,Q1_Promo,google,email,Q1_Promo,Camila Davis,camila.davis@yahoo.co.in,+919841900348,TechNova,83,$20.60,
-InvalidDate,Local Clinic,Meta Ads,Lookalike_1%,facebook,email,Q1_Promo,Sven Davis,sven.davis@protonmail.com,+919774959972,Ecom Express,21,$45.95,SQL
-Yesterday,SaaS Startup,Organic,Q1_Promo,facebook,email,Q1_Promo,Anita Reddy,anita.reddy@aol.com,+919928051794,Acme Corp,83,$17.57,Disqualified
-Today,E-commerce Brand,Google Ads,Q1_Promo,google,social,Q1_Promo,William Zhang,william.zhang@outlook.com,+919435988688,BlueOcean,25,$21.73,MQL
-13-Nov-2024,Local Clinic,Organic,Lookalike_1%,facebook,cpc,Q1_Promo,Elena Bose,elena.bose@logistics.com,+919536416892,Sunrise Foods,87,$35.40,Disqualified
-,E-commerce Brand,Google Ads,Q1_Promo,direct,cpc,Q1_Promo,Tariro Garcia,tariro.garcia@outlook.com,+919265757542,NextGen IT,42,$7.05,Spam
-Yesterday,Local Clinic,Meta Ads,Retargeting_30d,google,cpc,Q1_Promo,Min-jun Miller,min-jun.miller@agency.media,+919428347895,FinServe Group,21,$17.09,Spam
-2024.05.18,E-commerce Brand,Google Ads,Retargeting_30d,facebook,social,Q1_Promo,David Jain,david.jain@aol.com,+919031687330,Quantum Systems,75,$31.83,SQL
-06/19/2023,SaaS Startup,Google Ads,Retargeting_30d,direct,email,Q1_Promo,Khalid Ali,khalid.ali@corp.org,+919052240851,WebWorks,57,$45.75,MQL
-InvalidDate,E-commerce Brand,Referral,Retargeting_30d,direct,cpc,Q1_Promo,Rajesh Ali,rajesh.ali@icloud.com,+919934792544,Pioneer Manufacturing,16,$23.11,MQL
-Yesterday,Local Clinic,Meta Ads,Q1_Promo,google,cpc,Q1_Promo,Wei Santos,wei.santos@enterprise.co,+919451697350,Sunrise Foods,21,$39.05,Spam
-2023-04-12,E-commerce Brand,Google Ads,Retargeting_30d,linkedin,email,Q1_Promo,Seo-yeon Jones,seo-yeon.jones@builders.co.in,+919915161458,Paramount Health,30,$8.93,Disqualified
-Today,Local Clinic,Referral,Lookalike_1%,facebook,social,Q1_Promo,Layla Das,layla.das@logistics.com,+919696621603,City Hospital,96,$25.89,Spam
-Yesterday,E-commerce Brand,LinkedIn,Lookalike_1%,linkedin,social,Q1_Promo,Omar Johnson,omar.johnson@company.net,+919464495145,Healthcare Partners,32,$28.76,
-2023-11-11,E-commerce Brand,Organic,Lookalike_1%,facebook,cpc,Q1_Promo,Aisha Davis,aisha.davis@university.edu,+919285656545,Stellar Services,27,$42.27,
-10-Nov-2023,Local Clinic,LinkedIn,Q1_Promo,direct,social,Q1_Promo,Ravi Rodriguez,ravi.rodriguez@university.edu,+919502956228,TechNova,75,$18.24,SQL
-2025-05-06,SaaS Startup,Referral,Lookalike_1%,facebook,social,Q1_Promo,Riya Park,riya.park@builders.co.in,+919950512087,Metro Properties,52,$46.39,Spam
-Yesterday,SaaS Startup,Meta Ads,Retargeting_30d,google,social,Q1_Promo,Ravi Zhang,ravi.zhang@yahoo.com,+919274125178,Skyline Construction,86,$14.48,Spam
-2024.11.29,SaaS Startup,LinkedIn,Q1_Promo,facebook,email,Q1_Promo,Sneha Nair,sneha.nair@corp.org,+919208303893,Global Logistics,76,$26.28,MQL
-2024.05.12,Local Clinic,Google Ads,Lookalike_1%,direct,email,Q1_Promo,Mohamed Saleh,mohamed.saleh@yahoo.com,+919935681961,Sunrise Foods,40,$45.31,
-01-Jan-2023,E-commerce Brand,Google Ads,Lookalike_1%,google,cpc,Q1_Promo,Vivek Gupta,vivek.gupta@outlook.com,+919918359591,Metro Properties,11,$12.47,Spam
-"Nov 24, 2024",SaaS Startup,Meta Ads,Lookalike_1%,facebook,cpc,Q1_Promo,Sarah Hassan,sarah.hassan@hospital.org,+919675719214,FinServe Group,98,$31.20,MQL
-,SaaS Startup,Organic,Retargeting_30d,linkedin,cpc,Q1_Promo,Valentina Miller,valentina.miller@outlook.com,+919582585896,Healthcare Partners,74,$49.66,Spam
-Today,E-commerce Brand,Google Ads,Q1_Promo,linkedin,social,Q1_Promo,Khalid Santos,khalid.santos@corp.org,+919483029634,NextGen IT,79,$6.97,MQL
-01/04/2024,E-commerce Brand,Organic,Lookalike_1%,google,email,Q1_Promo,Olivia Nair,olivia.nair@agency.media,+919434875644,Healthcare Partners,85,$38.91,Spam
-Yesterday,SaaS Startup,Meta Ads,Lookalike_1%,facebook,social,Q1_Promo,Aditya Tanaka,aditya.tanaka@protonmail.com,+919545118579,Global Logistics,82,$22.61,Spam
-12-Aug-2023,E-commerce Brand,LinkedIn,Q1_Promo,facebook,social,Q1_Promo,James Okafor,james.okafor@consulting.biz,+919996042827,FinServe Group,29,$34.69,Spam
-12/11/2023,SaaS Startup,Meta Ads,Q1_Promo,google,email,Q1_Promo,Emily Yang,emily.yang@consulting.biz,+919366548541,WebWorks,93,$10.54,MQL
-11/05/2023,E-commerce Brand,Referral,Retargeting_30d,linkedin,email,Q1_Promo,Khalid Li,khalid.li@gmail.com,+919481012182,WebWorks,50,$30.68,SQL
-,SaaS Startup,LinkedIn,Retargeting_30d,google,social,Q1_Promo,Neha Li,neha.li@hospital.org,+919831930332,Metro Properties,50,$7.26,Disqualified
-2025.08.21,SaaS Startup,Organic,Q1_Promo,facebook,social,Q1_Promo,Kofi Li,kofi.li@enterprise.co,+919275525189,Zenith Enterprises,39,$19.80,Spam
-,E-commerce Brand,Referral,Q1_Promo,facebook,cpc,Q1_Promo,Olivia Davis,olivia.davis@corp.org,+919966812009,Quantum Systems,73,$27.88,Spam
-InvalidDate,Local Clinic,Google Ads,Q1_Promo,direct,cpc,Q1_Promo,Kofi Lee,kofi.lee@outlook.com,+919394204330,Global Logistics,95,$13.65,MQL
-2025.05.25,SaaS Startup,Google Ads,Retargeting_30d,facebook,email,Q1_Promo,Chidi Liu,chidi.liu@startup.io,+919275558264,Metro Properties,28,$38.13,MQL
-14/10/2023,E-commerce Brand,LinkedIn,Retargeting_30d,google,cpc,Q1_Promo,Kavita Perez,kavita.perez@enterprise.co,+919312097922,Stellar Services,37,$9.89,MQL
-,E-commerce Brand,LinkedIn,Lookalike_1%,direct,email,Q1_Promo,Santiago Jones,santiago.jones@gmail.com,+919116991611,Quantum Systems,44,$8.60,MQL
-15-Mar-2025,E-commerce Brand,Referral,Retargeting_30d,direct,email,Q1_Promo,Amanda Das,amanda.das@enterprise.co,+919671239520,Ecom Express,22,$16.80,Spam
-15-Mar-2025,E-commerce Brand,Referral,Retargeting_30d,direct,email,Q1_Promo,Amanda Das,amanda.das@enterprise.co,+919671239520,Ecom Express,22,$16.80,Spam
-,E-commerce Brand,Organic,Lookalike_1%,direct,email,Q1_Promo,Lucia Santos,lucia.santos@protonmail.com,+919891701719,Global Logistics,37,$12.11,Disqualified
-Today,E-commerce Brand,LinkedIn,Lookalike_1%,direct,email,Q1_Promo,Mohamed Wang,mohamed.wang@gmail.com,+919596836674,NextGen IT,86,$35.08,SQL
-,Local Clinic,Referral,Lookalike_1%,facebook,email,Q1_Promo,Karthik Nair,karthik.nair@aol.com,+919787147359,Metro Properties,90,$18.93,Disqualified
-21-Apr-2025,SaaS Startup,Google Ads,Q1_Promo,linkedin,cpc,Q1_Promo,Seo-yeon Singh,seo-yeon.singh@logistics.com,+919825766859,WebWorks,57,$11.10,
-24-Sep-2025,E-commerce Brand,Meta Ads,Q1_Promo,facebook,cpc,Q1_Promo,Emily Lee,emily.lee@corp.org,+919399460818,Zenith Enterprises,14,$26.52,Disqualified
-InvalidDate,Local Clinic,Organic,Q1_Promo,linkedin,social,Q1_Promo,Wei Park,wei.park@university.edu,+919004336787,Paramount Health,20,$15.58,SQL
-2023-12-20,E-commerce Brand,Referral,Q1_Promo,direct,email,Q1_Promo,Anita Yadav,anita.yadav@techsolutions.in,+919215448724,Metro Properties,29,$37.50,
-2025.03.04,E-commerce Brand,Google Ads,Retargeting_30d,direct,cpc,Q1_Promo,Emily Zhang,emily.zhang@outlook.com,+919359251178,DataFlow,24,$10.80,SQL
-2024.03.06,E-commerce Brand,LinkedIn,Retargeting_30d,facebook,cpc,Q1_Promo,Rajesh Nair,rajesh.nair@builders.co.in,+919419884542,Global Logistics,77,$19.31,SQL
-03/06/2024,Local Clinic,Referral,Lookalike_1%,google,email,Q1_Promo,Aditya Reddy,aditya.reddy@outlook.com,+919525563309,Stellar Services,59,$34.04,Spam
-08/04/2023,E-commerce Brand,Google Ads,Retargeting_30d,facebook,cpc,Q1_Promo,Priya Jain,priya.jain@builders.co.in,+919383322076,FinServe Group,52,$26.94,
-02-Dec-2024,E-commerce Brand,Meta Ads,Q1_Promo,direct,email,Q1_Promo,Anita Ali,anita.ali@hotmail.com,+919322253112,Quantum Systems,26,$22.14,Disqualified
-Yesterday,SaaS Startup,Google Ads,Lookalike_1%,facebook,cpc,Q1_Promo,John Chen,john.chen@aol.com,+919700530243,Retail Giants,35,$9.18,SQL
-Yesterday,Local Clinic,Organic,Retargeting_30d,linkedin,social,Q1_Promo,David Jones,david.jones@agency.media,+919038609390,FinServe Group,20,$38.78,Spam
-2024.01.02,SaaS Startup,Referral,Lookalike_1%,direct,cpc,Q1_Promo,Kavita Li,kavita.li@corp.org,+919320734124,Healthcare Partners,84,$22.29,
-29/01/2023,SaaS Startup,Google Ads,Retargeting_30d,google,cpc,Q1_Promo,Vivek Doe,vivek.doe@aol.com,+919225769467,Stellar Services,52,$10.49,Disqualified
-01/03/2023,SaaS Startup,LinkedIn,Retargeting_30d,linkedin,cpc,Q1_Promo,Kwame Ndiaye,kwame.ndiaye@icloud.com,+919184887439,Agile Agency,80,$41.68,
-,SaaS Startup,Meta Ads,Q1_Promo,direct,cpc,Q1_Promo,Kwame Ibrahim,kwame.ibrahim@hotmail.com,+919866370095,BlueOcean,13,$18.42,MQL
-Yesterday,E-commerce Brand,Referral,Q1_Promo,facebook,social,Q1_Promo,Seo-yeon Williams,seo-yeon.williams@company.net,+919412962826,TechNova,65,$11.51,
-Yesterday,E-commerce Brand,LinkedIn,Q1_Promo,facebook,email,Q1_Promo,Riya Kumar,riya.kumar@yahoo.com,+919790004505,FinServe Group,34,$5.81,Disqualified
-,SaaS Startup,Referral,Lookalike_1%,direct,cpc,Q1_Promo,Zahra Miller,zahra.miller@logistics.com,+919258687705,Paramount Health,56,$17.83,Spam
-18/07/2024,E-commerce Brand,Google Ads,Q1_Promo,linkedin,social,Q1_Promo,Lars Ndiaye,lars.ndiaye@agency.media,+919088787047,Ecom Express,75,$23.74,MQL
-"Sep 07, 2023",SaaS Startup,LinkedIn,Q1_Promo,direct,email,Q1_Promo,Suresh Takahashi,suresh.takahashi@icloud.com,+919024458320,TechNova,56,$36.96,SQL
-14/02/2024,SaaS Startup,Google Ads,Lookalike_1%,google,cpc,Q1_Promo,Anjali Yadav,anjali.yadav@startup.io,+919100904335,TechNova,85,$13.11,Spam
-06/15/2023,E-commerce Brand,Google Ads,Retargeting_30d,linkedin,email,Q1_Promo,Aditya Williams,aditya.williams@enterprise.co,+919870165993,Healthcare Partners,55,$45.88,Spam
-"Feb 17, 2024",E-commerce Brand,LinkedIn,Q1_Promo,direct,social,Q1_Promo,Arjun Chauhan,arjun.chauhan@consulting.biz,+919071817438,NextGen IT,23,$38.45,Spam
-"Mar 15, 2025",E-commerce Brand,Organic,Lookalike_1%,google,cpc,Q1_Promo,Diego Santos,diego.santos@startup.io,+919945740544,City Hospital,22,$25.95,SQL
-InvalidDate,SaaS Startup,Google Ads,Q1_Promo,facebook,cpc,Q1_Promo,Khalid Perez,khalid.perez@gmail.com,+919056436422,Agile Agency,38,$15.73,Spam
-08/18/2023,Local Clinic,LinkedIn,Retargeting_30d,facebook,cpc,Q1_Promo,Olivia Ndiaye,olivia.ndiaye@hotmail.com,+919473241665,Zenith Enterprises,50,$31.19,SQL
-13/03/2024,SaaS Startup,Google Ads,Retargeting_30d,direct,cpc,Q1_Promo,Carlos Taylor,carlos.taylor@icloud.com,+919892600544,Acme Corp,14,$46.37,SQL
-2023.03.23,Local Clinic,Referral,Lookalike_1%,facebook,social,Q1_Promo,Seo-yeon Anderson,seo-yeon.anderson@yahoo.co.in,+919731143425,BlueOcean,27,$21.19,Spam
-03/02/2025,E-commerce Brand,Google Ads,Retargeting_30d,linkedin,email,Q1_Promo,David Lopez,david.lopez@startup.io,+919377044400,NextGen IT,47,$23.35,Spam
+Date,Prospect,Organization,UTM Source,UTM Medium,UTM Campaign,Phone,Preferred Contact,Platform,Executive,Status,Latest Update,Campaign Summary
+24-Feb-2025,Sarah Hassan,FinServe Group,google,cpc,Q1_Promo,,,,,,,
+Last Week,Sneha Reddy,Quantum Systems,google,cpc,Q1_Promo,0091-9188385751,SNEHA.REDDY@LOGISTICS.COM,Broker,Karan Singh,Call Back,Working night shift,Needs orthopedic consultation
+01-Nov-2025,Diego Menon,Apex Solutions,google,cpc,Q1_Promo,+91-90986-30455 ext 755, diego.menon@icloud.com ,Organic,Rahul Mehta,Budget Issue,Call back tomorrow,Needs orthopedic consultation
+2025-01-07 19:00:00,Wei Smith,Metro Properties,google,cpc,Q1_Promo,+91 9446903735,wei.smith@hotmail.com,Housing,Rahul Mehta,No Response,Asked to call after 7 PM,Searching for MBA admission
+,Valentina Doe,Zenith Enterprises,google,cpc,Q1_Promo,,"valentina.doe@hotmail.com, secondary@logistics.com",,,,,
+,Vikram Iyer,Agile Agency,google,cpc,Q1_Promo,+1 (410) 555-5476,   vikram.iyer@startup.io   ,,,,,
+2026-03-14 02:00:00,Kavita Ali,Pioneer Manufacturing,google,cpc,Q1_Promo,+91 9265564819,kavita.ali@gmail.com,Broker,Priya Shah,Warm,Referred by existing client,Need possession before Diwali
+2026-03-14 02:00:00,Kavita Ali,Pioneer Manufacturing,google,cpc,Q1_Promo,+91 9265564819,kavita.ali@gmail.com,Broker,Priya Shah,DUPLICATE: Warm,Referred by existing client,Need possession before Diwali
+2025-07-27 20:00:00,Diego Reddy,Agile Agency,google,cpc,Q1_Promo,+91 9324126169,diego.reddy@icloud.com,Facebook Lead Ads,Rahul Mehta,Booked,Old customer returning,Requires virtual consultation
+Yesterday,Arjun Sharma,Stellar Services,google,cpc,Q1_Promo,92161 88102, arjun.sharma@outlook.com ,Facebook Lead Ads,Rahul Mehta,Meeting Scheduled,Price sensitive,Requires virtual consultation
+2026-01-20 13:00:00,Vikram Li,Quantum Systems,google,cpc,Q1_Promo,+91 9210675960,vikram.li@startup.io,Housing,Ali Hassan,Cold,Budget increased,Requires virtual consultation
+2025-08-05 16:00:00,Arjun Doe,Zenith Enterprises,google,cpc,Q1_Promo,+91 9444497001,arjun.doe@enterprise.co,Email Campaign,Sarah Khan,Cancelled,Sent brochure,Requested product catalogue
+2026.05.14,Vikram Rao,Pioneer Manufacturing,google,cpc,Q1_Promo,Office Number,vikram.rao@icloud.com,Employee Referral,Karan Singh,Busy,Price sensitive,Prefers east-facing unit
+12-May-2026,Priya Wang,Metro Properties,google,cpc,Q1_Promo,Office Number,"priya.wang@yahoo.com, secondary@gmail.com",JustDial,Rahul Mehta,Duplicate,Old customer returning,Looking for premium apartment under 1.2 Cr
+16-Apr-2026,Wei Kumar,Urban Builders,google,cpc,Q1_Promo,97720 53160,WEI.KUMAR@GMAIL.COM,Housing,Jessica Wong,Loan Pending,Price sensitive,Needs orthopedic consultation
+2025-01-12 15:00:00,John Gupta,Agile Agency,google,cpc,Q1_Promo,+91 9011930986,john.gupta@logistics.com,Email Campaign,Sarah Khan,Sale Closed,Duplicate enquiry from Facebook,Needs orthopedic consultation
+2025-02-20 09:00:00,Rahul Li,Quantum Systems,google,cpc,Q1_Promo,+91 9047713736,rahul.li@outlook.com,Cold Call,Ali Hassan,Booked,Call back tomorrow,Requires virtual consultation
+2025.04.05,Diego Rao,Sunrise Foods,google,cpc,Q1_Promo,+1 (660) 555-1294, diego.rao@techsolutions.in ,Google Ads,Priya Shah,Budget Issue,Budget increased,Requested product catalogue
+2025-06-06 03:00:00,Neha Verma,Stellar Services,google,cpc,Q1_Promo,+91 9865279507,neha.verma@hotmail.com,Walk-In,Ali Hassan,Duplicate,Preferred morning calls,Requested product catalogue
+2025-08-20 16:00:00,Priya Li,NextGen IT,google,cpc,Q1_Promo,+91 9447944927,priya.li@gmail.com,LinkedIn,Karan Singh,Busy,DND,Looking for premium apartment under 1.2 Cr
+2026-04-13 17:00:00,Ravi Li,Global Logistics,google,cpc,Q1_Promo,+91 9322877212,ravi.li@company.net,Email Campaign,Sarah Khan,Busy,Referred by existing client,Prefers east-facing unit
+2025-05-07 06:00:00,Diego Kumar,Sunrise Foods,google,cpc,Q1_Promo,+91 9533015229,diego.kumar@techsolutions.in,WhatsApp,Amit Patel,Call Back,Decision maker travelling,Prefers east-facing unit
+2025-05-07 06:00:00,Diego Kumar,Sunrise Foods,google,cpc,Q1_Promo,+91 9533015229,diego.kumar@techsolutions.in,WhatsApp,Amit Patel,DUPLICATE: Call Back,Decision maker travelling,Prefers east-facing unit
+15/05/2026,John Martinez,Acme Corp,google,cpc,Q1_Promo,90433 02801,john.martinez@gmail.com,Email Campaign,Priya Shah,Cold,Requested WhatsApp instead of calls,Need possession before Diwali
+2026-01-26 19:00:00,Sneha Martinez,Stellar Services,google,cpc,Q1_Promo,+91 9883252439,sneha.martinez@techsolutions.in,Website,Amit Patel,Booked,Price sensitive,Need possession before Diwali
+2026-01-26 19:00:00,Sneha Martinez,Stellar Services,google,cpc,Q1_Promo,+91 9883252439,sneha.martinez@techsolutions.in,Website,Amit Patel,Booked,Price sensitive,DUPLICATE: Need possession before Diwali
+2025-01-04,Valentina Rao,Metro Properties,google,cpc,Q1_Promo,Secondary Contact,VALENTINA.RAO@TECHSOLUTIONS.IN,Organic,Amit Patel,Sale Closed,DND,Need possession before Diwali
+2025-05-08 20:00:00,Sneha Kumar,Urban Builders,google,cpc,Q1_Promo,+91 9167124068,sneha.kumar@yahoo.com,Google Search,Sarah Khan,Loan Pending,Preferred morning calls,Looking for premium apartment under 1.2 Cr
+2025-06-22 05:00:00,Vikram Hassan,TechNova,google,cpc,Q1_Promo,+91 9474930199,vikram.hassan@yahoo.com,Google Search,Sarah Khan,Interested,Referred by existing client,Requested product catalogue
+Today,Sarah Patel,NextGen IT,google,cpc,Q1_Promo,Secondary Contact,sarah.patel@company.net,WhatsApp,Ali Hassan,Busy,Already spoke with spouse,Requires virtual consultation
+2025.10.28,Neha Patel,FinServe Group,google,cpc,Q1_Promo,+1 (670) 555-7632,neha.patel@gmail.com,Walk-In,Karan Singh,Cancelled,Interested in 3BHK,Searching for MBA admission
+2025-03-04 20:00:00,Kavita Hernandez,NextGen IT,google,cpc,Q1_Promo,+91 9879802509,kavita.hernandez@icloud.com,Website,Jessica Wong,Cancelled,Budget increased,Requires virtual consultation
+2025-07-30 07:00:00,Kavita Martinez,City Hospital,google,cpc,Q1_Promo,+91 9650974547,kavita.martinez@icloud.com,LinkedIn,Karan Singh,Loan Pending,DND,Requested product catalogue
+2026.05.14,Chen Gupta,"{""json"": ""fragment"", ""data"": ""Apex Solutions""}",google,cpc,Q1_Promo,9853639528 / 9950628526,chen.gupta@techsolutions.in,Housing,Amit Patel,Site Visit Completed,Budget increased,Prefers east-facing unit
+2025.10.14,Neha Singh,Metro Properties,google,cpc,Q1_Promo,Secondary Contact, neha.singh@outlook.com ,Employee Referral,Karan Singh,Lost,Sent brochure,Prefers east-facing unit
+2025-09-02 03:00:00,Priya Rao,Apex Solutions,google,cpc,Q1_Promo,+91 9548841441,priya.rao@logistics.com,Instagram,Amit Patel,Cancelled,Sent brochure,Prefers east-facing unit
+2026-01-18 13:00:00,Wei Singh,Zenith Enterprises,google,cpc,Q1_Promo,+91 9437844404,wei.singh@startup.io,Google Search,Priya Shah,Wrong Number,Not picking up,Looking for premium apartment under 1.2 Cr
+2025-09-25 11:00:00,Neha Doe,Urban Builders,google,cpc,Q1_Promo,+91 9111899751,neha.doe@gmail.com,Partner,Ali Hassan,Booked,Duplicate enquiry from Facebook,Looking for premium apartment under 1.2 Cr
+2026-01-16 05:00:00,Vikram Iyer,BlueOcean,google,cpc,Q1_Promo,+91 9689839593,vikram.iyer@logistics.com,Organic,Karan Singh,Booked,Price sensitive,Searching for MBA admission
+Yesterday,Ravi Menon,NextGen IT,google,cpc,Q1_Promo,Office Number,ravi.menon@techsolutions.in,MagicBricks,Jessica Wong,Busy,Wants to negotiate,Requested product catalogue
+2026-04-27 06:00:00,Sarah Sharma,Urban Builders,google,cpc,Q1_Promo,+91 9141689443,sarah.sharma@startup.io,Website,Amit Patel,Call Back,Price sensitive,Searching for MBA admission
+2025-09-04 21:00:00,Arjun Sharma,Urban Builders,google,cpc,Q1_Promo,+91 9734180954,arjun.sharma@gmail.com,LinkedIn,Ali Hassan,Site Visit Completed,Needs GST invoice,Interested in enterprise software demo
+2026-04-27 00:00:00,Emily Singh,Acme Corp,google,cpc,Q1_Promo,+91 9027929408,emily.singh@logistics.com,Employee Referral,Priya Shah,Budget Issue,Preferred morning calls,Requested product catalogue
+2025-01-24,Diego Sharma,Pioneer Manufacturing,google,cpc,Q1_Promo,+91-98930-51123 ext 704,DIEGO.SHARMA@TECHSOLUTIONS.IN,Broker,Ali Hassan,Cold,Preferred morning calls,Need possession before Diwali
+2026-02-08 00:00:00,Aditya Wang,Zenith Enterprises,google,cpc,Q1_Promo,+91 9619877430,aditya.wang@hotmail.com,Email Campaign,Rahul Mehta,Sale Closed,Old customer returning,Searching for MBA admission
+2026-02-08 00:00:00,Aditya Wang,Zenith Enterprises,DUPLICATE: google,cpc,Q1_Promo,+91 9619877430,aditya.wang@hotmail.com,Email Campaign,Rahul Mehta,Sale Closed,Old customer returning,Searching for MBA admission
+Last Week,Ravi Doe,Global Logistics,google,cpc,Q1_Promo,+91-92041-85823 ext 744,ravi.doe@startup.io,Organic,Karan Singh,Call Back,Interested in 3BHK,Need possession before Diwali
+12/20/2025,Chen Kumar,Sunrise Foods,google,cpc,Q1_Promo,Secondary Contact,chen.kumar@outlook.com,MagicBricks,Karan Singh,Interested,Budget increased,Requested product catalogue
+2025-09-24 12:00:00,Ravi Verma,Apex Solutions,google,cpc,Q1_Promo,+91 9172616735,ravi.verma@company.net,Email Campaign,Jessica Wong,Cancelled,Already spoke with spouse,Needs orthopedic consultation
+Last Week,Chen Sharma,Quantum Systems,google,cpc,Q1_Promo,Office Number,chen.sharma@icloud.com,Google Search,Sarah Khan,Interested,Old customer returning,Interested in enterprise software demo
+44927,Emily Hernandez,Quantum Systems,google,cpc,"Q1_Promo 🚀
+New Line",0091-9949724346,emily.hernandez@gmail.com,Organic,Rahul Mehta,Hot,Interested in 3BHK,Interested in enterprise software demo
+2025-04-22 15:00:00,Sneha Rao,Zenith Enterprises,google,cpc,Q1_Promo,+91 9180382515,sneha.rao@enterprise.co,Housing,Sarah Khan,Converted,Requested WhatsApp instead of calls,Needs orthopedic consultation
+2026-01-04 11:00:00,John Martinez,Urban Builders,google,cpc,Q1_Promo,+91 9673090390,john.martinez@icloud.com,Organic,Rahul Mehta,Warm,Wants to negotiate,Prefers east-facing unit
+2026.05.14,Emily Iyer,City Hospital,google,cpc,Q1_Promo,Office Number,EMILY.IYER@ICLOUD.COM,Website,Ali Hassan,Booked,Interested in 3BHK,Needs orthopedic consultation
+,John Rao,Stellar Services,google,cpc,Q1_Promo,+91-98145-17165 ext 35,,,,,,
+,John Rao,Stellar Services,google,cpc,Q1_Promo,+91-98145-17165 ext 35,,DUPLICATE: ,,,,
+Today,Rahul Iyer,TechNova,google,cpc,Q1_Promo,Office Number, rahul.iyer@techsolutions.in ,Trade Show,Priya Shah,Wrong Number,Price sensitive,Need possession before Diwali
+2026.05.14,Sneha Reddy,Metro Properties,google,cpc,Q1_Promo,Secondary Contact,,,,,,
+Today,Valentina Verma,Pioneer Manufacturing,google,cpc,Q1_Promo,Office Number,VALENTINA.VERMA@HOTMAIL.COM,Google Ads,Karan Singh,Meeting Scheduled,Duplicate enquiry from Facebook,Looking for premium apartment under 1.2 Cr
+2025-08-04 05:00:00,Arjun Singh,Sunrise Foods,google,cpc,Q1_Promo,+91 9103847175,arjun.singh@techsolutions.in,Email Campaign,Amit Patel,Lost,Not picking up,Need possession before Diwali
+2025-07-09 19:00:00,Valentina Wang,Agile Agency,google,cpc,Q1_Promo,+91 9061690415,valentina.wang@techsolutions.in,MagicBricks,Priya Shah,Cold,Already spoke with spouse,Searching for MBA admission
+2026-03-28 02:00:00,Vikram Doe,Sunrise Foods,google,cpc,Q1_Promo,+91 9780478572,vikram.doe@gmail.com,Organic,Priya Shah,Meeting Scheduled,Already spoke with spouse,Needs orthopedic consultation
+2025-08-30 12:00:00,John Ali,Stellar Services,google,cpc,Q1_Promo,+91 9308375101,john.ali@techsolutions.in,99acres,Sarah Khan,Cold,Preferred morning calls,Looking for premium apartment under 1.2 Cr
+2025-06-03 03:00:00,Aditya Menon,BlueOcean,google,cpc,Q1_Promo,+91 9562783578,aditya.menon@gmail.com,Housing,Jessica Wong,Lost,Wants to negotiate,Searching for MBA admission
+2026.04.03,Wei Iyer,Stellar Services,google,cpc,Q1_Promo,Office Number, wei.iyer@logistics.com ,MagicBricks,Jessica Wong,Converted,Sent brochure,Interested in enterprise software demo
+22/02/2025,Anjali Li,Stellar Services,google,cpc,Q1_Promo,92756 17863,ANJALI.LI@COMPANY.NET,Google Ads,Ali Hassan,Site Visit Completed,Old customer returning,Requested product catalogue
+2026-02-28 03:00:00,Diego Sharma,Global Logistics,google,cpc,Q1_Promo,+91 9755996321,diego.sharma@outlook.com,Email Campaign,Rahul Mehta,Busy,Follow up next Friday,Requires virtual consultation
+2025-01-03 18:00:00,Anjali Rao,FinServe Group,google,cpc,Q1_Promo,+91 9254196787,anjali.rao@gmail.com,Website,Rahul Mehta,Cancelled,Budget increased,Searching for MBA admission
+2026-03-22 07:00:00,Kavita Hassan,Global Logistics,google,cpc,Q1_Promo,+91 9458333570,kavita.hassan@enterprise.co,Organic,Amit Patel,Booked,Price sensitive,Need possession before Diwali
+2026-01-15 18:00:00,Michael Iyer,Pioneer Manufacturing,google,cpc,Q1_Promo,+91 9582862386,michael.iyer@startup.io,Employee Referral,Sarah Khan,No Response,Not picking up,Prefers east-facing unit
+2026.04.10,Aditya Wang,Stellar Services,google,cpc,Q1_Promo,Office Number,ADITYA.WANG@LOGISTICS.COM,LinkedIn,Ali Hassan,Site Visit Completed,Not picking up,Looking for premium apartment under 1.2 Cr
+23/12/2025,Chen Rao,Pioneer Manufacturing,google,cpc,Q1_Promo,WhatsApp Only,chen.raoaticloud.com,Google Ads,"{""json"": ""fragment"", ""data"": ""Amit Patel""}",No Response,Old customer returning,Requested product catalogue
+2026-04-24 22:00:00,Michael Hassan,Acme Corp,google,cpc,Q1_Promo,+91 9365391649,michael.hassan@startup.io,Trade Show,Ali Hassan,Cancelled,DND,Looking for premium apartment under 1.2 Cr
+,Vikram Li,TechNova,google,cpc,Q1_Promo,WhatsApp Only,vikram.li@gmail.com [donotemail],,,,,
+2025-11-08 06:00:00,Sneha Doe,Agile Agency,google,cpc,Q1_Promo,+91 9568492875,sneha.doe@techsolutions.in,Website,Karan Singh,Call Back,Sent brochure,Searching for MBA admission
+2026-03-09 15:00:00,Sneha Li,Urban Builders,google,cpc,Q1_Promo,+91 9801516862,sneha.li@hotmail.com,Housing,Priya Shah,Warm,Price sensitive,Searching for MBA admission
+2025-12-10 22:00:00,Anjali Reddy,Acme Corp,google,cpc,Q1_Promo,+91 9079826581,anjali.reddy@techsolutions.in,WhatsApp,Ali Hassan,Meeting Scheduled,Working night shift,Requested product catalogue
+2025-05-16 16:00:00,Rahul Rao,Pioneer Manufacturing,google,cpc,Q1_Promo,+91 9382612478,rahul.rao@techsolutions.in,Cold Call,Amit Patel,Budget Issue,Left voicemail,Looking for premium apartment under 1.2 Cr
+2025-10-04 21:00:00,John Singh,Apex Solutions,google,cpc,Q1_Promo,+91 9224359281,john.singh@startup.io,Cold Call,Sarah Khan,Warm,Budget increased,Needs orthopedic consultation
+Yesterday,Sarah Gupta,TechNova,google,cpc,Q1_Promo,0091-9333948582,SARAH.GUPTA@GMAIL.COM,Trade Show,Ali Hassan,Follow-up Required,Asked to call after 7 PM,Requires virtual consultation
+2025-02-21 16:00:00,Emily Iyer,Apex Solutions,google,cpc,Q1_Promo,+91 9195026042,emily.iyer@icloud.com,Cold Call,Amit Patel,Budget Issue,Follow up next Friday,Interested in enterprise software demo
+2026-01-23 01:00:00,Priya Doe,Stellar Services,google,cpc,Q1_Promo,+91 9346335862,priya.doe@startup.io,Organic,Amit Patel,Cancelled,Needs GST invoice,Need possession before Diwali
+2025-04-30 20:00:00,Vikram Sharma,City Hospital,google,cpc,Q1_Promo,+91 9860934493,vikram.sharma@hotmail.com,Website,Sarah Khan,Cold,Referred by existing client,Needs orthopedic consultation
+2025-05-22,Emily Reddy,NextGen IT,google,cpc,Q1_Promo,Secondary Contact,emily.reddy@gmail.com,Broker,Jessica Wong,Cold,Interested in 3BHK,Searching for MBA admission
+,Sneha Hassan,Metro Properties,google,cpc,Q1_Promo,,,,,,,
+2025-08-23 20:00:00,Neha Kumar,Zenith Enterprises,google,cpc,Q1_Promo,+91 9511121880,neha.kumar@logistics.com,Facebook Lead Ads,Jessica Wong,Hot,Asked to call after 7 PM,Looking for premium apartment under 1.2 Cr
+08/04/2026,Kavita Sharma,Urban Builders,google,cpc,Q1_Promo,+1 (439) 555-8188,,,,,,
+2025-08-02 09:00:00,Vikram Li,FinServe Group,google,cpc,Q1_Promo,+91 9451069125,vikram.li@hotmail.com,Referral,Rahul Mehta,Loan Pending,Call back tomorrow,Requested product catalogue
+2025-04-09 07:00:00,Chen Patel,Stellar Services,google,cpc,Q1_Promo,+91 9961042295,chen.patel@company.net,Organic,Amit Patel,Busy,Follow up next Friday,Interested in enterprise software demo
+30/04/2026,Arjun Hassan,BlueOcean,google,cpc,Q1_Promo,Office Number,ARJUN.HASSAN@HOTMAIL.COM,Employee Referral,Karan Singh,Call Back,Requested WhatsApp instead of calls,Requested product catalogue
+30/04/2026,Arjun Hassan,BlueOcean,google,cpc,Q1_Promo,Office Number,ARJUN.HASSAN@HOTMAIL.COM,DUPLICATE: Employee Referral,Karan Singh,Call Back,Requested WhatsApp instead of calls,Requested product catalogue
+2025-08-06 03:00:00,John Hernandez,Global Logistics,google,cpc,Q1_Promo,+91 9097629744,john.hernandez@yahoo.com,WhatsApp,Karan Singh,Site Visit Completed,Left voicemail,Need possession before Diwali
+2025-12-16 11:00:00,Emily Hernandez,TechNova,google,cpc,Q1_Promo,+91 9828118405,emily.hernandez@techsolutions.in,LinkedIn,Ali Hassan,Duplicate,Needs GST invoice,Requested product catalogue
+2025-03-31 08:00:00,Arjun Hassan,City Hospital,google,cpc,Q1_Promo,+91 9126481467,arjun.hassan@startup.io,Walk-In,Jessica Wong,Hot,Price sensitive,Needs orthopedic consultation
+2025-09-23 10:00:00,Valentina Wang,Urban Builders,google,cpc,Q1_Promo,+91 9467060933,valentina.wang@yahoo.com,Email Campaign,Rahul Mehta,Follow-up Required,Old customer returning,Prefers east-facing unit
+Yesterday,Ravi Patel,Apex Solutions,google,cpc,Q1_Promo,+1 (735) 555-6344, ravi.patel@techsolutions.in ,Organic,Karan Singh,Duplicate,Asked to call after 7 PM,Looking for premium apartment under 1.2 Cr
+Yesterday,Aditya Iyer,Acme Corp,google,cpc,Q1_Promo,,,,,,,
+Yesterday,Aditya Iyer,Acme Corp,google,cpc,Q1_Promo,,,,DUPLICATE: ,,,
+2025-02-19 10:00:00,John Rao,Pioneer Manufacturing,google,cpc,Q1_Promo,+91 9989125732,john.rao@logistics.com,MagicBricks,Sarah Khan,Cancelled,Working night shift,Requires virtual consultation
+03/06/2025,Kavita Doe,Agile Agency,google,cpc,Q1_Promo,+91-93704-66660 ext 632,KAVITA.DOE@ENTERPRISE.CO,Cold Call,Jessica Wong,Interested,Not picking up,Requires virtual consultation
+2026-03-26 13:00:00,Priya Gupta,NextGen IT,google,cpc,Q1_Promo,+91 9767041242,priya.gupta@outlook.com,Partner,Rahul Mehta,Budget Issue,Asked to call after 7 PM,Need possession before Diwali
+2025-02-12 14:00:00,Sneha Hernandez,Urban Builders,google,cpc,Q1_Promo,+91 9283645880,sneha.hernandez@startup.io,Organic,Sarah Khan,Loan Pending,Preferred morning calls,Prefers east-facing unit
+2025-08-24 07:00:00,John Wang,Pioneer Manufacturing,google,cpc,Q1_Promo,+91 9248893791,john.wang@gmail.com,Employee Referral,Jessica Wong,Site Visit Completed,Working night shift,Requested product catalogue
+2026-02-20 11:00:00,Kavita Gupta,Metro Properties,google,cpc,Q1_Promo,+91 9775661996,kavita.gupta@logistics.com,Trade Show,Sarah Khan,Invalid Lead,Call back tomorrow,Needs orthopedic consultation
+Yesterday,Priya Ali,Quantum Systems,google,cpc,Q1_Promo,WhatsApp Only,,,,,,
+2025-01-09 12:00:00,Wei Sharma,Zenith Enterprises,google,cpc,Q1_Promo,+91 9589620537,wei.sharma@outlook.com,Partner,Jessica Wong,Budget Issue,Call back tomorrow,Searching for MBA admission
+2025-01-09 12:00:00,Wei Sharma,Zenith Enterprises,google,cpc,Q1_Promo,+91 9589620537,wei.sharma@outlook.com,Partner,Jessica Wong,DUPLICATE: Budget Issue,Call back tomorrow,Searching for MBA admission
+2026-01-18 15:00:00,Kavita Kumar,Urban Builders,google,cpc,Q1_Promo,+91 9456155159,kavita.kumar@outlook.com,Email Campaign,Priya Shah,Call Back,Already spoke with spouse,Requested product catalogue
+2025-10-09 12:00:00,John Singh,Stellar Services,google,cpc,Q1_Promo,+91 9451837228,john.singh@outlook.com,Website,Jessica Wong,Warm,Left voicemail,Requested product catalogue
+2025-10-10 05:00:00,Kavita Doe,Sunrise Foods,google,cpc,Q1_Promo,+91 9165199851,kavita.doe@enterprise.co,Email Campaign,Rahul Mehta,Cancelled,Follow up next Friday,Need possession before Diwali
+2026-01-24 17:00:00,Wei Verma,Acme Corp,google,cpc,Q1_Promo,+91 9622181636,wei.verma@startup.io,Trade Show,Karan Singh,Converted,Price sensitive,Requires virtual consultation
+Today,Vikram Sharma,Global Logistics,google,cpc,Q1_Promo,+1 (858) 555-6399, vikram.sharma@logistics.com ,JustDial,Amit Patel,Warm,Decision maker travelling,Need possession before Diwali
+2025-04-09,John Reddy,BlueOcean,google,cpc,Q1_Promo,0091-9996669050, john.reddy@outlook.com ,Email Campaign,Karan Singh,Loan Pending,Requested WhatsApp instead of calls,Looking for premium apartment under 1.2 Cr
+2025-05-03 18:00:00,Sneha Gupta,City Hospital,google,cpc,Q1_Promo,+91 9503658045,sneha.gupta@gmail.com,Employee Referral,Jessica Wong,No Response,Sent brochure,Needs orthopedic consultation
+2025-05-14 19:00:00,Neha Hernandez,Metro Properties,google,cpc,Q1_Promo,+91 9489184104,neha.hernandez@hotmail.com,Cold Call,Jessica Wong,Wrong Number,Decision maker travelling,Searching for MBA admission
+2025-09-12 11:00:00,Vikram Reddy,Urban Builders,google,cpc,Q1_Promo,+91 9507080275,vikram.reddy@techsolutions.in,Facebook Lead Ads,Priya Shah,Lost,Preferred morning calls,Prefers east-facing unit
+2026-05-09 03:00:00,John Iyer,TechNova,google,cpc,Q1_Promo,+91 9295499902,john.iyer@company.net,99acres,Jessica Wong,Lost,Referred by existing client,Prefers east-facing unit
+,Arjun Sharma,Apex Solutions,google,cpc,Q1_Promo,+91 9999239862,,,,,,
+2026-04-26 18:00:00,Emily Singh,Metro Properties,google,cpc,Q1_Promo,+91 9876829302,emily.singh@gmail.com,Trade Show,Sarah Khan,Loan Pending,Follow up next Friday,Needs orthopedic consultation
+2025.10.27,Neha Smith,Global Logistics,google,cpc,Q1_Promo,98315 28326,neha.smith@company.net,Trade Show,Ali Hassan,Converted,Duplicate enquiry from Facebook,Looking for premium apartment under 1.2 Cr
+2025-06-23 04:00:00,Vikram Reddy,Zenith Enterprises,google,cpc,Q1_Promo,+91 9396711222,vikram.reddy@startup.io,Website,Priya Shah,Invalid Lead,Working night shift,Looking for premium apartment under 1.2 Cr
+12/23/2025,John Gupta,BlueOcean,google,cpc,Q1_Promo,WhatsApp Only, john.gupta@enterprise.co ,Organic,Priya Shah,Converted,Not picking up,Needs orthopedic consultation
+2026-03-24 01:00:00,Priya Gupta,Acme Corp,google,cpc,Q1_Promo,+91 9851285553,priya.gupta@hotmail.com,99acres,Jessica Wong,Meeting Scheduled,Requested WhatsApp instead of calls,Looking for premium apartment under 1.2 Cr
+2025-02-05 09:00:00,Chen Wang,Sunrise Foods,google,cpc,Q1_Promo,+91 9254585574,chen.wang@startup.io,Google Search,Ali Hassan,Invalid Lead,Working night shift,Requested product catalogue
+2025-07-12 22:00:00,Emily Smith,City Hospital,google,cpc,Q1_Promo,+91 9860291964,emily.smith@hotmail.com,Organic,Ali Hassan,Cancelled,Call back tomorrow,Prefers east-facing unit
+2025-09-29 03:00:00,Kavita Reddy,Agile Agency,google,cpc,Q1_Promo,+91 9595638942,kavita.reddy@hotmail.com,MagicBricks,Karan Singh,Meeting Scheduled,Old customer returning,Prefers east-facing unit
+2026-01-11 04:00:00,Diego Patel,Acme Corp,google,cpc,Q1_Promo,+91 9338020997,diego.patel@startup.io,Walk-In,Priya Shah,Lost,Preferred morning calls,Need possession before Diwali
+2026.05.14,Neha Iyer,Zenith Enterprises,google,cpc,Q1_Promo,0091-9588874435, neha.iyer@hotmail.com ,LinkedIn,Ali Hassan,Follow-up Required,Duplicate enquiry from Facebook,Need possession before Diwali
+2026-04-05 01:00:00,Aditya Sharma,Metro Properties,google,cpc,Q1_Promo,+91 9414953889,aditya.sharma@logistics.com,Website,Jessica Wong,Site Visit Completed,Decision maker travelling,Need possession before Diwali
+12-Feb-2025,Michael Kumar,Stellar Services,google,cpc,Q1_Promo,+91-99863-35499 ext 683, michael.kumar@hotmail.com ,Organic,Karan Singh,Lost,Follow up next Friday,Requested product catalogue
+2025-05-29 20:00:00,Sneha Sharma,Sunrise Foods,google,cpc,Q1_Promo,+91 9335253863,sneha.sharma@icloud.com,Google Ads,Jessica Wong,Interested,Interested in 3BHK,Searching for MBA admission
+2025-12-09,Neha Rao,Urban Builders,google,cpc,Q1_Promo,Office Number,,,,,,
+2025-07-25 10:00:00,Kavita Patel,Pioneer Manufacturing,google,cpc,Q1_Promo,+91 9681610373,kavita.patel@icloud.com,Google Search,Jessica Wong,Converted,Requested WhatsApp instead of calls,Requires virtual consultation
+Today,Neha Sharma,Sunrise Foods,google,cpc,Q1_Promo,WhatsApp Only,neha.sharmaatlogistics.com,,,,,
+2025-04-06 09:00:00,Michael Iyer,Zenith Enterprises,google,cpc,Q1_Promo,+91 9829663305,michael.iyer@icloud.com,Referral,Amit Patel,Call Back,Not picking up,Looking for premium apartment under 1.2 Cr
+2025-06-13 08:00:00,Diego Hernandez,Urban Builders,google,cpc,Q1_Promo,+91 9799784738,diego.hernandez@enterprise.co,Google Ads,Amit Patel,Budget Issue,Duplicate enquiry from Facebook,Requires virtual consultation
+2025-06-18 02:00:00,Wei Reddy,BlueOcean,google,cpc,Q1_Promo,+91 9190139257,wei.reddy@outlook.com,Email Campaign,Amit Patel,Cold,Sent brochure,Requested product catalogue
+Last Week,Arjun Kumar,Urban Builders,google,cpc,Q1_Promo,Secondary Contact,ARJUN.KUMAR@ENTERPRISE.CO,99acres,Rahul Mehta,Converted,Call back tomorrow,Searching for MBA admission
+2026-01-30 05:00:00,Kavita Gupta,Sunrise Foods,google,cpc,Q1_Promo,+91 9721026309,kavita.gupta@gmail.com,Google Ads,Ali Hassan,Cancelled,Not picking up,Requires virtual consultation
+2025-06-18 13:00:00,Rahul Hassan,Quantum Systems,google,cpc,Q1_Promo,+91 9319102959,rahul.hassan@techsolutions.in,Email Campaign,Jessica Wong,Budget Issue,Working night shift,Interested in enterprise software demo

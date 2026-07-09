@@ -1,114 +1,107 @@
-id,created_time,campaign_name,adset_name,form_id,platform,full_name,email,phone_number,lead_quality
-l_451336490361114,2024-08-10 07:00:00,Q3_Retargeting,Broad_25-45,88626173735,ig,Aditya Jones,ADITYA.JONES@COMPANY.NET,98884 9179,
-l_468366599239352,2023-05-13 15:00:00,Brand_Awareness_IN,Broad_25-45,33237214902,fb,Rajesh Li,rajesh.li@hospital.org,,
-l_420594723900040,2024-04-19 03:00:00,Q3_Retargeting,Tech_Interests,73036045420,ig,Tariq Li,tariq.li@consulting.biz,+91 97219 9591,LOW
-l_300674196573223,2023-01-09 13:00:00,Q3_Retargeting,Broad_25-45,13705841251,ig,Santiago Liu,"santiago.liu@gmail.com, secondary@university.edu",095040 6007,
-l_348406452234026,2023-01-28 22:00:00,Brand_Awareness_IN,Custom_List_Upload,33724044633,fb,Robert Williams,,+91 97283 5961,HIGH
-l_625673590009116,2023-11-09 07:00:00,Lookalike_Audience_1,Broad_25-45,80837735878,fb,Sven Diallo,sven.diallo@corp.org,940433185,
-l_885225455065955,2025-01-16 17:00:00,Q3_Retargeting,Broad_25-45,76894642814,fb,Swati Davis,swati.davis@agency.media,984738424,
-l_208580970940473,2025-07-22 16:00:00,Lead_Gen_Form,Broad_25-45,76991879699,ig,Zahra Silva,zahra.silva@university.edu,+91 (990) 42-8357,
-l_277507202656746,2024-07-07 22:00:00,Brand_Awareness_IN,Custom_List_Upload,29344334457,ig,Kofi Liu,kofi.liu@corp.org,,
-l_307632498649473,2024-11-17 09:00:00,Q3_Retargeting,Custom_List_Upload,56066239315,ig,Tariro Reddy,tariro.reddy@startup.io,916389683,HIGH
-l_884457544087681,2023-08-24 08:00:00,Lead_Gen_Form,Custom_List_Upload,40501672220,fb,Hiroshi Saleh, hiroshi.saleh@builders.co.in ,93165 5538,HIGH
-l_136546391847452,2023-09-21 17:00:00,Lookalike_Audience_1,Broad_25-45,88078637781,fb,Ashley Liu,ashley.liu@corp.org,094804 9718,
-l_887186391524215,2023-10-16 21:00:00,Lead_Gen_Form,Tech_Interests,45632004854,ig,Sven Sharma,sven.sharma@enterprise.co,91-99965-1738,
-l_759086727890642,2023-04-28 11:00:00,Lead_Gen_Form,Broad_25-45,46669025138,fb,Seo-yeon Perez,SEO-YEON.PEREZ@COMPANY.NET,91-92341-5704,
-l_138944755929491,2025-04-24 15:00:00,Lookalike_Audience_1,Broad_25-45,20058648583,ig,Carlos Taylor,carlos.taylor@agency.media,97672 0903,
-l_870437178558110,2023-12-21 09:00:00,Lookalike_Audience_1,Custom_List_Upload,85372870374,fb,Neha Schmidt,neha.schmidt@builders.co.in,987926374,
-l_540523233722634,2023-06-16 19:00:00,Lookalike_Audience_1,Tech_Interests,31798581778,ig,Khalid Lopez,khalid.lopez@hospital.org,96657 0648,
-l_163008711793383,2024-10-28 21:00:00,Lookalike_Audience_1,Custom_List_Upload,83812572000,ig,Mohamed Park,mohamed.park@builders.co.in,+91 95616 8737,
-l_987973373846569,2024-08-03 14:00:00,Lookalike_Audience_1,Custom_List_Upload,60912158527,fb,Emily Davis,emily.davis@aol.com,975567069,
-l_771411853602200,2023-10-30 22:00:00,Lead_Gen_Form,Broad_25-45,50064175567,fb,William Okafor, william.okafor@techsolutions.in ,91766 0759,
-l_561313490340680,2024-03-12 07:00:00,Lead_Gen_Form,Broad_25-45,83438650158,ig,Tariq Tanaka,tariq.tanaka@corp.org,+91 99656 4283,HIGH
-l_929998317502995,2024-08-03 12:00:00,Lead_Gen_Form,Custom_List_Upload,51022738767,fb,Takumi Jain,,+91 95867 0159 ext 802,HIGH
-l_580886624965362,2025-09-11 06:00:00,Lookalike_Audience_1,Tech_Interests,18521557007,ig,Wei Singh, wei.singh@hotmail.com ,099652 6382,
-l_988004276294934,2025-06-11 13:00:00,Brand_Awareness_IN,Custom_List_Upload,42795258371,ig,Mateo Traore,mateo.traore@icloud.com,955680675 ext 798,LOW
-l_265356069034376,2024-02-23 07:00:00,Lookalike_Audience_1,Tech_Interests,73214390586,fb,John Hussein,john.hussein@yahoo.com,98100 6090,
-l_779179807583135,2024-04-19 05:00:00,Lookalike_Audience_1,Broad_25-45,97480311399,ig,John Martinez,"john.martinez@enterprise.co, secondary@techsolutions.in",98597 5627,
-l_217840415732152,2024-03-02 10:00:00,Lookalike_Audience_1,Broad_25-45,49231606060,fb,Vikram Yadav,vikram.yadavatprotonmail.com,95022 0312,HIGH
-l_654189713543975,2023-02-02 15:00:00,Q3_Retargeting,Custom_List_Upload,43144032926,fb,Lucia Miller, lucia.miller@outlook.com ,+91 (910) 67-1179,
-l_969093467106202,2024-12-03 11:00:00,Lookalike_Audience_1,Custom_List_Upload,85264118705,fb,Sarah Chen,sarah.chen@builders.co.in,094431 1167,HIGH
-l_573278571071616,2025-03-02 14:00:00,Lookalike_Audience_1,Custom_List_Upload,76087451907,fb,James Menon,james.menon@protonmail.com,+91 95157 8236,
-l_184318877653509,2025-05-19 05:00:00,Q3_Retargeting,Broad_25-45,50761064361,ig,Suresh Silva,suresh.silva@gmail.com,98626 6927,HIGH
-l_924698004293235,2023-01-10 13:00:00,Lookalike_Audience_1,Custom_List_Upload,23001411389,ig,William Muller,william.muller@techsolutions.in,,
-l_385915005850071,2024-12-04 13:00:00,Q3_Retargeting,Broad_25-45,49943782180,fb,Amanda Gonzalez,amanda.gonzalez@protonmail.com,,
-l_417428628861159,2023-01-05 03:00:00,Lead_Gen_Form,Broad_25-45,43262381204,fb,Layla Traore,layla.traoreathotmail.com,91803 9620,
-l_991782675717882,2023-04-22 05:00:00,Q3_Retargeting,Broad_25-45,78963771980,fb,Rajesh Silva,rajesh.silva@outlook.com,+91 (952) 65-1347,LOW
-l_185399444203714,2024-10-28 03:00:00,Q3_Retargeting,Custom_List_Upload,60547165772,ig,Tariq Okafor,TARIQ.OKAFOR@UNIVERSITY.EDU,+91 (989) 97-7400,
-l_815932520210198,2025-07-20 23:00:00,Lookalike_Audience_1,Broad_25-45,99370289370,fb,Mateo Ali,mateo.ali@aol.com,+91 (990) 43-9318,
-l_815932520210198,2025-07-20 23:00:00,Lookalike_Audience_1,Broad_25-45,99370289370,fb,Mateo Ali,mateo.ali@aol.com,+91 (990) 43-9318,
-l_491281204955056,2024-10-01 08:00:00,Q3_Retargeting,Tech_Interests,61418008913,fb,Lars Hussein,lars.hussein@outlook.com,949229501,
-l_922709422806859,2025-01-05 02:00:00,Q3_Retargeting,Custom_List_Upload,88947157467,ig,Khalid Bose,khalid.bose@yahoo.co.in,989573600,HIGH
-l_291274696122437,2024-07-04 12:00:00,Brand_Awareness_IN,Broad_25-45,99415413319,fb,Kavita Rodriguez,kavita.rodriguez@hotmail.com,,
-l_513517001435618,2023-03-27 01:00:00,Brand_Awareness_IN,Custom_List_Upload,50236940880,fb,Yuki Jain,"yuki.jain@techsolutions.in, secondary@aol.com",+91 99037 2812,
-l_537988685263712,2024-08-23 23:00:00,Q3_Retargeting,Tech_Interests,91936334259,fb,Kavita Yang,"kavita.yang@builders.co.in, secondary@techsolutions.in",91-93205-4336,HIGH
-l_355833401952779,2025-08-01 09:00:00,Q3_Retargeting,Custom_List_Upload,31360528154,ig,Tariq Saleh,tariq.saleh@enterprise.co,,HIGH
-l_627341109397512,2023-07-17 05:00:00,Brand_Awareness_IN,Tech_Interests,26885690057,ig,Khalid Okafor,"khalid.okafor@university.edu, secondary@agency.media",097011 1025,LOW
-l_187026919286758,2025-08-25 15:00:00,Q3_Retargeting,Broad_25-45,16662704109,ig,William Muller,william.muller@protonmail.com,91-93890-8104,
-l_136263292865680,2023-12-06 03:00:00,Lookalike_Audience_1,Broad_25-45,29274589452,ig,Tariro Lopez,tariro.lopez@protonmail.com,+91 (953) 39-2313,
-l_283085146532580,2025-05-06 04:00:00,Brand_Awareness_IN,Custom_List_Upload,28919591340,fb,Pooja Williams, pooja.williams@consulting.biz ,+91 (917) 58-9160,
-l_564057622708296,2025-02-27 15:00:00,Lookalike_Audience_1,Custom_List_Upload,11810723099,ig,Michael Martinez,michael.martinez@gmail.com,097063 1919,
-l_476216213685508,2024-03-23 17:00:00,Brand_Awareness_IN,Broad_25-45,29495605844,ig,Amanda Ndiaye,amanda.ndiaye@startup.io,099262 2421,HIGH
-l_186518466274740,2023-08-13 07:00:00,Lead_Gen_Form,Custom_List_Upload,25582719672,ig,Sven Menon,"sven.menon@startup.io, secondary@company.net",,
-l_106861030574454,2023-07-23 14:00:00,Lookalike_Audience_1,Tech_Interests,54735618523,ig,Vikram Martinez,vikram.martinez@icloud.com,977867126,
-l_967896356834416,2023-05-19 10:00:00,Brand_Awareness_IN,Broad_25-45,68424501232,fb,Jessica Nair,jessica.nair@hotmail.com,+91 (945) 12-2590,
-l_887150940786585,2024-06-10 07:00:00,Lead_Gen_Form,Broad_25-45,73995315550,ig,Mateo Hernandez,mateo.hernandez@startup.io,+91 99596 4012 ext 904,
-l_887150940786585,2024-06-10 07:00:00,Lead_Gen_Form,Broad_25-45,73995315550,ig,Mateo Hernandez,mateo.hernandez@startup.io,+91 99596 4012 ext 904,
-l_295348700354807,2025-07-18 14:00:00,Lead_Gen_Form,Custom_List_Upload,77206957561,ig,Vivek Davis,vivek.davis@gmail.com,99791 8795,LOW
-l_573207731274599,2023-12-05 10:00:00,Lookalike_Audience_1,Tech_Interests,47485058897,ig,Kavita Lopez,,946145894,LOW
-l_462973170341350,2024-12-14 19:00:00,Brand_Awareness_IN,Broad_25-45,62893809840,ig,Neha Kim,,092640 9896,
-l_356758169499003,2023-03-31 09:00:00,Lookalike_Audience_1,Tech_Interests,63505861338,ig,Sven Muller,sven.muller@company.net,91-95491-3504,
-l_408431089664654,2025-01-25 15:00:00,Brand_Awareness_IN,Tech_Interests,28961176090,ig,Zahra Liu,zahra.liu@yahoo.com,+91 93143 8006,LOW
-l_646252567411087,2023-03-18 00:00:00,Brand_Awareness_IN,Broad_25-45,75209752966,ig,Amanda Lee,,91-99127-0938,
-l_121257067290299,2024-07-01 22:00:00,Q3_Retargeting,Broad_25-45,53116874445,ig,Wei Takahashi,wei.takahashi@techsolutions.in,,HIGH
-l_999899252650125,2023-09-20 16:00:00,Brand_Awareness_IN,Tech_Interests,19220135298,fb,Wei Li, wei.li@company.net ,+91 97865 4630,
-l_615607487229058,2023-12-11 03:00:00,Lookalike_Audience_1,Tech_Interests,27132956925,fb,Ngozi Smith,ngozi.smith@logistics.com,+91 (911) 62-4915 ext 203,LOW
-l_683769509983096,2023-01-18 03:00:00,Lookalike_Audience_1,Custom_List_Upload,49897338904,fb,Chen Diallo,chen.diallo@protonmail.com,096481 8364 ext 601,
-l_896526875692967,2024-06-24 14:00:00,Lookalike_Audience_1,Broad_25-45,19382030050,ig,Mohamed Jain,mohamed.jain@outlook.com,+91 (982) 33-8634,
-l_813547853061008,2024-12-28 13:00:00,Q3_Retargeting,Broad_25-45,79128576974,fb,Mateo Schmidt,mateo.schmidt@hotmail.com,913275450,
-l_446496638303106,2023-09-19 21:00:00,Lead_Gen_Form,Broad_25-45,69303371710,ig,Lucia Davis,lucia.davis@yahoo.co.in,91-99113-2264,
-l_177828968981269,2023-07-17 11:00:00,Lead_Gen_Form,Broad_25-45,31694581207,ig,Carlos Hernandez,,+91 (911) 16-4518 ext 295,
-l_859779640245952,2023-06-24 15:00:00,Lookalike_Audience_1,Custom_List_Upload,20387021946,ig,Santiago Liu,santiago.liu@agency.media,98429 9320,
-l_461652109256015,2023-02-24 05:00:00,Q3_Retargeting,Custom_List_Upload,14471596874,fb,Lucia Liu,lucia.liu@university.edu,,
-l_202226468910232,2024-04-08 10:00:00,Lead_Gen_Form,Tech_Interests,26386481201,ig,Khalid Bose,khalid.bose@enterprise.co,+91 (977) 91-0512,
-l_750280344768423,2023-03-05 07:00:00,Lead_Gen_Form,Tech_Interests,28307327886,fb,Vivek Kumar,,91-94135-9994,
-l_265326605113587,2023-05-29 22:00:00,Lookalike_Audience_1,Custom_List_Upload,40697108045,ig,Mohamed Taylor,mohamed.taylor@agency.media,91-91415-0378,
-l_319827283301520,2023-07-18 23:00:00,Lookalike_Audience_1,Custom_List_Upload,11890689365,fb,Wei Lee,wei.lee@techsolutions.in,+91 97392 8837,HIGH
-l_743331153337643,2024-11-23 20:00:00,Q3_Retargeting,Broad_25-45,23568533490,ig,Michael Taylor,,,
-l_920816955648339,2025-02-28 09:00:00,Q3_Retargeting,Broad_25-45,59114427171,fb,Layla Suzuki,layla.suzuki@company.net,93032 0038,
-l_670869724659386,2023-10-11 01:00:00,Q3_Retargeting,Broad_25-45,56762725219,ig,Alejandro Ali,alejandro.aliatbuilders.co.in,+91 94288 9816,HIGH
-l_684024135835471,2024-05-23 18:00:00,Lookalike_Audience_1,Custom_List_Upload,88647744315,fb,Valentina Perez,valentina.perez@university.edu,+91 98726 3984,
-l_681220789286303,2024-01-09 01:00:00,Q3_Retargeting,Broad_25-45,96429078088,ig,William Johnson,william.johnson@builders.co.in,+91 99752 2935,LOW
-l_647281364736383,2023-01-26 05:00:00,Lead_Gen_Form,Broad_25-45,44219112528,fb,Vivek Menon,vivek.menon@builders.co.in,098595 7490,
-l_905579266880867,2024-03-28 20:00:00,Q3_Retargeting,Broad_25-45,91781656369,ig,Suresh Garcia, suresh.garcia@company.net ,093477 5052,LOW
-l_524006078967864,2024-02-02 03:00:00,Lead_Gen_Form,Custom_List_Upload,69994087121,fb,Aditya Patel,aditya.patel@gmail.com,+91 (949) 52-0979,
-l_641880271162394,2025-06-04 14:00:00,Brand_Awareness_IN,Broad_25-45,72645827733,fb,Min-jun Ali,min-jun.ali@icloud.com,093360 7538,
-l_795327704077507,2025-05-13 04:00:00,Q3_Retargeting,Broad_25-45,40565656994,fb,Emily Santos,emily.santos@yahoo.com,94324 6251,
-l_990358334609906,2023-03-16 03:00:00,Lead_Gen_Form,Tech_Interests,43148981132,fb,Sarah Saleh,sarah.saleh@agency.media,+91 (966) 75-0771,
-l_672964942199583,2025-07-03 12:00:00,Brand_Awareness_IN,Broad_25-45,57898011916,ig,Michael Mahmoud,MICHAEL.MAHMOUD@CORP.ORG,093825 3603,LOW
-l_608407368902168,2025-08-15 00:00:00,Brand_Awareness_IN,Broad_25-45,58933785053,fb,Kavita Verma,kavita.verma@builders.co.in,095137 0257,
-l_255395266593309,2023-07-05 21:00:00,Q3_Retargeting,Broad_25-45,82148055667,ig,Mohamed Jain,mohamed.jain@startup.io,097130 0284,
-l_255395266593309,2023-07-05 21:00:00,Q3_Retargeting,Broad_25-45,82148055667,ig,Mohamed Jain,mohamed.jain@startup.io,097130 0284,
-l_685031486427467,2023-01-01 23:00:00,Brand_Awareness_IN,Broad_25-45,78266554690,ig,Isabella Saleh,isabella.saleh@logistics.com,91-93799-9047,
-l_449934379780607,2023-09-20 07:00:00,Lookalike_Audience_1,Custom_List_Upload,75050879620,fb,Hiroshi Hernandez,hiroshi.hernandez@aol.com,099382 6631,
-l_632521495403635,2024-08-27 04:00:00,Lead_Gen_Form,Custom_List_Upload,39548748108,fb,Michael Doe,michael.doe@enterprise.co,+91 (910) 13-6127,
-l_632521495403635,2024-08-27 04:00:00,Lead_Gen_Form,Custom_List_Upload,39548748108,fb,Michael Doe,michael.doe@enterprise.co,+91 (910) 13-6127,
-l_747483879601714,2023-01-29 03:00:00,Lead_Gen_Form,Broad_25-45,24121677685,fb,Tariq Hassan,tariq.hassan@corp.org,91163 7718,
-l_751144322748621,2023-08-11 11:00:00,Lookalike_Audience_1,Custom_List_Upload,75999666538,ig,Sarah Gupta,sarah.gupta@consulting.biz,953403054,
-l_713489557529754,2023-03-12 02:00:00,Brand_Awareness_IN,Tech_Interests,53881249722,fb,Elena Singh,elena.singh@yahoo.co.in,+91 96120 9127,
-l_943910093482072,2023-05-23 22:00:00,Lookalike_Audience_1,Broad_25-45,52237470781,fb,Anjali Williams,"anjali.williams@yahoo.com, secondary@icloud.com",933407549,
-l_943910093482072,2023-05-23 22:00:00,Lookalike_Audience_1,Broad_25-45,52237470781,fb,Anjali Williams,"anjali.williams@yahoo.com, secondary@icloud.com",933407549,
-l_136810614409603,2024-01-25 03:00:00,Lookalike_Audience_1,Tech_Interests,94066214321,ig,Min-jun Williams,min-jun.williams@aol.com,954838962,
-l_707819551189458,2024-08-14 05:00:00,Lookalike_Audience_1,Tech_Interests,77564675794,ig,Mei Nair,mei.nair@icloud.com,,
-l_484304473617734,2023-10-02 00:00:00,Brand_Awareness_IN,Tech_Interests,20174913989,fb,Pooja Doe,pooja.doeathospital.org,969569288,HIGH
-l_225227108871507,2024-05-26 10:00:00,Q3_Retargeting,Tech_Interests,23160390633,fb,Karthik Jones,"karthik.jones@agency.media, secondary@hotmail.com",096496 0551,HIGH
-l_216752298462477,2025-05-25 09:00:00,Q3_Retargeting,Tech_Interests,97562883222,ig,Ravi Yang,ravi.yang@yahoo.co.in,980828122,
-l_889151193656263,2023-09-30 14:00:00,Lead_Gen_Form,Custom_List_Upload,43206970549,ig,Robert Ali,"robert.ali@consulting.biz, secondary@builders.co.in",953777339,
-l_293382137930179,2024-04-17 18:00:00,Brand_Awareness_IN,Tech_Interests,95197742726,ig,Camila Kumar,camila.kumar@startup.io,+91 (973) 11-8918,
-l_413059427095547,2023-04-04 14:00:00,Q3_Retargeting,Broad_25-45,17291417471,ig,Santiago Zhang,santiago.zhang@corp.org,+91 97678 1720,
-l_611996335000095,2025-05-14 16:00:00,Q3_Retargeting,Broad_25-45,45997992829,ig,Robert Zhang,ROBERT.ZHANG@STARTUP.IO,92031 3700,HIGH
-l_864701276850303,2024-03-11 05:00:00,Q3_Retargeting,Tech_Interests,31855808055,fb,Mohamed Jones,mohamed.jones@company.net,,LOW
-l_292577652681007,2023-05-01 18:00:00,Lookalike_Audience_1,Broad_25-45,77259806690,ig,John Wang, john.wang@startup.io ,91-93141-7521,LOW
-l_884662750953234,2025-08-02 05:00:00,Lookalike_Audience_1,Tech_Interests,70668045449,ig,Vivek Diallo, vivek.diallo@university.edu ,97646 8462,
-l_924199669469639,2025-02-01 03:00:00,Brand_Awareness_IN,Custom_List_Upload,37550283067,ig,Zahra Suzuki,zahra.suzuki@corp.org,+91 (929) 52-4554,HIGH
-l_407996379611071,2023-02-27 08:00:00,Brand_Awareness_IN,Tech_Interests,14467902488,ig,Sneha Takahashi,sneha.takahashi@company.net,094562 3775,
+Platform,Lead Quality,Campaign,Ad Set,Creative,Form ID,Submitted At,Full Name,Email Address,Phone Number,Agent,Lead State,Remarks
+fb,LOW,Lead_Gen_Form,Custom_List_Upload,Video_Ad_v2,6587252,2026-01-22 00:00:00,Michael Sharma,michael.sharma@logistics.com,+91 9309482326,Amit Patel,Booked,Requested WhatsApp instead of calls
+ig,HIGH,Lookalike_Audience_1,Broad_25-45,Video_Ad_v2,9353991,2025-09-23 22:00:00,Arjun Ali,arjun.ali@logistics.com,+91 9372296841,Ali Hassan,Hot,Already spoke with spouse
+ig,,Lead_Gen_Form,Tech_Interests,Video_Ad_v2,9475588,2025-03-29 01:00:00,Vikram Li,vikram.li@techsolutions.in,+91 9404262846,Sarah Khan,Booked,Already spoke with spouse
+ig,,Lead_Gen_Form,Tech_Interests,Video_Ad_v2,9475588,2025-03-29 01:00:00,DUPLICATE: Vikram Li,vikram.li@techsolutions.in,+91 9404262846,Sarah Khan,Booked,Already spoke with spouse
+ig,,Q3_Retargeting,Broad_25-45,Video_Ad_v2,5154407,2025-12-12 09:00:00,Wei Smith,wei.smith@gmail.com,+91 9718745434,Karan Singh,Follow-up Required,Wants to negotiate
+ig,,Q3_Retargeting,Broad_25-45,Video_Ad_v2,5154407,DUPLICATE: 2025-12-12 09:00:00,Wei Smith,wei.smith@gmail.com,+91 9718745434,Karan Singh,Follow-up Required,Wants to negotiate
+ig,LOW,Lookalike_Audience_1,Custom_List_Upload,Video_Ad_v2,4339384,2026-05-01 00:00:00,Arjun Sharma,arjun.sharma@company.net,+91 9321333357,Jessica Wong,Cancelled,Old customer returning
+ig,LOW,Lead_Gen_Form,Custom_List_Upload,Video_Ad_v2,7870211,2026-05-16 13:00:00,Valentina Hassan,valentina.hassan@outlook.com,+91 9429047370,Rahul Mehta,Sale Closed,Preferred morning calls
+ig,HIGH,Lead_Gen_Form,Broad_25-45,Video_Ad_v2,8560877,2025-09-20 14:00:00,Sarah Hernandez,sarah.hernandez@logistics.com,+91 9305328930,Priya Shah,Interested,Asked to call after 7 PM
+fb,LOW,Lookalike_Audience_1,Tech_Interests,Video_Ad_v2,9855936,2025-04-24 12:00:00,Sneha Gupta,sneha.gupta@startup.io,+91 9014837220,Karan Singh,Follow-up Required,Already spoke with spouse
+fb,,Lookalike_Audience_1,Broad_25-45,Video_Ad_v2,3741545,01/05/2025,Michael Menon,michael.menon@outlook.com,+91-90044-79401 ext 869,Jessica Wong,Duplicate,Preferred morning calls
+ig,,Q3_Retargeting,Custom_List_Upload,Video_Ad_v2,4788475,2025-09-17 04:00:00,John Iyer,john.iyer@company.net,+91 9686756997,Ali Hassan,Busy,Decision maker travelling
+ig,HIGH,Lead_Gen_Form,Custom_List_Upload,Video_Ad_v2,9236265,2026-04-24 20:00:00,Emily Smith,emily.smith@logistics.com,+91 9237472004,Sarah Khan,Follow-up Required,Follow up next Friday
+ig,,Q3_Retargeting,Tech_Interests,Video_Ad_v2,4837949,2025-10-07,Neha Hernandez, neha.hernandez@startup.io ,0091-9978450340,Jessica Wong,Call Back,Duplicate enquiry from Facebook
+ig,,Q3_Retargeting,Tech_Interests,Video_Ad_v2,4837949,2025-10-07,Neha Hernandez, neha.hernandez@startup.io ,0091-9978450340,Jessica Wong,DUPLICATE: Call Back,Duplicate enquiry from Facebook
+ig,LOW,Lead_Gen_Form,Custom_List_Upload,Video_Ad_v2,5138361,,John Singh,john.singhatgmail.com,WhatsApp Only,,,
+fb,LOW,Q3_Retargeting,Tech_Interests,Video_Ad_v2,9396005,Yesterday,Chen Martinez,chen.martinez@techsolutions.in,+1 (718) 555-5800,Jessica Wong,Interested,DND
+fb,,Q3_Retargeting,Tech_Interests,Video_Ad_v2,3257533,Today,John Martinez,john.martinez@enterprise.co (old),,,,
+fb,LOW,Q3_Retargeting,Custom_List_Upload,Video_Ad_v2,5769285,2025-06-17 20:00:00,Sneha Martinez,sneha.martinez@gmail.com,+91 9815462053,Rahul Mehta,Loan Pending,Preferred morning calls
+ig,LOW,Q3_Retargeting,Custom_List_Upload,Video_Ad_v2,3936024,2025-10-10 23:00:00,Anjali Li,anjali.li@enterprise.co,+91 9053922233,Jessica Wong,Busy,Already spoke with spouse
+ig,LOW,Q3_Retargeting,Tech_Interests,Video_Ad_v2,3078591,2025-12-10 10:00:00,Rahul Kumar,rahul.kumar@company.net,+91 9239310920,Karan Singh,Invalid Lead,Asked to call after 7 PM
+ig,LOW,Q3_Retargeting,Tech_Interests,Video_Ad_v2,4584863,Yesterday,Priya Doe, priya.doe@gmail.com ,Secondary Contact,Amit Patel,Budget Issue,Old customer returning
+ig,,Lead_Gen_Form,Tech_Interests,Video_Ad_v2,1514254,2025-04-14 04:00:00,Neha Rao,neha.rao@outlook.com,+91 9886048506,Sarah Khan,Budget Issue,Referred by existing client
+fb,LOW,Q3_Retargeting,Broad_25-45,Video_Ad_v2,9480977,2025-10-03 09:00:00,John Doe,john.doe@yahoo.com,+91 9215398471,Jessica Wong,Wrong Number,DND
+ig,LOW,Lead_Gen_Form,Custom_List_Upload,Video_Ad_v2,9634206,2025.07.03,Aditya Rao, aditya.rao@enterprise.co ,+91 9841821049,Amit Patel,Meeting Scheduled,Follow up next Friday
+fb,LOW,Q3_Retargeting,Broad_25-45,Video_Ad_v2,8387454,Last Week,Sneha Menon,   sneha.menon@icloud.com   ,9763862600 / 9589371172,Karan Singh,Meeting Scheduled,Referred by existing client
+fb,LOW,Q3_Retargeting,Broad_25-45,Video_Ad_v2,1283146,2026.05.14,Sarah Gupta,   sarah.gupta@yahoo.com   ,,,,
+fb,,Lead_Gen_Form,Custom_List_Upload,Video_Ad_v2,8167000,01/04/2026,Wei Doe, wei.doe@yahoo.com ,WhatsApp Only,Sarah Khan,Converted,Duplicate enquiry from Facebook
+fb,LOW,Q3_Retargeting,Broad_25-45,Video_Ad_v2,3381061,2025-06-05 21:00:00,Emily Gupta,emily.gupta@outlook.com,+91 9515949538,Rahul Mehta,Wrong Number,Price sensitive
+ig,LOW,Lookalike_Audience_1,Tech_Interests,Video_Ad_v2,2427660,2025-06-23 10:00:00,Vikram Hassan,vikram.hassan@enterprise.co,+91 9835419610,Rahul Mehta,Booked,Decision maker travelling
+fb,HIGH,Lookalike_Audience_1,Broad_25-45,Video_Ad_v2,5281683,2025-04-24 18:00:00,Anjali Hassan,anjali.hassan@yahoo.com,+91 9483457584,Rahul Mehta,Hot,Preferred morning calls
+fb,,Lookalike_Audience_1,Tech_Interests,Video_Ad_v2,3544489,2026.05.14,Sarah Hassan,sarah.hassan@yahoo.com,+1 (384) 555-6833,Karan Singh,Budget Issue,Needs GST invoice
+fb,HIGH,Q3_Retargeting,Custom_List_Upload,Video_Ad_v2,4215005,2025-09-09 11:00:00,Chen Hernandez,chen.hernandez@hotmail.com,+91 9365169196,Jessica Wong,Call Back,Follow up next Friday
+ig,,Lead_Gen_Form,Tech_Interests,Video_Ad_v2,6865996,2026-03-25 09:00:00,Rahul Gupta,rahul.gupta@yahoo.com,+91 9764480368,Ali Hassan,Sale Closed,Left voicemail
+fb,HIGH,Q3_Retargeting,Custom_List_Upload,Video_Ad_v2,4892640,2026-05-14 12:00:00,Sarah Singh,sarah.singh@logistics.com,+91 9993895819,Amit Patel,Sale Closed,Preferred morning calls
+ig,HIGH,Lead_Gen_Form,Broad_25-45,Video_Ad_v2,5222311,Last Week,Chen Martinez,chen.martinez@logistics.com,+91-98075-62553 ext 995,Karan Singh,Duplicate,Price sensitive
+fb,HIGH,Q3_Retargeting,Tech_Interests,Video_Ad_v2,2940018,2026-03-21 12:00:00,Priya Verma,priya.verma@outlook.com,+91 9713268306,Karan Singh,Sale Closed,Requested WhatsApp instead of calls
+fb,,Lookalike_Audience_1,Broad_25-45,Video_Ad_v2,6262812,2025-03-31 13:00:00,Diego Verma,diego.verma@techsolutions.in,+91 9287688226,Jessica Wong,Site Visit Completed,Decision maker travelling
+ig,HIGH,Lead_Gen_Form,Custom_List_Upload,Video_Ad_v2,8896458,2026-01-30 22:00:00,Neha Menon,neha.menon@yahoo.com,+91 9331473057,Jessica Wong,Call Back,Already spoke with spouse
+fb,HIGH,Lead_Gen_Form,Tech_Interests,Video_Ad_v2,4939492,2026-03-06 02:00:00,Sneha Gupta,sneha.gupta@startup.io,+91 9712106259,Jessica Wong,Loan Pending,Decision maker travelling
+fb,"{""json"": ""fragment"", ""data"": ""HIGH""} ""quoted, text""",Lead_Gen_Form,Tech_Interests,Video_Ad_v2,1090822,2025.12.10,Diego Iyer,diego.iyerathotmail.com,+91 9183287168,"Jessica Wong 🚀
+New Line",Meeting Scheduled,Interested in 3BHK
+fb,LOW,Lead_Gen_Form,Broad_25-45,Video_Ad_v2,4947838,2025-10-20,Valentina Li,,Office Number,,,
+fb,HIGH,Lead_Gen_Form,Broad_25-45,Video_Ad_v2,5868090,2026-05-07 08:00:00,Diego Patel,diego.patel@techsolutions.in,+91 9981228868,Karan Singh,Loan Pending,Not picking up
+ig,LOW,Lookalike_Audience_1,Broad_25-45,Video_Ad_v2,2761483,2025-10-08 11:00:00,Wei Hernandez,wei.hernandez@startup.io,+91 9233579529,Karan Singh,Interested,Interested in 3BHK
+fb,,Lead_Gen_Form,Tech_Interests,Video_Ad_v2,9704466,2026-01-18 22:00:00,Chen Reddy,chen.reddy@company.net,+91 9311881998,Sarah Khan,Busy,Old customer returning
+fb,,Lookalike_Audience_1,Broad_25-45,Video_Ad_v2,5245803,2025-03-30 07:00:00,Arjun Sharma,arjun.sharma@techsolutions.in,+91 9848653223,Ali Hassan,Interested,Call back tomorrow
+fb,,Lookalike_Audience_1,Broad_25-45,Video_Ad_v2,5245803,2025-03-30 07:00:00,Arjun Sharma,arjun.sharma@techsolutions.in,+91 9848653223,DUPLICATE: Ali Hassan,Interested,Call back tomorrow
+ig,HIGH,Lead_Gen_Form,Broad_25-45,Video_Ad_v2,9946702,2025-05-03 04:00:00,Wei Martinez,wei.martinez@outlook.com,+91 9284324601,Ali Hassan,Loan Pending,Left voicemail
+fb,,Q3_Retargeting,Custom_List_Upload,Video_Ad_v2,9783780,2025-01-02 19:00:00,Arjun Iyer,arjun.iyer@techsolutions.in,+91 9183988263,Ali Hassan,Lost,Price sensitive
+ig,LOW,Lead_Gen_Form,Tech_Interests,Video_Ad_v2,7041715,2025-03-31 20:00:00,Ravi Doe,ravi.doe@techsolutions.in,+91 9532183086,Jessica Wong,Call Back,Price sensitive
+fb,HIGH,Q3_Retargeting,Broad_25-45,Video_Ad_v2,1723418,14-Jan-2025,Michael Sharma,MICHAEL.SHARMA@YAHOO.COM,95630 38144,Amit Patel,Busy,Decision maker travelling
+fb,HIGH,Lead_Gen_Form,Broad_25-45,Video_Ad_v2,7462199,2026-02-12 16:00:00,Diego Hernandez,diego.hernandez@icloud.com,+91 9378899537,Priya Shah,Cancelled,Referred by existing client
+ig,HIGH,Lookalike_Audience_1,Tech_Interests,Video_Ad_v2,9742323,2025.10.11,Arjun Hernandez,   arjun.hernandez@outlook.com   ,+91 9494630730,,,
+ig,,Q3_Retargeting,Broad_25-45,Video_Ad_v2,1313332,2025-08-23 13:00:00,Anjali Patel,anjali.patel@enterprise.co,+91 9173589862,Sarah Khan,Follow-up Required,Working night shift
+ig,,Lead_Gen_Form,Custom_List_Upload,Video_Ad_v2,5084472,---,Rahul Rao,   rahul.rao@yahoo.com   ,Secondary Contact,Rahul Mehta,Converted,Sent brochure
+fb,LOW,Lead_Gen_Form,Custom_List_Upload,Video_Ad_v2,5796643,2025-08-27 00:00:00,Vikram Kumar,vikram.kumar@gmail.com,+91 9407111273,Priya Shah,Wrong Number,Not picking up
+ig,,Q3_Retargeting,Custom_List_Upload,Video_Ad_v2,2773375,2025-06-27 21:00:00,Neha Reddy,neha.reddy@hotmail.com,+91 9210819621,Priya Shah,Warm,Sent brochure
+ig,HIGH,Lookalike_Audience_1,Broad_25-45,Video_Ad_v2,7907933,2025-11-18 14:00:00,Rahul Martinez,rahul.martinez@techsolutions.in,+91 9384654586,Karan Singh,Call Back,Requested WhatsApp instead of calls
+fb,,Q3_Retargeting,Custom_List_Upload,Video_Ad_v2,3159541,Last Week,Sarah Verma,   sarah.verma@enterprise.co   ,+91-91244-67501 ext 914,,,
+fb,LOW,Lookalike_Audience_1,Custom_List_Upload,Video_Ad_v2,7286016,Today,Ravi Sharma,,Secondary Contact,,,
+fb,,Lookalike_Audience_1,Custom_List_Upload,Video_Ad_v2,1521706,2025-10-31 02:00:00,Chen Iyer,chen.iyer@startup.io,+91 9108478166,Ali Hassan,Cold,Budget increased
+fb,,Lookalike_Audience_1,Custom_List_Upload,Video_Ad_v2,1521706,2025-10-31 02:00:00,Chen Iyer,chen.iyer@startup.io,+91 9108478166,Ali Hassan,DUPLICATE: Cold,Budget increased
+ig,LOW,Lead_Gen_Form,Tech_Interests,Video_Ad_v2,2160374,2026-05-12 04:00:00,Arjun Smith,arjun.smith@hotmail.com,+91 9536930699,Karan Singh,Hot,DND
+ig,HIGH,Lookalike_Audience_1,Custom_List_Upload,Video_Ad_v2,6570752,10/12/2025,Diego Sharma,DIEGO.SHARMA@GMAIL.COM,Office Number,Amit Patel,Budget Issue,Follow up next Friday
+fb,LOW,Lead_Gen_Form,Tech_Interests,Video_Ad_v2,9157276,Last Week,Ravi Martinez, ravi.martinez@hotmail.com ,+1 (973) 555-4964,Sarah Khan,Interested,Wants to negotiate
+ig,HIGH,Lookalike_Audience_1,Custom_List_Upload,Video_Ad_v2,6969424,18-Jun-2025,Vikram Li,,,,,
+fb,HIGH,Lead_Gen_Form,Tech_Interests,Video_Ad_v2,3787141,2026.05.14,Valentina Ali,VALENTINA.ALI@ICLOUD.COM,+1 (890) 555-7061,Priya Shah,Cold,Requested WhatsApp instead of calls
+ig,LOW,Lead_Gen_Form,Broad_25-45,Video_Ad_v2,1460286,2026-04-26 06:00:00,Chen Ali,chen.ali@gmail.com,+91 9090357087,Karan Singh,Cancelled,Already spoke with spouse
+ig,LOW,Q3_Retargeting,Custom_List_Upload,Video_Ad_v2,2774908,2025-10-10 03:00:00,Chen Martinez,chen.martinez@techsolutions.in,+91 9874410359,Jessica Wong,Booked,Sent brochure
+ig,HIGH,Lead_Gen_Form,Tech_Interests,Video_Ad_v2,3277233,19/11/2025,Diego Ali,"diego.ali@gmail.com, secondary@outlook.com",,,,
+fb,,Lead_Gen_Form,Broad_25-45,Video_Ad_v2,=SUM(A1:A5),Yesterday,Priya Verma,priya.verma@techsolutions.in (old),"+919265196282
+9995203457",Priya Shah,Site Visit Completed,Interested in 3BHK
+ig,LOW,Q3_Retargeting,Broad_25-45,Video_Ad_v2,5280102,2025-02-18 17:00:00,Priya Sharma,priya.sharma@company.net,+91 9259339990,Amit Patel,Wrong Number,Decision maker travelling
+ig,LOW,DUPLICATE: Q3_Retargeting,Broad_25-45,Video_Ad_v2,5280102,2025-02-18 17:00:00,Priya Sharma,priya.sharma@company.net,+91 9259339990,Amit Patel,Wrong Number,Decision maker travelling
+ig,HIGH,Q3_Retargeting,Tech_Interests,Video_Ad_v2,5246847,26-Aug-2025,Priya Wang,PRIYA.WANG@COMPANY.NET,0091-9901255505,Ali Hassan,Warm,Price sensitive
+fb,HIGH,Lookalike_Audience_1,Tech_Interests,Video_Ad_v2,3757698,2026-04-22 12:00:00,Sneha Gupta,sneha.gupta@techsolutions.in,+91 9795875405,Jessica Wong,Booked,Wants to negotiate
+ig,HIGH,Q3_Retargeting,Custom_List_Upload,Video_Ad_v2,6032853,2025-03-27 19:00:00,Diego Singh,diego.singh@outlook.com,+91 9589399138,Amit Patel,Meeting Scheduled,Decision maker travelling
+ig,LOW,Lookalike_Audience_1,Broad_25-45,Video_Ad_v2,5583375,2025-03-11 06:00:00,Aditya Iyer,aditya.iyer@yahoo.com,+91 9383944547,Sarah Khan,No Response,Old customer returning
+ig,LOW,Lookalike_Audience_1,Custom_List_Upload,Video_Ad_v2,2642438,Yesterday,Emily Kumar, emily.kumar@yahoo.com ,Secondary Contact,Karan Singh,Booked,Already spoke with spouse
+ig,,Lead_Gen_Form,Custom_List_Upload,Video_Ad_v2,5740965,Today,Michael Iyer,   michael.iyer@enterprise.co   ,0091-9323243339,Rahul Mehta,Busy,Referred by existing client
+ig,HIGH,Lookalike_Audience_1,Tech_Interests,Video_Ad_v2,8699916,2025-07-28 11:00:00,Kavita Reddy,kavita.reddy@outlook.com,+91 9983408841,Priya Shah,No Response,Price sensitive
+ig,LOW,Lookalike_Audience_1,Tech_Interests,Video_Ad_v2,6936310,2025-08-31 16:00:00,Anjali Verma,anjali.verma@yahoo.com,+91 9503677621,Jessica Wong,Cold,Already spoke with spouse
+ig,,Q3_Retargeting,Tech_Interests,Video_Ad_v2,8392233,2025-08-23 18:00:00,Arjun Wang,arjun.wang@icloud.com,+91 9182276244,Ali Hassan,Lost,Price sensitive
+fb,,Q3_Retargeting,Custom_List_Upload,Video_Ad_v2,5545259,2025-09-16 03:00:00,Aditya Ali,aditya.ali@icloud.com,+91 9185213446,Sarah Khan,Wrong Number,Interested in 3BHK
+fb,,Lead_Gen_Form,Broad_25-45,Video_Ad_v2,3188919,2025-08-03 07:00:00,Emily Verma,emily.verma@startup.io,+91 9804226667,Karan Singh,Cancelled,Duplicate enquiry from Facebook
+fb,HIGH,Q3_Retargeting,Tech_Interests,Video_Ad_v2,5604214,2025.11.10,Arjun Hassan,ARJUN.HASSAN@LOGISTICS.COM,90147 18797,Rahul Mehta,Interested,Needs GsT invoice
+fb,,Lead_Gen_Form,Tech_Interests,Video_Ad_v2,4548470,Last Week,Chen Li,,,,,
+fb,HIGH,Q3_Retargeting,Broad_25-45,Video_Ad_v2,2574763,2025-03-14 21:00:00,Neha Sharma,neha.sharma@outlook.com,+91 9816471964,Karan Singh,Follow-up Required,DND
+ig,HIGH,Lead_Gen_Form,Broad_25-45,Video_Ad_v2,6026799,2025-08-23 22:00:00,Valentina Reddy,valentina.reddy@startup.io,+91 9516099522,Rahul Mehta,Booked,DND
+fb,,Q3_Retargeting,Tech_Interests,Video_Ad_v2,5105724,2025-10-14 01:00:00,Rahul Sharma,rahul.sharma@enterprise.co,+91 9078087806,Priya Shah,No Response,Left voicemail
+ig,,Lookalike_Audience_1,Tech_Interests,Video_Ad_v2,2953356,2025-04-16 13:00:00,Neha Wang,neha.wang@logistics.com,+91 9068090422,Amit Patel,Invalid Lead,Decision maker travelling
+ig,LOW,Q3_Retargeting,Broad_25-45,Video_Ad_v2,7542297,2025-07-15 11:00:00,Sarah Li,sarah.li@logistics.com,+91 9155556368,Sarah Khan,Duplicate,Already spoke with spouse
+ig,LOW,Q3_Retargeting,Broad_25-45,Video_Ad_v2,7542297,DUPLICATE: 2025-07-15 11:00:00,Sarah Li,sarah.li@logistics.com,+91 9155556368,Sarah Khan,Duplicate,Already spoke with spouse
+fb,LOW,Q3_Retargeting,Tech_Interests,Video_Ad_v2,2993281,Today,Michael Hassan,michael.hassan@gmail.com,Secondary Contact,Jessica Wong,Hot,Sent brochure
+ig,LOW,Lookalike_Audience_1,Tech_Interests,Video_Ad_v2,7804174,07/09/2025,Diego Iyer,diego.iyeratoutlook.com,,,,
+fb,LOW,Lead_Gen_Form,Custom_List_Upload,Video_Ad_v2,8135686,2025-06-22 00:00:00,Neha Hassan,neha.hassan@enterprise.co,+91 9317064467,Amit Patel,Sale Closed,Working night shift
+ig,,Lookalike_Audience_1,Broad_25-45,Video_Ad_v2,6990670,Today,Vikram Reddy,vikram.reddy@enterprise.co,0091-9538828397,Rahul Mehta,Cancelled,Duplicate enquiry from Facebook
+ig,HIGH,Lookalike_Audience_1,Custom_List_Upload,Video_Ad_v2,6350089,2025-11-08 00:00:00,Emily Gupta,emily.gupta@enterprise.co,+91 9466813707,Karan Singh,Converted,Price sensitive
+ig,HIGH,Lead_Gen_Form,Broad_25-45,Video_Ad_v2,5631304,2025-11-28 19:00:00,Anjali Menon,anjali.menon@startup.io,+91 9100837104,Sarah Khan,Busy,Needs GST invoice
+fb,LOW,Q3_Retargeting,Broad_25-45,Video_Ad_v2,2683806,2026.05.14,Vikram Wang, vikram.wang@gmail.com ,Office Number,Ali Hassan,Sale Closed,Budget increased
+fb,,Lookalike_Audience_1,Broad_25-45,Video_Ad_v2,5688055,2026-03-08 16:00:00,Michael Singh,michael.singh@hotmail.com,+91 9153395310,Priya Shah,Booked,Call back tomorrow
+fb,LOW,Q3_Retargeting,Broad_25-45,Video_Ad_v2,4414757,2026-02-28 15:00:00,Michael Gupta,michael.gupta@outlook.com,+91 9466898118,Amit Patel,Sale Closed,Call back tomorrow
+fb,,Q3_Retargeting,Broad_25-45,Video_Ad_v2,4855380,2025-12-18 09:00:00,Aditya Verma,aditya.verma@startup.io,+91 9036046941,Jessica Wong,Cold,Old customer returning
+ig,LOW,Q3_Retargeting,Tech_Interests,Video_Ad_v2,9465433,Today,Anjali Singh,ANJALI.SINGH@GMAIL.COM,95842 85685,Sarah Khan,Booked,Left voicemail
+fb,LOW,Q3_Retargeting,Tech_Interests,Video_Ad_v2,3641429,2025-06-04 11:00:00,Sarah Gupta,sarah.gupta@outlook.com,+91 9367358235,Sarah Khan,Lost,Wants to negotiate

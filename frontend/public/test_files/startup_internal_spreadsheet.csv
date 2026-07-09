@@ -1,63 +1,50 @@
-Lead ID,Name,Role,Startup Name,Funding Stage,Work Email,Mobile,LinkedIn,Use Case,Vibe,Discussion Summary
-620,Min-jun,Co-founder,AI.io,Series A,min-jun.kim@startup.io,+919099537809,linkedin.com/in/min-jun-92,Customer facing app,Cold,Hot lead
-716,Fatima,Dev,SaaSify,Seed,fatima.das@startup.io,+919786359057,linkedin.com/in/fatima-15,Internal tools,Cold,Will visit with spouse
-783,Tariro,Co-founder,HealthTech Pro,Series A,tariro.ibrahim@startup.io,+919250780323,linkedin.com/in/tariro-67,Automation,Ghosted,Asked to call after 6 PM
-273,Takumi,Product Manager,AI.io,Series A,takumi.lopez@startup.io,+919683675687,linkedin.com/in/takumi-97,Data analysis,Super hot,Needs GST invoice
-653,Wei,Product Manager,HealthTech Pro,Series B,wei.martinez@startup.io,+919142989150,linkedin.com/in/wei-84,Customer facing app,Needs nurturing,Very strict on quality
-626,Alejandro,Dev,EdTech Hub,Seed,alejandro.brown@startup.io,+919059199345,linkedin.com/in/alejandro-57,Customer facing app,Needs nurturing,Do Not Call
-913,Tariro,Product Manager,EdTech Hub,Series A,tariro.chauhan@startup.io,+919765990128,linkedin.com/in/tariro-6,Automation,Needs nurturing,Requested brochure
-430,Hiroshi,Co-founder,SaaSify,Bootstrapped,hiroshi.davis@startup.io,+919019099073,linkedin.com/in/hiroshi-75,Customer facing app,Super hot,Prefers email communication
-360,David,Founder,FintechRevolution,Series A,david.diallo@startup.io,+919722357755,linkedin.com/in/david-44,Internal tools,Needs nurturing,DNC
-497,Sarah,Dev,FintechRevolution,Bootstrapped,sarah.traore@startup.io,+919848870265,linkedin.com/in/sarah-85,Data analysis,Ghosted,Email bounced
-403,Yuki,Co-founder,EdTech Hub,Seed,yuki.bose@startup.io,+919163611141,linkedin.com/in/yuki-13,Internal tools,Ghosted,Prefers email communication
-480,Yuki,Growth Hacker,AI.io,Series A,yuki.ndiaye@startup.io,+919481185051,linkedin.com/in/yuki-26,Internal tools,Cold,CBL
-195,Alejandro,Product Manager,EdTech Hub,Series B,alejandro.johnson@startup.io,+919404214608,linkedin.com/in/alejandro-45,Data analysis,Needs nurturing,Budget revised
-589,Aditya,Dev,AI.io,Series B,aditya.takahashi@startup.io,+919844717858,linkedin.com/in/aditya-22,Internal tools,Needs nurturing,Awaiting confirmation
-733,Khalid,Growth Hacker,FintechRevolution,Bootstrapped,khalid.williams@startup.io,+919136940820,linkedin.com/in/khalid-18,Automation,Needs nurturing,Budget revised
-630,Kavita,Product Manager,EdTech Hub,Bootstrapped,kavita.perez@startup.io,+919523812231,linkedin.com/in/kavita-59,Customer facing app,Cold,VM left
-447,James,Product Manager,SaaSify,Seed,james.das@startup.io,+919776141881,linkedin.com/in/james-71,Automation,Cold,Interested in 3BHK
-666,Amina,Product Manager,FintechRevolution,Series B,amina.traore@startup.io,+919831759733,linkedin.com/in/amina-80,Internal tools,Cold,Wants credit period of 60 days
-612,Rahul,Co-founder,FintechRevolution,Series B,rahul.kim@startup.io,+919928007421,linkedin.com/in/rahul-38,Internal tools,Needs nurturing,Send catalog again
-248,Ravi,Dev,SaaSify,Bootstrapped,ravi.chauhan@startup.io,+919328501861,linkedin.com/in/ravi-94,Data analysis,Super hot,Works night shift
-873,Emily,Product Manager,AI.io,Series B,emily.gupta@startup.io,+919120939785,linkedin.com/in/emily-8,Internal tools,Super hot,Sent pricing over WhatsApp
-753,Anita,Dev,EdTech Hub,Series A,anita.suzuki@startup.io,+919685687506,linkedin.com/in/anita-54,Automation,Needs nurturing,Duplicate enquiry
-556,Camila,Product Manager,SaaSify,Series A,camila.saleh@startup.io,+919852315745,linkedin.com/in/camila-9,Data analysis,Super hot,Requested brochure
-525,Michael,Product Manager,HealthTech Pro,Series B,michael.gonzalez@startup.io,+919666322033,linkedin.com/in/michael-96,Data analysis,Cold,Will visit with spouse
-111,Vivek,Growth Hacker,FintechRevolution,Series B,vivek.garcia@startup.io,+919075774345,linkedin.com/in/vivek-95,Automation,Ghosted,Awaiting confirmation
-962,Layla,Founder,SaaSify,Series B,layla.taylor@startup.io,+919861225559,linkedin.com/in/layla-82,Automation,Cold,Requested virtual demo
-825,Jessica,Founder,SaaSify,Seed,jessica.doe@startup.io,+919414528389,linkedin.com/in/jessica-94,Customer facing app,Needs nurturing,Prefers email communication
-510,Fatima,Product Manager,FintechRevolution,Seed,fatima.menon@startup.io,+919659096746,linkedin.com/in/fatima-49,Internal tools,Super hot,Send catalog again
-299,Wei,Growth Hacker,EdTech Hub,Seed,wei.okafor@startup.io,+919394842899,linkedin.com/in/wei-8,Data analysis,Ghosted,VM left
-981,Arjun,Founder,EdTech Hub,Bootstrapped,arjun.verma@startup.io,+919562914034,linkedin.com/in/arjun-22,Customer facing app,Needs nurturing,Loan discussion pending
-630,Emily,Growth Hacker,EdTech Hub,Seed,emily.traore@startup.io,+919732798635,linkedin.com/in/emily-74,Customer facing app,Ghosted,Requested brochure
-916,Mohamed,Product Manager,AI.io,Series A,mohamed.schmidt@startup.io,+919572304726,linkedin.com/in/mohamed-18,Automation,Ghosted,Decision maker travelling
-152,Rahul,Dev,HealthTech Pro,Series B,rahul.kumar@startup.io,+919579751423,linkedin.com/in/rahul-88,Internal tools,Needs nurturing,Will visit with spouse
-591,Alejandro,Product Manager,SaaSify,Bootstrapped,alejandro.martinez@startup.io,+919426621056,linkedin.com/in/alejandro-26,Automation,Cold,Loan discussion pending
-627,Chidi,Growth Hacker,EdTech Hub,Series B,chidi.iyer@startup.io,+919354896050,linkedin.com/in/chidi-64,Customer facing app,Cold,Requested virtual demo
-622,Ngozi,Product Manager,HealthTech Pro,Series A,ngozi.jones@startup.io,+919937967830,linkedin.com/in/ngozi-90,Data analysis,Super hot,Loan discussion pending
-968,Sven,Growth Hacker,SaaSify,Series B,sven.jain@startup.io,+919081219038,linkedin.com/in/sven-4,Internal tools,Super hot,Referred by existing customer
-945,Camila,Growth Hacker,FintechRevolution,Series B,camila.hassan@startup.io,+919863729776,linkedin.com/in/camila-77,Data analysis,Needs nurturing,Prefers email communication
-390,Olivia,Growth Hacker,AI.io,Series A,olivia.liu@startup.io,+919453144584,linkedin.com/in/olivia-33,Customer facing app,Cold,Asked to call after 6 PM
-941,Emily,Co-founder,HealthTech Pro,Bootstrapped,emily.zhang@startup.io,+919077191965,linkedin.com/in/emily-12,Customer facing app,Ghosted,Previous enquiry closed
-941,Emily,Co-founder,HealthTech Pro,Bootstrapped,emily.zhang@startup.io,+919077191965,linkedin.com/in/emily-12,Customer facing app,Ghosted,Previous enquiry closed
-499,Chidi,Dev,SaaSify,Seed,chidi.miller@startup.io,+919774883091,linkedin.com/in/chidi-15,Data analysis,Ghosted,Referred by existing customer
-597,Aisha,Co-founder,AI.io,Series B,aisha.zhang@startup.io,+919412042168,linkedin.com/in/aisha-7,Customer facing app,Needs nurturing,Price sensitive
-215,Suresh,Product Manager,HealthTech Pro,Series A,suresh.jones@startup.io,+919152115609,linkedin.com/in/suresh-7,Data analysis,Super hot,Not interested
-419,Aisha,Founder,AI.io,Bootstrapped,aisha.pillai@startup.io,+919762791012,linkedin.com/in/aisha-6,Customer facing app,Super hot,VM left
-353,William,Product Manager,EdTech Hub,Bootstrapped,william.sharma@startup.io,+919536571960,linkedin.com/in/william-19,Customer facing app,Super hot,Budget revised
-840,Jessica,Product Manager,SaaSify,Series A,jessica.wang@startup.io,+919396248037,linkedin.com/in/jessica-41,Automation,Super hot,Requested virtual demo
-448,Mei,Co-founder,HealthTech Pro,Series A,mei.smith@startup.io,+919470100256,linkedin.com/in/mei-4,Customer facing app,Cold,Loan discussion pending
-799,Robert,Growth Hacker,AI.io,Series B,robert.iyer@startup.io,+919584468008,linkedin.com/in/robert-87,Internal tools,Super hot,Cold
-591,Yuki,Growth Hacker,EdTech Hub,Series B,yuki.bose@startup.io,+919371425745,linkedin.com/in/yuki-35,Automation,Needs nurturing,Wants credit period of 60 days
-706,David,Dev,FintechRevolution,Seed,david.zhang@startup.io,+919797812529,linkedin.com/in/david-87,Customer facing app,Needs nurturing,Do Not Call
-440,Zahra,Product Manager,HealthTech Pro,Series B,zahra.smith@startup.io,+919510717151,linkedin.com/in/zahra-92,Automation,Cold,Warm
-881,Santiago,Growth Hacker,FintechRevolution,Bootstrapped,santiago.park@startup.io,+919029328406,linkedin.com/in/santiago-61,Automation,Super hot,Needs GST invoice
-660,Mohamed,Growth Hacker,HealthTech Pro,Series B,mohamed.perez@startup.io,+919797412140,linkedin.com/in/mohamed-5,Customer facing app,Ghosted,Requested brochure
-937,Min-jun,Product Manager,EdTech Hub,Series B,min-jun.anderson@startup.io,+919893752998,linkedin.com/in/min-jun-84,Automation,Needs nurturing,Email bounced
-739,Arjun,Product Manager,HealthTech Pro,Bootstrapped,arjun.rodriguez@startup.io,+919736328062,linkedin.com/in/arjun-72,Customer facing app,Cold,Wrong number
-656,Sneha,Growth Hacker,EdTech Hub,Series B,sneha.mahmoud@startup.io,+919972776762,linkedin.com/in/sneha-32,Data analysis,Super hot,Send catalog again
-293,Carlos,Product Manager,AI.io,Series B,carlos.yadav@startup.io,+919465862600,linkedin.com/in/carlos-35,Data analysis,Cold,Prefers email communication
-505,Rahul,Founder,SaaSify,Series A,rahul.chauhan@startup.io,+919798645182,linkedin.com/in/rahul-31,Customer facing app,Super hot,Cold
-207,Min-jun,Co-founder,SaaSify,Seed,min-jun.okafor@startup.io,+919389396201,linkedin.com/in/min-jun-91,Data analysis,Super hot,Send catalog again
-441,Arjun,Founder,EdTech Hub,Series A,arjun.verma@startup.io,+919750174336,linkedin.com/in/arjun-40,Automation,Cold,PIC unavailable
-692,Lars,Dev,HealthTech Pro,Seed,lars.smith@startup.io,+919661939005,linkedin.com/in/lars-16,Data analysis,Needs nurturing,Previous enquiry closed
+Lead ID,Name,Role,Startup Name,Funding Stage,Work Email,Mobile,Use Case,Channel,Assigned To,Lead State,Internal Notes
+859,Priya,Co-founder,FintechRevolution,Seed,priya.ali@outlook.com,+91 9088019621,Requested product catalogue,Partner,Sarah Khan,No Response,Working night shift
+107,Chen,Growth Hacker,FintechRevolution,Bootstrapped,chen.iyer@startup.io,+91 9427793632,Interested in enterprise software demo,Referral,Rahul Mehta,Loan Pending,Not picking up
+639,Emily,Co-founder,AI.io,Series A,EMILY.REDDY@YAHOO.COM,+91 9414713683,Needs orthopedic consultation,Partner,Rahul Mehta,Meeting Scheduled,Decision maker travelling
+159,Diego,Founder,AI.io,Seed,diego.rao@outlook.com,+91 9492876278,Interested in enterprise software demo,Partner,Priya Shah,Call Back,Not picking up
+702,Sarah,Product Manager,FintechRevolution,Seed,"sarah.wang@icloud.com, secondary@outlook.com","92263 29572 ""quoted, text""",Looking for premium apartment under 1.2 Cr,Website,Jessica Wong,Cancelled,"{""json"": ""fragment"", ""data"": ""Referred by existing client""}"
+855,Sarah,Founder,SaaSify,Bootstrapped,sarah.smith@gmail.com,+91 9094220567,Need possession before Diwali,Housing,Karan Singh,Warm,Old customer returning
+626,Arjun,Growth Hacker,FintechRevolution,Seed,arjun.ali@yahoo.com,+91 9281886842,Looking for premium apartment under 1.2 Cr,Instagram,Karan Singh,Cold,Needs GST invoice
+839,Arjun,Founder,FintechRevolution,Seed,arjun.menon@enterprise.co,+91 9302511205,Need possession before Diwali,WhatsApp,Ali Hassan,Busy,Interested in 3BHK
+DUPLICATE: 839,Arjun,Founder,FintechRevolution,Seed,arjun.menon@enterprise.co,+91 9302511205,Need possession before Diwali,WhatsApp,Ali Hassan,Busy,Interested in 3BHK
+351,Arjun,Founder,AI.io,Bootstrapped,,Secondary Contact,,,,,
+528,Arjun,Co-founder,AI.io,Series A,arjun.hassan@outlook.com,+91 9004737287,Looking for premium apartment under 1.2 Cr,Cold Call,Rahul Mehta,Follow-up Required,Already spoke with spouse
+170,Ravi,Co-founder,AI.io,Bootstrapped,ravi.gupta@company.net,+91 9550286184,Need possession before Diwali,Referral,Rahul Mehta,Budget Issue,Needs GST invoice
+583,Diego,Product Manager,SaaSify,Series A,diego.hernandez@techsolutions.in,+91 9501994934,Looking for premium apartment under 1.2 Cr,Partner,Amit Patel,Invalid Lead,Sent brochure
+655,Emily,Product Manager,SaaSify,Bootstrapped,emily.li@enterprise.co,+91 9671022816,Requires virtual consultation,99acres,Priya Shah,Invalid Lead,Needs GST invoice
+983,Ravi,Co-founder,AI.io,Bootstrapped,ravi.singh@logistics.com,+91 9290092807,Prefers east-facing unit,Cold Call,Rahul Mehta,Interested,Preferred morning calls
+108,Valentina,Growth Hacker,AI.io,Seed,valentina.li@yahoo.com,+91 9472825388,Need possession before Diwali,Website,Amit Patel,Duplicate,DND
+361,Anjali,Co-founder,SaaSify,Seed,anjali.ali@startup.io,+91 9449930230,Looking for premium apartment under 1.2 Cr,Email Campaign,Rahul Mehta,Loan Pending,Wants to negotiate
+368,Rahul,Growth Hacker,AI.io,Bootstrapped,rahul.sharma@gmail.com,+91 9285004950,Needs orthopedic consultation,Instagram,Rahul Mehta,Wrong Number,Budget increased
+116,Arjun,Founder,SaaSify,Bootstrapped,arjun.rao@enterprise.co,+91 9107451772,Requested product catalogue,Referral,Sarah Khan,Booked,Price sensitive
+719,Michael,Growth Hacker,AI.io,Bootstrapped,,,,,,,
+515,Michael,Co-founder,SaaSify,Bootstrapped,michael.verma@logistics.com,+91 9840817547,Looking for premium apartment under 1.2 Cr,Partner,Sarah Khan,Invalid Lead,Working night shift
+921,Chen,Co-founder,AI.io,Bootstrapped,chen.martinez@logistics.com,+91 9580447738,Needs orthopedic consultation,Trade Show,Ali Hassan,Cancelled,Not picking up
+298,Sarah,Co-founder,AI.io,Seed,sarah.ali@logistics.com,+91 9067427730,Prefers east-facing unit,Website,Priya Shah,Hot,Working night shift
+489,Kavita,Co-founder,SaaSify,Series A,KAVITA.HERNANDEZ@OUTLOOK.COM,+91-96428-10766 ext 122,Interested in enterprise software demo,Housing,Karan Singh,Hot,Price sensitive
+489,Kavita,DUPLICATE: Co-founder,SaaSify,Series A,KAVITA.HERNANDEZ@OUTLOOK.COM,+91-96428-10766 ext 122,Interested in enterprise software demo,Housing,Karan Singh,Hot,Price sensitive
+599,Sarah,Co-founder,AI.io,Bootstrapped,SARAH.PATEL@LOGISTICS.COM,WhatsApp Only,Requires virtual consultation,Referral,Priya Shah,Interested,DND
+291,Aditya,Co-founder,FintechRevolution,Series A,,WhatsApp Only,,,,,
+972,Chen,Product Manager,AI.io,Seed,chen.doe@yahoo.com,+91 9903500638,Interested in enterprise software demo,Google Search,Sarah Khan,Cancelled,Budget increased
+511,Ravi,Co-founder,FintechRevolution,Series A,ravi.menon@yahoo.com,+91 9960984504,Prefers east-facing unit,Google Search,Karan Singh,Site Visit Completed,Asked to call after 7 PM
+965,Kavita,Founder,FintechRevolution,Series A,kavita.iyer@hotmail.com,+91 9533378082,Searching for MBA admission,Employee Referral,Ali Hassan,Wrong Number,Preferred morning calls
+895,Neha,Founder,AI.io,Series A,neha.doe@startup.io,+91 9728381848,Prefers east-facing unit,Google Ads,Jessica Wong,Cancelled,Interested in 3BHK
+272,Diego,Co-founder,FintechRevolution,Series A,diego.wangatcompany.net,Secondary Contact,,,,,
+831,Diego,Growth Hacker,SaaSify,Series A,diego.martinez@startup.io,+91 9193978962,Looking for premium apartment under 1.2 Cr,JustDial,Rahul Mehta,Call Back,Needs GST invoice
+342,Rahul,Product Manager,AI.io,Seed,rahul.kumar@startup.io,+91 9895862769,Need possession before Diwali,Housing,Sarah Khan,Warm,Interested in 3BHK
+342,Rahul,Product Manager,AI.io,Seed,rahul.kumar@startup.io,+91 9895862769,Need possession before Diwali,Housing,Sarah Khan,Warm,DUPLICATE: Interested in 3BHK
+445,Emily,Co-founder,FintechRevolution,Bootstrapped,emily.singh@yahoo.com,+91 9868097701,Requested product catalogue,WhatsApp,Sarah Khan,Lost,Not picking up
+525,Ravi,Founder,FintechRevolution,Seed,ravi.iyer@outlook.com,+91 9344070725,Interested in enterprise software demo,LinkedIn,Jessica Wong,Duplicate,Follow up next Friday
+280,Michael,Co-founder,AI.io,Seed,michael.wang@company.net,+1 (466) 555-5733,Requested product catalogue,Cold Call,Jessica Wong,Booked,Working night shift
+252,Chen,Product Manager,AI.io,Bootstrapped,chen.reddy@yahoo.com,+91 9124328317,Need possession before Diwali,LinkedIn,Sarah Khan,Loan Pending,Working night shift
+405,Kavita,Product Manager,SaaSify,Seed,kavita.smith@enterprise.co,+91 9940879301,Requires virtual consultation,Google Search,Priya Shah,Hot,Working night shift
+583,Sneha,Growth Hacker,AI.io,Series A,sneha.patel@outlook.com,+91 9407309796,Requested product catalogue,Walk-In,Karan Singh,Interested,Left voicemail
+686,Sarah,Growth Hacker,AI.io,Series A,sarah.smith@icloud.com,+91 9255397604,Need possession before Diwali,JustDial,Priya Shah,Busy,Follow up next Friday
+218,Vikram,Co-founder,FintechRevolution,Seed, vikram.reddy@hotmail.com ,+91 9921423664,Needs orthopedic consultation,Housing,Amit Patel,Hot,Price sensitive
+596,Ravi,Growth Hacker,AI.io,Seed, ravi.smith@outlook.com ,+91-92463-21969 ext 935,Interested in enterprise software demo,WhatsApp,Jessica Wong,No Response,Wants to negotiate
+596,Ravi,Growth Hacker,AI.io,DUPLICATE: Seed, ravi.smith@outlook.com ,+91-92463-21969 ext 935,Interested in enterprise software demo,WhatsApp,Jessica Wong,No Response,Wants to negotiate
+753,Valentina,Product Manager,SaaSify,Series A, valentina.rao@icloud.com ,Secondary Contact,Searching for MBA admission,Website,Amit Patel,Warm,Needs GST invoice
+860,Sarah,Growth Hacker,AI.io,Series A,sarah.singh@outlook.com,+91 9288914558,Interested in enterprise software demo,Facebook Lead Ads,Sarah Khan,Loan Pending,Not picking up
+462,Wei,Founder,FintechRevolution,Series A,wei.singh@outlook.com,+91 9502943834,Requested product catalogue,Google Ads,Rahul Mehta,Lost,Wants to negotiate
+929,Chen,Founder,FintechRevolution,Seed,CHEN.IYER@TECHSOLUTIONS.IN,WhatsApp Only,Looking for premium apartment under 1.2 Cr,Employee Referral,Jessica Wong,No Response,Interested in 3BHK
