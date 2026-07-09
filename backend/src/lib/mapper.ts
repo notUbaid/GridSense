@@ -1,4 +1,4 @@
-import { getGroqClient, getGeminiClient, markGroqKeyExhausted } from './extractor';
+import { getGroqClient, getGeminiClient, markGroqKeyExhausted, markGeminiKeyExhausted } from './extractor';
 import { z } from 'zod';
 import { zodToJsonSchema } from 'zod-to-json-schema';
 import logger from '../utils/logger';
@@ -80,10 +80,17 @@ ${JSON.stringify(zodToJsonSchema(MappingSchema as any))}
   } catch (err: any) {
     logger.warn({ err: err.message }, 'Groq mapping failed, falling back to Gemini');
     try {
-      const gemini = getGeminiClient();
-      const model = gemini.getGenerativeModel({ model: 'gemini-1.5-flash', generationConfig: { responseMimeType: 'application/json' } });
-      const result = await model.generateContent(prompt);
-      resultString = result.response.text();
+      const { client: gemini, index: geminiIndex } = getGeminiClient();
+      try {
+        const model = gemini.getGenerativeModel({ model: 'gemini-1.5-flash', generationConfig: { responseMimeType: 'application/json' } });
+        const result = await model.generateContent(prompt);
+        resultString = result.response.text();
+      } catch (geminiErr: any) {
+        if (geminiErr.status === 429 || geminiErr.status === 400 || geminiErr.status === 403) {
+          markGeminiKeyExhausted(geminiIndex);
+        }
+        throw geminiErr;
+      }
     } catch (e: any) {
       logger.error({ err: e.message }, 'Both Groq and Gemini failed for mapping headers');
       return { mapping: [], overallConfidence: 0, processingTimeMs: Date.now() - startTime };

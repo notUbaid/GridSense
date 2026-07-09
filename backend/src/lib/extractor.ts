@@ -11,7 +11,9 @@ import { stripMarkdownFences, salvageExtractorJson, repairTruncatedJson, VALID_C
 let groqClients: Groq[] = [];
 let currentGroqIndex = 0;
 let availableGroqIndices: number[] = [];
-let genAI: GoogleGenerativeAI | null = null;
+let geminiClients: GoogleGenerativeAI[] = [];
+let currentGeminiIndex = 0;
+let availableGeminiIndices: number[] = [];
 
 export function getGroqClient(): { client: Groq, index: number } {
   if (!config.GROQ_API_KEY) {
@@ -49,12 +51,40 @@ export function markGroqKeyExhausted(index: number) {
   }, 60000);
 }
 
-export function getGeminiClient() {
+export function getGeminiClient(): { client: GoogleGenerativeAI, index: number } {
   if (!config.GEMINI_API_KEY) {
     throw new Error('GEMINI_API_KEY is missing.');
   }
-  if (!genAI) genAI = new GoogleGenerativeAI(config.GEMINI_API_KEY);
-  return genAI;
+  if (geminiClients.length === 0) {
+    const keys = config.GEMINI_API_KEY.split(',').map(k => k.trim()).filter(k => k.length > 0);
+    if (keys.length === 0) throw new Error('No valid GEMINI API keys found.');
+    geminiClients = keys.map(key => new GoogleGenerativeAI(key));
+    availableGeminiIndices = geminiClients.map((_, i) => i);
+  }
+  
+  if (availableGeminiIndices.length === 0) {
+    throw new Error('All Gemini keys are exhausted.');
+  }
+
+  // Round-robin selection
+  const selectedIndex = availableGeminiIndices[currentGeminiIndex % availableGeminiIndices.length];
+  currentGeminiIndex = (currentGeminiIndex + 1) % availableGeminiIndices.length;
+  
+  return { client: geminiClients[selectedIndex], index: selectedIndex };
+}
+
+export function markGeminiKeyExhausted(index: number) {
+  if (!availableGeminiIndices.includes(index)) return; // Already exhausted
+  availableGeminiIndices = availableGeminiIndices.filter(i => i !== index);
+  logger.warn(`Gemini key at index ${index} marked as exhausted. ${availableGeminiIndices.length} keys remaining. Will restore in 60s.`);
+  
+  // TTL-based recovery
+  setTimeout(() => {
+    if (!availableGeminiIndices.includes(index)) {
+      availableGeminiIndices.push(index);
+      logger.info(`Gemini key at index ${index} restored after 60s timeout. ${availableGeminiIndices.length} keys available.`);
+    }
+  }, 60000);
 }
 
 
@@ -238,10 +268,10 @@ export async function processBatch(
   const maxRetries = config.AI_MAX_RETRIES;
   const startTime = Date.now();
 
-  if (provider === 'groq' && Date.now() < circuitBreakerOpenUntil) {
+  if ((provider === 'groq' || provider === 'gemini') && Date.now() < circuitBreakerOpenUntil) {
     const limitError = new Error('API Key exhausted or restricted (Circuit Breaker Open)');
     (limitError as any).status = 429;
-    (limitError as any).exhaustedProvider = 'groq';
+    (limitError as any).exhaustedProvider = provider;
     throw limitError;
   }
 
@@ -515,6 +545,7 @@ ${Papa.unparse(aiRows, { header: false })}`;
 
   while (attempt < maxRetries) {
     let usedGroqIndex = currentGroqIndex;
+    let usedGeminiIndex = currentGeminiIndex;
     try {
       logger.info({ attempt: attempt + 1, batchSize: rows.length, aiBatchSize: aiRows.length, provider }, 'Sending batch to AI');
 
@@ -524,7 +555,8 @@ ${Papa.unparse(aiRows, { header: false })}`;
         if (process.env.NODE_ENV === 'test') {
           aiRecords = await MockAIProvider.extract(headers, aiRows);
         } else if (provider === 'gemini') {
-          const ai = getGeminiClient();
+          const { client: ai, index: geminiKeyIndex } = getGeminiClient();
+          usedGeminiIndex = geminiKeyIndex;
           const model = ai.getGenerativeModel({ model: 'gemini-1.5-flash' });
           const apiStart = performance.now();
           const result = await model.generateContent({
@@ -727,6 +759,19 @@ ${Papa.unparse(aiRows, { header: false })}`;
           } else {
             // Circuit Breaker: All keys exhausted or tried
             logger.error(`All ${groqClients.length} Groq keys exhausted or rate-limited. Opening circuit breaker for 1s.`);
+            circuitBreakerOpenUntil = Date.now() + 1000;
+          }
+        } else if (provider === 'gemini') {
+          if (isAuthError && typeof usedGeminiIndex === 'number') {
+            markGeminiKeyExhausted(usedGeminiIndex);
+          }
+          if (keysTried < geminiClients.length && availableGeminiIndices.length > 0) {
+            logger.warn(`Gemini key hit limit (Status: ${status}). Retrying with next available key...`);
+            keysTried++;
+            attempt = 0;
+            continue;
+          } else {
+            logger.error(`All ${geminiClients.length} Gemini keys exhausted or rate-limited. Opening circuit breaker for 1s.`);
             circuitBreakerOpenUntil = Date.now() + 1000;
           }
         }
