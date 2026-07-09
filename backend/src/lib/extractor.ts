@@ -669,7 +669,6 @@ ${Papa.unparse(aiRows, { header: false })}`;
             contents: [{ role: 'user', parts: [{ text: prompt }] }],
             generationConfig: {
               temperature: attempt > 0 ? 0.0 : 0.1,
-              responseMimeType: 'application/json',
               maxOutputTokens: Math.min(16384, Math.max(4096, aiRows.length * 200)),
             }
           });
