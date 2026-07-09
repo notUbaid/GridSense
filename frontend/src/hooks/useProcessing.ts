@@ -326,7 +326,7 @@ export function useProcessing() {
       
       // Sync records periodically — only update when data changed
       if (flatRecordsDirty) {
-        cachedFlatRecords = [...allExtractedRecords];
+        cachedFlatRecords = [...allExtractedRecords].sort((a, b) => parseInt(a._row_id || '0') - parseInt(b._row_id || '0'));
         flatRecordsDirty = false;
       }
       setRecords(cachedFlatRecords);
@@ -406,7 +406,7 @@ export function useProcessing() {
             for (const record of response.skippedRecords) {
               localSkippedRaw.push({ ...record.original, _skipReason: record.reason });
             }
-            setSkippedRawRows([...localSkippedRaw]);
+            setSkippedRawRows([...localSkippedRaw].sort((a, b) => parseInt(a._row_id || '0') - parseInt(b._row_id || '0')));
           }
           if (response.skippedReasons) {
             for (const [reason, count] of Object.entries(response.skippedReasons)) {
@@ -524,7 +524,7 @@ export function useProcessing() {
     clearTimer();
     
     // Final sync of records
-    setRecords([...allExtractedRecords]);
+    setRecords([...allExtractedRecords].sort((a, b) => parseInt(a._row_id || '0') - parseInt(b._row_id || '0')));
     isProcessingRef.current = false;
     
     setCurrentActivity('Finalizing extraction...');
@@ -540,7 +540,7 @@ export function useProcessing() {
       localFailReasons['Pipeline Aborted (API Limits Exceeded)'] = (localFailReasons['Pipeline Aborted (API Limits Exceeded)'] || 0) + abandonedRowsCount;
     }
 
-    setFailedRawRows(localFailedRaw);
+    setFailedRawRows(localFailedRaw.sort((a, b) => parseInt(a._row_id || '0') - parseInt(b._row_id || '0')));
 
     setMetrics(prev => ({
       ...prev,
