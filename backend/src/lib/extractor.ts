@@ -1,4 +1,5 @@
 import Groq from 'groq-sdk';
+import Papa from 'papaparse';
 import { z } from 'zod';
 import { CrmRecord, CrmRecordSchema } from '../validation/schema';
 import logger from '../utils/logger';
@@ -62,7 +63,8 @@ const LlmRecordSchema = CrmRecordSchema.omit({
   email: true, 
   mobile_without_country_code: true, 
   created_at: true,
-  country_code: true 
+  country_code: true,
+  _row_id: true
 });
 
 const llmResponseSchema = z.object({
@@ -468,13 +470,13 @@ CRITICAL RULES:
 - NEVER map dates, IDs, zip codes, or amounts (e.g., Appointment Date, Lead ID, Salary) to mobile numbers. Date columns must go into crm_note if unmapped.
 - Identify mobile/phone numbers. Standardize as strings without formatting. Extract the country code separately. If there is an extension, put it in "crm_note" as "Extension: [ext]".
 - For unmapped columns with useful information, append them to "crm_note". Format them cleanly in Title Case like "Platform: Instagram" or "Campaign: Q3 Retargeting" instead of raw machine names. Separate multiple notes with " | ".
-- If a row is completely irrelevant nonsense, DO NOT hallucinate data. Return an empty object {} except for _row_id.
+- If a row is completely irrelevant nonsense, DO NOT hallucinate data. Return an empty object {}.
 - "crm_note" should ONLY contain meaningful remarks, follow-up notes, secondary emails, or extra phone numbers.
 - DO NOT dump irrelevant columns (e.g., "Campaign", "Ad Set", random IDs, or random garbage) into "crm_note". However, source platforms (e.g., "Hubspot", "Zoho", "Excel") or lead sources ARE highly relevant and MUST be included in notes.
 - If a value in the input is completely empty, ignore it entirely and do not include its column name in the notes.
 - Combine first name + last name into a single "name" field. If the name is explicitly missing or empty, you MAY infer it from the email address if the email clearly contains a person's name (e.g., john.doe@... -> John Doe).
 - Primary Email and Phone numbers have ALREADY been extracted. If you see any additional or secondary emails/phones in the input, you MUST append them to the "crm_note" field. Do NOT output 'email' or 'mobile_without_country_code' fields.
-- You should return exactly ${aiRows.length} objects in the "records" array — one per input row.
+- You should return exactly ${aiRows.length} objects in the "records" array — one per input row. Ensure the output array order exactly matches the input CSV row order.
 - Output ONLY valid JSON matching the schema. No markdown, no explanation.
 
 Output JSON Format (only include keys that have values, omit all nulls):
@@ -491,21 +493,21 @@ Output JSON Format (only include keys that have values, omit all nulls):
       "crm_note": "string",
       "data_source": "string",
       "possession_time": "string",
-      "description": "string",
-      "_row_id": "string (MUST preserve from input row)"
+      "description": "string"
     }
   ]
 }
 
 Example:
-Headers: ["First Name", "SurName", "Org", "_row_id"]
-Row: [{"First Name": "John", "SurName": "Doe", "Org": "Acme Corp", "_row_id": "2"}]
-Output: {"records": [{"name": "John Doe", "company": "Acme Corp", "_row_id": "2"}]}
+CSV Headers: ["First Name", "SurName", "Org"]
+CSV Rows:
+John,Doe,Acme Corp
+Output: {"records": [{"name": "John Doe", "company": "Acme Corp"}]}
 
 ---
 CSV Headers: ${JSON.stringify(headers)}
-Row Data:
-${JSON.stringify(aiRows)}`;
+CSV Rows:
+${Papa.unparse(aiRows, { header: false })}`;
   promptChars = prompt.length;
 
   while (attempt < maxRetries) {
