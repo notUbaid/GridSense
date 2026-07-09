@@ -43,7 +43,7 @@ const MAX_FILE_SIZE_BYTES = 50 * 1024 * 1024;
  * Batch size for AI-processed rows. Reduced to 35 to ensure
  * prompt_tokens + max_tokens stays below Groq's strict 6,000 TPM limit.
  */
-const AI_BATCH_SIZE = 35;
+const AI_BATCH_SIZE = 50;
 const DETERMINISTIC_BATCH_SIZE = 5000;
 
 export function useProcessing() {
@@ -338,8 +338,8 @@ export function useProcessing() {
     }, 1000);
 
     // Provider assignment: We only cycle through the primary providers configured in the frontend
-    const PROVIDER_CASCADE = ['openrouter', 'groq', 'cohere'] as const;
-    type ProviderType = typeof PROVIDER_CASCADE[number];
+    type ProviderType = 'groq' | 'cohere' | 'openrouter';
+    const PROVIDER_CASCADE: ProviderType[] = ['groq', 'cohere', 'openrouter'];
     const disabledProviders = new Set<ProviderType>();
     let currentProviderIndex = 0;
 
@@ -365,7 +365,7 @@ export function useProcessing() {
     
     const queue: QueueTask[] = chunks.map((batch, index) => ({ batch, index, attempts: 0 }));
     let activeWorkers = 0;
-    let maxConcurrency = 2; // Start low (Adaptive Concurrency)
+    let maxConcurrency = 4; // Start low (Adaptive Concurrency)
     const MAX_ALLOWED_CONCURRENCY = 8;
     let isPipelineAborted = false;
 

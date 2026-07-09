@@ -1078,13 +1078,15 @@ ${Papa.unparse(aiRows, { header: false })}`;
           }
         }
         
-        const limitError = new Error(isAuthError ? 'API Key exhausted or restricted' : 'Rate limit exceeded');
-        (limitError as any).status = 429; // Coerce to 429 to avoid ugly 403 console errors in browser
-        (limitError as any).exhaustedProvider = provider;
-        throw limitError;
+        if (isAuthError) {
+          const limitError = new Error('API Key exhausted or restricted');
+          (limitError as any).status = 429; // Coerce to 429 to avoid ugly 403 console errors in browser
+          (limitError as any).exhaustedProvider = provider;
+          throw limitError;
+        }
       }
 
-      const isTransientError = status >= 500;
+      const isTransientError = status >= 500 || isRateLimit;
 
       if (!isTransientError && !(error instanceof SyntaxError)) {
         logger.error({ err: error.message, status }, 'Non-retriable error');
