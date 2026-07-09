@@ -338,7 +338,7 @@ export function useProcessing() {
     }, 1000);
 
     // Provider assignment: We only cycle through the primary providers configured in the frontend
-    const PROVIDER_CASCADE = ['groq', 'gemini'] as const;
+    const PROVIDER_CASCADE = ['groq'] as const;
     type ProviderType = typeof PROVIDER_CASCADE[number];
     const disabledProviders = new Set<ProviderType>();
     let currentProviderIndex = 0;
