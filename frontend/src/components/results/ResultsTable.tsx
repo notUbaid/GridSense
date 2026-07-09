@@ -103,8 +103,37 @@ export function ResultsTable({ data, originalFilename }: ResultsTableProps) {
     );
   }
 
+  const getNormalizedExportData = () => {
+    const CRM_SCHEMA_KEYS = [
+      "created_at",
+      "name",
+      "email",
+      "country_code",
+      "mobile_without_country_code",
+      "company",
+      "city",
+      "state",
+      "country",
+      "lead_owner",
+      "crm_status",
+      "crm_note",
+      "data_source",
+      "possession_time",
+      "description"
+    ];
+
+    return data.map(record => {
+      const normalizedRecord: Record<string, any> = {};
+      CRM_SCHEMA_KEYS.forEach(key => {
+        normalizedRecord[key] = (record as any)[key] ?? "";
+      });
+      return normalizedRecord;
+    });
+  };
+
   const exportCsv = () => {
-    const csv = Papa.unparse(data);
+    const normalizedData = getNormalizedExportData();
+    const csv = Papa.unparse(normalizedData);
     const blob = new Blob(['\uFEFF' + csv], { type: 'text/csv;charset=utf-8;' });
     const url = URL.createObjectURL(blob);
     const link = document.createElement('a');
@@ -117,7 +146,8 @@ export function ResultsTable({ data, originalFilename }: ResultsTableProps) {
   };
 
   const exportJson = () => {
-    const jsonContent = JSON.stringify(data, null, 2);
+    const normalizedData = getNormalizedExportData();
+    const jsonContent = JSON.stringify(normalizedData, null, 2);
     const blob = new Blob([jsonContent], { type: 'application/json' });
     const url = URL.createObjectURL(blob);
     const link = document.createElement('a');
