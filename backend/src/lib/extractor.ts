@@ -1065,6 +1065,17 @@ ${Papa.unparse(aiRows, { header: false })}`;
             logger.error(`All OpenRouter keys exhausted.`);
             circuitBreakerOpenUntil = Date.now() + 1000;
           }
+        } else if (provider === 'cohere') {
+          if (isAuthError && typeof usedCohereIndex === 'number') markCohereKeyExhausted(usedCohereIndex);
+          if (keysTried < cohereClients.length && availableCohereIndices.length > 0) {
+            logger.warn(`Cohere key hit limit. Retrying...`);
+            keysTried++;
+            attempt = 0;
+            continue;
+          } else {
+            logger.error(`All Cohere keys exhausted.`);
+            circuitBreakerOpenUntil = Date.now() + 1000;
+          }
         }
         
         const limitError = new Error(isAuthError ? 'API Key exhausted or restricted' : 'Rate limit exceeded');
