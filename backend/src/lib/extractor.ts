@@ -31,7 +31,10 @@ let availableOpenRouterIndices: number[] = [];
 
 export function getGroqClient(): { client: Groq, index: number } {
   if (!config.GROQ_API_KEY) {
-    throw new Error('GROQ_API_KEY is missing.');
+    const limitError = new Error('GROQ API Key is missing.');
+    (limitError as any).status = 403;
+    (limitError as any).exhaustedProvider = 'groq';
+    throw limitError;
   }
   if (groqClients.length === 0) {
     const keys = config.GROQ_API_KEY.split(',').map(k => k.trim()).filter(k => k.length > 0);
@@ -67,7 +70,10 @@ export function markGroqKeyExhausted(index: number) {
 
 export function getGeminiClient(): { client: GoogleGenerativeAI, index: number } {
   if (!config.GEMINI_API_KEY) {
-    throw new Error('GEMINI_API_KEY is missing.');
+    const limitError = new Error('GEMINI API Key is missing.');
+    (limitError as any).status = 403;
+    (limitError as any).exhaustedProvider = 'gemini';
+    throw limitError;
   }
   if (geminiClients.length === 0) {
     const keys = config.GEMINI_API_KEY.split(',').map(k => k.trim()).filter(k => k.length > 0);
@@ -102,7 +108,12 @@ export function markGeminiKeyExhausted(index: number) {
 }
 
 export function getOpenAIClient(): { client: OpenAI, index: number } {
-  if (!config.OPENAI_API_KEY) throw new Error('OPENAI_API_KEY is missing.');
+  if (!config.OPENAI_API_KEY) {
+    const limitError = new Error('OPENAI API Key is missing.');
+    (limitError as any).status = 403;
+    (limitError as any).exhaustedProvider = 'openai';
+    throw limitError;
+  }
   if (openaiClients.length === 0) {
     const keys = config.OPENAI_API_KEY.split(',').map(k => k.trim()).filter(k => k.length > 0);
     if (keys.length === 0) throw new Error('No valid OPENAI API keys found.');
@@ -128,7 +139,12 @@ export function markOpenAIKeyExhausted(index: number) {
 }
 
 export function getAnthropicClient(): { client: Anthropic, index: number } {
-  if (!config.ANTHROPIC_API_KEY) throw new Error('ANTHROPIC_API_KEY is missing.');
+  if (!config.ANTHROPIC_API_KEY) {
+    const limitError = new Error('ANTHROPIC API Key is missing.');
+    (limitError as any).status = 403;
+    (limitError as any).exhaustedProvider = 'anthropic';
+    throw limitError;
+  }
   if (anthropicClients.length === 0) {
     const keys = config.ANTHROPIC_API_KEY.split(',').map(k => k.trim()).filter(k => k.length > 0);
     if (keys.length === 0) throw new Error('No valid ANTHROPIC API keys found.');
@@ -154,7 +170,12 @@ export function markAnthropicKeyExhausted(index: number) {
 }
 
 export function getOpenRouterClient(): { client: OpenAI, index: number } {
-  if (!config.OPENROUTER_API_KEY) throw new Error('OPENROUTER_API_KEY is missing.');
+  if (!config.OPENROUTER_API_KEY) {
+    const limitError = new Error('OPENROUTER API Key is missing.');
+    (limitError as any).status = 403;
+    (limitError as any).exhaustedProvider = 'openrouter';
+    throw limitError;
+  }
   if (openRouterClients.length === 0) {
     const keys = config.OPENROUTER_API_KEY.split(',').map(k => k.trim()).filter(k => k.length > 0);
     if (keys.length === 0) throw new Error('No valid OPENROUTER API keys found.');
