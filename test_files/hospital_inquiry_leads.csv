@@ -1,74 +1,91 @@
 Enquiry Date,Patient Name,Guardian,Department,Doctor,Insurance,Appointment,Medical Concern,Contact Number,Patient Email,Channel,Handled By,Current Status,Internal Notes
-Last Week,Vikram Gupta,,Pediatrics,Dr. Reddy,None,2026-03-24,,WhatsApp Only,,,,,
-2025-02-08 20:00:00,Sarah Sharma,,Pediatrics,Dr. Sharma,Star Health,2025-01-04 16:00:00,Need possession before Diwali,+91 9481937220,sarah.sharma@hotmail.com,Website,Amit Patel,Cold,Price sensitive
-2025-02-08 20:00:00,DUPLICATE: Sarah Sharma,,Pediatrics,Dr. Sharma,Star Health,2025-01-04 16:00:00,Need possession before Diwali,+91 9481937220,sarah.sharma@hotmail.com,Website,Amit Patel,Cold,Price sensitive
-Yesterday,Valentina Menon,Aditya Menon,Pediatrics,Dr. Sharma,,,,,,,,,
-2025-07-30 09:00:00,Sarah Menon,Diego Wang,Orthopedics,Dr. Reddy,ICICI Lombard,2025-04-21 19:00:00,Interested in enterprise software demo,+91 9092434709,sarah.menon@techsolutions.in,Housing,Jessica Wong,Call Back,Referred by existing client
-2026-01-06 07:00:00,Emily Rao,Sarah Hernandez,Pediatrics,Dr. Sharma,Star Health,2026-01-15 11:00:00,Need possession before Diwali,+91 9906541168,emily.rao@outlook.com,Trade Show,Sarah Khan,Meeting Scheduled,Asked to call after 7 PM
-Last Week,John Wang,Wei Sharma,Neurology,=SUM(A1:A5),ICICI Lombard,07/08/2025,Needs orthopedic consultation,+91 9847187626,"john.wang@yahoo.com, secondary@company.net",99acres,Jessica Wong,Loan Pending,Call back tomorrow
-2026-03-29 05:00:00,Vikram Kumar,Sarah Verma,Cardiology,Dr. Reddy,,2025-09-18 11:00:00,Searching for MBA admission,+91 9622002010,vikram.kumar@logistics.com,Google Search,Amit Patel,Lost,Duplicate enquiry from Facebook
-08/11/2025,Michael Patel," 🚀
-New Line",Pediatrics,Any,HDFC Ergo,Last Week,Prefers east-facing unit,99269 46601,"{""json"": ""fragment"", ""data"": ""michael.patel@yahoo.com""}",MagicBricks,"Priya Shah ""quoted, text""",Lost,Decision maker travelling
-2026-03-31 06:00:00,Aditya Martinez,,Pediatrics,Dr. Reddy,HDFC Ergo,2025-08-03 12:00:00,Requires virtual consultation,+91 9529978204,aditya.martinez@startup.io,Website,Sarah Khan,Interested,Budget increased
-Yesterday,Sneha Reddy,,Pediatrics,Dr. Sharma,HDFC Ergo,Today,Searching for MBA admission,Office Number,sneha.reddy@outlook.com,Walk-In,Priya Shah,Warm,Not picking up
-2026-04-10 18:00:00,Sneha Reddy,Ravi Wang,Orthopedics,Dr. Patel,Star Health,2025-07-01 16:00:00,Prefers east-facing unit,+91 9413665681,sneha.reddy@logistics.com,Cold Call,Jessica Wong,Invalid Lead,Wants to negotiate
-2026-04-10 18:00:00,Sneha Reddy,Ravi Wang,Orthopedics,Dr. Patel,Star Health,2025-07-01 16:00:00,Prefers east-facing unit,+91 9413665681,DUPLICATE: sneha.reddy@logistics.com,Cold Call,Jessica Wong,Invalid Lead,Wants to negotiate
-2025-11-20 21:00:00,Sarah Martinez,Neha Wang,Cardiology,Any,ICICI Lombard,2025-08-27 07:00:00,Requested product catalogue,+91 9381583289,sarah.martinez@techsolutions.in,Google Search,Jessica Wong,Meeting Scheduled,Wants to negotiate
-2026-04-02 11:00:00,Vikram Martinez,Arjun Li,Pediatrics,Dr. Patel,None,2025-09-04 00:00:00,Requires virtual consultation,+91 9343638889,vikram.martinez@techsolutions.in,Organic,Amit Patel,No Response,Not picking up
-2026.04.19,Wei Smith,,Neurology,Dr. Patel,None,Today,Needs orthopedic consultation,+91 9586929438,WEI.SMITH@ICLOUD.COM,Trade Show,Rahul Mehta,Site Visit Completed,Already spoke with spouse
-2025-05-16 03:00:00,Emily Reddy,John Gupta,Pediatrics,Dr. Reddy,None,2025-04-16 10:00:00,Requested product catalogue,+91 9225007114,emily.reddy@outlook.com,Housing,Sarah Khan,Lost,Requested WhatsApp instead of calls
-invalid date,Aditya Menon,Neha Martinez,Neurology,Dr. Reddy,Star Health,"{""json"": ""fragment"", ""data"": ""2025.01.03""}",Need possession before Diwali,Office Number,aditya.menon@logistics.com (old),Partner,Amit Patel,Interested,Follow up next Friday
-2026-03-31 02:00:00,Michael Rao,Vikram Smith,Pediatrics,Dr. Sharma,ICICI Lombard,2026-04-25 21:00:00,Needs orthopedic consultation,+91 9066958747,michael.rao@yahoo.com,Google Search,Ali Hassan,Site Visit Completed,Needs GST invoice
-2025-08-05 16:00:00,Diego Doe,,Pediatrics,Dr. Patel,,2026-04-23 01:00:00,Requires virtual consultation,+91 9309741524,diego.doe@yahoo.com,Walk-In,Ali Hassan,Interested,Requested WhatsApp instead of calls
-DUPLICATE: 2025-08-05 16:00:00,Diego Doe,,Pediatrics,Dr. Patel,,2026-04-23 01:00:00,Requires virtual consultation,+91 9309741524,diego.doe@yahoo.com,Walk-In,Ali Hassan,Interested,Requested WhatsApp instead of calls
-2025-06-08 03:00:00,Neha Reddy,,Orthopedics,Dr. Sharma,,2026-03-07 14:00:00,Need possession before Diwali,+91 9528715699,neha.reddy@techsolutions.in,Trade Show,Amit Patel,Wrong Number,Price sensitive
-Yesterday,Neha Li,,Neurology,Dr. Patel,,2026.05.14,,,neha.li@yahoo.com [donotemail],,,,
-2026-01-23 06:00:00,Rahul Li,Kavita Li,Cardiology,Dr. Patel,Star Health,2025-04-04 01:00:00,Prefers east-facing unit,+91 9074125376,rahul.li@company.net,Partner,Amit Patel,Wrong Number,Follow up next Friday
-2025-10-31 10:00:00,Ravi Wang,,Neurology,Any,None,2025-11-02 18:00:00,Interested in enterprise software demo,+91 9143744534,ravi.wang@company.net,99acres,Sarah Khan,Loan Pending,DND
-2025-10-23 19:00:00,Chen Doe,Valentina Martinez,Cardiology,Dr. Sharma,Star Health,2026-03-15 04:00:00,Needs orthopedic consultation,+91 9994744445,chen.doe@enterprise.co,Email Campaign,Amit Patel,Sale Closed,Old customer returning
-2025-10-23 19:00:00,Chen Doe,DUPLICATE: Valentina Martinez,Cardiology,Dr. Sharma,Star Health,2026-03-15 04:00:00,Needs orthopedic consultation,+91 9994744445,chen.doe@enterprise.co,Email Campaign,Amit Patel,Sale Closed,Old customer returning
-2025.10.11,Vikram Hernandez,John Patel,Cardiology,Dr. Sharma,None,Last Week,Prefers east-facing unit,WhatsApp Only,vikram.hernandez@company.net,Trade Show,Sarah Khan,Busy,Wants to negotiate
-2026-03-03 12:00:00,Aditya Rao,Ravi Sharma,Cardiology,Dr. Sharma,,2026-03-03 15:00:00,Searching for MBA admission,+91 9944731273,aditya.rao@hotmail.com,Email Campaign,Jessica Wong,No Response,Price sensitive
-2025-03-16 00:00:00,Wei Smith,Emily Menon,Cardiology,Any,ICICI Lombard,2026-03-09 09:00:00,Interested in enterprise software demo,+91 9147406433,wei.smith@hotmail.com,Website,Amit Patel,Hot,Asked to call after 7 PM
-2025-10-08 04:00:00,Emily Ali,Rahul Wang,Cardiology,Dr. Reddy,None,2026-04-02 12:00:00,Needs orthopedic consultation,+91 9009404605,emily.ali@icloud.com,Walk-In,Amit Patel,Loan Pending,Preferred morning calls
-"44927 🚀
-New Line",Ravi Rao,,Neurology,Dr. Patel,HDFC Ergo,2025-12-11,Need possession before Diwali,+91-95905-06957 ext 319,   ravi.rao@techsolutions.in   ,Walk-In,Rahul Mehta,Cancelled,Budget increased
-2025-01-24 09:00:00,Vikram Verma,,Orthopedics,Dr. Patel,,2025-09-12 02:00:00,Searching for MBA admission,+91 9980614159,vikram.verma@hotmail.com,Referral,Rahul Mehta,Loan Pending,Already spoke with spouse
-2025-12-28 07:00:00,Anjali Singh,Ravi Smith,Cardiology,Dr. Reddy,None,2025-04-01 13:00:00,Need possession before Diwali,+91 9038791126,anjali.singh@startup.io,JustDial,Priya Shah,Wrong Number,Price sensitive
-2026-01-10 00:00:00,Sneha Verma,,Pediatrics,Dr. Reddy,HDFC Ergo,2026-05-04 22:00:00,Requested product catalogue,+91 9310938255,sneha.verma@enterprise.co,LinkedIn,Sarah Khan,Loan Pending,Asked to call after 7 PM
-2025-04-28 04:00:00,Rahul Sharma,,Orthopedics,Dr. Patel,,2025-06-19 08:00:00,Need possession before Diwali,+91 9212247351,rahul.sharma@hotmail.com,Cold Call,Rahul Mehta,Booked,Preferred morning calls
-2025-04-29 21:00:00,Neha Hernandez,Rahul Patel,Orthopedics,Dr. Reddy,ICICI Lombard,2026-04-03 10:00:00,Looking for premium apartment under 1.2 Cr,+91 9536812404,neha.hernandez@logistics.com,99acres,Karan Singh,No Response,Interested in 3BHK
-22/08/2025,John Hassan,,Pediatrics,Dr. Sharma,None,17/12/2025,Requested product catalogue,93306 60308,JOHN.HASSAN@ICLOUD.COM,Employee Referral,Ali Hassan,Busy,Old customer returning
-2025-02-14 07:00:00,Chen Smith,Anjali Wang,Orthopedics,Any,None,2025-12-20 05:00:00,Needs orthopedic consultation,+91 9412579308,chen.smith@enterprise.co,Trade Show,Karan Singh,Booked,Needs GST invoice
-2025-08-14 14:00:00,Sarah Verma,John Doe,Cardiology,Any,Star Health,2025-02-03 03:00:00,Looking for premium apartment under 1.2 Cr,+91 9620901606,sarah.verma@yahoo.com,Google Search,Sarah Khan,Call Back,Left voicemail
-Today,Sneha Sharma,,Orthopedics,Any,Star Health,02/25/2025,Needs orthopedic consultation,Secondary Contact,sneha.sharma@icloud.com,Walk-In,Priya Shah,Cold,Sent brochure
-2025-04-03 22:00:00,Ravi Singh,,Pediatrics,Any,ICICI Lombard,2025-10-22 23:00:00,Interested in enterprise software demo,+91 9469710726,ravi.singh@outlook.com,Google Search,Priya Shah,Hot,Requested WhatsApp instead of calls
-2025-12-24 22:00:00,Michael Hassan,Aditya Doe,Cardiology,Dr. Reddy,Star Health,2025-04-10 21:00:00,Needs orthopedic consultation,+91 9573740859,michael.hassan@icloud.com,MagicBricks,Karan Singh,Sale Closed,Not picking up
-2026-03-23 21:00:00,Kavita Rao,,Orthopedics,Dr. Reddy,ICICI Lombard,2025-08-18 01:00:00,Searching for MBA admission,+91 9721049007,kavita.rao@outlook.com,Partner,Rahul Mehta,Converted,Requested WhatsApp instead of calls
-2025-04-01 00:00:00,Sneha Verma,Priya Kumar,Pediatrics,Dr. Sharma,Star Health,2025-12-28 03:00:00,Needs orthopedic consultation,+91 9489319828,sneha.verma@gmail.com,LinkedIn,Sarah Khan,Booked,Sent brochure
-2025-02-25 00:00:00,Aditya Singh,,Orthopedics,Dr. Sharma,None,2025-03-05 08:00:00,Needs orthopedic consultation,+91 9956142422,aditya.singh@outlook.com,Broker,Karan Singh,Call Back,Working night shift
-2025-07-09 04:00:00,Kavita Smith,,Pediatrics,Dr. Sharma,,2026-01-22 22:00:00,Requested product catalogue,+91 9660898767,kavita.smith@logistics.com,Broker,Jessica Wong,Follow-up Required,Needs GST invoice
-2025-09-16 16:00:00,Aditya Menon,Sneha Doe,Orthopedics,Dr. Reddy,None,2026-03-22 08:00:00,Requested product catalogue,+91 9135300077,aditya.menon@startup.io,Housing,Amit Patel,Converted,Already spoke with spouse
-2025-02-23 02:00:00,Sarah Hassan,Diego Gupta,Neurology,Dr. Sharma,,2025-07-27 16:00:00,Looking for premium apartment under 1.2 Cr,+91 9195836054,sarah.hassan@startup.io,JustDial,Sarah Khan,Follow-up Required,Call back tomorrow
-2026-02-06 05:00:00,Priya Kumar,,Pediatrics,Dr. Patel,None,2025-12-09 08:00:00,Requires virtual consultation,+91 9497080635,priya.kumar@company.net,Referral,Sarah Khan,Follow-up Required,Follow up next Friday
-2025-11-19 08:00:00,Chen Reddy,,Pediatrics,Dr. Reddy,HDFC Ergo,2025-11-24 16:00:00,Needs orthopedic consultation,+91 9870824537,chen.reddy@company.net,Website,Ali Hassan,Converted,Referred by existing client
-2025-10-14 10:00:00,Valentina Martinez,Priya Verma,Pediatrics,Dr. Reddy,HDFC Ergo,2025-06-11 14:00:00,Looking for premium apartment under 1.2 Cr,+91 9159304547,valentina.martinez@outlook.com,Partner,Jessica Wong,Converted,Sent brochure
-Last Week,Ravi Ali,,Orthopedics,Dr. Patel,,,,,,,,,
-01/23/2026,Valentina Martinez,John Doe,Cardiology,Dr. Reddy,Star Health,,,Secondary Contact,valentina.martinez@enterprise.co (old),,,,
-2026-02-28 08:00:00,Vikram Doe,,Cardiology,Dr. Reddy,HDFC Ergo,2025-05-03 20:00:00,Interested in enterprise software demo,+91 9334353266,vikram.doe@gmail.com,Trade Show,Ali Hassan,Converted,Already spoke with spouse
-,Ravi Reddy,,Neurology,Dr. Patel,,2026.05.14,,,,,,,
-Last Week,Priya Martinez,,Pediatrics,Dr. Patel,None,Last Week,Needs orthopedic consultation,+91 9650981178, priya.martinez@yahoo.com ,99acres,Rahul Mehta,Warm,Referred by existing client
-2025-01-15 16:00:00,Wei Rao,Aditya Doe,Cardiology,Dr. Patel,HDFC Ergo,2025-12-26 12:00:00,Prefers east-facing unit,+91 9280527107,wei.rao@enterprise.co,MagicBricks,Rahul Mehta,Booked,Duplicate enquiry from Facebook
-2025-10-07 11:00:00,Valentina Smith,Chen Menon,Neurology,Dr. Reddy,None,2025-11-19 08:00:00,Requested product catalogue,+91 9329736985,valentina.smith@techsolutions.in,JustDial,Amit Patel,Cold,Working night shift
-2025-07-14 03:00:00,Aditya Sharma,,Cardiology,Dr. Reddy,Star Health,2025-01-15 10:00:00,Requires virtual consultation,+91 9099933087,aditya.sharma@logistics.com,Cold Call,Sarah Khan,Hot,Referred by existing client
-2025-10-29 02:00:00,Arjun Menon,Michael Verma,Neurology,Any,Star Health,2025-11-07 09:00:00,Requested product catalogue,+91 9929979446,arjun.menon@logistics.com,Referral,Rahul Mehta,Lost,DND
-2025-04-27 03:00:00,Wei Smith,Chen Menon,Neurology,Dr. Sharma,None,2025-09-10 05:00:00,Prefers east-facing unit,+91 9274468745,wei.smith@yahoo.com,Walk-In,Jessica Wong,Follow-up Required,Asked to call after 7 PM
-Last Week,Arjun Li,John Verma,Cardiology,Any,,04/03/2026,Needs orthopedic consultation,Office Number, arjun.li@outlook.com ,Cold Call,Sarah Khan,Lost,Budget increased
-Today,Sneha Verma,,Neurology,Dr. Sharma,None,Last Week,Requires virtual consultation,+91-99875-05458 ext 906,SNEHA.VERMA@COMPANY.NET,Employee Referral,Ali Hassan,Call Back,Needs GST invoice
-2025-05-30 01:00:00,Ravi Reddy,,Orthopedics,Dr. Reddy,None,2025-05-04 02:00:00,Requires virtual consultation,+91 9077604482,ravi.reddy@techsolutions.in,Walk-In,Ali Hassan,Wrong Number,Wants to negotiate
----,Michael Wang,,Orthopedics,Dr. Reddy,None,14/03/2025,Need possession before Diwali,Office Number,   michael.wang@startup.io   ,Cold Call,Karan Singh,Lost,Referred by existing client
-2025-08-21 19:00:00,Aditya Reddy,,Pediatrics,Dr. Sharma,Star Health,2025-02-27 01:00:00,Need possession before Diwali,+91 9403666015,aditya.reddy@techsolutions.in,Broker,Jessica Wong,Cold,Call back tomorrow
-2026-03-03 11:00:00,Anjali Martinez,Michael Ali,Pediatrics,Dr. Sharma,HDFC Ergo,2026-02-27 22:00:00,Interested in enterprise software demo,+91 9043929599,anjali.martinez@yahoo.com,MagicBricks,Amit Patel,Warm,Left voicemail
-2025-11-22 09:00:00,Valentina Singh,,Cardiology,Dr. Reddy,Star Health,2026-01-07 14:00:00,Looking for premium apartment under 1.2 Cr,+91 9440044649,valentina.singh@icloud.com,LinkedIn,Karan Singh,Follow-up Required,Not picking up
-Last Week,John Singh,Arjun Menon,Cardiology,Any,Star Health,01/04/2025,Requires virtual consultation,+1 (265) 555-4372,JOHN.SINGH@OUTLOOK.COM,Trade Show,Rahul Mehta,Converted,Duplicate enquiry from Facebook
-,Emily Ali,Valentina Kumar,Pediatrics,Dr. Sharma,Star Health,Today,,,emily.aliattechsolutions.in,,,,
+2026-01-01 20:00:00,Vikram Singh,Kavita Singh,Orthopedics,Any,HDFC Ergo,2026-05-11 04:00:00,Requested product catalogue,+91 9893672295,vikram.singh@yahoo.com,Leads_on_demand,Karan Singh,Sale Closed,Decision maker travelling
+Today,Kavita Reddy,Diego Gupta,Orthopedics,Dr. Patel,HDFC Ergo,2026.05.14,Looking for premium apartment under 1.2 Cr,Secondary Contact,kavita.reddy@gmail.com,Walk-In,Priya Shah,No Response,DND
+03/08/2026,Sarah Gupta,,Orthopedics,Any,ICICI Lombard,2025.01.20,Requires virtual consultation,+91 9111299055,sarah.gupta@company.net,Broker,Jessica Wong,Loan Pending,Duplicate enquiry from Facebook
+07/28/2025,Priya Li,Aditya Li,Pediatrics,Dr. Patel,,Yesterday,Prefers east-facing unit,+91 9587455526, priya.li@hotmail.com ,Organic,Jessica Wong,Loan Pending,Sent brochure
+2026-01-08 16:00:00,Priya Smith,,Pediatrics,Dr. Reddy,,2025-09-07 01:00:00,Interested in enterprise software demo,+91 9359658921,priya.smith@company.net,Facebook Lead Ads,Karan Singh,Cancelled,Follow up next Friday
+Last Week,Sarah Iyer,,Neurology,Any,ICICI Lombard,2025.08.10,Requires virtual consultation,WhatsApp Only,sarah.iyer@enterprise.co,leads_on_demand,Sarah Khan,No Response,Referred by existing client
+Last Week,Priya Singh,,Pediatrics,Dr. Reddy,HDFC Ergo,"{""json"": ""fragment"", ""data"": ""Last Week""}",Requested product catalogue,Office Number,priya.singh@logistics.com [donotemail],Facebook Lead Ads,Karan Singh,No Response,Call back tomorrow
+2026-01-10 23:00:00,Anjali Gupta,,Neurology,Any,None,2025-03-13 16:00:00,Looking for premium apartment under 1.2 Cr,+91 9103726570,anjali.gupta@company.net,Leads On Demand,Jessica Wong,Site Visit Completed,DND
+31/01/2026,Kavita Gupta,,Pediatrics,Dr. Sharma,ICICI Lombard,15-Feb-2025,Interested in enterprise software demo,WhatsApp Only, kavita.gupta@logistics.com ,Housing,Rahul Mehta,Budget Issue,Sent brochure
+2025-09-07 05:00:00,Diego Rao,Emily Sharma,Orthopedics,Dr. Patel,Star Health,2025-08-19 01:00:00,Requested product catalogue,+91 9178616276,diego.rao@outlook.com,Partner,Ali Hassan,Warm,Asked to call after 7 PM
+2025-12-19 11:00:00,Valentina Wang,,Cardiology,Dr. Patel,ICICI Lombard,2026-04-23 03:00:00,Needs orthopedic consultation,+91 9533780933,valentina.wang@company.net,Cold Call,Karan Singh,Interested,Wants to negotiate
+2025-07-14 07:00:00,Emily Singh,John Verma,Pediatrics,Dr. Reddy,None,2025-07-29 01:00:00,Prefers east-facing unit,+91 9916035697,emily.singh@outlook.com,Cold Call,Priya Shah,Cold,Working night shift
+2025-04-13 08:00:00,Sneha Verma,,Orthopedics,Dr. Patel,None,2025-02-03 15:00:00,Looking for premium apartment under 1.2 Cr,+91 9752637265,sneha.verma@icloud.com,Organic,Jessica Wong,Invalid Lead,Follow up next Friday
+2026-04-26 14:00:00,Neha Verma,Valentina Singh,Orthopedics,Dr. Reddy,None,2026-03-20 00:00:00,Requested product catalogue,+91 9634129443,neha.verma@logistics.com,Leads_on_demand,Ali Hassan,Invalid Lead,Wants to negotiate
+Today,Sneha Hassan,,Cardiology,Dr. Patel,HDFC Ergo,01/09/2025,Requires virtual consultation,9500974897 / 9326533975,sneha.hassan@enterprise.co (old),Facebook Lead Ads,Priya Shah,Lost,Already spoke with spouse
+09-May-2026,Sneha Hassan,Ravi Smith,Pediatrics,Dr. Sharma,ICICI Lombard,2026.03.10,Looking for premium apartment under 1.2 Cr,WhatsApp Only, sneha.hassan@enterprise.co ,LinkedIn,Rahul Mehta,Converted,Price sensitive
+2025-11-17 18:00:00,Wei Verma,,Cardiology,Dr. Reddy,Star Health,2026-04-04 09:00:00,Looking for premium apartment under 1.2 Cr,+91 9638114086,wei.verma@icloud.com,Referral,Sarah Khan,Sale Closed,Interested in 3BHK
+2025-05-22 12:00:00,John Kumar,,Pediatrics,Dr. Patel,,2025-05-23 20:00:00,Prefers east-facing unit,+91 9105331990,john.kumar@yahoo.com,Google Search,Rahul Mehta,No Response,Duplicate enquiry from Facebook
+2025-10-09 21:00:00,Arjun Patel,Neha Martinez,Neurology,Dr. Sharma,ICICI Lombard,2025-07-12 02:00:00,Requested product catalogue,+91 9690338049,arjun.patel@startup.io,Cold Call,Ali Hassan,Invalid Lead,Left voicemail
+20/02/2025,Ravi Kumar,,Neurology,Dr. Patel,HDFC Ergo,,,,"ravi.kumar@techsolutions.in, secondary@gmail.com",,,,
+2025-10-19 04:00:00,Wei Hernandez,,Cardiology,Dr. Reddy,ICICI Lombard,2026-05-03 01:00:00,Requires virtual consultation,+91 9491412759,wei.hernandez@yahoo.com,LinkedIn,Rahul Mehta,Booked,Follow up next Friday
+26-Dec-2025,Sarah Hernandez,,Cardiology,Any,,26/04/2026,Requested product catalogue,92042 01345,SARAH.HERNANDEZ@ICLOUD.COM,Trade Show,Priya Shah,Converted,follow up next Friday
+18-Jun-2025,"Chen Gupta ""quoted, text""",Diego Hassan,Orthopedics,Dr. Sharma,ICICI Lombard,2025.06.14,Need possession before Diwali,=SUM(A1:A5),chen.gupta@techsolutions.in,99acres,Sarah Khan,Invalid Lead,Working night shift
+2026-01-17 03:00:00,Valentina Singh,,Orthopedics,Dr. Sharma,None,2025-01-17 11:00:00,Interested in enterprise software demo,+91 9493471647,valentina.singh@company.net,WhatsApp,Sarah Khan,Wrong Number,Preferred morning calls
+2025-12-24 11:00:00,Arjun Doe,Wei Hassan,Cardiology,Dr. Reddy,None,2025-05-27 21:00:00,Interested in enterprise software demo,+91 9751559318,arjun.doe@startup.io,Facebook Lead Ads,Karan Singh,Interested,Duplicate enquiry from Facebook
+2025-10-19 19:00:00,Michael Sharma,Anjali Kumar,Cardiology,Dr. Patel,HDFC Ergo,2025-09-02 14:00:00,Looking for premium apartment under 1.2 Cr,+91 9166279259,michael.sharma@logistics.com,WhatsApp,Karan Singh,Budget Issue,Follow up next Friday
+2025-01-13 06:00:00,John Wang,Wei Ali,Orthopedics,Dr. Reddy,,2025-04-22 14:00:00,Interested in enterprise software demo,+91 9075539528,john.wang@outlook.com,Leads_on_demand,Amit Patel,Converted,Call back tomorrow
+2025-05-31 03:00:00,Kavita Martinez,,Orthopedics,Any,Star Health,2026-04-19 11:00:00,Interested in enterprise software demo,+91 9813345351,kavita.martinez@techsolutions.in,JustDial,Rahul Mehta,Lost,Left voicemail
+,Wei Reddy,,Cardiology,Dr. Patel,None,,,,,,,,
+2026.05.14,Neha Ali,Chen Patel,Orthopedics,Dr. Patel,Star Health,,,+91-90426-95138 ext 824,,,,,
+2025-07-05 19:00:00,Michael Reddy,,Neurology,Any,,2025-10-12 06:00:00,Requires virtual consultation,+91 9023445302,michael.reddy@startup.io,Leads On Demand,Rahul Mehta,Call Back,Asked to call after 7 PM
+2026-01-27 06:00:00,Neha Iyer,Sarah Reddy,Pediatrics,Dr. Patel,None,2025-01-28 08:00:00,Need possession before Diwali,+91 9071640864,neha.iyer@hotmail.com,Google Ads,Karan Singh,Site Visit Completed,Price sensitive
+2025.08.05,Diego Wang,Michael Wang,Cardiology,Dr. Sharma,ICICI Lombard,06/02/2025,Searching for MBA admission,Secondary Contact,diego.wang@techsolutions.in,JustDial,Karan Singh,Duplicate,Not picking up
+2025.08.05,Diego Wang,Michael Wang,Cardiology,DUPLICATE: Dr. Sharma,ICICI Lombard,06/02/2025,Searching for MBA admission,Secondary Contact,diego.wang@techsolutions.in,JustDial,Karan Singh,Duplicate,Not picking up
+2025.06.04,Neha Singh,Wei Wang,Neurology,Dr. Reddy,Star Health,2025-09-03,Searching for MBA admission,=SUM(A1:A5),   neha.singh@outlook.com   ,leads on demand,Jessica Wong,Call Back,Referred by existing client
+2025-09-28 17:00:00,Rahul Reddy,,Pediatrics,Any,Star Health,2025-05-13 05:00:00,Searching for MBA admission,+91 9274682390,rahul.reddy@yahoo.com,Google Ads,Karan Singh,Loan Pending,Left voicemail
+2025-03-10 01:00:00,Aditya Patel,,Cardiology,Dr. Sharma,,2025-09-10 08:00:00,Needs orthopedic consultation,+91 9136446435,aditya.patel@gmail.com,JustDial,Karan Singh,Interested,Asked to call after 7 PM
+2025-10-28 00:00:00,Sneha Hernandez,Kavita Iyer,Cardiology,Dr. Reddy,,2026-03-01 22:00:00,Need possession before Diwali,+91 9932622880,sneha.hernandez@techsolutions.in,  leads_on_demand ,Amit Patel,Cancelled,Preferred morning calls
+2025-10-21 06:00:00,Emily Kumar,,Pediatrics,Any,,2026-02-22 02:00:00,Interested in enterprise software demo,+91 9139434820,emily.kumar@outlook.com,Referral,Jessica Wong,Meeting Scheduled,Follow up next Friday
+01/31/2026,Michael Hassan,Arjun Li,Cardiology,Dr. Sharma,ICICI Lombard,2026-01-20,Interested in enterprise software demo,Office Number,MICHAEL.HASSAN@YAHOO.COM,JustDial,Jessica Wong,Follow-up Required,Duplicate enquiry from Facebook
+2025.12.26,Ravi Doe,Michael Smith,Pediatrics,Dr. Sharma,Star Health,21-Apr-2026,Requested product catalogue,99472 19925,ravi.doe@company.net,Google Ads,Sarah Khan,Wrong Number,DND
+Last Week,Vikram Kumar,,Neurology,Any,Star Health,24/10/2025,Looking for premium apartment under 1.2 Cr,"+1 (238) 555-4262 🚀
+New Line",vikram.kumar@company.net [donotemail],Instagram,Karan Singh,No Response,Asked to call after 7 PM
+2025-03-10 20:00:00,Rahul Patel,,Pediatrics,Dr. Reddy,Star Health,2026-04-16 14:00:00,Searching for MBA admission,+91 9253854838,rahul.patel@hotmail.com,Employee Referral,Ali Hassan,Interested,Not picking up
+09-Jan-2025,Arjun Singh,,Neurology,Dr. Sharma,,Last Week,Looking for premium apartment under 1.2 Cr,WhatsApp Only,ARJUN.SINGH@GMAIL.COM,Cold Call,Sarah Khan,Budget Issue,Asked to call after 7 PM
+2026-04-05 14:00:00,Sneha Li,,Orthopedics,Dr. Reddy,None,2026-04-29 13:00:00,Prefers east-facing unit,+91 9243801832,sneha.li@yahoo.com,Trade Show,Karan Singh,Hot,Call back tomorrow
+2025-11-03 06:00:00,Rahul Gupta,Aditya Smith,Neurology,Dr. Patel,None,2025-07-25 16:00:00,Requested product catalogue,+91 9198925483,rahul.gupta@techsolutions.in,leads_on_demand,Sarah Khan,Budget Issue,Sent brochure
+2025-09-25 20:00:00,Diego Menon,Neha Smith,Neurology,Dr. Reddy,HDFC Ergo,2025-08-27 23:00:00,Requires virtual consultation,+91 9972404770,diego.menon@enterprise.co,Housing,Sarah Khan,Site Visit Completed,Preferred morning calls
+Today,Rahul Verma,Aditya Menon,Orthopedics,Dr. Sharma,HDFC Ergo,2025.02.24,,,,,,,
+Yesterday,Emily Reddy,,Cardiology,Dr. Reddy,,Today,Requested product catalogue,94924 81411, emily.reddy@logistics.com ,LinkedIn,Jessica Wong,Sale Closed,Working night shift
+2025-08-31 14:00:00,Diego Li,,Pediatrics,Dr. Patel,None,2025-09-30 00:00:00,Prefers east-facing unit,+91 9854242713,diego.li@logistics.com,Leads On Demand,Sarah Khan,No Response,Interested in 3BHK
+2025-08-11 22:00:00,Emily Menon,Priya Hassan,Neurology,Dr. Patel,,2025-01-11 14:00:00,Need possession before Diwali,+91 9316940749,emily.menon@gmail.com,LinkedIn,Jessica Wong,Budget Issue,Duplicate enquiry from Facebook
+2025-12-21 02:00:00,Diego Hassan,,Pediatrics,Any,,2025-04-01 19:00:00,Requires virtual consultation,+91 9349333909,diego.hassan@startup.io,LinkedIn,Rahul Mehta,Wrong Number,Old customer returning
+2025-02-12 00:00:00,Ravi Singh,,Orthopedics,Dr. Reddy,None,2026-04-27 10:00:00,Looking for premium apartment under 1.2 Cr,+91 9863269927,ravi.singh@logistics.com,Google Search,Jessica Wong,Invalid Lead,Budget increased
+2025-07-10,Chen Wang,,Orthopedics,Dr. Sharma,,2025-11-05,Prefers east-facing unit,+91-91356-79849 ext 420, chen.wang@enterprise.co ,Leads_on_demand,Karan Singh,Hot,Sent brochure
+2026-02-22 14:00:00,Emily Hassan,,Orthopedics,Dr. Sharma,HDFC Ergo,2025-08-27 01:00:00,Looking for premium apartment under 1.2 Cr,+91 9150307282,emily.hassan@gmail.com,Google Ads,Amit Patel,Loan Pending,Not picking up
+2026-03-11 23:00:00,John Smith,,Cardiology,Dr. Patel,HDFC Ergo,2025-07-13 09:00:00,Interested in enterprise software demo,+91 9408963648,john.smith@startup.io,Employee Referral,Sarah Khan,Budget Issue,Already spoke with spouse
+2025-04-10 06:00:00,Vikram Martinez,,Orthopedics,Dr. Reddy,None,2025-08-14 01:00:00,Requires virtual consultation,+91 9423357764,vikram.martinez@outlook.com,leads on demand,Jessica Wong,Cancelled,Budget increased
+Today,Diego Reddy,,Neurology,Dr. Sharma,None,2025-02-10,Need possession before Diwali,WhatsApp Only,diego.reddy@icloud.com,leads_on_demand,Karan Singh,No Response,Asked to call after 7 PM
+12/16/2025,Ravi Ali,Michael Martinez,Pediatrics,Any,ICICI Lombard,Last Week,Needs orthopedic consultation,98681 80881, ravi.ali@techsolutions.in ,Walk-In,Amit Patel,Cancelled,Asked to call after 7 PM
+2025-07-28 18:00:00,Aditya Li,,Neurology,Any,None,2026-04-21 04:00:00,Interested in enterprise software demo,+91 9817748993,aditya.li@hotmail.com,JustDial,Jessica Wong,Hot,Working night shift
+11/01/2025,Vikram Reddy,,Cardiology,Dr. Sharma,,Yesterday,Looking for premium apartment under 1.2 Cr,Secondary Contact, vikram.reddy@hotmail.com ,99acres,Ali Hassan,Site Visit Completed,Working night shift
+2025-10-29 14:00:00,John Singh,,Orthopedics,Dr. Patel,None,2025-04-03 05:00:00,Prefers east-facing unit,+91 9421080788,john.singh@gmail.com,LinkedIn,Rahul Mehta,Sale Closed,Working night shift
+06/03/2025,Diego Smith,,Orthopedics,Any,Star Health,Today,Prefers east-facing unit,+1 (616) 555-7336, diego.smith@techsolutions.in ,  leads_on_demand ,Jessica Wong,Budget Issue,Asked to call after 7 PM
+2026-01-11 21:00:00,Valentina Hassan,,Cardiology,Dr. Sharma,ICICI Lombard,2025-07-25 18:00:00,Searching for MBA admission,+91 9884409853,valentina.hassan@yahoo.com,leads on demand,Jessica Wong,Lost,Preferred morning calls
+2025-03-04 18:00:00,Vikram Martinez,Emily Ali,Neurology,Dr. Sharma,None,2025-03-25 12:00:00,Needs orthopedic consultation,+91 9279878391,vikram.martinez@outlook.com,Partner,Sarah Khan,Interested,Referred by existing client
+2026-01-17 15:00:00,Priya Sharma,Michael Menon,Neurology,Dr. Sharma,ICICI Lombard,2026-05-07 07:00:00,Requires virtual consultation,+91 9274167964,priya.sharma@icloud.com,MagicBricks,Rahul Mehta,Sale Closed,Requested WhatsApp instead of calls
+2025-09-25 00:00:00,Ravi Hassan,,Orthopedics,Dr. Sharma,,2025-08-22 17:00:00,Requires virtual consultation,+91 9749409831,ravi.hassan@enterprise.co,leads on demand,Rahul Mehta,Converted,Call back tomorrow
+2025-07-03 14:00:00,Neha Verma,,Cardiology,Dr. Reddy,ICICI Lombard,2025-10-01 10:00:00,Searching for MBA admission,+91 9730260206,neha.verma@gmail.com,  leads_on_demand ,Ali Hassan,Cold,Duplicate enquiry from Facebook
+2025-01-23 07:00:00,Kavita Patel,Chen Gupta,Pediatrics,Dr. Sharma,HDFC Ergo,2025-06-11 10:00:00,Prefers east-facing unit,+91 9105116132,kavita.patel@gmail.com,Broker,Karan Singh,Warm,Interested in 3BHK
+2025-04-03 15:00:00,Wei Kumar,Sneha Reddy,Orthopedics,Dr. Sharma,HDFC Ergo,2025-06-17 04:00:00,Looking for premium apartment under 1.2 Cr,+91 9566928909,wei.kumar@enterprise.co,Facebook Lead Ads,Karan Singh,Duplicate,Interested in 3BHK
+2025-10-13 22:00:00,Vikram Smith,Rahul Hassan,Orthopedics,Dr. Reddy,ICICI Lombard,2025-02-01 22:00:00,Needs orthopedic consultation,+91 9656036057,vikram.smith@hotmail.com,Broker,Ali Hassan,Sale Closed,Decision maker travelling
+30/08/2025,John Rao,,Orthopedics,Any,ICICI Lombard,Last Week,Need possession before Diwali,+1 (561) 555-8654, john.rao@yahoo.com ,leads_on_demand,Priya Shah,Call Back,Price sensitive
+24/09/2025,Arjun Iyer,,Cardiology,Dr. Sharma,Star Health,2026.05.14,Prefers east-facing unit,97246 55383,ARJUN.IYER@STARTUP.IO,  leads_on_demand ,Rahul Mehta,Duplicate,Needs GST invoice
+2026-01-04 16:00:00,Rahul Gupta,,Neurology,Dr. Sharma,Star Health,2025-04-09 02:00:00,Looking for premium apartment under 1.2 Cr,+91 9220557981,rahul.gupta@outlook.com,WhatsApp,Karan Singh,Budget Issue,Follow up next Friday
+10-Mar-2025,Diego Menon,Priya Rao,Cardiology,Dr. Sharma,Star Health,2025.05.10,Needs orthopedic consultation,+91-97698-71622 ext 395, diego.menon@gmail.com ,Cold Call,Sarah Khan,Call Back,Preferred morning calls
+DUPLICATE: 10-Mar-2025,Diego Menon,Priya Rao,Cardiology,Dr. Sharma,Star Health,2025.05.10,Needs orthopedic consultation,+91-97698-71622 ext 395, diego.menon@gmail.com ,Cold Call,Sarah Khan,Call Back,Preferred morning calls
+Yesterday,Rahul Ali,Valentina Verma,Pediatrics,Dr. Reddy,HDFC Ergo,44927,Requested product catalogue,0091-9280273816,rahul.ali@hotmail.com (old),JustDial,Ali Hassan,Lost,Working night shift
+2025-09-29,Kavita Gupta,"Sarah Iyer 🚀
+New Line",Orthopedics,Dr. Reddy,,---,Need possession before Diwali,0091-9128170734,"kavita.gupta@yahoo.com, secondary@techsolutions.in",Referral,Sarah Khan,Hot,Follow up next Friday
+2025-09-29,Kavita Gupta,"DUPLICATE: Sarah Iyer 🚀
+New Line",Orthopedics,Dr. Reddy,,---,Need possession before Diwali,0091-9128170734,"kavita.gupta@yahoo.com, secondary@techsolutions.in",Referral,Sarah Khan,Hot,Follow up next Friday
+2025-02-11 16:00:00,Diego Ali,Emily Kumar,Neurology,Any,None,2025-09-04 09:00:00,Needs orthopedic consultation,+91 9984469354,diego.ali@techsolutions.in,leads on demand,Sarah Khan,Interested,Call back tomorrow
+Today,Wei Singh,Neha Li,Cardiology,Dr. Reddy,HDFC Ergo,Last Week,Searching for MBA admission,Office Number,WEI.SINGH@ICLOUD.COM,leads_on_demand,Ali Hassan,Site Visit Completed,Call back tomorrow
+2026-05-15 13:00:00,Vikram Patel,Valentina Smith,Pediatrics,Dr. Sharma,None,2026-02-21 23:00:00,Need possession before Diwali,+91 9167676508,vikram.patel@logistics.com,Facebook Lead Ads,Priya Shah,Call Back,Left voicemail
+2025.05.26,Chen Patel,,Orthopedics,"Any ""quoted, text""",ICICI Lombard,09/12/2025,Requires virtual consultation,9319093522 / 9601479372,chen.patel@startup.io [donotemail],Email Campaign,Karan Singh,Follow-up Required,Needs GST invoice
+2025-03-18 16:00:00,Valentina Gupta,,Cardiology,Any,HDFC Ergo,2026-03-05 10:00:00,Need possession before Diwali,+91 9442149610,valentina.gupta@gmail.com,Leads_on_demand,Ali Hassan,Follow-up Required,Referred by existing client
+Last Week,Emily Wang,Rahul Menon,Neurology,Dr. Reddy,Star Health,Last Week,,,,,,,
+2025-04-21 11:00:00,Diego Iyer,Chen Wang,Cardiology,Dr. Reddy,HDFC Ergo,2025-06-01 19:00:00,Requires virtual consultation,+91 9863895954,diego.iyer@startup.io,Google Search,Priya Shah,Busy,Decision maker travelling
+2026-03-29,Vikram Doe,,Pediatrics,Dr. Sharma,ICICI Lombard,08-Jun-2025,Need possession before Diwali,+91-92507-46592 ext 403,VIKRAM.DOE@HOTMAIL.COM,Walk-In,Priya Shah,Follow-up Required,Call back tomorrow

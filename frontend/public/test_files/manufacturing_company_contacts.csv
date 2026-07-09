@@ -1,93 +1,76 @@
 Customer Organization,Contact Person,Designation,Email,Direct Line,Requirement,Budget (Annual),Source,Owner,Disposition,Remarks
-Stellar Services,Anjali Li,Plant Head,,0091-9458889297,,< 10L,,,,
-Zenith Enterprises,Emily Ali,Plant Head,emily.ali@company.net,+91 9627211281,Requested product catalogue,50L - 1Cr,Cold Call,Priya Shah,Invalid Lead,Sent brochure
-FinServe Group,Diego Hernandez,Plant Head,DIEGO.HERNANDEZ@YAHOO.COM,Office Number,Needs orthopedic consultation,50L - 1Cr,LinkedIn,Sarah Khan,Hot,Left voicemail
-BlueOcean,Sneha Sharma,Plant Head,sneha.sharma@yahoo.com,+91 9136730247,Needs orthopedic consultation,50L - 1Cr,Google Ads,Karan Singh,Converted,Preferred morning calls
-Sunrise Foods,Emily Hassan,Plant Head,emily.hassan@outlook.com,+1 (949) 555-7776,Requires virtual consultation,10-50L,MagicBricks,Priya Shah,Call Back,call back tomorrow
-City Hospital,Anjali Menon,Purchase Manager,anjali.menon@yahoo.com,+91 9432481961,Needs orthopedic consultation,10-50L,Cold Call,Amit Patel,Wrong Number,Budget increased
-Agile Agency,Valentina Li,Plant Head,valentina.li@company.net,+91 9582506131,Searching for MBA admission,< 10L,Facebook Lead Ads,Sarah Khan,Booked,DND
-Global Logistics,Kavita Martinez,Procurement Head,kavita.martinez@outlook.com,+91 9288076468,Requested product catalogue,50L - 1Cr,MagicBricks,Sarah Khan,Sale Closed,DND
-Agile Agency,Wei Iyer,Procurement Head,wei.iyer@company.net,Secondary Contact,Needs orthopedic consultation,10-50L,Instagram,Karan Singh,Booked,Working night shift
-Quantum Systems,Sarah Li,Plant Head,sarah.li@hotmail.com,+91 9030859557,Requested product catalogue,50L - 1Cr,Facebook Lead Ads,Ali Hassan,Interested,Wants to negotiate
-Stellar Services,Priya Singh,Purchase Manager,priya.singh@hotmail.com,WhatsApp Only,Searching for MBA admission,50L - 1Cr,Trade Show,Priya Shah,Interested,Asked to call after 7 PM
-Stellar Services,Priya Verma,Purchase Manager, priya.verma@outlook.com ,0091-9385431556,Interested in enterprise software demo,< 10L,LinkedIn,Ali Hassan,Invalid Lead,Already spoke with spouse
-Global Logistics,Kavita Singh,Procurement Head,kavita.singh@logistics.com,+91 9139876781,Need possession before Diwali,10-50L,99acres,Priya Shah,Hot,Needs GST invoice
-NextGen IT,Vikram Kumar,Procurement Head,vikram.kumar@techsolutions.in,+91 9227488763,Requested product catalogue,10-50L,Trade Show,Rahul Mehta,Cold,Already spoke with spouse
-Quantum Systems,Michael Patel,Procurement Head,,,,50L - 1Cr,,,,
-Urban Builders,Emily Wang,Purchase Manager,emily.wang@enterprise.co,+91 9745177940,Interested in enterprise software demo,10-50L,Google Ads,Rahul Mehta,Meeting Scheduled,Referred by existing client
-Urban Builders,Emily Wang,Purchase Manager,emily.wang@enterprise.co,+91 9745177940,Interested in enterprise software demo,DUPLICATE: 10-50L,Google Ads,Rahul Mehta,Meeting Scheduled,Referred by existing client
-NextGen IT,Ravi Singh,Procurement Head,ravi.singh@techsolutions.in,+91 9433378745,Looking for premium apartment under 1.2 Cr,50L - 1Cr,Partner,Jessica Wong,Meeting Scheduled,Needs GST invoice
-NextGen IT,DUPLICATE: Ravi Singh,Procurement Head,ravi.singh@techsolutions.in,+91 9433378745,Looking for premium apartment under 1.2 Cr,50L - 1Cr,Partner,Jessica Wong,Meeting Scheduled,Needs GST invoice
-Stellar Services,Michael Hassan,Procurement Head,,WhatsApp Only,,< 10L,,,,
-Quantum Systems,Ravi Martinez,Procurement Head,ravi.martinezatoutlook.com,,,10-50L,,,,
-City Hospital,Michael Kumar,Plant Head,michael.kumar@icloud.com,+91 9672070525,Requested product catalogue,< 10L,99acres,Amit Patel,Invalid Lead,Call back tomorrow
-Zenith Enterprises,Diego Kumar,Purchase Manager,diego.kumar@startup.io,+91 9820458875,Requires virtual consultation,10-50L,Cold Call,Jessica Wong,Busy,Left voicemail
-Zenith Enterprises,Diego Kumar,DUPLICATE: Purchase Manager,diego.kumar@startup.io,+91 9820458875,Requires virtual consultation,10-50L,Cold Call,Jessica Wong,Busy,Left voicemail
-DUPLICATE: Zenith Enterprises,Diego Kumar,DUPLICATE: Purchase Manager,diego.kumar@startup.io,+91 9820458875,Requires virtual consultation,10-50L,Cold Call,Jessica Wong,Busy,Left voicemail
-NextGen IT,Kavita Menon,Procurement Head,kavita.menon@startup.io,+91 9003710397,Interested in enterprise software demo,10-50L,JustDial,Priya Shah,Converted,Already spoke with spouse
-Urban Builders,Emily Martinez,Procurement Head,emily.martinez@enterprise.co,+91 9199038477,Looking for premium apartment under 1.2 Cr,10-50L,Broker,Jessica Wong,Cold,Left voicemail
-Quantum Systems,Rahul Li,Procurement Head,rahul.li@techsolutions.in,+91 9394082207,Need possession before Diwali,10-50L,MagicBricks,Jessica Wong,Invalid Lead,Decision maker travelling
-Zenith Enterprises,Chen Reddy,Purchase Manager,chen.reddy@hotmail.com,+91 9988881672,Prefers east-facing unit,< 10L,Google Search,Ali Hassan,Busy,Budget increased
-Metro Properties,Arjun Wang,Plant Head,,Office Number,,50L - 1Cr,,,,
-City Hospital,Michael Smith,Procurement Head,michael.smith@startup.io,+91 9805048965,Searching for MBA admission,< 10L,Google Ads,Karan Singh,Cancelled,Left voicemail
-BlueOcean,Wei Sharma,Plant Head,wei.sharma@enterprise.co,+91 9481729183,Requested product catalogue,< 10L,Walk-In,Ali Hassan,Call Back,Budget increased
-BlueOcean,Aditya Sharma,Procurement Head,"aditya.sharmaatoutlook.com 🚀
-New Line","{""json"": ""fragment"", ""data"": ""+919920184931
-9352588133""}",Searching for MBA admission,10-50L,Housing,Priya Shah,Follow-up Required,=SUM(A1:A5)
-Stellar Services,Neha Iyer,Plant Head,neha.iyer@logistics.com,+91 9919871920,Requires virtual consultation,50L - 1Cr,Google Search,Amit Patel,Duplicate,Sent brochure
-Global Logistics,Ravi Singh,Plant Head,ravi.singh@enterprise.co,+91 9567432634,Requires virtual consultation,10-50L,Google Ads,Ali Hassan,Loan Pending,Follow up next Friday
-FinServe Group,John Menon,Purchase Manager,john.menon@startup.io,+91 9519908510,Needs orthopedic consultation,10-50L,JustDial,Amit Patel,Cold,Decision maker travelling
-Quantum Systems,Anjali Doe,Procurement Head,anjali.doe@techsolutions.in,+91 9227938434,Interested in enterprise software demo,10-50L,Instagram,Amit Patel,Booked,Duplicate enquiry from Facebook
-Stellar Services,Neha Wang,Purchase Manager,neha.wang@outlook.com,+91 9483802774,Interested in enterprise software demo,< 10L,Google Ads,Ali Hassan,Loan Pending,Old customer returning
-Sunrise Foods,Wei Reddy,Procurement Head,,Secondary Contact,,< 10L,,,,
-FinServe Group,Sneha Li,Plant Head,sneha.li@hotmail.com,+91 9022925760,Prefers east-facing unit,< 10L,MagicBricks,Rahul Mehta,Invalid Lead,Requested WhatsApp instead of calls
-Stellar Services,Diego Kumar,Purchase Manager,diego.kumar@yahoo.com,+91 9634614008,Requested product catalogue,10-50L,LinkedIn,Amit Patel,Invalid Lead,Left voicemail
-Sunrise Foods,Valentina Singh,Purchase Manager,valentina.singh@techsolutions.in,+91 9978638103,Looking for premium apartment under 1.2 Cr,10-50L,Broker,Amit Patel,Hot,Not picking up
-Stellar Services,Diego Patel,Purchase Manager,diego.patel@enterprise.co,+91 9017175164,Requested product catalogue,< 10L,LinkedIn,Sarah Khan,Call Back,Requested WhatsApp instead of calls
-Urban Builders,Valentina Wang,Purchase Manager,valentina.wang@enterprise.co,+91 9743931564,Prefers east-facing unit,< 10L,Broker,Jessica Wong,Wrong Number,Price sensitive
-TechNova,Arjun Li,Plant Head,arjun.li@enterprise.co,+91 9537397586,Interested in enterprise software demo,< 10L,Partner,Priya Shah,Wrong Number,Decision maker travelling
-Apex Solutions,Emily Verma,Purchase Manager, emily.verma@outlook.com ,+91 9688965600,Requires virtual consultation,10-50L,Cold Call,Rahul Mehta,Busy,Referred by existing client
-Quantum Systems,John Singh,Plant Head," ""quoted, text""","0091-9535787422 🚀
-New Line",Requested product catalogue,50L - 1Cr,JustDial,Rahul Mehta,Warm,Referred by existing client
-TechNova,Kavita Kumar,Plant Head,kavita.kumar@hotmail.com,+91 9647337832,Need possession before Diwali,10-50L,JustDial,Sarah Khan,Call Back,Working night shift
-BlueOcean,John Kumar,Procurement Head,john.kumar@company.net,+91 9453309617,Requested product catalogue,50L - 1Cr,Google Ads,Rahul Mehta,Invalid Lead,Call back tomorrow
-Acme Corp,Kavita Smith,Plant Head, kavita.smith@startup.io ,+91 9337474880,Looking for premium apartment under 1.2 Cr,< 10L,Email Campaign,Jessica Wong,Call Back,Duplicate enquiry from Facebook
-Apex Solutions,Aditya Verma,Purchase Manager,ADITYA.VERMA@OUTLOOK.COM,99082 09351,Needs orthopedic consultation,< 10L,Facebook Lead Ads,Priya Shah,Duplicate,DND
-NextGen IT,Arjun Kumar,Procurement Head,arjun.kumar@logistics.com,+91 9574569116,Interested in enterprise software demo,10-50L,Cold Call,Ali Hassan,Hot,Price sensitive
-City Hospital,Chen Hassan,Plant Head,chen.hassan@logistics.com,+91 9007738246,Looking for premium apartment under 1.2 Cr,50L - 1Cr,99acres,Priya Shah,Warm,Duplicate enquiry from Facebook
-Quantum Systems,Sneha Hassan,Plant Head,sneha.hassan@enterprise.co,+91 9609362093,Looking for premium apartment under 1.2 Cr,10-50L,Cold Call,Rahul Mehta,Booked,Call back tomorrow
-Metro Properties,Aditya Menon,Plant Head,aditya.menon@techsolutions.in,+91 9644109875,Interested in enterprise software demo,< 10L,LinkedIn,Ali Hassan,Lost,Asked to call after 7 PM
-Global Logistics,Vikram Patel,Plant Head,vikram.patel@hotmail.com,+91 9561123933,Needs orthopedic consultation,< 10L,Partner,Sarah Khan,Sale Closed,Sent brochure
-Quantum Systems,Sarah Menon,Purchase Manager,sarah.menon@yahoo.com,+91 9109594784,Looking for premium apartment under 1.2 Cr,< 10L,Housing,Amit Patel,Meeting Scheduled,Already spoke with spouse
-BlueOcean,Arjun Sharma,Purchase Manager,arjun.sharma@enterprise.co,+91 9600915373,Need possession before Diwali,50L - 1Cr,Cold Call,Amit Patel,Budget Issue,Decision maker travelling
-BlueOcean,Ravi Kumar,Purchase Manager,ravi.kumar@hotmail.com,+91 9723304341,Interested in enterprise software demo,< 10L,Facebook Lead Ads,Jessica Wong,Wrong Number,Left voicemail
-Metro Properties,Kavita Singh,Purchase Manager,kavita.singh@logistics.com,+91 9152009614,Prefers east-facing unit,10-50L,Instagram,Ali Hassan,Duplicate,Not picking up
-Urban Builders,Chen Menon,Procurement Head,chen.menon@yahoo.com (old),,,50L - 1Cr,,,,
-Urban Builders,Chen Menon,Procurement Head,chen.menon@yahoo.com (old),,,DUPLICATE: 50L - 1Cr,,,,
-Agile Agency,Priya Verma,Procurement Head,"priya.verma@enterprise.co, secondary@hotmail.com",,,10-50L,,,,
-Global Logistics,Neha Patel,Purchase Manager,neha.patel@yahoo.com,+91 9419654052,Requested product catalogue,< 10L,Instagram,Priya Shah,Cold,Decision maker travelling
-City Hospital,Neha Wang,Plant Head,neha.wang@outlook.com,+91 9480106059,Needs orthopedic consultation,50L - 1Cr,Organic,Karan Singh,Wrong Number,Needs GST invoice
-NextGen IT,Ravi Ali,Procurement Head,ravi.ali@company.net,+91 9867356699,Prefers east-facing unit,< 10L,LinkedIn,Karan Singh,Duplicate,Preferred morning calls
-Urban Builders,Chen Hassan,Plant Head,chen.hassanatoutlook.com,,,< 10L,,,,
-NextGen IT,John Iyer,Procurement Head,john.iyer@logistics.com [donotemail],"+919982865480
-9299939518",=SUM(A1:A5),< 10L,Walk-In,Karan Singh,"{""json"": ""fragment"", ""data"": ""Cold""}",Old customer returning
-NextGen IT,Emily Rao,Plant Head,EMILY.RAO@YAHOO.COM,+91 9758489193,Need possession before Diwali,50L - 1Cr,LinkedIn,Ali Hassan,No Response,DND
-BlueOcean,Arjun Sharma,Purchase Manager,,WhatsApp Only,,50L - 1Cr,,,,
-Metro Properties,Michael Ali,Procurement Head,,,,10-50L,,,,
-Metro Properties,Emily Martinez,Plant Head,emily.martinez@techsolutions.in,+91 9210930569,Prefers east-facing unit,10-50L,Walk-In,Karan Singh,Cold,Duplicate enquiry from Facebook
-Agile Agency,Sneha Singh,Plant Head, sneha.singh@icloud.com ,+91 9979234340,Searching for MBA admission,10-50L,Google Search,Rahul Mehta,Invalid Lead,Old customer returning
-Quantum Systems,Chen Sharma,Purchase Manager,chen.sharma@gmail.com,+91 9915530477,Interested in enterprise software demo,50L - 1Cr,JustDial,Amit Patel,Warm,Price sensitive
-Acme Corp,Arjun Reddy,Procurement Head,arjun.reddy@outlook.com,+91 9990621108,Looking for premium apartment under 1.2 Cr,10-50L,99acres,Ali Hassan,Duplicate,DND
-Metro Properties,Vikram Verma,Plant Head, vikram.verma@logistics.com ,WhatsApp Only,Requires virtual consultation,10-50L,Email Campaign,Karan Singh,Loan Pending,Not picking up
-NextGen IT,Sneha Ali,Procurement Head,"sneha.aliatstartup.io 🚀
-New Line",Secondary Contact,Needs orthopedic consultation,< 10L,Trade Show,Priya Shah,Call Back,Asked to call after 7 PM
-BlueOcean,Sneha Hassan,Procurement Head,sneha.hassan@techsolutions.in,+91 9484726437,Need possession before Diwali,10-50L,99acres,Sarah Khan,Call Back,Requested WhatsApp instead of calls
-Pioneer Manufacturing,Valentina Menon,Purchase Manager,valentina.menon@outlook.com,+91 9511156841,Need possession before Diwali,50L - 1Cr,Email Campaign,Rahul Mehta,Duplicate,Working night shift
-NextGen IT,Emily Menon,Procurement Head,emily.menon@hotmail.com,+91 9936157759,Looking for premium apartment under 1.2 Cr,10-50L,99acres,Amit Patel,Wrong Number,Follow up next Friday
-NextGen IT,Anjali Iyer,Procurement Head,anjali.iyer@enterprise.co,+91 9830533583,Interested in enterprise software demo,50L - 1Cr,Cold Call,Rahul Mehta,Busy,Price sensitive
-City Hospital,John Wang,Plant Head,john.wang@startup.io,+91 9844398892,Needs orthopedic consultation,10-50L,Website,Karan Singh,Lost,Sent brochure
-Acme Corp,Ravi Verma,Procurement Head,ravi.verma@gmail.com,+91 9937706606,Searching for MBA admission,50L - 1Cr,Email Campaign,Priya Shah,Invalid Lead,Referred by existing client
-Zenith Enterprises,Valentina Li,Procurement Head,valentina.li@company.net,+91 9958833611,Searching for MBA admission,10-50L,Cold Call,Sarah Khan,Meeting Scheduled,Duplicate enquiry from Facebook
-Apex Solutions,Chen Li,Plant Head, chen.li@icloud.com ,+91 9849151615,Looking for premium apartment under 1.2 Cr,10-50L,Housing,Rahul Mehta,Cold,Call back tomorrow
-Stellar Services,Wei Ali,Procurement Head,wei.ali@yahoo.com,+91 9888438456,Prefers east-facing unit,50L - 1Cr,Instagram,Priya Shah,Sale Closed,Requested WhatsApp instead of calls
-Sunrise Foods,Diego Menon,Purchase Manager,diego.menon@company.net,+91 9068261084,Requested product catalogue,< 10L,Facebook Lead Ads,Rahul Mehta,Hot,Follow up next Friday
+FinServe Group,Wei Hassan,Procurement Head,wei.hassan@logistics.com,+91 9835206591,Interested in enterprise software demo,50L - 1Cr,99acres,Rahul Mehta,Cancelled,Needs GST invoice
+Apex Solutions,John Verma,Purchase Manager,john.verma@gmail.com,+91 9743877216,Need possession before Diwali,< 10L,  leads_on_demand ,Sarah Khan,No Response,Decision maker travelling
+Stellar Services,Sarah Singh,Procurement Head,sarah.singh@logistics.com,+91 9966167931,Looking for premium apartment under 1.2 Cr,10-50L,Leads_on_demand,Karan Singh,Converted,DND
+TechNova,Wei Martinez,Procurement Head,wei.martinez@company.net,+91 9612252050,Prefers east-facing unit,50L - 1Cr,Instagram,Priya Shah,Converted,Not picking up
+Zenith Enterprises,Diego Iyer,Plant Head,diego.iyer@techsolutions.in,+91 9048514932,Searching for MBA admission,50L - 1Cr,Leads On Demand,Sarah Khan,Sale Closed,Working night shift
+Zenith Enterprises,Sarah Verma,Plant Head,sarah.verma@enterprise.co,+91 9657195320,Prefers east-facing unit,< 10L,99acres,Karan Singh,Call Back,Duplicate enquiry from Facebook
+Apex Solutions,Chen Sharma,Procurement Head,chen.sharma@startup.io,94485 26632,Requested product catalogue,< 10L,Partner,Karan Singh,Booked,Requested WhatsApp instead of calls
+Sunrise Foods,Priya Martinez,Plant Head,priya.martinez@hotmail.com,Office Number,Need possession before Diwali,50L - 1Cr,MagicBricks,Karan Singh,Converted,Requested WhatsApp instead of calls
+City Hospital,Aditya Li,Purchase Manager,aditya.li@company.net,+91 9415112034,Searching for MBA admission,50L - 1Cr,Facebook Lead Ads,Amit Patel,Sale Closed,Preferred morning calls
+BlueOcean,Chen Gupta,Procurement Head,CHEN.GUPTA@YAHOO.COM,Secondary Contact,Requires virtual consultation,10-50L,Trade Show,Sarah Khan,Follow-up Required,Referred by existing client
+NextGen IT,Vikram Patel,Plant Head,vikram.patel@icloud.com,+91 9507614547,Requires virtual consultation,50L - 1Cr,LinkedIn,Karan Singh,Warm,Asked to call after 7 PM
+Acme Corp,Wei Doe,Plant Head,,,,< 10L,,,,
+TechNova,Priya Patel,Purchase Manager,priya.patel@hotmail.com,+91 9463756922,Prefers east-facing unit,50L - 1Cr,Leads_on_demand,Amit Patel,Interested,Duplicate enquiry from Facebook
+Urban Builders,Chen Li,Plant Head,chen.li@gmail.com,+91 9725406406,Looking for premium apartment under 1.2 Cr,10-50L,Leads On Demand,Ali Hassan,Converted,Working night shift
+Agile Agency,Wei Hassan,Purchase Manager,wei.hassan@hotmail.com,+91 9083649007,Prefers east-facing unit,< 10L,LinkedIn,Ali Hassan,Follow-up Required,Not picking up
+Urban Builders,Ravi Gupta,Procurement Head, ravi.gupta@outlook.com ,Office Number,Requested product catalogue,< 10L,MagicBricks,Karan Singh,Wrong Number,Follow up next Friday
+Sunrise Foods,Ravi Menon,Purchase Manager,"ravi.menon@enterprise.co, secondary@techsolutions.in",,,50L - 1Cr,,,,
+Metro Properties,Arjun Li,Purchase Manager,arjun.li@startup.io,94178 67105,Prefers east-facing unit,10-50L,  leads_on_demand ,Jessica Wong,Budget Issue,Needs GST invoice
+Stellar Services,Vikram Reddy,Plant Head,vikram.reddy@logistics.com,+91 9163523295,Interested in enterprise software demo,< 10L,Partner,Amit Patel,Warm,Follow up next Friday
+Global Logistics,Arjun Patel,Plant Head,arjun.patel@yahoo.com,+91 9089755576,Need possession before Diwali,10-50L,  leads_on_demand ,Ali Hassan,Sale Closed,Requested WhatsApp instead of calls
+Global Logistics,Arjun Patel,Plant Head,arjun.patel@yahoo.com,+91 9089755576,Need possession before Diwali,10-50L,  leads_on_demand ,Ali Hassan,DUPLICATE: Sale Closed,Requested WhatsApp instead of calls
+Urban Builders,Valentina Singh,Procurement Head,valentina.singh@startup.io,+91 9595847945,Needs orthopedic consultation,10-50L,WhatsApp,Sarah Khan,Busy,Interested in 3BHK
+FinServe Group,Priya Hassan,Purchase Manager, priya.hassan@icloud.com ,Office Number,Looking for premium apartment under 1.2 Cr,50L - 1Cr,Referral,Rahul Mehta,Loan Pending,Not picking up
+Quantum Systems,Sneha Verma,Purchase Manager,sneha.verma@startup.io,+91 9463370037,Prefers east-facing unit,< 10L,Google Search,Jessica Wong,Booked,Wants to negotiate
+FinServe Group,Emily Kumar,Purchase Manager,emily.kumaratgmail.com,0091-9016442183,Interested in enterprise software demo,10-50L,Instagram,Sarah Khan,"{""json"": ""fragment"", ""data"": ""Busy""}",Left voicemail
+Global Logistics,Kavita Patel,Purchase Manager,kavita.patel@hotmail.com,+91 9102755372,Need possession before Diwali,< 10L,WhatsApp,Amit Patel,Sale Closed,Call back tomorrow
+Sunrise Foods,Aditya Wang,Purchase Manager,aditya.wang@logistics.com,+91 9841226602,Need possession before Diwali,10-50L,JustDial,Karan Singh,Duplicate,Asked to call after 7 PM
+Sunrise Foods,Emily Ali,Plant Head,EMILY.ALI@ICLOUD.COM,WhatsApp Only,Need possession before Diwali,50L - 1Cr,Google Search,Karan Singh,Budget Issue,Old customer returning
+Pioneer Manufacturing,Diego Smith,Procurement Head,DIEGO.SMITH@LOGISTICS.COM,0091-9101062900,Requires virtual consultation,< 10L,Employee Referral,Amit Patel,Cancelled,Already spoke with spouse
+Apex Solutions,Valentina Verma,Plant Head,valentina.verma@icloud.com,+91 9328161336,Searching for MBA admission,< 10L,Employee Referral,Priya Shah,Cancelled,Left voicemail
+Agile Agency,Sarah Menon,Purchase Manager,sarah.menon@startup.io,+1 (804) 555-3709,Interested in enterprise software demo,50L - 1Cr,leads_on_demand,Jessica Wong,Cancelled,DND
+Sunrise Foods,Michael Wang,Procurement Head,michael.wang@startup.io,+91 9467422820,Interested in enterprise software demo,50L - 1Cr,WhatsApp,Amit Patel,Loan Pending,Sent brochure
+BlueOcean,Priya Li,Purchase Manager,priya.li@company.net,+91 9654773099,Interested in enterprise software demo,< 10L,Facebook Lead Ads,Priya Shah,Converted,Call back tomorrow
+Stellar Services,Rahul Wang,Purchase Manager,rahul.wang@outlook.com,+91-90413-92960 ext 380,Searching for MBA admission,50L - 1Cr,LinkedIn,Amit Patel,Busy,Preferred morning calls
+Acme Corp,Arjun Ali,Purchase Manager,arjun.ali@company.net,94314 74560,Need possession before Diwali,< 10L,Email Campaign,Jessica Wong,Sale Closed,Interested in 3BHK
+Stellar Services,Aditya Singh,Purchase Manager,aditya.singh@hotmail.com,+91 9396957295,Looking for premium apartment under 1.2 Cr,< 10L,Housing,Amit Patel,Loan Pending,Needs GST invoice
+Sunrise Foods,Kavita Verma,Plant Head,kavita.verma@enterprise.co,+91 9938177653,Prefers east-facing unit,< 10L,99acres,Karan Singh,Cancelled,Needs GST invoice
+TechNova,Arjun Iyer,Procurement Head,,,,50L - 1Cr,,,,
+City Hospital,Valentina Kumar,Purchase Manager,valentina.kumar@gmail.com,98961 47745,Looking for premium apartment under 1.2 Cr,< 10L,Website,Ali Hassan,Call Back,Requested WhatsApp instead of calls
+Sunrise Foods,John Li,Procurement Head,john.li@enterprise.co,+91 9155427239,Need possession before Diwali,50L - 1Cr,Employee Referral,Jessica Wong,Booked,Wants to negotiate
+Pioneer Manufacturing,Sneha Kumar,Plant Head,sneha.kumar@logistics.com,Secondary Contact,Need possession before Diwali,50L - 1Cr,Referral,Sarah Khan,Lost,Duplicate enquiry from Facebook
+Sunrise Foods,Anjali Patel,Procurement Head,anjali.patel@icloud.com,+91 9945204702,Looking for premium apartment under 1.2 Cr,50L - 1Cr,Google Ads,Amit Patel,Busy,Needs GST invoice
+Zenith Enterprises,Ravi Menon,Procurement Head,ravi.menon@techsolutions.in,Office Number,Requires virtual consultation,< 10L,leads on demand,Sarah Khan,Loan Pending,Follow up next Friday
+BlueOcean,Sneha Rao,Plant Head,sneha.rao@techsolutions.in,+91 9347356894,Interested in enterprise software demo,50L - 1Cr,Housing,Ali Hassan,Follow-up Required,Asked to call after 7 PM
+BlueOcean,Ravi Gupta,Plant Head,ravi.gupta@icloud.com,0091-9611615731,Requested product catalogue,< 10L,Trade Show,Sarah Khan,Converted,Wants to negotiate
+City Hospital,Vikram Wang,Procurement Head,vikram.wang@techsolutions.in,+91 9719063287,Looking for premium apartment under 1.2 Cr,10-50L,Website,Sarah Khan,Booked,Referred by existing client
+TechNova,Valentina Sharma,Procurement Head,valentina.sharma@yahoo.com,+91 9536876333,Interested in enterprise software demo,50L - 1Cr,Partner,Jessica Wong,Warm,Duplicate enquiry from Facebook
+NextGen IT,Chen Wang,Purchase Manager,chen.wang@outlook.com,0091-9603049748,Searching for MBA admission,50L - 1Cr,Employee Referral,Jessica Wong,Site Visit Completed,Needs GST invoice
+FinServe Group,Sarah Sharma,Purchase Manager,sarah.sharma@techsolutions.in,+91 9266683556,Interested in enterprise software demo,50L - 1Cr,leads on demand,Ali Hassan,Cancelled,Old customer returning
+Apex Solutions,Michael Menon,Purchase Manager,michael.menon@enterprise.co,+91 9760774063,Needs orthopedic consultation,< 10L,MagicBricks,Rahul Mehta,No Response,Sent brochure
+Global Logistics,Sarah Reddy,Procurement Head,sarah.reddy@startup.io,+91 9269492262,Prefers east-facing unit,10-50L,Employee Referral,Sarah Khan,Call Back,Needs GST invoice
+Global Logistics,Sarah Reddy,Procurement Head,sarah.reddy@startup.io,DUPLICATE: +91 9269492262,Prefers east-facing unit,10-50L,Employee Referral,Sarah Khan,Call Back,Needs GST invoice
+Zenith Enterprises,Sneha Iyer,Purchase Manager, sneha.iyer@company.net ,95367 43238,Needs orthopedic consultation,50L - 1Cr,Google Search,Sarah Khan,Wrong Number,Price sensitive
+Apex Solutions,Ravi Reddy,Purchase Manager,ravi.reddy@yahoo.com,+91 9628479478,Need possession before Diwali,10-50L,Google Ads,Priya Shah,No Response,Left voicemail
+BlueOcean,Sarah Ali,Plant Head,sarah.ali@yahoo.com,+91 9998843563,Looking for premium apartment under 1.2 Cr,10-50L,Facebook Lead Ads,Jessica Wong,Hot,Left voicemail
+BlueOcean,Diego Wang,Purchase Manager,diego.wang@icloud.com,+91 9647581405,Need possession before Diwali,50L - 1Cr,Referral,Priya Shah,Wrong Number,Working night shift
+Acme Corp,Aditya Martinez,Purchase Manager,aditya.martinez@gmail.com,+91 9810457465,Need possession before Diwali,10-50L,Housing,Rahul Mehta,Cancelled,Needs GST invoice
+Global Logistics,Vikram Sharma,Purchase Manager,vikram.sharma@hotmail.com,+91 9170126565,Looking for premium apartment under 1.2 Cr,< 10L,Google Search,Amit Patel,Cold,Duplicate enquiry from Facebook
+Acme Corp,Wei Hernandez,Purchase Manager,wei.hernandez@yahoo.com,Secondary Contact,Looking for premium apartment under 1.2 Cr,< 10L,Broker,Amit Patel,Converted,DND
+Quantum Systems,Neha Rao,Plant Head,neha.rao@enterprise.co,94682 72023,Prefers east-facing unit,50L - 1Cr,Instagram,Karan Singh,Lost,Old customer returning
+Stellar Services,Chen Gupta,Procurement Head,chen.guptaatlogistics.com,+91-99996-77536 ext 992,,10-50L,,,,
+City Hospital,Arjun Wang,Procurement Head,arjun.wang@hotmail.com,+91 9837632788,Interested in enterprise software demo,10-50L,leads on demand,Ali Hassan,Call Back,Decision maker travelling
+Zenith Enterprises,Michael Hassan,Procurement Head,michael.hassan@startup.io,+91 9842699830,Requested product catalogue,50L - 1Cr,Leads_on_demand,Rahul Mehta,No Response,Left voicemail
+Apex Solutions,Rahul Rao,Purchase Manager,rahul.rao@hotmail.com,+91 9805519166,Searching for MBA admission,50L - 1Cr,  leads_on_demand ,Jessica Wong,No Response,Referred by existing client
+NextGen IT,Wei Patel,Procurement Head,"wei.patel@logistics.com, secondary@enterprise.co",Secondary Contact,,< 10L,,,,
+Quantum Systems,Valentina Doe,Purchase Manager,valentina.doe@hotmail.com,+91 9058331725,Interested in enterprise software demo,< 10L,Organic,Amit Patel,Invalid Lead,DND
+Apex Solutions,Sarah Doe,Procurement Head,sarah.doe@outlook.com,+91 9051088696,Looking for premium apartment under 1.2 Cr,< 10L,Leads_on_demand,Karan Singh,Cancelled,Left voicemail
+TechNova,Kavita Li,Procurement Head,kavita.li@startup.io,+91 9525736258,Prefers east-facing unit,10-50L,Email Campaign,Karan Singh,Follow-up Required,DND
+BlueOcean,Sneha Reddy,Plant Head,   sneha.reddy@gmail.com   ,98170 21545,"{""json"": ""fragment"", ""data"": ""Requested product catalogue""}",< 10L,Leads_on_demand,Karan Singh,Loan Pending,Asked to call after 7 PM
+Apex Solutions,John Wang,Procurement Head,john.wang@icloud.com,+91 9006996371,Needs orthopedic consultation,50L - 1Cr,Instagram,Rahul Mehta,Booked,Call back tomorrow
+Metro Properties,Michael Sharma,Plant Head,MICHAEL.SHARMA@COMPANY.NET,0091-9306236165,Requires virtual consultation,50L - 1Cr,leads on demand,Sarah Khan,No Response,Sent brochure
+Apex Solutions,Ravi Gupta,Procurement Head,ravi.gupta@techsolutions.in,+91 9347192433,Requested product catalogue,< 10L,Google Ads,Amit Patel,Cold,Decision maker travelling
+Agile Agency,Rahul Patel,Procurement Head,rahul.patel@gmail.com,+91 9364926173,Looking for premium apartment under 1.2 Cr,10-50L,Instagram,Priya Shah,Warm,Call back tomorrow
+Quantum Systems,Michael Ali,Procurement Head,,Office Number,,< 10L,,,,
+Sunrise Foods,Neha Singh,Plant Head,neha.singh@icloud.com,+91 9460129185,Looking for premium apartment under 1.2 Cr,10-50L,WhatsApp,Priya Shah,Booked,Old customer returning

@@ -1,50 +1,70 @@
 Lead ID,Name,Role,Startup Name,Funding Stage,Work Email,Mobile,Use Case,Channel,Assigned To,Lead State,Internal Notes
-859,Priya,Co-founder,FintechRevolution,Seed,priya.ali@outlook.com,+91 9088019621,Requested product catalogue,Partner,Sarah Khan,No Response,Working night shift
-107,Chen,Growth Hacker,FintechRevolution,Bootstrapped,chen.iyer@startup.io,+91 9427793632,Interested in enterprise software demo,Referral,Rahul Mehta,Loan Pending,Not picking up
-639,Emily,Co-founder,AI.io,Series A,EMILY.REDDY@YAHOO.COM,+91 9414713683,Needs orthopedic consultation,Partner,Rahul Mehta,Meeting Scheduled,Decision maker travelling
-159,Diego,Founder,AI.io,Seed,diego.rao@outlook.com,+91 9492876278,Interested in enterprise software demo,Partner,Priya Shah,Call Back,Not picking up
-702,Sarah,Product Manager,FintechRevolution,Seed,"sarah.wang@icloud.com, secondary@outlook.com","92263 29572 ""quoted, text""",Looking for premium apartment under 1.2 Cr,Website,Jessica Wong,Cancelled,"{""json"": ""fragment"", ""data"": ""Referred by existing client""}"
-855,Sarah,Founder,SaaSify,Bootstrapped,sarah.smith@gmail.com,+91 9094220567,Need possession before Diwali,Housing,Karan Singh,Warm,Old customer returning
-626,Arjun,Growth Hacker,FintechRevolution,Seed,arjun.ali@yahoo.com,+91 9281886842,Looking for premium apartment under 1.2 Cr,Instagram,Karan Singh,Cold,Needs GST invoice
-839,Arjun,Founder,FintechRevolution,Seed,arjun.menon@enterprise.co,+91 9302511205,Need possession before Diwali,WhatsApp,Ali Hassan,Busy,Interested in 3BHK
-DUPLICATE: 839,Arjun,Founder,FintechRevolution,Seed,arjun.menon@enterprise.co,+91 9302511205,Need possession before Diwali,WhatsApp,Ali Hassan,Busy,Interested in 3BHK
-351,Arjun,Founder,AI.io,Bootstrapped,,Secondary Contact,,,,,
-528,Arjun,Co-founder,AI.io,Series A,arjun.hassan@outlook.com,+91 9004737287,Looking for premium apartment under 1.2 Cr,Cold Call,Rahul Mehta,Follow-up Required,Already spoke with spouse
-170,Ravi,Co-founder,AI.io,Bootstrapped,ravi.gupta@company.net,+91 9550286184,Need possession before Diwali,Referral,Rahul Mehta,Budget Issue,Needs GST invoice
-583,Diego,Product Manager,SaaSify,Series A,diego.hernandez@techsolutions.in,+91 9501994934,Looking for premium apartment under 1.2 Cr,Partner,Amit Patel,Invalid Lead,Sent brochure
-655,Emily,Product Manager,SaaSify,Bootstrapped,emily.li@enterprise.co,+91 9671022816,Requires virtual consultation,99acres,Priya Shah,Invalid Lead,Needs GST invoice
-983,Ravi,Co-founder,AI.io,Bootstrapped,ravi.singh@logistics.com,+91 9290092807,Prefers east-facing unit,Cold Call,Rahul Mehta,Interested,Preferred morning calls
-108,Valentina,Growth Hacker,AI.io,Seed,valentina.li@yahoo.com,+91 9472825388,Need possession before Diwali,Website,Amit Patel,Duplicate,DND
-361,Anjali,Co-founder,SaaSify,Seed,anjali.ali@startup.io,+91 9449930230,Looking for premium apartment under 1.2 Cr,Email Campaign,Rahul Mehta,Loan Pending,Wants to negotiate
-368,Rahul,Growth Hacker,AI.io,Bootstrapped,rahul.sharma@gmail.com,+91 9285004950,Needs orthopedic consultation,Instagram,Rahul Mehta,Wrong Number,Budget increased
-116,Arjun,Founder,SaaSify,Bootstrapped,arjun.rao@enterprise.co,+91 9107451772,Requested product catalogue,Referral,Sarah Khan,Booked,Price sensitive
-719,Michael,Growth Hacker,AI.io,Bootstrapped,,,,,,,
-515,Michael,Co-founder,SaaSify,Bootstrapped,michael.verma@logistics.com,+91 9840817547,Looking for premium apartment under 1.2 Cr,Partner,Sarah Khan,Invalid Lead,Working night shift
-921,Chen,Co-founder,AI.io,Bootstrapped,chen.martinez@logistics.com,+91 9580447738,Needs orthopedic consultation,Trade Show,Ali Hassan,Cancelled,Not picking up
-298,Sarah,Co-founder,AI.io,Seed,sarah.ali@logistics.com,+91 9067427730,Prefers east-facing unit,Website,Priya Shah,Hot,Working night shift
-489,Kavita,Co-founder,SaaSify,Series A,KAVITA.HERNANDEZ@OUTLOOK.COM,+91-96428-10766 ext 122,Interested in enterprise software demo,Housing,Karan Singh,Hot,Price sensitive
-489,Kavita,DUPLICATE: Co-founder,SaaSify,Series A,KAVITA.HERNANDEZ@OUTLOOK.COM,+91-96428-10766 ext 122,Interested in enterprise software demo,Housing,Karan Singh,Hot,Price sensitive
-599,Sarah,Co-founder,AI.io,Bootstrapped,SARAH.PATEL@LOGISTICS.COM,WhatsApp Only,Requires virtual consultation,Referral,Priya Shah,Interested,DND
-291,Aditya,Co-founder,FintechRevolution,Series A,,WhatsApp Only,,,,,
-972,Chen,Product Manager,AI.io,Seed,chen.doe@yahoo.com,+91 9903500638,Interested in enterprise software demo,Google Search,Sarah Khan,Cancelled,Budget increased
-511,Ravi,Co-founder,FintechRevolution,Series A,ravi.menon@yahoo.com,+91 9960984504,Prefers east-facing unit,Google Search,Karan Singh,Site Visit Completed,Asked to call after 7 PM
-965,Kavita,Founder,FintechRevolution,Series A,kavita.iyer@hotmail.com,+91 9533378082,Searching for MBA admission,Employee Referral,Ali Hassan,Wrong Number,Preferred morning calls
-895,Neha,Founder,AI.io,Series A,neha.doe@startup.io,+91 9728381848,Prefers east-facing unit,Google Ads,Jessica Wong,Cancelled,Interested in 3BHK
-272,Diego,Co-founder,FintechRevolution,Series A,diego.wangatcompany.net,Secondary Contact,,,,,
-831,Diego,Growth Hacker,SaaSify,Series A,diego.martinez@startup.io,+91 9193978962,Looking for premium apartment under 1.2 Cr,JustDial,Rahul Mehta,Call Back,Needs GST invoice
-342,Rahul,Product Manager,AI.io,Seed,rahul.kumar@startup.io,+91 9895862769,Need possession before Diwali,Housing,Sarah Khan,Warm,Interested in 3BHK
-342,Rahul,Product Manager,AI.io,Seed,rahul.kumar@startup.io,+91 9895862769,Need possession before Diwali,Housing,Sarah Khan,Warm,DUPLICATE: Interested in 3BHK
-445,Emily,Co-founder,FintechRevolution,Bootstrapped,emily.singh@yahoo.com,+91 9868097701,Requested product catalogue,WhatsApp,Sarah Khan,Lost,Not picking up
-525,Ravi,Founder,FintechRevolution,Seed,ravi.iyer@outlook.com,+91 9344070725,Interested in enterprise software demo,LinkedIn,Jessica Wong,Duplicate,Follow up next Friday
-280,Michael,Co-founder,AI.io,Seed,michael.wang@company.net,+1 (466) 555-5733,Requested product catalogue,Cold Call,Jessica Wong,Booked,Working night shift
-252,Chen,Product Manager,AI.io,Bootstrapped,chen.reddy@yahoo.com,+91 9124328317,Need possession before Diwali,LinkedIn,Sarah Khan,Loan Pending,Working night shift
-405,Kavita,Product Manager,SaaSify,Seed,kavita.smith@enterprise.co,+91 9940879301,Requires virtual consultation,Google Search,Priya Shah,Hot,Working night shift
-583,Sneha,Growth Hacker,AI.io,Series A,sneha.patel@outlook.com,+91 9407309796,Requested product catalogue,Walk-In,Karan Singh,Interested,Left voicemail
-686,Sarah,Growth Hacker,AI.io,Series A,sarah.smith@icloud.com,+91 9255397604,Need possession before Diwali,JustDial,Priya Shah,Busy,Follow up next Friday
-218,Vikram,Co-founder,FintechRevolution,Seed, vikram.reddy@hotmail.com ,+91 9921423664,Needs orthopedic consultation,Housing,Amit Patel,Hot,Price sensitive
-596,Ravi,Growth Hacker,AI.io,Seed, ravi.smith@outlook.com ,+91-92463-21969 ext 935,Interested in enterprise software demo,WhatsApp,Jessica Wong,No Response,Wants to negotiate
-596,Ravi,Growth Hacker,AI.io,DUPLICATE: Seed, ravi.smith@outlook.com ,+91-92463-21969 ext 935,Interested in enterprise software demo,WhatsApp,Jessica Wong,No Response,Wants to negotiate
-753,Valentina,Product Manager,SaaSify,Series A, valentina.rao@icloud.com ,Secondary Contact,Searching for MBA admission,Website,Amit Patel,Warm,Needs GST invoice
-860,Sarah,Growth Hacker,AI.io,Series A,sarah.singh@outlook.com,+91 9288914558,Interested in enterprise software demo,Facebook Lead Ads,Sarah Khan,Loan Pending,Not picking up
-462,Wei,Founder,FintechRevolution,Series A,wei.singh@outlook.com,+91 9502943834,Requested product catalogue,Google Ads,Rahul Mehta,Lost,Wants to negotiate
-929,Chen,Founder,FintechRevolution,Seed,CHEN.IYER@TECHSOLUTIONS.IN,WhatsApp Only,Looking for premium apartment under 1.2 Cr,Employee Referral,Jessica Wong,No Response,Interested in 3BHK
+613,Priya,Co-founder,SaaSify,Bootstrapped, priya.singh@startup.io ,WhatsApp Only,Interested in enterprise software demo,Leads On Demand,Priya Shah,Meeting Scheduled,Follow up next Friday
+613,Priya,Co-founder,SaaSify,Bootstrapped, priya.singh@startup.io ,WhatsApp Only,Interested in enterprise software demo,Leads On Demand,DUPLICATE: Priya Shah,Meeting Scheduled,Follow up next Friday
+115,Chen,Co-founder,FintechRevolution,Seed,chen.sharma@logistics.com,+91 9622649732,Searching for MBA admission,leads_on_demand,Rahul Mehta,Hot,Referred by existing client
+750,Anjali,Co-founder,SaaSify,Series A,anjali.iyer@icloud.com,+91 9246313440,Interested in enterprise software demo,Partner,Jessica Wong,Busy,Follow up next Friday
+896,Wei,Growth Hacker,SaaSify,Seed,wei.sharma@icloud.com,+91 9532580996,Need possession before Diwali,leads_on_demand,Priya Shah,Interested,Not picking up
+688,Rahul,Growth Hacker,AI.io,Seed,rahul.kumar@gmail.com,+91 9440794436,Looking for premium apartment under 1.2 Cr,Facebook Lead Ads,Priya Shah,Interested,Follow up next Friday
+372,Michael,Product Manager,AI.io,Seed,michael.singh@techsolutions.in,+91 9736477531,Need possession before Diwali,WhatsApp,Ali Hassan,Converted,Duplicate enquiry from Facebook
+578,Wei,Product Manager,AI.io,Series A,wei.martinez@outlook.com,+91 9746262819,Prefers east-facing unit,Walk-In,Rahul Mehta,Call Back,Sent brochure
+687,Wei,Founder,SaaSify,Seed,wei.verma@company.net,+91 9863401033,Looking for premium apartment under 1.2 Cr,Referral,Sarah Khan,Busy,Preferred morning calls
+793,Kavita,Product Manager,SaaSify,Seed,kavita.li@techsolutions.in,+91 9413737471,Looking for premium apartment under 1.2 Cr,leads_on_demand,Ali Hassan,Booked,Wants to negotiate
+340,Kavita,Founder,FintechRevolution,Series A,kavita.hassan@enterprise.co,+91 9104070930,Looking for premium apartment under 1.2 Cr,Walk-In,Karan Singh,Cancelled,Duplicate enquiry from Facebook
+818,Vikram,Product Manager,AI.io,Seed,vikram.verma@yahoo.com,+91 9253980122,Requires virtual consultation,Broker,Jessica Wong,Converted,Sent brochure
+199,Sarah,Growth Hacker,FintechRevolution,Seed,sarah.reddy@icloud.com,+91 9761107152,Searching for MBA admission,Housing,Karan Singh,Warm,Duplicate enquiry from Facebook
+831,Sneha,Growth Hacker,FintechRevolution,Bootstrapped,sneha.verma@hotmail.com,+91 9899414368,Requires virtual consultation,Google Search,Karan Singh,Sale Closed,Price sensitive
+670,Kavita,Growth Hacker,SaaSify,Bootstrapped,kavita.kumar@icloud.com,+91 9307945803,Requires virtual consultation,Trade Show,Jessica Wong,Follow-up Required,Not picking up
+441,Ravi,Growth Hacker,SaaSify,Seed,ravi.patel@logistics.com,+91 9113524134,Requested product catalogue,Facebook Lead Ads,Karan Singh,Call Back,Old customer returning
+343,Aditya,Growth Hacker,SaaSify,Seed,aditya.li@techsolutions.in,+91 9317204345,Searching for MBA admission,Employee Referral,Rahul Mehta,Cold,Duplicate enquiry from Facebook
+939,Wei,Founder,AI.io,Series A,wei.ali@yahoo.com,+91 9509439132,Need possession before Diwali,MagicBricks,Karan Singh,Booked,Wants to negotiate
+655,Valentina,Founder,SaaSify,Series A,valentina.singh@startup.io,+91 9925074174,Needs orthopedic consultation,Website,Sarah Khan,Sale Closed,Interested in 3BHK
+722,Diego,Founder,AI.io,Bootstrapped,diego.hassan@techsolutions.in,+91 9635895586,Prefers east-facing unit,Broker,Rahul Mehta,Interested,Requested WhatsApp instead of calls
+335,Diego,Founder,AI.io,Series A,diego.li@outlook.com,+91 9413006867,Requested product catalogue,  leads_on_demand ,Ali Hassan,Meeting Scheduled,Sent brochure
+888,Vikram,Co-founder,SaaSify,Bootstrapped,,,,,,,
+457,Anjali,Growth Hacker,SaaSify,Bootstrapped,anjali.martinez@startup.io,+91 9054012660,Looking for premium apartment under 1.2 Cr,Email Campaign,Karan Singh,Cold,DND
+399,Valentina,Product Manager,SaaSify,Series A,VALENTINA.KUMAR@TECHSOLUTIONS.IN,0091-9651281149,Requested product catalogue,Broker,Jessica Wong,Follow-up Required,Interested in 3BHK
+659,Priya,Co-founder,FintechRevolution,Series A,priya.gupta@outlook.com,+91 9291819952,Searching for MBA admission,Cold Call,Rahul Mehta,Hot,Call back tomorrow
+705,Priya,Product Manager,AI.io,Series A,priya.wang@startup.io,+91 9814163949,Searching for MBA admission,Google Ads,Ali Hassan,Follow-up Required,Preferred morning calls
+761,Arjun,Co-founder,FintechRevolution,Bootstrapped,arjun.li@company.net,+91 9279102508,Requested product catalogue,WhatsApp,Jessica Wong,Booked,Sent brochure
+859,Aditya,Growth Hacker,AI.io,Bootstrapped, aditya.singh@logistics.com ,96920 89003,Looking for premium apartment under 1.2 Cr,Facebook Lead Ads,Sarah Khan,Wrong Number,Preferred morning calls
+960,Valentina,Founder,FintechRevolution,Seed,VALENTINA.LI@LOGISTICS.COM,+1 (361) 555-8493,Requires virtual consultation,Employee Referral,Ali Hassan,Converted,Price sensitive
+167,Michael,Growth Hacker,SaaSify,Seed,michael.hernandez@yahoo.com,+91 9456484190,Searching for MBA admission,WhatsApp,Priya Shah,Hot,Budget increased
+229,Anjali,Founder,SaaSify,Bootstrapped,anjali.ali@gmail.com,+91 9029515850,Looking for premium apartment under 1.2 Cr,Google Ads,Jessica Wong,Meeting Scheduled,Referred by existing client
+634,Rahul,Founder,AI.io,Seed,RAHUL.ALI@TECHSOLUTIONS.IN,+91-90547-68959 ext 723,Requires virtual consultation,Facebook Lead Ads,Priya Shah,Cancelled,Wants to negotiate
+382,Aditya,Product Manager,AI.io,Bootstrapped,aditya.kumar@hotmail.com,+91 9952051662,Need possession before Diwali,Organic,Ali Hassan,Invalid Lead,Wants to negotiate
+107,Emily,Founder,AI.io,Seed,EMILY.REDDY@GMAIL.COM,93375 76895,Interested in enterprise software demo,Google Ads,Jessica Wong,Cold,Call back tomorrow
+107,Emily,Founder,AI.io,Seed,EMILY.REDDY@GMAIL.COM,93375 76895,Interested in enterprise software demo,Google Ads,DUPLICATE: Jessica Wong,Cold,Call back tomorrow
+666,Rahul,Co-founder,AI.io,Bootstrapped,rahul.smith@yahoo.com,+91 9413052238,Searching for MBA admission,Google Ads,Ali Hassan,Call Back,Sent brochure
+659,Chen,Growth Hacker,SaaSify,Seed, chen.martinez@enterprise.co ,+1 (306) 555-8756,Looking for premium apartment under 1.2 Cr,Partner,Sarah Khan,Meeting Scheduled,Price sensitive
+659,Sarah,Co-founder,AI.io,Seed, sarah.ali@icloud.com ,0091-9197886840,Requires virtual consultation,Organic,Amit Patel,Budget Issue,Old customer returning
+800,Michael,Founder,AI.io,Series A,michael.reddy@hotmail.com,Office Number,Needs orthopedic consultation,99acres,Ali Hassan,Meeting Scheduled,Not picking up
+763,Kavita,Founder,AI.io,Series A,kavita.martinez@startup.io (old),+91-93772-53568 ext 202,Requested product catalogue,Employee Referral,Karan Singh,Call Back,"Sent brochure ""quoted, text"""
+450,John,Growth Hacker,FintechRevolution,Series A,john.hassan@techsolutions.in,+91 9075126191,Interested in enterprise software demo,Trade Show,Jessica Wong,Sale Closed,Not picking up
+237,Anjali,Growth Hacker,SaaSify,Bootstrapped,anjali.hernandez@yahoo.com,+91 9429826961,Prefers east-facing unit,Instagram,Karan Singh,Follow-up Required,Asked to call after 7 PM
+611,Valentina,Co-founder,AI.io,Seed,valentina.smith@logistics.com,+91 9433757527,Need possession before Diwali,WhatsApp,Karan Singh,Converted,Duplicate enquiry from Facebook
+208,Aditya,Growth Hacker,SaaSify,Bootstrapped,aditya.hassan@hotmail.com,+91 9679227179,Looking for premium apartment under 1.2 Cr,Facebook Lead Ads,Sarah Khan,Loan Pending,Asked to call after 7 PM
+617,Michael,Product Manager,SaaSify,Bootstrapped,michael.rao@gmail.com,+91 9331975257,Requires virtual consultation,Google Ads,Sarah Khan,Cold,Follow up next Friday
+408,Sarah,Co-founder,SaaSify,Seed,sarah.ali@startup.io,+91 9094779314,Looking for premium apartment under 1.2 Cr,WhatsApp,Ali Hassan,Follow-up Required,Call back tomorrow
+473,Vikram,Growth Hacker,SaaSify,Seed,vikram.hassan@logistics.com,+91 9491154465,Interested in enterprise software demo,99acres,Priya Shah,Cancelled,Already spoke with spouse
+627,Sneha,Growth Hacker,AI.io,Series A,sneha.reddy@gmail.com,+91 9612918348,Needs orthopedic consultation,leads_on_demand,Ali Hassan,Hot,Referred by existing client
+925,Vikram,Product Manager,FintechRevolution,Series A,vikram.martinez@yahoo.com,+91 9869728950,Requested product catalogue,Referral,Jessica Wong,Invalid Lead,Needs GST invoice
+588,Arjun,Founder,FintechRevolution,Seed,arjun.singh@gmail.com,+91 9940579183,Need possession before Diwali,Partner,Jessica Wong,Warm,Old customer returning
+689,Michael,Founder,SaaSify,Series A,michael.doe@logistics.com,+91 9794208363,Looking for premium apartment under 1.2 Cr,Facebook Lead Ads,Priya Shah,Busy,Budget increased
+548,Michael,Growth Hacker,AI.io,Seed,michael.kumar@hotmail.com,+91 9882348509,Interested in enterprise software demo,Broker,Priya Shah,Hot,left voicemail
+207,Emily,Growth Hacker,AI.io,Bootstrapped,EMILY.SINGH@YAHOO.COM,Office Number,Searching for MBA admission,Trade Show,Priya Shah,Booked,Referred by existing client
+360,Emily,Founder,SaaSify,Bootstrapped,emily.menon@yahoo.com,+91 9346969232,Need possession before Diwali,JustDial,Sarah Khan,Duplicate,Old customer returning
+318,Valentina,Growth Hacker,FintechRevolution,Bootstrapped,VALENTINA.SMITH@LOGISTICS.COM,96948 74801,Requires virtual consultation,99acres,Sarah Khan,Cancelled,Working night shift
+952,Diego,Product Manager,FintechRevolution,Bootstrapped, diego.iyer@startup.io ,92189 20212,Requires virtual consultation,Organic,Amit Patel,Budget Issue,Price sensitive
+470,Sarah,Growth Hacker,FintechRevolution,Bootstrapped,sarah.hassan@startup.io,+91 9149098396,Interested in enterprise software demo,  leads_on_demand ,Sarah Khan,Interested,Not picking up
+226,John,Founder,FintechRevolution,Bootstrapped,john.wang@startup.io,+91 9768624815,Searching for MBA admission,MagicBricks,Priya Shah,Follow-up Required,Old customer returning
+693,Valentina,Founder,AI.io,Bootstrapped,valentina.li@icloud.com,Secondary Contact,Requested product catalogue,Partner,Ali Hassan,Hot,Follow up next Friday
+478,Ravi,Growth Hacker,AI.io,Bootstrapped,ravi.rao@icloud.com,0091-9979637914,Requires virtual consultation,Partner,Amit Patel,Invalid Lead,DND
+788,Chen,Product Manager,AI.io,Seed,chen.li@logistics.com,+91 9939968378,Prefers east-facing unit,Referral,Karan Singh,Lost,Decision maker travelling
+587,Vikram,Co-founder,SaaSify,Series A,VIKRAM.IYER@ICLOUD.COM,WhatsApp Only,Needs orthopedic consultation,Cold Call,Priya Shah,Converted,Working night shift
+197,Diego,Founder,SaaSify,Bootstrapped,DIEGO.REDDY@LOGISTICS.COM,Office Number,Needs orthopedic consultation,JustDial,Jessica Wong,No Response,Requested WhatsApp instead of calls
+165,Ravi,Growth Hacker,SaaSify,Seed,ravi.singh@techsolutions.in,+91 9545585118,Looking for premium apartment under 1.2 Cr,Email Campaign,Sarah Khan,Busy,Already spoke with spouse
+667,Emily,Product Manager,SaaSify,Series A,emily.smith@techsolutions.in,+91 9958507147,Needs orthopedic consultation,Walk-In,Rahul Mehta,Hot,DND
+274,Valentina,Founder,SaaSify,Seed,valentina.kumar@hotmail.com,+91 9027241573,Searching for MBA admission,Google Ads,Amit Patel,Budget Issue,Wants to negotiate
+117,Sneha,Founder,AI.io,Series A,sneha.hassan@logistics.com,+91 9533511617,Searching for MBA admission,leads on demand,Ali Hassan,Lost,Left voicemail
+300,John,Co-founder,AI.io,Series A,john.verma@startup.io,+91 9582459473,Prefers east-facing unit,Referral,Jessica Wong,Site Visit Completed,Duplicate enquiry from Facebook
+821,Ravi,Co-founder,FintechRevolution,Bootstrapped,ravi.menon@logistics.com,+91 9347628488,Requested product catalogue,Leads_on_demand,Sarah Khan,Booked,Already spoke with spouse

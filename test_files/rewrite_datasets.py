@@ -12,7 +12,7 @@ CITIES = ['Mumbai', 'Delhi', 'Bangalore', 'Hyderabad', 'Chennai', 'Pune', 'Ahmed
 LEAD_OWNERS = ['Rahul Mehta', 'Priya Shah', 'Amit Patel', 'Sarah Khan', 'Karan Singh', 'Jessica Wong', 'Ali Hassan']
 CRM_STATUSES = ['Interested', 'Hot', 'Warm', 'Cold', 'Call Back', 'Busy', 'No Response', 'Wrong Number', 'Converted', 'Sale Closed', 'Site Visit Completed', 'Meeting Scheduled', 'Budget Issue', 'Loan Pending', 'Follow-up Required', 'Duplicate', 'Invalid Lead', 'Booked', 'Cancelled', 'Lost']
 CRM_NOTES = ['Asked to call after 7 PM', 'Interested in 3BHK', 'Decision maker travelling', 'Sent brochure', 'Budget increased', 'Needs GST invoice', 'Already spoke with spouse', 'Follow up next Friday', 'Requested WhatsApp instead of calls', 'Duplicate enquiry from Facebook', 'Old customer returning', 'Preferred morning calls', 'Working night shift', 'Left voicemail', 'Referred by existing client', 'Wants to negotiate', 'Price sensitive', 'Call back tomorrow', 'Not picking up', 'DND']
-SOURCES = ['Facebook Lead Ads', 'Instagram', 'Google Search', 'Google Ads', 'Organic', 'Referral', 'Website', 'Walk-In', 'JustDial', 'MagicBricks', '99acres', 'Housing', 'LinkedIn', 'WhatsApp', 'Cold Call', 'Email Campaign', 'Trade Show', 'Broker', 'Employee Referral', 'Partner']
+SOURCES = ['Facebook Lead Ads', 'Instagram', 'Google Search', 'Google Ads', 'Organic', 'Referral', 'Website', 'Walk-In', 'JustDial', 'MagicBricks', '99acres', 'Housing', 'LinkedIn', 'WhatsApp', 'Cold Call', 'Email Campaign', 'Trade Show', 'Broker', 'Employee Referral', 'Partner', 'leads_on_demand', 'Leads_on_demand', 'leads on demand', 'Leads On Demand', '  leads_on_demand ']
 DESCRIPTIONS = ['Looking for premium apartment under 1.2 Cr', 'Needs orthopedic consultation', 'Searching for MBA admission', 'Interested in enterprise software demo', 'Requested product catalogue', 'Requires virtual consultation', 'Prefers east-facing unit', 'Need possession before Diwali']
 
 def random_messiness():
@@ -152,7 +152,12 @@ def process_real_estate():
         'Customer Details': f"{c['fn']} {c['ln']}",
         'Primary Mobile': c['phone'],
         'Email ID': c['email'],
-        'Project': random.choice(['Meridian Tower', 'Eden Park', 'Sarjapur Plots']),
+        'Project': random.choice([
+            'meridian_tower', 'Meridian Tower', 'meridian tower',
+            'eden_park', 'Eden Park', 'eden-park',
+            'varah_swamy', 'Varah Swamy', 'varahswamy',
+            'sarjapur_plots', 'Sarjapur Plots', ' sarjapur_plots '
+        ]),
         'Configuration': random.choice(['1 BHK', '2 BHK', '3 BHK', 'Villa']),
         'Budget': random.choice(['50-80L', '80L-1Cr', '1Cr+', '2Cr+']),
         'Possession': random.choice(['Ready to Move', 'Under Construction', '1 Year']),

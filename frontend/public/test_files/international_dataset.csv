@@ -1,324 +1,355 @@
 Record ID,Full Name,Corporate Email,Office Contact,Country,Timezone,Language Preference,Enterprise,Job Title,Advisor,Status,Conversation Summary
-INTL-6430,Anjali Iyer,anjali.iyer@gmail.com,+91 9190021025,Japan,JST,English,NextGen IT,CEO,Sarah Khan,Interested,Budget increased
-INTL-6080,Sarah Martinez,,Secondary Contact,Mexico,PST,English,FinServe Group,Manager,,,
-INTL-5129,Neha Singh,neha.singh@company.net,+91 9299266754,France,CET,Japanese,Sunrise Foods,Director,Rahul Mehta,Follow-up Required,Preferred morning calls
-INTL-7422,Wei Hassan, wei.hassan@hotmail.com ,Office Number,UAE,PST,English,Urban Builders,Manager,Amit Patel,Duplicate,Sent brochure
-INTL-4256,Chen Rao,chen.rao@yahoo.com [donotemail],,UAE,PST,English,Zenith Enterprises,Manager,,,
-INTL-9469,Rahul Iyer,RAHUL.IYER@COMPANY.NET,+1 (236) 555-3585,Japan,JST,Spanish,Apex Solutions,Director,Ali Hassan,Loan Pending,Working night shift
-INTL-7927,Rahul Hassan,rahul.hassan@outlook.com,0091-9791330990,Germany,PST,Japanese,Urban Builders,Director,Rahul Mehta,Invalid Lead,Price sensitive
-INTL-1835,Valentina Hassan,valentina.hassan@yahoo.com,+91 9045571388,France,JST,English,TechNova,Director,Sarah Khan,Busy,Budget increased
-INTL-8330,Vikram Menon,vikram.menon@enterprise.co,+91 9720854296,UAE,JST,Spanish,TechNova,Director,Rahul Mehta,Meeting Scheduled,Decision maker travelling
-INTL-9350,John Patel,john.patel@startup.io,+91 9155874245,Mexico,CET,Japanese,Apex Solutions,Manager,Priya Shah,Invalid Lead,Price sensitive
-INTL-5924,Emily Ali,emily.ali@outlook.com,+91 9472921233,France,EST,Spanish,City Hospital,Manager,Rahul Mehta,Call Back,Budget increased
-INTL-3162,Sneha Reddy,sneha.reddy@icloud.com,+91 9771670694,France,PST,French,BlueOcean,Director,Ali Hassan,Invalid Lead,Referred by existing client
-INTL-1053,Aditya Li,aditya.li@hotmail.com,+91 9548381354,Japan,JST,English,BlueOcean,CEO,Ali Hassan,Follow-up Required,Working night shift
-INTL-3554,Diego Ali,diego.ali@enterprise.co,+91 9231157003,Spain,EST,French,NextGen IT,Manager,Rahul Mehta,Wrong Number,Sent brochure
-INTL-8714,Chen Doe,chen.doe@hotmail.com,+91 9022791085,Japan,CET,English,Zenith Enterprises,Consultant,Amit Patel,Warm,Preferred morning calls
-INTL-5492,Vikram Doe,,,UAE,CET,English,Global Logistics,Director,,,
-INTL-9215,Ravi Doe,ravi.doe@startup.io,+91 9394176883,Spain,EST,Japanese,Apex Solutions,Director,Priya Shah,Interested,Needs GST invoice
-INTL-5455,Neha Kumar,neha.kumar@icloud.com,+91 9199733048,Mexico,EST,English,Acme Corp,Consultant,Priya Shah,Site Visit Completed,Preferred morning calls
-INTL-3569,Sarah Hernandez,sarah.hernandez@techsolutions.in,+91 9318237576,Japan,PST,Spanish,Urban Builders,Director,Sarah Khan,Site Visit Completed,Price sensitive
-INTL-7999,John Singh,john.singh@icloud.com,+91-98509-50193 ext 774,Spain,PST,Japanese,Pioneer Manufacturing,Consultant,Rahul Mehta,No Response,Not picking up
-INTL-4796,Chen Iyer,chen.iyer@techsolutions.in,+91 9356071191,Mexico,CET,Spanish,Stellar Services,Consultant,Ali Hassan,Invalid Lead,Interested in 3BHK
-INTL-8646,Neha Smith,neha.smith@company.net,+91 9601649800,Japan,JST,Japanese,Pioneer Manufacturing,Manager,Jessica Wong,Busy,Needs GST invoice
-INTL-7622,Diego Ali,diego.ali@yahoo.com,+91 9094400633,France,JST,Japanese,Quantum Systems,Director,Amit Patel,Sale Closed,Needs GST invoice
-INTL-8359,Valentina Singh,valentina.singh@company.net,+91 9249300370,Japan,JST,Spanish,Agile Agency,Consultant,Amit Patel,Hot,Wants to negotiate
-INTL-8203,Rahul Li,rahul.li@outlook.com,+91 9411450191,Japan,CET,Spanish,NextGen IT,Director,Jessica Wong,Busy,Needs GsT invoice
-INTL-6787,Sneha Hassan,sneha.hassan@startup.io,+91 9896917901,Germany,EST,French,Stellar Services,Director,Priya Shah,Loan Pending,DND
-INTL-3295,Michael Li,michael.li@enterprise.co,+91 9316157153,France,EST,Spanish,Global Logistics,CEO,Priya Shah,Converted,Referred by existing client
-INTL-6404,Anjali Reddy,anjali.reddy@enterprise.co,+91-97010-22094 ext 138,UAE,PST,French,Pioneer Manufacturing,Manager,Amit Patel,No Response,Preferred morning calls
-INTL-3185,Sneha Patel,sneha.patel@startup.io,+91 9112468822,Japan,CET,Japanese,BlueOcean,Consultant,Jessica Wong,Wrong Number,Asked to call after 7 PM
-INTL-1642,Vikram Singh,vikram.singh@gmail.com,+91 9530390225,Mexico,CET,Japanese,BlueOcean,Director,Sarah Khan,Call Back,Requested WhatsApp instead of calls
-INTL-2908,Aditya Menon,aditya.menon@enterprise.co,+91 9297891516,UAE,EST,French,Agile Agency,Director,Priya Shah,Converted,Decision maker travelling
-INTL-3555,Rahul Martinez,rahul.martinez@techsolutions.in,+91 9064547525,Germany,PST,French,Metro Properties,Director,Priya Shah,Loan Pending,Interested in 3BHK
-INTL-4682,Michael Ali,michael.ali@company.net,+91-99330-49684 ext 654,Spain,CET,French,Global Logistics,CEO,Priya Shah,Booked,Already spoke with spouse
-INTL-1038,Wei Singh,wei.singh@enterprise.co,+91 9367324765,Spain,EST,Japanese,Urban Builders,Manager,Ali Hassan,Wrong Number,Wants to negotiate
-INTL-1038,Wei Singh,DUPLICATE: wei.singh@enterprise.co,+91 9367324765,Spain,EST,Japanese,Urban Builders,Manager,Ali Hassan,Wrong Number,Wants to negotiate
-INTL-1161,Sneha Iyer,sneha.iyer@gmail.com,+91 9020159507,Japan,PST,French,TechNova,CEO,Amit Patel,Cold,Needs GST invoice
-INTL-1027,Chen Martinez,chen.martinez@icloud.com,+91 9461643305,Spain,PST,Spanish,NextGen IT,Director,Amit Patel,Cold,Working night shift
-INTL-3362,John Hassan,john.hassan@techsolutions.in,+91 9375825464,UAE,JST,Spanish,NextGen IT,Director,Ali Hassan,Call Back,Sent brochure
-INTL-3833,Aditya Singh,aditya.singh@outlook.com,+91 9376988571,Germany,EST,Japanese,Sunrise Foods,CEO,Karan Singh,Meeting Scheduled,Interested in 3BHK
-INTL-4316,Chen Verma, chen.verma@company.net ,+1 (488) 555-9066,Germany,PST,English,Apex Solutions,Director,Jessica Wong,Lost,Duplicate enquiry from Facebook
-INTL-5195,Diego Wang,diego.wang@company.net,+91-96095-05392 ext 600,Japan,JST,Spanish,Zenith Enterprises,CEO,Sarah Khan,Follow-up Required,Interested in 3BHK
-INTL-6389,Vikram Sharma,,,UAE,JST,Spanish,Sunrise Foods,Manager,,,
-INTL-6389,Vikram Sharma,,DUPLICATE: ,UAE,JST,Spanish,Sunrise Foods,Manager,,,
-INTL-4433,Kavita Verma,kavita.verma@enterprise.co,+91 9168962476,UAE,PST,French,BlueOcean,Consultant,Priya Shah,Site Visit Completed,Wants to negotiate
-INTL-2020,Sarah Kumar,sarah.kumar@enterprise.co (old),+1 (971) 555-7466,Spain,JST,Spanish,Quantum Systems,Consultant,Sarah Khan,"=SUM(A1:A5) ""quoted, text""",Wants to negotiate
-INTL-7793,Sarah Smith,sarah.smith@hotmail.com,+91 9197505223,France,JST,Spanish,BlueOcean,Manager,Ali Hassan,Booked,Call back tomorrow
-INTL-3965,Michael Sharma,MICHAEL.SHARMA@ENTERPRISE.CO,+91 9409063024,UAE,JST,French,City Hospital,Consultant,Rahul Mehta,Sale Closed,Preferred morning calls
-INTL-2585,John Doe, john.doe@enterprise.co ,+91 9060951780,Japan,PST,English,Agile Agency,CEO,Ali Hassan,Lost,Sent brochure
-INTL-5133,Sarah Hernandez, sarah.hernandez@techsolutions.in ,97832 25367,Spain,CET,Japanese,Pioneer Manufacturing,Consultant,Ali Hassan,Call Back,Not picking up
-INTL-6521,Neha Wang,neha.wang@icloud.com,+91 9971741061,UAE,JST,English,Stellar Services,Consultant,Rahul Mehta,Loan Pending,Needs GST invoice
-INTL-5715,Emily Ali,emily.ali@company.net,+91 9220115034,Japan,JST,Spanish,Quantum Systems,Director,Sarah Khan,Cancelled,Decision maker travelling
-INTL-6839,Wei Rao,,+91 9518399025,Germany,JST,English,Quantum Systems,CEO,,,
-INTL-6708,Michael Sharma,michael.sharma@outlook.com,+91 9711632229,UAE,PST,Spanish,Agile Agency,Manager,Priya Shah,Site Visit Completed,Duplicate enquiry from Facebook
-INTL-7681,Ravi Reddy, ravi.reddy@hotmail.com ,+1 (361) 555-3970,Spain,EST,French,BlueOcean,CEO,Rahul Mehta,Invalid Lead,Decision maker travelling
-INTL-7194,Arjun Menon,arjun.menon@company.net,+91 9011581004,Spain,EST,English,Pioneer Manufacturing,Director,Jessica Wong,Interested,Asked to call after 7 PM
-INTL-7389,Neha Iyer,neha.iyer@outlook.com,+91 9266224783,Mexico,EST,English,FinServe Group,Director,Amit Patel,Busy,Asked to call after 7 PM
-INTL-3198,Emily Hernandez,emily.hernandez@startup.io,+91 9856956560,France,EST,English,Zenith Enterprises,CEO,Amit Patel,Sale Closed,Preferred morning calls
-INTL-5269,Kavita Menon,kavita.menon@startup.io,+91 9931928886,France,EST,Japanese,Sunrise Foods,Director,Rahul Mehta,Lost,Working night shift
-INTL-5672,Arjun Martinez,arjun.martinez@gmail.com,+91 9886582686,Spain,JST,Spanish,NextGen IT,CEO,Ali Hassan,Converted,Interested in 3BHK
-INTL-1695,Emily Ali, emily.ali@yahoo.com ,0091-9086171911,Mexico,JST,Spanish,Urban Builders,CEO,Rahul Mehta,Meeting Scheduled,Price sensitive
-INTL-5349,Sneha Patel,SNEHA.PATEL@ENTERPRISE.CO,WhatsApp Only,France,CET,Japanese,Apex Solutions,Consultant,Karan Singh,Site Visit Completed,Sent brochure
-INTL-8547,Aditya Hassan,aditya.hassan@enterprise.co,+91 9639756453,Spain,EST,English,Acme Corp,Consultant,Ali Hassan,Loan Pending,Not picking up
-INTL-6482,Diego Kumar,diego.kumar@hotmail.com,+91 9738111281,Mexico,PST,French,Pioneer Manufacturing,Manager,Karan Singh,Booked,Old customer returning
-INTL-7286,Ravi Li,ravi.li@icloud.com,+91 9868952222,UAE,CET,Japanese,Sunrise Foods,Director,Jessica Wong,Duplicate,Decision maker travelling
-INTL-9052,Aditya Verma,aditya.verma@hotmail.com,+91 9706681430,Japan,CET,Spanish,Global Logistics,Director,Karan Singh,Call Back,Wants to negotiate
-INTL-9289,Michael Rao,michael.rao@icloud.com,+91 9837222919,Japan,EST,Spanish,Acme Corp,Manager,Karan Singh,Lost,Preferred morning calls
-INTL-8662,Diego Hassan,,,UAE,CET,English,BlueOcean,Consultant,,,
-INTL-1592,Kavita Hernandez,kavita.hernandez@icloud.com,+91 9639983180,France,EST,French,NextGen IT,Consultant,Jessica Wong,Call Back,Follow up next Friday
-INTL-8404,Wei Ali,,WhatsApp Only,Germany,JST,French,Quantum Systems,Manager,,,
-INTL-4776,Sarah Li,sarah.li@techsolutions.in,+91 9894280661,UAE,PST,Spanish,Stellar Services,Manager,Sarah Khan,Lost,Old customer returning
-INTL-7680,Aditya Smith,ADITYA.SMITH@YAHOO.COM,WhatsApp Only,Japan,PST,Japanese,Zenith Enterprises,CEO,Amit Patel,Cold,Working night shift
-INTL-1455,Emily Ali,emily.ali@company.net,+91 9532482161,Spain,JST,French,NextGen IT,CEO,Jessica Wong,Hot,Needs GST invoice
-INTL-4901,Rahul Martinez,rahul.martinez@company.net,+91 9344782942,Germany,CET,Japanese,Stellar Services,Director,Karan Singh,No Response,Preferred morning calls
-INTL-8376,John Patel,john.patel@startup.io,+91 9321677386,Germany,EST,English,Global Logistics,Consultant,Ali Hassan,Wrong Number,DND
-=SUM(A1:A5),Michael Martinez,,9613531403 / 9797170013,France,JST,Japanese,Acme Corp,CEO,Rahul Mehta,Lost,Call back tomorrow
-INTL-3675,Valentina Wang,valentina.wang@company.net,+91 9449752872,Spain,PST,Spanish,FinServe Group,CEO,Karan Singh,Cold,Not picking up
-INTL-3916,Neha Ali,neha.ali@techsolutions.in,+91 9474036512,Spain,CET,English,TechNova,CEO,Jessica Wong,Hot,Left voicemail
-INTL-3104,Rahul Menon,rahul.menonatstartup.io,Secondary Contact,UAE,JST,Japanese,TechNova,Director,,,
-INTL-4281,Sneha Iyer,sneha.iyer@hotmail.com,+91 9311697803,Spain,EST,Japanese,Global Logistics,Consultant,Karan Singh,Busy,Left voicemail
-INTL-4403,Wei Reddy,=SUM(A1:A5),+91 9631609472,France,PST,French,Metro Properties,Manager,Rahul Mehta,Follow-up Required,Not picking up
-INTL-4083,John Patel,john.patel@startup.io,+91 9254906274,France,JST,Japanese,TechNova,Consultant,Karan Singh,Loan Pending,Sent brochure
-INTL-8954,Sarah Hernandez,sarah.hernandez@outlook.com,+91 9444548778,UAE,PST,Spanish,Quantum Systems,Manager,Sarah Khan,Follow-up Required,Needs GST invoice
-INTL-8954,Sarah Hernandez,sarah.hernandez@outlook.com,+91 9444548778,DUPLICATE: UAE,PST,Spanish,Quantum Systems,Manager,Sarah Khan,Follow-up Required,Needs GST invoice
-INTL-4591,Chen Wang,CHEN.WANG@STARTUP.IO,0091-9085956872,Germany,CET,English,Agile Agency,Director,Rahul Mehta,Sale Closed,Call back tomorrow
-INTL-3914,Aditya Patel,aditya.patel@startup.io,+91 9837966768,UAE,CET,Japanese,Acme Corp,Director,Jessica Wong,Cancelled,Call back tomorrow
-INTL-8818,Arjun Sharma,arjun.sharma@hotmail.com,+91 9601044186,France,PST,French,NextGen IT,CEO,Priya Shah,Loan Pending,Wants to negotiate
-INTL-2689,Sarah Doe,sarah.doe@gmail.com,WhatsApp Only,Germany,PST,Japanese,Global Logistics,Director,Sarah Khan,Wrong Number,Call back tomorrow
-INTL-3419,Aditya Wang,aditya.wang@techsolutions.in,+91 9793511921,France,EST,Japanese,Metro Properties,Director,Rahul Mehta,Interested,Referred by existing client
-INTL-9572,Valentina Menon,valentina.menon@techsolutions.in,+91 9524550162,Mexico,EST,Spanish,TechNova,Consultant,Sarah Khan,Lost,Requested WhatsApp instead of calls
-INTL-8090,Arjun Rao,arjun.rao@yahoo.com,+91 9758121943,Spain,PST,Spanish,TechNova,Director,Ali Hassan,Booked,call back tomorrow
-INTL-3312,Valentina Hernandez,valentina.hernandez@logistics.com,+91 9732794522,Germany,PST,French,Acme Corp,Director,Rahul Mehta,Loan Pending,Duplicate enquiry from Facebook
-INTL-9210,Emily Iyer,emily.iyer@gmail.com,+91 9099735671,France,JST,Spanish,Acme Corp,CEO,Karan Singh,Call Back,Old customer returning
-INTL-1107,Michael Patel,michael.patel@yahoo.com,+91 9838838110,France,PST,Japanese,Global Logistics,Director,Sarah Khan,Follow-up Required,Referred by existing client
-INTL-1851,Rahul Patel,rahul.patel@gmail.com,+91 9020897948,Spain,JST,French,Global Logistics,Manager,Karan Singh,Meeting Scheduled,Already spoke with spouse
-INTL-3547,Rahul Doe,,0091-9748696697,Japan,CET,English,Quantum Systems,Manager,Sarah Khan,Invalid Lead,Budget increased
-INTL-5974,Anjali Ali,anjali.ali@hotmail.com,+91 9169783938,Spain,EST,Spanish,FinServe Group,CEO,Amit Patel,Follow-up Required,Sent brochure
-INTL-8944,John Hernandez,john.hernandez@logistics.com,+91 9680940698,Japan,JST,Japanese,NextGen IT,Director,Priya Shah,Meeting Scheduled,Price sensitive
-INTL-2848,John Singh,john.singh@yahoo.com,+91 9770698661,Spain,PST,French,Apex Solutions,Manager,Jessica Wong,Site Visit Completed,Duplicate enquiry from Facebook
-INTL-4474,Ravi Singh,ravi.singh@icloud.com,+91 9165009021,Mexico,JST,Spanish,Apex Solutions,Manager,Rahul Mehta,Invalid Lead,Already spoke with spouse
-INTL-6257,Valentina Gupta,valentina.gupta@enterprise.co,+91 9648556864,France,PST,Spanish,Pioneer Manufacturing,Consultant,Ali Hassan,Sale Closed,DND
-INTL-5444,Neha Reddy,neha.reddy@enterprise.co,+91 9297317358,Japan,PST,English,Stellar Services,CEO,Ali Hassan,Budget Issue,Price sensitive
-INTL-2544,Wei Hernandez,WEI.HERNANDEZ@ENTERPRISE.CO,0091-9910428557,Spain,JST,French,FinServe Group,CEO,Jessica Wong,Converted,DND
-INTL-7820,Ravi Sharma,ravi.sharma@techsolutions.in,+91-92041-87203 ext 301,UAE,EST,Japanese,TechNova,Consultant,Karan Singh,Interested,Decision maker travelling
-INTL-2597,John Wang,john.wang@startup.io,+91 9528805111,Spain,CET,Japanese,Urban Builders,Consultant,Priya Shah,Converted,Left voicemail
-INTL-3670,Emily Iyer,emily.iyer@startup.io,+91 9964200225,Mexico,JST,English,Apex Solutions,Director,Ali Hassan,Booked,Duplicate enquiry from Facebook
-INTL-2206,Neha Singh,neha.singh@hotmail.com,+91 9959754295,Mexico,PST,Spanish,Acme Corp,Director,Ali Hassan,No Response,Duplicate enquiry from Facebook
-INTL-9584,Sneha Hassan, sneha.hassan@hotmail.com ,Secondary Contact,Japan,PST,Japanese,Agile Agency,Manager,Sarah Khan,Loan Pending,Old customer returning
-INTL-8131,Chen Reddy,chen.reddy@outlook.com,+91 9814755410,Germany,EST,Spanish,Global Logistics,Manager,Jessica Wong,Converted,Left voicemail
-INTL-7286,Ravi Patel,,,Germany,PST,Japanese,Quantum Systems,CEO,,,
-INTL-9081,Aditya Rao,aditya.rao@icloud.com,+91 9639676120,UAE,JST,French,City Hospital,Manager,Karan Singh,Follow-up Required,Asked to call after 7 PM
-INTL-5642,Arjun Wang,arjun.wang@gmail.com,+91 9495912398,Germany,PST,French,Agile Agency,CEO,Sarah Khan,Warm,Asked to call after 7 PM
-INTL-5543,Sarah Reddy,sarah.reddy@outlook.com,+91 9769165838,UAE,JST,Japanese,Apex Solutions,Consultant,Ali Hassan,Hot,Working night shift
-INTL-5754,Neha Rao,neha.rao@enterprise.co,+91 9884591923,Mexico,PST,Spanish,TechNova,Consultant,Rahul Mehta,Cancelled,Referred by existing client
-INTL-2819,Priya Patel,priya.patel@gmail.com,+91 9856353166,Spain,EST,Spanish,TechNova,Director,Rahul Mehta,Interested,DND
-INTL-3503,Vikram Sharma,vikram.sharma@gmail.com,+91 9192791619,Spain,PST,Japanese,Sunrise Foods,Consultant,Rahul Mehta,Hot,Interested in 3BHK
-INTL-1322,Neha Sharma, neha.sharma@enterprise.co ,Secondary Contact,Japan,EST,Spanish,Urban Builders,Manager,Amit Patel,Cancelled,Duplicate enquiry from Facebook
-INTL-8650,Valentina Doe,valentina.doe@company.net,+91 9823649576,Spain,JST,Spanish,Zenith Enterprises,Director,Priya Shah,Loan Pending,Needs GST invoice
-INTL-6497,Emily Ali,emily.ali@icloud.com,+91 9185468691,Spain,CET,Japanese,Sunrise Foods,Director,Amit Patel,Warm,Old customer returning
-INTL-1872,Aditya Smith,aditya.smith@gmail.com,+91 9849096982,Japan,CET,French,Global Logistics,CEO,Ali Hassan,Cold,DND
-INTL-7719,Rahul Kumar,rahul.kumar@logistics.com,+91 9531652988,France,CET,French,Pioneer Manufacturing,Manager,Jessica Wong,Warm,Decision maker travelling
-INTL-8297,Wei Patel,WEI.PATEL@LOGISTICS.COM,98272 69083,Spain,CET,English,Stellar Services,Consultant,Jessica Wong,Lost,Left voicemail
-INTL-2630,Michael Wang,michael.wang@logistics.com,+91 9129737827,Japan,EST,Spanish,Acme Corp,Director,Sarah Khan,Cancelled,Budget increased
-INTL-1971,Wei Patel,wei.patel@hotmail.com,+91 9954501864,Mexico,CET,Japanese,Urban Builders,Manager,Karan Singh,Sale Closed,DND
-INTL-7212,Kavita Wang,kavita.wang@hotmail.com,+91 9397787915,Spain,CET,French,Stellar Services,Consultant,Jessica Wong,Budget Issue,Asked to call after 7 PM
-INTL-2128,Ravi Patel, ravi.patel@gmail.com ,Office Number,France,JST,Spanish,Apex Solutions,Consultant,Sarah Khan,Booked,Preferred morning calls
-INTL-7542,Wei Doe,wei.doe@hotmail.com,+91 9795960744,Japan,PST,French,BlueOcean,Consultant,Priya Shah,Converted,Referred by existing client
-INTL-1608,Rahul Hassan,rahul.hassan@outlook.com,+91 9846306914,France,CET,Japanese,FinServe Group,CEO,Karan Singh,Cold,Working night shift
-INTL-8469,Ravi Reddy,ravi.reddy@icloud.com,+91 9192807131,France,JST,French,Quantum Systems,Director,Amit Patel,Meeting Scheduled,Asked to call after 7 PM
-INTL-1588,Anjali Menon,anjali.menon@outlook.com,+91 9744055022,France,EST,Spanish,Agile Agency,Director,Sarah Khan,Call Back,Sent brochure
-INTL-5998,John Menon,john.menon@enterprise.co,+91 9106604032,Japan,JST,Japanese,Metro Properties,Consultant,Sarah Khan,Warm,Budget increased
-INTL-9993,Ravi Li,ravi.li@techsolutions.in,+91 9239803109,UAE,PST,English,Zenith Enterprises,Consultant,Sarah Khan,Budget Issue,Interested in 3BHK
-INTL-6522,Arjun Gupta,ARJUN.GUPTA@STARTUP.IO,Secondary Contact,Germany,EST,Spanish,Acme Corp,CEO,Sarah Khan,Budget Issue,Decision maker travelling
-INTL-3730,Aditya Gupta,,Secondary Contact,Mexico,PST,English,FinServe Group,Director,,,
-INTL-8889,Neha Hernandez,neha.hernandez@company.net,+91 9353076128,Mexico,PST,French,Zenith Enterprises,Director,Priya Shah,Invalid Lead,Interested in 3BHK
-INTL-6646,Sarah Gupta,sarah.gupta@yahoo.com,+91 9301438961,Mexico,PST,Japanese,Apex Solutions,CEO,Karan Singh,Invalid Lead,DND
-INTL-7171,Wei Doe,wei.doe@gmail.com,+91 9076711095,UAE,PST,Spanish,Stellar Services,Consultant,Priya Shah,Sale Closed,Left voicemail
-INTL-3486,Kavita Menon,kavita.menon@gmail.com,+91 9379980247,UAE,CET,Japanese,Zenith Enterprises,Director,Jessica Wong,Hot,Referred by existing client
-INTL-3356,Ravi Menon,ravi.menon@outlook.com,+91 9221873342,Germany,JST,Spanish,Stellar Services,Consultant,Priya Shah,Duplicate,Budget increased
-INTL-9996,Valentina Martinez,valentina.martinez@enterprise.co,+91 9490045354,UAE,PST,English,NextGen IT,Consultant,Ali Hassan,Booked,Referred by existing client
-INTL-5045,Priya Gupta,priya.gupta@techsolutions.in,+91 9479276762,Japan,CET,Spanish,Zenith Enterprises,CEO,Rahul Mehta,Call Back,Duplicate enquiry from Facebook
-INTL-5792,Vikram Hernandez,vikram.hernandez@techsolutions.in,+91 9037243786,Spain,EST,English,Zenith Enterprises,Director,Karan Singh,Converted,Referred by existing client
-INTL-6522,Anjali Ali,anjali.ali@company.net,+91 9658251330,Germany,EST,Japanese,FinServe Group,CEO,Jessica Wong,Call Back,Not picking up
-INTL-5446,Sarah Rao, sarah.rao@techsolutions.in ,Office Number,Japan,EST,Japanese,Global Logistics,Manager,Sarah Khan,Busy,Old customer returning
-INTL-5232,Ravi Hassan,ravi.hassan@gmail.com,+91 9673240617,UAE,CET,English,NextGen IT,Director,Jessica Wong,Cold,Already spoke with spouse
-INTL-1482,Arjun Menon,arjun.menon@company.net,+91 9724555784,UAE,CET,Spanish,Global Logistics,Consultant,Priya Shah,Hot,Sent brochure
-INTL-6570,Diego Wang,diego.wang@outlook.com,+91 9363307651,UAE,EST,French,NextGen IT,CEO,Ali Hassan,Converted,Decision maker travelling
-INTL-3402,John Wang,"john.wang@techsolutions.in, secondary@startup.io",Secondary Contact,Japan,CET,English,Zenith Enterprises,Director,Jessica Wong,Loan Pending,Preferred morning calls
-INTL-3596,John Li,john.li@techsolutions.in,+91 9103814753,UAE,JST,Spanish,Metro Properties,Director,Karan Singh,Cancelled,Requested WhatsApp instead of calls
-INTL-4938,Sarah Kumar,   sarah.kumar@logistics.com   ,WhatsApp Only,Spain,JST,Spanish,FinServe Group,CEO,Sarah Khan,Lost,Wants to negotiate
-INTL-5570,Rahul Smith,rahul.smith@startup.io,96695 20721,Mexico,EST,French,Apex Solutions,Consultant,Amit Patel,Booked,Old customer returning
-INTL-6665,Vikram Sharma, vikram.sharma@enterprise.co ,Secondary Contact,Mexico,JST,Spanish,Global Logistics,Consultant,Karan Singh,Cold,Needs GST invoice
-INTL-6409,Ravi Menon,ravi.menon@company.net,+91 9111274710,Germany,EST,English,Pioneer Manufacturing,CEO,Jessica Wong,Call Back,DND
-INTL-7926,Michael Doe,michael.doe@company.net,+91 9478167484,UAE,JST,Japanese,Stellar Services,Consultant,Amit Patel,Booked,Old customer returning
-INTL-4540,Ravi Rao,RAVI.RAO@GMAIL.COM,Office Number,Germany,EST,Spanish,Urban Builders,Director,Amit Patel,Sale Closed,Requested WhatsApp instead of calls
-INTL-4540,Ravi Rao,RAVI.RAO@GMAIL.COM,Office Number,Germany,EST,Spanish,Urban Builders,DUPLICATE: Director,Amit Patel,Sale Closed,Requested WhatsApp instead of calls
-INTL-9101,Rahul Li,rahul.li@logistics.com,+91 9125556590,Mexico,JST,French,Agile Agency,CEO,Karan Singh,Cancelled,Follow up next Friday
-INTL-3172,Sneha Singh,sneha.singh@outlook.com,+91 9401385238,UAE,JST,French,Quantum Systems,CEO,Sarah Khan,Booked,Already spoke with spouse
-INTL-8108,Sneha Rao,   sneha.rao@logistics.com   ,+1 (724) 555-8840,UAE,PST,Japanese,Urban Builders,Director,Priya Shah,Busy,Duplicate enquiry from Facebook
-INTL-9946,Diego Ali,diego.ali@logistics.com,+91 9777202677,Germany,EST,Japanese,NextGen IT,Director,Jessica Wong,Loan Pending,Price sensitive
-INTL-7534,Emily Doe,emily.doe@icloud.com,Secondary Contact,France,PST,English,Zenith Enterprises,Manager,Sarah Khan,Wrong Number,Referred by existing client
-INTL-4839,Diego Doe,diego.doe@company.net,Office Number,Germany,CET,English,Quantum Systems,CEO,Sarah Khan,Duplicate,Wants to negotiate
-INTL-7113,Priya Smith,priya.smith@gmail.com,+91-97598-56453 ext 749,Mexico,JST,Spanish,TechNova,CEO,Jessica Wong,Follow-up Required,Referred by existing client
-INTL-8933,Rahul Singh,"rahul.singh@startup.io, secondary@gmail.com",,Mexico,JST,Spanish,Global Logistics,Consultant,,,
-INTL-5140,Ravi Gupta,ravi.gupta@startup.io,+91 9726243416,Spain,PST,Japanese,NextGen IT,Consultant,Amit Patel,Duplicate,Old customer returning
-INTL-1570,John Smith,john.smith@outlook.com,+91 9664930855,Mexico,JST,Spanish,BlueOcean,Consultant,Karan Singh,Interested,Requested WhatsApp instead of calls
-INTL-6287,Wei Rao,wei.raoatyahoo.com,0091-9378599079,Spain,CET,Spanish,NextGen IT,CEO,,,
-INTL-2833,Valentina Singh,valentina.singh@startup.io,+91 9100150402,Spain,CET,French,Pioneer Manufacturing,Manager,Priya Shah,Cold,Sent brochure
-INTL-7660,Rahul Ali,rahul.ali@techsolutions.in,+91 9615428895,Spain,CET,English,Sunrise Foods,Consultant,Sarah Khan,Cancelled,Not picking up
-INTL-9128,Arjun Ali,arjun.ali@yahoo.com,+91 9294346570,UAE,PST,French,Pioneer Manufacturing,Consultant,Karan Singh,No Response,Decision maker travelling
-INTL-5385,Emily Martinez,EMILY.MARTINEZ@HOTMAIL.COM,Office Number,Spain,EST,Spanish,TechNova,Consultant,Sarah Khan,Sale Closed,Old customer returning
-INTL-8402,Ravi Rao,"ravi.rao@enterprise.co, secondary@icloud.com",0091-9541921188,Spain,JST,French,Sunrise Foods,Manager,Priya Shah,Cold,Asked to call after 7 PM
-INTL-9929,Ravi Sharma,ravi.sharma@gmail.com,+91 9814469821,Mexico,EST,Spanish,TechNova,Consultant,Rahul Mehta,Call Back,Sent brochure
-INTL-9737,Michael Kumar,michael.kumar@outlook.com,+91 9720458057,UAE,EST,Spanish,BlueOcean,Consultant,Priya Shah,Cold,Sent brochure
-INTL-5857,Wei Smith,WEI.SMITH@LOGISTICS.COM,Office Number,Germany,CET,Japanese,Stellar Services,CEO,Ali Hassan,Follow-up Required,Requested WhatsApp instead of calls
-INTL-1245,Arjun Doe, arjun.doe@icloud.com ,Office Number,France,CET,French,Stellar Services,Director,Sarah Khan,No Response,Price sensitive
-INTL-3179,Kavita Smith,kavita.smith@techsolutions.in,+91 9848873731,Germany,CET,Japanese,Agile Agency,Director,Karan Singh,Converted,Old customer returning
-INTL-3946,John Smith,john.smith@company.net,+91 9689435717,Spain,CET,Spanish,Quantum Systems,Manager,Jessica Wong,Invalid Lead,Preferred morning calls
-INTL-7199,Vikram Ali,vikram.ali@hotmail.com,+91 9178756310,Mexico,JST,Spanish,Global Logistics,Consultant,Ali Hassan,Invalid Lead,Working night shift
-INTL-8431,John Singh,JOHN.SINGH@ENTERPRISE.CO,0091-9105135532,Japan,CET,English,Zenith Enterprises,Consultant,Karan Singh,Warm,Duplicate enquiry from Facebook
-INTL-6976,Ravi Gupta, ravi.gupta@logistics.com ,+1 (293) 555-2673,Spain,PST,Japanese,Global Logistics,Manager,Priya Shah,Budget Issue,Price sensitive
-INTL-6288,Arjun Martinez,arjun.martinez@enterprise.co,+91 9185553167,UAE,EST,Japanese,Sunrise Foods,Director,Karan Singh,Hot,Already spoke with spouse
-INTL-9434,Sneha Patel,sneha.patel@techsolutions.in,+91 9246782869,France,EST,Japanese,Metro Properties,CEO,Priya Shah,Lost,Budget increased
-INTL-9434,Sneha Patel,sneha.patel@techsolutions.in,+91 9246782869,France,EST,Japanese,Metro Properties,CEO,Priya Shah,DUPLICATE: Lost,Budget increased
-INTL-2876,Arjun Wang,ARJUN.WANG@LOGISTICS.COM,96671 79631,Spain,PST,Japanese,Apex Solutions,Director,Priya Shah,Invalid Lead,Budget increased
-INTL-3848,Sneha Li,sneha.li@startup.io,+91 9726800855,Japan,EST,Spanish,Acme Corp,Consultant,Sarah Khan,Cancelled,Old customer returning
-INTL-5545,Ravi Rao,ravi.rao@startup.io,+91 9194904841,UAE,PST,English,BlueOcean,CEO,Karan Singh,Budget Issue,Call back tomorrow
-INTL-5545,Ravi Rao,ravi.rao@startup.io,+91 9194904841,UAE,PST,English,DUPLICATE: BlueOcean,CEO,Karan Singh,Budget Issue,Call back tomorrow
-INTL-4026,Priya Li,priya.li@gmail.com,+91 9564013620,Germany,CET,English,Acme Corp,Consultant,Rahul Mehta,Follow-up Required,Duplicate enquiry from Facebook
-INTL-7458,Priya Sharma,priya.sharma@techsolutions.in,+91 9036814573,Germany,JST,Spanish,Sunrise Foods,CEO,Ali Hassan,Cold,Left voicemail
-INTL-1274,Sneha Hernandez,sneha.hernandez@outlook.com,WhatsApp Only,Germany,PST,French,FinServe Group,Director,Ali Hassan,Converted,Requested WhatsApp instead of calls
-INTL-2460,Sneha Li,sneha.li@hotmail.com,+91 9764533025,Spain,JST,Japanese,Apex Solutions,CEO,Jessica Wong,Follow-up Required,Asked to call after 7 PM
-INTL-1813,Sarah Sharma,"sarah.sharma@company.net, secondary@techsolutions.in",,Germany,JST,French,Sunrise Foods,Director,,,
-INTL-2026,Anjali Gupta,anjali.gupta@techsolutions.in,+91 9389878826,Japan,EST,Spanish,Sunrise Foods,CEO,Ali Hassan,Busy,Old customer returning
-"INTL-8958 🚀
-New Line",Anjali Hernandez,anjali.hernandez@hotmail.com (old),9904735413 / 9307644274,Germany,JST,Japanese,Acme Corp,Consultant,Priya Shah,No Response,Follow up next Friday
-INTL-8075,Arjun Li,arjun.li@startup.io,99829 42459,UAE,JST,Japanese,Urban Builders,Manager,Amit Patel,Cancelled,Referred by existing client
-INTL-4263,Valentina Singh,valentina.singh@icloud.com,+91 9738525837,Mexico,JST,English,City Hospital,Manager,Jessica Wong,Busy,Asked to call after 7 PM
-INTL-7445,Ravi Patel, ravi.patel@startup.io ,Secondary Contact,UAE,CET,Spanish,Quantum Systems,Consultant,Jessica Wong,Converted,Referred by existing client
-INTL-7956,Neha Hassan,neha.hassan@enterprise.co,+91 9983482038,Japan,PST,Spanish,Quantum Systems,Director,Ali Hassan,Loan Pending,Price sensitive
-INTL-1367,Sarah Gupta,sarah.gupta@enterprise.co,+91 9671549380,UAE,EST,Spanish,Sunrise Foods,Director,Karan Singh,Warm,Call back tomorrow
-INTL-4262,Sarah Patel,sarah.patel@logistics.com,+91 9454788043,Germany,CET,Japanese,Acme Corp,Director,Ali Hassan,Warm,Duplicate enquiry from Facebook
-INTL-8315,Anjali Sharma,anjali.sharmaatenterprise.co,0091-9781301047,Spain,JST,English,Stellar Services,Manager,,,
-INTL-4699,Sneha Doe, sneha.doe@startup.io ,+91 9827541814,France,JST,Japanese,Sunrise Foods,Director,Ali Hassan,Sale Closed,DND
-INTL-2671,Wei Rao,wei.rao@gmail.com,+91 9037883132,Mexico,JST,English,Pioneer Manufacturing,Director,Jessica Wong,Site Visit Completed,Budget increased
-INTL-6408,Emily Kumar,emily.kumar@outlook.com,+91 9434279787,Mexico,PST,Japanese,Stellar Services,CEO,Ali Hassan,Busy,Old customer returning
-INTL-9572,Chen Singh,chen.singh@startup.io,+91 9972291204,Spain,EST,Japanese,Global Logistics,Director,Priya Shah,Interested,Asked to call after 7 PM
-INTL-1324,Rahul Ali,RAHUL.ALI@ICLOUD.COM,+91-97650-28994 ext 127,Spain,CET,Japanese,Urban Builders,Manager,Priya Shah,Busy,Requested WhatsApp instead of calls
-INTL-4646,Kavita Ali,kavita.ali@techsolutions.in,+91 9926470514,Germany,JST,Japanese,Sunrise Foods,CEO,Karan Singh,Warm,Needs GST invoice
-INTL-6985,Neha Martinez,NEHA.MARTINEZ@TECHSOLUTIONS.IN,+91-96702-24879 ext 476,Germany,JST,English,Acme Corp,CEO,Jessica Wong,Busy,Asked to call after 7 PM
-INTL-7089,John Doe,john.doe@logistics.com,+91 9862501308,Japan,CET,Japanese,Global Logistics,Consultant,Rahul Mehta,Converted,Decision maker travelling
-INTL-5624,Sarah Iyer,sarah.iyer@yahoo.com,+91 9610586875,Mexico,CET,English,Agile Agency,Director,Ali Hassan,No Response,Decision maker travelling
-INTL-3579,Michael Rao,michael.rao@yahoo.com,+91 9753588272,UAE,CET,French,TechNova,Consultant,Rahul Mehta,Booked,Decision maker travelling
-INTL-1667,Wei Verma,wei.verma@enterprise.co,+91 9853736268,Japan,EST,English,FinServe Group,Manager,Priya Shah,Interested,Price sensitive
-INTL-3202,Anjali Menon,anjali.menon@logistics.com,+91 9287218266,Germany,PST,Japanese,FinServe Group,Director,Karan Singh,Hot,Price sensitive
-INTL-1606,Sarah Reddy,SARAH.REDDY@YAHOO.COM,+91-93290-10802 ext 988,Japan,EST,French,City Hospital,Manager,Ali Hassan,Interested,Already spoke with spouse
-INTL-5204,Sneha Doe,sneha.doe@techsolutions.in,+91 9688924657,Japan,PST,English,Pioneer Manufacturing,CEO,Karan Singh,Booked,Wants to negotiate
-INTL-9001,Anjali Gupta,anjali.gupta@outlook.com,+91 9393163551,France,EST,Spanish,City Hospital,Director,Amit Patel,No Response,DND
-INTL-7410,Sneha Gupta,sneha.gupta@enterprise.co,Secondary Contact,UAE,PST,French,Pioneer Manufacturing,Manager,Sarah Khan,Meeting Scheduled,Decision maker travelling
-INTL-2911,Neha Hassan,neha.hassan@hotmail.com,+91 9562210337,Mexico,JST,English,Acme Corp,Director,Rahul Mehta,Invalid Lead,Decision maker travelling
-INTL-8693,Sarah Patel,sarah.patelaticloud.com,,Spain,PST,Japanese,Acme Corp,Director,,,
-INTL-8212,Vikram Reddy,vikram.reddy@techsolutions.in,+91 9710287850,Mexico,EST,French,Apex Solutions,CEO,Jessica Wong,Cold,Duplicate enquiry from Facebook
-INTL-4595,Wei Singh,WEI.SINGH@COMPANY.NET,99272 52713,France,PST,Spanish,Global Logistics,Director,Karan Singh,Busy,Working night shift
-INTL-5051,Sneha Sharma,sneha.sharma@hotmail.com,+91 9968904860,Mexico,EST,English,NextGen IT,Consultant,Priya Shah,Warm,Follow up next Friday
-INTL-2149,Emily Verma,emily.verma@company.net,+91 9524265972,Mexico,PST,Japanese,City Hospital,Director,Jessica Wong,Duplicate,Old customer returning
-INTL-3398,Priya Patel, priya.patel@startup.io ,Office Number,France,EST,English,FinServe Group,Consultant,Rahul Mehta,Duplicate,Needs GST invoice
-INTL-1274,Chen Menon,chen.menon@hotmail.com,+91 9426069788,Mexico,CET,Japanese,BlueOcean,CEO,Priya Shah,Duplicate,Follow up next Friday
-INTL-5096,Anjali Reddy,anjali.reddy@logistics.com,+91 9206927809,Japan,PST,French,City Hospital,CEO,Ali Hassan,Cold,Old customer returning
-INTL-1552,Valentina Hernandez,valentina.hernandez@yahoo.com,+91 9307103524,UAE,PST,French,NextGen IT,Director,Priya Shah,Loan Pending,DND
-INTL-8229,Arjun Ali,arjun.ali@gmail.com,WhatsApp Only,Mexico,PST,Japanese,Quantum Systems,CEO,Jessica Wong,No Response,Duplicate enquiry from Facebook
-INTL-2553,Vikram Sharma,VIKRAM.SHARMA@GMAIL.COM,WhatsApp Only,Spain,EST,French,Stellar Services,Consultant,Amit Patel,Loan Pending,Left voicemail
-INTL-6660,Diego Menon,diego.menon@outlook.com,+91 9039460012,Japan,EST,French,Urban Builders,Director,Priya Shah,Budget Issue,Duplicate enquiry from Facebook
-INTL-5013,Emily Menon,emily.menon@yahoo.com,+91 9299631941,France,PST,Japanese,Metro Properties,CEO,Amit Patel,Site Visit Completed,Interested in 3BHK
-INTL-7882,Anjali Hernandez,anjali.hernandez@company.net,+91 9551585527,France,JST,French,Metro Properties,CEO,Priya Shah,Warm,Referred by existing client
-INTL-6682,John Kumar,,,UAE,PST,French,Urban Builders,Manager,,,
-DUPLICATE: INTL-6682,John Kumar,,,UAE,PST,French,Urban Builders,Manager,,,
-INTL-7016,Michael Gupta,michael.gupta@yahoo.com,+91 9374025937,UAE,EST,French,Pioneer Manufacturing,CEO,Karan Singh,Warm,Decision maker travelling
-INTL-1293,Aditya Gupta,"aditya.gupta@techsolutions.in, secondary@techsolutions.in",+1 (612) 555-3822,Spain,PST,French,Pioneer Manufacturing,Director,"Priya Shah ""quoted, text""",Warm,Needs GST invoice
-INTL-5339,Aditya Iyer,aditya.iyer@enterprise.co,+91 9332946009,Japan,CET,Spanish,Metro Properties,Consultant,Amit Patel,Hot,DND
-INTL-5981,Kavita Kumar,kavita.kumar@techsolutions.in,+91 9088680624,Mexico,EST,Spanish,Sunrise Foods,CEO,Sarah Khan,Duplicate,Asked to call after 7 PM
-INTL-9198,Emily Reddy,emily.reddy@startup.io,+91 9423524287,Germany,JST,English,Global Logistics,Manager,Amit Patel,Duplicate,Not picking up
-INTL-9388,Wei Kumar,wei.kumar@company.net,+91 9363625204,France,CET,Spanish,TechNova,CEO,Jessica Wong,Hot,Left voicemail
-INTL-7538,Sneha Verma,sneha.verma@outlook.com,+91 9930973335,Germany,PST,English,Agile Agency,Consultant,Karan Singh,Busy,Interested in 3BHK
-INTL-5160,Rahul Kumar,rahul.kumar@hotmail.com,+91 9716175396,Germany,EST,Spanish,Pioneer Manufacturing,CEO,Jessica Wong,Sale Closed,Asked to call after 7 PM
-INTL-5325,Wei Doe,wei.doe@techsolutions.in,+91 9727325964,Germany,CET,Japanese,Urban Builders,CEO,Jessica Wong,Busy,Left voicemail
-INTL-5060,Wei Sharma,wei.sharma@yahoo.com,+91 9515799944,Germany,EST,English,Stellar Services,Director,Karan Singh,Loan Pending,DND
-INTL-8586,Arjun Sharma,arjun.sharma@yahoo.com,+91 9448145931,Japan,PST,Spanish,Zenith Enterprises,Manager,Rahul Mehta,Loan Pending,Requested WhatsApp instead of calls
-INTL-9251,Anjali Sharma,   anjali.sharma@outlook.com   ,+91-98889-01158 ext 770,France,PST,"English 🚀
-New Line",Global Logistics,CEO,Priya Shah,Invalid Lead,Requested WhatsApp instead of calls
-INTL-3825,Sarah Reddy,sarah.reddy@yahoo.com,+91 9427895591,Spain,PST,Spanish,Global Logistics,Director,Amit Patel,Site Visit Completed,Requested WhatsApp instead of calls
-INTL-5509,Sarah Reddy,SARAH.REDDY@GMAIL.COM,+91-99279-29075 ext 168,Germany,PST,Japanese,Pioneer Manufacturing,Manager,Sarah Khan,Sale Closed,DND
-INTL-9653,Priya Singh,priya.singh@logistics.com,+91 9259798031,France,CET,French,Urban Builders,Manager,Amit Patel,Cancelled,Asked to call after 7 PM
-INTL-7435,Valentina Verma,valentina.verma@startup.io,+91 9568445736,Germany,CET,English,Urban Builders,CEO,Ali Hassan,Lost,Follow up next Friday
-INTL-9736,Wei Kumar,wei.kumar@yahoo.com,+91 9894749734,Spain,JST,French,City Hospital,Manager,Priya Shah,Hot,Asked to call after 7 PM
-INTL-5486,Emily Menon,emily.menon@icloud.com,+91 9766700078,Spain,PST,French,NextGen IT,Director,Rahul Mehta,Invalid Lead,Preferred morning calls
-INTL-8672,Ravi Ali,ravi.ali@techsolutions.in,+91 9800756463,Japan,EST,Spanish,Stellar Services,Director,Ali Hassan,Lost,Needs GST invoice
-INTL-8275,Kavita Ali,   kavita.ali@enterprise.co   ,Office Number,Mexico,JST,Spanish,Apex Solutions,Consultant,Sarah Khan,Cold,DND
-INTL-4119,Arjun Hassan,arjun.hassan@icloud.com,Office Number,Spain,JST,French,TechNova,Director,Karan Singh,Busy,Preferred morning calls
-INTL-5332,Michael Kumar,michael.kumar@logistics.com,WhatsApp Only,France,CET,Japanese,Urban Builders,Director,Sarah Khan,Call Back,Interested in 3BHK
-INTL-5332,DUPLICATE: Michael Kumar,michael.kumar@logistics.com,WhatsApp Only,France,CET,Japanese,Urban Builders,Director,Sarah Khan,Call Back,Interested in 3BHK
-INTL-2148,Sarah Rao,,+91 9032424594,UAE,PST,English,Quantum Systems,Consultant,,,
-INTL-2148,Sarah Rao,,+91 9032424594,UAE,PST,English,Quantum Systems,Consultant,,DUPLICATE: ,
-INTL-2542,John Ali,john.ali@hotmail.com,+91 9683555087,Germany,EST,English,FinServe Group,Manager,Priya Shah,Cancelled,Price sensitive
-INTL-2865,Rahul Martinez,,,Mexico,PST,Japanese,Quantum Systems,Director,,,
-INTL-3209,Rahul Menon,rahul.menon@outlook.com,+91 9066673368,France,PST,Japanese,Agile Agency,Consultant,Ali Hassan,Hot,Duplicate enquiry from facebook
-INTL-4745,Ravi Menon,RAVI.MENON@OUTLOOK.COM,+91-95961-76887 ext 820,Mexico,EST,English,Sunrise Foods,Director,Priya Shah,Cancelled,Price sensitive
-INTL-5777,Valentina Sharma,valentina.sharma@enterprise.co,+91 9371428424,Germany,CET,Japanese,Agile Agency,Director,Priya Shah,Budget Issue,Already spoke with spouse
-INTL-5117,Arjun Li,arjun.li@company.net,+1 (674) 555-6884,UAE,PST,Spanish,Urban Builders,Manager,Priya Shah,Duplicate,Old customer returning
-INTL-8680,Priya Doe,priya.doe@yahoo.com,+91 9024468853,Spain,JST,Japanese,BlueOcean,Manager,Sarah Khan,Duplicate,Old customer returning
-INTL-4261,Sneha Reddy,sneha.reddy@hotmail.com,+91 9603499035,Spain,PST,Spanish,Acme Corp,Consultant,Sarah Khan,Loan Pending,Sent brochure
-INTL-9095,Arjun Ali,ARJUN.ALI@LOGISTICS.COM,0091-9592871634,Japan,PST,English,FinServe Group,CEO,Sarah Khan,Interested,Not picking up
-INTL-4020,Anjali Smith,anjali.smith@startup.io,+91 9731147689,Germany,JST,English,Agile Agency,Director,Priya Shah,Site Visit Completed,DND
-INTL-1483,Ravi Martinez,ravi.martinez@logistics.com,+91 9160082919,France,JST,Spanish,Sunrise Foods,Manager,Karan Singh,Budget Issue,Price sensitive
-INTL-8840,Priya Hassan,,+1 (691) 555-3438,Mexico,PST,Spanish,Agile Agency,Consultant,,,
-INTL-5548,Kavita Verma,kavita.verma@enterprise.co,+91 9952965319,Mexico,EST,Japanese,Pioneer Manufacturing,Director,Ali Hassan,Cancelled,Not picking up
-INTL-2112,Neha Reddy,neha.reddy@startup.io,WhatsApp Only,France,JST,Spanish,NextGen IT,Director,Rahul Mehta,Converted,Budget increased
-"{""json"": ""fragment"", ""data"": ""INTL-6782""}",Diego Martinez,   diego.martinez@company.net   ,WhatsApp Only,UAE,JST,Spanish,Zenith Enterprises,Director,Ali Hassan,No Response,Wants to negotiate
-"{""json"": ""fragment"", ""data"": ""INTL-6782""}",Diego Martinez,   diego.martinez@company.net   ,WhatsApp Only,DUPLICATE: UAE,JST,Spanish,Zenith Enterprises,Director,Ali Hassan,No Response,Wants to negotiate
-INTL-4295,Anjali Doe,anjali.doe@enterprise.co,+91 9060623570,Spain,JST,Japanese,Stellar Services,Manager,Jessica Wong,Follow-up Required,Price sensitive
-INTL-7472,Arjun Hassan,,,Spain,EST,French,Urban Builders,Consultant,,,
-INTL-9735,Emily Sharma,emily.sharma@startup.io,+91 9845274172,UAE,CET,English,City Hospital,CEO,Priya Shah,Call Back,Call back tomorrow
-INTL-4289,Wei Hernandez,wei.hernandez@gmail.com,+91 9768424350,Spain,JST,Japanese,Stellar Services,Consultant,Sarah Khan,Follow-up Required,Old customer returning
-INTL-5886,Sneha Sharma,,,Spain,JST,Japanese,Acme Corp,Consultant,,,
-INTL-7714,Rahul Rao,rahul.rao@enterprise.co,+91 9514436042,UAE,EST,English,Apex Solutions,Director,Karan Singh,Converted,Needs GST invoice
-INTL-7865,Neha Iyer,neha.iyer@techsolutions.in,+91 9739663194,UAE,PST,French,Sunrise Foods,CEO,Amit Patel,Loan Pending,DND
-INTL-1119,Emily Hassan,emily.hassan@yahoo.com,+91 9932025645,Japan,CET,Spanish,FinServe Group,Manager,Ali Hassan,Interested,Asked to call after 7 PM
-INTL-6988,Rahul Reddy,rahul.reddy@yahoo.com,+91 9085456761,Japan,JST,Japanese,Quantum Systems,Director,Ali Hassan,Booked,Follow up next Friday
-INTL-5352,Aditya Gupta, aditya.gupta@company.net ,+1 (588) 555-4734,Mexico,PST,Spanish,FinServe Group,Director,Ali Hassan,Interested,Budget increased
-INTL-5286,Sneha Verma,   sneha.verma@enterprise.co   ,Office Number,Mexico,CET,Japanese,TechNova,Director,,,
-INTL-2259,Ravi Reddy,ravi.reddy@gmail.com,93287 67957,Japan,CET,Spanish,Stellar Services,Consultant,Jessica Wong,Invalid Lead,Call back tomorrow
-INTL-7015,Michael Martinez,michael.martinez@techsolutions.in,+91 9541010860,Germany,JST,French,Agile Agency,Consultant,Priya Shah,Converted,Old customer returning
-INTL-7190,John Verma,john.vermaathotmail.com,0091-9124634861,Spain,PST,French,Zenith Enterprises,CEO,,,
-INTL-4684,Wei Hassan,wei.hassan@techsolutions.in,+91 9293134841,Japan,CET,French,Global Logistics,Director,Karan Singh,No Response,Follow up next Friday
-INTL-3175,Sarah Patel,sarah.patel@gmail.com,+91 9342667817,Mexico,CET,Spanish,City Hospital,Director,Sarah Khan,Invalid Lead,Requested WhatsApp instead of calls
-INTL-4018,Michael Martinez,michael.martinez@yahoo.com,+91 9268802069,Japan,PST,Japanese,Sunrise Foods,Consultant,Karan Singh,Budget Issue,Old customer returning
-INTL-9204,Rahul Singh, rahul.singh@gmail.com ,Secondary Contact,Japan,PST,Spanish,Zenith Enterprises,Manager,Amit Patel,Booked,Working night shift
-INTL-6586,Neha Sharma,neha.sharma@company.net,+91 9194871384,UAE,JST,English,Global Logistics,Director,Jessica Wong,Wrong Number,Working night shift
-INTL-1367,Rahul Reddy,rahul.reddy@hotmail.com,+91 9204906093,UAE,JST,Spanish,TechNova,Consultant,Ali Hassan,Interested,Sent brochure
-INTL-7498,Sneha Li,sneha.li@techsolutions.in,+91 9977394638,UAE,JST,French,Metro Properties,Consultant,Jessica Wong,Budget Issue,Requested WhatsApp instead of calls
-INTL-4973,Sarah Martinez,sarah.martinez@startup.io,WhatsApp Only,Mexico,JST,French,NextGen IT,Director,Jessica Wong,Booked,Price sensitive
-INTL-4973,Sarah Martinez,sarah.martinez@startup.io,WhatsApp Only,Mexico,DUPLICATE: JST,French,NextGen IT,Director,Jessica Wong,Booked,Price sensitive
-INTL-9320,Vikram Martinez,vikram.martinez@enterprise.co,+91 9138244452,Japan,JST,English,Global Logistics,Director,Amit Patel,Cold,Already spoke with spouse
-INTL-8923,Sneha Li,sneha.li@company.net,+91 9976575897,Japan,CET,Spanish,TechNova,Manager,Priya Shah,Duplicate,Not picking up
-INTL-8646,Wei Doe,wei.doe@gmail.com,+91 9392373304,Spain,PST,English,Sunrise Foods,Consultant,Amit Patel,Loan Pending,Referred by existing client
-INTL-4000,Aditya Hassan,aditya.hassan@techsolutions.in,+91 9500881653,France,PST,Japanese,Metro Properties,Consultant,Rahul Mehta,Call Back,Wants to negotiate
-INTL-1356,Sneha Hassan,sneha.hassan@techsolutions.in,+91 9719420834,Mexico,JST,English,BlueOcean,Director,Sarah Khan,Hot,Preferred morning calls
-INTL-5793,Rahul Smith,,,Mexico,CET,French,Stellar Services,Consultant,,,
-INTL-9525,Anjali Verma,anjali.verma@yahoo.com,+91 9534615637,Japan,PST,English,Metro Properties,CEO,Amit Patel,Follow-up Required,Referred by existing client
-INTL-7887,Vikram Rao,   vikram.rao@techsolutions.in   ,Office Number,UAE,EST,French,"Metro Properties 🚀
-New Line",CEO,Ali Hassan,Converted,"DND ""quoted, text"""
-INTL-2843,Neha Verma,   neha.verma@enterprise.co   ,+91-92284-22858 ext 723,UAE,JST,Japanese,Pioneer Manufacturing,Manager,Priya Shah,Converted,Working night shift
-INTL-5779,Arjun Smith,arjun.smith@techsolutions.in,+91 9402221931,Japan,PST,Spanish,Acme Corp,Manager,Karan Singh,Invalid Lead,Call back tomorrow
-INTL-4490,Michael Doe,michael.doe@outlook.com,+91 9013123300,Japan,EST,Japanese,Agile Agency,Manager,Priya Shah,Hot,Needs GST invoice
-INTL-9582,Emily Singh,emily.singh@yahoo.com,+91 9840002749,Spain,EST,English,Sunrise Foods,Consultant,Sarah Khan,Busy,Old customer returning
-INTL-8204,Anjali Sharma,anjali.sharma@icloud.com,+91 9575820196,Japan,JST,Spanish,BlueOcean,Consultant,Amit Patel,Wrong Number,Requested WhatsApp instead of calls
-INTL-4912,John Reddy,john.reddy@company.net,+91 9741814400,Spain,EST,Spanish,NextGen IT,Consultant,Ali Hassan,Lost,Asked to call after 7 PM
-INTL-2304,Wei Hassan,wei.hassan@techsolutions.in,+91 9061305760,Spain,PST,Japanese,Stellar Services,Manager,Karan Singh,Invalid Lead,Wants to negotiate
-INTL-8302,Neha Ali,neha.ali@icloud.com,+91 9594660006,Mexico,PST,Japanese,Quantum Systems,Manager,Sarah Khan,Busy,Old customer returning
-INTL-2700,Sneha Rao,sneha.rao@outlook.com,Secondary Contact,Mexico,CET,English,Acme Corp,Consultant,Ali Hassan,No Response,Call back tomorrow
-"{""json"": ""fragment"", ""data"": ""INTL-5038""}",Vikram Menon,   vikram.menon@hotmail.com   ,WhatsApp Only,Spain,EST,Japanese,FinServe Group,CEO,Amit Patel,Duplicate,Not picking up
-INTL-2236,Neha Li,,WhatsApp Only,France,PST,English,Pioneer Manufacturing,CEO,Priya Shah,Budget Issue,=SUM(A1:A5)
-INTL-5968,John Martinez,john.martinez@company.net,+91 9610970198,UAE,EST,English,BlueOcean,Consultant,Rahul Mehta,Booked,Budget increased
-INTL-8190,John Ali,john.ali@gmail.com,+91 9846770112,UAE,EST,Japanese,Urban Builders,Director,Rahul Mehta,Follow-up Required,Sent brochure
-INTL-2680,Aditya Hernandez,aditya.hernandez@startup.io,+91 9066960726,Mexico,CET,French,Quantum Systems,Manager,Ali Hassan,Warm,Already spoke with spouse
+INTL-4031,Arjun Iyer,arjun.iyer@yahoo.com,+91 9493015231,Germany,PST,English,Metro Properties,Manager,Amit Patel,Converted,Left voicemail
+INTL-3455,Vikram Gupta,vikram.gupta@outlook.com,+1 (851) 555-5016,France,JST,French,Agile Agency,CEO,Jessica Wong,Hot,Preferred morning calls
+INTL-9485,Rahul Martinez,rahul.martinezaticloud.com,"+919553849026
+9577370185",UAE,EST,English,Pioneer Manufacturing,CEO,Ali Hassan,Sale Closed,Price sensitive
+INTL-1918,Sneha Menon,sneha.menon@startup.io,+91 9807990617,Germany,CET,Spanish,Stellar Services,Consultant,Priya Shah,Wrong Number,Interested in 3BHK
+INTL-8797,Chen Rao,chen.rao@hotmail.com,+91 9353221267,Spain,CET,Japanese,Sunrise Foods,CEO,Jessica Wong,No Response,Budget increased
+INTL-2965,Sneha Hassan,sneha.hassan@gmail.com,0091-9379594047,France,EST,Spanish,Apex Solutions,Director,Karan Singh,Meeting Scheduled,Follow up next Friday
+INTL-6374,Sarah Sharma,sarah.sharma@icloud.com,+91 9358737444,Spain,JST,English,NextGen IT,Manager,Priya Shah,Wrong Number,DND
+INTL-2955,Arjun Hernandez,arjun.hernandez@yahoo.com,+91 9308759597,Spain,EST,Japanese,Sunrise Foods,CEO,Rahul Mehta,Busy,Price sensitive
+INTL-6846,Michael Iyer,michael.iyer@icloud.com,+91-94367-37307 ext 30,Spain,EST,French,TechNova,Director,Jessica Wong,Converted,Referred by existing client
+INTL-1078,Emily Patel,emily.patel@outlook.com,+91 9722557332,Japan,EST,French,Pioneer Manufacturing,Director,Jessica Wong,Follow-up Required,Already spoke with spouse
+INTL-1346,Arjun Gupta,arjun.gupta@enterprise.co,+91 9186446026,Mexico,CET,Spanish,Acme Corp,Manager,Jessica Wong,Call Back,Requested WhatsApp instead of calls
+=SUM(A1:A5),Arjun Wang,,9396254577 / 9853036195,France,PST,English,Acme Corp,Manager,Sarah Khan,Warm,Follow up next Friday
+INTL-1212,Wei Sharma,wei.sharma@techsolutions.in,+91 9323951419,Spain,PST,Japanese,Stellar Services,CEO,Ali Hassan,Invalid Lead,Not picking up
+INTL-3809,Sneha Ali,sneha.ali@gmail.com,+91 9790807646,Japan,EST,Japanese,Metro Properties,Director,Amit Patel,Meeting Scheduled,Interested in 3BHK
+INTL-4898,John Gupta,,Secondary Contact,Japan,PST,French,Metro Properties,Manager,,,
+INTL-5029,Kavita Kumar,kavita.kumar@logistics.com,+91 9641073323,France,EST,French,Quantum Systems,Consultant,Rahul Mehta,Converted,Budget increased
+INTL-2668,Vikram Li,vikram.li@logistics.com,Office Number,Japan,CET,Japanese,NextGen IT,Director,Jessica Wong,Duplicate,Requested WhatsApp instead of calls
+INTL-5603,Chen Verma,chen.verma@logistics.com,+91 9737275817,Mexico,JST,French,NextGen IT,CEO,Jessica Wong,Interested,Already spoke with spouse
+INTL-7720,Aditya Kumar,aditya.kumar@techsolutions.in,+91 9418340727,Mexico,JST,English,NextGen IT,Director,Priya Shah,Sale Closed,Left voicemail
+INTL-6690,Ravi Gupta,ravi.gupta@techsolutions.in,+91 9742515565,UAE,PST,Japanese,Stellar Services,Director,Karan Singh,Invalid Lead,Requested WhatsApp instead of calls
+INTL-5783,Rahul Iyer,,,Mexico,JST,Japanese,Quantum Systems,CEO,,,
+INTL-9197,Arjun Iyer,arjun.iyer@enterprise.co,+91 9831152675,Germany,CET,Japanese,Pioneer Manufacturing,CEO,Rahul Mehta,No Response,Budget increased
+INTL-3835,Michael Kumar,michael.kumar@logistics.com,92303 78231,Germany,PST,French,Stellar Services,Director,Ali Hassan,Call Back,Wants to negotiate
+INTL-7560,Anjali Verma,anjali.verma@logistics.com,+91 9125386798,Japan,PST,French,Acme Corp,Manager,Priya Shah,Follow-up Required,Duplicate enquiry from Facebook
+INTL-8444,Priya Singh,,+1 (716) 555-8892,Mexico,JST,Japanese,City Hospital,Manager,,,
+INTL-4401,Ravi Martinez,ravi.martinez@startup.io,+91 9543397341,Germany,CET,English,Zenith Enterprises,Manager,Amit Patel,Cancelled,Duplicate enquiry from Facebook
+INTL-1915,John Singh,john.singh@hotmail.com,+91 9495502047,Spain,EST,English,Sunrise Foods,Consultant,Ali Hassan,Booked,Left voicemail
+INTL-1915,John Singh,john.singh@hotmail.com,+91 9495502047,Spain,EST,English,Sunrise Foods,DUPLICATE: Consultant,Ali Hassan,Booked,Left voicemail
+INTL-7632,Diego Kumar,diego.kumar@startup.io,+91 9735428988,Spain,EST,English,Metro Properties,Manager,Jessica Wong,Meeting Scheduled,Preferred morning calls
+INTL-2516,Arjun Sharma,arjun.sharma@techsolutions.in,+91 9290828014,Japan,PST,Spanish,TechNova,Consultant,Rahul Mehta,Converted,Call back tomorrow
+INTL-4605,Emily Wang,,,Germany,PST,Japanese,FinServe Group,Director,,,
+INTL-5568,Valentina Hernandez, valentina.hernandez@icloud.com ,+91-91086-38725 ext 72,Spain,CET,Japanese,Apex Solutions,CEO,Priya Shah,Hot,DND
+INTL-2341,John Menon,john.menon@hotmail.com,+91 9212438027,France,CET,French,Acme Corp,Consultant,Priya Shah,Converted,Follow up next Friday
+INTL-7264,Priya Singh,priya.singh@logistics.com,+91 9468458973,Germany,JST,French,Sunrise Foods,Director,Rahul Mehta,No Response,DND
+INTL-6005,Aditya Martinez,aditya.martinez@logistics.com,+91 9739986568,Germany,EST,French,NextGen IT,Manager,Rahul Mehta,Invalid Lead,Duplicate enquiry from Facebook
+INTL-4197,Vikram Verma,vikram.verma@techsolutions.in,+91 9439404329,Japan,EST,English,BlueOcean,Manager,Ali Hassan,Booked,Referred by existing client
+INTL-7054,Sneha Li,sneha.li@outlook.com,+91 9902987184,Germany,CET,French,NextGen IT,CEO,Jessica Wong,Converted,Price sensitive
+INTL-4457,John Verma,john.verma@yahoo.com,+91 9854361117,Spain,JST,Spanish,TechNova,CEO,Rahul Mehta,Wrong Number,Already spoke with spouse
+INTL-6375,Rahul Hassan,rahul.hassan@enterprise.co,+91 9856105886,UAE,CET,French,Zenith Enterprises,Manager,Rahul Mehta,No Response,DND
+INTL-5815,Sneha Rao,sneha.rao@icloud.com,+91 9876169464,Germany,EST,French,TechNova,Consultant,Ali Hassan,Warm,DND
+INTL-5815,Sneha Rao,sneha.rao@icloud.com,+91 9876169464,Germany,EST,DUPLICATE: French,TechNova,Consultant,Ali Hassan,Warm,DND
+INTL-4776,Kavita Ali, kavita.ali@hotmail.com ,+91 9647654892,Germany,EST,Japanese,Acme Corp,Consultant,Jessica Wong,Meeting Scheduled,Decision maker travelling
+INTL-8379,Rahul Rao,rahul.rao@company.net,+91 9863265115,France,PST,French,Quantum Systems,Consultant,Amit Patel,Busy,Duplicate enquiry from Facebook
+INTL-2874,Valentina Ali,valentina.ali@techsolutions.in,+91 9683307203,France,EST,Spanish,Metro Properties,CEO,Jessica Wong,Follow-up Required,Already spoke with spouse
+INTL-2098,Michael Rao,michael.rao@outlook.com,+91 9797275266,UAE,PST,French,Quantum Systems,Consultant,Priya Shah,Wrong Number,Preferred morning calls
+INTL-7638,Vikram Doe,vikram.doe@hotmail.com,+91 9771602867,UAE,PST,Japanese,Quantum Systems,Director,Karan Singh,Hot,Not picking up
+INTL-1542,Chen Verma,chen.verma@icloud.com,+91 9444686091,Japan,PST,Japanese,Urban Builders,Consultant,Sarah Khan,Wrong Number,Duplicate enquiry from Facebook
+INTL-8543,Arjun Menon,arjun.menon@company.net,+91 9779288861,France,EST,Japanese,Quantum Systems,Director,Jessica Wong,Duplicate,DND
+INTL-9663,Sarah Hassan,sarah.hassan@outlook.com,+91 9673260511,France,JST,Japanese,Zenith Enterprises,Director,Sarah Khan,Invalid Lead,Price sensitive
+INTL-6566,Kavita Patel,kavita.patel@enterprise.co,Office Number,Mexico,CET,Japanese,Sunrise Foods,Consultant,Jessica Wong,Loan Pending,Interested in 3BHK
+INTL-3097,John Reddy,,95149 97801,France,CET,Japanese,Sunrise Foods,CEO,,,
+INTL-8666,Vikram Smith,vikram.smith@enterprise.co,Secondary Contact,Japan,PST,Spanish,Agile Agency,Director,Ali Hassan,Follow-up Required,Asked to call after 7 PM
+INTL-3990,Priya Smith,priya.smith@techsolutions.in,+91 9099534291,Spain,JST,French,FinServe Group,CEO,Jessica Wong,Budget Issue,Decision maker travelling
+INTL-1326,Ravi Smith,ravi.smith@techsolutions.in,+91 9122956006,Japan,JST,Spanish,Acme Corp,Manager,Jessica Wong,Warm,Referred by existing client
+INTL-2829,Sarah Verma, sarah.verma@startup.io ,+91 9169391739,France,JST,Japanese,NextGen IT,Director,Sarah Khan,Interested,Decision maker travelling
+INTL-5526,Arjun Verma,arjun.verma@techsolutions.in,+91 9508253092,France,CET,Japanese,Zenith Enterprises,CEO,Amit Patel,Cancelled,Not picking up
+INTL-4304,Arjun Menon,ARJUN.MENON@TECHSOLUTIONS.IN,+91 9979167362,Spain,JST,English,Zenith Enterprises,CEO,Ali Hassan,Interested,Not picking up
+INTL-1836,Michael Iyer,,98472 51038,Japan,PST,Japanese,Acme Corp,Consultant,,,
+INTL-4856,Vikram Smith,vikram.smith@startup.io,+91 9518490332,Spain,CET,Spanish,Global Logistics,Director,Amit Patel,Cold,Referred by existing client
+INTL-7548,Rahul Sharma,rahul.sharma@hotmail.com,+91 9372196963,Germany,CET,Spanish,BlueOcean,CEO,Ali Hassan,Lost,DND
+INTL-3152,Diego Gupta,"diego.gupta@company.net, secondary@outlook.com",0091-9024918525,Mexico,PST,Spanish,Urban Builders,Director,Jessica Wong,"{""json"": ""fragment"", ""data"": ""Invalid Lead""}",Sent brochure
+INTL-7643,Neha Hassan,,,Japan,EST,Spanish,Acme Corp,Consultant,,,
+INTL-7234,John Reddy,john.reddy@enterprise.co,+91 9138699097,Japan,PST,Japanese,City Hospital,Consultant,Jessica Wong,Converted,DND
+INTL-4441,Valentina Martinez,valentina.martinez@startup.io,+91 9727072295,Germany,EST,French,Stellar Services,CEO,Jessica Wong,Booked,Sent brochure
+INTL-2943,Neha Smith,neha.smith@logistics.com,+91 9205375009,Germany,PST,French,Pioneer Manufacturing,CEO,Ali Hassan,Lost,Old customer returning
+INTL-2554,Diego Reddy,diego.reddy@hotmail.com,+91 9619220552,Mexico,PST,Spanish,Zenith Enterprises,Manager,Priya Shah,No Response,DND
+INTL-8583,Neha Smith,neha.smith@icloud.com,+91 9182385802,Mexico,CET,French,TechNova,Manager,Sarah Khan,Duplicate,Working night shift
+INTL-6387,Sneha Ali,sneha.ali@icloud.com,+91 9699955369,Mexico,EST,English,TechNova,Director,Sarah Khan,Follow-up Required,Asked to call after 7 PM
+INTL-4607,Valentina Iyer,valentina.iyer@gmail.com,+91 9893275809,UAE,JST,French,BlueOcean,CEO,Priya Shah,Busy,Already spoke with spouse
+INTL-6807,Neha Rao,neha.rao@logistics.com,Office Number,Spain,JST,Japanese,Apex Solutions,CEO,Rahul Mehta,Budget Issue,Referred by existing client
+INTL-7283,Priya Ali,priya.ali@yahoo.com,+91 9201029290,Spain,EST,Spanish,Metro Properties,Director,Karan Singh,Lost,Referred by existing client
+INTL-8159,Sarah Smith,"   sarah.smith@icloud.com    🚀
+New Line",Office Number,Germany,CET,French,Quantum Systems,CEO,Priya Shah,No Response,Call back tomorrow
+INTL-3220,Arjun Gupta, arjun.gupta@icloud.com ,Office Number,Spain,JST,English,City Hospital,Consultant,Jessica Wong,Budget Issue,Budget increased
+INTL-2559,Sneha Rao,SNEHA.RAO@GMAIL.COM,+91 9612680611,UAE,EST,French,Global Logistics,Manager,Jessica Wong,Hot,Preferred morning calls
+INTL-3931,Valentina Wang,valentina.wang@hotmail.com,+91 9109822102,Japan,JST,French,Agile Agency,CEO,Karan Singh,Loan Pending,Needs GST invoice
+INTL-2736,Kavita Hernandez,kavita.hernandez@logistics.com,+91 9922952150,UAE,JST,French,Apex Solutions,Manager,Jessica Wong,Lost,Wants to negotiate
+INTL-1051,Sarah Martinez,SARAH.MARTINEZ@ENTERPRISE.CO,+91-95165-17755 ext 562,Mexico,PST,Spanish,Agile Agency,CEO,Karan Singh,Converted,Decision maker travelling
+INTL-4748,Emily Kumar,EMILY.KUMAR@TECHSOLUTIONS.IN,+91-96225-05270 ext 271,Japan,CET,Spanish,Quantum Systems,Manager,Karan Singh,Warm,Old customer returning
+INTL-7983,John Singh,john.singhatlogistics.com,Office Number,"{""json"": ""fragment"", ""data"": ""Spain""}","EST 🚀
+New Line",Japanese,NextGen IT,Consultant,Jessica Wong,Interested,Call back tomorrow
+INTL-4143,Michael Reddy,michael.reddy@company.net,+91 9344517004,UAE,EST,English,Metro Properties,Director,Priya Shah,Cancelled,Already spoke with spouse
+INTL-2124,Priya Li,priya.li@gmail.com,"+919509487191
+9890622691",Spain,JST,French,"TechNova 🚀
+New Line",Director,Rahul Mehta,Hot,Budget increased
+INTL-6924,Chen Li,chen.li@gmail.com,+91 9594966596,Mexico,EST,Spanish,BlueOcean,Manager,Ali Hassan,Cancelled,Call back tomorrow
+INTL-5853,Anjali Gupta, anjali.gupta@enterprise.co ,Secondary Contact,UAE,PST,Japanese,NextGen IT,Manager,Rahul Mehta,Duplicate,Not picking up
+INTL-8044,Sneha Smith,sneha.smith@outlook.com,+91 9622107166,Japan,PST,Japanese,Urban Builders,Consultant,Rahul Mehta,Wrong Number,Preferred morning calls
+INTL-9214,Sneha Menon,SNEHA.MENON@YAHOO.COM,Office Number,Japan,JST,French,TechNova,CEO,Ali Hassan,Cold,Call back tomorrow
+INTL-1048,Arjun Kumar,arjun.kumar@techsolutions.in,+91 9082917960,UAE,CET,French,City Hospital,Director,Ali Hassan,No Response,DND
+INTL-5035,Michael Gupta,MICHAEL.GUPTA@OUTLOOK.COM,90422 29163,France,EST,Japanese,TechNova,Manager,Amit Patel,Interested,Preferred morning calls
+INTL-6553,Valentina Kumar, valentina.kumar@enterprise.co ,+91 9993620434,Germany,CET,Japanese,Agile Agency,Consultant,Jessica Wong,Lost,Preferred morning calls
+INTL-6481,Rahul Singh,rahul.singh@logistics.com,+91 9160204687,Spain,PST,Spanish,City Hospital,Director,Karan Singh,Busy,Sent brochure
+INTL-4539,Aditya Sharma,,+91 9603329090,Japan,CET,English,"Agile Agency 🚀
+New Line",Consultant,Amit Patel,Converted,Interested in 3BHK
+INTL-4391,Vikram Ali,vikram.ali@enterprise.co,+91 9422784899,Spain,CET,French,Urban Builders,Director,Sarah Khan,Meeting Scheduled,Working night shift
+INTL-4033,Emily Doe,emily.doe@logistics.com,+91 9208447225,UAE,CET,French,Stellar Services,Manager,Jessica Wong,Invalid Lead,Requested WhatsApp instead of calls
+INTL-7477,Arjun Doe,arjun.doe@logistics.com,+91 9239980459,Germany,EST,French,Quantum Systems,CEO,Sarah Khan,Loan Pending,Interested in 3BHK
+INTL-7515,"Kavita Verma ""quoted, text""",,+1 (359) 555-4346,France,JST,French,Agile Agency,Consultant,Amit Patel,Follow-up Required,Already spoke with spouse
+INTL-2459,Neha Patel,neha.patel@outlook.com,+91 9427174813,Japan,CET,Spanish,Sunrise Foods,Consultant,Amit Patel,Lost,Not picking up
+INTL-5604,Vikram Wang,vikram.wang@enterprise.co,+91 9665304088,Spain,CET,Spanish,Stellar Services,CEO,Rahul Mehta,Cold,Sent brochure
+INTL-3656,Chen Ali,chen.aliattechsolutions.in,WhatsApp Only,UAE,EST,English,TechNova,Manager,,,
+INTL-1955,Anjali Ali,anjali.aliaticloud.com,0091-9054531709,Mexico,JST,Spanish,NextGen IT,Consultant,,,
+INTL-3559,Valentina Doe,VALENTINA.DOE@ICLOUD.COM,+91 9206336464,Spain,CET,Japanese,TechNova,Director,Jessica Wong,Follow-up Required,DND
+INTL-9400,Neha Li,neha.li@hotmail.com,Office Number,Spain,EST,French,TechNova,Consultant,Rahul Mehta,Loan Pending,Left voicemail
+INTL-3337,Vikram Singh,vikram.singh@icloud.com,+91 9292169894,Mexico,CET,French,FinServe Group,Director,Sarah Khan,Warm,Call back tomorrow
+INTL-2773,Chen Iyer,chen.iyer@hotmail.com,+91 9973816637,Japan,JST,French,Sunrise Foods,Manager,Ali Hassan,Lost,Old customer returning
+INTL-1872,Anjali Iyer,anjali.iyer@enterprise.co,+91 9560810432,Mexico,JST,Japanese,Acme Corp,CEO,Karan Singh,Loan Pending,Sent brochure
+INTL-8799,Valentina Martinez,valentina.martinez@techsolutions.in,+1 (781) 555-8710,Mexico,PST,French,Agile Agency,Consultant,Amit Patel,Invalid Lead,Call back tomorrow
+INTL-2801,Sneha Smith,sneha.smith@logistics.com,+91 9145405196,Germany,EST,Japanese,Zenith Enterprises,Director,Karan Singh,Warm,Referred by existing client
+INTL-7983,Kavita Doe,kavita.doe@icloud.com,+91 9471547948,Japan,PST,French,Urban Builders,Director,Rahul Mehta,Cold,Wants to negotiate
+INTL-5800,Anjali Iyer,anjali.iyer@techsolutions.in,+91 9010720786,France,PST,English,Zenith Enterprises,Manager,Ali Hassan,Invalid Lead,Budget increased
+INTL-4242,Arjun Kumar,"arjun.kumar@icloud.com, secondary@icloud.com",,UAE,CET,English,Global Logistics,Director,,,
+INTL-1478,Kavita Ali,kavita.ali@techsolutions.in,+91 9533505197,Japan,PST,French,Apex Solutions,Manager,Rahul Mehta,Site Visit Completed,Already spoke with spouse
+INTL-4462,Sarah Sharma,sarah.sharma@logistics.com,WhatsApp Only,Spain,JST,French,BlueOcean,Consultant,Karan Singh,Loan Pending,Sent brochure
+INTL-9062,Aditya Rao,aditya.rao@logistics.com,+91 9993339820,UAE,EST,Japanese,Agile Agency,CEO,Jessica Wong,Busy,Left voicemail
+INTL-4418,Wei Wang, wei.wang@gmail.com ,+1 (877) 555-6822,France,EST,English,Pioneer Manufacturing,Consultant,Ali Hassan,Budget Issue,Working night shift
+INTL-4418,Wei Wang, wei.wang@gmail.com ,+1 (877) 555-6822,France,EST,English,Pioneer Manufacturing,Consultant,DUPLICATE: Ali Hassan,Budget Issue,Working night shift
+INTL-2469,Michael Verma, michael.verma@company.net ,Secondary Contact,France,PST,Spanish,Acme Corp,Consultant,Karan Singh,Cold,Referred by existing client
+INTL-7178,Arjun Gupta,arjun.gupta@yahoo.com,+91 9764524067,Spain,CET,Japanese,Urban Builders,CEO,Priya Shah,Warm,Old customer returning
+INTL-3469,Diego Li, diego.li@hotmail.com ,Office Number,Japan,CET,French,Global Logistics,Director,Sarah Khan,Budget Issue,Old customer returning
+INTL-2389,Sneha Reddy,sneha.reddy@hotmail.com,+91 9247779254,Germany,CET,English,Quantum Systems,Consultant,Rahul Mehta,Warm,Preferred morning calls
+INTL-6135,Neha Wang,neha.wang@techsolutions.in,+91 9769089895,France,CET,Spanish,Apex Solutions,Director,Jessica Wong,No Response,Price sensitive
+INTL-4689,Aditya Li, aditya.li@logistics.com ,+91-97532-37044 ext 152,Germany,JST,Japanese,NextGen IT,Manager,Priya Shah,No Response,Old customer returning
+INTL-4987,Kavita Smith,kavita.smith@enterprise.co,+91 9709689170,Japan,EST,Spanish,Quantum Systems,Consultant,Ali Hassan,Cold,Left voicemail
+INTL-7595,Neha Smith,   neha.smith@techsolutions.in   ,+1 (734) 555-9946,Japan,CET,French,"Pioneer Manufacturing 🚀
+New Line",Director,Ali Hassan,Cancelled,Budget increased
+INTL-7595,Neha Smith,DUPLICATE:    neha.smith@techsolutions.in   ,+1 (734) 555-9946,Japan,CET,French,"Pioneer Manufacturing 🚀
+New Line",Director,Ali Hassan,Cancelled,Budget increased
+INTL-1939,Sneha Martinez,,,Germany,CET,English,NextGen IT,Director,,,
+INTL-4966,Ravi Reddy,ravi.reddy@startup.io,+91 9466297266,Germany,CET,English,Acme Corp,Director,Jessica Wong,Loan Pending,Not picking up
+INTL-7242,Kavita Kumar,kavita.kumar@logistics.com,+91 9203456861,Germany,EST,Spanish,Urban Builders,Director,Sarah Khan,Cancelled,Interested in 3BHK
+INTL-9594,Valentina Patel,valentina.patel@icloud.com,+91 9220877704,Germany,CET,Japanese,Sunrise Foods,CEO,Jessica Wong,Wrong Number,Duplicate enquiry from Facebook
+INTL-4054,Diego Gupta,DIEGO.GUPTA@ENTERPRISE.CO,+91 9006501284,UAE,CET,English,Metro Properties,Manager,Karan Singh,Cold,Requested WhatsApp instead of calls
+INTL-6632,Priya Martinez,priya.martinez@hotmail.com,+91 9383877386,France,CET,French,BlueOcean,Director,Priya Shah,Duplicate,Budget increased
+INTL-7194,Anjali Li,,Secondary Contact,Mexico,JST,English,City Hospital,Director,,,
+INTL-3994,Kavita Sharma,kavita.sharma@startup.io,+91 9995840342,UAE,PST,French,City Hospital,Manager,Priya Shah,Wrong Number,Old customer returning
+INTL-1841,Aditya Verma,aditya.verma@yahoo.com,+91 9244372857,Mexico,JST,Spanish,TechNova,CEO,Amit Patel,Budget Issue,Asked to call after 7 PM
+INTL-4425,Arjun Menon,arjun.menon@hotmail.com,+91 9195902309,Mexico,JST,French,Agile Agency,CEO,Jessica Wong,Duplicate,Old customer returning
+INTL-8226,Kavita Martinez, kavita.martinez@gmail.com ,+91-93933-27616 ext 26,Mexico,PST,Spanish,City Hospital,CEO,Karan Singh,Warm,Decision maker travelling
+INTL-4938,Vikram Li,,,Japan,EST,Japanese,Pioneer Manufacturing,Consultant,,,
+INTL-4986,John Menon,john.menon@icloud.com,+91 9338555636,France,CET,Spanish,Agile Agency,Manager,Karan Singh,Wrong Number,Left voicemail
+INTL-9411,Sarah Kumar,sarah.kumar@icloud.com,+91 9676623841,Germany,CET,English,City Hospital,CEO,Priya Shah,Busy,Not picking up
+INTL-7577,Valentina Singh,valentina.singhatlogistics.com,WhatsApp Only,Japan,JST,English,FinServe Group,Consultant,,,
+INTL-3796,Anjali Ali,anjali.ali@logistics.com,+91 9778230608,Mexico,EST,French,Agile Agency,Director,Priya Shah,Sale Closed,Price sensitive
+INTL-3730,Sneha Rao, sneha.rao@icloud.com ,0091-9153845511,Japan,CET,French,Metro Properties,CEO,Karan Singh,Booked,Budget increased
+INTL-6324,Valentina Wang, valentina.wang@outlook.com ,0091-9778690010,Mexico,CET,English,Agile Agency,Manager,Karan Singh,Busy,Already spoke with spouse
+INTL-2887,Kavita Martinez,kavita.martinez@gmail.com,+91 9009223409,France,EST,English,Pioneer Manufacturing,Manager,Ali Hassan,Wrong Number,Old customer returning
+INTL-2090,Kavita Reddy,kavita.reddy@gmail.com,+91 9880403006,France,CET,French,Apex Solutions,CEO,Amit Patel,Hot,DND
+INTL-3630,Sarah Hassan,SARAH.HASSAN@STARTUP.IO,+91 9024818819,UAE,PST,French,BlueOcean,Manager,Rahul Mehta,Call Back,Referred by existing client
+INTL-1449,John Hassan,john.hassan@techsolutions.in,+91 9456088099,UAE,JST,Spanish,BlueOcean,Consultant,Karan Singh,No Response,DND
+INTL-3967,Aditya Hernandez,aditya.hernandez@icloud.com,+91 9105896698,Spain,JST,Spanish,City Hospital,Manager,Priya Shah,Invalid Lead,Requested WhatsApp instead of calls
+INTL-2606,Kavita Gupta,kavita.gupta@yahoo.com,+91 9305698998,UAE,PST,English,Sunrise Foods,CEO,Karan Singh,Lost,DND
+INTL-7880,Kavita Smith,kavita.smith@startup.io,Secondary Contact,Mexico,PST,Japanese,Stellar Services,CEO,Priya Shah,Lost,Follow up next Friday
+INTL-6753,Kavita Patel,,,Spain,JST,English,Stellar Services,Director,,,
+INTL-9062,Diego Hernandez,diego.hernandez@hotmail.com,+91 9193897262,UAE,JST,French,Stellar Services,Manager,Jessica Wong,Booked,Price sensitive
+INTL-5374,Priya Singh,priya.singh@outlook.com,+91 9693868953,Mexico,CET,French,Metro Properties,Director,Sarah Khan,Sale Closed,Already spoke with spouse
+INTL-7029,Anjali Menon,ANJALI.MENON@COMPANY.NET,97827 90702,Japan,PST,French,Acme Corp,Director,Jessica Wong,Booked,Wants to negotiate
+INTL-4504,Neha Verma,neha.verma@enterprise.co,+91 9005292884,Mexico,JST,French,Acme Corp,Manager,Amit Patel,Warm,Working night shift
+INTL-3806,Sneha Menon,sneha.menon@enterprise.co,+91 9216319749,Japan,PST,English,Zenith Enterprises,Director,Priya Shah,Loan Pending,Call back tomorrow
+INTL-2457,Wei Patel,wei.patel@gmail.com,+91 9383263908,Mexico,CET,French,City Hospital,CEO,Rahul Mehta,Duplicate,Budget increased
+INTL-9230,Sneha Sharma,sneha.sharma@yahoo.com,+91 9172246162,Mexico,EST,English,Pioneer Manufacturing,Manager,Ali Hassan,Interested,Old customer returning
+INTL-1188,Kavita Sharma,kavita.sharma@logistics.com,+91 9080153748,Japan,JST,Japanese,Quantum Systems,CEO,Karan Singh,Follow-up Required,Old customer returning
+INTL-7850,Neha Kumar,neha.kumar@logistics.com,+91 9984734766,UAE,CET,Spanish,Acme Corp,CEO,Jessica Wong,Wrong Number,Asked to call after 7 PM
+INTL-1340,Priya Hernandez,priya.hernandez@techsolutions.in,+91 9317341501,UAE,CET,French,Acme Corp,Consultant,Ali Hassan,Meeting Scheduled,Asked to call after 7 PM
+INTL-2451,Arjun Patel,arjun.patel@logistics.com,+91 9694336083,Spain,JST,English,NextGen IT,Manager,Jessica Wong,Loan Pending,Working night shift
+INTL-9914,Wei Smith,wei.smith@techsolutions.in,WhatsApp Only,France,CET,Spanish,Quantum Systems,CEO,Sarah Khan,Site Visit Completed,Interested in 3BHK
+INTL-1680,Ravi Singh,ravi.singh@enterprise.co,+91 9786238234,France,JST,Spanish,Zenith Enterprises,CEO,Sarah Khan,Loan Pending,Decision maker travelling
+INTL-8455,Rahul Kumar,RAHUL.KUMAR@ICLOUD.COM,Secondary Contact,France,EST,Japanese,Urban Builders,CEO,Jessica Wong,Cancelled,Preferred morning calls
+INTL-8455,Rahul Kumar,RAHUL.KUMAR@ICLOUD.COM,Secondary Contact,France,DUPLICATE: EST,Japanese,Urban Builders,CEO,Jessica Wong,Cancelled,Preferred morning calls
+INTL-8449,Diego Patel,diego.patel@hotmail.com,+91 9766268056,Mexico,EST,French,Urban Builders,Director,Ali Hassan,Cancelled,Working night shift
+INTL-2312,Ravi Doe,ravi.doe@company.net,+91 9509109170,Mexico,JST,Spanish,Agile Agency,Director,Amit Patel,Busy,Duplicate enquiry from Facebook
+INTL-5495,Priya Verma, priya.verma@hotmail.com ,97007 93182,France,EST,English,Metro Properties,CEO,Rahul Mehta,No Response,DND
+INTL-5342,Wei Doe,wei.doe@icloud.com,+91 9987250012,France,JST,French,Global Logistics,CEO,Karan Singh,Meeting Scheduled,DND
+INTL-3999,Sarah Hernandez,sarah.hernandez@yahoo.com,+91 9986348100,Germany,JST,Japanese,Agile Agency,CEO,Rahul Mehta,Loan Pending,DND
+INTL-8489,Arjun Hernandez,arjun.hernandez@outlook.com,+91 9315349979,Spain,EST,Spanish,City Hospital,CEO,Sarah Khan,Site Visit Completed,Budget increased
+INTL-9540,Arjun Iyer, arjun.iyer@icloud.com ,0091-9401609976,Mexico,EST,English,Stellar Services,Director,Rahul Mehta,Meeting Scheduled,Old customer returning
+INTL-2683,John Smith,john.smith@icloud.com,+91 9300766950,Japan,EST,Japanese,TechNova,Consultant,Karan Singh,Warm,Preferred morning calls
+INTL-3150,Neha Patel,neha.patel@gmail.com,+91 9937191086,Japan,JST,English,City Hospital,Director,Amit Patel,Lost,Wants to negotiate
+INTL-7162,Chen Hassan,chen.hassan@logistics.com,+91 9353665944,UAE,EST,French,Apex Solutions,Director,Karan Singh,Wrong Number,Asked to call after 7 PM
+INTL-5281,Arjun Sharma,arjun.sharma@yahoo.com,+91 9402245877,Germany,PST,Japanese,BlueOcean,Consultant,Jessica Wong,Sale Closed,Working night shift
+INTL-2782,Michael Reddy,michael.reddy@icloud.com (old),WhatsApp Only,Spain,JST,French,Agile Agency,Director,,,
+INTL-5705,Sneha Wang,sneha.wang@icloud.com,+91 9245289108,France,CET,English,Stellar Services,Manager,Amit Patel,Invalid Lead,Needs GST invoice
+INTL-2237,Wei Gupta,wei.gupta@logistics.com,+91 9057766462,Spain,EST,English,Zenith Enterprises,Director,Sarah Khan,Budget Issue,Not picking up
+INTL-5084,Wei Iyer,WEI.IYER@LOGISTICS.COM,Secondary Contact,Mexico,PST,Spanish,Apex Solutions,Manager,Karan Singh,No Response,Follow up next Friday
+INTL-5342,Kavita Gupta,kavita.gupta@startup.io,+91 9556237543,Spain,CET,English,Metro Properties,Consultant,Jessica Wong,Call Back,Duplicate enquiry from Facebook
+INTL-7840,John Iyer,john.iyer@logistics.com,Secondary Contact,Mexico,JST,Spanish,Zenith Enterprises,Director,Amit Patel,Meeting Scheduled,Requested WhatsApp instead of calls
+INTL-2720,Rahul Wang,rahul.wang@techsolutions.in,+91 9267680695,UAE,CET,French,Apex Solutions,Manager,Karan Singh,Warm,Already spoke with spouse
+INTL-1485,Valentina Smith,valentina.smith@gmail.com,+91 9077637966,Japan,EST,Japanese,City Hospital,Manager,Priya Shah,Warm,Requested WhatsApp instead of calls
+INTL-1397,Kavita Martinez,kavita.martinez@icloud.com,+91 9163650244,France,JST,English,City Hospital,Manager,Priya Shah,Invalid Lead,Needs GST invoice
+INTL-9718,Aditya Sharma,"aditya.sharma@hotmail.com, secondary@gmail.com",Office Number,Germany,PST,English,Quantum Systems,Manager,,,
+INTL-9718,DUPLICATE: Aditya Sharma,"aditya.sharma@hotmail.com, secondary@gmail.com",Office Number,Germany,PST,English,Quantum Systems,Manager,,,
+INTL-1315,Neha Patel,neha.patel@techsolutions.in,+91 9061921526,Germany,PST,Spanish,Metro Properties,Consultant,Jessica Wong,Interested,Referred by existing client
+INTL-7779,John Li,john.li@outlook.com,+91 9802840586,Spain,EST,English,Quantum Systems,Manager,Karan Singh,Duplicate,DND
+INTL-5728,Neha Menon,   neha.menon@enterprise.co   ,9731971868 / 9825737057,Japan,JST,French,Apex Solutions,CEO,Sarah Khan,Follow-up Required,Asked to call after 7 PM
+INTL-1540,Kavita Doe,kavita.doe@company.net,+91 9259634557,Germany,EST,Japanese,Sunrise Foods,Manager,Ali Hassan,Hot,Old customer returning
+INTL-1742,Neha Reddy,NEHA.REDDY@YAHOO.COM,Secondary Contact,France,PST,English,Stellar Services,Manager,Priya Shah,Budget Issue,Asked to call after 7 PM
+INTL-1241,Valentina Ali,"valentina.ali@gmail.com, secondary@gmail.com","{""json"": ""fragment"", ""data"": ""9446315791 / 9383194243""}","Japan ""quoted, text""","PST 🚀
+New Line",Japanese,Stellar Services,CEO,Rahul Mehta,Warm,Asked to call after 7 PM
+INTL-8401,Arjun Iyer,arjun.iyer@company.net,90303 00058,France,JST,English,Agile Agency,Manager,Rahul Mehta,Interested,Interested in 3BHK
+INTL-4712,Emily Verma,emily.verma@hotmail.com,+1 (489) 555-1354,Japan,CET,French,BlueOcean,Director,Jessica Wong,Converted,DND
+INTL-7068,Diego Gupta,diego.gupta@techsolutions.in,+91 9052844103,Germany,JST,English,Zenith Enterprises,Director,Karan Singh,Warm,Preferred morning calls
+INTL-3413,Sneha Kumar, sneha.kumar@company.net ,+91 9663584193,Spain,EST,French,Global Logistics,CEO,Jessica Wong,Call Back,Sent brochure
+INTL-5645,Wei Verma,,+91-92622-42069 ext 23,Japan,JST,Japanese,FinServe Group,CEO,,,
+INTL-8048,Chen Patel,chen.patel@yahoo.com,+91 9125903415,France,EST,Japanese,City Hospital,Director,Ali Hassan,Loan Pending,Interested in 3BHK
+INTL-9768,Kavita Singh,kavita.singh@gmail.com,+91 9015218611,Japan,PST,French,TechNova,Consultant,Priya Shah,Duplicate,Sent brochure
+INTL-4508,Neha Reddy,neha.reddy@icloud.com,+91 9054276681,Mexico,EST,Spanish,City Hospital,Manager,Priya Shah,Warm,Follow up next Friday
+INTL-8813,Chen Wang,chen.wang@outlook.com,+91 9654089178,Spain,JST,English,Apex Solutions,Consultant,Priya Shah,Wrong Number,Sent brochure
+INTL-8375,Aditya Rao,aditya.rao@outlook.com,+91 9546242505,Mexico,CET,Spanish,FinServe Group,Consultant,Jessica Wong,Budget Issue,Needs GST invoice
+INTL-2273,Neha Hernandez,neha.hernandez@company.net,+91 9297902032,Mexico,CET,English,Quantum Systems,Director,Amit Patel,No Response,Follow up next Friday
+INTL-6836,=SUM(A1:A5),,9990000566 / 9063996340,Spain,PST,English,Agile Agency,Director,Amit Patel,Site Visit Completed,Left voicemail
+INTL-1843,Valentina Sharma,VALENTINA.SHARMA@TECHSOLUTIONS.IN,WhatsApp Only,Japan,JST,English,Zenith Enterprises,Director,Ali Hassan,Hot,Budget increased
+INTL-5317,Valentina Kumar,"valentina.kumar@company.net, secondary@logistics.com",99371 99463,Germany,EST,English,Quantum Systems,CEO,Ali Hassan,Busy,Asked to call after 7 PM
+INTL-6713,Aditya Doe,aditya.doe@yahoo.com,+91 9699696178,Spain,PST,English,Sunrise Foods,Manager,Amit Patel,Site Visit Completed,Old customer returning
+INTL-7759,Kavita Reddy,kavita.reddy@hotmail.com,+91 9869168511,UAE,CET,Japanese,City Hospital,Consultant,Rahul Mehta,No Response,Follow up next Friday
+INTL-4978,"Rahul Reddy 🚀
+New Line",rahul.reddy@yahoo.com (old),WhatsApp Only,Germany,JST,Japanese,Sunrise Foods,Director,Karan Singh,Sale Closed,Referred by existing client
+INTL-5645,Aditya Rao,aditya.rao@hotmail.com,+91 9357824997,Mexico,EST,Spanish,Apex Solutions,Manager,Karan Singh,Warm,Referred by existing client
+INTL-6357,Michael Rao,michael.rao@techsolutions.in,+91 9268838884,Mexico,PST,French,Stellar Services,Consultant,Ali Hassan,Loan Pending,Budget increased
+INTL-3872,Priya Gupta,priya.gupta@logistics.com,+91 9586524316,Mexico,CET,English,Global Logistics,Consultant,Jessica Wong,No Response,Preferred morning calls
+INTL-2574,Priya Martinez,priya.martinez@hotmail.com,+91 9861909405,Germany,JST,English,Zenith Enterprises,CEO,Karan Singh,Budget Issue,Needs GST invoice
+INTL-3125,Arjun Hassan, arjun.hassan@gmail.com ,+1 (936) 555-3707,Japan,PST,Japanese,Pioneer Manufacturing,Manager,Jessica Wong,Hot,Decision maker travelling
+INTL-6435,Diego Li,,90318 66102,Mexico,JST,Japanese,NextGen IT,Consultant,,,
+INTL-5571,Chen Singh,,Secondary Contact,UAE,CET,French,City Hospital,Consultant,,,
+INTL-8449,Neha Singh,neha.singh@enterprise.co [donotemail],"+919444157359
+9988886167",Mexico,CET,English,Zenith Enterprises,Consultant,Karan Singh,Meeting Scheduled,"Requested WhatsApp instead of calls ""quoted, text"""
+INTL-8617,Priya Rao,PRIYA.RAO@STARTUP.IO,+91 9960347431,Germany,PST,French,Agile Agency,Director,Ali Hassan,Meeting Scheduled,Preferred morning calls
+INTL-2995,Diego Ali,diego.ali@hotmail.com,+91 9627160975,UAE,EST,French,NextGen IT,Manager,Karan Singh,Hot,Needs GST invoice
+INTL-4738,John Wang,john.wang@yahoo.com,+91 9853148233,Spain,JST,English,Stellar Services,CEO,Sarah Khan,Duplicate,Left voicemail
+INTL-4789,John Martinez,john.martinez@techsolutions.in,+91 9898322823,Spain,PST,English,Metro Properties,Manager,Rahul Mehta,Cold,Price sensitive
+INTL-6638,Aditya Li,aditya.li@yahoo.com,+91 9870237525,France,JST,English,Apex Solutions,Director,Sarah Khan,Invalid Lead,Decision maker travelling
+INTL-8504,Vikram Wang,   vikram.wang@logistics.com   ,WhatsApp Only,Mexico,PST,English,Global Logistics,Director,,,
+INTL-4226,Priya Kumar,priya.kumar@yahoo.com,0091-9755715779,Germany,JST,English,Metro Properties,Consultant,Priya Shah,Cold,"{""json"": ""fragment"", ""data"": ""Left voicemail""}"
+INTL-5899,Michael Kumar,michael.kumar@logistics.com,+91 9639988635,Spain,CET,Spanish,Acme Corp,CEO,Sarah Khan,Meeting Scheduled,DND
+INTL-9623,Ravi Sharma,ravi.sharma@company.net,+91-93733-42269 ext 455,Spain,JST,French,Pioneer Manufacturing,Director,Karan Singh,Wrong Number,Wants to negotiate
+INTL-1780,Kavita Martinez,kavita.martinez@startup.io,+91 9284347794,Germany,EST,English,Agile Agency,Director,Amit Patel,Interested,Wants to negotiate
+INTL-3959,Valentina Smith,valentina.smith@yahoo.com,+91 9118816784,France,CET,Spanish,Acme Corp,CEO,Ali Hassan,Warm,Requested WhatsApp instead of calls
+INTL-6143,Emily Patel,emily.patel@logistics.com,0091-9938594899,Japan,EST,Spanish,BlueOcean,Consultant,Priya Shah,Cancelled,Old customer returning
+INTL-8069,Sneha Iyer,sneha.iyer@hotmail.com,+91 9014403912,Mexico,EST,Spanish,Apex Solutions,Director,Karan Singh,Invalid Lead,Decision maker travelling
+INTL-8230,Neha Menon,   neha.menon@gmail.com   ,"+91-99284-76315 ext 476 🚀
+New Line","{""json"": ""fragment"", ""data"": ""France""}",PST,English,Stellar Services,Manager,Rahul Mehta,Busy,Follow up next Friday
+INTL-9413,Chen Martinez,chen.martinez@company.net,+1 (959) 555-1820,France,JST,Japanese,Agile Agency,CEO,Amit Patel,Hot,Wants to negotiate
+INTL-8187,Vikram Doe,vikram.doe@company.net,+91 9905485264,UAE,CET,Japanese,Quantum Systems,Manager,Rahul Mehta,No Response,Already spoke with spouse
+INTL-4561,Valentina Sharma,valentina.sharma@icloud.com,+91 9422377071,Spain,JST,Japanese,Apex Solutions,CEO,Jessica Wong,Loan Pending,Asked to call after 7 PM
+INTL-1926,Valentina Kumar,valentina.kumar@enterprise.co,Secondary Contact,Mexico,EST,Spanish,Agile Agency,CEO,,,
+INTL-8517,Sarah Kumar,sarah.kumar@hotmail.com,+91 9883529692,Germany,JST,Spanish,FinServe Group,Director,Priya Shah,Converted,Price sensitive
+INTL-4162,Emily Doe,emily.doe@icloud.com,+91 9589783748,France,JST,Japanese,Global Logistics,Director,Sarah Khan,Follow-up Required,Interested in 3BHK
+INTL-1312,Diego Smith,diego.smith@enterprise.co,+91 9066615727,UAE,PST,French,Global Logistics,Consultant,Priya Shah,Site Visit Completed,Budget increased
+INTL-2173,Michael Hernandez,michael.hernandez@startup.io,+91 9712471930,Germany,PST,English,Quantum Systems,Director,Rahul Mehta,Budget Issue,Needs GST invoice
+INTL-3008,Vikram Patel,VIKRAM.PATEL@GMAIL.COM,WhatsApp Only,Japan,JST,French,Urban Builders,Manager,Ali Hassan,Lost,Old customer returning
+INTL-3689,Priya Patel,priya.patel@gmail.com,99626 13247,Japan,PST,Japanese,Metro Properties,Director,Sarah Khan,Follow-up Required,Sent brochure
+INTL-8350,Aditya Ali,aditya.ali@techsolutions.in,+91 9971914044,Germany,JST,English,Zenith Enterprises,Manager,Jessica Wong,Hot,DND
+INTL-2701,Sneha Rao,sneha.rao@gmail.com,+91 9745820028,Mexico,PST,French,Agile Agency,CEO,Rahul Mehta,Site Visit Completed,Old customer returning
+INTL-5520,Chen Smith,chen.smith@yahoo.com,+91 9839417704,Mexico,EST,English,Pioneer Manufacturing,Manager,Ali Hassan,Sale Closed,Not picking up
+INTL-2455,Priya Smith,priya.smith@company.net,+91 9522774172,UAE,CET,Japanese,Sunrise Foods,Director,Priya Shah,Warm,Duplicate enquiry from Facebook
+INTL-4257,Kavita Martinez,kavita.martinez@outlook.com,+91 9480491105,Mexico,PST,Japanese,BlueOcean,Manager,Jessica Wong,Sale Closed,Follow up next Friday
+INTL-2827,Valentina Patel,valentina.patel@startup.io,+91 9189257564,France,PST,Japanese,Acme Corp,Manager,Priya Shah,Cancelled,Price sensitive
+INTL-4303,John Ali,john.ali@techsolutions.in,+91 9248793718,Mexico,PST,Spanish,Quantum Systems,Manager,Sarah Khan,Sale Closed,Working night shift
+INTL-4303,John Ali,john.ali@techsolutions.in,+91 9248793718,Mexico,PST,Spanish,Quantum Systems,Manager,Sarah Khan,DUPLICATE: Sale Closed,Working night shift
+INTL-5474,John Menon,john.menon@company.net,+91 9061161624,Japan,JST,French,Pioneer Manufacturing,Manager,Amit Patel,Converted,Sent brochure
+INTL-9691,Valentina Hernandez,valentina.hernandez@hotmail.com,+91 9756394674,Mexico,CET,Japanese,Urban Builders,Director,Rahul Mehta,Hot,DND
+INTL-5403,Wei Smith,wei.smith@yahoo.com,+91 9089587666,Spain,EST,English,Stellar Services,Director,Ali Hassan,Converted,Follow up next Friday
+INTL-6498,Wei Smith,wei.smith@techsolutions.in,+91 9427304676,UAE,CET,French,Agile Agency,CEO,Jessica Wong,Follow-up Required,Price sensitive
+INTL-2186,Rahul Iyer,rahul.iyer@icloud.com,+91 9865579398,Spain,PST,French,Sunrise Foods,Consultant,Karan Singh,Cancelled,Requested WhatsApp instead of calls
+INTL-7516,Sneha Hernandez,sneha.hernandez@outlook.com,+91 9947747306,France,PST,French,TechNova,Consultant,Amit Patel,Budget Issue,Follow up next Friday
+INTL-2350,Aditya Doe,aditya.doe@logistics.com,+91 9927864040,Japan,JST,Japanese,TechNova,Director,Rahul Mehta,Loan Pending,Decision maker travelling
+INTL-6108,Wei Smith,wei.smith@logistics.com,+91 9445431699,UAE,CET,French,Sunrise Foods,Director,Jessica Wong,Lost,Preferred morning calls
+INTL-5288,Anjali Reddy,,WhatsApp Only,UAE,CET,Spanish,NextGen IT,CEO,,,
+INTL-5735,Aditya Smith,aditya.smith@techsolutions.in,+91 9231727777,France,PST,French,Quantum Systems,Director,Sarah Khan,Converted,DND
+INTL-9508,Sneha Reddy,sneha.reddy@yahoo.com,+91 9060458693,France,PST,Spanish,Apex Solutions,Director,Rahul Mehta,Converted,Left voicemail
+INTL-9746,Kavita Reddy,kavita.reddy@hotmail.com,+91 9602862267,Spain,CET,Japanese,Metro Properties,Manager,Priya Shah,Hot,Not picking up
+INTL-1712,Vikram Iyer,vikram.iyer@company.net,+91 9894424343,UAE,PST,English,Quantum Systems,Consultant,Sarah Khan,Busy,Follow up next Friday
+INTL-2876,Emily Wang,emily.wang@startup.io,+91 9400457036,France,EST,English,FinServe Group,Manager,Amit Patel,Duplicate,Interested in 3BHK
+INTL-4706,Valentina Smith,valentina.smith@logistics.com,+91 9266202251,Mexico,CET,Japanese,FinServe Group,CEO,Sarah Khan,Warm,Already spoke with spouse
+INTL-8818,Neha Iyer,NEHA.IYER@HOTMAIL.COM,+91-90475-09401 ext 191,Mexico,CET,Japanese,NextGen IT,Consultant,Karan Singh,Sale Closed,Requested WhatsApp instead of calls
+INTL-8585,Diego Smith, diego.smith@gmail.com ,+91 9213233456,UAE,PST,Spanish,City Hospital,Consultant,Amit Patel,Cold,DND
+INTL-7653,Vikram Kumar,,0091-9180481160,Spain,CET,French,Metro Properties,Consultant,,,
+INTL-3118,Rahul Iyer,,Office Number,Mexico,EST,Spanish,Quantum Systems,Manager,,,
+INTL-9467,Kavita Patel,,,France,JST,Spanish,Acme Corp,Director,,,
+INTL-7449,Rahul Smith, rahul.smith@yahoo.com ,+1 (627) 555-7748,Mexico,CET,Japanese,BlueOcean,Consultant,Sarah Khan,Busy,Call back tomorrow
+INTL-2653,Rahul Rao,rahul.rao@icloud.com,+91 9058956735,UAE,PST,Japanese,Pioneer Manufacturing,CEO,Amit Patel,Booked,Sent brochure
+INTL-4771,Ravi Li,,WhatsApp Only,Japan,JST,French,Metro Properties,Consultant,,,
+INTL-3605,Rahul Ali, rahul.ali@logistics.com ,0091-9836062037,France,PST,French,Urban Builders,Manager,Ali Hassan,Loan Pending,DND
+INTL-6100,John Gupta,john.gupta@yahoo.com,+91 9917593207,Mexico,JST,French,FinServe Group,Director,Priya Shah,Budget Issue,Old customer returning
+INTL-8695,Emily Sharma,emily.sharmaatstartup.io,+1 (727) 555-9942,UAE,CET,French,FinServe Group,Director,,,
+INTL-2809,Aditya Smith,aditya.smith@startup.io,+91 9360823400,UAE,PST,Japanese,Apex Solutions,Director,Rahul Mehta,Duplicate,Budget increased
+INTL-5276,Rahul Gupta,rahul.gupta@company.net,+91 9964341403,Japan,JST,Japanese,Sunrise Foods,CEO,Rahul Mehta,Hot,Already spoke with spouse
+INTL-3811,Rahul Sharma,RAHUL.SHARMA@LOGISTICS.COM,+1 (605) 555-3779,Japan,EST,French,Global Logistics,Consultant,Ali Hassan,Meeting Scheduled,Referred by existing client
+INTL-6829,Sneha Reddy,sneha.reddy@logistics.com,+91 9274857469,Mexico,JST,English,Urban Builders,Manager,Karan Singh,Busy,Not picking up
+INTL-4492,Wei Kumar,wei.kumar@enterprise.co,+91 9831844375,Spain,CET,French,Zenith Enterprises,Consultant,Amit Patel,Call Back,Wants to negotiate
+INTL-9555,Sarah Martinez,sarah.martinez@gmail.com,0091-9510007159,UAE,EST,Japanese,Apex Solutions,Consultant,,,
+INTL-4027,Arjun Gupta,arjun.gupta@logistics.com,WhatsApp Only,France,JST,English,City Hospital,CEO,,,
+INTL-7921,Priya Li,priya.li@enterprise.co,+91 9029499291,Mexico,CET,French,BlueOcean,Consultant,Rahul Mehta,Meeting Scheduled,Call back tomorrow
+INTL-8638,Wei Wang,wei.wang@hotmail.com [donotemail],+1 (760) 555-2926,Mexico,JST,French,Agile Agency,Director,Amit Patel,Warm,Asked to call after 7 PM
+INTL-8638,Wei Wang,DUPLICATE: wei.wang@hotmail.com [donotemail],+1 (760) 555-2926,Mexico,JST,French,Agile Agency,Director,Amit Patel,Warm,Asked to call after 7 PM
+INTL-2227,Kavita Reddy,"kavita.reddy@icloud.com, secondary@outlook.com",9322793020 / 9730171288,France,CET,English,City Hospital,Manager,Sarah Khan,Invalid Lead,Wants to negotiate
+INTL-4449,Chen Doe,chen.doe@techsolutions.in,+91 9437663452,Germany,CET,Japanese,Pioneer Manufacturing,Director,Rahul Mehta,Call Back,Wants to negotiate
+INTL-7964,Aditya Reddy,aditya.reddy@yahoo.com,+91 9625907732,France,PST,French,Global Logistics,Consultant,Karan Singh,Duplicate,Already spoke with spouse
+INTL-4973,Michael Gupta,michael.gupta@hotmail.com,+91 9651998643,Spain,EST,English,BlueOcean,Manager,Jessica Wong,Sale Closed,Left voicemail
+INTL-3101,Anjali Reddy,anjali.reddy@gmail.com,+91 9972751623,Spain,PST,English,FinServe Group,Director,Ali Hassan,Wrong Number,Decision maker travelling
+INTL-8432,Neha Verma,neha.verma@startup.io,+91 9084656356,Germany,EST,English,TechNova,CEO,Amit Patel,No Response,Needs GST invoice
+INTL-1345,Michael Smith,,+91-92223-75090 ext 950,Mexico,JST,Spanish,Urban Builders,Director,,,
+INTL-1289,Kavita Iyer,kavita.iyer@company.net,+91 9436004395,Mexico,EST,Japanese,Sunrise Foods,Consultant,Ali Hassan,Lost,Needs GST invoice
+INTL-6259,John Menon, john.menon@startup.io ,Secondary Contact,Japan,EST,Japanese,Zenith Enterprises,CEO,Karan Singh,Meeting Scheduled,Referred by existing client
+INTL-9279,Priya Martinez,priya.martinez@outlook.com,+91 9377639573,Spain,JST,French,City Hospital,Consultant,Karan Singh,Meeting Scheduled,Follow up next Friday
+INTL-6758,Sneha Li,sneha.li@hotmail.com,+91 9208887520,UAE,EST,French,Agile Agency,CEO,Jessica Wong,Warm,Duplicate enquiry from Facebook
+INTL-2176,Aditya Gupta,aditya.gupta@startup.io,+91 9449493484,Japan,PST,Japanese,Agile Agency,CEO,Ali Hassan,Invalid Lead,Decision maker travelling
+INTL-5178,Valentina Patel,valentina.patel@startup.io,+91 9163006172,UAE,JST,Japanese,Acme Corp,Director,Priya Shah,Warm,Wants to negotiate
+INTL-3014,Rahul Hassan,rahul.hassan@outlook.com,+91 9424810497,Spain,CET,French,Metro Properties,CEO,Priya Shah,Booked,Duplicate enquiry from Facebook
+INTL-6783,Ravi Smith,   ravi.smith@outlook.com   ,+91 9248574902,Mexico,PST,English,NextGen IT,Consultant,Karan Singh,No Response,Price sensitive
+INTL-3695,Wei Ali,wei.ali@gmail.com,+91 9072463976,France,PST,Japanese,Urban Builders,CEO,Amit Patel,Hot,Interested in 3BHK
+INTL-6176,Rahul Hernandez,rahul.hernandez@enterprise.co,+91 9541169226,France,CET,Spanish,Acme Corp,Manager,Priya Shah,Hot,Wants to negotiate
+INTL-2300,Emily Reddy,emily.reddy@yahoo.com,+91 9021107926,Mexico,PST,Spanish,Apex Solutions,Consultant,Karan Singh,No Response,Working night shift
+INTL-5637,Priya Verma,priya.verma@gmail.com,+91 9906439248,UAE,JST,Japanese,TechNova,Manager,Rahul Mehta,Cancelled,Duplicate enquiry from Facebook
+INTL-6448,Kavita Martinez,kavita.martinez@company.net,+91 9866674676,Mexico,EST,Spanish,Sunrise Foods,Director,Amit Patel,Cold,Referred by existing client
+INTL-8163,Sarah Patel,sarah.patel@yahoo.com,+91 9486745385,Spain,PST,English,Sunrise Foods,Consultant,Amit Patel,Sale Closed,Working night shift
+INTL-5122,Priya Ali,priya.ali@company.net,+91 9430325057,Mexico,PST,French,Sunrise Foods,Manager,Sarah Khan,Lost,Decision maker travelling
+INTL-8887,Anjali Patel,anjali.patelatoutlook.com,Office Number,France,JST,Spanish,Metro Properties,Director,,,
+INTL-7088,Priya Ali,priya.ali@techsolutions.in,+91 9944315210,France,JST,French,Agile Agency,Manager,Amit Patel,Duplicate,Left voicemail
+INTL-7631,Michael Martinez,,,Germany,JST,English,FinServe Group,CEO,,,
+INTL-6715,Aditya Gupta,aditya.gupta@company.net,+91 9681355109,France,EST,French,Urban Builders,Director,Ali Hassan,Follow-up Required,Not picking up
+INTL-3275,Valentina Hernandez,valentina.hernandez@icloud.com,+91 9875046582,Germany,CET,Spanish,Zenith Enterprises,CEO,Ali Hassan,Duplicate,Price sensitive
+INTL-2570,Aditya Hernandez,aditya.hernandez@logistics.com,+91 9183085201,Japan,JST,French,Pioneer Manufacturing,Manager,Jessica Wong,Site Visit Completed,Not picking up
+INTL-3530,Sneha Verma,sneha.verma@logistics.com,+91 9907140028,UAE,CET,English,Pioneer Manufacturing,CEO,Amit Patel,Invalid Lead,Call back tomorrow
+INTL-9637,Neha Smith,neha.smith@gmail.com,+91 9928320832,Germany,EST,English,Zenith Enterprises,CEO,Sarah Khan,Converted,Wants to negotiate
+INTL-5544,Vikram Reddy,vikram.reddy@enterprise.co,+91 9118632162,Spain,EST,Japanese,Acme Corp,CEO,Ali Hassan,Invalid Lead,Asked to call after 7 PM
+INTL-3327,Anjali Wang,anjali.wang@logistics.com,+91 9096325689,UAE,CET,French,Zenith Enterprises,Director,Amit Patel,Duplicate,Price sensitive
+INTL-5893,Ravi Hernandez,ravi.hernandez@techsolutions.in [donotemail],+91-94537-35724 ext 935,Germany,EST,French,BlueOcean,CEO,Amit Patel,Call Back,Asked to call after 7 PM
+INTL-2879,Chen Iyer,,WhatsApp Only,France,PST,English,TechNova,Consultant,,,
+INTL-7401,Neha Singh,neha.singh@yahoo.com,Office Number,Japan,CET,French,NextGen IT,Director,Rahul Mehta,Cold,Asked to call after 7 PM
+INTL-3861,Arjun Martinez,arjun.martinez@gmail.com,+91 9445666199,Germany,EST,Spanish,NextGen IT,Consultant,Jessica Wong,Wrong Number,Working night shift
+INTL-2673,Ravi Hernandez,ravi.hernandez@startup.io,+91 9853897160,Germany,PST,French,FinServe Group,CEO,Priya Shah,Booked,Needs GST invoice
+INTL-8158,John Sharma,john.sharma@yahoo.com,Office Number,Germany,EST,Spanish,Apex Solutions,CEO,Sarah Khan,Call Back,Interested in 3BHK
+INTL-7548,Neha Kumar,neha.kumar@logistics.com,+91 9708527589,Spain,PST,English,Quantum Systems,CEO,Jessica Wong,Call Back,Referred by existing client
+INTL-7695,Sneha Rao,sneha.rao@techsolutions.in,+91 9949282329,Japan,CET,French,Metro Properties,Director,Amit Patel,Site Visit Completed,Requested WhatsApp instead of calls
+INTL-5977,Diego Sharma,diego.sharma@enterprise.co,+91 9455139099,Mexico,PST,English,Quantum Systems,Manager,Rahul Mehta,Hot,Interested in 3BHK
+INTL-3127,Anjali Smith,anjali.smith@yahoo.com,+91 9893857580,UAE,EST,Japanese,Quantum Systems,Consultant,Ali Hassan,Wrong Number,Not picking up
+INTL-8761,Michael Li, michael.li@techsolutions.in ,Secondary Contact,Spain,JST,English,Stellar Services,Director,Rahul Mehta,Follow-up Required,Old customer returning
+INTL-9698,Michael Menon,michael.menon@outlook.com,+91 9881805813,Germany,CET,Spanish,Pioneer Manufacturing,Director,Amit Patel,Follow-up Required,Decision maker travelling
+INTL-8083,Sneha Li,,91930 68379,Germany,JST,English,Acme Corp,CEO,,,
+INTL-3507,Priya Wang,PRIYA.WANG@COMPANY.NET,+91 9408559719,Japan,CET,Japanese,TechNova,Manager,Rahul Mehta,Cold,Requested WhatsApp instead of calls
+INTL-7711,Diego Singh,diego.singh@company.net,+91 9351936491,UAE,JST,Spanish,NextGen IT,Manager,Amit Patel,Lost,Old customer returning
+INTL-8400,Rahul Sharma,rahul.sharma@techsolutions.in,+91 9683673206,Japan,CET,English,FinServe Group,Consultant,Amit Patel,Wrong Number,Working night shift
+INTL-4768,Wei Smith,wei.smith@enterprise.co,+91 9461698599,Mexico,PST,Japanese,Zenith Enterprises,Consultant,Amit Patel,Interested,Budget increased
+INTL-3444,John Li,john.li@company.net,+91 9639650333,Germany,CET,English,Agile Agency,Director,Karan Singh,Booked,Already spoke with spouse
+INTL-5969,Emily Singh,emily.singh@yahoo.com,+91 9931204296,Japan,CET,French,NextGen IT,Consultant,Amit Patel,Invalid Lead,Preferred morning calls
+INTL-8644,Arjun Hernandez,,+1 (447) 555-2011,Spain,JST,Japanese,Apex Solutions,CEO,,,
+INTL-5750,Diego Li,,+1 (880) 555-5445,UAE,EST,Japanese,Zenith Enterprises,Manager,,,
+INTL-5431,Ravi Wang,,,France,EST,Japanese,TechNova,Director,,,
+INTL-5431,Ravi Wang,,,France,EST,Japanese,DUPLICATE: TechNova,Director,,,
+INTL-3878,Michael Sharma,michael.sharma@icloud.com,+91 9561740059,Germany,EST,Japanese,Stellar Services,Director,Amit Patel,Warm,Referred by existing client
+INTL-9376,Anjali Reddy,anjali.reddy@startup.io,+91 9785898830,Japan,EST,English,Acme Corp,CEO,Karan Singh,Lost,Decision maker travelling
+INTL-4161,Ravi Li,ravi.li@startup.io,+91 9630286915,Germany,PST,Japanese,Urban Builders,Director,Rahul Mehta,Lost,Referred by existing client

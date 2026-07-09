@@ -1,505 +1,462 @@
 " Lead Name ","Reach Number","Email Address","Organization","Date","Disposition","Internal Remarks","Empty1"," Gar bage ","Dup Column"
-"Sarah Doe","9373096432 / 9611326706","sarah.doe@outlook.com (old) 🚀
-New Line","City Hospital","44927","{""json"": ""fragment"", ""data"": ""Hot""}","Needs GST invoice","","garb","Sarah Doe"
-"Michael Menon","+1 (709) 555-3174","   michael.menon@hotmail.com   ","Global Logistics","2025.05.27","Duplicate ""quoted, text""","Requested WhatsApp instead of calls","","123","Michael Menon"
-"John Menon","+919166465002
-9265518035","john.menon@startup.io","Urban Builders","2026.01.16","Cancelled","Asked to call after 7 PM","","=SUM(A1:A5)","John Menon"
-"Anjali Reddy","+91 9081020814","anjali.reddy@techsolutions.in [donotemail]","Pioneer Manufacturing","2025.06.26 ""quoted, text""","Warm","Already spoke with spouse","","{""json"": ""fragment"", ""data"": """"}","Anjali Reddy"
-"Wei Martinez ""quoted, text""","Office Number","wei.martinez@gmail.com, secondary@hotmail.com","Apex Solutions","{""json"": ""fragment"", ""data"": ""invalid date""}","Sale Closed","Left voicemail","","#$@%","Wei Martinez ""quoted, text"""
-"Ravi Wang ""quoted, text""","Office Number","{""json"": ""fragment"", ""data"": ""ravi.wang@outlook.com, secondary@gmail.com""}","Global Logistics","---","Call Back","Needs GST invoice","","garb","Ravi Wang ""quoted, text"""
-"=SUM(A1:A5)","+919109192428
-9403381140","emily.liatyahoo.com","Global Logistics 🚀
-New Line","Last Week","Duplicate","Asked to call after 7 PM","","{""json"": ""fragment"", ""data"": ""#$@%""}","=SUM(A1:A5)"
-"Valentina Hernandez","WhatsApp Only","valentina.hernandez@hotmail.com, secondary@icloud.com","Pioneer Manufacturing","invalid date","Warm","DND","=SUM(A1:A5)","=SUM(A1:A5)","Valentina Hernandez"
-"Vikram Hernandez","0091-9041775087 ""quoted, text""","vikram.hernandez@startup.io, secondary@techsolutions.in","Urban Builders","08/22/2025","Lost","Wants to negotiate","","garb","Vikram Hernandez"
-"Vikram Hernandez","0091-9041775087 ""quoted, text""","vikram.hernandez@startup.io, secondary@techsolutions.in","Urban Builders","DUPLICATE: 08/22/2025","Lost","Wants to negotiate","","garb","Vikram Hernandez"
-"Chen Doe","+1 (277) 555-7286","   chen.doe@outlook.com   ","Stellar Services","2025.05.02","No Response","Requested WhatsApp instead of calls","","","Chen Doe"
-"Kavita Rao","WhatsApp Only","kavita.rao@startup.io, secondary@icloud.com","NextGen IT","2025-09-30","Busy","Follow up next Friday","","{""json"": ""fragment"", ""data"": ""=SUM(A1:A5)""}","Kavita Rao"
-"Valentina Sharma","Office Number","valentina.sharma@icloud.com (old)","City Hospital","26/02/2026","No Response","Budget increased","","123","Valentina Sharma"
-"Sarah Doe","95940 95023","","Acme Corp","invalid date","Busy","Left voicemail","","#$@%","Sarah Doe"
-"Vikram Kumar","+91 9037161047","vikram.kumaratgmail.com","Metro Properties","---","Follow-up Required","Preferred morning calls","","=SUM(A1:A5)","Vikram Kumar"
-"Michael Patel","0091-9599009420","   michael.patel@yahoo.com   ","Stellar Services 🚀
-New Line","2026.05.14","Sale Closed","Already spoke with spouse","","123","Michael Patel"
-"Emily Doe","Office Number","","Pioneer Manufacturing","44927","Budget Issue","Sent brochure","","=SUM(A1:A5)","Emily Doe"
-"Valentina Rao","Secondary Contact","   valentina.rao@startup.io   ","Metro Properties","13-May-2026","Wrong Number","DND","","=SUM(A1:A5)","Valentina Rao"
-"Vikram Hernandez","+91 9091519225","vikram.hernandez@enterprise.co","TechNova","2025.06.10","Interested","DND","","123","Vikram Hernandez"
-"Valentina Iyer","Secondary Contact","valentina.iyer@logistics.com, secondary@company.net","Zenith Enterprises","44927","Interested","Left voicemail 🚀
-New Line","","garb","Valentina Iyer"
-"Neha Reddy 🚀
-New Line","+91-90477-51550 ext 982","neha.reddy@techsolutions.in","Metro Properties","15-Apr-2026","Loan Pending ""quoted, text""","Referred by existing client","","{""json"": ""fragment"", ""data"": ""123""}","Neha Reddy 🚀
+"Neha Hernandez","+919771884769
+9079607142","   neha.hernandez@hotmail.com   ","Zenith Enterprises","44927","Hot","Wants to negotiate","","123","Neha Hernandez"
+"Valentina Patel","Secondary Contact 🚀
+New Line","valentina.patelattechsolutions.in","Stellar Services","---","Warm","DND","","garb","Valentina Patel"
+"Anjali Verma","Office Number","anjali.verma@enterprise.co (old)","City Hospital","2025.01.31","Cold","Referred by existing client","","","Anjali Verma"
+"Aditya Kumar","9886618891 / 9319914963","aditya.kumar@startup.io [donotemail]","Pioneer Manufacturing","2026.05.14","Converted","Requested WhatsApp instead of calls"," 🚀
+New Line","","Aditya Kumar"
+"Emily Sharma","+91-99257-09879 ext 601","emily.sharmaatoutlook.com","BlueOcean","26-Aug-2025","Meeting Scheduled","Asked to call after 7 PM","","123","Emily Sharma"
+"Arjun Doe","91016 36874"," 🚀
+New Line","Urban Builders","2025.06.21","Warm","Left voicemail","","#$@%","Arjun Doe"
+"Anjali Wang","WhatsApp Only","anjali.wangatcompany.net","Metro Properties","04-Jan-2025","No Response ""quoted, text""","Not picking up","","=SUM(A1:A5)","Anjali Wang"
+"Anjali Reddy","+91 9753548588","anjali.reddy@gmail.com, secondary@startup.io","Acme Corp","Yesterday","Site Visit Completed","Preferred morning calls","{""json"": ""fragment"", ""data"": """"}","","Anjali Reddy"
+"{""json"": ""fragment"", ""data"": ""Emily Hassan""}","0091-9610448860","","FinServe Group","2025.05.10","No Response","Preferred morning calls","","123","{""json"": ""fragment"", ""data"": ""Emily Hassan""}"
+"{""json"": ""fragment"", ""data"": ""Chen Ali""}","0091-9587324029","chen.aliaticloud.com","TechNova","invalid date","=SUM(A1:A5)","Already spoke with spouse","","=SUM(A1:A5)","{""json"": ""fragment"", ""data"": ""Chen Ali""}"
+"Ravi Hernandez","+91-91498-26151 ext 713","   ravi.hernandez@hotmail.com   ","Acme Corp","11/28/2025 ""quoted, text""","Invalid Lead","Already spoke with spouse","","=SUM(A1:A5)","Ravi Hernandez"
+"Rahul Verma","Secondary Contact","","Pioneer Manufacturing","04-Jun-2025","Booked","Referred by existing client","","#$@%","Rahul Verma"
+"Chen Doe","9467200637 / 9127539231","chen.doe@techsolutions.in [donotemail]","Zenith Enterprises","Yesterday","No Response ""quoted, text""","Referred by existing client","","=SUM(A1:A5)","Chen Doe"
+"Rahul Ali","Office Number","rahul.ali@startup.io, secondary@logistics.com","Sunrise Foods","03/05/2025","Converted","Interested in 3BHK","","123","Rahul Ali"
+"Sarah Sharma","Secondary Contact","sarah.sharma@gmail.com, secondary@enterprise.co","Global Logistics","2026.05.14","Cancelled","Already spoke with spouse","","=SUM(A1:A5)","Sarah Sharma"
+"Michael Gupta","WhatsApp Only","michael.gupta@outlook.com, secondary@enterprise.co 🚀
+New Line","Stellar Services","23-Nov-2025","Busy","Interested in 3BHK","{""json"": ""fragment"", ""data"": """"}","#$@%","Michael Gupta"
+"Michael Patel","+1 (461) 555-9723 ""quoted, text""","","Apex Solutions","44927","Call Back","Call back tomorrow","","#$@%","Michael Patel"
+"Rahul Rao","+91-96703-22923 ext 213","   rahul.rao@company.net   ","Quantum Systems","07/10/2025","Duplicate","Asked to call after 7 PM","","123","Rahul Rao"
+"Vikram Gupta","Office Number","vikram.gupta@logistics.com, secondary@startup.io","Acme Corp","08/09/2025","Cancelled","Asked to call after 7 PM","","garb","Vikram Gupta"
+"Rahul Hernandez","0091-9846600039","rahul.hernandez@hotmail.com [donotemail]","Apex Solutions","2026.05.14","Lost","Asked to call after 7 PM","","=SUM(A1:A5)","Rahul Hernandez"
+"Priya Martinez","+91-97631-37637 ext 800","priya.martinezatenterprise.co","Quantum Systems","08/25/2025","{""json"": ""fragment"", ""data"": ""Warm""}","Not picking up","","#$@%","Priya Martinez"
+"Priya Doe","Secondary Contact","priya.doe@company.net 🚀
+New Line","Apex Solutions","---","Interested","Not picking up","","","Priya Doe"
+"Rahul Menon","9910772223 / 9965031546","rahul.menon@company.net","=SUM(A1:A5)","invalid date","No Response","Budget increased","","#$@%","Rahul Menon"
+"Sneha Ali","+91-98296-43481 ext 61","   sneha.ali@outlook.com   ","BlueOcean","2026-02-02","Booked","Sent brochure","","123","Sneha Ali"
+"Kavita Menon","+1 (630) 555-1394","kavita.menonattechsolutions.in","Stellar Services","06/02/2025","Loan Pending","Working night shift","=SUM(A1:A5)","garb","Kavita Menon"
+"Priya Doe","9151125383 / 9309985248","priya.doeatyahoo.com","City Hospital","invalid date","Duplicate","Referred by existing client","","garb","Priya Doe"
+"Wei Reddy","+91 9874700716","wei.reddy@gmail.com, secondary@startup.io","City Hospital","2026.05.14","Meeting Scheduled","Preferred morning calls"," ""quoted, text""","garb","Wei Reddy"
+"Neha Hernandez 🚀
+New Line","+91-95000-40358 ext 715","{""json"": ""fragment"", ""data"": """"}","NextGen IT","---","No Response","Requested WhatsApp instead of calls","","123","Neha Hernandez 🚀
 New Line"
-"Sarah Gupta","+1 (660) 555-5318","sarah.gupta@enterprise.co (old)","NextGen IT","2026-04-26","Budget Issue","Old customer returning","","123","Sarah Gupta"
-"Neha Menon","WhatsApp Only","neha.menon@hotmail.com","Global Logistics 🚀
-New Line","---","Converted","Follow up next Friday","","123","Neha Menon"
-"Neha Menon","DUPLICATE: WhatsApp Only","neha.menon@hotmail.com","Global Logistics 🚀
-New Line","---","Converted","Follow up next Friday","","123","Neha Menon"
-"Neha Menon","DUPLICATE: WhatsApp Only","neha.menon@hotmail.com","Global Logistics 🚀
-New Line","---","DUPLICATE: Converted","Follow up next Friday","","123","Neha Menon"
-"Valentina Hernandez","WhatsApp Only","valentina.hernandez@outlook.com","{""json"": ""fragment"", ""data"": ""Global Logistics""}","---","Converted","Working night shift","","123","Valentina Hernandez"
-"=SUM(A1:A5)","WhatsApp Only","neha.reddy@outlook.com, secondary@icloud.com","Apex Solutions ""quoted, text""","Last Week","Wrong Number 🚀
-New Line","Working night shift","","123","=SUM(A1:A5)"
-"Chen Menon","WhatsApp Only","chen.menon@techsolutions.in (old)","Zenith Enterprises","Today","Booked ""quoted, text""","Not picking up","","garb","Chen Menon"
-"Rahul Menon","+1 (268) 555-4431","rahul.menonatstartup.io","Pioneer Manufacturing","Last Week","Cold","Old customer returning"," ""quoted, text""","123 🚀
-New Line","Rahul Menon"
-"Valentina Rao","{""json"": ""fragment"", ""data"": ""WhatsApp Only""}","valentina.rao@company.net, secondary@logistics.com 🚀
-New Line","Agile Agency","03/31/2026","Warm","Call back tomorrow","","","Valentina Rao"
-"Wei Li","{""json"": ""fragment"", ""data"": ""WhatsApp Only""}","wei.liatcompany.net","Sunrise Foods","---","Booked","Wants to negotiate","","123","Wei Li"
-"Arjun Doe","WhatsApp Only","arjun.doe@gmail.com","Zenith Enterprises","44927","Meeting Scheduled","Old customer returning","","","Arjun Doe"
-"Sarah Singh","9736658832 / 9158735132","sarah.singh@logistics.com, secondary@startup.io","BlueOcean","2026.05.14","Site Visit Completed","Follow up next Friday","","=SUM(A1:A5)","Sarah Singh"
-"Sneha Smith","+919556913100
-9490276275","sneha.smith@startup.io (old)","Apex Solutions","Last Week","Cold","Interested in 3BHK","=SUM(A1:A5)","garb","Sneha Smith"
-"Vikram Reddy","9338416936 / 9732251815","vikram.reddy@yahoo.com (old)","FinServe Group","10/03/2025","Budget Issue","Left voicemail ""quoted, text""","","=SUM(A1:A5)","Vikram Reddy"
-"Sarah Hassan","Secondary Contact","{""json"": ""fragment"", ""data"": ""sarah.hassanaticloud.com""}","BlueOcean","Last Week","Warm","Preferred morning calls","","#$@% ""quoted, text""","Sarah Hassan"
-"Vikram Hernandez","{""json"": ""fragment"", ""data"": ""Office Number""}","vikram.hernandez@startup.io (old)","NextGen IT","Last Week","Follow-up Required","Working night shift","","123","Vikram Hernandez"
-"Priya Wang","91295 44778","priya.wangatyahoo.com","Quantum Systems","19/04/2025","Budget Issue","Follow up next Friday","","#$@%","Priya Wang"
-"John Doe","WhatsApp Only","john.doe@yahoo.com [donotemail]","City Hospital","23/04/2025","Lost","Already spoke with spouse","","garb 🚀
-New Line","John Doe"
-"Neha Verma","WhatsApp Only","neha.verma@hotmail.com (old)","Metro Properties","=SUM(A1:A5)","Budget Issue","Interested in 3BHK","{""json"": ""fragment"", ""data"": """"}","garb","Neha Verma"
-"John Singh","9420688613 / 9057843999","john.singh@yahoo.com [donotemail] ""quoted, text""","Apex Solutions","2025-07-26","Meeting Scheduled 🚀
-New Line","=SUM(A1:A5)","","","John Singh"
-"Aditya Smith","+91-90861-04453 ext 682","aditya.smith@techsolutions.in","Agile Agency","2026.05.14","Site Visit Completed","Requested WhatsApp instead of calls","","garb","Aditya Smith"
-"Emily Kumar","9208364908 / 9705383762","emily.kumaraticloud.com","City Hospital","invalid date","Follow-up Required","Follow up next Friday","","#$@%","Emily Kumar"
-"Emily Kumar","9208364908 / 9705383762","DUPLICATE: emily.kumaraticloud.com","City Hospital","invalid date","Follow-up Required","Follow up next Friday","","#$@%","Emily Kumar"
-"Kavita Hassan","95158 86950","   kavita.hassan@yahoo.com   ","Global Logistics 🚀
-New Line","44927","Busy","Referred by existing client","","","Kavita Hassan"
-"Aditya Wang","+91 9610803380","aditya.wang@outlook.com, secondary@logistics.com","Global Logistics","---","Site Visit Completed","Preferred morning calls","","garb","Aditya Wang"
-"Kavita Iyer","WhatsApp Only","kavita.iyer@logistics.com [donotemail]","Agile Agency","---","Loan Pending","Referred by existing client","","garb","Kavita Iyer"
-"Chen Menon","+919391841620
-9508772815","chen.menon@yahoo.com (old)","Pioneer Manufacturing","03/12/2025","Cold","DND","","","Chen Menon"
-"Diego Ali","9256973249 / 9559806770 ""quoted, text""","diego.ali@hotmail.com (old)","Quantum Systems","20/03/2025","Meeting Scheduled","Price sensitive","","=SUM(A1:A5)","Diego Ali"
-"Diego Ali","9256973249 / 9559806770 ""quoted, text""","diego.ali@hotmail.com (old)","Quantum Systems","20/03/2025","DUPLICATE: Meeting Scheduled","Price sensitive","","=SUM(A1:A5)","Diego Ali"
-"Sneha Iyer","9583911308 / 9140214605","sneha.iyer@company.net [donotemail] 🚀
-New Line","FinServe Group","2026.05.14","No Response","Already spoke with spouse","","","Sneha Iyer"
-"Arjun Verma","9875240690 / 9884828352","arjun.vermaathotmail.com","Sunrise Foods","02/02/2025 🚀
-New Line","Site Visit Completed","Old customer returning","","{""json"": ""fragment"", ""data"": ""=SUM(A1:A5)""}","Arjun Verma"
-"Aditya Ali","+91 9755013626 🚀
-New Line","aditya.ali@hotmail.com (old)","Stellar Services","{""json"": ""fragment"", ""data"": ""25-Apr-2026""}","Follow-up Required","Follow up next Friday","","","Aditya Ali"
-"John Kumar","9967364929 / 9007016033","john.kumar@icloud.com (old)","{""json"": ""fragment"", ""data"": ""Agile Agency""}","03/23/2025 🚀
-New Line","Loan Pending","Duplicate enquiry from Facebook","","#$@%","John Kumar"
-"Aditya Li","+91 9945137587 ""quoted, text""","aditya.li@logistics.com, secondary@outlook.com","Acme Corp","Last Week","Invalid Lead","Not picking up","","123","Aditya Li"
-"Sneha Ali","+91-98438-21178 ext 857","sneha.ali@techsolutions.in","Acme Corp","Today","Busy","Wants to negotiate","","#$@% 🚀
-New Line","Sneha Ali"
-"Sneha Rao","Office Number","sneha.rao@yahoo.com, secondary@logistics.com","=SUM(A1:A5)","44927","Invalid Lead","Needs GST invoice","","garb","Sneha Rao"
-"John Menon","9558496145 / 9653238645","john.menon@hotmail.com, secondary@hotmail.com","Pioneer Manufacturing","---","Warm","DND","","#$@%","John Menon"
-"Neha Doe","WhatsApp Only","neha.doeatoutlook.com","Pioneer Manufacturing","---","Interested","Duplicate enquiry from Facebook","","=SUM(A1:A5)","Neha Doe"
-"Emily Martinez","Office Number","emily.martinez@outlook.com, secondary@company.net","Metro Properties","Today","Converted","Decision maker travelling","","=SUM(A1:A5)","Emily Martinez"
-"Priya Verma","+919927423686
-9219285763","priya.verma@startup.io [donotemail]","Metro Properties","08/03/2025","Busy","Price sensitive","","123","Priya Verma"
-"Vikram Reddy","Office Number","   vikram.reddy@logistics.com   ","Apex Solutions","30/09/2025","Call Back","Preferred morning calls","","123","Vikram Reddy"
-"Neha Patel","92621 21261","","Metro Properties","Last Week","Cancelled","Follow up next Friday","","#$@% 🚀
-New Line","Neha Patel"
-"Arjun Singh","+91 9456261247","arjun.singh@gmail.com","Quantum Systems","2025.05.31","Invalid Lead","Sent brochure","","123","Arjun Singh"
-"Aditya Singh","0091-9425564954","aditya.singh@startup.io, secondary@startup.io","BlueOcean","07/19/2025","Meeting Scheduled","Already spoke with spouse","","garb","Aditya Singh"
-"Michael Verma","WhatsApp Only","michael.verma@hotmail.com, secondary@icloud.com","Metro Properties","Yesterday","Sale Closed","Not picking up","=SUM(A1:A5)","=SUM(A1:A5)","Michael Verma"
-"Vikram Gupta","Office Number ""quoted, text""","   vikram.gupta@yahoo.com   ","BlueOcean","2026.05.14","Follow-up Required","{""json"": ""fragment"", ""data"": ""Wants to negotiate 🚀
-New Line""}","","garb","Vikram Gupta"
-"John Wang","0091-9229690783","john.wang@yahoo.com","City Hospital","2026.05.14 ""quoted, text""","Duplicate","Wants to negotiate","","","John Wang"
-"Vikram Patel","+91-92289-39619 ext 494 ""quoted, text""","vikram.patel@enterprise.co, secondary@icloud.com","TechNova","44927","Follow-up Required","Old customer returning","","=SUM(A1:A5)","Vikram Patel"
-"Emily Smith","94549 00557","emily.smith@yahoo.com [donotemail]","Sunrise Foods","invalid date","Call Back","Working night shift","","","Emily Smith"
-"Vikram Gupta","+91 9548866544","vikram.gupta@yahoo.com [donotemail]","Zenith Enterprises","Yesterday","Loan Pending","Decision maker travelling","","=SUM(A1:A5)","Vikram Gupta"
-"Ravi Patel","WhatsApp Only","ravi.patel@gmail.com, secondary@icloud.com","Urban Builders","15/01/2025","Booked","Left voicemail","","garb","Ravi Patel"
-"Diego Li","=SUM(A1:A5)","diego.li@icloud.com [donotemail]","Urban Builders","Last Week","{""json"": ""fragment"", ""data"": ""Meeting Scheduled""}","Wants to negotiate"," ""quoted, text""","","Diego Li"
-"Sneha Doe","=SUM(A1:A5)","sneha.doe@hotmail.com, secondary@gmail.com","Stellar Services","---","Booked","Working night shift","","garb","Sneha Doe"
-"Ravi Reddy","+1 (581) 555-1104","   ravi.reddy@hotmail.com   ","Sunrise Foods","20/02/2026","Warm","Preferred morning calls"," 🚀
-New Line","","Ravi Reddy"
-"Aditya Menon","0091-9614368611","aditya.menon@icloud.com, secondary@outlook.com","Quantum Systems","=SUM(A1:A5)","Budget Issue","Requested WhatsApp instead of calls","","garb","Aditya Menon"
-"Anjali Sharma","+919433915718
-9088149419","=SUM(A1:A5)","TechNova","Today","No Response","Preferred morning calls","{""json"": ""fragment"", ""data"": """"}","garb","Anjali Sharma"
-"Kavita Martinez","0091-9154371069","kavita.martinez@startup.io [donotemail]","Sunrise Foods","2025-11-05","Cold","Interested in 3BHK"," ""quoted, text""","","Kavita Martinez"
-"Wei Gupta","+919306812754
-9472663340","wei.guptaaticloud.com","Stellar Services","12/02/2025","Site Visit Completed","Follow up next Friday","=SUM(A1:A5)","123","Wei Gupta"
-"Michael Verma","WhatsApp Only","michael.vermaatoutlook.com","Quantum Systems","invalid date","Booked","{""json"": ""fragment"", ""data"": ""Duplicate enquiry from Facebook""}","","=SUM(A1:A5)","Michael Verma"
-"Michael Verma","WhatsApp Only","michael.vermaatoutlook.com","Quantum Systems","DUPLICATE: invalid date","Booked","{""json"": ""fragment"", ""data"": ""Duplicate enquiry from Facebook""}","","=SUM(A1:A5)","Michael Verma"
-"Aditya Doe","9960223322 / 9734887683","aditya.doe@hotmail.com","NextGen IT","01/31/2025","Converted","Follow up next Friday","","#$@%","Aditya Doe"
-"Neha Ali","+919601877192
-9714154257","neha.aliatlogistics.com","Urban Builders 🚀
-New Line","---","Site Visit Completed","Price sensitive","","=SUM(A1:A5)","Neha Ali"
-"Aditya Singh","{""json"": ""fragment"", ""data"": ""+1 (914) 555-5476""}","   aditya.singh@hotmail.com   ","Apex Solutions","14/06/2025","Call Back","Left voicemail","=SUM(A1:A5)","garb","Aditya Singh"
-"Valentina Wang","92350 51497","valentina.wang@hotmail.com, secondary@techsolutions.in 🚀
-New Line","Global Logistics","2026.05.14","Budget Issue","Price sensitive","","","Valentina Wang"
-"Ravi Li","Office Number","   ravi.li@enterprise.co   ","Metro Properties","2026-01-17","Warm","Sent brochure"," 🚀
-New Line","123","Ravi Li"
-"Neha Gupta","Secondary Contact 🚀
-New Line","neha.gupta@icloud.com, secondary@icloud.com","Acme Corp","2025-05-06","Wrong Number","Left voicemail","","#$@%","Neha Gupta"
-"Neha Li","+91 9595965170 🚀
-New Line","neha.liattechsolutions.in","Sunrise Foods","44927","Interested","Old customer returning ""quoted, text""","","#$@%","Neha Li"
-"Chen Ali 🚀
-New Line","+1 (377) 555-9094","chen.ali@gmail.com","Pioneer Manufacturing","04/12/2025","Cancelled","Asked to call after 7 PM","=SUM(A1:A5)","123","Chen Ali 🚀
+"Kavita Ali","+91 9666722656","kavita.ali@startup.io (old)","Apex Solutions","12-Jan-2026","Call Back 🚀
+New Line","Duplicate enquiry from Facebook","{""json"": ""fragment"", ""data"": """"} ""quoted, text""","=SUM(A1:A5)","Kavita Ali"
+"Rahul Li","+919788736309
+9751173230","rahul.li@logistics.com","BlueOcean","Yesterday","Wrong Number","Interested in 3BHK"," 🚀
+New Line","","Rahul Li"
+"Arjun Singh","WhatsApp Only","","TechNova","2025.11.08","Hot","Requested WhatsApp instead of calls","","=SUM(A1:A5)","Arjun Singh"
+"Vikram Menon","94153 51547","vikram.menon@icloud.com","Global Logistics","2025-01-14","{""json"": ""fragment"", ""data"": ""Booked 🚀
+New Line""}","Follow up next Friday","","","Vikram Menon"
+"Diego Ali","+91-99761-00892 ext 420","   diego.ali@techsolutions.in   ","Acme Corp","invalid date","=SUM(A1:A5)","Not picking up","","garb","Diego Ali"
+"Arjun Gupta 🚀
+New Line","0091-9910992383","   arjun.gupta@techsolutions.in   ","Acme Corp","Today","Sale Closed","{""json"": ""fragment"", ""data"": ""Requested WhatsApp instead of calls""}","","=SUM(A1:A5)","Arjun Gupta 🚀
 New Line"
-"Wei Reddy","Office Number","wei.reddy@gmail.com (old)","Acme Corp","08/06/2025","Invalid Lead","Follow up next Friday","","123","Wei Reddy"
-"Michael Smith","+1 (353) 555-2180","","Quantum Systems","invalid date","Busy","DND","","garb ""quoted, text""","Michael Smith"
-"Sarah Ali","{""json"": ""fragment"", ""data"": ""WhatsApp Only""}","sarah.ali@company.net [donotemail]","Quantum Systems","03/24/2026","No Response","Price sensitive","","#$@%","Sarah Ali"
-"Priya Hassan","Office Number","   priya.hassan@logistics.com   ","FinServe Group","Last Week","Budget Issue","Working night shift","{""json"": ""fragment"", ""data"": """"}","=SUM(A1:A5)","Priya Hassan"
-"Rahul Gupta","Office Number","rahul.gupta@outlook.com [donotemail]","Sunrise Foods","invalid date","Loan Pending","DND","","#$@%","Rahul Gupta"
-"Priya Hassan","+91 9473234571","   priya.hassan@yahoo.com   ","Acme Corp ""quoted, text""","05/23/2025","Sale Closed","Decision maker travelling","","","Priya Hassan"
-"Ravi Reddy","Office Number ""quoted, text""","","Sunrise Foods","invalid date","Sale Closed","DND","","=SUM(A1:A5)","Ravi Reddy"
-"Priya Hassan","+919426570635
-9266127904","priya.hassan@icloud.com, secondary@logistics.com","Zenith Enterprises","15-Jan-2026","Wrong Number","{""json"": ""fragment"", ""data"": ""Asked to call after 7 PM""}","","garb 🚀
-New Line","Priya Hassan"
-"Aditya Singh","+1 (725) 555-7927","=SUM(A1:A5)","Sunrise Foods","01/30/2025","Loan Pending","Requested WhatsApp instead of calls","","#$@%","Aditya Singh"
-"Arjun Ali","+1 (497) 555-7108","arjun.aliatlogistics.com","Metro Properties","---","No Response","Follow up next Friday","","=SUM(A1:A5)","Arjun Ali"
-"Valentina Hernandez","+91-95368-92918 ext 94","valentina.hernandezathotmail.com","Metro Properties","2026.05.14","{""json"": ""fragment"", ""data"": ""Hot""}","Old customer returning","","123","Valentina Hernandez"
-"{""json"": ""fragment"", ""data"": ""Sneha Wang""}","92562 84822","sneha.wang@logistics.com [donotemail]","Stellar Services","2026.03.22","Booked","DND","","#$@%","{""json"": ""fragment"", ""data"": ""Sneha Wang""}"
-"Wei Patel","=SUM(A1:A5)","wei.patel@hotmail.com [donotemail]","BlueOcean","11/03/2025","Cancelled","Sent brochure","","#$@%","Wei Patel"
-"Ravi Patel ""quoted, text""","+91 9933107499","   ravi.patel@startup.io   ","City Hospital","2026.05.14","Busy","Not picking up","","123","Ravi Patel ""quoted, text"""
-"{""json"": ""fragment"", ""data"": ""Priya Smith""}","Office Number","   priya.smith@yahoo.com   ","Metro Properties","2026.05.14","Duplicate ""quoted, text""","Duplicate enquiry from Facebook","","","{""json"": ""fragment"", ""data"": ""Priya Smith""}"
-"Neha Hassan","Secondary Contact ""quoted, text""","   neha.hassan@icloud.com   ","Global Logistics","28/07/2025","Budget Issue","DND","","#$@%","Neha Hassan"
-"Emily Smith","+919582267464
-9239738615","emily.smithatstartup.io ""quoted, text""","Urban Builders","28-Jan-2025","Budget Issue","Wants to negotiate","","#$@%","Emily Smith"
-"Ravi Verma","98464 79992","ravi.verma@gmail.com, secondary@company.net","City Hospital","invalid date","Wrong Number","Already spoke with spouse","","=SUM(A1:A5)","Ravi Verma"
-"Anjali Menon","WhatsApp Only","anjali.menon@logistics.com [donotemail]","BlueOcean","invalid date","Cold","{""json"": ""fragment"", ""data"": ""Preferred morning calls""}","","123","Anjali Menon"
-"Kavita Iyer","WhatsApp Only","","FinServe Group","Today","Loan Pending","Preferred morning calls","{""json"": ""fragment"", ""data"": """"}","garb","Kavita Iyer"
-"Diego Reddy","+91-96705-45700 ext 495 🚀
-New Line","diego.reddy@techsolutions.in [donotemail]","FinServe Group","10-May-2025","Sale Closed","Already spoke with spouse","{""json"": ""fragment"", ""data"": """"}","123","Diego Reddy"
-"Diego Reddy","+91-96705-45700 ext 495 🚀
-New Line","DUPLICATE: diego.reddy@techsolutions.in [donotemail]","FinServe Group","10-May-2025","Sale Closed","Already spoke with spouse","{""json"": ""fragment"", ""data"": """"}","123","Diego Reddy"
-"Priya Menon","+919416129838
-9621225413","   priya.menon@yahoo.com   ","Quantum Systems","2025.11.20","Call Back","Preferred morning calls","","#$@% ""quoted, text""","Priya Menon"
-"Neha Wang","+919695651601
-9399260649","neha.wang@yahoo.com, secondary@logistics.com","Global Logistics","2025.12.09","Loan Pending","Requested WhatsApp instead of calls","","#$@%","Neha Wang"
-"Kavita Iyer","{""json"": ""fragment"", ""data"": ""Secondary Contact""}","kavita.iyeratenterprise.co","Stellar Services","Yesterday","Call Back","Budget increased","","#$@%","Kavita Iyer"
-"Vikram Sharma","0091-9165202480","vikram.sharmaatcompany.net","Sunrise Foods","=SUM(A1:A5)","Cancelled","Budget increased","","=SUM(A1:A5)","Vikram Sharma"
-"Diego Wang 🚀
-New Line","Office Number","diego.wang@yahoo.com [donotemail]","Quantum Systems","invalid date","Converted","Not picking up","","123","Diego Wang 🚀
+"Valentina Ali","+91-95711-62132 ext 196","valentina.ali@hotmail.com (old)","Sunrise Foods","Today","Cold","Call back tomorrow","","123","Valentina Ali"
+"Diego Smith","98952 94894","diego.smithattechsolutions.in","Stellar Services","11/24/2025","Hot","=SUM(A1:A5)","","","Diego Smith"
+"Ravi Singh","94703 78219","   ravi.singh@icloud.com   ","Urban Builders","Last Week","Follow-up Required","Call back tomorrow","","","Ravi Singh"
+"Anjali Reddy","+91 9441410197","anjali.reddy@company.net, secondary@yahoo.com","Global Logistics","{""json"": ""fragment"", ""data"": ""2026.05.14""}","Meeting Scheduled","Left voicemail","","","Anjali Reddy"
+"Rahul Iyer","0091-9433348065","   rahul.iyer@yahoo.com   ","City Hospital","44927","Interested ""quoted, text""","Old customer returning","","garb","Rahul Iyer"
+"Vikram Li 🚀
+New Line","96427 37101","   vikram.li@logistics.com   ","BlueOcean","---","Budget Issue","Follow up next Friday","","#$@%","Vikram Li 🚀
 New Line"
-"Valentina Sharma","+91-95384-27078 ext 247","valentina.sharma@logistics.com, secondary@techsolutions.in","BlueOcean","2025-07-29","Interested","Follow up next Friday","","#$@%","Valentina Sharma"
-"John Sharma","93794 23569","   john.sharma@company.net   ","Apex Solutions","2025.12.22","Invalid Lead","Working night shift","","","John Sharma"
-"=SUM(A1:A5)","Secondary Contact","aditya.wang@company.net (old)","Apex Solutions","invalid date ""quoted, text""","Interested","Already spoke with spouse","","#$@%","=SUM(A1:A5)"
-"Sneha Patel","+919463102126
-9496836437","sneha.patel@techsolutions.in","Urban Builders","Last Week","Interested","Call back tomorrow","","123","Sneha Patel"
-"Priya Sharma","90980 82872","priya.sharma@hotmail.com (old)","Pioneer Manufacturing","{""json"": ""fragment"", ""data"": ""2025-12-12""}","Lost","Duplicate enquiry from Facebook","","#$@%","Priya Sharma"
-"Ravi Reddy","Office Number","ravi.reddy@logistics.com","BlueOcean","{""json"": ""fragment"", ""data"": ""invalid date""}","Budget Issue","Already spoke with spouse","","","Ravi Reddy"
-"Anjali Rao","Office Number","anjali.rao@techsolutions.in (old)","Pioneer Manufacturing","09/11/2025","Booked","Follow up next Friday","","123","Anjali Rao"
-"Priya Li","+91 9759372509","   priya.li@enterprise.co   ","NextGen IT","02/04/2026","Call Back","Old customer returning","","","Priya Li"
-"=SUM(A1:A5)","+1 (738) 555-7134","","Stellar Services","---","Budget Issue","Referred by existing client","","123","=SUM(A1:A5)"
-"Aditya Patel","WhatsApp Only","aditya.patelatyahoo.com","Stellar Services","20-Aug-2025","Budget Issue","Duplicate enquiry from Facebook","","#$@%","Aditya Patel"
-"Aditya Patel","DUPLICATE: WhatsApp Only","aditya.patelatyahoo.com","Stellar Services","20-Aug-2025","Budget Issue","Duplicate enquiry from Facebook","","#$@%","Aditya Patel"
-"{""json"": ""fragment"", ""data"": ""Neha Iyer""}","+1 (655) 555-8271","neha.iyer@enterprise.co [donotemail]","Zenith Enterprises","invalid date","Lost","Decision maker travelling","","","{""json"": ""fragment"", ""data"": ""Neha Iyer""}"
-"Valentina Gupta","9858493235 / 9713480412","valentina.guptaatlogistics.com","Global Logistics","08/26/2025","Interested","{""json"": ""fragment"", ""data"": ""Budget increased 🚀
-New Line""}"," ""quoted, text""","#$@%","Valentina Gupta"
-"Rahul Martinez","+91 9127614912","rahul.martinez@outlook.com [donotemail]","Pioneer Manufacturing","07-Dec-2025","Converted","Not picking up"," 🚀
-New Line","123","Rahul Martinez"
-"Arjun Kumar","0091-9601369346","   arjun.kumar@logistics.com   ","TechNova","{""json"": ""fragment"", ""data"": ""2025-03-04""}","Loan Pending ""quoted, text""","Old customer returning","","garb","Arjun Kumar"
-"Ravi Sharma","Office Number","ravi.sharmaatoutlook.com","Pioneer Manufacturing","Last Week","=SUM(A1:A5)","Wants to negotiate 🚀
-New Line","{""json"": ""fragment"", ""data"": """"}","","Ravi Sharma"
-"Vikram Singh","=SUM(A1:A5)","vikram.singh@gmail.com","Agile Agency","11/02/2025","Budget Issue","Duplicate enquiry from Facebook","","","Vikram Singh"
-"Rahul Patel","+919964766848
-9626171518","rahul.patel@gmail.com (old)","NextGen IT","{""json"": ""fragment"", ""data"": ""Last Week""}","Busy","Call back tomorrow","","garb","Rahul Patel"
-"Aditya Li","+1 (785) 555-9855","   aditya.li@hotmail.com   ","Urban Builders","Last Week","Duplicate","{""json"": ""fragment"", ""data"": ""Asked to call after 7 PM""}","","garb","Aditya Li"
-"Valentina Singh","Secondary Contact","valentina.singhatcompany.net 🚀
-New Line","Stellar Services","Today","Meeting Scheduled","Call back tomorrow","","#$@%","Valentina Singh"
-"DUPLICATE: Valentina Singh","Secondary Contact","valentina.singhatcompany.net 🚀
-New Line","Stellar Services","Today","Meeting Scheduled","Call back tomorrow","","#$@%","DUPLICATE: Valentina Singh"
-"DUPLICATE: Valentina Singh","Secondary Contact","valentina.singhatcompany.net 🚀
-New Line","DUPLICATE: Stellar Services","Today","Meeting Scheduled","Call back tomorrow","","#$@%","DUPLICATE: Valentina Singh"
-"Michael Ali","+1 (837) 555-1446","=SUM(A1:A5)","{""json"": ""fragment"", ""data"": ""NextGen IT""}","---","Busy","Referred by existing client"," 🚀
-New Line","","Michael Ali"
-"=SUM(A1:A5)","WhatsApp Only","neha.doe@yahoo.com [donotemail]","Agile Agency","2026.05.14","Converted","Working night shift","","","=SUM(A1:A5)"
-"Diego Menon","Office Number","diego.menonatyahoo.com","Pioneer Manufacturing","11/29/2025","Meeting Scheduled","Follow up next Friday 🚀
-New Line","","=SUM(A1:A5)","Diego Menon"
-"DUPLICATE: Diego Menon","Office Number","diego.menonatyahoo.com","Pioneer Manufacturing","11/29/2025","Meeting Scheduled","Follow up next Friday 🚀
-New Line","","=SUM(A1:A5)","DUPLICATE: Diego Menon"
-"Sneha Smith","+1 (583) 555-6064","sneha.smith@enterprise.co","Zenith Enterprises","Yesterday","Hot","Working night shift","","garb","Sneha Smith"
-"Emily Smith 🚀
-New Line","+1 (841) 555-2338","","NextGen IT","12-May-2025","Cancelled","Asked to call after 7 PM","","#$@%","Emily Smith 🚀
+"Sarah Rao","99832 72932","   sarah.rao@hotmail.com   ","Global Logistics","26/03/2026","Cancelled 🚀
+New Line","Price sensitive ""quoted, text""","","garb","Sarah Rao"
+"Vikram Rao","+91 9215360708","","Agile Agency","2025-10-19","Duplicate ""quoted, text""","Duplicate enquiry from Facebook"," 🚀
+New Line","123","Vikram Rao"
+"Sneha Smith","WhatsApp Only","   sneha.smith@techsolutions.in   ","Urban Builders","{""json"": ""fragment"", ""data"": ""01/05/2026""}","Loan Pending","Follow up next Friday","","123","Sneha Smith"
+"Arjun Singh","90463 45847","arjun.singhathotmail.com","NextGen IT","2025.11.20","Interested","Referred by existing client","","=SUM(A1:A5)","Arjun Singh"
+"Vikram Rao","+91-97555-32388 ext 831","   vikram.rao@techsolutions.in   ","Apex Solutions","invalid date","Interested","Requested WhatsApp instead of calls 🚀
+New Line","","#$@%","Vikram Rao"
+"Wei Kumar","WhatsApp Only","   wei.kumar@hotmail.com   ","City Hospital","Last Week","Cold","Left voicemail","","123","Wei Kumar"
+"Emily Gupta","+919572056959
+9757104468","emily.gupta@enterprise.co [donotemail] 🚀
+New Line","Pioneer Manufacturing","2025.01.10","Lost","DND","","#$@%","Emily Gupta"
+"Rahul Menon 🚀
+New Line","+1 (915) 555-1076","rahul.menon@outlook.com, secondary@enterprise.co","FinServe Group","invalid date","=SUM(A1:A5)","Call back tomorrow","","garb","Rahul Menon 🚀
 New Line"
-"Emily Smith 🚀
-New Line","+1 (841) 555-2338","","DUPLICATE: NextGen IT","12-May-2025","Cancelled","Asked to call after 7 PM","","#$@%","Emily Smith 🚀
+"Vikram Ali","96285 04429","vikram.ali@startup.io, secondary@logistics.com","Pioneer Manufacturing","2025.03.14","Sale Closed","Old customer returning","{""json"": ""fragment"", ""data"": """"}","","Vikram Ali"
+"Michael Menon","Secondary Contact","michael.menon@startup.io (old)","Pioneer Manufacturing","invalid date","No Response 🚀
+New Line","Referred by existing client","","garb","Michael Menon"
+"Kavita Hassan","WhatsApp Only","kavita.hassan@yahoo.com, secondary@techsolutions.in","Zenith Enterprises","15/06/2025","Call Back","Budget increased","","123","Kavita Hassan"
+"Kavita Hassan","WhatsApp Only","kavita.hassan@yahoo.com, secondary@techsolutions.in","Zenith Enterprises","15/06/2025","Call Back","Budget increased","","DUPLICATE: 123","Kavita Hassan"
+"Chen Rao","Office Number","chen.raoatstartup.io","City Hospital","---","Busy","Preferred morning calls ""quoted, text""","","=SUM(A1:A5)","Chen Rao"
+"DUPLICATE: Chen Rao","Office Number","chen.raoatstartup.io","City Hospital","---","Busy","Preferred morning calls ""quoted, text""","","=SUM(A1:A5)","DUPLICATE: Chen Rao"
+"Neha Reddy","0091-9544086678","neha.reddyatyahoo.com","Apex Solutions","Today","Warm","Working night shift ""quoted, text""","","","Neha Reddy"
+"Neha Reddy","DUPLICATE: 0091-9544086678","neha.reddyatyahoo.com","Apex Solutions","Today","Warm","Working night shift ""quoted, text""","","","Neha Reddy"
+"Vikram Hernandez","WhatsApp Only","   vikram.hernandez@yahoo.com   ","{""json"": ""fragment"", ""data"": ""Stellar Services""}","11/02/2025","Booked","Call back tomorrow","","123","Vikram Hernandez"
+"Emily Rao","Secondary Contact","emily.rao@outlook.com [donotemail]","Apex Solutions","Today","Duplicate","Interested in 3BHK"," 🚀
+New Line","{""json"": ""fragment"", ""data"": ""123""}","Emily Rao"
+"Michael Reddy","+919876100378
+9103518966","   michael.reddy@company.net   ","Acme Corp","Yesterday","Converted","Budget increased 🚀
+New Line","","123","Michael Reddy"
+"Anjali Gupta","+1 (970) 555-5067","   anjali.gupta@hotmail.com   ","Sunrise Foods","21-Jun-2025 🚀
+New Line","Duplicate","=SUM(A1:A5)","","garb","Anjali Gupta"
+"Valentina Ali","0091-9552705442","   valentina.ali@company.net   ","Agile Agency","44927","Cancelled","Budget increased","","#$@%","Valentina Ali"
+"Valentina Ali","0091-9552705442","   valentina.ali@company.net   ","Agile Agency","44927","DUPLICATE: Cancelled","Budget increased","","#$@%","Valentina Ali"
+"Ravi Rao","9673785071 / 9310615783","ravi.rao@company.net, secondary@icloud.com","Zenith Enterprises","13-Sep-2025","Cancelled","Already spoke with spouse","","#$@%","Ravi Rao"
+"Chen Rao","Office Number","chen.raoattechsolutions.in","Apex Solutions","---","Site Visit Completed","Already spoke with spouse","","=SUM(A1:A5)","Chen Rao"
+"Priya Gupta 🚀
+New Line","+1 (514) 555-2429","","City Hospital","2025-05-29","Duplicate","{""json"": ""fragment"", ""data"": ""Working night shift""}","","123","Priya Gupta 🚀
 New Line"
-"Diego Martinez","Secondary Contact"," 🚀
-New Line","Zenith Enterprises","Last Week ""quoted, text""","No Response","Decision maker travelling","","#$@%","Diego Martinez"
-"Wei Ali","=SUM(A1:A5)","   wei.ali@yahoo.com   ","City Hospital","Yesterday","Warm","Working night shift","","garb 🚀
+"Ravi Ali","90234 82483","{""json"": ""fragment"", ""data"": ""ravi.ali@icloud.com, secondary@techsolutions.in""}","Zenith Enterprises","invalid date","Busy","Left voicemail","","","Ravi Ali"
+"Valentina Verma","0091-9270087643","valentina.verma@enterprise.co","Agile Agency","---","Lost","Decision maker travelling","","","Valentina Verma"
+"Kavita Wang","96048 79128","   kavita.wang@icloud.com   ","Apex Solutions","44927","No Response","Left voicemail 🚀
+New Line","","=SUM(A1:A5)","Kavita Wang"
+"Kavita Wang","96048 79128","   kavita.wang@icloud.com   ","Apex Solutions","44927","DUPLICATE: No Response","Left voicemail 🚀
+New Line","","=SUM(A1:A5)","Kavita Wang"
+"Rahul Hassan","91761 98527","rahul.hassan@company.net [donotemail]","Sunrise Foods","Today","Interested","Budget increased","","=SUM(A1:A5)","Rahul Hassan"
+"Neha Hassan","WhatsApp Only","neha.hassanatstartup.io","Apex Solutions","Last Week","Sale Closed","Working night shift","","#$@% 🚀
+New Line","Neha Hassan"
+"Chen Wang","9723496122 / 9438972770","chen.wangaticloud.com 🚀
+New Line","Apex Solutions","2026.01.24","Invalid Lead","Price sensitive","","=SUM(A1:A5)","Chen Wang"
+"Chen Iyer","+91-90591-05176 ext 51","chen.iyeratyahoo.com","Metro Properties","09/12/2025","Invalid Lead","Needs GST invoice","","#$@%","Chen Iyer"
+"Arjun Reddy","+1 (585) 555-6066","arjun.reddy@outlook.com (old)","{""json"": ""fragment"", ""data"": ""Global Logistics""}","44927","Duplicate","Requested WhatsApp instead of calls","","garb","Arjun Reddy"
+"Valentina Menon","+1 (724) 555-4021","   valentina.menon@outlook.com   ","NextGen IT","04/12/2025","Lost","Duplicate enquiry from Facebook 🚀
+New Line","","{""json"": ""fragment"", ""data"": """"}","Valentina Menon"
+"John Rao","0091-9687887655","=SUM(A1:A5)","Sunrise Foods","20-Mar-2026","Cancelled","Not picking up","","=SUM(A1:A5)","John Rao"
+"Diego Hassan","{""json"": ""fragment"", ""data"": ""Secondary Contact""}","diego.hassanatcompany.net","Metro Properties","01/04/2026","No Response","Duplicate enquiry from Facebook","","#$@%","Diego Hassan"
+"Aditya Patel","Office Number","aditya.patel@startup.io [donotemail]","Apex Solutions","25/01/2026","Budget Issue","Needs GST invoice","","123","Aditya Patel"
+"Vikram Reddy 🚀
+New Line","0091-9369607474 ""quoted, text""","vikram.reddy@startup.io, secondary@enterprise.co","City Hospital","Today","Lost","Wants to negotiate","","garb","Vikram Reddy 🚀
+New Line"
+"Priya Singh","0091-9298585159","priya.singh@gmail.com [donotemail]","BlueOcean","2025.03.16","Meeting Scheduled ""quoted, text""","Preferred morning calls","","","Priya Singh"
+"Neha Patel","+91-91466-21466 ext 58","   neha.patel@logistics.com    ""quoted, text""","FinServe Group","invalid date","Cold","Wants to negotiate 🚀
+New Line","","123","Neha Patel"
+"Neha Ali","0091-9734975056","neha.aliaticloud.com","Apex Solutions","07/31/2025","Follow-up Required","=SUM(A1:A5)","","#$@% 🚀
+New Line","Neha Ali"
+"Neha Ali","DUPLICATE: 0091-9734975056","neha.aliaticloud.com","Apex Solutions","07/31/2025","Follow-up Required","=SUM(A1:A5)","","#$@% 🚀
+New Line","Neha Ali"
+"Neha Verma","+1 (811) 555-1293","neha.verma@hotmail.com","Zenith Enterprises","01/26/2026","Busy","Wants to negotiate 🚀
+New Line","","garb","Neha Verma"
+"Chen Hernandez","0091-9996395341","chen.hernandez@gmail.com","Pioneer Manufacturing","Today","{""json"": ""fragment"", ""data"": ""Follow-up Required""}","Call back tomorrow"," ""quoted, text""","#$@%","Chen Hernandez"
+"Chen Hernandez","0091-9996395341","chen.hernandez@gmail.com","Pioneer Manufacturing","Today","{""json"": ""fragment"", ""data"": ""Follow-up Required""}","DUPLICATE: Call back tomorrow"," ""quoted, text""","#$@%","Chen Hernandez"
+"Aditya Patel","+919000398582
+9339973579","aditya.patel@startup.io, secondary@hotmail.com","Quantum Systems","2026.05.14","Busy","Left voicemail","","=SUM(A1:A5)","Aditya Patel"
+"Chen Reddy","+919030298206
+9920841040","chen.reddy@icloud.com, secondary@techsolutions.in","TechNova","Last Week","Site Visit Completed","Budget increased","","{""json"": ""fragment"", ""data"": ""=SUM(A1:A5)""}","Chen Reddy"
+"Vikram Smith","Secondary Contact","vikram.smith@outlook.com [donotemail]","Sunrise Foods","2026.05.14","Invalid Lead","Working night shift","","123","Vikram Smith"
+"Rahul Iyer","9435089562 / 9758838119","","Acme Corp","44927","=SUM(A1:A5)","Preferred morning calls","","garb","Rahul Iyer"
+"Sarah Patel","+919525423156
+9561476653","   sarah.patel@logistics.com   ","NextGen IT","44927 🚀
+New Line","Wrong Number","Sent brochure","","=SUM(A1:A5)","Sarah Patel"
+"Ravi Singh","+919802442970
+9557842385","   ravi.singh@techsolutions.in   ","BlueOcean","05/11/2026","Duplicate","Already spoke with spouse","","=SUM(A1:A5)","Ravi Singh"
+"John Iyer","Office Number","john.iyer@enterprise.co [donotemail]","Sunrise Foods","Today","Warm","Already spoke with spouse ""quoted, text""","","123","John Iyer"
+"Chen Reddy","Secondary Contact","chen.reddy@company.net","NextGen IT","01/06/2025","Call Back","Interested in 3BHK","","=SUM(A1:A5)","Chen Reddy"
+"Michael Hernandez","9440771389 / 9487465407","","Global Logistics","2026.05.14","Cancelled","Old customer returning"," 🚀
+New Line","=SUM(A1:A5)","Michael Hernandez"
+"Sneha Reddy","+91-99545-96670 ext 102 ""quoted, text""","sneha.reddy@company.net (old)","Metro Properties","2026-03-24","Booked","DND","","#$@%","Sneha Reddy"
+"Valentina Verma","+1 (280) 555-7969","   valentina.verma@enterprise.co   ","NextGen IT","2026.05.14","Budget Issue","Working night shift","","=SUM(A1:A5)","Valentina Verma"
+"Rahul Kumar","=SUM(A1:A5)","rahul.kumaratgmail.com","Apex Solutions","Today","Interested","Wants to negotiate","","#$@%","Rahul Kumar"
+"Wei Iyer","Office Number","   wei.iyer@outlook.com   ","Apex Solutions","{""json"": ""fragment"", ""data"": ""05/08/2025""}","Wrong Number","Budget increased","","garb","Wei Iyer"
+"Wei Iyer","+91-93423-64124 ext 17","","FinServe Group","Today","Cancelled","{""json"": ""fragment"", ""data"": ""Sent brochure""}","","123","Wei Iyer"
+"Rahul Martinez","9157548450 / 9661683610","rahul.martinez@outlook.com","NextGen IT","06/04/2026 ""quoted, text""","Lost","Requested WhatsApp instead of calls","","=SUM(A1:A5)","Rahul Martinez"
+"Diego Li","0091-9138848832","diego.li@hotmail.com, secondary@company.net","Apex Solutions","invalid date","Duplicate","Price sensitive","","#$@%","Diego Li"
+"Neha Wang","9190162675 / 9767274174","   neha.wang@logistics.com   ","FinServe Group","invalid date","No Response 🚀
+New Line","Call back tomorrow","","#$@%","Neha Wang"
+"Anjali Hassan","Secondary Contact","","Metro Properties","14/08/2025","Interested","Call back tomorrow","","","Anjali Hassan"
+"Neha Iyer","9715315990 / 9527713249","   neha.iyer@outlook.com   ","Zenith Enterprises","---","Booked","DND","","123","Neha Iyer"
+"Kavita Iyer","{""json"": ""fragment"", ""data"": ""+91-92433-57821 ext 95""}","   kavita.iyer@logistics.com   ","Urban Builders","invalid date","Hot","Duplicate enquiry from Facebook","","#$@%","Kavita Iyer"
+"Sneha Wang","+91 9630958713","sneha.wang@logistics.com [donotemail]","TechNova","2025-12-30","Loan Pending","DND","","=SUM(A1:A5)","Sneha Wang"
+"Valentina Patel","+1 (358) 555-4242","valentina.patelaticloud.com","Sunrise Foods","Yesterday","Call Back","Decision maker travelling","","=SUM(A1:A5)","Valentina Patel"
+"Kavita Menon","9008561551 / 9332323331","kavita.menon@startup.io (old)","=SUM(A1:A5)","2026-03-02","Wrong Number","Interested in 3BHK","","=SUM(A1:A5)","Kavita Menon"
+"Kavita Menon","9008561551 / 9332323331","kavita.menon@startup.io (old)","=SUM(A1:A5)","2026-03-02","Wrong Number","DUPLICATE: Interested in 3BHK","","=SUM(A1:A5)","Kavita Menon"
+"Ravi Li","+91 9746522403","ravi.li@hotmail.com, secondary@enterprise.co","BlueOcean ""quoted, text""","12/15/2025","Invalid Lead","{""json"": ""fragment"", ""data"": ""Preferred morning calls""}","","=SUM(A1:A5)","Ravi Li"
+"Priya Verma","+91-99836-63997 ext 476","   priya.verma@logistics.com   ","NextGen IT","2026.05.14","Site Visit Completed","Left voicemail",""," ""quoted, text""","Priya Verma"
+"Kavita Rao","{""json"": ""fragment"", ""data"": ""9453353313 / 9555946821""}","kavita.rao@yahoo.com, secondary@startup.io 🚀
+New Line","Quantum Systems ""quoted, text""","2025.11.04","Cancelled","Not picking up","","=SUM(A1:A5)","Kavita Rao"
+"Chen Patel","WhatsApp Only","chen.patelattechsolutions.in","Quantum Systems ""quoted, text""","2025.05.19","Site Visit Completed","Not picking up","","","Chen Patel"
+"Emily Ali ""quoted, text""","Secondary Contact","emily.aliatstartup.io","NextGen IT","15-Mar-2025","Busy","Interested in 3BHK","","","Emily Ali ""quoted, text"""
+"Priya Gupta","+91-96427-78605 ext 819","priya.guptaatlogistics.com","Zenith Enterprises","Today","Busy","Left voicemail"," 🚀
+New Line","123","Priya Gupta"
+"Emily Martinez","Secondary Contact","emily.martinezathotmail.com","Zenith Enterprises","44927","Warm","Already spoke with spouse","","","Emily Martinez"
+"Diego Iyer","Office Number","diego.iyer@company.net, secondary@techsolutions.in","Apex Solutions","44927","Cancelled","Referred by existing client","","#$@%","Diego Iyer"
+"John Hassan","Office Number","   john.hassan@icloud.com   ","BlueOcean","02/04/2026","No Response","Left voicemail 🚀
+New Line","","","John Hassan"
+"Chen Kumar","WhatsApp Only","chen.kumaratcompany.net","Sunrise Foods","07/16/2025","Loan Pending","Interested in 3BHK","","{""json"": ""fragment"", ""data"": ""garb""}","Chen Kumar"
+"Michael Ali","WhatsApp Only","michael.aliatgmail.com","Stellar Services","Yesterday","Invalid Lead","Call back tomorrow","","=SUM(A1:A5)","Michael Ali"
+"Priya Patel","WhatsApp Only","","TechNova","invalid date","Budget Issue","Preferred morning calls","","123","Priya Patel"
+"Priya Patel","99268 55529","priya.patel@techsolutions.in","Global Logistics","13/01/2026","Interested","Already spoke with spouse","{""json"": ""fragment"", ""data"": """"}","garb","Priya Patel"
+"Michael Sharma ""quoted, text""","=SUM(A1:A5)","michael.sharma@techsolutions.in (old)","BlueOcean","invalid date","Meeting Scheduled","Wants to negotiate 🚀
+New Line","","#$@%","Michael Sharma ""quoted, text"""
+"Vikram Smith","WhatsApp Only","","BlueOcean","invalid date","Lost ""quoted, text""","Not picking up","","=SUM(A1:A5)","Vikram Smith"
+"Ravi Li","+91 9030314465","   ravi.li@icloud.com   ","FinServe Group","25/10/2025","Sale Closed","Not picking up","{""json"": ""fragment"", ""data"": """"}","#$@%","Ravi Li"
+"Anjali Singh","0091-9797566852","   anjali.singh@outlook.com    ""quoted, text""","Apex Solutions","03/29/2026","Follow-up Required","Referred by existing client","","garb 🚀
+New Line","Anjali Singh"
+"Chen Iyer","91381 97374","chen.iyer@startup.io","Agile Agency","06/18/2025","Converted","Left voicemail","","123","Chen Iyer"
+"Diego Sharma","+1 (457) 555-8473","diego.sharmaatcompany.net 🚀
+New Line","=SUM(A1:A5)","invalid date","No Response","Decision maker travelling","","","Diego Sharma"
+"Anjali Sharma","0091-9020148500","anjali.sharmaatstartup.io 🚀
+New Line","BlueOcean","2026.04.23","Lost","Referred by existing client","","garb","Anjali Sharma"
+"Sarah Wang","WhatsApp Only","","Acme Corp","2026-04-26","Wrong Number","Interested in 3BHK","","=SUM(A1:A5)","Sarah Wang"
+"Vikram Gupta","93353 24575","   vikram.gupta@yahoo.com   ","Global Logistics","Last Week","Cold","Left voicemail","","#$@%","Vikram Gupta"
+"Anjali Ali","+91-90088-39938 ext 551","anjali.aliatcompany.net","Apex Solutions","invalid date","Invalid Lead","Old customer returning","","=SUM(A1:A5) 🚀
+New Line","Anjali Ali"
+"Ravi Reddy","{""json"": ""fragment"", ""data"": ""9085520175 / 9384205189""}","ravi.reddy@gmail.com, secondary@logistics.com","City Hospital ""quoted, text""","Today","Warm","Budget increased","","garb 🚀
+New Line","Ravi Reddy"
+"Ravi Verma","9429432407 / 9283581675 ""quoted, text""","=SUM(A1:A5)","Zenith Enterprises","2026.02.11","Lost","Needs GST invoice","","123","Ravi Verma"
+"Diego Kumar","+91 9766233429","diego.kumar@techsolutions.in","Urban Builders","05/12/2025","Sale Closed","Requested WhatsApp instead of calls","{""json"": ""fragment"", ""data"": """"}","=SUM(A1:A5)","Diego Kumar"
+"Priya Smith","9481450774 / 9744800598","priya.smith@logistics.com, secondary@techsolutions.in 🚀
+New Line","Urban Builders","08-Nov-2025","Invalid Lead","Preferred morning calls","","","Priya Smith"
+"Kavita Rao","=SUM(A1:A5)","kavita.rao@logistics.com, secondary@techsolutions.in","Agile Agency","2025.12.05","Call Back","Referred by existing client 🚀
+New Line","","garb","Kavita Rao"
+"Chen Reddy","+91 9806427761","   chen.reddy@icloud.com   ","Urban Builders","2025.01.16","Meeting Scheduled","Preferred morning calls","","#$@%","Chen Reddy"
+"John Reddy","=SUM(A1:A5)","john.reddy@hotmail.com, secondary@techsolutions.in","Urban Builders","27/05/2025","Wrong Number","Wants to negotiate","","#$@%","John Reddy"
+"Sneha Kumar","9006932444 / 9209559326","sneha.kumar@logistics.com, secondary@enterprise.co","TechNova","Yesterday","Duplicate","Already spoke with spouse","","123","Sneha Kumar"
+"Anjali Kumar","Secondary Contact","anjali.kumar@enterprise.co, secondary@techsolutions.in","Quantum Systems","01/15/2025","Interested","Left voicemail","","=SUM(A1:A5)","Anjali Kumar"
+"Aditya Li","+919391685763
+9690053450","aditya.li@outlook.com (old)","Quantum Systems 🚀
+New Line","04/22/2026","Call Back","Price sensitive","","=SUM(A1:A5)","Aditya Li"
+"Neha Martinez","9103121581 / 9177556305","neha.martinezatoutlook.com","Pioneer Manufacturing","10/02/2025","Site Visit Completed","Not picking up"," 🚀
+New Line","garb","Neha Martinez"
+"=SUM(A1:A5)","Office Number","diego.reddy@icloud.com, secondary@company.net","Acme Corp ""quoted, text""","14-Apr-2025","Converted","Call back tomorrow","","=SUM(A1:A5)","=SUM(A1:A5)"
+"Rahul Patel","0091-9112223951","   rahul.patel@hotmail.com   ","Metro Properties","2025-08-25","Interested","Budget increased","","=SUM(A1:A5)","Rahul Patel"
+"Arjun Reddy","+91-98482-37628 ext 638","   arjun.reddy@techsolutions.in   ","Global Logistics","12-Jun-2025","Lost","{""json"": ""fragment"", ""data"": ""Decision maker travelling""} ""quoted, text""","","","Arjun Reddy"
+"Priya Hassan","{""json"": ""fragment"", ""data"": ""93543 48707""}","   priya.hassan@icloud.com   ","City Hospital","08/02/2026","Cancelled","Left voicemail"," 🚀
+New Line","=SUM(A1:A5)","Priya Hassan"
+"Sneha Hassan","Secondary Contact","sneha.hassan@hotmail.com, secondary@logistics.com 🚀
+New Line","FinServe Group","12/05/2025","Budget Issue","{""json"": ""fragment"", ""data"": ""Follow up next Friday""}","","123 ""quoted, text""","Sneha Hassan"
+"Vikram Smith","0091-9498800971","vikram.smithatenterprise.co","Metro Properties","2026.05.14","Cold","Asked to call after 7 PM","","=SUM(A1:A5)","Vikram Smith"
+"Kavita Menon","9557457981 / 9685547695","kavita.menon@outlook.com (old)","NextGen IT","03/04/2026","Budget Issue","Requested WhatsApp instead of calls"," 🚀
+New Line","123","Kavita Menon"
+"Aditya Hernandez","0091-9384575667","aditya.hernandezattechsolutions.in","Acme Corp","2026.05.14","Converted","Old customer returning","","=SUM(A1:A5)","Aditya Hernandez"
+"Michael Verma","9995224401 / 9860593875","{""json"": ""fragment"", ""data"": ""   michael.verma@techsolutions.in   ""}","BlueOcean","01/05/2025","Invalid Lead","Interested in 3BHK"," 🚀
+New Line","#$@%","Michael Verma"
+"Chen Hassan","9025875078 / 9290591014","","BlueOcean","2025.08.21","Wrong Number","Preferred morning calls","","=SUM(A1:A5)","Chen Hassan"
+"Anjali Menon","Office Number","anjali.menon@techsolutions.in, secondary@logistics.com","Metro Properties","10/29/2025","Hot","{""json"": ""fragment"", ""data"": ""DND""}",""," ""quoted, text""","Anjali Menon"
+"John Iyer","0091-9059840229","john.iyer@outlook.com [donotemail]","{""json"": ""fragment"", ""data"": ""Quantum Systems 🚀
+New Line""}","2026.05.14","Budget Issue","Price sensitive","","","John Iyer"
+"Sneha Rao","0091-9674502862","sneha.rao@company.net","Urban Builders","25-Mar-2025","No Response","Call back tomorrow","","garb","Sneha Rao"
+"Wei Ali","Office Number","=SUM(A1:A5)","BlueOcean","Today","{""json"": ""fragment"", ""data"": ""Lost""}","Interested in 3BHK","","123","Wei Ali"
+"=SUM(A1:A5)","+919187293593
+9091226806","   emily.hassan@hotmail.com   ","{""json"": ""fragment"", ""data"": ""NextGen IT""}","2026.03.17","Booked","Follow up next Friday 🚀
+New Line ""quoted, text""","","=SUM(A1:A5)","=SUM(A1:A5)"
+"Valentina Hassan","+1 (549) 555-7745 🚀
+New Line","valentina.hassan@hotmail.com [donotemail]","Sunrise Foods","22/11/2025","Duplicate","Wants to negotiate","","=SUM(A1:A5)","Valentina Hassan"
+"Emily Gupta","+919270558826
+9372451818","   emily.gupta@company.net   ","BlueOcean","02/22/2026","Busy","Wants to negotiate","{""json"": ""fragment"", ""data"": """"} ""quoted, text""","123","Emily Gupta"
+"Arjun Rao","99086 27053","arjun.rao@startup.io 🚀
+New Line","Agile Agency","Yesterday","No Response","Left voicemail","","garb","Arjun Rao"
+"Aditya Rao","+91 9191839767","aditya.rao@outlook.com (old)","Pioneer Manufacturing","{""json"": ""fragment"", ""data"": ""2026.05.14""}","Budget Issue","Requested WhatsApp instead of calls","","","Aditya Rao"
+"Sneha Wang","+919955039441
+9993833603","sneha.wang@gmail.com [donotemail]","NextGen IT","05/11/2025","Booked","Interested in 3BHK 🚀
+New Line","","#$@%","Sneha Wang"
+"Sneha Wang","+919955039441
+9993833603","sneha.wang@gmail.com [donotemail]","NextGen IT","05/11/2025","Booked","DUPLICATE: Interested in 3BHK 🚀
+New Line","","#$@%","Sneha Wang"
+"=SUM(A1:A5)","+91-93415-93412 ext 18","sneha.iyeraticloud.com","BlueOcean","2026.05.14","Call Back","Needs GST invoice","","123","=SUM(A1:A5)"
+"Neha Singh","+1 (547) 555-5939","{""json"": ""fragment"", ""data"": ""neha.singh@icloud.com, secondary@outlook.com""}","Zenith Enterprises","2026.05.14","Lost","DND","","","Neha Singh"
+"Vikram Verma","+91 9531670620","   vikram.verma@company.net   ","Urban Builders","30/11/2025","Lost ""quoted, text""","Wants to negotiate","","=SUM(A1:A5)","Vikram Verma"
+"Rahul Wang","+91 9314355773","   rahul.wang@company.net   ","Apex Solutions","2025.12.13","No Response","Left voicemail","","","Rahul Wang"
+"Wei Singh","+1 (343) 555-8274","wei.singhatenterprise.co","Stellar Services","{""json"": ""fragment"", ""data"": ""2026.01.12""}","Cold","Already spoke with spouse","","","Wei Singh"
+"Vikram Kumar","+91 9932425262","   vikram.kumar@techsolutions.in   ","Urban Builders","05-Oct-2025","Converted","Referred by existing client","{""json"": ""fragment"", ""data"": """"}","#$@% ""quoted, text""","Vikram Kumar"
+"Diego Li","+91 9799610417","diego.li@hotmail.com","Quantum Systems","09/18/2025","Cold","=SUM(A1:A5)","","=SUM(A1:A5)","Diego Li"
+"Chen Singh","WhatsApp Only","chen.singhaticloud.com","Agile Agency","14-Jul-2025","Booked","{""json"": ""fragment"", ""data"": ""Price sensitive""}","","123","Chen Singh"
+"Vikram Menon","+1 (333) 555-5086","vikram.menon@outlook.com, secondary@gmail.com","Acme Corp","44927","Booked","Duplicate enquiry from Facebook","","123","Vikram Menon"
+"John Menon","Office Number","   john.menon@outlook.com   ","Agile Agency","---","{""json"": ""fragment"", ""data"": ""Booked""}","Preferred morning calls","","123","John Menon"
+"Emily Kumar","WhatsApp Only 🚀
+New Line","emily.kumar@outlook.com, secondary@outlook.com","NextGen IT","invalid date","Interested","Requested WhatsApp instead of calls","","garb","Emily Kumar"
+"Neha Gupta","9566538067 / 9167027652","","Acme Corp","29/05/2025","Interested","Old customer returning","","123","Neha Gupta"
+"Diego Sharma","+91-91012-61583 ext 447","","Urban Builders","2025.10.25","Sale Closed","Price sensitive","","=SUM(A1:A5)","Diego Sharma"
+"Priya Wang","+91 9710882514","priya.wang@techsolutions.in [donotemail]","FinServe Group","{""json"": ""fragment"", ""data"": ""Today""}","Follow-up Required","Requested WhatsApp instead of calls","","","Priya Wang"
+"Aditya Doe ""quoted, text""","+91 9760478830","aditya.doe@techsolutions.in","NextGen IT","2026.05.14","Duplicate","Call back tomorrow","","=SUM(A1:A5)","Aditya Doe ""quoted, text"""
+"Ravi Menon","0091-9579949752","ravi.menon@techsolutions.in, secondary@icloud.com","FinServe Group","28/07/2025","Booked","Preferred morning calls","","{""json"": ""fragment"", ""data"": ""=SUM(A1:A5)""}","Ravi Menon"
+"Neha Li","+1 (544) 555-4659","neha.li@company.net [donotemail]","Global Logistics","04/06/2025","Duplicate 🚀
+New Line","Duplicate enquiry from Facebook","","#$@%","Neha Li"
+"Michael Reddy ""quoted, text""","+91-95877-02117 ext 291","michael.reddy@logistics.com","Quantum Systems","2026.05.14","Busy","Needs GST invoice","=SUM(A1:A5)","","Michael Reddy ""quoted, text"""
+"Aditya Sharma","Office Number","aditya.sharma@company.net, secondary@icloud.com","Quantum Systems 🚀
+New Line","2026.05.14","Busy","Decision maker travelling","","garb","Aditya Sharma"
+"Sneha Hernandez","+91-98108-50961 ext 551","sneha.hernandez@techsolutions.in [donotemail]","Sunrise Foods","2025.06.07","Interested","Call back tomorrow","","123","Sneha Hernandez"
+"Aditya Gupta","9078050942 / 9515862674","aditya.guptaatstartup.io","City Hospital","invalid date","Invalid Lead","Budget increased","","garb 🚀
+New Line","Aditya Gupta"
+"Valentina Singh","9738013212 / 9443861950","valentina.singhatoutlook.com","BlueOcean","2025-06-17 🚀
+New Line","Hot","Left voicemail","","#$@%","Valentina Singh"
+"Aditya Kumar","+91-91621-08954 ext 362","aditya.kumar@yahoo.com, secondary@logistics.com","FinServe Group","2025.05.27","Cancelled 🚀
+New Line","Working night shift","","123","Aditya Kumar"
+"Vikram Kumar","WhatsApp Only","vikram.kumar@gmail.com, secondary@logistics.com","Agile Agency","44927","Follow-up Required","Referred by existing client ""quoted, text""","","","Vikram Kumar"
+"Wei Gupta","Office Number","wei.guptaatlogistics.com","Metro Properties","invalid date","Cancelled 🚀
+New Line","Left voicemail"," ""quoted, text""","#$@%","Wei Gupta"
+"Diego Verma","+919903345148
+9820572313","diego.vermaatgmail.com","Pioneer Manufacturing","2026-04-02 ""quoted, text""","Converted","Old customer returning","","123","Diego Verma"
+"Vikram Singh","9540349418 / 9580651934","vikram.singh@yahoo.com, secondary@company.net","Metro Properties 🚀
+New Line","44927","Lost","Not picking up","","123","Vikram Singh"
+"John Reddy","99446 43685","john.reddy@outlook.com, secondary@company.net","Acme Corp","2025.10.07","Busy","Left voicemail","{""json"": ""fragment"", ""data"": """"}","garb","John Reddy"
+"Kavita Iyer","97700 08262","   kavita.iyer@techsolutions.in   ","Pioneer Manufacturing","2025.06.21","Budget Issue","Sent brochure","","","Kavita Iyer"
+"Sarah Hernandez","+1 (827) 555-2176","sarah.hernandez@logistics.com, secondary@startup.io","Stellar Services","Yesterday","Site Visit Completed","Wants to negotiate","","=SUM(A1:A5) 🚀
+New Line","Sarah Hernandez"
+"Michael Martinez","+91-91689-75237 ext 440","michael.martinez@techsolutions.in, secondary@icloud.com","Zenith Enterprises","05/11/2025","Wrong Number","Interested in 3BHK","","#$@%","Michael Martinez"
+"{""json"": ""fragment"", ""data"": ""Kavita Gupta""}","0091-9511142032","   kavita.gupta@startup.io   ","BlueOcean","2026.05.14","Invalid Lead","Price sensitive","","garb","{""json"": ""fragment"", ""data"": ""Kavita Gupta""}"
+"John Hernandez","+919687441413
+9727631415","john.hernandez@yahoo.com [donotemail]","BlueOcean","---","Busy","Not picking up","","{""json"": ""fragment"", ""data"": """"}","John Hernandez"
+"Michael Smith","9263839413 / 9326580323","michael.smith@gmail.com","Global Logistics","02/24/2026","Busy","Asked to call after 7 PM","{""json"": ""fragment"", ""data"": """"}","#$@%","Michael Smith"
+"Kavita Doe","Office Number","kavita.doeatoutlook.com","Urban Builders","2026.05.14","Follow-up Required","Needs GST invoice","","","Kavita Doe"
+"Wei Rao","WhatsApp Only","","NextGen IT","Today","=SUM(A1:A5)","Decision maker travelling","","{""json"": ""fragment"", ""data"": ""=SUM(A1:A5)""}","Wei Rao"
+"{""json"": ""fragment"", ""data"": ""Priya Menon""}","Secondary Contact","priya.menon@outlook.com [donotemail]","NextGen IT","---","Hot","Already spoke with spouse","","=SUM(A1:A5)","{""json"": ""fragment"", ""data"": ""Priya Menon""}"
+"Anjali Menon","WhatsApp Only","=SUM(A1:A5)","{""json"": ""fragment"", ""data"": ""NextGen IT""}","Today","No Response","Duplicate enquiry from Facebook ""quoted, text""","","123","Anjali Menon"
+"Anjali Menon","WhatsApp Only","=SUM(A1:A5)","{""json"": ""fragment"", ""data"": ""NextGen IT""}","DUPLICATE: Today","No Response","Duplicate enquiry from Facebook ""quoted, text""","","123","Anjali Menon"
+"Aditya Gupta","+919775522486
+9658764186","aditya.gupta@icloud.com","FinServe Group","01/19/2026","Warm","Price sensitive","=SUM(A1:A5)","=SUM(A1:A5)","Aditya Gupta"
+"Kavita Hassan","{""json"": ""fragment"", ""data"": ""WhatsApp Only""}","=SUM(A1:A5)","Stellar Services","Yesterday","Lost","Asked to call after 7 PM","","#$@%","Kavita Hassan"
+"Priya Ali","Secondary Contact","   priya.ali@techsolutions.in   ","Apex Solutions","2025.08.16","Busy","Not picking up","","garb","Priya Ali"
+"Anjali Gupta","+91 9473908019","{""json"": ""fragment"", ""data"": ""anjali.gupta@gmail.com (old)""}","Global Logistics","2025-03-26","Meeting Scheduled","Follow up next Friday","","=SUM(A1:A5)","Anjali Gupta"
+"Wei Ali","+1 (864) 555-2122","wei.ali@enterprise.co (old)","Pioneer Manufacturing","---","Warm","Budget increased","","garb 🚀
 New Line","Wei Ali"
-"Valentina Singh","+919824423001
-9904278327","valentina.singh@logistics.com (old)","Metro Properties","{""json"": ""fragment"", ""data"": ""2026.05.14""}","Busy","Needs GST invoice","","","Valentina Singh"
-"Diego Singh","Secondary Contact","diego.singh@company.net (old)","Global Logistics","Yesterday","Meeting Scheduled","Old customer returning","","garb","Diego Singh"
-"Sneha Hernandez","=SUM(A1:A5)","","Global Logistics","11-Feb-2025 🚀
-New Line","Meeting Scheduled","Price sensitive","","123","Sneha Hernandez"
-"{""json"": ""fragment"", ""data"": ""Rahul Martinez""}","=SUM(A1:A5)","   rahul.martinez@techsolutions.in   ","Agile Agency 🚀
-New Line","2026.05.14","Interested","Needs GST invoice","","#$@%","{""json"": ""fragment"", ""data"": ""Rahul Martinez""}"
-"John Ali","+1 (666) 555-9167","john.ali@yahoo.com (old)","Zenith Enterprises","invalid date 🚀
-New Line","Invalid Lead","Left voicemail","","=SUM(A1:A5)","John Ali"
-"Priya Menon","+91 9612371111","priya.menon@enterprise.co, secondary@techsolutions.in","Stellar Services","44927","Duplicate","{""json"": ""fragment"", ""data"": ""Call back tomorrow""}","","123","Priya Menon"
-"Priya Patel","98624 98969","priya.patel@outlook.com","Quantum Systems ""quoted, text""","2026.05.14","No Response","Call back tomorrow","","","Priya Patel"
-"John Reddy","+919285143981
-9047042164","   john.reddy@enterprise.co   ","Urban Builders","01/04/2026","Cold","Requested WhatsApp instead of calls"," 🚀
-New Line","123","John Reddy"
-"Rahul Menon","9999556731 / 9979584662","rahul.menonathotmail.com","NextGen IT","28-Apr-2025","Site Visit Completed","Sent brochure","","=SUM(A1:A5)","Rahul Menon"
-"Chen Hernandez","+91-93657-72891 ext 765","chen.hernandez@yahoo.com [donotemail]","Sunrise Foods","{""json"": ""fragment"", ""data"": ""44927""}","Invalid Lead","Price sensitive","","","Chen Hernandez"
-"{""json"": ""fragment"", ""data"": ""Aditya Martinez""}","WhatsApp Only","aditya.martinez@techsolutions.in, secondary@gmail.com","Urban Builders","Today","Sale Closed","Sent brochure","","=SUM(A1:A5)","{""json"": ""fragment"", ""data"": ""Aditya Martinez""}"
-"Emily Ali","+1 (823) 555-5904","   emily.ali@startup.io   ","Quantum Systems","Last Week","Meeting Scheduled","Price sensitive","","=SUM(A1:A5)","Emily Ali"
-"Sarah Ali","+1 (688) 555-5291","sarah.ali@company.net, secondary@hotmail.com","Urban Builders","2026.05.14 🚀
-New Line","Interested","DND","","=SUM(A1:A5)","Sarah Ali"
-"Sarah Ali","+1 (688) 555-5291","sarah.ali@company.net, secondary@hotmail.com","Urban Builders","2026.05.14 🚀
-New Line","Interested","DND","","DUPLICATE: =SUM(A1:A5)","Sarah Ali"
-"John Menon","98085 34959","   john.menon@icloud.com   ","Sunrise Foods","{""json"": ""fragment"", ""data"": ""2025.02.02""}","Budget Issue","Needs GST invoice","","","John Menon"
-"Arjun Menon","+91 9757533820","","Apex Solutions","26-Mar-2026 ""quoted, text""","Cancelled","Decision maker travelling","","#$@%","Arjun Menon"
-"Michael Li ""quoted, text""","+91 9952208061","michael.li@icloud.com, secondary@yahoo.com","TechNova","---","Wrong Number","Budget increased","","garb","Michael Li ""quoted, text"""
-"Rahul Gupta","+1 (446) 555-7871 🚀
-New Line","{""json"": ""fragment"", ""data"": ""rahul.gupta@company.net, secondary@startup.io""}","Pioneer Manufacturing","2025.11.26","Converted","Already spoke with spouse","","123","Rahul Gupta"
-"Michael Reddy","90189 40422","   michael.reddy@enterprise.co   ","Urban Builders","04/30/2025","Call Back 🚀
-New Line","Sent brochure","","","Michael Reddy"
-"Sarah Li","98015 11115","sarah.li@icloud.com, secondary@company.net","TechNova","Last Week 🚀
-New Line","Cold","Duplicate enquiry from Facebook","","{""json"": ""fragment"", ""data"": ""123""}","Sarah Li"
-"Diego Kumar","0091-9215551651","diego.kumar@gmail.com","Quantum Systems","44927","Call Back","Asked to call after 7 PM","=SUM(A1:A5)","=SUM(A1:A5)","Diego Kumar"
-"Emily Rao","+1 (555) 555-5410","emily.raoathotmail.com","{""json"": ""fragment"", ""data"": ""Sunrise Foods""}","44927","Site Visit Completed","Wants to negotiate","","123","Emily Rao"
-"Vikram Verma","+1 (507) 555-8417","","City Hospital","invalid date","Meeting Scheduled","Left voicemail","","=SUM(A1:A5)","Vikram Verma"
-"Michael Doe","Secondary Contact","michael.doeatenterprise.co","Urban Builders","Yesterday","Invalid Lead","Follow up next Friday 🚀
-New Line","","#$@%","Michael Doe"
-"Anjali Hernandez","+1 (387) 555-2041","anjali.hernandez@outlook.com, secondary@enterprise.co","Quantum Systems","07/10/2025","Follow-up Required","Preferred morning calls","","","Anjali Hernandez"
-"Diego Iyer","+1 (205) 555-3596","diego.iyer@logistics.com, secondary@gmail.com","{""json"": ""fragment"", ""data"": ""Agile Agency""}","44927","Converted","Follow up next Friday","","#$@%","Diego Iyer"
-"Emily Wang","0091-9751315420","   emily.wang@gmail.com   ","Sunrise Foods","13-May-2026","Warm","Duplicate enquiry from Facebook 🚀
-New Line","","123","Emily Wang"
-"Rahul Hernandez","0091-9184165457","rahul.hernandez@icloud.com (old)","TechNova","Last Week","Busy","Requested WhatsApp instead of calls"," 🚀
-New Line","#$@%","Rahul Hernandez"
-"Neha Sharma","9232931987 / 9216317841","=SUM(A1:A5)","FinServe Group","22-Oct-2025","Busy","Preferred morning calls","","=SUM(A1:A5)","Neha Sharma"
-"Valentina Smith","+1 (940) 555-6850","","Urban Builders","24/08/2025","Duplicate","Needs GST invoice","","","Valentina Smith"
-"Vikram Gupta","Secondary Contact","vikram.gupta@outlook.com [donotemail]","Agile Agency","2025.10.16","Budget Issue","Wants to negotiate","","123 ""quoted, text""","Vikram Gupta"
-"Ravi Rao","+1 (370) 555-1571","ravi.rao@techsolutions.in, secondary@outlook.com","Urban Builders","44927","Follow-up Required","Requested WhatsApp instead of calls","","=SUM(A1:A5)","Ravi Rao"
-"Ravi Verma 🚀
-New Line","Office Number","ravi.verma@icloud.com [donotemail]","Sunrise Foods","01-Mar-2026","Warm","Decision maker travelling","","#$@%","Ravi Verma 🚀
+"Sarah Patel","+91 9979668598","sarah.patel@startup.io, secondary@techsolutions.in","Pioneer Manufacturing","Last Week","Cold","Decision maker travelling","","{""json"": ""fragment"", ""data"": """"}","Sarah Patel"
+"Ravi Rao","0091-9873392598","ravi.raoatenterprise.co","Quantum Systems","05/24/2025","Busy","Needs GST invoice","","garb","Ravi Rao"
+"John Gupta","+919203102061
+9582666357","john.gupta@icloud.com, secondary@logistics.com","Apex Solutions","10/22/2025","Lost","Wants to negotiate","","123","John Gupta"
+"Kavita Verma","WhatsApp Only","   kavita.verma@enterprise.co   ","Acme Corp","{""json"": ""fragment"", ""data"": ""invalid date 🚀
+New Line""} ""quoted, text""","Converted","Follow up next Friday","","#$@%","Kavita Verma"
+"Rahul Hernandez","Office Number","   rahul.hernandez@company.net   ","Global Logistics","Yesterday","Budget Issue","Budget increased"," ""quoted, text""","123","Rahul Hernandez"
+"Michael Singh","+1 (749) 555-8542","michael.singhatcompany.net","Urban Builders","Last Week","Wrong Number","Interested in 3BHK","","=SUM(A1:A5)","Michael Singh"
+"Anjali Patel","Office Number","anjali.patelattechsolutions.in","FinServe Group","08/07/2025","Lost","Budget increased","{""json"": ""fragment"", ""data"": """"}","garb","Anjali Patel"
+"Aditya Reddy","9492280959 / 9776460377","   aditya.reddy@outlook.com   ","City Hospital","2025-10-22","Invalid Lead","Referred by existing client","","#$@%","Aditya Reddy"
+"Anjali Verma","0091-9691058991 🚀
+New Line","anjali.verma@startup.io, secondary@outlook.com","BlueOcean ""quoted, text""","Last Week","Sale Closed","Wants to negotiate","{""json"": ""fragment"", ""data"": """"}","garb","Anjali Verma"
+"Arjun Wang","+1 (961) 555-2967","arjun.wang@startup.io, secondary@outlook.com","BlueOcean","11/01/2025","{""json"": ""fragment"", ""data"": ""Site Visit Completed""}","Sent brochure","","=SUM(A1:A5)","Arjun Wang"
+"Vikram Kumar","98758 34362","   vikram.kumar@enterprise.co   ","Global Logistics","2025.08.30","Follow-up Required","Duplicate enquiry from Facebook","","","Vikram Kumar"
+"Vikram Kumar","98758 34362","   vikram.kumar@enterprise.co   ","Global Logistics","2025.08.30","Follow-up Required","DUPLICATE: Duplicate enquiry from Facebook","","","Vikram Kumar"
+"Valentina Hernandez","+1 (839) 555-6197","valentina.hernandezattechsolutions.in","Apex Solutions 🚀
+New Line","2026.05.14","Converted","Wants to negotiate","","=SUM(A1:A5)","Valentina Hernandez"
+"Valentina Iyer","+1 (674) 555-8442","valentina.iyeratlogistics.com","Pioneer Manufacturing","---","Interested ""quoted, text""","Interested in 3BHK","","=SUM(A1:A5)","Valentina Iyer"
+"Wei Rao","+91 9855411163","wei.rao@gmail.com, secondary@enterprise.co","BlueOcean","Today","Converted","Referred by existing client ""quoted, text""","","=SUM(A1:A5)","Wei Rao"
+"Anjali Kumar","0091-9546268090","anjali.kumar@enterprise.co, secondary@hotmail.com","Acme Corp","2025.06.05","Converted","Wants to negotiate","","{""json"": ""fragment"", ""data"": ""123""}","Anjali Kumar"
+"Arjun Hernandez","9543795622 / 9232807200","{""json"": ""fragment"", ""data"": ""   arjun.hernandez@hotmail.com   ""}","Apex Solutions","2026.05.14","Busy","Referred by existing client","","garb ""quoted, text""","Arjun Hernandez"
+"John Doe","=SUM(A1:A5)","john.doe@techsolutions.in, secondary@icloud.com","BlueOcean ""quoted, text""","Yesterday","Lost","Working night shift 🚀
+New Line","","=SUM(A1:A5)","John Doe"
+"Diego Martinez","+91 9903627163","diego.martinezatoutlook.com","Agile Agency","{""json"": ""fragment"", ""data"": ""Last Week""} ""quoted, text""","Sale Closed","Referred by existing client","=SUM(A1:A5)","=SUM(A1:A5)","Diego Martinez"
+"Chen Li","Secondary Contact","","FinServe Group","Yesterday","Wrong Number","Old customer returning","","","Chen Li"
+"Chen Li","Secondary Contact","","FinServe Group","Yesterday","Wrong Number","DUPLICATE: Old customer returning","","","Chen Li"
+"Chen Li","Secondary Contact","DUPLICATE: ","FinServe Group","Yesterday","Wrong Number","DUPLICATE: Old customer returning","","","Chen Li"
+"Arjun Wang","0091-9158000532","arjun.wang@company.net","Metro Properties","06/24/2025 ""quoted, text""","Meeting Scheduled","DND","","#$@%","Arjun Wang"
+"Neha Hernandez","+91 9407267849","{""json"": ""fragment"", ""data"": ""   neha.hernandez@techsolutions.in   ""}","Agile Agency","Yesterday","Busy","Budget increased 🚀
+New Line","","#$@%","Neha Hernandez"
+"Arjun Gupta","9322255854 / 9304939587"," 🚀
+New Line","Quantum Systems","Yesterday","=SUM(A1:A5)","Budget increased","{""json"": ""fragment"", ""data"": """"}","#$@%","Arjun Gupta"
+"John Iyer","94982 45950","   john.iyer@outlook.com   ","TechNova","invalid date","Cancelled","Needs GST invoice","","123","John Iyer"
+"Emily Iyer","9561887223 / 9001981698","emily.iyer@hotmail.com","Urban Builders","---","Site Visit Completed","Decision maker travelling","","garb","Emily Iyer"
+"Kavita Ali","+91 9165460207","kavita.ali@company.net","TechNova","Last Week","Interested","Already spoke with spouse","","","Kavita Ali"
+"{""json"": ""fragment"", ""data"": ""Michael Menon""}","WhatsApp Only","michael.menon@gmail.com, secondary@techsolutions.in","Quantum Systems","Yesterday","Budget Issue","DND","","#$@%","{""json"": ""fragment"", ""data"": ""Michael Menon""}"
+"Neha Hassan","+919140089763
+9184696353","neha.hassan@startup.io","{""json"": ""fragment"", ""data"": ""TechNova""}","invalid date","Meeting Scheduled","=SUM(A1:A5)","","#$@%","Neha Hassan"
+"=SUM(A1:A5)","0091-9249358746 🚀
+New Line","sarah.kumaratlogistics.com","Urban Builders","---","Converted","Referred by existing client"," ""quoted, text""","garb","=SUM(A1:A5)"
+"Chen Martinez","Office Number","chen.martinez@company.net, secondary@outlook.com ""quoted, text""","NextGen IT","05/02/2026","{""json"": ""fragment"", ""data"": ""Invalid Lead""}","Not picking up","","","Chen Martinez"
+"Priya Ali","+1 (434) 555-5698","=SUM(A1:A5)","Urban Builders","---","Interested","Referred by existing client","","#$@%","Priya Ali"
+"Valentina Wang","Office Number","   valentina.wang@startup.io   ","NextGen IT","03/15/2026","{""json"": ""fragment"", ""data"": ""Invalid Lead""}","Budget increased","","garb","Valentina Wang"
+"=SUM(A1:A5)","{""json"": ""fragment"", ""data"": ""+91 9739254349""}","   chen.doe@logistics.com   ","Sunrise Foods","invalid date","Lost","Duplicate enquiry from Facebook","","garb","=SUM(A1:A5)"
+"Michael Menon","0091-9766510564","   michael.menon@enterprise.co   ","Pioneer Manufacturing","28-Oct-2025","Interested","Referred by existing client","","{""json"": ""fragment"", ""data"": ""garb""}","Michael Menon"
+"Valentina Gupta","WhatsApp Only"," 🚀
+New Line","TechNova","23-Apr-2026","Invalid Lead","Call back tomorrow","","123","Valentina Gupta"
+"Valentina Singh","+91-94490-81880 ext 616","valentina.singh@logistics.com, secondary@hotmail.com","Apex Solutions","Last Week","Invalid Lead","Follow up next Friday","","123","Valentina Singh"
+"Sneha Doe","+1 (412) 555-5909","sneha.doe@outlook.com, secondary@techsolutions.in","Apex Solutions","Yesterday","Invalid Lead","Decision maker travelling"," ""quoted, text""","123","Sneha Doe"
+"Vikram Menon","Office Number","vikram.menon@yahoo.com ""quoted, text""","Agile Agency","08/04/2026","Warm","Interested in 3BHK","","#$@%","Vikram Menon"
+"Sarah Gupta","0091-9399578108","sarah.gupta@yahoo.com","Metro Properties 🚀
+New Line","2026-04-08","Follow-up Required","Call back tomorrow","","","Sarah Gupta"
+"Chen Wang","+1 (846) 555-1392","chen.wang@gmail.com [donotemail]","FinServe Group","2025.10.22","Interested","Call back tomorrow","","=SUM(A1:A5)","Chen Wang"
+"Ravi Ali","WhatsApp Only","=SUM(A1:A5)","NextGen IT","invalid date","Call Back","Already spoke with spouse","","#$@%","Ravi Ali"
+"Arjun Doe","Office Number","arjun.doeatenterprise.co","Urban Builders","13/03/2026","Budget Issue","Budget increased","","garb","Arjun Doe"
+"Sarah Gupta","0091-9938996401","sarah.gupta@company.net","Acme Corp","23/11/2025","Follow-up Required","Referred by existing client","","=SUM(A1:A5)","Sarah Gupta"
+"Valentina Hassan","+91 9713928074","","Metro Properties","09/01/2025","Cold","Sent brochure ""quoted, text""","","123","Valentina Hassan"
+"Vikram Kumar","+91 9693611747","","Pioneer Manufacturing ""quoted, text""","Yesterday","Cancelled 🚀
+New Line","Follow up next Friday","","#$@%","Vikram Kumar"
+"Wei Patel","+91-98466-55218 ext 910","wei.patel@yahoo.com, secondary@yahoo.com ""quoted, text""","Pioneer Manufacturing","2025.07.19","Lost","Already spoke with spouse","","garb","Wei Patel"
+"Arjun Reddy","+1 (863) 555-4745","arjun.reddy@enterprise.co (old)","Quantum Systems","44927","Lost","Not picking up","","","Arjun Reddy"
+"Sneha Kumar","0091-9726149653","sneha.kumar@techsolutions.in (old)","TechNova","invalid date","Wrong Number","Wants to negotiate","","#$@%","Sneha Kumar"
+"John Iyer","+1 (735) 555-6116","   john.iyer@startup.io   ","Global Logistics","2026.05.14","Call Back","Referred by existing client","","garb","John Iyer"
+"John Iyer","DUPLICATE: +1 (735) 555-6116","   john.iyer@startup.io   ","Global Logistics","2026.05.14","Call Back","Referred by existing client","","garb","John Iyer"
+"Sneha Reddy","+919201404488
+9282922114","sneha.reddy@gmail.com [donotemail]","Agile Agency","2026.04.03","Follow-up Required","Already spoke with spouse","","garb","Sneha Reddy"
+"Diego Reddy","WhatsApp Only","diego.reddyatcompany.net","Stellar Services","Yesterday","Interested","=SUM(A1:A5)","","garb","Diego Reddy"
+"Diego Iyer","Secondary Contact","diego.iyer@startup.io, secondary@hotmail.com","Pioneer Manufacturing","09/09/2025 🚀
+New Line","Booked","Old customer returning","{""json"": ""fragment"", ""data"": """"}","#$@%","Diego Iyer"
+"{""json"": ""fragment"", ""data"": ""Neha Hassan""}","99961 27738","neha.hassanattechsolutions.in","FinServe Group 🚀
+New Line","2025-02-20","Hot","Preferred morning calls","","123","{""json"": ""fragment"", ""data"": ""Neha Hassan""}"
+"Kavita Rao","9708543836 / 9652497566","kavita.rao@startup.io [donotemail]","City Hospital","{""json"": ""fragment"", ""data"": ""invalid date""}","Budget Issue","Price sensitive","","garb","Kavita Rao"
+"Emily Verma","WhatsApp Only","","Apex Solutions ""quoted, text""","---","Cancelled","Decision maker travelling","{""json"": ""fragment"", ""data"": """"}","=SUM(A1:A5)","Emily Verma"
+"Arjun Reddy","Secondary Contact","{""json"": ""fragment"", ""data"": ""arjun.reddy@company.net (old)""}","Sunrise Foods","18-Nov-2025","Loan Pending","Duplicate enquiry from Facebook","","","Arjun Reddy"
+"Wei Ali","9055639852 / 9548492651","wei.ali@logistics.com, secondary@gmail.com","Quantum Systems","Last Week","Hot ""quoted, text""","Duplicate enquiry from Facebook","","#$@%","Wei Ali"
+"Wei Singh","0091-9400416622","wei.singh@yahoo.com","{""json"": ""fragment"", ""data"": ""NextGen IT 🚀
+New Line""}","2025-05-15","Wrong Number","Call back tomorrow","","garb","Wei Singh"
+"Kavita Li","+91 9661333339","   kavita.li@techsolutions.in   ","Sunrise Foods","2025.12.18","Booked","Left voicemail","","123","Kavita Li"
+"Sneha Smith","+91 9630468770","sneha.smith@outlook.com (old)","FinServe Group","Last Week","Booked","Asked to call after 7 PM","","123","Sneha Smith"
+"Valentina Rao","+91 9719267565","   valentina.rao@outlook.com   ","Acme Corp","Today","Converted","Preferred morning calls","","garb","Valentina Rao"
+"Valentina Hernandez","Secondary Contact","valentina.hernandez@icloud.com [donotemail]","Urban Builders","44927","No Response 🚀
+New Line","Budget increased","","=SUM(A1:A5)","Valentina Hernandez"
+"Ravi Singh 🚀
+New Line","90180 22652","ravi.singh@enterprise.co (old)","Urban Builders","invalid date","Loan Pending","{""json"": ""fragment"", ""data"": ""Requested WhatsApp instead of calls""}","","","Ravi Singh 🚀
 New Line"
-"Michael Singh","92594 23720","   michael.singh@outlook.com   ","Urban Builders","44927","Converted","Old customer returning","","","Michael Singh"
-"Rahul Kumar","+91 9907409855","rahul.kumar@yahoo.com, secondary@logistics.com","NextGen IT","---","Hot ""quoted, text""","Interested in 3BHK","","garb","Rahul Kumar"
-"Sarah Singh","WhatsApp Only","sarah.singh@techsolutions.in, secondary@company.net","Urban Builders","44927","Interested","Left voicemail","=SUM(A1:A5)","#$@%","Sarah Singh"
-"Emily Doe","Secondary Contact","emily.doe@techsolutions.in, secondary@yahoo.com","Sunrise Foods","02/12/2026","Cancelled","DND","","","Emily Doe"
-"Arjun Patel","0091-9965951348","arjun.patel@logistics.com","FinServe Group","2025-02-14","Warm","Duplicate enquiry from Facebook","","123","Arjun Patel"
-"Priya Li 🚀
-New Line","9052722410 / 9970795006","priya.li@hotmail.com, secondary@logistics.com","Agile Agency","Yesterday","Meeting Scheduled","Requested WhatsApp instead of calls","","123","Priya Li 🚀
-New Line"
-"Arjun Martinez","Office Number","   arjun.martinez@yahoo.com   ","FinServe Group 🚀
-New Line","10/31/2025","Call Back","Working night shift","","123","Arjun Martinez"
-"=SUM(A1:A5) ""quoted, text""","WhatsApp Only","   priya.smith@startup.io   ","Apex Solutions","03-May-2026","Hot","Budget increased","","garb","=SUM(A1:A5) ""quoted, text"""
-"Anjali Gupta","+1 (264) 555-1631","anjali.gupta@enterprise.co [donotemail]","Urban Builders","---","Wrong Number","Needs GST invoice 🚀
-New Line","","123","Anjali Gupta"
-"Neha Verma","90539 00791","neha.verma@icloud.com, secondary@outlook.com","FinServe Group","08/05/2025","No Response","Budget increased","","#$@% 🚀
-New Line","Neha Verma"
-"Neha Verma","90539 00791","DUPLICATE: neha.verma@icloud.com, secondary@outlook.com","FinServe Group","08/05/2025","No Response","Budget increased","","#$@% 🚀
-New Line","Neha Verma"
-"Chen Hernandez","+91-94907-14595 ext 51","chen.hernandez@yahoo.com, secondary@icloud.com","Quantum Systems","Yesterday","No Response","Sent brochure","","","Chen Hernandez"
-"Valentina Patel","WhatsApp Only","","City Hospital","44927","Sale Closed","Price sensitive","","123","Valentina Patel"
-"Vikram Gupta","+1 (660) 555-1347","vikram.gupta@yahoo.com (old)","Quantum Systems 🚀
-New Line","2026.04.15","Duplicate","Working night shift","","=SUM(A1:A5)","Vikram Gupta"
-"Rahul Verma","+919475664697
-9749533448","rahul.verma@hotmail.com [donotemail]","TechNova","invalid date","Cold","Call back tomorrow","{""json"": ""fragment"", ""data"": "" 🚀
-New Line""}","#$@%","Rahul Verma"
-"John Singh","+1 (907) 555-6448","john.singh@icloud.com, secondary@company.net","Agile Agency","2026.05.14","Hot 🚀
-New Line","Needs GST invoice","","","John Singh"
-"Sneha Kumar","Secondary Contact","   sneha.kumar@techsolutions.in   ","FinServe Group","Last Week","Site Visit Completed","Wants to negotiate","","garb","Sneha Kumar"
-"Emily Kumar","+91-94916-05254 ext 865","emily.kumaratyahoo.com","Sunrise Foods","Last Week ""quoted, text""","Invalid Lead","Requested WhatsApp instead of calls","","=SUM(A1:A5) 🚀
-New Line","Emily Kumar"
-"=SUM(A1:A5)","93629 55678","","NextGen IT","2026.05.14","Invalid Lead","Requested WhatsApp instead of calls","","garb","=SUM(A1:A5)"
-"Ravi Smith","Office Number 🚀
-New Line","   ravi.smith@yahoo.com   ","TechNova","Yesterday","Lost","=SUM(A1:A5)","","123","Ravi Smith"
-"Arjun Reddy","93287 42556","arjun.reddy@gmail.com, secondary@outlook.com","FinServe Group 🚀
-New Line","Last Week","{""json"": ""fragment"", ""data"": ""Interested""}","Requested WhatsApp instead of calls","","=SUM(A1:A5)","Arjun Reddy"
-"Vikram Wang","Office Number ""quoted, text""","=SUM(A1:A5)","Zenith Enterprises","2025.10.29","Interested","DND","","garb","Vikram Wang"
-"Vikram Kumar","Secondary Contact","   vikram.kumar@company.net   ","Sunrise Foods","2025-02-24 🚀
-New Line","Busy","Old customer returning","","","Vikram Kumar"
-"Priya Sharma","+919666478696
-9995588163","priya.sharma@startup.io (old)","NextGen IT","2026.05.14","Sale Closed","Price sensitive","","garb","Priya Sharma"
-"Anjali Rao","+919688876233
-9362224689","anjali.raoattechsolutions.in","Agile Agency","Yesterday","Meeting Scheduled","Decision maker travelling 🚀
-New Line ""quoted, text""","","","Anjali Rao"
-"Rahul Singh","+91-98399-54339 ext 146","rahul.singhathotmail.com","Metro Properties","2026.05.14 ""quoted, text""","Warm","{""json"": ""fragment"", ""data"": ""Budget increased""}","","","Rahul Singh"
-"Valentina Hassan","WhatsApp Only","valentina.hassan@enterprise.co [donotemail]","Urban Builders","=SUM(A1:A5)","Sale Closed","Already spoke with spouse","","","Valentina Hassan"
-"Anjali Kumar","Office Number","   anjali.kumar@enterprise.co   ","Pioneer Manufacturing","Last Week","Cold","Interested in 3BHK","","","Anjali Kumar"
-"Emily Kumar","+91 9558455373","emily.kumar@yahoo.com, secondary@yahoo.com 🚀
-New Line","NextGen IT","=SUM(A1:A5)","Warm","Requested WhatsApp instead of calls","","123","Emily Kumar"
-"Rahul Gupta","Office Number","rahul.gupta@company.net, secondary@hotmail.com","NextGen IT","29/05/2025","Lost","Wants to negotiate","","=SUM(A1:A5)","Rahul Gupta"
-"Chen Verma","9564870368 / 9842590828","{""json"": ""fragment"", ""data"": ""chen.verma@hotmail.com, secondary@enterprise.co""}","Agile Agency","06/18/2025","Follow-up Required","Old customer returning","","#$@%","Chen Verma"
-"Sarah Reddy","Secondary Contact","","Global Logistics","---","Cold","Preferred morning calls","","#$@%","Sarah Reddy"
-"Chen Menon","Office Number","chen.menon@yahoo.com, secondary@icloud.com","BlueOcean 🚀
-New Line","Yesterday","Lost","Already spoke with spouse","{""json"": ""fragment"", ""data"": """"}","garb","Chen Menon"
-"Rahul Gupta","92239 37829","rahul.gupta@techsolutions.in [donotemail]","NextGen IT","2026.05.14","Call Back","Requested WhatsApp instead of calls","","","Rahul Gupta"
-"Ravi Reddy","Secondary Contact","ravi.reddy@enterprise.co, secondary@techsolutions.in","TechNova","{""json"": ""fragment"", ""data"": ""invalid date""}","Call Back","Follow up next Friday","","","Ravi Reddy"
-"Emily Singh","9278560247 / 9685886137","   emily.singh@icloud.com   ","Sunrise Foods","2026.03.05","Meeting Scheduled","Sent brochure"," ""quoted, text""","","Emily Singh"
-"John Hassan","+91-97652-81720 ext 924","john.hassan@hotmail.com [donotemail]","NextGen IT","invalid date","Duplicate","Left voicemail","","","John Hassan"
-"=SUM(A1:A5)","+91-91699-63021 ext 297","diego.smith@hotmail.com, secondary@enterprise.co","BlueOcean","2026.05.14","Loan Pending","Decision maker travelling 🚀
-New Line","","123","=SUM(A1:A5)"
-"Neha Doe","WhatsApp Only","   neha.doe@outlook.com   ","TechNova","2026.05.14","Cancelled","Left voicemail","","123","Neha Doe"
-"Wei Hernandez","99629 09378","wei.hernandezatcompany.net","Agile Agency","2026.01.20","Call Back","Duplicate enquiry from Facebook","","123","Wei Hernandez"
-"Sneha Gupta","+1 (452) 555-4011","   sneha.gupta@techsolutions.in   ","TechNova","Yesterday","No Response","Asked to call after 7 PM","","","Sneha Gupta"
-"Valentina Hernandez","Secondary Contact","valentina.hernandezatstartup.io","Acme Corp","---","Wrong Number","Call back tomorrow","","garb","Valentina Hernandez"
-"=SUM(A1:A5)","+91-99234-81443 ext 258","chen.reddy@outlook.com","BlueOcean","Yesterday ""quoted, text""","Busy","Asked to call after 7 PM","","123","=SUM(A1:A5)"
-"Rahul Gupta","+91 9738770539","rahul.gupta@company.net, secondary@outlook.com","Urban Builders","Yesterday","Follow-up Required","Sent brochure","=SUM(A1:A5)","123","Rahul Gupta"
-"Emily Smith","+919367530236
-9515342008","   emily.smith@hotmail.com   ","TechNova","06/01/2025","=SUM(A1:A5)","Call back tomorrow","","123","Emily Smith"
-"=SUM(A1:A5)","+1 (448) 555-6860","neha.smith@yahoo.com, secondary@startup.io","Stellar Services","Last Week","Cancelled 🚀
-New Line","Decision maker travelling","","","=SUM(A1:A5)"
-"Kavita Verma","9471378316 / 9715150984","kavita.verma@hotmail.com, secondary@hotmail.com","=SUM(A1:A5)","Last Week","Cancelled","Not picking up 🚀
-New Line","","=SUM(A1:A5)","Kavita Verma"
-"Sarah Li","Secondary Contact","sarah.li@enterprise.co, secondary@hotmail.com 🚀
-New Line","Quantum Systems","06/26/2025","Converted","Sent brochure","","123","Sarah Li"
-"Rahul Wang","=SUM(A1:A5)","   rahul.wang@yahoo.com   ","Stellar Services","2026.05.14","Follow-up Required","Asked to call after 7 PM","","123","Rahul Wang"
-"Neha Reddy","+91-90383-57935 ext 35","neha.reddyatenterprise.co","Agile Agency","=SUM(A1:A5)","Booked","Preferred morning calls","","","Neha Reddy"
-"John Doe","90102 57251","john.doe@gmail.com, secondary@startup.io","FinServe Group ""quoted, text""","2026-03-22","Hot","Referred by existing client","","garb","John Doe"
-"Arjun Hernandez","+1 (794) 555-4461","   arjun.hernandez@yahoo.com   ","TechNova","Yesterday","Loan Pending","Sent brochure","","=SUM(A1:A5)","Arjun Hernandez"
-"John Hernandez","Secondary Contact","john.hernandez@icloud.com, secondary@hotmail.com","Apex Solutions","Today","Wrong Number","Needs GST invoice","","=SUM(A1:A5)","John Hernandez"
-"Wei Gupta","+919910395477
-9976340263","wei.guptaatgmail.com","Acme Corp","02/02/2026","Meeting Scheduled","Interested in 3BHK","","#$@%","Wei Gupta"
-"Priya Kumar","0091-9569313264","priya.kumar@gmail.com [donotemail]","Urban Builders","Yesterday","Hot","Requested WhatsApp instead of calls","","=SUM(A1:A5)","Priya Kumar"
-"Kavita Singh","{""json"": ""fragment"", ""data"": ""WhatsApp Only""}","kavita.singh@techsolutions.in [donotemail]","Global Logistics","21-Feb-2025","Invalid Lead","Already spoke with spouse",""," 🚀
-New Line","Kavita Singh"
-"Wei Verma","{""json"": ""fragment"", ""data"": ""+91-90343-26471 ext 413""}","wei.verma@enterprise.co","BlueOcean","44927","Follow-up Required","Price sensitive","","","Wei Verma"
-"Rahul Verma","97395 02095","","Zenith Enterprises","03/20/2025","Converted","Preferred morning calls","","=SUM(A1:A5)","Rahul Verma"
-"Kavita Sharma","Office Number","kavita.sharmaatoutlook.com","NextGen IT 🚀
-New Line","---","Budget Issue","DND","","#$@%","Kavita Sharma"
-"Chen Li","Office Number","chen.li@techsolutions.in, secondary@techsolutions.in","TechNova","20/10/2025","Cancelled","Referred by existing client"," 🚀
-New Line","garb","Chen Li"
-"Michael Gupta","Secondary Contact","michael.gupta@gmail.com, secondary@icloud.com","FinServe Group","Today","No Response","{""json"": ""fragment"", ""data"": ""Preferred morning calls""}","","#$@%","Michael Gupta"
-"Sarah Menon","+91 9104986616","sarah.menonaticloud.com","City Hospital","2025.03.22","Warm","Not picking up","","#$@%","Sarah Menon"
-"Chen Gupta","9433174998 / 9006452012","   chen.gupta@startup.io   ","BlueOcean","Today","Loan Pending","DND","","","Chen Gupta"
-"Kavita Menon 🚀
-New Line","WhatsApp Only","=SUM(A1:A5)","Sunrise Foods","2025.01.25","Hot","{""json"": ""fragment"", ""data"": ""Requested WhatsApp instead of calls""}","","123 ""quoted, text""","Kavita Menon 🚀
-New Line"
-"Emily Kumar","+1 (938) 555-5293","emily.kumar@logistics.com [donotemail]","Metro Properties","03/29/2025","Busy","Left voicemail","{""json"": ""fragment"", ""data"": """"}","123","Emily Kumar"
-"Anjali Hassan","+91-95912-30176 ext 37 🚀
-New Line","anjali.hassan@enterprise.co (old)","Apex Solutions","Today","Duplicate","DND","","#$@%","Anjali Hassan"
-"Sneha Ali","Office Number","sneha.ali@company.net","TechNova","03/31/2026","Converted","Left voicemail","","garb","Sneha Ali"
-"Kavita Martinez","+919835536596
-9133386319 🚀
-New Line","kavita.martinezatoutlook.com","TechNova","01/20/2025","Budget Issue","Needs GST invoice","","{""json"": ""fragment"", ""data"": ""123""}","Kavita Martinez"
-"Vikram Verma","+91 9673565604","vikram.verma@techsolutions.in [donotemail]","Zenith Enterprises","=SUM(A1:A5)","{""json"": ""fragment"", ""data"": ""Interested""}","Price sensitive","","","Vikram Verma"
-"Anjali Li","+919520718510
-9211542427","anjali.liatyahoo.com","FinServe Group","Yesterday","Loan Pending","Needs GST invoice","","123","Anjali Li"
-"Rahul Doe","9277733714 / 9633771053","rahul.doeatcompany.net","Urban Builders","Last Week","Cold","Duplicate enquiry from Facebook","","123","Rahul Doe"
-"Neha Hernandez","9271505972 / 9904530249","neha.hernandez@yahoo.com, secondary@company.net","Apex Solutions","44927","=SUM(A1:A5)","Duplicate enquiry from Facebook","","=SUM(A1:A5)","Neha Hernandez"
-"Neha Hernandez","9271505972 / 9904530249","neha.hernandez@yahoo.com, secondary@company.net","DUPLICATE: Apex Solutions","44927","=SUM(A1:A5)","Duplicate enquiry from Facebook","","=SUM(A1:A5)","Neha Hernandez"
-"Chen Reddy","Office Number","chen.reddy@yahoo.com","=SUM(A1:A5)","02/12/2025","Site Visit Completed","Referred by existing client","","","Chen Reddy"
-"Emily Sharma 🚀
-New Line","Secondary Contact","emily.sharmaatstartup.io","TechNova","22/09/2025","Sale Closed","Requested WhatsApp instead of calls"," ""quoted, text""","","Emily Sharma 🚀
-New Line"
-"Priya Rao","WhatsApp Only","{""json"": ""fragment"", ""data"": ""priya.rao@gmail.com""}","Quantum Systems","02/24/2026 🚀
-New Line","Loan Pending","Needs GST invoice","","=SUM(A1:A5)","Priya Rao"
-"Priya Kumar","9950319853 / 9927525862 🚀
-New Line","priya.kumar@techsolutions.in, secondary@gmail.com","Agile Agency","04/03/2026","Loan Pending","Budget increased","","123","Priya Kumar"
-"Neha Smith","9488406563 / 9071427570","   neha.smith@gmail.com   ","Zenith Enterprises","2026.05.14","No Response","DND","{""json"": ""fragment"", ""data"": """"}","","Neha Smith"
-"Michael Martinez","{""json"": ""fragment"", ""data"": ""+91-93960-33691 ext 159""}","","TechNova","2026.05.14","No Response","Working night shift","","#$@%","Michael Martinez"
-"Michael Wang","+91-90894-46228 ext 190","   michael.wang@enterprise.co   ","Zenith Enterprises","---","Booked","Sent brochure","","garb ""quoted, text""","Michael Wang"
-"Valentina Sharma","+91-95172-43614 ext 192","valentina.sharma@outlook.com, secondary@enterprise.co","Pioneer Manufacturing","08/15/2025","Cancelled","Price sensitive","","#$@%","Valentina Sharma"
-"Priya Doe","+919632983761
-9629520413","priya.doeatyahoo.com","FinServe Group","22-Nov-2025","Busy","Budget increased 🚀
-New Line","","=SUM(A1:A5)","Priya Doe"
-"Vikram Smith","WhatsApp Only","vikram.smith@enterprise.co","TechNova","04/02/2026","Booked","Price sensitive","","=SUM(A1:A5)","Vikram Smith"
-"Emily Gupta","+91-91551-78036 ext 301","","NextGen IT","25-Mar-2026","Follow-up Required","Left voicemail","","=SUM(A1:A5)","Emily Gupta"
-"Neha Li","=SUM(A1:A5)","{""json"": ""fragment"", ""data"": ""   neha.li@startup.io   ""}","FinServe Group","44927 ""quoted, text""","Duplicate","Call back tomorrow","","#$@%","Neha Li"
-"{""json"": ""fragment"", ""data"": ""Neha Gupta""}","0091-9951424060 🚀
-New Line","neha.guptaatyahoo.com","NextGen IT","Yesterday","Budget Issue","Decision maker travelling","","123","{""json"": ""fragment"", ""data"": ""Neha Gupta""}"
-"Sneha Verma","9638532272 / 9297344348 ""quoted, text""","   sneha.verma@hotmail.com   ","Stellar Services","2025-05-13","{""json"": ""fragment"", ""data"": ""Follow-up Required""}","Already spoke with spouse","=SUM(A1:A5)","123","Sneha Verma"
-"Arjun Li","+91 9283431174","arjun.liathotmail.com","Global Logistics","Last Week","Invalid Lead","Working night shift","","=SUM(A1:A5)","Arjun Li"
-"Priya Kumar","WhatsApp Only","","Global Logistics","29/06/2025","Site Visit Completed","Referred by existing client","","","Priya Kumar"
-"Chen Hernandez","+91 9765080823 🚀
-New Line","","Stellar Services","Last Week","Busy","Interested in 3BHK","","123","Chen Hernandez"
-"Chen Hernandez","+91 9765080823 🚀
-New Line","","Stellar Services","Last Week","Busy","Interested in 3BHK","DUPLICATE: ","123","Chen Hernandez"
-"Michael Li","99273 83185","michael.li@gmail.com, secondary@hotmail.com","Zenith Enterprises","=SUM(A1:A5)","{""json"": ""fragment"", ""data"": ""Call Back""}","Price sensitive","","garb","Michael Li"
-"Valentina Ali","+919490959994
-9060121435","valentina.aliatcompany.net","Sunrise Foods","Today","Site Visit Completed","Wants to negotiate","","=SUM(A1:A5)","Valentina Ali"
-"Chen Sharma","=SUM(A1:A5)","chen.sharma@yahoo.com, secondary@logistics.com","Quantum Systems","2026.05.14","No Response","Not picking up"," 🚀
-New Line","garb","Chen Sharma"
-"Chen Kumar","=SUM(A1:A5)","chen.kumar@outlook.com [donotemail]","Pioneer Manufacturing","2025.04.22","Cold","Price sensitive","","#$@%","Chen Kumar"
-"Wei Wang","{""json"": ""fragment"", ""data"": ""96508 78948""}","wei.wang@logistics.com [donotemail]","Pioneer Manufacturing","Today","Hot","Old customer returning","","#$@%","Wei Wang"
-"{""json"": ""fragment"", ""data"": ""Chen Patel""}","+919939237034
-9799548384","chen.patel@icloud.com [donotemail]","Metro Properties","Last Week","Sale Closed","=SUM(A1:A5)","","=SUM(A1:A5)","{""json"": ""fragment"", ""data"": ""Chen Patel""}"
-"Vikram Menon","Secondary Contact 🚀
-New Line","vikram.menon@enterprise.co [donotemail]","Sunrise Foods","17/10/2025","Site Visit Completed","Interested in 3BHK","","=SUM(A1:A5)","Vikram Menon"
-"Vikram Sharma","+91 9033240219","vikram.sharma@gmail.com (old)","TechNova","{""json"": ""fragment"", ""data"": ""2026.05.14""}","Invalid Lead","Not picking up","","123","Vikram Sharma"
-"Vikram Sharma","+91 9033240219","vikram.sharma@gmail.com (old)","TechNova","{""json"": ""fragment"", ""data"": ""2026.05.14""}","Invalid Lead","DUPLICATE: Not picking up","","123","Vikram Sharma"
-"=SUM(A1:A5)","Office Number 🚀
-New Line","emily.iyeratoutlook.com","Pioneer Manufacturing","invalid date","Cancelled","Decision maker travelling","","=SUM(A1:A5)","=SUM(A1:A5)"
-"Rahul Reddy 🚀
-New Line","+91 9785621972","rahul.reddy@logistics.com, secondary@outlook.com","Pioneer Manufacturing","2025.11.05","Meeting Scheduled","Wants to negotiate","","garb","Rahul Reddy 🚀
-New Line"
-"Chen Ali","0091-9032845990","chen.ali@gmail.com, secondary@logistics.com","Global Logistics","2025-07-01","Call Back 🚀
-New Line","Budget increased","","123","Chen Ali"
-"Anjali Li","WhatsApp Only","anjali.li@hotmail.com, secondary@icloud.com","Acme Corp","2025.12.13","Invalid Lead","Call back tomorrow","","=SUM(A1:A5)","Anjali Li"
-"Sarah Li","+91 9028535832","sarah.liaticloud.com","=SUM(A1:A5)","27/07/2025","Duplicate","Asked to call after 7 PM 🚀
-New Line","","garb","Sarah Li"
-"Chen Rao","Secondary Contact","chen.raoaticloud.com","NextGen IT","Last Week","Wrong Number 🚀
-New Line","Referred by existing client","","=SUM(A1:A5)","Chen Rao"
-"Kavita Menon","96345 59341","","Quantum Systems","04/03/2025","Site Visit Completed","Interested in 3BHK","","garb","Kavita Menon"
-"Sarah Reddy","+91-90625-54693 ext 157 ""quoted, text""","sarah.reddy@company.net","BlueOcean","02-Mar-2026","Sale Closed","Not picking up","","garb","Sarah Reddy"
-"Sarah Reddy","+91-90625-54693 ext 157 ""quoted, text""","sarah.reddy@company.net","BlueOcean","DUPLICATE: 02-Mar-2026","Sale Closed","Not picking up","","garb","Sarah Reddy"
-"Diego Hernandez","98349 07324","diego.hernandezatenterprise.co","Apex Solutions","invalid date","Loan Pending","Preferred morning calls"," 🚀
-New Line","garb ""quoted, text""","Diego Hernandez"
-"Rahul Kumar","9200633603 / 9140614152","","Metro Properties","06-Jan-2025","Cancelled","Decision maker travelling","","#$@%","Rahul Kumar"
-"=SUM(A1:A5)","+91-93003-73991 ext 762","wei.smith@startup.io [donotemail]","Metro Properties","2026.05.14","Lost","Wants to negotiate","","123","=SUM(A1:A5)"
-"Aditya Hernandez","WhatsApp Only","aditya.hernandezaticloud.com","=SUM(A1:A5)","44927","Sale Closed","Preferred morning calls 🚀
-New Line","","=SUM(A1:A5)","Aditya Hernandez"
-"=SUM(A1:A5)","Office Number","anjali.patel@logistics.com ""quoted, text""","Zenith Enterprises","2026.05.14","Booked","Requested WhatsApp instead of calls","","123","=SUM(A1:A5)"
-"Vikram Kumar","90150 63121","vikram.kumaratlogistics.com","City Hospital","Yesterday","Cancelled","Requested WhatsApp instead of calls","","=SUM(A1:A5)","Vikram Kumar"
-"Michael Ali","+91 9074249897","   michael.ali@yahoo.com   ","Pioneer Manufacturing","2026.05.14","Hot","Sent brochure"," ""quoted, text""","123","Michael Ali"
-"Michael Patel","+919612973691
-9476755503","michael.patelatoutlook.com","City Hospital","invalid date","Meeting Scheduled","Working night shift","","123","Michael Patel"
-"Vikram Patel","Office Number","","Urban Builders","---","Booked","Not picking up","","garb","Vikram Patel"
-"Aditya Martinez","+919153931783
-9430318347","   aditya.martinez@hotmail.com   ","BlueOcean ""quoted, text""","2025.05.25","Warm","Budget increased","","#$@%","Aditya Martinez"
-"Anjali Reddy","+919124111150
-9698520130","   anjali.reddy@enterprise.co   ","Acme Corp","Yesterday","Follow-up Required","Wants to negotiate","","","Anjali Reddy"
-"Michael Reddy","+91 9361672752","=SUM(A1:A5)","NextGen IT","---","Follow-up Required","{""json"": ""fragment"", ""data"": ""Referred by existing client""}","","garb","Michael Reddy"
-"Diego Gupta","Secondary Contact","diego.guptaaticloud.com","Metro Properties ""quoted, text""","Last Week","=SUM(A1:A5)","Price sensitive","","garb","Diego Gupta"
-"Sneha Patel 🚀
-New Line","93124 72874","sneha.patelatgmail.com","Acme Corp","Last Week","Cancelled","Working night shift","","#$@%","Sneha Patel 🚀
-New Line"
-"Sneha Patel 🚀
-New Line","93124 72874","sneha.patelatgmail.com","Acme Corp","Last Week","DUPLICATE: Cancelled","Working night shift","","#$@%","Sneha Patel 🚀
-New Line"
-"Valentina Smith","+91 9285035524","   valentina.smith@logistics.com   ","TechNova","03-Apr-2025","Loan Pending","Referred by existing client","","123","Valentina Smith"
-"Sneha Rao","+919329779226
-9219019951","","Apex Solutions","Today","Warm","Preferred morning calls","","123","Sneha Rao"
-"Neha Menon","+1 (586) 555-5579","neha.menon@outlook.com [donotemail]","Sunrise Foods","04/14/2026","Meeting Scheduled","DND","=SUM(A1:A5)","=SUM(A1:A5)","Neha Menon"
-"{""json"": ""fragment"", ""data"": ""Kavita Martinez""}","+919969073531
-9455206058","kavita.martinez@hotmail.com [donotemail]","Stellar Services","2026.05.14","Duplicate","Left voicemail","","=SUM(A1:A5)","{""json"": ""fragment"", ""data"": ""Kavita Martinez""}"
-"Arjun Martinez","WhatsApp Only ""quoted, text""","   arjun.martinez@logistics.com   ","Sunrise Foods","44927","Booked","Working night shift","=SUM(A1:A5)","=SUM(A1:A5)","Arjun Martinez"
-"Neha Doe","WhatsApp Only","","=SUM(A1:A5)","04/02/2026","Meeting Scheduled","Requested WhatsApp instead of calls ""quoted, text""","","#$@%","Neha Doe"
-"Anjali Sharma","+919000733767
-9286110173","anjali.sharmaattechsolutions.in","Quantum Systems","---","Invalid Lead","DND","","garb 🚀
-New Line","Anjali Sharma"
-"Arjun Rao","9222629624 / 9212673082","   arjun.rao@logistics.com   ","Agile Agency","Today","Wrong Number","{""json"": ""fragment"", ""data"": ""Duplicate enquiry from Facebook""}","","","Arjun Rao"
-"Priya Menon","+91 9296256754","","Stellar Services","14-Aug-2025","Meeting Scheduled","Decision maker travelling","","garb","Priya Menon"
-"{""json"": ""fragment"", ""data"": ""Anjali Smith""}","94563 37563","","Global Logistics","2025-06-08 ""quoted, text""","No Response","Wants to negotiate","","","{""json"": ""fragment"", ""data"": ""Anjali Smith""}"
-"Arjun Reddy","92475 67715","arjun.reddyathotmail.com","Stellar Services","Yesterday","Busy","Not picking up","{""json"": ""fragment"", ""data"": """"}","#$@%","Arjun Reddy"
-"Priya Kumar","+919022880279
-9573202460","   priya.kumar@enterprise.co   ","{""json"": ""fragment"", ""data"": ""Quantum Systems""}","44927","Site Visit Completed","Left voicemail","","","Priya Kumar"
-"Emily Ali","0091-9143633782","emily.aliatenterprise.co","Sunrise Foods","---","No Response","Price sensitive","","=SUM(A1:A5)","Emily Ali"
-"Rahul Ali","+91 9107997201","   rahul.ali@logistics.com   ","Stellar Services","invalid date","Booked","Already spoke with spouse","","","Rahul Ali"
-"John Doe","+1 (688) 555-9116","   john.doe@hotmail.com   ","Pioneer Manufacturing","44927","Busy","Referred by existing client","{""json"": ""fragment"", ""data"": """"}","garb","John Doe"
-"John Reddy","9862327586 / 9785577490","","Zenith Enterprises","09/05/2025","Lost","Duplicate enquiry from Facebook","","#$@%","John Reddy"
-"Arjun Rao 🚀
-New Line","+1 (267) 555-7974","","Urban Builders","2026-04-12","Interested","Call back tomorrow","","123","Arjun Rao 🚀
-New Line"
-"Diego Martinez","+91-96102-51985 ext 286","diego.martinez@techsolutions.in, secondary@enterprise.co","Metro Properties","---","Duplicate","Duplicate enquiry from Facebook","","#$@%","Diego Martinez"
-"Anjali Wang","+919850183515
-9107957379","anjali.wang@company.net (old)","Quantum Systems","18-May-2025","Site Visit Completed","Follow up next Friday","","=SUM(A1:A5)","Anjali Wang"
-"Chen Verma","WhatsApp Only","chen.verma@enterprise.co, secondary@logistics.com","Urban Builders","03/10/2026","Booked","Call back tomorrow","","#$@%","Chen Verma"
-"Neha Iyer","97969 43590","","BlueOcean","Yesterday","Warm","Interested in 3BHK","","#$@%","Neha Iyer"
-"Ravi Reddy","+1 (600) 555-1349","ravi.reddyatenterprise.co","BlueOcean","invalid date","Meeting Scheduled","Old customer returning","","123","Ravi Reddy"
-"Michael Martinez","+919484614625
-9005233777","   michael.martinez@enterprise.co   ","Urban Builders","44927","Cancelled","Already spoke with spouse","","=SUM(A1:A5)","Michael Martinez"
-"Michael Reddy","Office Number","michael.reddy@techsolutions.in (old)","Urban Builders","29/03/2025","Site Visit Completed","Requested WhatsApp instead of calls","","=SUM(A1:A5) 🚀
-New Line","Michael Reddy"
-"Michael Reddy","Office Number","michael.reddy@techsolutions.in (old)","Urban Builders","29/03/2025","Site Visit Completed","Requested WhatsApp instead of calls","DUPLICATE: ","=SUM(A1:A5) 🚀
-New Line","Michael Reddy"
-"Sneha Patel","+91-91711-07457 ext 433","   sneha.patel@startup.io   ","{""json"": ""fragment"", ""data"": ""Quantum Systems""}","01-May-2025","Site Visit Completed","Asked to call after 7 PM","","","Sneha Patel"
-"Sneha Iyer","{""json"": ""fragment"", ""data"": ""0091-9760614085""}","   sneha.iyer@outlook.com   ","=SUM(A1:A5)","16/08/2025","Cancelled","Price sensitive","","=SUM(A1:A5)","Sneha Iyer"
-"DUPLICATE: Sneha Iyer","{""json"": ""fragment"", ""data"": ""0091-9760614085""}","   sneha.iyer@outlook.com   ","=SUM(A1:A5)","16/08/2025","Cancelled","Price sensitive","","=SUM(A1:A5)","DUPLICATE: Sneha Iyer"
-"Arjun Patel","+91-96669-56852 ext 48","arjun.patel@outlook.com","City Hospital","15/02/2025","Cold","Budget increased"," ""quoted, text""","garb","Arjun Patel"
-"Arjun Patel","+91-96669-56852 ext 48","arjun.patel@outlook.com","DUPLICATE: City Hospital","15/02/2025","Cold","Budget increased"," ""quoted, text""","garb","Arjun Patel"
-"{""json"": ""fragment"", ""data"": ""Aditya Reddy""}","0091-9444047264","aditya.reddyatyahoo.com","NextGen IT","Last Week","Lost","Price sensitive","","=SUM(A1:A5)","{""json"": ""fragment"", ""data"": ""Aditya Reddy""}"
-"Anjali Hassan","Office Number","anjali.hassanatyahoo.com","Agile Agency","Yesterday","Loan Pending","Duplicate enquiry from Facebook","","123","Anjali Hassan"
-"Wei Doe","+1 (444) 555-8306","wei.doe@company.net, secondary@icloud.com","Zenith Enterprises","2025-08-10","Warm","Needs GST invoice","","=SUM(A1:A5)","Wei Doe"
-"Priya Ali","0091-9957417020","priya.aliathotmail.com","Agile Agency","2025.03.19","{""json"": ""fragment"", ""data"": ""No Response""}","Old customer returning","","#$@%","Priya Ali"
-"Priya Ali","0091-9957417020","priya.aliathotmail.com","Agile Agency","2025.03.19","{""json"": ""fragment"", ""data"": ""No Response""}","Old customer returning","DUPLICATE: ","#$@%","Priya Ali"
-"Wei Hernandez","Office Number","wei.hernandez@hotmail.com, secondary@outlook.com","Pioneer Manufacturing","2025-07-17","Loan Pending","Requested WhatsApp instead of calls","","=SUM(A1:A5)","Wei Hernandez"
-"Emily Li","Secondary Contact","emily.liatcompany.net","Apex Solutions","15/09/2025","Lost","Already spoke with spouse","","123","Emily Li"
-"Kavita Reddy","97662 56738","   kavita.reddy@startup.io   ","NextGen IT","Today","Hot","Requested WhatsApp instead of calls",""," ""quoted, text""","Kavita Reddy"
-"Chen Iyer","+91 9768116208"," 🚀
-New Line","Apex Solutions","2026.05.14","Invalid Lead","Duplicate enquiry from Facebook","","","Chen Iyer"
-"Chen Verma","0091-9395271479","","NextGen IT","Yesterday","Wrong Number","Asked to call after 7 PM","","#$@%","Chen Verma"
-"Michael Singh 🚀
-New Line","WhatsApp Only","michael.singh@enterprise.co","FinServe Group","Yesterday","Site Visit Completed","Needs GST invoice","","","Michael Singh 🚀
-New Line"
-"Rahul Li","9922623068 / 9915477066","","Pioneer Manufacturing","2025.05.26","Hot","Duplicate enquiry from Facebook","","","Rahul Li"
-"Emily Hernandez","0091-9453985309","   emily.hernandez@icloud.com   ","FinServe Group","2026.01.28","Invalid Lead","Budget increased","","","Emily Hernandez"
-"Emily Hernandez","0091-9453985309","   emily.hernandez@icloud.com   ","FinServe Group","2026.01.28","Invalid Lead","DUPLICATE: Budget increased","","","Emily Hernandez"
+"Aditya Rao","0091-9444883294","aditya.rao@icloud.com, secondary@logistics.com","{""json"": ""fragment"", ""data"": ""Quantum Systems""}","16-Apr-2025","Hot","Not picking up","","#$@%","Aditya Rao"
+"Diego Verma","{""json"": ""fragment"", ""data"": ""0091-9084776989""}","diego.vermaatoutlook.com","Sunrise Foods","05/02/2025","Booked","Already spoke with spouse ""quoted, text""","","#$@%","Diego Verma"
+"Neha Hassan","+919801552247
+9503641924","   neha.hassan@hotmail.com   ","City Hospital","2025.06.22","Duplicate","Needs GST invoice","","=SUM(A1:A5)","Neha Hassan"
+"Wei Hernandez","+1 (220) 555-8513","wei.hernandezatcompany.net","BlueOcean","2026-04-09","No Response 🚀
+New Line","Asked to call after 7 PM","","#$@%","Wei Hernandez"
+"Ravi Doe","9828580637 / 9737211257","   ravi.doe@logistics.com   ","Apex Solutions","=SUM(A1:A5)","Site Visit Completed","Asked to call after 7 PM","","123 ""quoted, text""","Ravi Doe"
+"=SUM(A1:A5)","+91-93631-12823 ext 368","{""json"": ""fragment"", ""data"": ""sarah.guptaatcompany.net""}","TechNova","14-Mar-2026","Hot","Interested in 3BHK",""," ""quoted, text""","=SUM(A1:A5)"
+"Neha Verma","+1 (708) 555-8556","   neha.verma@startup.io   ","Urban Builders","Today","Call Back","Duplicate enquiry from Facebook","","","Neha Verma"
+"Valentina Reddy","WhatsApp Only","valentina.reddy@techsolutions.in, secondary@hotmail.com","Global Logistics","2026-03-03","Call Back","Follow up next Friday","","","Valentina Reddy"
+"Priya Hassan","Office Number 🚀
+New Line","priya.hassan@enterprise.co [donotemail]","Metro Properties","2025.04.26","Lost","Price sensitive","","garb","Priya Hassan"
+"Aditya Hassan","+919003556883
+9454126031","   aditya.hassan@enterprise.co   ","Stellar Services","2026.05.14","Warm","Old customer returning","","","Aditya Hassan"
+"Ravi Li","+91-91304-84726 ext 391","ravi.liatoutlook.com","Acme Corp","Yesterday","Warm","Call back tomorrow","","=SUM(A1:A5)","Ravi Li"
+"Priya Verma","Secondary Contact","priya.verma@company.net","Global Logistics","Yesterday","Lost","Needs GST invoice","","123","Priya Verma"
+"Diego Rao","+91-94869-18893 ext 942","","Zenith Enterprises","{""json"": ""fragment"", ""data"": ""44927 🚀
+New Line""}","Interested","Needs GST invoice","","garb","Diego Rao"
+"Ravi Rao","Secondary Contact","ravi.rao@techsolutions.in, secondary@outlook.com","Pioneer Manufacturing","04-Mar-2025","Meeting Scheduled","Working night shift","","123","Ravi Rao"
+"Valentina Doe","9152957585 / 9053603306","valentina.doe@gmail.com (old)","NextGen IT","2025.12.19","Busy","Working night shift","","","Valentina Doe"
+"Wei Iyer","0091-9647918494","wei.iyer@hotmail.com [donotemail] 🚀
+New Line","BlueOcean","01/16/2025","No Response","Call back tomorrow","","garb","Wei Iyer"
+"Emily Smith","Secondary Contact","emily.smith@yahoo.com [donotemail]","Acme Corp","2025-03-31","Cold","Price sensitive","","=SUM(A1:A5)","Emily Smith"
+"Emily Smith","Secondary Contact","emily.smith@yahoo.com [donotemail]","Acme Corp","2025-03-31","Cold","Price sensitive","","DUPLICATE: =SUM(A1:A5)","Emily Smith"
+"Emily Smith","Secondary Contact","emily.smith@yahoo.com [donotemail]","Acme Corp","2025-03-31","Cold","Price sensitive","DUPLICATE: ","DUPLICATE: =SUM(A1:A5)","Emily Smith"
+"Sarah Smith","+919892550216
+9375113563","sarah.smith@hotmail.com, secondary@outlook.com","Sunrise Foods","2025-12-08","Invalid Lead","Call back tomorrow","","=SUM(A1:A5)","Sarah Smith"
+"Michael Hassan","+1 (286) 555-2084","michael.hassan@gmail.com (old)","City Hospital","invalid date","Site Visit Completed","Price sensitive","","#$@%","Michael Hassan"
+"Priya Li","+91 9765982844","priya.liaticloud.com","Global Logistics","10/10/2025","{""json"": ""fragment"", ""data"": ""Duplicate""}","Not picking up","","=SUM(A1:A5)","Priya Li"
+"Sarah Singh","0091-9737108701","","Stellar Services","24-Jan-2025","Sale Closed","Preferred morning calls","","garb","Sarah Singh"
+"Anjali Rao","0091-9502058426","   anjali.rao@yahoo.com   ","Apex Solutions","invalid date","Budget Issue","Budget increased","","123","Anjali Rao"
+"Sarah Martinez","+919087898121
+9092768217","sarah.martinez@company.net [donotemail] 🚀
+New Line","NextGen IT","Last Week","Loan Pending","Requested WhatsApp instead of calls","","#$@%","Sarah Martinez"
+"Aditya Ali","=SUM(A1:A5)","","Zenith Enterprises","Last Week","Cancelled","Already spoke with spouse","","","Aditya Ali"
+"Rahul Patel","Secondary Contact","rahul.patel@outlook.com","Urban Builders","Today","No Response","Asked to call after 7 PM","","garb","Rahul Patel"
+"Kavita Hernandez","95927 26032","kavita.hernandez@logistics.com (old)","Agile Agency","18/04/2026","Sale Closed","DND","","","Kavita Hernandez"
+"{""json"": ""fragment"", ""data"": ""Valentina Iyer""}","98105 79700","valentina.iyer@gmail.com (old)","=SUM(A1:A5)","invalid date","Duplicate","Call back tomorrow","","#$@%","{""json"": ""fragment"", ""data"": ""Valentina Iyer""}"
+"Emily Doe","97438 08409 🚀
+New Line","emily.doe@icloud.com, secondary@gmail.com","Urban Builders","2025.03.25 ""quoted, text""","Busy","Already spoke with spouse","","","Emily Doe"
+"Michael Iyer","Secondary Contact","michael.iyeratstartup.io","Stellar Services","17-Jan-2026","Budget Issue","Decision maker travelling"," 🚀
+New Line","garb","Michael Iyer"
+"Ravi Li ""quoted, text""","0091-9753541022","ravi.li@logistics.com [donotemail]","Acme Corp","2025.03.04 🚀
+New Line","Cold","Sent brochure","","123","Ravi Li ""quoted, text"""
+"Anjali Hernandez","+1 (338) 555-4677","anjali.hernandez@hotmail.com (old)","FinServe Group","2026.05.14","Follow-up Required","Follow up next Friday"," 🚀
+New Line","#$@%","Anjali Hernandez"
+"Aditya Sharma","+919446720119
+9362269897","","=SUM(A1:A5)","26/03/2025","Lost","Requested WhatsApp instead of calls","","123","Aditya Sharma"
+"Aditya Sharma","DUPLICATE: +919446720119
+9362269897","","=SUM(A1:A5)","26/03/2025","Lost","Requested WhatsApp instead of calls","","123","Aditya Sharma"
+"Aditya Hassan","+91 9137699830","   aditya.hassan@icloud.com   ","City Hospital","---","Wrong Number","Price sensitive","","garb","Aditya Hassan"
+"Aditya Wang","WhatsApp Only","   aditya.wang@logistics.com   ","Pioneer Manufacturing ""quoted, text""","Last Week","Invalid Lead","Sent brochure","","123","Aditya Wang"
+"Anjali Singh","WhatsApp Only","anjali.singh@enterprise.co","Global Logistics","invalid date","Sale Closed","Sent brochure","","123","Anjali Singh"
+"=SUM(A1:A5)","Office Number","sneha.patelatyahoo.com","{""json"": ""fragment"", ""data"": ""City Hospital""}","04/11/2025","Site Visit Completed","Left voicemail","","123","=SUM(A1:A5)"
+"Ravi Smith","+91 9480905543","{""json"": ""fragment"", ""data"": ""ravi.smithatyahoo.com""}","Stellar Services","24/05/2025","Loan Pending","Old customer returning","","garb","Ravi Smith"
+"Wei Patel","+91-96156-16655 ext 560","   wei.patel@logistics.com   ","Pioneer Manufacturing","2025.12.24","Booked","Price sensitive","{""json"": ""fragment"", ""data"": """"}","garb","Wei Patel"
+"Wei Kumar","+91-94807-86867 ext 305","wei.kumaraticloud.com","Quantum Systems","---","Duplicate","Call back tomorrow","","#$@%","Wei Kumar"
+"Vikram Patel","+91 9054845096","","Urban Builders","2026.05.14","No Response","Referred by existing client 🚀
+New Line","","=SUM(A1:A5)","Vikram Patel"
+"Wei Verma","+91 9603618847","wei.verma@techsolutions.in, secondary@gmail.com","Zenith Enterprises","---","Loan Pending","Needs GST invoice","","","Wei Verma"
+"Neha Patel","=SUM(A1:A5)","neha.patelatenterprise.co","BlueOcean","invalid date","Wrong Number","Requested WhatsApp instead of calls","","garb","Neha Patel"
+"Wei Gupta","Office Number ""quoted, text""","wei.guptaatyahoo.com","Zenith Enterprises","28/08/2025","Loan Pending","Decision maker travelling","","123","Wei Gupta"
+"Wei Smith ""quoted, text""","+91 9778567568","wei.smith@outlook.com [donotemail]","Agile Agency","Today","Invalid Lead","Working night shift","","garb","Wei Smith ""quoted, text"""
+"Kavita Smith","Secondary Contact","kavita.smith@logistics.com, secondary@icloud.com","Zenith Enterprises 🚀
+New Line","invalid date","Converted","Requested WhatsApp instead of calls","","{""json"": ""fragment"", ""data"": """"}","Kavita Smith"
+"Vikram Li","9419713273 / 9225944654","vikram.li@yahoo.com, secondary@icloud.com","Acme Corp","2025-07-26","Sale Closed","Call back tomorrow","","123","Vikram Li"
+"Aditya Singh","WhatsApp Only","   aditya.singh@hotmail.com    🚀
+New Line","Apex Solutions","18/04/2025","Invalid Lead","Follow up next Friday","","","Aditya Singh"
+"Ravi Patel","9455479433 / 9598630265","{""json"": ""fragment"", ""data"": ""ravi.patel@startup.io (old)""}","Stellar Services","09/03/2025","Warm","Preferred morning calls","","=SUM(A1:A5)","Ravi Patel"
+"Neha Martinez","+1 (316) 555-3672","neha.martinez@logistics.com","BlueOcean","Yesterday","Hot","Follow up next Friday","","#$@% ""quoted, text""","Neha Martinez"
+"Diego Patel","+919253478467
+9182884117","","NextGen IT","10/03/2025","Cancelled","DND","","#$@%","Diego Patel"
+"Wei Wang","Office Number","   wei.wang@company.net   ","Apex Solutions","04/06/2026","Converted","Interested in 3BHK","","=SUM(A1:A5)","Wei Wang"
+"Priya Iyer","+91-98550-23826 ext 101","","Pioneer Manufacturing","Last Week","=SUM(A1:A5)","Not picking up","","#$@%","Priya Iyer"
+"=SUM(A1:A5)","WhatsApp Only","   michael.iyer@enterprise.co   ","Global Logistics","Today","No Response","Requested WhatsApp instead of calls","","#$@%","=SUM(A1:A5)"
+"Kavita Patel","+91-93965-49119 ext 449","kavita.patel@yahoo.com [donotemail]","Pioneer Manufacturing","02/08/2025","Interested ""quoted, text""","Follow up next Friday","","","Kavita Patel"
+"John Menon","+1 (976) 555-8167","john.menon@outlook.com","Acme Corp","02/01/2025","Site Visit Completed 🚀
+New Line","DND","","garb","John Menon"

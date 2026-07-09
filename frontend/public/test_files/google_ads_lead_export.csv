@@ -1,119 +1,92 @@
 Source,Medium,Campaign,Cost Per Lead,Ad Spend,CTR,Conversion Time,First Name,Last Name,Business Email,Reach Number,Sales Rep,Disposition,Sales Notes,Requirement
-Google Ads,cpc,Search_Branded,$29.59,$2374.55,9.7%,2025-08-28 09:00:00,Sarah,Sharma,sarah.sharma@hotmail.com,+91 9252063574,Amit Patel,Cold,Working night shift,Requested product catalogue
-Google Ads,cpc,Search_Branded,$9.61,$4747.76,2.5%,2025-02-14 21:00:00,Rahul,Li,rahul.li@company.net,+91 9693333489,Jessica Wong,Lost,Preferred morning calls,Searching for MBA admission
-Google Ads,cpc,Search_Branded,$10.58,$1506.43,5.5%,2025-04-08 05:00:00,Rahul,Ali,rahul.ali@gmail.com,+91 9223789965,Karan Singh,Sale Closed,Decision maker travelling,Requires virtual consultation
-Google Ads,cpc,Search_Branded,$33.69,$1995.36,6.5%,2026-02-14 13:00:00,Diego,Gupta,diego.gupta@startup.io,+91 9543845402,Priya Shah,Booked,Requested WhatsApp instead of calls,Searching for MBA admission
-Google Ads,cpc,Search_Branded,$31.83,$3922.31,1.7%,2026-03-12 21:00:00,John,Smith,john.smith@yahoo.com,+91 9643921874,Ali Hassan,Warm,Requested WhatsApp instead of calls,Searching for MBA admission
-Google Ads,cpc,Search_Branded,$12.91,$685.24,9.4%,2025-11-19 03:00:00,Ravi,Smith,ravi.smith@techsolutions.in,+91 9112344509,Ali Hassan,Lost,Referred by existing client,Needs orthopedic consultation
-Google Ads,cpc,Search_Branded,$40.05,$1396.68,6.0%,Today,Rahul,Smith,rahul.smith@hotmail.com,0091-9662104106,Rahul Mehta,Follow-up Required,Left voicemail,Searching for MBA admission
-Google Ads,cpc,Search_Branded,$18.67,$968.86,3.9%,2025-12-02 06:00:00,Anjali,Menon,anjali.menon@techsolutions.in,+91 9181268361,Priya Shah,Warm,Referred by existing client,Requested product catalogue
-Google Ads,cpc,Search_Branded,$24.36,$3571.70,8.9%,2025-10-09 07:00:00,Valentina,Li,valentina.li@hotmail.com,+91 9172211545,Ali Hassan,Meeting Scheduled,Budget increased,Looking for premium apartment under 1.2 Cr
-Google Ads,cpc,Search_Branded,$21.08,$2058.39,6.5%,,John,Ali,,WhatsApp Only,,,,
-Google Ads,cpc,Search_Branded,$34.54,$3066.57,6.4%,Last Week,Anjali,Reddy,anjali.reddy@techsolutions.in,97760 79855,Karan Singh,Invalid Lead,Working night shift,Interested in enterprise software demo
-Google Ads,cpc,Search_Branded,$27.53,$2496.63,1.1%,2025-06-04 08:00:00,Priya,Ali,priya.ali@company.net,+91 9764152190,Jessica Wong,Budget Issue,Asked to call after 7 PM,Searching for MBA admission
-Google Ads,cpc,Search_Branded,$16.22,$2731.45,3.1%,2025-07-09 07:00:00,Aditya,Martinez,aditya.martinez@hotmail.com,+91 9410206763,Amit Patel,Interested,Call back tomorrow,Requested product catalogue
-Google Ads,cpc,Search_Branded,$47.54,$1760.50,5.8%,2025-01-27 16:00:00,Valentina,Li,valentina.li@outlook.com,+91 9736290836,Ali Hassan,No Response,Asked to call after 7 PM,Searching for MBA admission
-Google Ads,cpc,Search_Branded,$26.11,$1537.18,6.0%,2025-03-17 06:00:00,Vikram,Menon,vikram.menon@icloud.com,+91 9938079764,Sarah Khan,Follow-up Required,Call back tomorrow,Needs orthopedic consultation
-Google Ads,cpc,Search_Branded,$46.51,$2623.68,7.6%,,Chen,Iyer,   chen.iyer@yahoo.com   ,99916 35553,,,,
-Google Ads,cpc,Search_Branded,$45.85,$3135.50,7.0%,Yesterday,Emily,Singh,emily.singh@outlook.com (old),"+919194447508
-9792908124",Priya Shah,Call Back,Left voicemail,Needs orthopedic consultation
-Google Ads,cpc,Search_Branded,$44.29,$4789.60,3.2%,,Anjali,Hassan,   anjali.hassan@techsolutions.in   ,,,,,
-Google Ads,cpc,Search_Branded,$40.33,$1780.72,1.0%,Last Week,Priya,Patel,,,,,,
-Google Ads,cpc,Search_Branded,$42.98,$2745.99,9.4%,23/01/2025,Anjali,Iyer, anjali.iyer@startup.io ,0091-9389211025,Amit Patel,Cancelled,Old customer returning,Needs orthopedic consultation
-Google Ads,cpc,Search_Branded,$33.86,$2689.53,5.1%,2025-07-21 20:00:00,Sneha,Verma,sneha.verma@hotmail.com,+91 9659123477,Jessica Wong,Follow-up Required,Call back tomorrow,Requires virtual consultation
-Google Ads,cpc,Search_Branded,$23.72,$1017.24,9.5%,2025-01-23 22:00:00,Michael,Verma,michael.verma@outlook.com,+91 9197281287,Priya Shah,Lost,Referred by existing client,Needs orthopedic consultation
-Google Ads,cpc,Search_Branded,$33.56,$1286.55,1.9%,2025-03-19 08:00:00,Diego,Verma,diego.verma@logistics.com,+91 9451187075,Amit Patel,Call Back,Old customer returning,Requires virtual consultation
-Google Ads,cpc,Search_Branded,$29.19,$3147.69,8.3%,,Vikram,Li,   vikram.li@hotmail.com   ,Secondary Contact,,,,
-Google Ads,cpc,Search_Branded,$18.56,$3642.25,1.2%,2025-07-22 21:00:00,John,Smith,john.smith@techsolutions.in,+91 9461038668,Sarah Khan,Warm,Already spoke with spouse,Interested in enterprise software demo
-Google Ads,cpc,Search_Branded,$14.48,$4547.15,8.1%,2025-08-31 21:00:00,Wei,Smith,wei.smith@outlook.com,+91 9624878141,Ali Hassan,Cancelled,Old customer returning,Need possession before Diwali
-Google Ads,cpc,Search_Branded,$14.63,$1151.56,1.6%,2025-02-05 19:00:00,Kavita,Patel,kavita.patel@outlook.com,+91 9879024488,Priya Shah,Converted,Follow up next Friday,Looking for premium apartment under 1.2 Cr
-Google Ads,cpc,Search_Branded,$42.20,$4097.88,9.5%,06/08/2025,Michael,Verma,michael.verma@hotmail.com,99738 86458,Priya Shah,No Response,Not picking up,Looking for premium apartment under 1.2 Cr
-Google Ads,cpc,Search_Branded,$40.77,$4299.15,4.2%,2025-10-11 09:00:00,Sneha,Reddy,sneha.reddy@yahoo.com,+91 9124594980,Priya Shah,Call Back,Old customer returning,Requires virtual consultation
-Google Ads,cpc,Search_Branded,$23.06,$1309.44,7.9%,2026-03-23 10:00:00,Sneha,Martinez,sneha.martinez@logistics.com,+91 9308012142,Jessica Wong,Budget Issue,Duplicate enquiry from Facebook,Requires virtual consultation
-Google Ads,cpc,Search_Branded,$39.35,$4986.59,4.3%,2025-08-27 17:00:00,Rahul,Kumar,rahul.kumar@outlook.com,+91 9722928666,Karan Singh,Booked,Left voicemail,Requested product catalogue
-Google Ads,cpc,Search_Branded,$7.46,$4456.96,8.1%,2025-05-21,Rahul,Li,,,,,,
-Google Ads,cpc,Search_Branded,$43.82,$1439.36,3.0%,2025-09-03 10:00:00,John,Doe,john.doe@enterprise.co,+91 9748510573,Priya Shah,Converted,Wants to negotiate,Interested in enterprise software demo
-Google Ads,cpc,Search_Branded,$28.43,$4781.12,2.3%,2026.05.14,Valentina,Gupta,VALENTINA.GUPTA@HOTMAIL.COM,+91 9747058779,Jessica Wong,Booked,Old customer returning,Requested product catalogue
-Google Ads,cpc,Search_Branded,$37.97,$2708.20,4.6%,2026-01-07 23:00:00,Arjun,Li,arjun.li@outlook.com,+91 9215500185,Jessica Wong,Booked,Requested WhatsApp instead of calls,Interested in enterprise software demo
-Google Ads,cpc,Search_Branded,$25.26,$4266.18,1.9%,26-May-2025,Arjun,Hernandez,ARJUN.HERNANDEZ@COMPANY.NET,+91-94812-03745 ext 266,Rahul Mehta,Interested,Not picking up,Requested product catalogue
-Google Ads,cpc,Search_Branded,$46.93,$2040.61,1.1%,2026.01.27,Sarah,Sharma,SARAH.SHARMA@OUTLOOK.COM,Office Number,Amit Patel,Interested,DND,Requires virtual consultation
-Google Ads,cpc,Search_Branded,$9.80,$2154.61,7.7%,05-Nov-2025,Ravi,Wang,,,,,,
-Google Ads,cpc,Search_Branded,$29.63,$3126.01,4.3%,2026-01-22 03:00:00,Sarah,Sharma,sarah.sharma@gmail.com,+91 9705553391,Priya Shah,Booked,Wants to negotiate,Requested product catalogue
-Google Ads,cpc,Search_Branded,$15.26,$1633.79,5.6%,2025-10-28 20:00:00,Arjun,Singh,arjun.singh@icloud.com,+91 9129187214,Amit Patel,Lost,Preferred morning calls,Searching for MBA admission
-Google Ads,cpc,Search_Branded,$27.78,$3763.60,1.5%,2025-03-23 10:00:00,Neha,Sharma,neha.sharma@enterprise.co,+91 9592162257,Jessica Wong,Converted,Needs GST invoice,Need possession before Diwali
-Google Ads,cpc,Search_Branded,$21.44,$884.30,6.5%,2026-01-09 13:00:00,Wei,Li,wei.li@logistics.com,+91 9981608767,Karan Singh,Booked,Asked to call after 7 PM,Interested in enterprise software demo
-Google Ads,cpc,Search_Branded,$39.14,$3452.51,4.6%,2025-03-02 05:00:00,Wei,Iyer,wei.iyer@icloud.com,+91 9536704709,Karan Singh,Converted,Price sensitive,Prefers east-facing unit
-Google Ads,cpc,Search_Branded,$30.72,$1379.30,5.5%,2025.12.24,Priya,Smith,priya.smith@gmail.com,+91-90053-73873 ext 264,Sarah Khan,Invalid Lead,Price sensitive,Searching for MBA admission
-Google Ads,cpc,Search_Branded,$15.03,$2285.95,6.5%,2025-03-03,Ravi,Singh,ravi.singh@outlook.com,0091-9564062522,Jessica Wong,Invalid Lead,Decision maker travelling,Prefers east-facing unit
-Google Ads,cpc,Search_Branded,$18.05,$4704.76,4.8%,2025-08-13 18:00:00,Neha,Hernandez,neha.hernandez@enterprise.co,+91 9724377671,Karan Singh,Invalid Lead,DND,Prefers east-facing unit
-Google Ads,cpc,Search_Branded,$6.79,$3632.10,4.2%,Last Week,Rahul,Wang,RAHUL.WANG@TECHSOLUTIONS.IN,Secondary Contact,Priya Shah,Meeting Scheduled,Wants to negotiate,Interested in enterprise software demo
-Google Ads,cpc,Search_Branded,$29.80,$3144.08,3.5%,2025-08-28 08:00:00,Sneha,Martinez,sneha.martinez@outlook.com,+91 9632425508,Rahul Mehta,Busy,Duplicate enquiry from Facebook,Searching for MBA admission
-Google Ads,cpc,Search_Branded,$27.86,$951.05,1.8%,Yesterday,Neha,Verma,NEHA.VERMA@ICLOUD.COM,+1 (726) 555-3598,Amit Patel,Budget Issue,Price sensitive,Requires virtual consultation
-Google Ads,cpc,Search_Branded,$17.96,$3125.14,1.7%,01/01/2026,Priya,Li,priya.li@enterprise.co,+1 (585) 555-4591,Sarah Khan,Follow-up Required,Budget increased,Needs orthopedic consultation
-Google Ads,cpc,Search_Branded,$29.88,$4683.84,1.5%,2026-02-23,Michael,Li, michael.li@yahoo.com ,Secondary Contact,Priya Shah,Lost,Asked to call after 7 PM,Interested in enterprise software demo
-Google Ads,cpc,Search_Branded,$46.63,$1059.01,2.2%,2025-08-04 20:00:00,Chen,Menon,chen.menon@hotmail.com,+91 9750398227,Ali Hassan,Busy,Preferred morning calls,Requested product catalogue
-Google Ads,cpc,Search_Branded,$12.89,$3153.27,2.8%,22/10/2025,Sarah,Verma,sarah.verma@hotmail.com,+91 9233012040,Karan Singh,Invalid Lead,Working night shift,Interested in enterprise software demo
-Google Ads,cpc,Search_Branded,$17.09,$869.98,1.8%,2025-11-13 12:00:00,Rahul,Reddy,rahul.reddy@startup.io,+91 9946398151,Priya Shah,Wrong Number,Duplicate enquiry from Facebook,Prefers east-facing unit
-Google Ads,cpc,Search_Branded,$24.89,$4575.91,1.0%,2025-02-18 23:00:00,Sneha,Wang,sneha.wang@hotmail.com,+91 9731073558,Sarah Khan,Hot,Interested in 3BHK,Requested product catalogue
-Google Ads,cpc,Search_Branded,$18.86,$576.85,2.4%,2025-09-13 14:00:00,Chen,Hassan,chen.hassan@outlook.com,+91 9610921895,Ali Hassan,Converted,Budget increased,Requires virtual consultation
-Google Ads,cpc,Search_Branded,$40.54,$2870.98,7.7%,Yesterday,Arjun,Hernandez, arjun.hernandez@logistics.com ,0091-9827518028,Jessica Wong,Site Visit Completed,Interested in 3BHK,Requested product catalogue
-Google Ads,cpc,Search_Branded,$15.69,$1234.59,3.1%,2025-08-26 02:00:00,Michael,Kumar,michael.kumar@icloud.com,+91 9715032721,Sarah Khan,Follow-up Required,Call back tomorrow,Needs orthopedic consultation
-Google Ads,cpc,Search_Branded,$27.17,$4309.31,5.8%,2026-04-13 01:00:00,Anjali,Singh,anjali.singh@logistics.com,+91 9412078255,Sarah Khan,Wrong Number,Not picking up,Need possession before Diwali
-Google Ads,cpc,Search_Branded,$17.69,$1514.38,5.3%,2025-05-26 17:00:00,Emily,Hassan,emily.hassan@enterprise.co,+91 9927256413,Amit Patel,Lost,Old customer returning,Requested product catalogue
-Google Ads,cpc,Search_Branded,$46.49,$2870.18,2.0%,2026-03-03 18:00:00,Priya,Doe,priya.doe@startup.io,+91 9055079003,Priya Shah,Wrong Number,Preferred morning calls,Needs orthopedic consultation
-Google Ads,cpc,Search_Branded,$46.49,$2870.18,2.0%,2026-03-03 18:00:00,DUPLICATE: Priya,Doe,priya.doe@startup.io,+91 9055079003,Priya Shah,Wrong Number,Preferred morning calls,Needs orthopedic consultation
-Google Ads,cpc,Search_Branded,$33.26,"{""json"": ""fragment"", ""data"": ""$1107.45""}",4.9%,"20-Jan-2025 ""quoted, text""",Emily,Hassan,   emily.hassan@startup.io   ,"+919890723638
-9672692385",Priya Shah,Booked,Preferred morning calls,Looking for premium apartment under 1.2 Cr
-Google Ads,cpc,Search_Branded,$8.45,$1412.74,1.8%,2026.05.14,Sneha,Sharma, sneha.sharma@gmail.com ,Secondary Contact,Ali Hassan,Invalid Lead,Requested WhatsApp instead of calls,Interested in enterprise software demo
-Google Ads,cpc,Search_Branded,$8.45,$1412.74,1.8%,2026.05.14,Sneha,Sharma,DUPLICATE:  sneha.sharma@gmail.com ,Secondary Contact,Ali Hassan,Invalid Lead,Requested WhatsApp instead of calls,Interested in enterprise software demo
-Google Ads,cpc,Search_Branded,$49.57,$3828.57,2.2%,2025-11-20 18:00:00,Neha,Hassan,neha.hassan@company.net,+91 9781645275,Karan Singh,Cancelled,Requested WhatsApp instead of calls,Requested product catalogue
-Google Ads,cpc,Search_Branded,$43.85,$1340.86,7.6%,2026-01-13 08:00:00,Kavita,Smith,kavita.smith@yahoo.com,+91 9763824678,Ali Hassan,Meeting Scheduled,Budget increased,Requires virtual consultation
-Google Ads,cpc,Search_Branded,$42.70,$1240.74,3.6%,2025.09.17,Ravi,Sharma, ravi.sharma@outlook.com ,+91-93189-66002 ext 124,Rahul Mehta,Loan Pending,Preferred morning calls,Interested in enterprise software demo
-Google Ads,=SUM(A1:A5),Search_Branded,$29.12,$2483.65,5.1%,08/22/2025,Anjali,Smith,anjali.smith@yahoo.com (old),+91 9309635946,Rahul Mehta,Converted,Left voicemail,Prefers east-facing unit
-Google Ads,cpc,Search_Branded,$44.32,$926.13,3.0%,2026.04.18,Neha,Iyer,,,,,,
-Google Ads,cpc,Search_Branded,$38.82,$2995.01,6.9%,2026.05.14,Valentina,Hassan,,96132 96216,,,,
-Google Ads,cpc,Search_Branded,$43.46,$4641.63,4.5%,2025-07-26 05:00:00,Rahul,Li,rahul.li@outlook.com,+91 9888265506,Ali Hassan,Cancelled,Duplicate enquiry from Facebook,Interested in enterprise software demo
-Google Ads,cpc,Search_Branded,$6.05,$4322.39,2.4%,2025-01-25 16:00:00,Chen,Hassan,chen.hassan@gmail.com,+91 9819180203,Sarah Khan,Lost,Budget increased,Interested in enterprise software demo
-Google Ads,cpc,Search_Branded,$24.46,$1549.93,1.2%,Yesterday,Neha,Gupta,,,,,,
-Google Ads,cpc,Search_Branded,$23.92,$4689.07,7.6%,,Sneha,Gupta,sneha.gupta@startup.io [donotemail],WhatsApp Only,,,,
-Google Ads,cpc,Search_Branded,$14.23,$1432.36,6.1%,2025-11-04 16:00:00,Anjali,Doe,anjali.doe@enterprise.co,+91 9801633029,Karan Singh,Interested,Interested in 3BHK,Interested in enterprise software demo
-Google Ads,cpc,Search_Branded,$29.14,$2124.61,1.3%,2026-01-05 01:00:00,John,Singh,john.singh@hotmail.com,+91 9394370115,Priya Shah,Hot,Preferred morning calls,Interested in enterprise software demo
-Google Ads,cpc,Search_Branded,$30.72,$1999.92,5.6%,,Rahul,Hassan,,,,,,
-Google Ads,cpc,Search_Branded,$26.78,$2894.67,4.7%,2025-10-10 09:00:00,Chen,Doe,chen.doe@logistics.com,+91 9673378493,Jessica Wong,Invalid Lead,Sent brochure,Needs orthopedic consultation
-Google Ads,cpc,Search_Branded,$26.78,$2894.67,4.7%,2025-10-10 09:00:00,Chen,DUPLICATE: Doe,chen.doe@logistics.com,+91 9673378493,Jessica Wong,Invalid Lead,Sent brochure,Needs orthopedic consultation
-Google Ads,cpc,Search_Branded,$13.39,$2057.51,9.7%,2025-12-04 06:00:00,Diego,Verma,diego.verma@hotmail.com,+91 9964368423,Rahul Mehta,Call Back,Working night shift,Interested in enterprise software demo
-Google Ads,cpc,Search_Branded,$13.39,$2057.51,9.7%,2025-12-04 06:00:00,Diego,Verma,diego.verma@hotmail.com,+91 9964368423,Rahul Mehta,Call Back,Working night shift,DUPLICATE: Interested in enterprise software demo
-Google Ads,cpc,Search_Branded,$27.03,$2893.86,4.1%,2026.05.14,Wei,Doe, wei.doe@company.net ,Secondary Contact,Rahul Mehta,Converted,Price sensitive,Requires virtual consultation
-Google Ads,cpc,Search_Branded,$34.86,$1884.61,9.1%,2025-10-09 02:00:00,Priya,Ali,priya.ali@outlook.com,+91 9999475794,Amit Patel,Budget Issue,Already spoke with spouse,Needs orthopedic consultation
-Google Ads,cpc,Search_Branded,$33.61,$4507.14,7.1%,2025-02-26 20:00:00,Rahul,Sharma,rahul.sharma@company.net,+91 9616805112,Ali Hassan,Interested,Price sensitive,Searching for MBA admission
-Google Ads,cpc,Search_Branded,$33.61,$4507.14,7.1%,2025-02-26 20:00:00,Rahul,Sharma,rahul.sharma@company.net,+91 9616805112,DUPLICATE: Ali Hassan,Interested,Price sensitive,Searching for MBA admission
-Google Ads,cpc,Search_Branded,$20.16,$2230.22,3.2%,2026-05-16 00:00:00,Neha,Hernandez,neha.hernandez@yahoo.com,+91 9324248612,Ali Hassan,Cold,Preferred morning calls,Looking for premium apartment under 1.2 Cr
-Google Ads,cpc,Search_Branded,$28.71,$4189.46,6.5%,2026-03-16 08:00:00,Neha,Gupta,neha.gupta@techsolutions.in,+91 9227884912,Rahul Mehta,Hot,Already spoke with spouse,Requested product catalogue
-Google Ads,cpc,Search_Branded,$49.10,$3745.09,2.9%,2026.05.14,Emily,Iyer,EMILY.IYER@COMPANY.NET,+91-98302-70433 ext 761,Amit Patel,Wrong Number,Already spoke with spouse,Requires virtual consultation
-Google Ads,cpc,Search_Branded,$28.83,$1537.69,7.6%,2025-07-31,Michael,Iyer, michael.iyer@company.net ,+1 (902) 555-8776,Karan Singh,Wrong Number,Asked to call after 7 PM,Searching for MBA admission
-Google Ads,cpc,Search_Branded,$6.48,$588.04,1.1%,2026-05-14 11:00:00,Valentina,Sharma,valentina.sharma@logistics.com,+91 9947780980,Priya Shah,Budget Issue,Preferred morning calls,Requires virtual consultation
-Google Ads,cpc,Search_Branded,$17.41,$4271.54,7.7%,09/30/2025,Vikram,Patel,VIKRAM.PATEL@ENTERPRISE.CO,Secondary Contact,Jessica Wong,Call Back,Old customer returning,Requested product catalogue
-Google Ads,cpc,Search_Branded,$16.84,$1513.56,2.5%,2026.04.01,Vikram,Doe,,99294 01388,,,,
-Google Ads,cpc,Search_Branded,$6.29,$2072.12,4.8%,2025-10-24 07:00:00,Vikram,Menon,vikram.menon@company.net,+91 9623318442,Ali Hassan,Cancelled,Follow up next Friday,Need possession before Diwali
-Google Ads,cpc,Search_Branded,$30.38,$3169.15,5.0%,12-Dec-2025,Priya,Hernandez, priya.hernandez@hotmail.com ,0091-9869718271,Ali Hassan,Sale Closed,Budget increased,Prefers east-facing unit
-Google Ads,cpc,Search_Branded,$39.10,$725.30,4.2%,2026-01-14 03:00:00,Rahul,Hassan,rahul.hassan@company.net,+91 9229737952,Jessica Wong,Follow-up Required,Already spoke with spouse,Needs orthopedic consultation
-Google Ads,cpc,Search_Branded,$25.29,$1254.54,7.6%,2025-10-21 02:00:00,Priya,Iyer,priya.iyer@outlook.com,+91 9128751227,Jessica Wong,Wrong Number,Interested in 3BHK,Requires virtual consultation
-Google Ads,cpc,Search_Branded,$29.35,$4888.69,7.1%,Today,Sarah,Verma,   sarah.verma@yahoo.com   ,,,,,
-Google Ads,cpc,Search_Branded,$20.97,$3263.51,9.5%,2025-04-25 17:00:00,John,Reddy,john.reddy@outlook.com,+91 9984004160,Jessica Wong,Sale Closed,Decision maker travelling,Need possession before Diwali
-Google Ads,cpc,Search_Branded,$18.46,$3613.82,1.2%,2025-03-26 19:00:00,Vikram,Li,vikram.li@hotmail.com,+91 9704998137,Karan Singh,Meeting Scheduled,Decision maker travelling,Requested product catalogue
-Google Ads,cpc,Search_Branded,$17.97,$1986.77,6.2%,2026.05.14,Priya,Smith,priya.smith@yahoo.com,96450 54420,Rahul Mehta,Duplicate,DND,Requested product catalogue
-Google Ads,cpc,Search_Branded,$33.00,$3430.40,7.2%,2025-05-26 08:00:00,Valentina,Hernandez,valentina.hernandez@techsolutions.in,+91 9637400518,Amit Patel,Call Back,Left voicemail,Need possession before Diwali
-Google Ads,cpc,Search_Branded,$47.30,$1884.05,4.5%,2025-06-16 16:00:00,Arjun,Iyer,arjun.iyer@icloud.com,+91 9895992616,Rahul Mehta,Follow-up Required,Decision maker travelling,Requested product catalogue
-Google Ads,cpc,Search_Branded,$10.17,$1592.83,5.9%,2025-12-12 16:00:00,Emily,Menon,emily.menon@startup.io,+91 9927680518,Amit Patel,Site Visit Completed,Decision maker travelling,Requires virtual consultation
-Google Ads,cpc,Search_Branded,$31.15,$3695.14,6.8%,2026-02-24,Rahul,Li,RAHUL.LI@LOGISTICS.COM,0091-9675115177,Amit Patel,Meeting Scheduled,Working night shift,Prefers east-facing unit
-Google Ads,cpc,Search_Branded,$33.00,$1673.07,2.6%,Yesterday,Priya,Gupta,priya.guptaatcompany.net,Office Number,Rahul Mehta,Site Visit Completed,Price sensitive,Interested in enterprise software demo
-Google Ads,cpc,Search_Branded,$35.54,$3851.13,6.9%,,Ravi,Menon,,+91-94105-09623 ext 375,,,,
-Google Ads,cpc,Search_Branded,$26.00,$2920.11,8.7%,2025-04-29 11:00:00,Ravi,Iyer,ravi.iyer@icloud.com,+91 9069803424,Amit Patel,Site Visit Completed,Duplicate enquiry from Facebook,Need possession before Diwali
-Google Ads,cpc,Search_Branded,$35.48,$4409.92,2.7%,2025-01-05 17:00:00,Kavita,Kumar,kavita.kumar@hotmail.com,+91 9464360685,Ali Hassan,Lost,Old customer returning,Looking for premium apartment under 1.2 Cr
-Google Ads,cpc,Search_Branded,$7.34,$1068.99,6.0%,2025-03-04 12:00:00,Sneha,Menon,sneha.menon@gmail.com,+91 9181329462,Sarah Khan,Booked,Duplicate enquiry from Facebook,Need possession before Diwali
-Google Ads,cpc,Search_Branded,$26.13,$926.05,9.3%,16-Sep-2025,Arjun,Rao, arjun.rao@outlook.com ,WhatsApp Only,Ali Hassan,Follow-up Required,Left voicemail,Need possession before Diwali
-Google Ads,cpc,Search_Branded,$48.48,$1877.49,7.9%,2025-10-27 18:00:00,Ravi,Menon,ravi.menon@icloud.com,+91 9681835419,Amit Patel,Site Visit Completed,Requested WhatsApp instead of calls,Prefers east-facing unit
-Google Ads,cpc,Search_Branded,$14.14,$2677.89,7.3%,Today,Michael,Li,michael.li@company.net,+91 9044119456,Amit Patel,Call Back,Sent brochure,Interested in enterprise software demo
-Google Ads,cpc,Search_Branded,$40.00,$2583.45,2.4%,2025-12-10 04:00:00,Rahul,Reddy,rahul.reddy@company.net,+91 9126244439,Priya Shah,Meeting Scheduled,Old customer returning,Needs orthopedic consultation
-Google Ads,cpc,Search_Branded,$27.40,$2533.99,4.9%,2025-08-01 04:00:00,Sarah,Ali,sarah.ali@enterprise.co,+91 9582111270,Jessica Wong,Follow-up Required,Interested in 3BHK,Requested product catalogue
-Google Ads,cpc,Search_Branded,$30.93,$4892.59,4.9%,2025-07-20 17:00:00,Valentina,Patel,valentina.patel@gmail.com,+91 9885012112,Amit Patel,Converted,Preferred morning calls,Prefers east-facing unit
+Google Ads,cpc,Search_Branded,$21.05,$2435.66,6.1%,2026-02-08,Neha,Hassan,neha.hassan@company.net,90896 98096,Ali Hassan,Lost,Budget increased,Needs orthopedic consultation
+Google Ads,cpc,Search_Branded,$15.07,$1736.34,3.4%,2025-05-13 05:00:00,Aditya,Reddy,aditya.reddy@startup.io,+91 9610455317,Rahul Mehta,Hot,Requested WhatsApp instead of calls,Prefers east-facing unit
+Google Ads,cpc,Search_Branded,$15.07,$1736.34,3.4%,2025-05-13 05:00:00,Aditya,Reddy,aditya.reddy@startup.io,+91 9610455317,Rahul Mehta,Hot,Requested WhatsApp instead of calls,DUPLICATE: Prefers east-facing unit
+Google Ads,cpc,Search_Branded,$47.82,$948.98,4.9%,2025-06-03 12:00:00,John,Wang,john.wang@yahoo.com,+91 9946019974,Karan Singh,Follow-up Required,Left voicemail,Interested in enterprise software demo
+Google Ads,cpc,Search_Branded,$16.12,$1151.16,7.0%,2026-04-16 00:00:00,Kavita,Reddy,kavita.reddy@hotmail.com,+91 9733941441,Ali Hassan,Follow-up Required,Sent brochure,Interested in enterprise software demo
+Google Ads,cpc,Search_Branded,$46.33,$3799.67,1.5%,2025-07-01 02:00:00,Rahul,Hernandez,rahul.hernandez@gmail.com,+91 9032116949,Ali Hassan,Sale Closed,Not picking up,Looking for premium apartment under 1.2 Cr
+Google Ads,cpc,Search_Branded,$23.59,$4038.40,1.1%,2025-04-09 21:00:00,Rahul,Doe,rahul.doe@logistics.com,+91 9884917858,Sarah Khan,Duplicate,Decision maker travelling,Searching for MBA admission
+Google Ads,cpc,Search_Branded,$44.70,$3321.68,3.9%,2025-11-11 12:00:00,Rahul,Doe,rahul.doe@yahoo.com,+91 9724524725,Amit Patel,Interested,Already spoke with spouse,Requires virtual consultation
+Google Ads,cpc,Search_Branded,$43.61,$1039.15,3.2%,2026-02-16 20:00:00,Priya,Hassan,priya.hassan@enterprise.co,+91 9622836452,Karan Singh,Site Visit Completed,Follow up next Friday,Prefers east-facing unit
+Google Ads,cpc,Search_Branded,$45.42,$3051.88,5.6%,2025-10-13 06:00:00,Sneha,Menon,sneha.menon@startup.io,+91 9414751223,Priya Shah,Interested,Follow up next Friday,Requested product catalogue
+Google Ads,cpc,Search_Branded,$32.86,$3457.48,5.6%,44927,Wei,=SUM(A1:A5),wei.doe@techsolutions.in (old),Secondary Contact,Priya Shah,Meeting Scheduled,DND,Requested product catalogue
+Google Ads,cpc,Search_Branded,$26.81,$3157.34,3.6%,2025-04-28 16:00:00,Anjali,Martinez,anjali.martinez@company.net,+91 9222727748,Jessica Wong,Invalid Lead,Interested in 3bHK,Requested product catalogue
+Google Ads,cpc,Search_Branded,$34.80,$1975.42,1.6%,2026-01-01 12:00:00,Valentina,Sharma,valentina.sharma@enterprise.co,+91 9830707691,Rahul Mehta,Budget Issue,Already spoke with spouse,Need possession before Diwali
+Google Ads,cpc,Search_Branded,$35.93,$2935.17,3.9%,Yesterday,Kavita,Singh,KAVITA.SINGH@ICLOUD.COM,0091-9375958619,Amit Patel,Cancelled,Requested WhatsApp instead of calls,Need possession before Diwali
+Google Ads,cpc,Search_Branded,$46.29,$3045.57,2.9%,2025-01-28 19:00:00,Sneha,Kumar,sneha.kumar@gmail.com,+91 9495955329,Sarah Khan,Converted,Budget increased,Requested product catalogue
+Google Ads,cpc,Search_Branded,$13.72,$4971.32,5.4%,2026.05.14,Emily,Sharma,emily.sharma@techsolutions.in [donotemail],+1 (823) 555-8373,Rahul Mehta,Interested,Sent brochure,Interested in enterprise software demo
+Google Ads,cpc,Search_Branded,$20.61,$4489.83,4.2%,2025-09-14 21:00:00,Rahul,Sharma,rahul.sharma@hotmail.com,+91 9231361685,Amit Patel,Booked,Sent brochure,Requested product catalogue
+Google Ads,cpc,Search_Branded,$19.40,$3819.30,7.1%,2025-04-16 06:00:00,Sarah,Gupta,sarah.gupta@outlook.com,+91 9039210044,Karan Singh,Wrong Number,Working night shift,Needs orthopedic consultation
+Google Ads,cpc,Search_Branded,$24.55,$2453.98,3.0%,2025-03-18 21:00:00,Chen,Gupta,chen.gupta@outlook.com,+91 9583062642,Amit Patel,Invalid Lead,Call back tomorrow,Requested product catalogue
+Google Ads,cpc,Search_Branded,$29.07,$1638.62,8.5%,2026-01-10 09:00:00,Wei,Sharma,wei.sharma@startup.io,+91 9899843848,Rahul Mehta,Meeting Scheduled,Wants to negotiate,Need possession before Diwali
+Google Ads,cpc,Search_Branded,$47.30,$2457.57,7.0%,2025-05-20 14:00:00,Aditya,Rao,aditya.rao@techsolutions.in,+91 9590806172,Ali Hassan,Site Visit Completed,Already spoke with spouse,Requires virtual consultation
+Google Ads,cpc,Search_Branded,$23.03,$3222.67,6.9%,2025-09-23 07:00:00,Wei,Smith,wei.smith@company.net,+91 9444230554,Karan Singh,Busy,Referred by existing client,Requires virtual consultation
+Google Ads,cpc,Search_Branded,$14.34,$3683.61,1.4%,11-Oct-2025,Diego,Smith, diego.smith@startup.io ,0091-9215998871,Amit Patel,Sale Closed,Not picking up,Searching for MBA admission
+Google Ads,cpc,Search_Branded,$9.42,$4313.85,1.4%,Yesterday,Anjali,Iyer, anjali.iyer@hotmail.com ,+91-96085-73658 ext 632,Ali Hassan,Follow-up Required,Follow up next Friday,Searching for MBA admission
+Google Ads,cpc,Search_Branded,$9.85,$1512.85,6.7%,07-Jun-2025,Ravi,Menon,RAVI.MENON@GMAIL.COM,92296 22368,Priya Shah,Site Visit Completed,Call back tomorrow,Need possession before Diwali
+Google Ads,cpc,Search_Branded,DUPLICATE: $9.85,$1512.85,6.7%,07-Jun-2025,Ravi,Menon,RAVI.MENON@GMAIL.COM,92296 22368,Priya Shah,Site Visit Completed,Call back tomorrow,Need possession before Diwali
+Google Ads,cpc,Search_Branded,$35.44,$4196.90,3.9%,2026-03-30 12:00:00,Neha,Hassan,neha.hassan@outlook.com,+91 9969738679,Sarah Khan,Duplicate,Requested WhatsApp instead of calls,Looking for premium apartment under 1.2 Cr
+Google Ads,cpc,Search_Branded,$17.92,$4581.39,6.9%,2026-02-09 22:00:00,Rahul,Reddy,rahul.reddy@gmail.com,+91 9138678396,Amit Patel,Booked,Old customer returning,Prefers east-facing unit
+Google Ads,cpc,Search_Branded,$36.29,$867.08,4.7%,2026-03-29 14:00:00,Michael,Sharma,michael.sharma@enterprise.co,+91 9410494604,Jessica Wong,Lost,DND,Prefers east-facing unit
+Google Ads,cpc,Search_Branded,$42.27,$3161.47,2.4%,04-Dec-2025,Ravi,Kumar,   ravi.kumar@techsolutions.in   ,+91 9479424536,,,,
+Google Ads,cpc,Search_Branded,$26.12,$3744.01,9.3%,2026-03-07 09:00:00,Michael,Wang,michael.wang@outlook.com,+91 9709946618,Sarah Khan,Invalid Lead,Old customer returning,Interested in enterprise software demo
+Google Ads,cpc,Search_Branded,$40.53,$2180.38,9.5%,2025-07-05 11:00:00,Anjali,Sharma,anjali.sharma@startup.io,+91 9589046109,Amit Patel,Invalid Lead,Decision maker travelling,Interested in enterprise software demo
+Google Ads,cpc,Search_Branded,$30.07,$1846.10,2.4%,31/01/2026,Aditya,Rao, aditya.rao@company.net ,98997 72079,Jessica Wong,Wrong Number,Call back tomorrow,Looking for premium apartment under 1.2 Cr
+Google Ads,cpc,Search_Branded,$25.47,$4991.23,1.3%,2025-03-14 17:00:00,Rahul,Iyer,rahul.iyer@hotmail.com,+91 9711815062,Jessica Wong,Converted,Call back tomorrow,Need possession before Diwali
+Google Ads,cpc,Search_Branded,$25.47,$4991.23,DUPLICATE: 1.3%,2025-03-14 17:00:00,Rahul,Iyer,rahul.iyer@hotmail.com,+91 9711815062,Jessica Wong,Converted,Call back tomorrow,Need possession before Diwali
+Google Ads,cpc,Search_Branded,$14.61,$1623.25,4.3%,01/10/2025,Valentina,Kumar, valentina.kumar@gmail.com ,0091-9813206582,Sarah Khan,Loan Pending,Sent brochure,Prefers east-facing unit
+Google Ads,cpc,Search_Branded,$22.17,$821.11,7.9%,2025-11-16 05:00:00,Valentina,Smith,valentina.smith@startup.io,+91 9010116471,Amit Patel,Sale Closed,Already spoke with spouse,Prefers east-facing unit
+Google Ads,cpc,Search_Branded,$27.69,$4597.73,2.1%,2026-02-07 02:00:00,Ravi,Rao,ravi.rao@gmail.com,+91 9939716633,Priya Shah,Interested,Follow up next Friday,Searching for MBA admission
+Google Ads,cpc,Search_Branded,$21.08,$3666.19,6.5%,2025-01-27 06:00:00,Vikram,Doe,vikram.doe@outlook.com,+91 9131913849,Ali Hassan,Cold,Requested WhatsApp instead of calls,Prefers east-facing unit
+Google Ads,cpc,Search_Branded,$33.40,$2098.68,1.9%,Today,Valentina,Wang,valentina.wang@hotmail.com,+91 9916958186,Priya Shah,Loan Pending,Requested WhatsApp instead of calls,Prefers east-facing unit
+Google Ads,cpc,Search_Branded,$18.94,$4527.72,4.0%,2025-04-16,Sneha,Sharma,sneha.sharma@logistics.com (old),,,,,
+Google Ads,cpc,Search_Branded,$19.52,$2399.36,5.7%,Last Week,Rahul,Hernandez,rahul.hernandez@gmail.com,+91-97181-19042 ext 88,Sarah Khan,Wrong Number,DND,Prefers east-facing unit
+Google Ads,cpc,Search_Branded,$37.69,$3575.09,3.3%,Today,Diego,Kumar,diego.kumar@logistics.com,+91 9498988113,Ali Hassan,Interested,Follow up next Friday,Need possession before Diwali
+Google Ads,cpc,Search_Branded,$6.68,$2769.95,5.9%,2026-01-31 10:00:00,Anjali,Smith,anjali.smith@enterprise.co,+91 9418698938,Priya Shah,Booked,Referred by existing client,Interested in enterprise software demo
+Google Ads,cpc,Search_Branded,$7.63,$1757.98,4.5%,2025-04-04 06:00:00,John,Menon,john.menon@logistics.com,+91 9800535070,Jessica Wong,Lost,Call back tomorrow,Need possession before Diwali
+Google Ads,cpc,Search_Branded,$44.08,$1135.11,8.6%,02/15/2026,Chen,Hassan,CHEN.HASSAN@TECHSOLUTIONS.IN,+1 (953) 555-3623,Rahul Mehta,Duplicate,Already spoke with spouse,Searching for MBA admission
+Google Ads,cpc,Search_Branded,$9.85,$1122.72,6.5%,2025-12-17 22:00:00,Emily,Iyer,emily.iyer@outlook.com,+91 9995520775,Amit Patel,Hot,DND,Interested in enterprise software demo
+Google Ads,cpc,Search_Branded,$32.12,$1148.84,8.0%,2025-06-01 15:00:00,Chen,Doe,chen.doe@enterprise.co,+91 9052348110,Sarah Khan,Booked,Price sensitive,Needs orthopedic consultation
+Google Ads,cpc,Search_Branded,$37.33,$1900.93,6.3%,2025-08-03,Chen,Martinez,CHEN.MARTINEZ@YAHOO.COM,+91-99853-92784 ext 917,Amit Patel,Meeting Scheduled,Call back tomorrow,Needs orthopedic consultation
+DUPLICATE: Google Ads,cpc,Search_Branded,$37.33,$1900.93,6.3%,2025-08-03,Chen,Martinez,CHEN.MARTINEZ@YAHOO.COM,+91-99853-92784 ext 917,Amit Patel,Meeting Scheduled,Call back tomorrow,Needs orthopedic consultation
+Google Ads,cpc,Search_Branded,$26.53,$719.68,3.9%,2026-01-15 19:00:00,Neha,Hernandez,neha.hernandez@startup.io,+91 9071808755,Jessica Wong,Wrong Number,Needs GST invoice,Requested product catalogue
+Google Ads,cpc,Search_Branded,$30.07,$4318.51,9.6%,2025-07-13 17:00:00,Rahul,Martinez,rahul.martinez@outlook.com,+91 9518542944,Jessica Wong,Loan Pending,Decision maker travelling,Interested in enterprise software demo
+Google Ads,cpc,Search_Branded,$27.96,$1572.00,3.7%,2025.07.03,Priya,Wang, priya.wang@gmail.com ,90189 22712,Jessica Wong,Budget Issue,Preferred morning calls,Requires virtual consultation
+Google Ads,cpc,Search_Branded,$33.06,$4275.44,8.4%,2025-08-15 20:00:00,Priya,Ali,priya.ali@company.net,+91 9223647533,Karan Singh,Sale Closed,Referred by existing client,Interested in enterprise software demo
+Google Ads,cpc,Search_Branded,$28.74,$1929.49,9.7%,2025-11-02 02:00:00,Vikram,Rao,vikram.rao@startup.io,+91 9357540112,Jessica Wong,Call Back,Referred by existing client,Requires virtual consultation
+Google Ads,cpc,Search_Branded,$15.53,$4072.59,1.7%,---,Diego,Gupta,   diego.gupta@outlook.com   ,9887048033 / 9252015406,Jessica Wong,Site Visit Completed,preferred morning calls,Prefers east-facing unit
+Google Ads,cpc,Search_Branded,$32.61,$2518.68,7.5%,Last Week,Arjun,Rao, arjun.rao@techsolutions.in ,WhatsApp Only,Priya Shah,Follow-up Required,Sent brochure,Requested product catalogue
+Google Ads,cpc,Search_Branded,$30.76,$1900.49,1.5%,,Arjun,Singh,   arjun.singh@techsolutions.in   ,0091-9387636071,,,,
+Google Ads,cpc,Search_Branded,$13.42,$4277.43,8.9%,2025.12.28,Vikram,Verma,VIKRAM.VERMA@LOGISTICS.COM,+91-93836-36207 ext 366,Ali Hassan,Call Back,Already spoke with spouse,Prefers east-facing unit
+Google Ads,cpc,Search_Branded,$43.10,$3481.83,7.7%,2025-10-16,Valentina,Gupta,,Secondary Contact,,,,
+Google Ads,cpc,Search_Branded,$21.44,$1675.13,3.9%,Yesterday,Arjun,Reddy,,92803 66864,,,,
+Google Ads,cpc,Search_Branded,$21.44,DUPLICATE: $1675.13,3.9%,Yesterday,Arjun,Reddy,,92803 66864,,,,
+Google Ads,cpc,Search_Branded,$20.03,$769.14,6.8%,Last Week,Sneha,Menon,sneha.menon@hotmail.com,+1 (542) 555-1723,Ali Hassan,Call Back,Not picking up,Interested in enterprise software demo
+Google Ads,cpc,Search_Branded,$20.03,$769.14,6.8%,Last Week,Sneha,Menon,sneha.menon@hotmail.com,+1 (542) 555-1723,Ali Hassan,Call Back,Not picking up,DUPLICATE: Interested in enterprise software demo
+Google Ads,cpc,Search_Branded,$23.77,$2888.33,4.3%,2025-01-15 05:00:00,Priya,Rao,priya.rao@gmail.com,+91 9027874307,Sarah Khan,Call Back,Preferred morning calls,Need possession before Diwali
+Google Ads,cpc,Search_Branded,$35.37,$4055.29,6.6%,2026-03-20 14:00:00,Valentina,Martinez,valentina.martinez@gmail.com,+91 9419515806,Priya Shah,Hot,Follow up next Friday,Looking for premium apartment under 1.2 Cr
+Google Ads,cpc,Search_Branded,$13.14,$638.01,5.3%,2025-02-07 22:00:00,Priya,Hassan,priya.hassan@enterprise.co,+91 9852426294,Karan Singh,Wrong Number,Call back tomorrow,Interested in enterprise software demo
+Google Ads,cpc,Search_Branded,$49.29,$3752.50,9.2%,Today,Chen,Martinez,CHEN.MARTINEZ@HOTMAIL.COM,Office Number,Sarah Khan,Converted,DND,Requested product catalogue
+Google Ads,cpc,Search_Branded,$14.67,$4268.38,7.8%,2026-05-12 06:00:00,Chen,Kumar,chen.kumar@yahoo.com,+91 9922855003,Sarah Khan,Budget Issue,Referred by existing client,Interested in enterprise software demo
+Google Ads,cpc,Search_Branded,$8.90,$1885.43,2.4%,28/02/2026,Wei,Sharma, wei.sharma@hotmail.com ,Office Number,Amit Patel,Wrong Number,DND,Requires virtual consultation
+Google Ads,cpc,Search_Branded,$33.39,$4676.39,1.3%,2025-08-10 15:00:00,Neha,Ali,neha.ali@enterprise.co,+91 9756453850,Priya Shah,Budget Issue,Wants to negotiate,Needs orthopedic consultation
+Google Ads,cpc,Search_Branded,$46.71,$1853.31,5.9%,2026-02-09 14:00:00,Sneha,Doe,sneha.doe@logistics.com,+91 9037316944,Sarah Khan,Budget Issue,Working night shift,Requires virtual consultation
+Google Ads,cpc,Search_Branded,$47.40,$4283.28,9.4%,2025-12-05 17:00:00,Priya,Verma,priya.verma@techsolutions.in,+91 9720702892,Sarah Khan,Duplicate,Working night shift,Requested product catalogue
+Google Ads,cpc,Search_Branded,$9.97,$4574.06,1.2%,2025-09-10 20:00:00,John,Rao,john.rao@startup.io,+91 9150514025,Amit Patel,Hot,Needs GST invoice,Looking for premium apartment under 1.2 Cr
+Google Ads,cpc,Search_Branded,$47.95,$1398.09,9.9%,2026-02-05,Ravi,Martinez,,,,,,
+Google Ads,cpc,Search_Branded,$35.32,$3975.99,9.5%,2025-01-04 10:00:00,Anjali,Rao,anjali.rao@company.net,+91 9104539346,Amit Patel,Hot,Working night shift,Searching for MBA admission
+Google Ads,cpc,Search_Branded,$28.80,$4871.74,5.7%,2025-12-29 21:00:00,Priya,Kumar,priya.kumar@company.net,+91 9198950976,Ali Hassan,Meeting Scheduled,Price sensitive,Need possession before Diwali
+Google Ads,cpc,Search_Branded,$10.33,$3056.17,7.8%,2025-09-08 09:00:00,Valentina,Hassan,valentina.hassan@startup.io,+91 9319157201,Karan Singh,Loan Pending,Interested in 3bHK,Searching for MBA admission
+Google Ads,cpc,Search_Branded,$23.71,$2552.01,3.2%,2026-02-09 01:00:00,John,Iyer,john.iyer@icloud.com,+91 9412888283,Karan Singh,Booked,Call back tomorrow,Looking for premium apartment under 1.2 Cr
+Google Ads,cpc,Search_Branded,$7.67,$4606.22,6.8%,2025-08-23 09:00:00,Valentina,Sharma,valentina.sharma@hotmail.com,+91 9786807995,Sarah Khan,Follow-up Required,Needs GST invoice,Requires virtual consultation
+Google Ads,cpc,Search_Branded,$23.14,$1458.07,9.8%,Yesterday,Sarah,Martinez,sarah.martinez@enterprise.co,0091-9195805176,Rahul Mehta,Duplicate,Working night shift,Requires virtual consultation
+Google Ads,cpc,Search_Branded,$46.97,$1188.75,7.6%,12-May-2026,Arjun,Li,,,,,,
+Google Ads,cpc,DUPLICATE: Search_Branded,$46.97,$1188.75,7.6%,12-May-2026,Arjun,Li,,,,,,
+Google Ads,cpc,DUPLICATE: Search_Branded,$46.97,$1188.75,7.6%,12-May-2026,DUPLICATE: Arjun,Li,,,,,,
+Google Ads,cpc,Search_Branded,$46.81,$4932.83,7.6%,2025-12-04 21:00:00,Neha,Gupta,neha.gupta@yahoo.com,+91 9757154017,Rahul Mehta,Meeting Scheduled,Asked to call after 7 PM,Requested product catalogue
+Google Ads,cpc,Search_Branded,$9.03,$2785.40,6.5%,2026-03-18,Wei,Verma,WEI.VERMA@COMPANY.NET,+1 (489) 555-6845,Jessica Wong,Converted,Budget increased,Need possession before Diwali
+Google Ads,cpc,Search_Branded,$23.98,$764.11,2.3%,2025-07-09 15:00:00,Aditya,Singh,aditya.singh@startup.io,+91 9321875493,Rahul Mehta,Wrong Number,Old customer returning,Requested product catalogue
+Google Ads,cpc,Search_Branded,$6.77,$4199.44,4.6%,Today,Michael,Ali,MICHAEL.ALI@YAHOO.COM,91970 68166,Ali Hassan,Busy,Decision maker travelling,Searching for MBA admission
+Google Ads,cpc,Search_Branded,$20.53,$4997.31,4.2%,2026-03-20 20:00:00,Chen,Singh,chen.singh@hotmail.com,+91 9874289327,Priya Shah,Follow-up Required,Already spoke with spouse,Requires virtual consultation
+Google Ads,cpc,Search_Branded,$43.19,$1785.51,4.5%,2025-05-14,Kavita,Menon,KAVITA.MENON@ENTERPRISE.CO,+91-90257-02439 ext 269,Ali Hassan,Warm,Budget increased,Searching for MBA admission
+Google Ads,cpc,Search_Branded,$30.62,$4245.73,2.1%,2026-03-23 22:00:00,John,Reddy,john.reddy@icloud.com,+91 9161876624,Amit Patel,Duplicate,Wants to negotiate,Need possession before Diwali
