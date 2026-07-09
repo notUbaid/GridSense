@@ -1,4 +1,4 @@
-import { getGroqClient, getGeminiClient, markGroqKeyExhausted, markGeminiKeyExhausted } from './extractor';
+import { getGroqClient, getGeminiClient, getOpenAIClient, getAnthropicClient, getOpenRouterClient, markGroqKeyExhausted, markGeminiKeyExhausted } from './extractor';
 import { z } from 'zod';
 import { zodToJsonSchema } from 'zod-to-json-schema';
 import logger from '../utils/logger';
@@ -52,48 +52,67 @@ ${JSON.stringify(zodToJsonSchema(MappingSchema as any))}
   let resultString = '';
   
   try {
-    let groq;
-    let index: number;
-    try {
-       const res = getGroqClient();
-       groq = res.client;
-       index = res.index;
-    } catch (e) {
-       throw e;
-    }
-    
-    try {
-      const completion = await groq.chat.completions.create({
-        messages: [{ role: 'user', content: prompt }],
-        model: 'llama-3.1-8b-instant',
-        temperature: 0,
-        max_tokens: 1024,
-        response_format: { type: 'json_object' }
-      });
-      resultString = completion.choices[0]?.message?.content || '{}';
-    } catch (err: any) {
-      if (err.status === 429 || err.status === 400 || err.status === 403) {
-         markGroqKeyExhausted(index);
-      }
-      throw err;
-    }
+    const { client: groq, index } = getGroqClient();
+    const completion = await groq.chat.completions.create({
+      messages: [{ role: 'user', content: prompt }],
+      model: 'llama-3.1-8b-instant',
+      temperature: 0,
+      max_tokens: 1024,
+      response_format: { type: 'json_object' }
+    });
+    resultString = completion.choices[0]?.message?.content || '{}';
   } catch (err: any) {
+    if (err.status === 429 || err.status === 400 || err.status === 403) {
+      // Assuming groq failed, let's not mark it as exhausted for mapper since mapper runs rarely, but we can
+    }
     logger.warn({ err: err.message }, 'Groq mapping failed, falling back to Gemini');
     try {
-      const { client: gemini, index: geminiIndex } = getGeminiClient();
+      const { client: gemini } = getGeminiClient();
+      const model = gemini.getGenerativeModel({ model: 'gemini-1.5-flash', generationConfig: { responseMimeType: 'application/json' } });
+      const result = await model.generateContent(prompt);
+      resultString = result.response.text();
+    } catch (err2: any) {
+      logger.warn({ err: err2.message }, 'Gemini mapping failed, falling back to OpenAI');
       try {
-        const model = gemini.getGenerativeModel({ model: 'gemini-1.5-flash', generationConfig: { responseMimeType: 'application/json' } });
-        const result = await model.generateContent(prompt);
-        resultString = result.response.text();
-      } catch (geminiErr: any) {
-        if (geminiErr.status === 429 || geminiErr.status === 400 || geminiErr.status === 403) {
-          markGeminiKeyExhausted(geminiIndex);
+        const { client: openai } = getOpenAIClient();
+        const completion = await openai.chat.completions.create({
+          messages: [{ role: 'user', content: prompt }],
+          model: 'gpt-4o-mini',
+          temperature: 0,
+          max_tokens: 1024,
+          response_format: { type: 'json_object' }
+        });
+        resultString = completion.choices[0]?.message?.content || '{}';
+      } catch (err3: any) {
+        logger.warn({ err: err3.message }, 'OpenAI mapping failed, falling back to Anthropic');
+        try {
+          const { client: anthropic } = getAnthropicClient();
+          const message = await anthropic.messages.create({
+            model: 'claude-3-5-haiku-20241022',
+            messages: [{ role: 'user', content: prompt }],
+            temperature: 0,
+            max_tokens: 1024,
+          });
+          const block = message.content.find(b => b.type === 'text');
+          resultString = block?.type === 'text' ? block.text : '{}';
+        } catch (err4: any) {
+          logger.warn({ err: err4.message }, 'Anthropic mapping failed, falling back to OpenRouter');
+          try {
+            const { client: openrouter } = getOpenRouterClient();
+            const completion = await openrouter.chat.completions.create({
+              messages: [{ role: 'user', content: prompt }],
+              model: 'openai/gpt-4o-mini',
+              temperature: 0,
+              max_tokens: 1024,
+              response_format: { type: 'json_object' }
+            });
+            resultString = completion.choices[0]?.message?.content || '{}';
+          } catch (err5: any) {
+            logger.error({ err: err5.message }, 'All providers failed for mapping headers');
+            return { mapping: [], overallConfidence: 0, processingTimeMs: Date.now() - startTime };
+          }
         }
-        throw geminiErr;
       }
-    } catch (e: any) {
-      logger.error({ err: e.message }, 'Both Groq and Gemini failed for mapping headers');
-      return { mapping: [], overallConfidence: 0, processingTimeMs: Date.now() - startTime };
     }
   }
 

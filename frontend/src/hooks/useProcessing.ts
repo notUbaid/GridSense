@@ -308,7 +308,6 @@ export function useProcessing() {
     let localSuccessfulRows = 0;
     let localSkippedRows = localSkippedRaw.length;
     let localTotalSleepMs = 0;
-    let isGeminiDisabled = false;
     let localBatchesSent = 0;
     let localTotalRetries = 0;
     let localPeakConcurrency = 0;
@@ -339,10 +338,22 @@ export function useProcessing() {
     }, 1000);
 
     // Provider assignment
-    let nextProvider: 'groq' | 'gemini' = 'groq';
+    const PROVIDER_CASCADE = ['groq', 'gemini', 'openai', 'anthropic', 'openrouter'] as const;
+    type ProviderType = typeof PROVIDER_CASCADE[number];
+    const disabledProviders = new Set<ProviderType>();
+    let currentProviderIndex = 0;
 
-    const getNextProvider = (): 'groq' | 'gemini' => {
-      return nextProvider;
+    const getNextProvider = (): ProviderType => {
+      let attempts = 0;
+      while (attempts < PROVIDER_CASCADE.length) {
+        const p = PROVIDER_CASCADE[currentProviderIndex];
+        if (!disabledProviders.has(p)) {
+          return p;
+        }
+        currentProviderIndex = (currentProviderIndex + 1) % PROVIDER_CASCADE.length;
+        attempts++;
+      }
+      return PROVIDER_CASCADE[0];
     };
 
     // Advanced Queue State
@@ -430,29 +441,33 @@ export function useProcessing() {
         const status = error.response?.status;
         const exhaustedProvider = error.response?.data?.exhaustedProvider || error.exhaustedProvider || 'groq';
         
-        if (status === 429 || backendError.toLowerCase().includes('rate limit') || status === 403) {
+        if (status === 429 || backendError.toLowerCase().includes('rate limit') || status === 403 || backendError.toLowerCase().includes('exhausted')) {
           // Adaptive Concurrency: Scale down aggressively on rate limit
           maxConcurrency = Math.max(1, Math.floor(maxConcurrency / 2));
           
-          if (exhaustedProvider === 'groq') {
-            if (nextProvider === 'groq' && !isGeminiDisabled) {
-              nextProvider = 'gemini';
-              toast.info(`Groq free limit reached. Switching to Gemini backup...`);
-              setCurrentActivity(`Switching AI engine to Gemini...`);
-              localTotalSleepMs += 1500;
-              await new Promise(r => setTimeout(r, 1500));
-            }
-          } else if (exhaustedProvider === 'gemini') {
-            if (backendError.toLowerCase().includes('api key') || backendError.toLowerCase().includes('restricted')) {
-              toast.error('Gemini API key is invalid or exhausted. Disabling Gemini fallback permanently.');
-              isGeminiDisabled = true;
-              nextProvider = 'groq';
-            } else {
-              setCurrentActivity(`API limits reached across all providers. Sleeping...`);
-              localTotalSleepMs += 15000;
-              await new Promise(r => setTimeout(r, 15000));
-              nextProvider = 'groq';
-            }
+          const isAuthError = backendError.toLowerCase().includes('api key') || backendError.toLowerCase().includes('restricted') || backendError.toLowerCase().includes('invalid');
+          
+          if (isAuthError) {
+            toast.error(`${exhaustedProvider.toUpperCase()} API key is invalid/missing. Disabling provider.`);
+            disabledProviders.add(exhaustedProvider as ProviderType);
+          } else {
+             // Rate limit
+             toast.info(`${exhaustedProvider.toUpperCase()} limits reached. Cycling provider...`);
+          }
+
+          if (disabledProviders.size >= PROVIDER_CASCADE.length) {
+            toast.error('All AI providers disabled due to invalid/missing API keys!');
+            // Sleep so we don't spam 8 attempts instantly
+            await new Promise(r => setTimeout(r, 5000));
+          } else {
+             currentProviderIndex = (currentProviderIndex + 1) % PROVIDER_CASCADE.length;
+             // Ensure we skip disabled ones
+             while (disabledProviders.has(PROVIDER_CASCADE[currentProviderIndex])) {
+               currentProviderIndex = (currentProviderIndex + 1) % PROVIDER_CASCADE.length;
+             }
+             setCurrentActivity(`Switching AI engine to ${PROVIDER_CASCADE[currentProviderIndex].toUpperCase()}...`);
+             localTotalSleepMs += 2000;
+             await new Promise(r => setTimeout(r, 2000));
           }
           task.attempts++;
           localTotalRetries++;

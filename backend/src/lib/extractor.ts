@@ -1,4 +1,6 @@
 import Groq from 'groq-sdk';
+import OpenAI from 'openai';
+import Anthropic from '@anthropic-ai/sdk';
 import Papa from 'papaparse';
 import { z } from 'zod';
 import { CrmRecord, CrmRecordSchema } from '../validation/schema';
@@ -14,6 +16,18 @@ let availableGroqIndices: number[] = [];
 let geminiClients: GoogleGenerativeAI[] = [];
 let currentGeminiIndex = 0;
 let availableGeminiIndices: number[] = [];
+
+let openaiClients: OpenAI[] = [];
+let currentOpenAIIndex = 0;
+let availableOpenAIIndices: number[] = [];
+
+let anthropicClients: Anthropic[] = [];
+let currentAnthropicIndex = 0;
+let availableAnthropicIndices: number[] = [];
+
+let openRouterClients: OpenAI[] = [];
+let currentOpenRouterIndex = 0;
+let availableOpenRouterIndices: number[] = [];
 
 export function getGroqClient(): { client: Groq, index: number } {
   if (!config.GROQ_API_KEY) {
@@ -83,6 +97,84 @@ export function markGeminiKeyExhausted(index: number) {
     if (!availableGeminiIndices.includes(index)) {
       availableGeminiIndices.push(index);
       logger.info(`Gemini key at index ${index} restored after 60s timeout. ${availableGeminiIndices.length} keys available.`);
+    }
+  }, 60000);
+}
+
+export function getOpenAIClient(): { client: OpenAI, index: number } {
+  if (!config.OPENAI_API_KEY) throw new Error('OPENAI_API_KEY is missing.');
+  if (openaiClients.length === 0) {
+    const keys = config.OPENAI_API_KEY.split(',').map(k => k.trim()).filter(k => k.length > 0);
+    if (keys.length === 0) throw new Error('No valid OPENAI API keys found.');
+    openaiClients = keys.map(key => new OpenAI({ apiKey: key }));
+    availableOpenAIIndices = openaiClients.map((_, i) => i);
+  }
+  if (availableOpenAIIndices.length === 0) throw new Error('All OpenAI keys are exhausted.');
+  const selectedIndex = availableOpenAIIndices[currentOpenAIIndex % availableOpenAIIndices.length];
+  currentOpenAIIndex = (currentOpenAIIndex + 1) % availableOpenAIIndices.length;
+  return { client: openaiClients[selectedIndex], index: selectedIndex };
+}
+
+export function markOpenAIKeyExhausted(index: number) {
+  if (!availableOpenAIIndices.includes(index)) return;
+  availableOpenAIIndices = availableOpenAIIndices.filter(i => i !== index);
+  logger.warn(`OpenAI key at index ${index} marked as exhausted. ${availableOpenAIIndices.length} remaining.`);
+  setTimeout(() => {
+    if (!availableOpenAIIndices.includes(index)) {
+      availableOpenAIIndices.push(index);
+      logger.info(`OpenAI key at index ${index} restored.`);
+    }
+  }, 60000);
+}
+
+export function getAnthropicClient(): { client: Anthropic, index: number } {
+  if (!config.ANTHROPIC_API_KEY) throw new Error('ANTHROPIC_API_KEY is missing.');
+  if (anthropicClients.length === 0) {
+    const keys = config.ANTHROPIC_API_KEY.split(',').map(k => k.trim()).filter(k => k.length > 0);
+    if (keys.length === 0) throw new Error('No valid ANTHROPIC API keys found.');
+    anthropicClients = keys.map(key => new Anthropic({ apiKey: key }));
+    availableAnthropicIndices = anthropicClients.map((_, i) => i);
+  }
+  if (availableAnthropicIndices.length === 0) throw new Error('All Anthropic keys are exhausted.');
+  const selectedIndex = availableAnthropicIndices[currentAnthropicIndex % availableAnthropicIndices.length];
+  currentAnthropicIndex = (currentAnthropicIndex + 1) % availableAnthropicIndices.length;
+  return { client: anthropicClients[selectedIndex], index: selectedIndex };
+}
+
+export function markAnthropicKeyExhausted(index: number) {
+  if (!availableAnthropicIndices.includes(index)) return;
+  availableAnthropicIndices = availableAnthropicIndices.filter(i => i !== index);
+  logger.warn(`Anthropic key at index ${index} marked as exhausted. ${availableAnthropicIndices.length} remaining.`);
+  setTimeout(() => {
+    if (!availableAnthropicIndices.includes(index)) {
+      availableAnthropicIndices.push(index);
+      logger.info(`Anthropic key at index ${index} restored.`);
+    }
+  }, 60000);
+}
+
+export function getOpenRouterClient(): { client: OpenAI, index: number } {
+  if (!config.OPENROUTER_API_KEY) throw new Error('OPENROUTER_API_KEY is missing.');
+  if (openRouterClients.length === 0) {
+    const keys = config.OPENROUTER_API_KEY.split(',').map(k => k.trim()).filter(k => k.length > 0);
+    if (keys.length === 0) throw new Error('No valid OPENROUTER API keys found.');
+    openRouterClients = keys.map(key => new OpenAI({ baseURL: 'https://openrouter.ai/api/v1', apiKey: key }));
+    availableOpenRouterIndices = openRouterClients.map((_, i) => i);
+  }
+  if (availableOpenRouterIndices.length === 0) throw new Error('All OpenRouter keys are exhausted.');
+  const selectedIndex = availableOpenRouterIndices[currentOpenRouterIndex % availableOpenRouterIndices.length];
+  currentOpenRouterIndex = (currentOpenRouterIndex + 1) % availableOpenRouterIndices.length;
+  return { client: openRouterClients[selectedIndex], index: selectedIndex };
+}
+
+export function markOpenRouterKeyExhausted(index: number) {
+  if (!availableOpenRouterIndices.includes(index)) return;
+  availableOpenRouterIndices = availableOpenRouterIndices.filter(i => i !== index);
+  logger.warn(`OpenRouter key at index ${index} marked as exhausted. ${availableOpenRouterIndices.length} remaining.`);
+  setTimeout(() => {
+    if (!availableOpenRouterIndices.includes(index)) {
+      availableOpenRouterIndices.push(index);
+      logger.info(`OpenRouter key at index ${index} restored.`);
     }
   }, 60000);
 }
@@ -254,7 +346,7 @@ let circuitBreakerOpenUntil = 0;
 export async function processBatch(
   headers: string[], 
   rows: Record<string, string>[],
-  provider: 'groq' | 'gemini' = 'groq',
+  provider: 'groq' | 'gemini' | 'openai' | 'anthropic' | 'openrouter' = 'groq',
   schemaMapping?: { source: string, target?: string | null, confidence?: any }[] | null
 ) {
   let promptChars = 0;
@@ -268,7 +360,7 @@ export async function processBatch(
   const maxRetries = config.AI_MAX_RETRIES;
   const startTime = Date.now();
 
-  if ((provider === 'groq' || provider === 'gemini') && Date.now() < circuitBreakerOpenUntil) {
+  if (['groq', 'gemini', 'openai', 'anthropic', 'openrouter'].includes(provider) && Date.now() < circuitBreakerOpenUntil) {
     const limitError = new Error('API Key exhausted or restricted (Circuit Breaker Open)');
     (limitError as any).status = 429;
     (limitError as any).exhaustedProvider = provider;
@@ -546,6 +638,9 @@ ${Papa.unparse(aiRows, { header: false })}`;
   while (attempt < maxRetries) {
     let usedGroqIndex = currentGroqIndex;
     let usedGeminiIndex = currentGeminiIndex;
+    let usedOpenAIIndex = currentOpenAIIndex;
+    let usedAnthropicIndex = currentAnthropicIndex;
+    let usedOpenRouterIndex = currentOpenRouterIndex;
     try {
       logger.info({ attempt: attempt + 1, batchSize: rows.length, aiBatchSize: aiRows.length, provider }, 'Sending batch to AI');
 
@@ -592,10 +687,99 @@ ${Papa.unparse(aiRows, { header: false })}`;
           
           parsed = salvageExtractorJson(parsed);
 
-
           const validated = llmResponseSchema.safeParse(parsed);
           if (!validated.success) {
             logger.error({ errors: validated.error.format() }, 'Zod validation failed on Gemini output');
+            throw new Error('AI output did not match expected schema');
+          }
+          aiRecords = validated.data.records;
+          parseLatencyMs = performance.now() - parseStart;
+        } else if (provider === 'openai' || provider === 'openrouter') {
+          const isRouter = provider === 'openrouter';
+          const { client, index } = isRouter ? getOpenRouterClient() : getOpenAIClient();
+          if (isRouter) usedOpenRouterIndex = index;
+          else usedOpenAIIndex = index;
+
+          const apiStart = performance.now();
+          const completion = await client.chat.completions.create({
+            messages: [
+              { role: 'system', content: 'You are a data extraction system. Output ONLY valid JSON matching the requested schema. No markdown fences, no commentary.' },
+              { role: 'user', content: prompt }
+            ],
+            model: isRouter ? 'openai/gpt-4o-mini' : 'gpt-4o-mini',
+            temperature: attempt > 0 ? 0.0 : 0.1,
+            max_tokens: Math.min(4000, Math.max(1024, aiRows.length * 80)),
+            response_format: { type: 'json_object' },
+          });
+          apiLatencyMs = performance.now() - apiStart;
+
+          const content = completion.choices[0]?.message?.content;
+          if (!content) throw new Error(`Empty response from ${provider}`);
+          responseChars = content.length;
+          promptTokens = completion.usage?.prompt_tokens || 0;
+          responseTokens = completion.usage?.completion_tokens || 0;
+
+          const parseStart = performance.now();
+          const cleaned = stripMarkdownFences(content);
+          let parsed;
+          try {
+            parsed = JSON.parse(cleaned);
+          } catch (e) {
+            logger.warn({ content: cleaned.substring(0, 500) }, 'JSON parse failed, attempting to repair truncated JSON');
+            try {
+              const repaired = repairTruncatedJson(cleaned);
+              parsed = JSON.parse(repaired);
+            } catch (repairError) {
+              throw e;
+            }
+          }
+          parsed = salvageExtractorJson(parsed);
+          const validated = llmResponseSchema.safeParse(parsed);
+          if (!validated.success) {
+            logger.error({ errors: validated.error.format() }, `Zod validation failed on ${provider} output`);
+            throw new Error('AI output did not match expected schema');
+          }
+          aiRecords = validated.data.records;
+          parseLatencyMs = performance.now() - parseStart;
+        } else if (provider === 'anthropic') {
+          const { client, index } = getAnthropicClient();
+          usedAnthropicIndex = index;
+
+          const apiStart = performance.now();
+          const message = await client.messages.create({
+            model: 'claude-3-5-haiku-20241022',
+            system: 'You are a data extraction system. Output ONLY valid JSON matching the requested schema. No markdown fences, no commentary.',
+            messages: [{ role: 'user', content: prompt }],
+            temperature: attempt > 0 ? 0.0 : 0.1,
+            max_tokens: Math.min(4000, Math.max(1024, aiRows.length * 80)),
+          });
+          apiLatencyMs = performance.now() - apiStart;
+
+          const block = message.content.find(b => b.type === 'text');
+          const content = block?.type === 'text' ? block.text : '';
+          if (!content) throw new Error(`Empty response from Anthropic`);
+          responseChars = content.length;
+          promptTokens = message.usage?.input_tokens || 0;
+          responseTokens = message.usage?.output_tokens || 0;
+
+          const parseStart = performance.now();
+          const cleaned = stripMarkdownFences(content);
+          let parsed;
+          try {
+            parsed = JSON.parse(cleaned);
+          } catch (e) {
+            logger.warn({ content: cleaned.substring(0, 500) }, 'JSON parse failed, attempting to repair truncated JSON');
+            try {
+              const repaired = repairTruncatedJson(cleaned);
+              parsed = JSON.parse(repaired);
+            } catch (repairError) {
+              throw e;
+            }
+          }
+          parsed = salvageExtractorJson(parsed);
+          const validated = llmResponseSchema.safeParse(parsed);
+          if (!validated.success) {
+            logger.error({ errors: validated.error.format() }, `Zod validation failed on Anthropic output`);
             throw new Error('AI output did not match expected schema');
           }
           aiRecords = validated.data.records;
@@ -772,6 +956,39 @@ ${Papa.unparse(aiRows, { header: false })}`;
             continue;
           } else {
             logger.error(`All ${geminiClients.length} Gemini keys exhausted or rate-limited. Opening circuit breaker for 1s.`);
+            circuitBreakerOpenUntil = Date.now() + 1000;
+          }
+        } else if (provider === 'openai') {
+          if (isAuthError && typeof usedOpenAIIndex === 'number') markOpenAIKeyExhausted(usedOpenAIIndex);
+          if (keysTried < openaiClients.length && availableOpenAIIndices.length > 0) {
+            logger.warn(`OpenAI key hit limit. Retrying...`);
+            keysTried++;
+            attempt = 0;
+            continue;
+          } else {
+            logger.error(`All OpenAI keys exhausted.`);
+            circuitBreakerOpenUntil = Date.now() + 1000;
+          }
+        } else if (provider === 'anthropic') {
+          if (isAuthError && typeof usedAnthropicIndex === 'number') markAnthropicKeyExhausted(usedAnthropicIndex);
+          if (keysTried < anthropicClients.length && availableAnthropicIndices.length > 0) {
+            logger.warn(`Anthropic key hit limit. Retrying...`);
+            keysTried++;
+            attempt = 0;
+            continue;
+          } else {
+            logger.error(`All Anthropic keys exhausted.`);
+            circuitBreakerOpenUntil = Date.now() + 1000;
+          }
+        } else if (provider === 'openrouter') {
+          if (isAuthError && typeof usedOpenRouterIndex === 'number') markOpenRouterKeyExhausted(usedOpenRouterIndex);
+          if (keysTried < openRouterClients.length && availableOpenRouterIndices.length > 0) {
+            logger.warn(`OpenRouter key hit limit. Retrying...`);
+            keysTried++;
+            attempt = 0;
+            continue;
+          } else {
+            logger.error(`All OpenRouter keys exhausted.`);
             circuitBreakerOpenUntil = Date.now() + 1000;
           }
         }
