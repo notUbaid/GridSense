@@ -402,7 +402,7 @@ let circuitBreakerOpenUntil = 0;
 export async function processBatch(
   headers: string[], 
   rows: Record<string, string>[],
-  provider: 'groq' | 'gemini' | 'openai' | 'anthropic' | 'openrouter' = 'groq',
+  provider: 'groq' | 'gemini' | 'openai' | 'anthropic' | 'openrouter' | 'cohere' = 'groq',
   schemaMapping?: { source: string, target?: string | null, confidence?: any }[] | null
 ) {
   let promptChars = 0;
@@ -846,7 +846,7 @@ ${Papa.unparse(aiRows, { header: false })}`;
           });
           apiLatencyMs = performance.now() - apiStart;
 
-          const content = completion.message?.content?.[0]?.text;
+          const content = (completion.message?.content?.[0] as any)?.text;
           if (!content) throw new Error('Empty response from Cohere');
           responseChars = content.length;
           promptTokens = completion.usage?.billedUnits?.inputTokens || 0;

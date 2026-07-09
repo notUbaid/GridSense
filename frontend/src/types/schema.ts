@@ -25,7 +25,7 @@ export const ProcessBatchRequestSchema = z.object({
   batchId: z.string().min(1),
   headers: z.array(z.string()),
   rows: z.array(z.record(z.string(), z.any())),
-  provider: z.enum(['groq', 'gemini', 'openai', 'anthropic', 'openrouter']).optional().default('groq'),
+  provider: z.enum(['groq', 'gemini', 'openai', 'anthropic', 'openrouter', 'cohere']).optional().default('groq'),
   schemaMapping: z.array(z.object({
     source: z.string(),
     target: z.string().optional().nullable(),
