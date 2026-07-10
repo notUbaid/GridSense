@@ -58,6 +58,7 @@ const DETERMINISTIC_BATCH_SIZE = 5000;
 export function useProcessing() {
   const [state, setState] = useState<ProcessState>('idle');
   const [progress, setProgress] = useState(0);
+  const [useOllama, setUseOllama] = useState(false);
   const [processedRows, setProcessedRows] = useState(0);
   const [records, setRecords] = useState<CrmRecord[]>([]);
   const [skippedRawRows, setSkippedRawRows] = useState<Record<string, string>[]>([]);
@@ -303,7 +304,7 @@ export function useProcessing() {
     // Provider assignment: We only cycle through the primary providers configured in the frontend
     type ProviderType = 'groq' | 'cohere' | 'openrouter' | 'ollama';
     // To use local Ollama models, change this to: ['ollama'] or ['groq', 'ollama']
-    const PROVIDER_CASCADE: ProviderType[] = ['groq'];
+    const PROVIDER_CASCADE: ProviderType[] = useOllama ? ['ollama', 'groq'] : ['groq'];
     const disabledProviders = new Set<ProviderType>();
     let currentProviderIndex = 0;
 
@@ -731,5 +732,7 @@ export function useProcessing() {
     startProcessing,
     retryFailed,
     reset,
+    useOllama,
+    setUseOllama
   };
 }

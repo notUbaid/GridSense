@@ -9,12 +9,13 @@ import { Button } from '@/components/ui/button';
 import { PreviewCard } from '@/components/pipeline/PreviewCard';
 import { ProgressCard } from '@/components/pipeline/ProgressCard';
 import { ThemeToggle } from '@/components/ThemeToggle';
+import { OllamaToggle } from '@/components/OllamaToggle';
 import { SummaryDashboard } from '@/components/pipeline/SummaryDashboard';
 import { SchemaMappingPanel } from '@/components/upload/SchemaMappingPanel';
 import { motion, AnimatePresence } from 'framer-motion';
 
 export default function Home() {
-  const { state, progress, processedRows, records, skippedRawRows, failedRawRows, previewData, schemaMapping, metrics, error, originalFilename, totalParsedRows, currentActivity, activityLogs, elapsedMs, etaMs, processFile, startProcessing, retryFailed, reset } = useProcessing();
+  const { state, progress, processedRows, records, skippedRawRows, failedRawRows, previewData, schemaMapping, metrics, error, originalFilename, totalParsedRows, currentActivity, activityLogs, elapsedMs, etaMs, processFile, startProcessing, retryFailed, reset, useOllama, setUseOllama } = useProcessing();
 
   return (
     <main className="relative min-h-screen bg-background text-foreground p-4 sm:p-6 md:p-12 overflow-hidden selection:bg-primary/20">
@@ -32,7 +33,10 @@ export default function Home() {
               Semantic spreadsheet intelligence. Drop any CSV, and the AI will automatically map the raw data into a strictly typed CRM schema.
             </p>
           </div>
-          <ThemeToggle />
+          <div className="flex items-center gap-2">
+            <OllamaToggle useOllama={useOllama} setUseOllama={setUseOllama} />
+            <ThemeToggle />
+          </div>
         </div>
 
         <div className="relative min-h-[400px]">

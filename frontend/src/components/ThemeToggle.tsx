@@ -11,10 +11,7 @@ export function ThemeToggle() {
   return (
     <motion.button
       whileHover={{ scale: 1.05 }}
-      whileTap={{ 
-        scale: 0.85, 
-        borderRadius: "50% 50% 10% 50%", // Water drop squish shape
-      }}
+      whileTap={{ scale: 0.95 }}
       transition={{ type: "spring", stiffness: 400, damping: 17 }}
       className="relative flex items-center justify-center h-10 w-10 rounded-full border border-primary/20 bg-background/50 backdrop-blur-md shadow-[inset_0_-2px_4px_rgba(0,0,0,0.1)] dark:shadow-[inset_0_-2px_4px_rgba(255,255,255,0.1)] hover:bg-primary/10 overflow-hidden"
       onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')}
