@@ -1,13 +1,13 @@
-# GridSense
+# GridSense: AI-Powered Data Extraction Engine
 
 [![Next.js](https://img.shields.io/badge/Next.js-14-black?style=flat&logo=next.js)](https://nextjs.org/)
 [![Express.js](https://img.shields.io/badge/Express.js-Backend-blue?style=flat&logo=express)](https://expressjs.com/)
 [![Tailwind CSS](https://img.shields.io/badge/Tailwind-CSS-38B2AC?style=flat&logo=tailwind-css)](https://tailwindcss.com/)
 [![TypeScript](https://img.shields.io/badge/TypeScript-Strict-blue?style=flat&logo=typescript)](https://www.typescriptlang.org/)
 
-**GridSense** is an enterprise-grade, hybrid artificial intelligence data ingestion pipeline. It provides a robust, scalable bridge between volatile, unstructured user-generated data (such as arbitrary CSV exports) and strict backend validation systems (such as rigid CRM schemas).
+**GridSense** is an enterprise-grade, hybrid artificial intelligence data ingestion pipeline built for the **GrowEasy Software Developer Internship Evaluation**.
 
-By isolating non-deterministic Large Language Model (LLM) behavior within a tightly controlled deterministic shell, GridSense achieves near-perfect data extraction accuracy without the latency or hallucination risks typically associated with AI-driven parsing.
+It provides a robust, scalable bridge between volatile, unstructured user-generated data (such as arbitrary CSV exports) and strict backend validation systems (such as rigid CRM schemas). By isolating non-deterministic Large Language Model (LLM) behavior within a tightly controlled deterministic shell, GridSense achieves near-perfect data extraction accuracy without the latency or hallucination risks typically associated with AI-driven parsing.
 
 ---
 
@@ -17,17 +17,38 @@ In B2B SaaS and enterprise CRM systems, data ingestion is a notoriously brittle 
 
 Traditional ingestion pipelines rely on fixed-schema CSV parsers, which require strict column mapping. When a header changes (e.g., from "Full Name" to "First" and "Last"), or when a phone number is buried within a "Client Notes" column, deterministic parsers silently drop the data or force extensive manual user intervention.
 
-GridSense solves this problem by utilizing semantic AI as a contextual translation layer, governed by rigid schema boundaries.
+**The Goal:** Build a system that allows users to upload *any* CSV, and have it intelligently map to our strict 13-field CRM schema automatically.
 
-## 2. The Hybrid Extraction Methodology
+---
 
-GridSense rejects the paradigm of passing raw data files directly into an LLM. Instead, it utilizes a hybrid architecture:
+## 2. Honest Engineering Decisions & Architecture
 
-1. **Deterministic Fast-Path**: Standard CSV layout reading, row splitting, concurrency, type coercion, and final data formatting are handled exclusively by compiled, deterministic logic.
-2. **Semantic Fallback**: The AI is invoked solely to map unrecognized column headers or extract nested entities (e.g., finding a valid Indian mobile number inside a block of text).
-3. **Strict Boundaries**: If the LLM generates a row that does not conform to the predefined `Zod` schema, the payload is rejected and the chunk is retried. Row integrity is strictly preserved; input arrays are mapped back to their original indexes, guaranteeing that no data is silently dropped, duplicated, or hallucinated by the AI.
+Building an LLM-wrapper is easy. Building a *reliable* AI data pipeline that doesn't drop rows, hallucinate data, or crash under load is incredibly difficult. Here are the core engineering decisions and lessons learned during the development of GridSense:
 
-## 3. System Architecture & Data Flow
+### Why a Hybrid "Fast-Path" Approach?
+Initially, one might assume we could just throw entire CSV files into an LLM and ask it to return JSON. **This does not work in production.** LLMs have context limits, they hallucinate extra rows, and they are incredibly slow.
+* **Our Solution:** The system is a hybrid. We first use standard heuristics to detect obvious mappings (e.g., if a header is exactly `email`, map it immediately). The AI is invoked *only* to map unrecognized column headers or extract nested entities (like finding a valid Indian mobile number hidden inside a text paragraph). This saves massive amounts of compute and API costs.
+
+### Client-Side Chunking via Web Workers
+Passing a 10,000-row CSV to a Node.js backend would block the event loop and crash the server on large loads.
+* **Our Solution:** All CSV parsing is done entirely in the user's browser using `PapaParse` inside a Web Worker. We slice the massive CSV into small, 50-row chunks on the client side, and send those tiny chunks to the stateless backend in parallel. The server never holds state, making it infinitely scalable.
+
+### The Dynamic Fallback Cascade
+Relying on a single AI provider (like OpenAI or Groq) guarantees failure during load spikes. If Groq throws a `429 Too Many Requests` error, the user's data extraction would fail.
+* **Our Solution:** I built a dynamic multi-provider fallback cascade. If a batch fails on Groq, the backend seamlessly catches the error, retries it on Gemini, and if that fails, cascades to OpenRouter or Anthropic. This happens entirely invisibly to the user, ensuring near 100% uptime.
+
+### Zod Runtime Boundaries & JSON Salvaging (The Messy Reality of AI)
+TypeScript provides compile-time safety, but an LLM response is inherently untyped runtime text. Sometimes, models forget closing brackets, hallucinate markdown fences, or output integers instead of strings for phone numbers.
+* **Our Solution:** We enforce a strict runtime boundary using `Zod`. Before any AI data is accepted, it passes through our `salvageExtractorJson` utility. This utility is the unsung hero of the app: it strips markdown fences, repairs truncated JSON using a custom AST parser, coerces raw integers into strings, and wraps single objects into arrays. Only after passing this aggressive cleaning does the data enter the strict Zod validator.
+
+### Local Privacy-First Inference (Ollama Integration)
+For enterprise environments handling highly sensitive PII (Personally Identifiable Information), sending data to cloud APIs is a violation of compliance.
+* **Our Solution:** GridSense supports zero-cost, 100% local inference. When the user toggles the local hardware switch, the frontend intercepts AI requests and routes them directly to the user's local Ollama daemon.
+* **The 4B Model Challenge:** Small local models (like Gemma 4B) are notoriously bad at following complex schema instructions. I heavily optimized the local execution path by restricting the batch size to 5 rows and using highly sophisticated **Few-Shot Prompting**. By giving the local model a strict template with explicit `null` fallbacks, we forced a 4B model to generate production-ready structured JSON.
+
+---
+
+## 3. System Architecture Data Flow
 
 ```mermaid
 flowchart TD
@@ -53,32 +74,18 @@ flowchart TD
 
     F --> L[Data Normalization & Formatting]
     K --> L
-    L --> M[Structured CSV Export]
+    L --> M[Structured CSV/JSON Export]
 ```
-
-## 4. Key Technical Innovations
-
-### Adaptive Client-Side Chunking
-Offloading initial parsing and chunking to the client prevents the backend from managing large, stateful file uploads. The backend remains stateless, receiving small, easily processed JSON payloads. Passing a 10,000-row CSV into an LLM context window results in immediate failure due to token limits; chunking into localized 20-50 row batches ensures high mapping accuracy.
-
-### Dynamic Multi-Provider Fallback
-Relying on a single AI provider guarantees failure during load spikes or API outages. GridSense features a dynamic cascade fallback system. If a `429 Too Many Requests` or `503 Service Unavailable` error is encountered (e.g., on Groq), the pipeline seamlessly cycles the failed batch to the next available provider (Gemini, OpenRouter) without surfacing the network failure to the end-user.
-
-### Privacy-First Local Inference (Ollama)
-For environments handling highly sensitive PII (Personally Identifiable Information) or strict compliance requirements (GDPR/HIPAA), GridSense supports zero-cost, 100% local inference. When enabled, the browser intercepts AI requests and routes them directly to the user's local GPU daemon, bypassing cloud providers entirely.
-
-### Zod Runtime Boundaries
-TypeScript provides compile-time safety, but an LLM response is inherently untyped runtime data. GridSense enforces a strict runtime boundary using `Zod`. The pipeline guarantees that any data re-entering the deterministic flow matches the exact target interfaces, stripping invalid keys and coercing types before serialization.
 
 ---
 
-## 5. Local Development & Deployment
+## 4. Local Development & Deployment
 
 The project operates as a unified monorepo containing both the Next.js client and the Express.js API server.
 
 ### Prerequisites
 - Node.js (v18+)
-- Local Ollama Daemon (Optional, for local inference)
+- Local Ollama Daemon (Optional, for privacy-first local inference)
 
 ### Repository Setup
 
@@ -104,7 +111,7 @@ npm run dev
 ```
 
 ### Environment Variables
-For cloud-based AI inference, the following secrets must be configured in `.env`:
+For cloud-based AI inference, the following secrets must be configured in `.env` inside the `backend` folder:
 - `GROQ_API_KEY`
 - `GEMINI_API_KEY`
 - `OPENAI_API_KEY` (Optional)
@@ -114,7 +121,7 @@ For cloud-based AI inference, the following secrets must be configured in `.env`
 
 ---
 
-## 6. Local AI Configuration (Ollama)
+## 5. Local AI Configuration (Ollama)
 
 To utilize GridSense's local inference capabilities, you must configure your local Ollama daemon to accept cross-origin requests from the web application.
 
@@ -141,16 +148,13 @@ To utilize GridSense's local inference capabilities, you must configure your loc
 
 ---
 
-## 7. Testing & Quality Assurance
+## 6. Testing & Quality Assurance
 
 The backend architecture includes a comprehensive Vitest suite designed to validate the extraction logic without consuming live API tokens. The testing environment utilizes an injected mock AI provider to guarantee deterministic execution of the pipeline logic during CI/CD.
 
 ```bash
-npm run test:backend
+cd backend
+npm run test
 ```
 
-The validation strategy relies on asserting that the `processBatch` controller correctly parses, sanitizes, and maps varying structural inputs into the exact 15-field CRM schema under varied load and error conditions.
-
----
-
-*Built for the GrowEasy Software Developer Internship Evaluation.*
+The validation strategy relies on asserting that the `processBatch` controller correctly parses, sanitizes, and maps varying structural inputs into the exact 13-field CRM schema under varied load and error conditions.
