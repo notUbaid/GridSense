@@ -174,8 +174,8 @@ export function ResultsTable({ data, originalFilename }: ResultsTableProps) {
             navigator.clipboard.writeText(JSON.stringify(data, null, 2));
             toast.success('Copied all JSON to clipboard');
           }} variant="ghost" size="sm" className="h-8 hidden sm:flex">Copy JSON</Button>
-          <Button onClick={exportJson} variant="outline" size="sm" className="h-8 hidden sm:flex">Download JSON</Button>
-          <Button onClick={exportCsv} variant="outline" size="sm" className="h-8">Export CSV</Button>
+          <Button onClick={exportJson} variant="outline" size="sm" className="h-8 hidden sm:flex border-amber-500/30 text-amber-600 hover:bg-amber-500/10 hover:text-amber-700 dark:border-amber-500/30 dark:text-amber-400 dark:hover:text-amber-300">Download JSON</Button>
+          <Button onClick={exportCsv} variant="outline" size="sm" className="h-8 border-green-500/30 text-green-600 hover:bg-green-500/10 hover:text-green-700 dark:border-green-500/30 dark:text-green-400 dark:hover:text-green-300">Export CSV</Button>
         </div>
       </div>
       <div className="rounded-md border bg-card overflow-x-auto max-w-full max-h-[600px] overflow-y-auto relative">
