@@ -557,7 +557,7 @@ export function useProcessing() {
     // Final sync of records with Deduplication
     const seenEmails = new Set<string>();
     const seenPhones = new Set<string>();
-    const uniqueRecords: ExtractedRecord[] = [];
+    const uniqueRecords: CrmRecord[] = [];
     
     // Sort by _row_id first so we always keep the earliest row
     const sortedRecords = [...allExtractedRecords].sort((a, b) => parseInt(a._row_id || '0') - parseInt(b._row_id || '0'));
