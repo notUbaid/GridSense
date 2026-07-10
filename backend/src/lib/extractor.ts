@@ -390,7 +390,7 @@ const DATE_FORMAT_REGEX = /\b(?:(?:19|20)\d{2}[-/.]\d{1,2}[-/.]\d{1,2}|\d{1,2}[-
 const TEXT_DATE_REGEX = /\b(?:Jan(?:uary)?|Feb(?:ruary)?|Mar(?:ch)?|Apr(?:il)?|May|Jun(?:e)?|Jul(?:y)?|Aug(?:ust)?|Sep(?:tember)?|Oct(?:ober)?|Nov(?:ember)?|Dec(?:ember)?)\s+\d{1,2}(?:st|nd|rd|th)?(?:,\s*|\s+|-)?(?:19|20)\d{2}\b/i;
 const DIGIT_REGEX = /\d/g;
 
-function resolveRelativeDate(str: string): number | null {
+function resolveRelativeDate(_str: string): number | null {
   // We explicitly reject relative dates (Yesterday, Last Week) as requested by the user,
   // preventing them from being improperly converted into static timestamps.
   return null;
