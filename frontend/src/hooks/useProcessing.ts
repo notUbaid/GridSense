@@ -452,7 +452,8 @@ export function useProcessing() {
         }
         
         const error = err as Error & { response?: { data?: { error?: string, exhaustedProvider?: string }, status?: number }, exhaustedProvider?: string };
-        const backendError = error.response?.data?.error || error.message || 'Unknown error';
+        const backendErrorObj = error.response?.data?.error || error.message || 'Unknown error';
+        const backendError = typeof backendErrorObj === 'string' ? backendErrorObj : JSON.stringify(backendErrorObj);
         const status = error.response?.status;
         const exhaustedProvider = error.response?.data?.exhaustedProvider || error.exhaustedProvider || 'groq';
         
