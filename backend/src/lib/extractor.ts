@@ -662,9 +662,26 @@ export async function processBatch(
   }
 
   const prompt = provider === 'ollama' ? 
-`Convert the following CSV data into a JSON array of objects. Do NOT wrap the array in any object.
-[{"name":"string","email":"string","mobile_without_country_code":"string","company":"string","city":"string","state":"string","country":"string","lead_owner":"string","crm_status":"GOOD_LEAD_FOLLOW_UP|DID_NOT_CONNECT|BAD_LEAD|SALE_DONE","crm_note":"string","data_source":"leads_on_demand|meridian_tower|eden_park|varah_swamy|sarjapur_plots","possession_time":"string","description":"string"}]
-Omit keys with null/empty values. Extract country codes from phones. Combine First/Last name. Ensure EXACT array length of ${aiRows.length}.
+`Convert the following CSV data into a JSON array of objects. Do NOT wrap the array in any object. Use this exact schema for every object:
+[
+  {
+    "name": "string or null",
+    "email": "string or null",
+    "mobile_without_country_code": "string or null",
+    "company": "string or null",
+    "city": "string or null",
+    "state": "string or null",
+    "country": "string or null",
+    "lead_owner": "string or null",
+    "crm_status": "GOOD_LEAD_FOLLOW_UP or DID_NOT_CONNECT or BAD_LEAD or SALE_DONE or null",
+    "crm_note": "string or null",
+    "data_source": "leads_on_demand or meridian_tower or eden_park or varah_swamy or sarjapur_plots or null",
+    "possession_time": "string or null",
+    "description": "string or null"
+  }
+]
+Use null for missing or empty values. Do NOT omit any keys.
+Extract country codes from phones. Combine First/Last name. Ensure EXACT array length of ${aiRows.length}.
 
 CSV Headers: ${JSON.stringify(headers)}
 CSV Rows:
