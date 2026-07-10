@@ -505,7 +505,7 @@ export async function processBatch(
         }
       }
 
-      if (!created_at && !/appointment|meeting|event|end|follow|birth|dob/i.test(key)) {
+      if (!created_at && /created|enquiry|added|submitted|timestamp|lead date/i.test(key)) {
         const relative = resolveRelativeDate(value);
         if (relative) {
           created_at = new Date(relative).toISOString();
@@ -523,10 +523,9 @@ export async function processBatch(
       }
 
       if (!mobile_without_country_code && value.length > 0) {
-        const isExcludedColumn = /date|time|created|updated|added|id|uuid|guid|token|zip|post|code|salary|price|amount|campaign|adset|note|desc|comment|history|message/i.test(key);
-        const isPureDate = DATE_FORMAT_REGEX.test(value);
+        const isPhoneColumn = /phone|mobile|cell|whatsapp|contact/i.test(key);
         
-        if (!isExcludedColumn && !isPureDate) {
+        if (isPhoneColumn) {
           const digitCount = (value.match(DIGIT_REGEX) || []).length;
           if (digitCount >= 7) {
             // If the value is purely a phone number format
