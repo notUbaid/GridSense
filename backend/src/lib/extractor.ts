@@ -238,8 +238,6 @@ export function markCohereKeyExhausted(index: number) {
 
 
 const LlmRecordSchema = CrmRecordSchema.omit({ 
-  email: true, 
-  mobile_without_country_code: true, 
   created_at: true,
   country_code: true,
   _row_id: true
@@ -687,14 +685,16 @@ Output JSON Format (only include keys that have values, omit all nulls):
   "records": [
     {
       "name": "string",
+      "email": "string",
+      "mobile_without_country_code": "string",
       "company": "string",
       "city": "string",
       "state": "string",
       "country": "string",
       "lead_owner": "string",
-      "crm_status": "string",
+      "crm_status": "GOOD_LEAD_FOLLOW_UP | DID_NOT_CONNECT | BAD_LEAD | SALE_DONE",
       "crm_note": "string",
-      "data_source": "string",
+      "data_source": "leads_on_demand | meridian_tower | eden_park | varah_swamy | sarjapur_plots",
       "possession_time": "string",
       "description": "string"
     }
