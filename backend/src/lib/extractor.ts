@@ -911,7 +911,7 @@ ${Papa.unparse(aiRows, { header: false })}`;
           }
           aiRecords = validated.data.records;
           parseLatencyMs = performance.now() - parseStart;
-        } else {
+        } else if (provider === 'groq') {
           const { client: groqClient, index: groqKeyIndex } = getGroqClient();
           usedGroqIndex = groqKeyIndex;
           const apiStart = performance.now();
@@ -966,6 +966,52 @@ ${Papa.unparse(aiRows, { header: false })}`;
           }
           aiRecords = validated.data.records;
           parseLatencyMs = performance.now() - parseStart;
+        } else if (provider === 'ollama') {
+          const apiStart = performance.now();
+          
+          // Use OpenAI client pointed at Ollama's local server
+          const ollamaClient = new OpenAI({ baseURL: 'http://localhost:11434/v1', apiKey: 'ollama', maxRetries: 0 });
+          const completion = await ollamaClient.chat.completions.create({
+            model: 'llama3', // User can change this if needed
+            messages: [
+              { role: 'system', content: 'You are a data extraction system. Output ONLY valid JSON matching the requested schema. No markdown fences, no commentary.' },
+              { role: 'user', content: prompt }
+            ],
+            temperature: attempt > 0 ? 0.0 : 0.1,
+            response_format: { type: 'json_object' }
+          });
+          apiLatencyMs = performance.now() - apiStart;
+
+          const content = completion.choices[0]?.message?.content;
+          if (!content) throw new Error('Empty response from Ollama');
+          responseChars = content.length;
+          promptTokens = completion.usage?.prompt_tokens || 0;
+          responseTokens = completion.usage?.completion_tokens || 0;
+
+          const parseStart = performance.now();
+          const cleaned = stripMarkdownFences(content);
+          let parsed;
+          try {
+            parsed = JSON.parse(cleaned);
+          } catch (e) {
+            logger.warn({ content: cleaned.substring(0, 500) }, 'JSON parse failed, attempting to repair truncated JSON');
+            try {
+              const repaired = repairTruncatedJson(cleaned);
+              parsed = JSON.parse(repaired);
+            } catch {
+              throw e;
+            }
+          }
+          parsed = salvageExtractorJson(parsed);
+          const validated = llmResponseSchema.safeParse(parsed);
+          if (!validated.success) {
+            logger.error({ errors: validated.error.format() }, 'Zod validation failed on Ollama output');
+            throw new Error('AI output did not match expected schema');
+          }
+          aiRecords = validated.data.records;
+          parseLatencyMs = performance.now() - parseStart;
+        } else {
+          throw new Error(`Unsupported AI Provider: ${provider}`);
         }
       }
 
