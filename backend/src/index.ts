@@ -17,7 +17,7 @@ app.use(helmet());
 app.use(cors({
   origin: config.FRONTEND_URL,
 }));
-app.use(express.json({ limit: '10mb' })); // Support larger payloads for batches
+app.use(express.json({ limit: '50mb' })); // Support larger payloads for deterministic batches
 
 const apiLimiter = rateLimit({
   windowMs: 15 * 60 * 1000, // 15 minutes
