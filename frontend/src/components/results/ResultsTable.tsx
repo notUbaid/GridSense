@@ -131,7 +131,7 @@ export function ResultsTable({ data, originalFilename }: ResultsTableProps) {
         if (typeof val === 'string') {
           val = val.replace(/\r\n/g, '\\n').replace(/[\r\n]/g, '\\n').replace(/\t/g, ' ').replace(/\s{2,}/g, ' ').trim();
         }
-        normalizedRecord[key] = val ?? "";
+        normalizedRecord[key] = val ?? null;
       });
       return normalizedRecord;
     });

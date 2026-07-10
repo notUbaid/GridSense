@@ -17,6 +17,14 @@ export interface SchemaMapping {
   overallConfidence: number;
 }
 
+export interface ActivityLog {
+  id: string;
+  message: string;
+  timestamp: Date;
+  type: 'info' | 'warning' | 'error' | 'success';
+}
+
+
 export interface ProcessMetrics {
   totalRows: number;
   successfulRows: number;
@@ -43,7 +51,7 @@ const MAX_FILE_SIZE_BYTES = 50 * 1024 * 1024;
  * Batch size for AI-processed rows. Reduced to 35 to ensure
  * prompt_tokens + max_tokens stays below Groq's strict 6,000 TPM limit.
  */
-const AI_BATCH_SIZE = 50;
+const AI_BATCH_SIZE = 35;
 const DETERMINISTIC_BATCH_SIZE = 5000;
 
 export function useProcessing() {
@@ -59,6 +67,14 @@ export function useProcessing() {
   const [originalFilename, setOriginalFilename] = useState<string | null>(null);
   const [totalParsedRows, setTotalParsedRows] = useState<number>(0);
   const [currentActivity, setCurrentActivity] = useState<string>('Idle');
+  const [activityLogs, setActivityLogs] = useState<ActivityLog[]>([]);
+
+  const addLog = useCallback((message: string, type: ActivityLog['type'] = 'info') => {
+    setActivityLogs(prev => {
+      const newLog: ActivityLog = { id: Math.random().toString(36).substring(7), message, timestamp: new Date(), type };
+      return [...prev.slice(-99), newLog]; // Keep last 100 logs
+    });
+  }, []);
   const [elapsedMs, setElapsedMs] = useState<number>(0);
   const [etaMs, setEtaMs] = useState<number | null>(null);
   const [metrics, setMetrics] = useState<ProcessMetrics>({
@@ -138,6 +154,8 @@ export function useProcessing() {
     setPreviewData(null);
     setSchemaMapping(null);
     setCurrentActivity('Idle');
+    setActivityLogs([]);
+    addLog('Starting extraction pipeline...', 'info');
     setElapsedMs(0);
     setEtaMs(null);
     setMetrics({ totalRows: 0, successfulRows: 0, skippedRows: 0, failedRows: 0, failedBatches: 0, processingTimeMs: 0, totalSleepMs: 0, skipReasons: {}, failReasons: {}, parseTimeMs: 0, mappingTimeMs: 0, batchesSent: 0, totalRetries: 0, peakConcurrency: 0, isDeterministic: false });
@@ -256,6 +274,7 @@ export function useProcessing() {
     const mappingStart = performance.now();
     try {
       setCurrentActivity('AI is analyzing your column headers...');
+      addLog('Analyzing column headers via AI...', 'info');
       
       // Await the speculative promise if it exists, otherwise fire a new request
       const mappingPromise = mapHeadersPromiseRef.current || apiClient.post('/process/map-headers', { headers }, { signal: abortControllerRef.current?.signal });
@@ -280,6 +299,7 @@ export function useProcessing() {
          throw err;
       }
       // Header mapping failure is non-fatal — fall back to AI extraction
+      addLog('Failed to map headers deterministically, falling back to full AI extraction', 'warning');
       console.warn('Failed to map headers, falling back to AI extraction', err);
     }
     const mappingTimeMs = Math.round(performance.now() - mappingStart);
@@ -291,6 +311,7 @@ export function useProcessing() {
     }
 
     setCurrentActivity(`Warming up AI models for ${validRows.length} valid records...`);
+    addLog(`Warming up ${PROVIDER_CASCADE.join(', ')} AI models for ${validRows.length} records...`, 'info');
 
     // Fix #3: Use a single accumulator array instead of indexed slots
     // to avoid index collisions when batches are split on rate limit
@@ -387,6 +408,7 @@ export function useProcessing() {
       const taskProvider = getNextProvider();
       
       setCurrentActivity(`Mapping fields for rows ${task.index * effectiveBatchSize + 1} to ${Math.min((task.index + 1) * effectiveBatchSize, validRows.length)}...`);
+      addLog(`[${taskProvider.toUpperCase()}] Extracting schema for batch ${task.index + 1} (rows ${task.index * effectiveBatchSize + 1}-${Math.min((task.index + 1) * effectiveBatchSize, validRows.length)})...`, 'info');
       
       try {
         localBatchesSent++;
@@ -427,6 +449,7 @@ export function useProcessing() {
           localProcessedRows += task.batch.length;
           setProcessedRows(localProcessedRows);
           setProgress(Math.round((localProcessedRows / sanitizedData.length) * 100));
+          addLog(`[${taskProvider.toUpperCase()}] Batch ${task.index + 1} processed successfully. Extracted ${response.records?.length || 0} records.`, 'success');
         } else {
           throw new Error(response.error || 'Batch failed without specific error');
         }
@@ -441,7 +464,7 @@ export function useProcessing() {
         const status = error.response?.status;
         const exhaustedProvider = error.response?.data?.exhaustedProvider || error.exhaustedProvider || 'groq';
         
-        if (status === 429 || backendError.toLowerCase().includes('rate limit') || status === 403 || backendError.toLowerCase().includes('exhausted')) {
+        if (status === 429 || status === 413 || backendError.toLowerCase().includes('rate limit') || status === 403 || backendError.toLowerCase().includes('exhausted')) {
           // Adaptive Concurrency: Scale down aggressively on rate limit
           maxConcurrency = Math.max(1, Math.floor(maxConcurrency / 2));
           
@@ -466,6 +489,7 @@ export function useProcessing() {
                currentProviderIndex = (currentProviderIndex + 1) % PROVIDER_CASCADE.length;
              }
              setCurrentActivity(`Switching AI engine to ${PROVIDER_CASCADE[currentProviderIndex].toUpperCase()}...`);
+             addLog(`Rate limit hit on ${exhaustedProvider.toUpperCase()}. Cycling to ${PROVIDER_CASCADE[currentProviderIndex].toUpperCase()}...`, 'warning');
              localTotalSleepMs += 2000;
              await new Promise(r => setTimeout(r, 2000));
           }
@@ -491,6 +515,7 @@ export function useProcessing() {
             queue.unshift({ batch: task.batch.slice(mid), index: task.index, attempts: 0 });
             queue.unshift({ batch: task.batch.slice(0, mid), index: task.index, attempts: 0 });
             toast.info(`Splitting batch ${task.index + 1} into smaller chunks to avoid rate limits...`);
+            addLog(`Splitting batch ${task.index + 1} into smaller chunks due to payload limits...`, 'warning');
           } else {
             // Jittered Exponential Backoff
             const baseDelay = 1000;
@@ -541,6 +566,7 @@ export function useProcessing() {
     isProcessingRef.current = false;
     
     setCurrentActivity('Finalizing extraction...');
+    addLog('Finalizing extraction and preparing results...', 'info');
 
     // Track abandoned rows left in the queue due to a hard abort
     if (queue.length > 0) {
@@ -573,9 +599,11 @@ export function useProcessing() {
     if (localFailedRows === 0) {
       setState('done');
       toast.success('Extraction complete!');
+      addLog('Extraction completed successfully.', 'success');
     } else {
       setState('partial_success');
       toast.warning('Extraction finished with some batch errors. Partial results recovered.');
+      addLog(`Extraction finished with errors. Failed to process ${localFailedRows} rows.`, 'warning');
     }
   }, [previewData, clearTimer]);
 
@@ -634,6 +662,7 @@ export function useProcessing() {
     originalFilename,
     totalParsedRows,
     currentActivity,
+    activityLogs,
     elapsedMs,
     etaMs,
     processFile,

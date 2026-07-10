@@ -1,9 +1,10 @@
-import React from 'react';
+import React, { useEffect, useRef } from 'react';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 
 import { ResultsTable } from '@/components/results/ResultsTable';
 import { Skeleton } from '@/components/ui/skeleton';
 import { CrmRecord } from '@/types/schema';
+import { ActivityLog } from '@/hooks/useProcessing';
 import { Clock, Timer } from 'lucide-react';
 import { motion } from 'framer-motion';
 
@@ -13,6 +14,7 @@ interface ProgressCardProps {
   skippedRows: number;
   records: CrmRecord[];
   currentActivity: string;
+  activityLogs: ActivityLog[];
   elapsedMs: number;
   etaMs: number | null;
   totalRows: number;
@@ -26,7 +28,15 @@ function formatTime(ms: number) {
   return `${m}:${s.toString().padStart(2, '0')}`;
 }
 
-export function ProgressCard({ progress, processedRows, skippedRows, records, currentActivity, elapsedMs, etaMs, totalRows }: ProgressCardProps) {
+export function ProgressCard({ progress, processedRows, skippedRows, records, currentActivity, activityLogs, elapsedMs, etaMs, totalRows }: ProgressCardProps) {
+  const scrollRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    if (scrollRef.current) {
+      scrollRef.current.scrollTop = scrollRef.current.scrollHeight;
+    }
+  }, [activityLogs]);
+
   return (
     <motion.div 
       className="space-y-6"
@@ -73,6 +83,31 @@ export function ProgressCard({ progress, processedRows, skippedRows, records, cu
               {skippedRows > 0 && <span className="opacity-70 ml-1">({skippedRows} instantly skipped)</span>}
             </span>
             <span className="text-foreground">{progress}% Complete</span>
+          </div>
+
+          <div className="mt-4 rounded-md bg-zinc-950 text-zinc-300 font-mono text-xs overflow-hidden border border-border/50 shadow-inner">
+             <div className="flex items-center px-3 py-1.5 bg-zinc-900 border-b border-zinc-800 text-[10px] text-zinc-500 uppercase tracking-wider font-semibold">
+               <span className="flex gap-1.5 mr-3">
+                 <div className="w-2.5 h-2.5 rounded-full bg-red-500/80"></div>
+                 <div className="w-2.5 h-2.5 rounded-full bg-yellow-500/80"></div>
+                 <div className="w-2.5 h-2.5 rounded-full bg-green-500/80"></div>
+               </span>
+               Background Extraction Process
+             </div>
+             <div ref={scrollRef} className="p-3 h-40 overflow-y-auto space-y-1.5 scroll-smooth">
+               {activityLogs.map((log) => (
+                 <div key={log.id} className="flex gap-2 leading-relaxed">
+                   <span className="text-zinc-600 shrink-0">[{log.timestamp.toLocaleTimeString([], {hour12:false, hour:'2-digit', minute:'2-digit', second:'2-digit'})}]</span>
+                   <span className={
+                     log.type === 'error' ? 'text-red-400' :
+                     log.type === 'warning' ? 'text-amber-400' :
+                     log.type === 'success' ? 'text-green-400' :
+                     'text-zinc-300'
+                   }>{log.message}</span>
+                 </div>
+               ))}
+               {activityLogs.length === 0 && <span className="text-zinc-600 italic">Waiting for pipeline to start...</span>}
+             </div>
           </div>
         </CardContent>
       </Card>

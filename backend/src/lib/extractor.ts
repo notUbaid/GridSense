@@ -255,10 +255,15 @@ const llmResponseSchema = z.object({
 function normalizeAndValidate(record: any): CrmRecord {
   const norm = { ...record };
 
-  // 1. Whitespace & NaN Normalization
+  // 1. Whitespace, Placeholder & NaN Normalization
   for (const key of Object.keys(norm)) {
     if (typeof norm[key] === 'string') {
-      const val = norm[key].trim();
+      let val = norm[key].trim();
+      
+      // Remove placeholders like <>, <email>, [missing], etc that AI might hallucinate
+      val = val.replace(/<[^>]*>/g, '').replace(/\[[^\]]*\]/g, '').trim();
+      val = val.replace(/\s{2,}/g, ' '); // Collapse multiple spaces resulting from removal
+      
       const lower = val.toLowerCase();
       if (val === '' || lower === 'nan' || lower === 'null') {
         norm[key] = null;
