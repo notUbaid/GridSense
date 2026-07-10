@@ -92,6 +92,8 @@ export const VALID_DATA_SOURCES = [
 export function salvageExtractorJson(parsed: any): any {
   if (Array.isArray(parsed)) {
     parsed = { records: parsed };
+  } else if (typeof parsed === 'object' && parsed !== null && !Array.isArray(parsed.records)) {
+    parsed = { records: [parsed] };
   }
 
   if (parsed && Array.isArray(parsed.records)) {
@@ -101,6 +103,8 @@ export function salvageExtractorJson(parsed: any): any {
           const val = record[key];
           if (val === '') {
             record[key] = null;
+          } else if (typeof val === 'number' || typeof val === 'boolean') {
+            record[key] = String(val);
           } else if (typeof val === 'object' && val !== null) {
             // Flatten hallucinated nested structures (e.g. { name: ["John", "Doe"] })
             record[key] = Array.isArray(val) ? val.join(' ') : JSON.stringify(val);

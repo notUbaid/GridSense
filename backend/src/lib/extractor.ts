@@ -765,7 +765,10 @@ ${Papa.unparse(aiRows, { header: false })}`;
           }
           parsed = salvageExtractorJson(parsed);
           const validated = llmResponseSchema.safeParse(parsed);
-          if (!validated.success) throw new Error('AI output did not match expected schema');
+          if (!validated.success) {
+            logger.error({ errors: validated.error.format(), parsed }, 'Zod validation failed on precomputed response');
+            throw new Error('AI output did not match expected schema');
+          }
           aiRecords = validated.data.records;
           parseLatencyMs = performance.now() - parseStart;
         } else if (process.env.NODE_ENV === 'test') {
