@@ -7,7 +7,7 @@ import { motion, Variants, useSpring, useTransform, useMotionValueEvent } from '
 
 const ResultsTable = dynamic(() => import('@/components/results/ResultsTable').then(mod => mod.ResultsTable), { ssr: false });
 import { useEffect, useState } from 'react';
-import { AlertCircle, FileCheck2 } from 'lucide-react';
+import { AlertCircle, FileCheck2, Zap, Clock, Activity, Cpu, AlertTriangle, Database, Gauge, ServerCrash, Layers } from 'lucide-react';
 import { ProcessMetrics, ProcessState } from '@/hooks/useProcessing';
 import { CrmRecord } from '@/types/schema';
 import Papa from 'papaparse';
@@ -303,43 +303,99 @@ export function SummaryDashboard({ state, metrics, originalFilename, records, sk
                   Nerdy Info
                 </Button>
               } />
-              <DialogContent className="max-w-sm font-mono text-sm">
-                <DialogHeader>
-                  <DialogTitle className="font-sans">Extraction Details</DialogTitle>
-                </DialogHeader>
-                <div className="space-y-4 pt-4">
-                  <div className="grid grid-cols-2 gap-y-1">
-                    <span className="text-muted-foreground">Mode:</span>
-                    <span className="text-right">{metrics.isDeterministic ? 'Deterministic' : 'AI Inference'}</span>
-                    <span className="text-muted-foreground">CSV Parse:</span>
-                    <span className="text-right">{metrics.parseTimeMs}ms</span>
-                    <span className="text-muted-foreground">Header Analysis:</span>
-                    <span className="text-right">{metrics.mappingTimeMs}ms</span>
-                    <span className="text-muted-foreground">Extraction processing:</span>
-                    <span className="text-right">{Math.max(0, (metrics.processingTimeMs - metrics.totalSleepMs - metrics.parseTimeMs - metrics.mappingTimeMs) / 1000).toFixed(2)}s</span>
-                    <span className="text-muted-foreground">Rate Limit Sleep:</span>
-                    <span className="text-right text-orange-400">{(metrics.totalSleepMs / 1000).toFixed(2)}s</span>
-                    <span className="text-muted-foreground font-bold mt-2">Total Time:</span>
-                    <span className="text-right font-bold mt-2">{(metrics.processingTimeMs / 1000).toFixed(2)}s</span>
+              <DialogContent className="max-w-2xl bg-card border-border/50 shadow-2xl p-0 overflow-hidden">
+                <div className="bg-gradient-to-r from-blue-500/10 to-indigo-500/10 px-6 py-4 border-b border-border/50 flex items-center justify-between">
+                  <div className="flex items-center space-x-2">
+                    <div className="p-2 bg-blue-500/20 rounded-md">
+                      <Cpu className="w-5 h-5 text-blue-500" />
+                    </div>
+                    <DialogTitle className="text-lg font-semibold tracking-tight">Extraction Details</DialogTitle>
                   </div>
-                  
-                  <div className="h-px bg-border" />
-                  
-                  <div className="grid grid-cols-2 gap-y-1">
-                    <span className="text-muted-foreground">Total Input Rows</span>
-                    <span className="text-right">{metrics.totalRows}</span>
-                    <span className="text-destructive">Failed (API Limits)</span>
-                    <span className="text-right text-destructive font-bold">{metrics.failedRows}</span>
-                    <span className="text-muted-foreground">Batches Sent</span>
-                    <span className="text-right">{metrics.batchesSent}</span>
-                    <span className="text-muted-foreground">Avg API Latency</span>
-                    <span className="text-right">{metrics.batchesSent > 0 ? Math.round((metrics.processingTimeMs - metrics.totalSleepMs) / Math.max(1, metrics.batchesSent)) : 0}ms</span>
-                    <span className="text-muted-foreground">Peak Concurrency</span>
-                    <span className="text-right">{metrics.peakConcurrency} workers</span>
-                    <span className="text-muted-foreground">API Retries</span>
-                    <span className="text-right">{metrics.totalRetries}</span>
-                    <span className="text-muted-foreground">Rows/sec</span>
-                    <span className="text-right">{metrics.processingTimeMs > 0 ? Math.round((metrics.totalRows / metrics.processingTimeMs) * 1000) : 0}</span>
+                  <div className="px-3 py-1 rounded-full bg-background/50 border border-border text-xs font-medium text-muted-foreground flex items-center space-x-1.5">
+                    <span className="relative flex h-2 w-2">
+                      <span className={cn("animate-ping absolute inline-flex h-full w-full rounded-full opacity-75", metrics.isDeterministic ? "bg-green-400" : "bg-blue-400")}></span>
+                      <span className={cn("relative inline-flex rounded-full h-2 w-2", metrics.isDeterministic ? "bg-green-500" : "bg-blue-500")}></span>
+                    </span>
+                    <span>{metrics.isDeterministic ? 'Deterministic Fast-Path' : 'AI Inference'}</span>
+                  </div>
+                </div>
+
+                <div className="p-6 grid grid-cols-1 md:grid-cols-2 gap-4">
+                  {/* Processing Time Breakdown */}
+                  <div className="bg-muted/30 border border-border/50 rounded-xl p-4 space-y-3">
+                    <div className="flex items-center space-x-2 mb-2">
+                      <Clock className="w-4 h-4 text-muted-foreground" />
+                      <h4 className="text-sm font-semibold">Processing Timeline</h4>
+                    </div>
+                    <div className="flex justify-between items-center text-sm">
+                      <span className="text-muted-foreground">CSV Parsing</span>
+                      <span className="font-mono font-medium">{metrics.parseTimeMs}ms</span>
+                    </div>
+                    <div className="flex justify-between items-center text-sm">
+                      <span className="text-muted-foreground">Header Analysis</span>
+                      <span className="font-mono font-medium">{metrics.mappingTimeMs}ms</span>
+                    </div>
+                    <div className="flex justify-between items-center text-sm">
+                      <span className="text-muted-foreground">Core Extraction</span>
+                      <span className="font-mono font-medium">{Math.max(0, (metrics.processingTimeMs - metrics.totalSleepMs - metrics.parseTimeMs - metrics.mappingTimeMs) / 1000).toFixed(2)}s</span>
+                    </div>
+                    <div className="flex justify-between items-center text-sm">
+                      <span className="text-muted-foreground">Rate Limit Sleep</span>
+                      <span className="font-mono font-medium text-amber-500">{(metrics.totalSleepMs / 1000).toFixed(2)}s</span>
+                    </div>
+                    <div className="pt-2 mt-2 border-t border-border/50 flex justify-between items-center">
+                      <span className="font-medium text-sm">Total Time</span>
+                      <span className="font-mono font-bold text-primary">{(metrics.processingTimeMs / 1000).toFixed(2)}s</span>
+                    </div>
+                  </div>
+
+                  {/* Job Metrics */}
+                  <div className="bg-muted/30 border border-border/50 rounded-xl p-4 space-y-3">
+                    <div className="flex items-center space-x-2 mb-2">
+                      <Activity className="w-4 h-4 text-muted-foreground" />
+                      <h4 className="text-sm font-semibold">Job Metrics</h4>
+                    </div>
+                    <div className="flex justify-between items-center text-sm">
+                      <span className="text-muted-foreground">Total Input Rows</span>
+                      <span className="font-mono font-medium">{metrics.totalRows}</span>
+                    </div>
+                    <div className="flex justify-between items-center text-sm">
+                      <span className="text-muted-foreground">Processing Speed</span>
+                      <span className="font-mono font-medium">{metrics.processingTimeMs > 0 ? Math.round((metrics.totalRows / metrics.processingTimeMs) * 1000) : 0} rows/s</span>
+                    </div>
+                    <div className="flex justify-between items-center text-sm">
+                      <span className="text-muted-foreground">Peak Concurrency</span>
+                      <span className="font-mono font-medium">{metrics.peakConcurrency} workers</span>
+                    </div>
+                    <div className="flex justify-between items-center text-sm">
+                      <span className="text-muted-foreground">Batches Dispatched</span>
+                      <span className="font-mono font-medium">{metrics.batchesSent}</span>
+                    </div>
+                    <div className="flex justify-between items-center text-sm">
+                      <span className="text-muted-foreground">Avg API Latency</span>
+                      <span className="font-mono font-medium">{metrics.batchesSent > 0 ? Math.round((metrics.processingTimeMs - metrics.totalSleepMs) / Math.max(1, metrics.batchesSent)) : 0}ms</span>
+                    </div>
+                  </div>
+
+                  {/* Errors & Retries */}
+                  <div className="md:col-span-2 bg-muted/30 border border-border/50 rounded-xl p-4 flex items-center justify-between">
+                     <div className="flex items-center space-x-6">
+                        <div>
+                          <div className="flex items-center space-x-1.5 mb-1">
+                            <ServerCrash className="w-3.5 h-3.5 text-destructive" />
+                            <span className="text-xs font-medium uppercase tracking-wider text-muted-foreground">Failed Rows</span>
+                          </div>
+                          <span className={cn("font-mono text-lg font-semibold", metrics.failedRows > 0 ? "text-destructive" : "text-foreground")}>{metrics.failedRows}</span>
+                        </div>
+                        <div className="h-8 w-px bg-border/50" />
+                        <div>
+                          <div className="flex items-center space-x-1.5 mb-1">
+                            <AlertTriangle className="w-3.5 h-3.5 text-amber-500" />
+                            <span className="text-xs font-medium uppercase tracking-wider text-muted-foreground">API Retries</span>
+                          </div>
+                          <span className={cn("font-mono text-lg font-semibold", metrics.totalRetries > 0 ? "text-amber-500" : "text-foreground")}>{metrics.totalRetries}</span>
+                        </div>
+                     </div>
                   </div>
                 </div>
               </DialogContent>

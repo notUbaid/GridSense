@@ -49,10 +49,10 @@ export interface ProcessMetrics {
 const MAX_FILE_SIZE_BYTES = 50 * 1024 * 1024;
 
 /**
- * Batch size for AI-processed rows. Reduced to 35 to ensure
+ * Batch size for AI-processed rows. Reduced to 50 to ensure
  * prompt_tokens + max_tokens stays below Groq's strict 6,000 TPM limit.
  */
-const AI_BATCH_SIZE = 35;
+const AI_BATCH_SIZE = 50;
 const DETERMINISTIC_BATCH_SIZE = 5000;
 
 export function useProcessing() {
@@ -289,7 +289,7 @@ export function useProcessing() {
           setSchemaMapping(data);
           // With a high-confidence schema mapping, we can use deterministic processing
           // which doesn't hit the AI — so we can use much larger batches
-          if (data.overallConfidence >= 70) {
+          if (data.overallConfidence >= 30) {
             effectiveBatchSize = DETERMINISTIC_BATCH_SIZE;
             localIsDeterministic = true;
             fetchedMapping = data.mapping; // Only use mapping if highly confident
