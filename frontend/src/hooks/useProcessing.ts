@@ -247,17 +247,6 @@ export function useProcessing() {
     const localSkipReasons: Record<string, number> = {};
 
     for (const row of sanitizedData) {
-      const rowVals = Object.values(row).join(' ').toLowerCase();
-      const hasEmail = rowVals.includes('@');
-      const totalDigits = (rowVals.match(DIGIT_REGEX) || []).length;
-      
-      if (!hasEmail && totalDigits < 7) {
-        const reason = `Record skipped because no usable contact exists (No valid email detected, phone contained only ${totalDigits} digits)`;
-        localSkippedRaw.push({ ...row, _skipReason: reason });
-        localSkipReasons[reason] = (localSkipReasons[reason] || 0) + 1;
-        continue;
-      }
-
       validRows.push(row);
     }
 

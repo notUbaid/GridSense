@@ -386,16 +386,13 @@ function normalizeAndValidate(record: any): CrmRecord {
 const EMAIL_REGEX = /[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}/;
 const PHONE_FORMAT_REGEX = /^[\s\d()+-]{7,30}$/;
 const PHONE_EMBEDDED_REGEX = /(?:\+?\d{1,4}[\s.-]*)?\(?\d{2,4}\)?(?:[\s.-]*\d{2,6}){1,4}(?:\s*(?:ext|x|extension)\.?\s*\d{1,5})?/i;
-const DATE_FORMAT_REGEX = /\b(?:19|20)\d{2}[-/.]\d{1,2}[-/.]\d{1,2}\b|\b\d{1,2}[-/.]\d{1,2}[-/.](?:19|20)\d{2}\b/;
-const TEXT_DATE_REGEX = /\b(?:Jan(?:uary)?|Feb(?:ruary)?|Mar(?:ch)?|Apr(?:il)?|May|Jun(?:e)?|Jul(?:y)?|Aug(?:ust)?|Sep(?:tember)?|Oct(?:ober)?|Nov(?:ember)?|Dec(?:ember)?)\s+\d{1,2}(?:st|nd|rd|th)?(?:,\s*|\s+)(?:19|20)\d{2}\b/i;
+const DATE_FORMAT_REGEX = /\b(?:(?:19|20)\d{2}[-/.]\d{1,2}[-/.]\d{1,2}|\d{1,2}[-/.]\d{1,2}[-/.\s]*(?:19|20)\d{2}|\d{1,2}[-/\s]+(?:Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Oct|Nov|Dec)[a-z]*[-/\s]+(?:19|20)\d{2})\b/i;
+const TEXT_DATE_REGEX = /\b(?:Jan(?:uary)?|Feb(?:ruary)?|Mar(?:ch)?|Apr(?:il)?|May|Jun(?:e)?|Jul(?:y)?|Aug(?:ust)?|Sep(?:tember)?|Oct(?:ober)?|Nov(?:ember)?|Dec(?:ember)?)\s+\d{1,2}(?:st|nd|rd|th)?(?:,\s*|\s+|-)?(?:19|20)\d{2}\b/i;
 const DIGIT_REGEX = /\d/g;
 
 function resolveRelativeDate(str: string): number | null {
-  const lower = str.trim().toLowerCase();
-  const now = new Date();
-  if (lower === 'today') return now.getTime();
-  if (lower === 'yesterday') return now.getTime() - 86400000;
-  if (lower === 'tomorrow') return now.getTime() + 86400000;
+  // We explicitly reject relative dates (Yesterday, Last Week) as requested by the user,
+  // preventing them from being improperly converted into static timestamps.
   return null;
 }
 
@@ -477,10 +474,19 @@ export async function processBatch(
       if (!value) continue;
 
       if (!email) {
-        const match = value.match(EMAIL_REGEX);
-        if (match) {
-          email = match[0];
-          value = value.replace(match[0], '').trim();
+        const isNoteColumn = /note|desc|comment|history|message|detail|context/i.test(key);
+        const isEmailColumn = /email/i.test(key);
+
+        if (isEmailColumn || !isNoteColumn) {
+          const match = value.match(EMAIL_REGEX);
+          if (match) {
+            email = match[0];
+            const remainder = value.replace(match[0], '').trim();
+            if (remainder.length > 0) {
+              sanitized.crm_note = sanitized.crm_note ? `${sanitized.crm_note} | Extra email info: ${remainder}` : `Extra email info: ${remainder}`;
+            }
+            value = '';
+          }
         }
       }
 
@@ -502,7 +508,7 @@ export async function processBatch(
       }
 
       if (!mobile_without_country_code && value.length > 0) {
-        const isExcludedColumn = /date|time|created|updated|added|id|uuid|guid|token|zip|post|code|salary|price|amount|campaign|adset/i.test(key);
+        const isExcludedColumn = /date|time|created|updated|added|id|uuid|guid|token|zip|post|code|salary|price|amount|campaign|adset|note|desc|comment|history|message/i.test(key);
         const isPureDate = DATE_FORMAT_REGEX.test(value);
         
         if (!isExcludedColumn && !isPureDate) {
