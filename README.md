@@ -5,101 +5,82 @@
 [![Tailwind CSS](https://img.shields.io/badge/Tailwind-CSS-38B2AC?style=flat&logo=tailwind-css)](https://tailwindcss.com/)
 [![TypeScript](https://img.shields.io/badge/TypeScript-Strict-blue?style=flat&logo=typescript)](https://www.typescriptlang.org/)
 
-**GridSense** is an intelligent, hybrid AI data ingestion pipeline. It seamlessly maps messy, unstructured CSV files into a strictly typed CRM schema, bridging the gap between volatile user-generated data and strict backend validation requirements.
+**GridSense** is an enterprise-grade, hybrid artificial intelligence data ingestion pipeline. It provides a robust, scalable bridge between volatile, unstructured user-generated data (such as arbitrary CSV exports) and strict backend validation systems (such as rigid CRM schemas).
+
+By isolating non-deterministic Large Language Model (LLM) behavior within a tightly controlled deterministic shell, GridSense achieves near-perfect data extraction accuracy without the latency or hallucination risks typically associated with AI-driven parsing.
 
 ---
 
-## The Problem
+## 1. Project Context & The Data Volatility Problem
 
-CRM data migration fundamentally suffers from format volatility. End-users export data from disparate sources (Facebook Lead Ads, Google Ads, legacy CRM systems, manual spreadsheets). These exports yield arbitrary column headers, inconsistent date formats, embedded newlines, and scattered contact information.
+In B2B SaaS and enterprise CRM systems, data ingestion is a notoriously brittle process. End-users frequently export data from highly disparate sources, including legacy CRMs, marketing platforms (Facebook Lead Ads, Google Ads), or manually maintained spreadsheets. These exports yield arbitrary column headers, inconsistent date formats, embedded newlines, and scattered contact information.
 
-Traditional fixed-schema CSV importers fail because they require strict column mapping. When headers change or columns are merged (e.g., "Full Name" instead of "First" and "Last"), deterministic parsers drop the data or force manual user intervention.
+Traditional ingestion pipelines rely on fixed-schema CSV parsers, which require strict column mapping. When a header changes (e.g., from "Full Name" to "First" and "Last"), or when a phone number is buried within a "Client Notes" column, deterministic parsers silently drop the data or force extensive manual user intervention.
 
-## The Solution
+GridSense solves this problem by utilizing semantic AI as a contextual translation layer, governed by rigid schema boundaries.
 
-GridSense approaches data ingestion by combining **deterministic software engineering** with **semantic AI extraction**.
+## 2. The Hybrid Extraction Methodology
 
-Instead of relying entirely on fragile regular expressions or trusting an LLM with raw, unconstrained output, the system uses AI exclusively as a semantic translation layer. Hard constraints are applied before and after the LLM execution. Deterministic logic handles file parsing, chunking, validation, and serialization. The AI is only invoked to semantically map unknown column headers to the target schema, isolating non-deterministic behavior to a single, easily observable boundary.
+GridSense rejects the paradigm of passing raw data files directly into an LLM. Instead, it utilizes a hybrid architecture:
 
-## Key Features
+1. **Deterministic Fast-Path**: Standard CSV layout reading, row splitting, concurrency, type coercion, and final data formatting are handled exclusively by compiled, deterministic logic.
+2. **Semantic Fallback**: The AI is invoked solely to map unrecognized column headers or extract nested entities (e.g., finding a valid Indian mobile number inside a block of text).
+3. **Strict Boundaries**: If the LLM generates a row that does not conform to the predefined `Zod` schema, the payload is rejected and the chunk is retried. Row integrity is strictly preserved; input arrays are mapped back to their original indexes, guaranteeing that no data is silently dropped, duplicated, or hallucinated by the AI.
 
-- **Local Privacy-First AI (Ollama)**: Execute LLM extraction locally on your own hardware at zero cost, ensuring strict data privacy.
-- **Dynamic Cloud Fallback**: Automatically cascades across cloud AI providers (Groq, Gemini, OpenRouter) if local models are unavailable or rate-limited.
-- **Client-Side Chunking**: Leverages Web Workers to parse and chunk massive CSVs directly in the browser, preventing server memory bloat.
-- **Zod Schema Boundaries**: All LLM outputs are stripped of markdown and piped through strictly typed Zod schemas to guarantee data integrity.
-- **Resilient Retry Logic**: Automatically catches `429 Too Many Requests` or `503 Service Unavailable` errors, splits failed batches, and cycles to the next available AI engine.
-
----
-
-## Using Local AI (Ollama)
-
-GridSense supports **100% local, zero-cost data extraction** using [Ollama](https://ollama.com/). This allows you to process highly sensitive CRM data without ever sending it to a cloud provider.
-
-### Setup Instructions
-
-1. Install and start [Ollama](https://ollama.com/) on your local machine.
-2. Download your preferred model. We recommend `gemma3` or `llama3`:
-   ```bash
-   ollama run gemma3:latest
-   ```
-3. **CRITICAL: Enable CORS**
-   Because modern web browsers block cross-origin requests for security, you MUST launch Ollama with CORS permissions enabled so the GridSense web app can communicate with your local daemon.
-
-   **On macOS/Linux:**
-   ```bash
-   OLLAMA_ORIGINS="*" ollama serve
-   ```
-   
-   **On Windows (PowerShell):**
-   ```powershell
-   $env:OLLAMA_ORIGINS="*"
-   ollama serve
-   ```
-4. Open the GridSense app, click the **Microchip Icon** (Local AI Toggle) in the top right corner to activate local inference.
-
-When enabled, the browser will seamlessly intercept AI requests, send the prompts to your local GPU, and relay the mapped data back to the server for strict validation. If Ollama is turned off or unreachable, GridSense will transparently failover to cloud providers.
-
----
-
-## Architecture
+## 3. System Architecture & Data Flow
 
 ```mermaid
 flowchart TD
-    subgraph Client ["Frontend (Browser)"]
+    subgraph Client ["Frontend Application (Browser)"]
         A[File Selection] --> B[PapaParse Web Worker]
-        B --> C[Heuristic Filtering]
-        C --> D[Header Analysis]
-        D --> E{Semantic Confidence}
-        E -- "High (≥ 70%)" --> F[Deterministic Extraction]
+        B --> C[Heuristic Triage & Filtering]
+        C --> D[Header Analysis & Chunking]
+        D --> E{Semantic Confidence Score}
+        E -- "High (≥ 70%)" --> F[Deterministic Extraction Fast-Path]
         E -- "Low (< 70%)" --> G[AI Semantic Mapping]
-        G --> O{Local Ollama Enabled?}
-        O -- "Yes" --> P[Local GPU Inference]
+        G --> O{Local Inference Enabled?}
+        O -- "Yes" --> P[Local GPU Inference via Ollama]
         P --> H
     end
 
-    subgraph Server ["Backend (Express)"]
-        G --> H[Batching & Concurrency]
+    subgraph Server ["Backend API (Express.js)"]
+        G --> H[Batch Queueing & Concurrency Management]
         O -- "No" --> H
         H --> I[LLM Prompt Construction]
-        I --> J{Multi-Provider Fallback}
-        J --> K[Zod Schema Validation]
+        I --> J{Multi-Provider Fallback Cascade}
+        J --> K[Zod Schema Runtime Validation]
     end
 
-    F --> L[Data Normalization]
+    F --> L[Data Normalization & Formatting]
     K --> L
-    L --> M[Export]
+    L --> M[Structured CSV Export]
 ```
 
-## Engineering Decisions
+## 4. Key Technical Innovations
 
-- **Why batching?** Passing a 10,000-row CSV into an LLM context window results in immediate failure due to token limits or severe degradation in instruction adherence. Chunking into small 20-50 row batches ensures high mapping accuracy.
-- **Why client-side chunking?** Offloading the initial parsing and chunking to the client prevents the backend from managing large, stateful file uploads. The backend remains stateless.
-- **Why multi-provider retries?** Relying on a single free-tier AI API guarantees failure during load spikes. The cascade fallback system allows the pipeline to gracefully recover without surfacing the failure to the user.
-- **Why Zod?** The pipeline requires a runtime guarantee that the AI output matches the TypeScript interfaces. Zod enforces this boundary, stripping invalid keys and coercing types before the data re-enters the deterministic pipeline.
+### Adaptive Client-Side Chunking
+Offloading initial parsing and chunking to the client prevents the backend from managing large, stateful file uploads. The backend remains stateless, receiving small, easily processed JSON payloads. Passing a 10,000-row CSV into an LLM context window results in immediate failure due to token limits; chunking into localized 20-50 row batches ensures high mapping accuracy.
 
-## Local Development
+### Dynamic Multi-Provider Fallback
+Relying on a single AI provider guarantees failure during load spikes or API outages. GridSense features a dynamic cascade fallback system. If a `429 Too Many Requests` or `503 Service Unavailable` error is encountered (e.g., on Groq), the pipeline seamlessly cycles the failed batch to the next available provider (Gemini, OpenRouter) without surfacing the network failure to the end-user.
 
-The project operates as a monorepo containing both the Next.js client and Express.js server.
+### Privacy-First Local Inference (Ollama)
+For environments handling highly sensitive PII (Personally Identifiable Information) or strict compliance requirements (GDPR/HIPAA), GridSense supports zero-cost, 100% local inference. When enabled, the browser intercepts AI requests and routes them directly to the user's local GPU daemon, bypassing cloud providers entirely.
+
+### Zod Runtime Boundaries
+TypeScript provides compile-time safety, but an LLM response is inherently untyped runtime data. GridSense enforces a strict runtime boundary using `Zod`. The pipeline guarantees that any data re-entering the deterministic flow matches the exact target interfaces, stripping invalid keys and coercing types before serialization.
+
+---
+
+## 5. Local Development & Deployment
+
+The project operates as a unified monorepo containing both the Next.js client and the Express.js API server.
+
+### Prerequisites
+- Node.js (v18+)
+- Local Ollama Daemon (Optional, for local inference)
+
+### Repository Setup
 
 ```bash
 # Clone the repository
@@ -111,31 +92,65 @@ npm ci
 cd frontend && npm ci
 cd backend && npm ci
 
-# Copy environment variables
+# Configure environment variables
 cp .env.example .env
 ```
 
-To run both servers concurrently:
+### Running the Application
+
+To run both the frontend and backend servers concurrently:
 ```bash
 npm run dev
 ```
 
 ### Environment Variables
-Production cloud deployments require the following secrets in `.env`:
+For cloud-based AI inference, the following secrets must be configured in `.env`:
 - `GROQ_API_KEY`
 - `GEMINI_API_KEY`
 - `OPENAI_API_KEY` (Optional)
 - `ANTHROPIC_API_KEY` (Optional)
 
-*(Note: No API keys are required if you exclusively use Local Ollama).*
+*(Note: API keys are not required if you exclusively utilize the Local Inference execution path).*
 
-## Testing
+---
 
-The backend includes a Vitest suite designed to validate the extraction logic without consuming live API tokens. The test environment utilizes a mocked AI provider to ensure deterministic execution of the pipeline.
+## 6. Local AI Configuration (Ollama)
+
+To utilize GridSense's local inference capabilities, you must configure your local Ollama daemon to accept cross-origin requests from the web application.
+
+1. Ensure [Ollama](https://ollama.com/) is installed and running.
+2. Download a high-performance quantized model (e.g., `gemma3` or `llama3`):
+   ```bash
+   ollama run gemma3:latest
+   ```
+3. **Enable CORS Parameters**:
+   Modern browsers block local requests from external web origins for security. You must launch the daemon with the appropriate CORS overrides.
+
+   **macOS / Linux:**
+   ```bash
+   OLLAMA_ORIGINS="*" ollama serve
+   ```
+   
+   **Windows (PowerShell):**
+   ```powershell
+   $env:OLLAMA_ORIGINS="*"
+   ollama serve
+   ```
+
+4. Within the GridSense application UI, toggle the local inference setting (the microchip icon). All extraction workloads will instantly route to your local hardware.
+
+---
+
+## 7. Testing & Quality Assurance
+
+The backend architecture includes a comprehensive Vitest suite designed to validate the extraction logic without consuming live API tokens. The testing environment utilizes an injected mock AI provider to guarantee deterministic execution of the pipeline logic during CI/CD.
 
 ```bash
 npm run test:backend
 ```
 
+The validation strategy relies on asserting that the `processBatch` controller correctly parses, sanitizes, and maps varying structural inputs into the exact 15-field CRM schema under varied load and error conditions.
+
 ---
+
 *Built for the GrowEasy Software Developer Internship Evaluation.*
