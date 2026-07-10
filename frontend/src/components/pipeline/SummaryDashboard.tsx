@@ -7,7 +7,7 @@ import { motion, Variants, useSpring, useTransform, useMotionValueEvent } from '
 
 const ResultsTable = dynamic(() => import('@/components/results/ResultsTable').then(mod => mod.ResultsTable), { ssr: false });
 import { useEffect, useState } from 'react';
-import { AlertCircle, FileCheck2, Zap, Clock, Activity, Cpu, AlertTriangle, Database, Gauge, ServerCrash, Layers } from 'lucide-react';
+import { AlertCircle, FileCheck2, Clock, Activity, Cpu, AlertTriangle, ServerCrash } from 'lucide-react';
 import { ProcessMetrics, ProcessState } from '@/hooks/useProcessing';
 import { CrmRecord } from '@/types/schema';
 import Papa from 'papaparse';

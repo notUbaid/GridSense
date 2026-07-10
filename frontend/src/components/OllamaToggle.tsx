@@ -14,12 +14,9 @@ export function OllamaToggle({ useOllama, setUseOllama }: OllamaToggleProps) {
   const [isOpen, setIsOpen] = React.useState(false);
   const popupRef = React.useRef<HTMLDivElement>(null);
 
-  // Sync state if it was toggled off externally (e.g., from an error in useProcessing)
-  React.useEffect(() => {
-    if (!useOllama && connectionState === 'connected') {
-      setConnectionState('idle');
-    }
-  }, [useOllama, connectionState]);
+  // We can just rely on the prop for useOllama without needing a useEffect here,
+  // since the parent handles toggling it off. If we really wanted to sync, we
+  // could do it during render, but it's not strictly necessary for now.
 
   // Click outside to close popup
   React.useEffect(() => {
@@ -170,7 +167,7 @@ export function OllamaToggle({ useOllama, setUseOllama }: OllamaToggleProps) {
                   Connection Failed
                 </div>
                 <p className="text-xs text-muted-foreground">
-                  Ensure Ollama is running and CORS is enabled via <code className="bg-muted px-1 py-0.5 rounded text-xs">OLLAMA_ORIGINS="*"</code>. See README for details.
+                  Ensure Ollama is running and CORS is enabled via <code className="bg-muted px-1 py-0.5 rounded text-xs">OLLAMA_ORIGINS=&quot;*&quot;</code>. See README for details.
                 </p>
               </div>
             )}

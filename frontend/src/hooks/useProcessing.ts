@@ -3,7 +3,7 @@
 import { useState, useCallback, useRef, useEffect } from 'react';
 import Papa from 'papaparse';
 
-const DIGIT_REGEX = /\d/g;
+
 
 import { processBatchApi, apiClient, callLocalOllama } from '../services/api';
 import { CrmRecord, ProcessBatchRequest } from '../types/schema';
@@ -229,7 +229,7 @@ export function useProcessing() {
         toast.error(errMsg);
       },
     });
-  }, []);
+  }, [addLog]);
 
   const startProcessing = useCallback(async () => {
     const fullData = parsedDataRef.current;
@@ -379,8 +379,8 @@ export function useProcessing() {
     
     const queue: QueueTask[] = chunks.map((batch, index) => ({ batch, index, attempts: 0 }));
     let activeWorkers = 0;
-    let maxConcurrency = 10; // Start higher for fast processing
-    const MAX_ALLOWED_CONCURRENCY = 20; // Allow bursting up to 20 parallel requests
+    let maxConcurrency = useOllama ? 1 : 10; // Local Ollama handles 1 task efficiently; cloud handles 10-20
+    const MAX_ALLOWED_CONCURRENCY = useOllama ? 1 : 20;
     let isPipelineAborted = false;
 
     const dispatchWorkers = () => {
@@ -668,7 +668,7 @@ export function useProcessing() {
       toast.warning('Extraction finished with some batch errors. Partial results recovered.');
       addLog(`Extraction finished with errors. Failed to process ${localFailedRows} rows.`, 'warning');
     }
-  }, [previewData, clearTimer]);
+  }, [previewData, clearTimer, addLog, useOllama]);
 
   const retryFailed = useCallback(() => {
     if (failedRawRows.length === 0 || !previewData) return;
