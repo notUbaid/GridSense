@@ -16,17 +16,22 @@ export const processBatchApi = async (batch: ProcessBatchRequest, schemaMapping?
 };
 
 export const callLocalOllama = async (prompt: string, model: string = 'llama3', signal?: AbortSignal) => {
-  const response = await fetch('http://127.0.0.1:11434/v1/chat/completions', {
+  const response = await fetch('http://127.0.0.1:11434/api/chat', {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify({
       model,
       messages: [
-        { role: 'system', content: 'You are a data extraction system. Output ONLY valid JSON matching the requested schema. No markdown fences, no commentary.' },
+        { role: 'system', content: 'You are a strict data extraction system. Output ONLY valid JSON array.' },
         { role: 'user', content: prompt }
       ],
-      temperature: 0.1,
-      response_format: { type: 'json_object' }
+      format: 'json',
+      options: {
+        temperature: 0.0,
+        num_ctx: 8192,
+        num_predict: 2000
+      },
+      stream: false
     }),
     signal
   });
@@ -36,7 +41,7 @@ export const callLocalOllama = async (prompt: string, model: string = 'llama3', 
   }
 
   const data = await response.json();
-  const content = data.choices?.[0]?.message?.content;
+  const content = data.message?.content;
   
   if (!content) {
     throw new Error('Empty response from Ollama');

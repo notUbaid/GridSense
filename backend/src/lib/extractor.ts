@@ -661,7 +661,14 @@ export async function processBatch(
     return { records: validRecords, skippedCount, skippedReasons, skippedRecords, processingTimeMs, metrics: { promptChars, responseChars, promptTokens, responseTokens, apiLatencyMs, parseLatencyMs, retries: attempt } };
   }
 
-  const prompt = `You are a strict data extraction engine. You receive CSV headers and row data as JSON.
+  const prompt = provider === 'ollama' ? 
+`Map the CSV rows to this exact JSON schema:
+{"records":[{"name":"string","email":"string","mobile_without_country_code":"string","company":"string","city":"string","state":"string","country":"string","lead_owner":"string","crm_status":"GOOD_LEAD_FOLLOW_UP|DID_NOT_CONNECT|BAD_LEAD|SALE_DONE","crm_note":"string","data_source":"leads_on_demand|meridian_tower|eden_park|varah_swamy|sarjapur_plots","possession_time":"string","description":"string"}]}
+Omit keys with null/empty values. Extract country codes from phones. Combine First/Last name. Ensure EXACT array length of ${aiRows.length}.
+
+CSV Headers: ${JSON.stringify(headers)}
+CSV Rows:
+${Papa.unparse(aiRows, { header: false })}` : `You are a strict data extraction engine. You receive CSV headers and row data as JSON.
 Your job is purely to map the provided semantic data into the defined CRM schema.
 
 CRITICAL RULES:
