@@ -183,8 +183,7 @@ export function useProcessing() {
             const sanitized: Record<string, string> = { _row_id: String(index + 2) };
             for (const key in row) {
               if (key === '_row_id') continue;
-              const val = row[key] || '';
-              sanitized[key] = val.length > 2000 ? val.substring(0, 2000) + '...' : val;
+              sanitized[key] = row[key] || '';
             }
             return sanitized;
           });

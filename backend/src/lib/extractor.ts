@@ -263,7 +263,6 @@ function normalizeAndValidate(record: any): CrmRecord {
       // Remove specific placeholders like <email>, [missing], etc that AI might hallucinate.
       // We no longer blindly remove all text inside brackets/chevrons as it corrupts valid data (e.g. [donotemail]).
       val = val.replace(/(?:<missing>|\[missing\]|<null>|\[null\]|<empty>|\[empty\]|<unknown>|\[unknown\]|<email>|\[email\]|<phone>|\[phone\])/gi, '').trim();
-      val = val.replace(/\s{2,}/g, ' '); // Collapse multiple spaces resulting from removal
       
       const lower = val.toLowerCase();
       if (val === '' || lower === 'nan' || lower === 'null') {
@@ -547,7 +546,7 @@ export async function processBatch(
       if (value === '') {
         delete sanitized[key];
       } else {
-        sanitized[key] = value;
+        sanitized[key] = value.length > 2000 ? value.substring(0, 2000) + '...' : value;
       }
     }
     const needsAI = Object.keys(sanitized).length > 0;
