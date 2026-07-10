@@ -268,6 +268,13 @@ function normalizeAndValidate(record: any): CrmRecord {
       const lower = val.toLowerCase();
       if (val === '' || lower === 'nan' || lower === 'null') {
         norm[key] = null;
+      } else if (key === 'created_at') {
+        const parsedDate = Date.parse(val.replace(/\./g, '-'));
+        if (!isNaN(parsedDate)) {
+          norm[key] = new Date(parsedDate).toISOString();
+        } else {
+          norm[key] = null; // invalid date
+        }
       } else {
         norm[key] = val;
       }
@@ -288,10 +295,17 @@ function normalizeAndValidate(record: any): CrmRecord {
     }
   }
 
-  // 2. Email Validation
+  // 2. Email Validation & Extraction
   if (norm.email) {
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    if (!emailRegex.test(norm.email)) {
+    const origEmail = String(norm.email);
+    const match = origEmail.match(/[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}/);
+    if (match) {
+      norm.email = match[0];
+      const remainder = origEmail.replace(match[0], '').trim();
+      if (remainder.length > 0) {
+        norm.crm_note = norm.crm_note ? `${norm.crm_note} | Extra email info: ${remainder}` : `Extra email info: ${remainder}`;
+      }
+    } else {
       norm.email = null;
     }
   }
@@ -476,9 +490,9 @@ export async function processBatch(
 
       if (!email) {
         const isNoteColumn = /note|desc|comment|history|message|detail|context/i.test(key);
-        const isEmailColumn = /email/i.test(key);
+        const isEmailColumn = /e-?mail/i.test(key);
 
-        if (isEmailColumn || !isNoteColumn) {
+        if (isEmailColumn) {
           const match = value.match(EMAIL_REGEX);
           if (match) {
             email = match[0];
