@@ -44,7 +44,7 @@ export function getGroqClient(): { client: Groq, index: number } {
   if (groqClients.length === 0) {
     const keys = config.GROQ_API_KEY.split(',').map(k => k.trim()).filter(k => k.length > 0);
     if (keys.length === 0) throw new Error('No valid GROQ API keys found.');
-    groqClients = keys.map(key => new Groq({ apiKey: key }));
+    groqClients = keys.map(key => new Groq({ apiKey: key, maxRetries: 0 }));
     availableGroqIndices = groqClients.map((_, i) => i);
   }
   
@@ -122,7 +122,7 @@ export function getOpenAIClient(): { client: OpenAI, index: number } {
   if (openaiClients.length === 0) {
     const keys = config.OPENAI_API_KEY.split(',').map(k => k.trim()).filter(k => k.length > 0);
     if (keys.length === 0) throw new Error('No valid OPENAI API keys found.');
-    openaiClients = keys.map(key => new OpenAI({ apiKey: key }));
+    openaiClients = keys.map(key => new OpenAI({ apiKey: key, maxRetries: 0 }));
     availableOpenAIIndices = openaiClients.map((_, i) => i);
   }
   if (availableOpenAIIndices.length === 0) throw new Error('All OpenAI keys are exhausted.');
@@ -153,7 +153,7 @@ export function getAnthropicClient(): { client: Anthropic, index: number } {
   if (anthropicClients.length === 0) {
     const keys = config.ANTHROPIC_API_KEY.split(',').map(k => k.trim()).filter(k => k.length > 0);
     if (keys.length === 0) throw new Error('No valid ANTHROPIC API keys found.');
-    anthropicClients = keys.map(key => new Anthropic({ apiKey: key }));
+    anthropicClients = keys.map(key => new Anthropic({ apiKey: key, maxRetries: 0 }));
     availableAnthropicIndices = anthropicClients.map((_, i) => i);
   }
   if (availableAnthropicIndices.length === 0) throw new Error('All Anthropic keys are exhausted.');
@@ -184,7 +184,7 @@ export function getOpenRouterClient(): { client: OpenAI, index: number } {
   if (openRouterClients.length === 0) {
     const keys = config.OPENROUTER_API_KEY.split(',').map(k => k.trim()).filter(k => k.length > 0);
     if (keys.length === 0) throw new Error('No valid OPENROUTER API keys found.');
-    openRouterClients = keys.map(key => new OpenAI({ baseURL: 'https://openrouter.ai/api/v1', apiKey: key }));
+    openRouterClients = keys.map(key => new OpenAI({ baseURL: 'https://openrouter.ai/api/v1', apiKey: key, maxRetries: 0 }));
     availableOpenRouterIndices = openRouterClients.map((_, i) => i);
   }
   if (availableOpenRouterIndices.length === 0) throw new Error('All OpenRouter keys are exhausted.');
@@ -927,8 +927,8 @@ ${Papa.unparse(aiRows, { header: false })}`;
             temperature: attempt > 0 ? 0.0 : 0.1,
             // Groq deducts TPM based on prompt_tokens + max_tokens requested.
             // Free tier has 6,000 TPM limit. Setting this too high causes instant 429s.
-            // 35 rows generates ~1700 tokens. We cap max_tokens conservatively to 2100.
-            max_tokens: Math.min(4000, Math.max(1024, aiRows.length * 60)),
+            // We cap max_tokens aggressively (45 tokens/row) to stretch the limit.
+            max_tokens: Math.max(500, aiRows.length * 45),
             response_format: { type: 'json_object' },
           });
           apiLatencyMs = performance.now() - apiStart;
