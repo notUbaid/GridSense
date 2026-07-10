@@ -254,7 +254,7 @@ export function useProcessing() {
 
     // Determine batch size based on whether we'll have a schema mapping
     // (will be refined after map-headers call)
-    let effectiveBatchSize = AI_BATCH_SIZE;
+    let effectiveBatchSize = useOllama ? 5 : AI_BATCH_SIZE;
 
     setMetrics(prev => ({ ...prev, totalRows: sanitizedData.length }));
     const startTime = Date.now();
