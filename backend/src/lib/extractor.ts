@@ -260,8 +260,9 @@ function normalizeAndValidate(record: any): CrmRecord {
     if (typeof norm[key] === 'string') {
       let val = norm[key].trim();
       
-      // Remove placeholders like <>, <email>, [missing], etc that AI might hallucinate
-      val = val.replace(/<[^>]*>/g, '').replace(/\[[^\]]*\]/g, '').trim();
+      // Remove specific placeholders like <email>, [missing], etc that AI might hallucinate.
+      // We no longer blindly remove all text inside brackets/chevrons as it corrupts valid data (e.g. [donotemail]).
+      val = val.replace(/(?:<missing>|\[missing\]|<null>|\[null\]|<empty>|\[empty\]|<unknown>|\[unknown\]|<email>|\[email\]|<phone>|\[phone\])/gi, '').trim();
       val = val.replace(/\s{2,}/g, ' '); // Collapse multiple spaces resulting from removal
       
       const lower = val.toLowerCase();
