@@ -553,8 +553,40 @@ export function useProcessing() {
 
     clearTimer();
     
-    // Final sync of records
-    setRecords([...allExtractedRecords].sort((a, b) => parseInt(a._row_id || '0') - parseInt(b._row_id || '0')));
+    // Final sync of records with Deduplication
+    const seenEmails = new Set<string>();
+    const seenPhones = new Set<string>();
+    const uniqueRecords: ExtractedRecord[] = [];
+    
+    // Sort by _row_id first so we always keep the earliest row
+    const sortedRecords = [...allExtractedRecords].sort((a, b) => parseInt(a._row_id || '0') - parseInt(b._row_id || '0'));
+
+    for (const record of sortedRecords) {
+      const email = record.email?.toLowerCase();
+      const phone = record.mobile_without_country_code;
+      
+      let isDuplicate = false;
+      if (email && seenEmails.has(email)) isDuplicate = true;
+      if (phone && seenPhones.has(phone)) isDuplicate = true;
+      
+      if (isDuplicate) {
+        localSkippedRows++;
+        localSuccessfulRows--;
+        localSkipReasons['Duplicate Record'] = (localSkipReasons['Duplicate Record'] || 0) + 1;
+        
+        // Find the original row using _row_id (which is index + 2)
+        const rowIndex = parseInt(record._row_id || '2') - 2;
+        if (rowIndex >= 0 && rowIndex < sanitizedData.length) {
+          localSkippedRaw.push({ ...sanitizedData[rowIndex], _skipReason: `Rejected (Duplicate of previously extracted record)` });
+        }
+      } else {
+        if (email) seenEmails.add(email);
+        if (phone) seenPhones.add(phone);
+        uniqueRecords.push(record);
+      }
+    }
+
+    setRecords(uniqueRecords);
     isProcessingRef.current = false;
     
     setCurrentActivity('Finalizing extraction...');
@@ -571,6 +603,7 @@ export function useProcessing() {
       localFailReasons['Pipeline Aborted (API Limits Exceeded)'] = (localFailReasons['Pipeline Aborted (API Limits Exceeded)'] || 0) + abandonedRowsCount;
     }
 
+    setSkippedRawRows([...localSkippedRaw].sort((a, b) => parseInt(a._row_id || '0') - parseInt(b._row_id || '0')));
     setFailedRawRows(localFailedRaw.sort((a, b) => parseInt(a._row_id || '0') - parseInt(b._row_id || '0')));
 
     setMetrics(prev => ({

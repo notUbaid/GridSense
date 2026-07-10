@@ -678,7 +678,7 @@ CRITICAL RULES:
 - DO NOT dump irrelevant columns (e.g., "Campaign", "Ad Set", random IDs, or random garbage) into "crm_note". However, source platforms (e.g., "Hubspot", "Zoho", "Excel") or lead sources ARE highly relevant and MUST be included in notes.
 - If a value in the input is completely empty, ignore it entirely and do not include its column name in the notes.
 - Combine first name + last name into a single "name" field. If the name is explicitly missing or empty, you MAY infer it from the email address if the email clearly contains a person's name (e.g., john.doe@... -> John Doe).
-- Primary Email and Phone numbers have ALREADY been extracted. If you see any additional or secondary emails/phones in the input, you MUST append them to the "crm_note" field. Do NOT output 'email' or 'mobile_without_country_code' fields.
+- If you find a primary email or phone number in the input, you MUST extract them into the 'email' and 'mobile_without_country_code' fields. If you see any ADDITIONAL or secondary emails/phones beyond the first one, you MUST append them to the "crm_note" field.
 - You should return exactly ${aiRows.length} objects in the "records" array — one per input row. Ensure the output array order exactly matches the input CSV row order.
 - Output ONLY valid JSON matching the schema. No markdown, no explanation.
 
