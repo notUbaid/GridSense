@@ -488,7 +488,6 @@ export async function processBatch(
       if (!value) continue;
 
       if (!email) {
-        const isNoteColumn = /note|desc|comment|history|message|detail|context/i.test(key);
         const isEmailColumn = /e-?mail/i.test(key);
 
         if (isEmailColumn) {
