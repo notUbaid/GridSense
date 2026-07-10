@@ -1044,7 +1044,7 @@ ${Papa.unparse(aiRows, { header: false })}`;
 
       if (shouldRotateKey) {
         if (provider === 'groq') {
-          if (isAuthError && typeof usedGroqIndex === 'number') {
+          if ((isAuthError || isRateLimit) && typeof usedGroqIndex === 'number') {
             markGroqKeyExhausted(usedGroqIndex);
           }
           if (keysTried < groqClients.length && availableGroqIndices.length > 0) {
@@ -1058,7 +1058,7 @@ ${Papa.unparse(aiRows, { header: false })}`;
             circuitBreakerOpenUntil = Date.now() + 1000;
           }
         } else if (provider === 'gemini') {
-          if (isAuthError && typeof usedGeminiIndex === 'number') {
+          if ((isAuthError || isRateLimit) && typeof usedGeminiIndex === 'number') {
             markGeminiKeyExhausted(usedGeminiIndex);
           }
           if (keysTried < geminiClients.length && availableGeminiIndices.length > 0) {
@@ -1071,7 +1071,7 @@ ${Papa.unparse(aiRows, { header: false })}`;
             circuitBreakerOpenUntil = Date.now() + 1000;
           }
         } else if (provider === 'openai') {
-          if (isAuthError && typeof usedOpenAIIndex === 'number') markOpenAIKeyExhausted(usedOpenAIIndex);
+          if ((isAuthError || isRateLimit) && typeof usedOpenAIIndex === 'number') markOpenAIKeyExhausted(usedOpenAIIndex);
           if (keysTried < openaiClients.length && availableOpenAIIndices.length > 0) {
             logger.warn(`OpenAI key hit limit. Retrying...`);
             keysTried++;
@@ -1082,7 +1082,7 @@ ${Papa.unparse(aiRows, { header: false })}`;
             circuitBreakerOpenUntil = Date.now() + 1000;
           }
         } else if (provider === 'anthropic') {
-          if (isAuthError && typeof usedAnthropicIndex === 'number') markAnthropicKeyExhausted(usedAnthropicIndex);
+          if ((isAuthError || isRateLimit) && typeof usedAnthropicIndex === 'number') markAnthropicKeyExhausted(usedAnthropicIndex);
           if (keysTried < anthropicClients.length && availableAnthropicIndices.length > 0) {
             logger.warn(`Anthropic key hit limit. Retrying...`);
             keysTried++;
@@ -1093,7 +1093,7 @@ ${Papa.unparse(aiRows, { header: false })}`;
             circuitBreakerOpenUntil = Date.now() + 1000;
           }
         } else if (provider === 'openrouter') {
-          if (isAuthError && typeof usedOpenRouterIndex === 'number') markOpenRouterKeyExhausted(usedOpenRouterIndex);
+          if ((isAuthError || isRateLimit) && typeof usedOpenRouterIndex === 'number') markOpenRouterKeyExhausted(usedOpenRouterIndex);
           if (keysTried < openRouterClients.length && availableOpenRouterIndices.length > 0) {
             logger.warn(`OpenRouter key hit limit. Retrying...`);
             keysTried++;
@@ -1104,7 +1104,7 @@ ${Papa.unparse(aiRows, { header: false })}`;
             circuitBreakerOpenUntil = Date.now() + 1000;
           }
         } else if (provider === 'cohere') {
-          if (isAuthError && typeof usedCohereIndex === 'number') markCohereKeyExhausted(usedCohereIndex);
+          if ((isAuthError || isRateLimit) && typeof usedCohereIndex === 'number') markCohereKeyExhausted(usedCohereIndex);
           if (keysTried < cohereClients.length && availableCohereIndices.length > 0) {
             logger.warn(`Cohere key hit limit. Retrying...`);
             keysTried++;
