@@ -330,13 +330,18 @@ function normalizeAndValidate(record: any): CrmRecord {
     }
     
     // Extract extension before stripping non-digits
-    const extMatch = phoneStr.match(/(?:ext|x|extension)\.?\s*(\d{1,5})/i);
+    // Strip and save extension if present
+    const extMatch = phoneStr.match(/(?:ext|x|extension)\.?\s*(\d+)/i);
     if (extMatch) {
-      const ext = extMatch[1];
+      norm.crm_note = norm.crm_note ? norm.crm_note + ' | Ext: ' + extMatch[1] : 'Ext: ' + extMatch[1];
       phoneStr = phoneStr.replace(extMatch[0], '').trim();
-      if (ext) {
-         norm.crm_note = norm.crm_note ? `${norm.crm_note} | Extension: ${ext}` : `Extension: ${ext}`;
-      }
+    }
+
+    const parts = phoneStr.split(/[/|,]/).map(p => p.trim()).filter(Boolean);
+    if (parts.length > 1) {
+      phoneStr = parts[0];
+      const extra = parts.slice(1);
+      norm.crm_note = norm.crm_note ? norm.crm_note + ' | Extra phones: ' + extra.join(', ') : 'Extra phones: ' + extra.join(', ');
     }
     
     if (phoneStr.startsWith('00')) {
