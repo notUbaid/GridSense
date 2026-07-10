@@ -32,6 +32,8 @@ export const ProcessBatchRequestSchema = z.object({
     confidence: z.any().optional()
   })).optional().nullable(),
   columnsToAppendToNotes: z.array(z.string()).optional().nullable(),
+  precomputedLlmResponse: z.string().optional().nullable(),
+  returnPromptOnly: z.boolean().optional().nullable(),
 });
 
 export type ProcessBatchRequest = z.infer<typeof ProcessBatchRequestSchema>;
@@ -49,6 +51,9 @@ export const ProcessBatchResponseSchema = z.object({
   error: z.string().optional(),
   exhaustedProvider: z.string().optional(),
   processingTimeMs: z.number().optional(),
+  prompt: z.string().optional(),
+  aiRowCount: z.number().optional(),
+  isPromptOnly: z.boolean().optional(),
 });
 
 export type ProcessBatchResponse = z.infer<typeof ProcessBatchResponseSchema>;

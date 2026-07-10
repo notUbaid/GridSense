@@ -32,4 +32,6 @@ export const ProcessBatchRequestSchema = z.object({
     confidence: z.any().optional()
   })).optional().nullable(),
   columnsToAppendToNotes: z.array(z.string()).optional().nullable(),
+  precomputedLlmResponse: z.string().optional().nullable(),
+  returnPromptOnly: z.boolean().optional().nullable(),
 });

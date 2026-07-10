@@ -32,20 +32,18 @@ export const processBatchController = async (req: Request, res: Response): Promi
     return;
   }
 
-  const { batchId, headers, rows, provider, schemaMapping, columnsToAppendToNotes } = parsed.data;
+  const { batchId, headers, rows, provider, schemaMapping, columnsToAppendToNotes, returnPromptOnly, precomputedLlmResponse } = parsed.data;
 
   try {
-    const { records, skippedCount, skippedReasons, skippedRecords, processingTimeMs, metrics } = await processBatch(headers, rows, provider as any, schemaMapping, columnsToAppendToNotes);
+    const result = await processBatch(headers, rows, provider as any, schemaMapping, columnsToAppendToNotes, {
+      returnPromptOnly: returnPromptOnly || false,
+      precomputedLlmResponse: precomputedLlmResponse || undefined
+    });
     
     res.status(200).json({
       batchId,
       status: 'success',
-      records,
-      skippedCount,
-      skippedReasons,
-      skippedRecords,
-      processingTimeMs,
-      metrics
+      ...result
     });
   } catch (error: any) {
     const status = error?.status || error?.response?.status;

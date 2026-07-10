@@ -5,7 +5,7 @@ import Papa from 'papaparse';
 
 const DIGIT_REGEX = /\d/g;
 
-import { processBatchApi, apiClient } from '../services/api';
+import { processBatchApi, apiClient, callLocalOllama } from '../services/api';
 import { CrmRecord, ProcessBatchRequest } from '../types/schema';
 import { toast } from 'sonner';
 import axios from 'axios';
@@ -404,13 +404,43 @@ export function useProcessing() {
       
       try {
         localBatchesSent++;
-        const response = await processBatchApi({
-          batchId: `batch_${task.index}_${task.attempts}`,
-          headers,
-          rows: task.batch,
-          provider: taskProvider,
-          columnsToAppendToNotes: fetchedColumnsToAppendToNotes,
-        }, fetchedMapping, abortControllerRef.current?.signal);
+        let response;
+        if (taskProvider === 'ollama') {
+          // 1. Get Prompt from Backend
+          const promptResponse = await processBatchApi({
+            batchId: `batch_${task.index}_${task.attempts}`,
+            headers,
+            rows: task.batch,
+            provider: taskProvider,
+            columnsToAppendToNotes: fetchedColumnsToAppendToNotes,
+            returnPromptOnly: true
+          }, fetchedMapping, abortControllerRef.current?.signal);
+
+          // 2. Local Ollama Call
+          let precomputedLlmResponse;
+          if (promptResponse.aiRowCount && promptResponse.aiRowCount > 0 && promptResponse.prompt) {
+             addLog(`Sending prompt to local Ollama (rows ${task.index * effectiveBatchSize + 1}-${Math.min((task.index + 1) * effectiveBatchSize, validRows.length)})...`, 'info');
+             precomputedLlmResponse = await callLocalOllama(promptResponse.prompt, 'gemma3:latest', abortControllerRef.current?.signal);
+          }
+
+          // 3. Finalize on Backend
+          response = await processBatchApi({
+            batchId: `batch_${task.index}_${task.attempts}`,
+            headers,
+            rows: task.batch,
+            provider: taskProvider,
+            columnsToAppendToNotes: fetchedColumnsToAppendToNotes,
+            precomputedLlmResponse
+          }, fetchedMapping, abortControllerRef.current?.signal);
+        } else {
+          response = await processBatchApi({
+            batchId: `batch_${task.index}_${task.attempts}`,
+            headers,
+            rows: task.batch,
+            provider: taskProvider,
+            columnsToAppendToNotes: fetchedColumnsToAppendToNotes,
+          }, fetchedMapping, abortControllerRef.current?.signal);
+        }
 
         if (response.status === 'success' || response.status === 'partial') {
           // Adaptive Concurrency: Scale up on success
@@ -458,13 +488,18 @@ export function useProcessing() {
         const status = error.response?.status;
         const exhaustedProvider = error.response?.data?.exhaustedProvider || error.exhaustedProvider || 'groq';
         
-        if (status === 429 || status === 413 || backendError.toLowerCase().includes('rate limit') || status === 403 || backendError.toLowerCase().includes('exhausted')) {
+        const isOllamaFailure = taskProvider === 'ollama' && (backendError.toLowerCase().includes('failed to fetch') || backendError.toLowerCase().includes('network error') || backendError.toLowerCase().includes('ollama request failed'));
+
+        if (isOllamaFailure || status === 429 || status === 413 || backendError.toLowerCase().includes('rate limit') || status === 403 || backendError.toLowerCase().includes('exhausted')) {
           // Adaptive Concurrency: Scale down aggressively on rate limit
           maxConcurrency = Math.max(1, Math.floor(maxConcurrency / 2));
           
           const isAuthError = backendError.toLowerCase().includes('api key') || backendError.toLowerCase().includes('restricted') || backendError.toLowerCase().includes('invalid');
           
-          if (isAuthError) {
+          if (isOllamaFailure) {
+            toast.error(`Local Ollama is unreachable. Disabling local inference.`);
+            disabledProviders.add(taskProvider);
+          } else if (isAuthError) {
             toast.error(`${exhaustedProvider.toUpperCase()} API key is invalid/missing. Disabling provider.`);
             disabledProviders.add(exhaustedProvider as ProviderType);
           } else {

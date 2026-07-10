@@ -421,9 +421,10 @@ let circuitBreakerOpenUntil = 0;
 export async function processBatch(
   headers: string[], 
   rows: Record<string, string>[],
-  provider: 'groq' | 'gemini' | 'openai' | 'anthropic' | 'openrouter' | 'cohere' = 'groq',
+  provider: 'groq' | 'gemini' | 'openai' | 'anthropic' | 'openrouter' | 'cohere' | 'ollama' = 'groq',
   schemaMapping?: { source: string, target?: string | null, confidence?: any }[] | null,
-  columnsToAppendToNotes?: string[] | null
+  columnsToAppendToNotes?: string[] | null,
+  options?: { returnPromptOnly?: boolean, precomputedLlmResponse?: string }
 ) {
   let promptChars = 0;
   let responseChars = 0;
@@ -718,6 +719,17 @@ CSV Rows:
 ${Papa.unparse(aiRows, { header: false })}`;
   promptChars = prompt.length;
 
+  if (options?.returnPromptOnly) {
+    return {
+      records: [],
+      skippedCount: 0,
+      processingTimeMs: Date.now() - startTime,
+      prompt,
+      aiRowCount: aiRows.length,
+      isPromptOnly: true
+    } as any;
+  }
+
   while (attempt < maxRetries) {
     let usedGroqIndex = currentGroqIndex;
     let usedGeminiIndex = currentGeminiIndex;
@@ -731,7 +743,25 @@ ${Papa.unparse(aiRows, { header: false })}`;
       let aiRecords: any[] = [];
       
       if (aiRows.length > 0) {
-        if (process.env.NODE_ENV === 'test') {
+        if (options?.precomputedLlmResponse) {
+          const parseStart = performance.now();
+          let parsed;
+          try {
+            parsed = JSON.parse(stripMarkdownFences(options.precomputedLlmResponse));
+          } catch (e) {
+            try {
+              const repaired = repairTruncatedJson(stripMarkdownFences(options.precomputedLlmResponse));
+              parsed = JSON.parse(repaired);
+            } catch {
+              throw e;
+            }
+          }
+          parsed = salvageExtractorJson(parsed);
+          const validated = llmResponseSchema.safeParse(parsed);
+          if (!validated.success) throw new Error('AI output did not match expected schema');
+          aiRecords = validated.data.records;
+          parseLatencyMs = performance.now() - parseStart;
+        } else if (process.env.NODE_ENV === 'test') {
           aiRecords = await MockAIProvider.extract(headers, aiRows);
         } else if (provider === 'gemini') {
           const { client: ai, index: geminiKeyIndex } = getGeminiClient();
@@ -962,50 +992,6 @@ ${Papa.unparse(aiRows, { header: false })}`;
           const validated = llmResponseSchema.safeParse(parsed);
           if (!validated.success) {
             logger.error({ errors: validated.error.format() }, 'Zod validation failed on AI output');
-            throw new Error('AI output did not match expected schema');
-          }
-          aiRecords = validated.data.records;
-          parseLatencyMs = performance.now() - parseStart;
-        } else if (provider === 'ollama') {
-          const apiStart = performance.now();
-          
-          // Use OpenAI client pointed at Ollama's local server
-          const ollamaClient = new OpenAI({ baseURL: 'http://localhost:11434/v1', apiKey: 'ollama', maxRetries: 0 });
-          const completion = await ollamaClient.chat.completions.create({
-            model: 'llama3', // User can change this if needed
-            messages: [
-              { role: 'system', content: 'You are a data extraction system. Output ONLY valid JSON matching the requested schema. No markdown fences, no commentary.' },
-              { role: 'user', content: prompt }
-            ],
-            temperature: attempt > 0 ? 0.0 : 0.1,
-            response_format: { type: 'json_object' }
-          });
-          apiLatencyMs = performance.now() - apiStart;
-
-          const content = completion.choices[0]?.message?.content;
-          if (!content) throw new Error('Empty response from Ollama');
-          responseChars = content.length;
-          promptTokens = completion.usage?.prompt_tokens || 0;
-          responseTokens = completion.usage?.completion_tokens || 0;
-
-          const parseStart = performance.now();
-          const cleaned = stripMarkdownFences(content);
-          let parsed;
-          try {
-            parsed = JSON.parse(cleaned);
-          } catch (e) {
-            logger.warn({ content: cleaned.substring(0, 500) }, 'JSON parse failed, attempting to repair truncated JSON');
-            try {
-              const repaired = repairTruncatedJson(cleaned);
-              parsed = JSON.parse(repaired);
-            } catch {
-              throw e;
-            }
-          }
-          parsed = salvageExtractorJson(parsed);
-          const validated = llmResponseSchema.safeParse(parsed);
-          if (!validated.success) {
-            logger.error({ errors: validated.error.format() }, 'Zod validation failed on Ollama output');
             throw new Error('AI output did not match expected schema');
           }
           aiRecords = validated.data.records;
