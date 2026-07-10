@@ -14,6 +14,7 @@ export type ProcessState = 'idle' | 'parsing' | 'preview' | 'processing' | 'done
 
 export interface SchemaMapping {
   mapping: { source: string; target: string; confidence: number }[];
+  columnsToAppendToNotes?: string[];
   overallConfidence: number;
 }
 
@@ -218,7 +219,7 @@ export function useProcessing() {
         
         // Start mapping headers in the background immediately
         mapHeadersPromiseRef.current = apiClient
-          .post('/process/map-headers', { headers }, { signal: ac.signal })
+          .post('/process/map-headers', { headers, sampleRows: sanitizedData.slice(0, 3) }, { signal: ac.signal })
           .catch(() => null); // Ignore errors from speculation
       },
       error: (err: Error) => {
@@ -270,6 +271,7 @@ export function useProcessing() {
     const startTime = Date.now();
 
     let fetchedMapping: ProcessBatchRequest['schemaMapping'] | null = null;
+    let fetchedColumnsToAppendToNotes: string[] | null = null;
     let localIsDeterministic = false;
     const mappingStart = performance.now();
     try {
@@ -277,7 +279,7 @@ export function useProcessing() {
       addLog('Analyzing column headers via AI...', 'info');
       
       // Await the speculative promise if it exists, otherwise fire a new request
-      const mappingPromise = mapHeadersPromiseRef.current || apiClient.post('/process/map-headers', { headers }, { signal: abortControllerRef.current?.signal });
+      const mappingPromise = mapHeadersPromiseRef.current || apiClient.post('/process/map-headers', { headers, sampleRows: sanitizedData.slice(0, 3) }, { signal: abortControllerRef.current?.signal });
       const res = (await mappingPromise) as { data?: SchemaMapping };
       mapHeadersPromiseRef.current = null; // Clear out the ref
 
@@ -291,6 +293,7 @@ export function useProcessing() {
             effectiveBatchSize = DETERMINISTIC_BATCH_SIZE;
             localIsDeterministic = true;
             fetchedMapping = data.mapping; // Only use mapping if highly confident
+            fetchedColumnsToAppendToNotes = data.columnsToAppendToNotes || null;
           }
         }
       }
@@ -309,6 +312,12 @@ export function useProcessing() {
     for (let i = 0; i < validRows.length; i += effectiveBatchSize) {
       chunks.push(validRows.slice(i, i + effectiveBatchSize));
     }
+
+    // Provider assignment: We only cycle through the primary providers configured in the frontend
+    type ProviderType = 'groq' | 'cohere' | 'openrouter';
+    const PROVIDER_CASCADE: ProviderType[] = ['groq', 'cohere', 'openrouter'];
+    const disabledProviders = new Set<ProviderType>();
+    let currentProviderIndex = 0;
 
     setCurrentActivity(`Warming up AI models for ${validRows.length} valid records...`);
     addLog(`Warming up ${PROVIDER_CASCADE.join(', ')} AI models for ${validRows.length} records...`, 'info');
@@ -358,11 +367,6 @@ export function useProcessing() {
       }
     }, 1000);
 
-    // Provider assignment: We only cycle through the primary providers configured in the frontend
-    type ProviderType = 'groq' | 'cohere' | 'openrouter';
-    const PROVIDER_CASCADE: ProviderType[] = ['groq', 'cohere', 'openrouter'];
-    const disabledProviders = new Set<ProviderType>();
-    let currentProviderIndex = 0;
 
     const getNextProvider = (): ProviderType => {
       let attempts = 0;
@@ -417,6 +421,7 @@ export function useProcessing() {
           headers,
           rows: task.batch,
           provider: taskProvider,
+          columnsToAppendToNotes: fetchedColumnsToAppendToNotes,
         }, fetchedMapping, abortControllerRef.current?.signal);
 
         if (response.status === 'success' || response.status === 'partial') {

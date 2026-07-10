@@ -408,7 +408,8 @@ export async function processBatch(
   headers: string[], 
   rows: Record<string, string>[],
   provider: 'groq' | 'gemini' | 'openai' | 'anthropic' | 'openrouter' | 'cohere' = 'groq',
-  schemaMapping?: { source: string, target?: string | null, confidence?: any }[] | null
+  schemaMapping?: { source: string, target?: string | null, confidence?: any }[] | null,
+  columnsToAppendToNotes?: string[] | null
 ) {
   let promptChars = 0;
   let responseChars = 0;
@@ -598,12 +599,14 @@ export async function processBatch(
 
         const valTrimmed = val.trim();
         const keyLower = key.toLowerCase();
+        
+        const isExplicitAppend = columnsToAppendToNotes && columnsToAppendToNotes.includes(key);
 
         if (valTrimmed.includes('@') && EMAIL_REGEX.test(valTrimmed)) {
            extraNotes.push(`Additional email: ${valTrimmed}`);
         } else if ((valTrimmed.match(DIGIT_REGEX) || []).length >= 7 && (PHONE_FORMAT_REGEX.test(valTrimmed) || PHONE_EMBEDDED_REGEX.test(valTrimmed))) {
            extraNotes.push(`Additional phone: ${valTrimmed}`);
-        } else if (keyLower.includes('note') || keyLower.includes('remark') || keyLower.includes('comment') || keyLower.includes('feedback')) {
+        } else if (isExplicitAppend || keyLower.includes('note') || keyLower.includes('remark') || keyLower.includes('comment') || keyLower.includes('feedback')) {
            extraNotes.push(`${key}: ${valTrimmed}`);
         }
       }

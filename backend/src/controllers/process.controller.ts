@@ -11,7 +11,7 @@ export const mapHeaders = async (req: Request, res: Response): Promise<void> => 
       res.status(400).json({ error: 'Headers array is required' });
       return;
     }
-    const result = await mapHeadersToSchema(headers);
+    const result = await mapHeadersToSchema(headers, req.body.sampleRows);
     res.status(200).json(result);
   } catch (error: any) {
     logger.error({ err: error.message }, 'Header mapping failed');
@@ -32,10 +32,10 @@ export const processBatchController = async (req: Request, res: Response): Promi
     return;
   }
 
-  const { batchId, headers, rows, provider, schemaMapping } = parsed.data;
+  const { batchId, headers, rows, provider, schemaMapping, columnsToAppendToNotes } = parsed.data;
 
   try {
-    const { records, skippedCount, skippedReasons, skippedRecords, processingTimeMs, metrics } = await processBatch(headers, rows, provider as any, schemaMapping);
+    const { records, skippedCount, skippedReasons, skippedRecords, processingTimeMs, metrics } = await processBatch(headers, rows, provider as any, schemaMapping, columnsToAppendToNotes);
     
     res.status(200).json({
       batchId,

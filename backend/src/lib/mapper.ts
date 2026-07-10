@@ -10,6 +10,7 @@ const MappingSchema = z.object({
     target: z.string(),
     confidence: z.number().min(0).max(100),
   })),
+  columnsToAppendToNotes: z.array(z.string()).describe("Any columns that don't map cleanly to the schema but contain highly relevant business data (e.g. Lead Source, Platform, Job Title, Budget, Campaign Name). Do NOT include generic garbage like IDs or timestamps."),
   overallConfidence: z.number().min(0).max(100),
 });
 
@@ -17,11 +18,12 @@ import crypto from 'crypto';
 
 const headerCache = new Map<string, any>();
 
-export async function mapHeadersToSchema(headers: string[]): Promise<any> {
+export async function mapHeadersToSchema(headers: string[], sampleRows?: Record<string, string>[]): Promise<any> {
   const startTime = Date.now();
   
-  // Fingerprint headers
-  const headerHash = crypto.createHash('sha256').update(headers.join('|').toLowerCase()).digest('hex');
+  // Fingerprint headers and sample rows to avoid false cache hits for generic headers (e.g. col_1, col_2)
+  const hashPayload = headers.join('|').toLowerCase() + (sampleRows ? JSON.stringify(sampleRows) : '');
+  const headerHash = crypto.createHash('sha256').update(hashPayload).digest('hex');
   if (headerCache.has(headerHash)) {
     logger.info({ headerHash }, 'Header mapping cache hit');
     const cached = headerCache.get(headerHash);
@@ -32,7 +34,7 @@ export async function mapHeadersToSchema(headers: string[]): Promise<any> {
     'name', 'email', 'mobile_without_country_code', 'company', 'city', 'state', 'country', 'lead_owner', 'crm_status', 'crm_note', 'data_source', 'possession_time', 'description'
   ];
 
-  const prompt = `You are a data architect. Given a list of CSV headers, map them to the corresponding fields in our CRM schema.
+  let prompt = `You are a data architect. Given a list of CSV headers, map them to the corresponding fields in our CRM schema.
 CRITICAL RULES:
 - Only map a header if it directly aligns with a target field.
 - If a header does not cleanly map to any field, do not include it.
@@ -43,11 +45,13 @@ Target CRM Fields:
 ${schemaKeys.join(', ')}
 
 CSV Headers to map:
-${JSON.stringify(headers)}
+${JSON.stringify(headers)}`;
 
-JSON Schema:
-${JSON.stringify(zodToJsonSchema(MappingSchema as any))}
-`;
+  if (sampleRows && sampleRows.length > 0) {
+    prompt += `\n\nSample Data Rows (use this to infer column meanings if headers are ambiguous, missing, or generic):\n${JSON.stringify(sampleRows, null, 2)}`;
+  }
+
+  prompt += `\n\nJSON Schema:\n${JSON.stringify(zodToJsonSchema(MappingSchema as any))}\n`;
 
   let resultString = '';
   
