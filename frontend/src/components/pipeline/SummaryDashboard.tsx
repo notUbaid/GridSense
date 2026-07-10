@@ -355,25 +355,25 @@ export function SummaryDashboard({ state, metrics, originalFilename, records, sk
                       <Activity className="w-4 h-4 text-muted-foreground" />
                       <h4 className="text-sm font-semibold">Job Metrics</h4>
                     </div>
-                    <div className="flex justify-between items-center text-sm">
-                      <span className="text-muted-foreground">Total Input Rows</span>
-                      <span className="font-mono font-medium">{metrics.totalRows}</span>
+                    <div className="flex justify-between items-center text-sm gap-2">
+                      <span className="text-muted-foreground whitespace-nowrap">Total Input Rows</span>
+                      <span className="font-mono font-medium truncate">{metrics.totalRows}</span>
                     </div>
-                    <div className="flex justify-between items-center text-sm">
-                      <span className="text-muted-foreground">Processing Speed</span>
-                      <span className="font-mono font-medium">{metrics.processingTimeMs > 0 ? Math.round((metrics.totalRows / metrics.processingTimeMs) * 1000) : 0} rows/s</span>
+                    <div className="flex justify-between items-center text-sm gap-2">
+                      <span className="text-muted-foreground whitespace-nowrap">Processing Speed</span>
+                      <span className="font-mono font-medium truncate">{metrics.processingTimeMs > 0 ? Math.round((metrics.totalRows / metrics.processingTimeMs) * 1000) : 0} rows/s</span>
                     </div>
-                    <div className="flex justify-between items-center text-sm">
-                      <span className="text-muted-foreground">Peak Concurrency</span>
-                      <span className="font-mono font-medium">{metrics.peakConcurrency} workers</span>
+                    <div className="flex justify-between items-center text-sm gap-2">
+                      <span className="text-muted-foreground whitespace-nowrap">Peak Concurrency</span>
+                      <span className="font-mono font-medium truncate">{metrics.peakConcurrency} workers</span>
                     </div>
-                    <div className="flex justify-between items-center text-sm">
-                      <span className="text-muted-foreground">Batches Dispatched</span>
-                      <span className="font-mono font-medium">{metrics.batchesSent}</span>
+                    <div className="flex justify-between items-center text-sm gap-2">
+                      <span className="text-muted-foreground whitespace-nowrap">Batches Dispatched</span>
+                      <span className="font-mono font-medium truncate">{metrics.batchesSent}</span>
                     </div>
-                    <div className="flex justify-between items-center text-sm">
-                      <span className="text-muted-foreground">Avg API Latency</span>
-                      <span className="font-mono font-medium">{metrics.batchesSent > 0 ? Math.round((metrics.processingTimeMs - metrics.totalSleepMs) / Math.max(1, metrics.batchesSent)) : 0}ms</span>
+                    <div className="flex justify-between items-center text-sm gap-2">
+                      <span className="text-muted-foreground whitespace-nowrap">Avg API Latency</span>
+                      <span className="font-mono font-medium truncate">{metrics.batchesSent > 0 ? Math.round((metrics.processingTimeMs - metrics.totalSleepMs) / Math.max(1, metrics.batchesSent)) : 0}ms</span>
                     </div>
                   </div>
 

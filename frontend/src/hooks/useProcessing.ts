@@ -277,11 +277,10 @@ export function useProcessing() {
         if (data.mapping && data.mapping.length > 0) {
           setSchemaMapping(data);
           // With a high-confidence schema mapping, we can use deterministic processing
-          // which doesn't hit the AI — so we can use much larger batches
-          if (data.overallConfidence >= 30) {
+          if (data.overallConfidence >= 0) {
             effectiveBatchSize = DETERMINISTIC_BATCH_SIZE;
             localIsDeterministic = true;
-            fetchedMapping = data.mapping; // Only use mapping if highly confident
+            fetchedMapping = data.mapping;
             fetchedColumnsToAppendToNotes = data.columnsToAppendToNotes || null;
           }
         }
