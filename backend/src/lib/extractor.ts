@@ -662,8 +662,8 @@ export async function processBatch(
   }
 
   const prompt = provider === 'ollama' ? 
-`Map the CSV rows to this exact JSON schema:
-{"records":[{"name":"string","email":"string","mobile_without_country_code":"string","company":"string","city":"string","state":"string","country":"string","lead_owner":"string","crm_status":"GOOD_LEAD_FOLLOW_UP|DID_NOT_CONNECT|BAD_LEAD|SALE_DONE","crm_note":"string","data_source":"leads_on_demand|meridian_tower|eden_park|varah_swamy|sarjapur_plots","possession_time":"string","description":"string"}]}
+`Convert the following CSV data into a JSON array of objects. Do NOT wrap the array in any object.
+[{"name":"string","email":"string","mobile_without_country_code":"string","company":"string","city":"string","state":"string","country":"string","lead_owner":"string","crm_status":"GOOD_LEAD_FOLLOW_UP|DID_NOT_CONNECT|BAD_LEAD|SALE_DONE","crm_note":"string","data_source":"leads_on_demand|meridian_tower|eden_park|varah_swamy|sarjapur_plots","possession_time":"string","description":"string"}]
 Omit keys with null/empty values. Extract country codes from phones. Combine First/Last name. Ensure EXACT array length of ${aiRows.length}.
 
 CSV Headers: ${JSON.stringify(headers)}

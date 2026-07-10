@@ -22,7 +22,7 @@ export const callLocalOllama = async (prompt: string, model: string = 'llama3', 
     body: JSON.stringify({
       model,
       messages: [
-        { role: 'system', content: 'You are a strict data extraction system. Output ONLY valid JSON array.' },
+        { role: 'system', content: 'You are a strict data extraction system. Output ONLY a valid JSON array of objects.' },
         { role: 'user', content: prompt }
       ],
       format: 'json',
