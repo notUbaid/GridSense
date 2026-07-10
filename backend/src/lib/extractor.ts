@@ -662,26 +662,73 @@ export async function processBatch(
   }
 
   const prompt = provider === 'ollama' ? 
-`Convert the following CSV data into a JSON array of objects. Do NOT wrap the array in any object. Use this exact schema for every object:
+`You are a strict data extraction system. Your task is to convert raw CSV rows into a JSON array of objects based on a specific CRM schema.
+You must output EXACTLY a JSON array, nothing else. Do not output a dictionary with a "records" key.
+
+CRITICAL INSTRUCTIONS:
+1. ALWAYS use "null" for missing or empty values. DO NOT omit the keys. Every object MUST have all 13 keys.
+2. The output MUST be a JSON array: [ { ... }, { ... } ]
+3. Combine First and Last names into the "name" field.
+4. Extract phone numbers into "mobile_without_country_code". Remove +91, +1, etc.
+5. Identify emails and put them in "email".
+6. If the CSV row has irrelevant junk, set fields to null.
+
+EXACT SCHEMA PER OBJECT:
+{
+  "name": "string or null",
+  "email": "string or null",
+  "mobile_without_country_code": "string or null",
+  "company": "string or null",
+  "city": "string or null",
+  "state": "string or null",
+  "country": "string or null",
+  "lead_owner": "string or null",
+  "crm_status": "GOOD_LEAD_FOLLOW_UP or DID_NOT_CONNECT or BAD_LEAD or SALE_DONE or null",
+  "crm_note": "string or null",
+  "data_source": "leads_on_demand or meridian_tower or eden_park or varah_swamy or sarjapur_plots or null",
+  "possession_time": "string or null",
+  "description": "string or null"
+}
+
+EXAMPLE INPUT (Headers: ["FirstName", "LastName", "Phone", "Status", "Notes"]):
+"John","Doe","+1 555 123 4567","interested","Wants to buy in Q4"
+"Jane","","","wrong number",""
+
+EXAMPLE OUTPUT:
 [
   {
-    "name": "string or null",
-    "email": "string or null",
-    "mobile_without_country_code": "string or null",
-    "company": "string or null",
-    "city": "string or null",
-    "state": "string or null",
-    "country": "string or null",
-    "lead_owner": "string or null",
-    "crm_status": "GOOD_LEAD_FOLLOW_UP or DID_NOT_CONNECT or BAD_LEAD or SALE_DONE or null",
-    "crm_note": "string or null",
-    "data_source": "leads_on_demand or meridian_tower or eden_park or varah_swamy or sarjapur_plots or null",
-    "possession_time": "string or null",
-    "description": "string or null"
+    "name": "John Doe",
+    "email": null,
+    "mobile_without_country_code": "5551234567",
+    "company": null,
+    "city": null,
+    "state": null,
+    "country": null,
+    "lead_owner": null,
+    "crm_status": "GOOD_LEAD_FOLLOW_UP",
+    "crm_note": "Notes: Wants to buy in Q4",
+    "data_source": null,
+    "possession_time": null,
+    "description": null
+  },
+  {
+    "name": "Jane",
+    "email": null,
+    "mobile_without_country_code": null,
+    "company": null,
+    "city": null,
+    "state": null,
+    "country": null,
+    "lead_owner": null,
+    "crm_status": "BAD_LEAD",
+    "crm_note": null,
+    "data_source": null,
+    "possession_time": null,
+    "description": null
   }
 ]
-Use null for missing or empty values. Do NOT omit any keys.
-Extract country codes from phones. Combine First/Last name. Ensure EXACT array length of ${aiRows.length}.
+
+Now process the following ${aiRows.length} rows. Ensure EXACTLY ${aiRows.length} objects in the array.
 
 CSV Headers: ${JSON.stringify(headers)}
 CSV Rows:
