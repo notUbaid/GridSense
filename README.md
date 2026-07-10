@@ -158,3 +158,20 @@ npm run test
 ```
 
 The validation strategy relies on asserting that the `processBatch` controller correctly parses, sanitizes, and maps varying structural inputs into the exact 13-field CRM schema under varied load and error conditions.
+
+---
+
+## 7. AI Acknowledgements & Disclosures
+
+In the spirit of complete engineering transparency and modern software development practices, this project heavily leveraged artificial intelligence tooling throughout its lifecycle. This multi-agent approach allowed for rapid iteration, rigorous quality assurance, and highly optimized architecture.
+
+Specifically, the following AI systems were utilized:
+1. **Antigravity IDE**: Used extensively for core code development assistance, architectural scaffolding, and navigating the monorepo structure. The agentic nature of the IDE was instrumental in rapidly prototyping the hybrid deterministic/semantic extraction pipeline.
+2. **Claude (Anthropic)**: Deployed as an objective, secondary reviewer for quality checks, logic validation, and edge-case testing. Claude's rigorous analysis helped identify potential infinite loops in the API fallback cascade and suggested the AST-based JSON repair logic.
+3. **ChatGPT (OpenAI)**: Utilized heavily for refining and optimizing the internal LLM prompts (such as the few-shot templates used for the local Ollama integration), as well as generating and mutating the synthetic CSV files used for testing the extraction pipeline against realistic, messy data inputs.
+
+By orchestrating these diverse AI tools, I was able to focus entirely on higher-level system design, edge-case mitigation, and ensuring the final product met stringent enterprise standards.
+
+---
+
+*Built for the GrowEasy Software Developer Internship Evaluation.*
