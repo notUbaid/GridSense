@@ -273,7 +273,6 @@ In the spirit of transparency, this project leveraged AI tooling throughout deve
 ## Submission
 
 - **Position Applied For:** Intern
-- **Email:** varun@groweasy.ai
 
 ---
 
