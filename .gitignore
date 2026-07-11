@@ -9,3 +9,8 @@ backend/.env
 .next/
 *.log
 *.tsbuildinfo
+
+# Development scratch files
+backend/test-*.ts
+backend/test-*.js
+backend/profile.ts

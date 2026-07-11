@@ -232,6 +232,9 @@ export function useProcessing() {
   }, [addLog]);
 
   const startProcessing = useCallback(async () => {
+    // Guard: prevent double invocation if user clicks "Start" while already processing
+    if (isProcessingRef.current) return;
+
     const fullData = parsedDataRef.current;
     if (!previewData || !fullData) return;
     

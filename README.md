@@ -1,177 +1,280 @@
-# GridSense: AI-Powered Data Extraction Engine
+<p align="center">
+  <h1 align="center">GridSense</h1>
+  <p align="center"><strong>AI-Powered CSV → CRM Data Extraction Engine</strong></p>
+  <p align="center">
+    <a href="https://nextjs.org/"><img src="https://img.shields.io/badge/Next.js-16-black?style=flat&logo=next.js" alt="Next.js"></a>
+    <a href="https://expressjs.com/"><img src="https://img.shields.io/badge/Express.js-4-blue?style=flat&logo=express" alt="Express.js"></a>
+    <a href="https://tailwindcss.com/"><img src="https://img.shields.io/badge/Tailwind-v4-38B2AC?style=flat&logo=tailwind-css" alt="Tailwind CSS"></a>
+    <a href="https://www.typescriptlang.org/"><img src="https://img.shields.io/badge/TypeScript-Strict-blue?style=flat&logo=typescript" alt="TypeScript"></a>
+  </p>
+</p>
 
-[![Next.js](https://img.shields.io/badge/Next.js-14-black?style=flat&logo=next.js)](https://nextjs.org/)
-[![Express.js](https://img.shields.io/badge/Express.js-Backend-blue?style=flat&logo=express)](https://expressjs.com/)
-[![Tailwind CSS](https://img.shields.io/badge/Tailwind-CSS-38B2AC?style=flat&logo=tailwind-css)](https://tailwindcss.com/)
-[![TypeScript](https://img.shields.io/badge/TypeScript-Strict-blue?style=flat&logo=typescript)](https://www.typescriptlang.org/)
+> Drop any CSV — Facebook leads, Google Ads exports, real estate CRMs, messy spreadsheets — and the AI will automatically extract and map every field into GrowEasy's CRM schema.
 
-**GridSense** is an enterprise-grade, hybrid artificial intelligence data ingestion pipeline built for the **GrowEasy Software Developer Internship Evaluation**.
-
-It provides a robust, scalable bridge between volatile, unstructured user-generated data (such as arbitrary CSV exports) and strict backend validation systems (such as rigid CRM schemas). By isolating non-deterministic Large Language Model (LLM) behavior within a tightly controlled deterministic shell, GridSense achieves near-perfect data extraction accuracy without the latency or hallucination risks typically associated with AI-driven parsing.
-
----
-
-## 1. Project Context & The Data Volatility Problem
-
-In B2B SaaS and enterprise CRM systems, data ingestion is a notoriously brittle process. End-users frequently export data from highly disparate sources, including legacy CRMs, marketing platforms (Facebook Lead Ads, Google Ads), or manually maintained spreadsheets. These exports yield arbitrary column headers, inconsistent date formats, embedded newlines, and scattered contact information.
-
-Traditional ingestion pipelines rely on fixed-schema CSV parsers, which require strict column mapping. When a header changes (e.g., from "Full Name" to "First" and "Last"), or when a phone number is buried within a "Client Notes" column, deterministic parsers silently drop the data or force extensive manual user intervention.
-
-**The Goal:** Build a system that allows users to upload *any* CSV, and have it intelligently map to our strict 13-field CRM schema automatically.
+🔗 **Live Demo:** [grid-sense-ge.vercel.app](https://grid-sense-ge.vercel.app)
 
 ---
 
-## 2. Honest Engineering Decisions & Architecture
+## Table of Contents
 
-Building an LLM-wrapper is easy. Building a *reliable* AI data pipeline that doesn't drop rows, hallucinate data, or crash under load is incredibly difficult. Here are the core engineering decisions and lessons learned during the development of GridSense:
-
-### Why a Hybrid "Fast-Path" Approach?
-Initially, one might assume we could just throw entire CSV files into an LLM and ask it to return JSON. **This does not work in production.** LLMs have context limits, they hallucinate extra rows, and they are incredibly slow.
-* **Our Solution:** The system is a hybrid. We first use standard heuristics to detect obvious mappings (e.g., if a header is exactly `email`, map it immediately). The AI is invoked *only* to map unrecognized column headers or extract nested entities (like finding a valid Indian mobile number hidden inside a text paragraph). This saves massive amounts of compute and API costs.
-
-### Client-Side Chunking via Web Workers
-Passing a 10,000-row CSV to a Node.js backend would block the event loop and crash the server on large loads.
-* **Our Solution:** All CSV parsing is done entirely in the user's browser using `PapaParse` inside a Web Worker. We slice the massive CSV into small, 50-row chunks on the client side, and send those tiny chunks to the stateless backend in parallel. The server never holds state, making it infinitely scalable.
-
-### The Dynamic Fallback Cascade
-Relying on a single AI provider (like OpenAI or Groq) guarantees failure during load spikes. If Groq throws a `429 Too Many Requests` error, the user's data extraction would fail.
-* **Our Solution:** I built a dynamic multi-provider fallback cascade. If a batch fails on Groq, the backend seamlessly catches the error, retries it on Gemini, and if that fails, cascades to OpenRouter or Anthropic. This happens entirely invisibly to the user, ensuring near 100% uptime.
-
-### Zod Runtime Boundaries & JSON Salvaging (The Messy Reality of AI)
-TypeScript provides compile-time safety, but an LLM response is inherently untyped runtime text. Sometimes, models forget closing brackets, hallucinate markdown fences, or output integers instead of strings for phone numbers.
-* **Our Solution:** We enforce a strict runtime boundary using `Zod`. Before any AI data is accepted, it passes through our `salvageExtractorJson` utility. This utility is the unsung hero of the app: it strips markdown fences, repairs truncated JSON using a custom AST parser, coerces raw integers into strings, and wraps single objects into arrays. Only after passing this aggressive cleaning does the data enter the strict Zod validator.
-
-### Local Privacy-First Inference (Ollama Integration)
-For enterprise environments handling highly sensitive PII (Personally Identifiable Information), sending data to cloud APIs is a violation of compliance.
-* **Our Solution:** GridSense supports zero-cost, 100% local inference. When the user toggles the local hardware switch, the frontend intercepts AI requests and routes them directly to the user's local Ollama daemon.
-* **The 4B Model Challenge:** Small local models (like Gemma 4B) are notoriously bad at following complex schema instructions. I heavily optimized the local execution path by restricting the batch size to 5 rows and using highly sophisticated **Few-Shot Prompting**. By giving the local model a strict template with explicit `null` fallbacks, we forced a 4B model to generate production-ready structured JSON.
+- [The Problem](#the-problem)
+- [How It Works](#how-it-works)
+- [Key Features](#key-features)
+- [Tech Stack](#tech-stack)
+- [Setup Instructions](#setup-instructions)
+- [Environment Variables](#environment-variables)
+- [Local AI (Ollama)](#local-ai-ollama)
+- [Running Tests](#running-tests)
+- [Docker](#docker)
+- [Architecture](#architecture)
+- [Engineering Decisions](#engineering-decisions)
+- [AI Acknowledgements](#ai-acknowledgements)
 
 ---
 
-## 3. System Architecture Data Flow
+## The Problem
 
-```mermaid
-flowchart TD
-    subgraph Client ["Frontend Application (Browser)"]
-        A[File Selection] --> B[PapaParse Web Worker]
-        B --> C[Heuristic Triage & Filtering]
-        C --> D[Header Analysis & Chunking]
-        D --> E{Semantic Confidence Score}
-        E -- "High (≥ 70%)" --> F[Deterministic Extraction Fast-Path]
-        E -- "Low (< 70%)" --> G[AI Semantic Mapping]
-        G --> O{Local Inference Enabled?}
-        O -- "Yes" --> P[Local GPU Inference via Ollama]
-        P --> H
-    end
+CRM data ingestion is brittle. Users export leads from Facebook, Google Ads, Zoho, HubSpot, or hand-made Excel sheets — each with different column names, date formats, and layouts. Traditional parsers break the moment a header changes from `"Full Name"` to `"First"` + `"Last"`, or when a phone number is buried inside a notes column.
 
-    subgraph Server ["Backend API (Express.js)"]
-        G --> H[Batch Queueing & Concurrency Management]
-        O -- "No" --> H
-        H --> I[LLM Prompt Construction]
-        I --> J{Multi-Provider Fallback Cascade}
-        J --> K[Zod Schema Runtime Validation]
-    end
+**GridSense solves this.** Upload *any* CSV, and the AI will intelligently map it to the strict 15-field GrowEasy CRM schema — automatically.
 
-    F --> L[Data Normalization & Formatting]
-    K --> L
-    L --> M[Structured CSV/JSON Export]
+---
+
+## How It Works
+
+```
+Upload CSV  →  Client-side parsing  →  AI header analysis  →  Deterministic or AI extraction  →  Normalized CRM records
 ```
 
+1. **Upload** — Drag & drop or file picker. Parsed entirely in the browser via a Web Worker (no data leaves your machine during parsing).
+2. **Preview** — See your raw data in a paginated, sticky-header table. No AI processing yet.
+3. **Confirm** — Click "Start AI Extraction". The system analyzes your column headers to determine the fastest extraction strategy.
+4. **Results** — View extracted CRM records, skipped rows with reasons, and export as CSV or JSON.
+
 ---
 
-## 4. Local Development & Deployment
+## Key Features
 
-The project operates as a unified monorepo containing both the Next.js client and the Express.js API server.
+| Category | Feature |
+|----------|---------|
+| **Upload** | Drag & Drop, File Picker, 10+ sample datasets included |
+| **Preview** | Paginated table, sticky headers, horizontal/vertical scrolling |
+| **AI Extraction** | Multi-provider fallback cascade (Groq → Gemini → OpenAI → Anthropic → OpenRouter → Cohere) |
+| **Smart Routing** | Deterministic fast-path for high-confidence mappings, AI only when needed |
+| **Resilience** | Automatic retries, exponential backoff, batch splitting on rate limits, circuit breaker |
+| **Local AI** | Ollama integration for 100% offline, privacy-first inference |
+| **Results** | Export CSV/JSON, copy JSON, row-level clipboard, skipped/failed row inspectors |
+| **UX** | Dark mode, animated progress, real-time activity logs, ETA countdown, keyboard shortcuts |
+| **Validation** | Zod runtime boundaries, JSON repair for truncated AI responses, enum enforcement |
+| **DevOps** | Docker & Docker Compose, Vercel deployment config, unit tests (Vitest), Husky + lint-staged |
+
+---
+
+## Tech Stack
+
+| Layer | Technology |
+|-------|-----------|
+| **Frontend** | Next.js 16, React 19, Tailwind CSS v4, Framer Motion, TanStack Table, Shadcn/Base UI |
+| **Backend** | Node.js, Express.js, TypeScript, Zod validation |
+| **AI Providers** | Groq (LLaMA 3.1 8B), Google Gemini 1.5 Flash, OpenAI GPT-4o-mini, Anthropic Claude 3.5 Haiku, OpenRouter, Cohere, Ollama (local) |
+| **Testing** | Vitest, Supertest |
+| **DevOps** | Docker, Docker Compose, Vercel, Husky, lint-staged, Prettier, ESLint |
+
+---
+
+## Setup Instructions
 
 ### Prerequisites
-- Node.js (v18+)
-- Local Ollama Daemon (Optional, for privacy-first local inference)
+- **Node.js** v18+
+- **npm** (comes with Node.js)
 
-### Repository Setup
+### 1. Clone & Install
 
 ```bash
 # Clone the repository
 git clone https://github.com/notUbaid/GridSense.git
 cd GridSense
 
-# Install dependencies across the monorepo
+# Install root dependencies (monorepo scripts)
 npm ci
-cd frontend && npm ci
-cd backend && npm ci
 
-# Configure environment variables
-cp .env.example .env
+# Install backend dependencies
+cd backend
+npm ci
+cd ..
+
+# Install frontend dependencies
+cd frontend
+npm ci
+cd ..
 ```
 
-### Running the Application
+### 2. Configure Environment
 
-To run both the frontend and backend servers concurrently:
 ```bash
+# Copy the example environment file into the backend folder
+cp .env.example backend/.env
+```
+
+Edit `backend/.env` and add your API keys (see [Environment Variables](#environment-variables)).
+
+### 3. Run Development Servers
+
+```bash
+# From the project root — starts both frontend and backend concurrently
 npm run dev
 ```
 
-### Environment Variables
-For cloud-based AI inference, the following secrets must be configured in `.env` inside the `backend` folder:
-- `GROQ_API_KEY`
-- `GEMINI_API_KEY`
-- `OPENAI_API_KEY` (Optional)
-- `ANTHROPIC_API_KEY` (Optional)
-
-*(Note: API keys are not required if you exclusively utilize the Local Inference execution path).*
+- **Frontend**: http://localhost:3000
+- **Backend**: http://localhost:8000
+- **Health Check**: http://localhost:8000/health
 
 ---
 
-## 5. Local AI Configuration (Ollama)
+## Environment Variables
 
-To utilize GridSense's local inference capabilities, you must configure your local Ollama daemon to accept cross-origin requests from the web application.
+Configure these in `backend/.env`:
 
-1. Ensure [Ollama](https://ollama.com/) is installed and running.
-2. Download a high-performance quantized model (e.g., `gemma3` or `llama3`):
+| Variable | Required | Description |
+|----------|----------|-------------|
+| `GROQ_API_KEY` | **Yes** (or any one provider) | Free at [console.groq.com](https://console.groq.com). Supports comma-separated keys for rotation. |
+| `GEMINI_API_KEY` | Recommended | Free at [aistudio.google.com](https://aistudio.google.com). Used as fallback. |
+| `OPENAI_API_KEY` | Optional | Falls back after Gemini. |
+| `ANTHROPIC_API_KEY` | Optional | Falls back after OpenAI. |
+| `OPENROUTER_API_KEY` | Optional | Falls back after Anthropic. |
+| `COHERE_API_KEY` | Optional | Falls back after OpenRouter. |
+| `FRONTEND_URL` | No | CORS origin. Defaults to `http://localhost:3000`. |
+| `AI_MAX_RETRIES` | No | Max retry attempts per batch. Default: `3`. |
+| `AI_RETRY_DELAY_MS` | No | Base retry delay in ms (exponential backoff). Default: `2000`. |
+
+> **Tip:** You only need *one* API key to get started. Groq offers a generous free tier with LLaMA 3.1 8B Instant.
+
+---
+
+## Local AI (Ollama)
+
+For fully offline, privacy-first extraction:
+
+1. Install [Ollama](https://ollama.com/) and pull a model:
    ```bash
-   ollama run gemma3:latest
+   ollama pull gemma3:latest
    ```
-3. **Enable CORS Parameters**:
-   Modern browsers block local requests from external web origins for security. You must launch the daemon with the appropriate CORS overrides.
+
+2. Start Ollama with CORS enabled:
 
    **macOS / Linux:**
    ```bash
    OLLAMA_ORIGINS="*" ollama serve
    ```
-   
    **Windows (PowerShell):**
    ```powershell
    $env:OLLAMA_ORIGINS="*"
    ollama serve
    ```
 
-4. Within the GridSense application UI, toggle the local inference setting (the microchip icon). All extraction workloads will instantly route to your local hardware.
+3. In the GridSense UI, click the **CPU icon** (top right) to activate local inference. All extraction routes through your local hardware — no data leaves your machine.
 
 ---
 
-## 6. Testing & Quality Assurance
-
-The backend architecture includes a comprehensive Vitest suite designed to validate the extraction logic without consuming live API tokens. The testing environment utilizes an injected mock AI provider to guarantee deterministic execution of the pipeline logic during CI/CD.
+## Running Tests
 
 ```bash
+# Backend unit tests (8 tests across 3 suites)
 cd backend
 npm run test
 ```
 
-The validation strategy relies on asserting that the `processBatch` controller correctly parses, sanitizes, and maps varying structural inputs into the exact 13-field CRM schema under varied load and error conditions.
+Tests use a mock AI provider to ensure deterministic execution without consuming API tokens.
 
 ---
 
-## 7. AI Acknowledgements & Disclosures
+## Docker
 
-In the spirit of complete engineering transparency and modern software development practices, this project heavily leveraged artificial intelligence tooling throughout its lifecycle. This multi-agent approach allowed for rapid iteration, rigorous quality assurance, and highly optimized architecture.
+### Docker Compose (recommended)
 
-Specifically, the following AI systems were utilized:
-1. **Antigravity IDE**: Used extensively for core code development assistance, architectural scaffolding, and navigating the monorepo structure. The agentic nature of the IDE was instrumental in rapidly prototyping the hybrid deterministic/semantic extraction pipeline.
-2. **Claude (Anthropic)**: Deployed as an objective, secondary reviewer for quality checks, logic validation, and edge-case testing. Claude's rigorous analysis helped identify potential infinite loops in the API fallback cascade and suggested the AST-based JSON repair logic.
-3. **ChatGPT (OpenAI)**: Utilized heavily for refining and optimizing the internal LLM prompts (such as the few-shot templates used for the local Ollama integration), as well as generating and mutating the synthetic CSV files used for testing the extraction pipeline against realistic, messy data inputs.
+```bash
+docker compose up --build
+```
 
-By orchestrating these diverse AI tools, I was able to focus entirely on higher-level system design, edge-case mitigation, and ensuring the final product met stringent enterprise standards.
+This starts both the backend (port 8000) and frontend (port 3000) with health checks.
+
+### Individual Docker Build
+
+```bash
+docker build -t gridsense .
+```
 
 ---
 
-*Built for the GrowEasy Software Developer Internship Evaluation.*
+## Architecture
+
+```mermaid
+flowchart TD
+    subgraph Client ["Frontend (Browser)"]
+        A[File Upload] --> B[PapaParse Web Worker]
+        B --> C[Preview Table]
+        C --> D[Confirm Import]
+        D --> E[Header Analysis API Call]
+        E --> F{Schema Confidence ≥ 70%?}
+        F -- Yes --> G[Deterministic Fast-Path]
+        F -- No --> H[AI Semantic Extraction]
+        H --> I{Local Ollama Enabled?}
+        I -- Yes --> J[Local GPU Inference]
+        I -- No --> K[Cloud API Batching]
+    end
+
+    subgraph Server ["Backend (Express.js)"]
+        K --> L[Multi-Provider Cascade]
+        L --> M[Groq → Gemini → OpenAI → Anthropic → OpenRouter → Cohere]
+        M --> N[JSON Repair & Zod Validation]
+    end
+
+    G --> O[Normalize & Validate]
+    J --> O
+    N --> O
+    O --> P[CRM Records + Export]
+```
+
+### Key Data Flow
+
+1. **CSV Parsing** — Happens entirely in the browser via PapaParse Web Worker. The backend never receives the raw file.
+2. **Header Mapping** — A lightweight AI call maps CSV column names to CRM schema fields with confidence scores.
+3. **Batch Processing** — Rows are chunked (20 for AI, 5000 for deterministic) and processed concurrently with adaptive throttling.
+4. **Normalization** — Every record passes through deterministic validation: email regex, phone formatting, country code extraction, enum enforcement.
+
+---
+
+## Engineering Decisions
+
+### Hybrid Deterministic/AI Extraction
+Sending every row to an LLM is slow, expensive, and unreliable. Instead, we first analyze headers. If the AI confidently maps them (≥70% confidence), we skip the LLM entirely and use deterministic field mapping — processing thousands of rows in milliseconds.
+
+### JSON Repair Pipeline
+LLMs sometimes return truncated JSON, markdown fences, or integers where strings are expected. Our `salvageExtractorJson` + `repairTruncatedJson` utilities handle all of this transparently, recovering partial responses instead of failing the entire batch.
+
+### Adaptive Concurrency
+The frontend dynamically scales concurrent batch requests (1–20 workers) based on success/failure signals. On rate limits, concurrency halves. On success, it increments. This maximizes throughput without overwhelming free-tier API limits.
+
+### Multi-Key Rotation
+Each provider supports comma-separated API keys. When one key hits its rate limit, it's marked as exhausted and restored after a 60-second TTL. The system round-robins through available keys automatically.
+
+---
+
+## AI Acknowledgements
+
+In the spirit of transparency, this project leveraged AI tooling throughout development:
+
+1. **Antigravity IDE** — Core development assistance and architectural scaffolding.
+2. **Claude (Anthropic)** — Quality checks, edge-case analysis, and logic validation.
+3. **ChatGPT (OpenAI)** — Prompt optimization for local Ollama inference and synthetic test data generation.
+
+---
+
+## Submission
+
+- **Position Applied For:** Intern
+- **Email:** varun@groweasy.ai
+
+---
+
+*Built for the GrowEasy Software Developer Evaluation.*
